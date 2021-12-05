@@ -48,7 +48,7 @@ namespace DataAccess.Abstract
         }
 
         //SqlCommand "sql komutu" parametreye göre sql komutunu çalıştırmak olarak düşünülebilir.
-        protected SqlCommand Execute(string commandText, params SqlParameter[] sqlParameters) // filtre ederken birden fazla parametre gönderme ihtimali olduğu için params kullanılıyor. dizi yapısı olur
+        public SqlCommand Execute(string commandText, params SqlParameter[] sqlParameters) // filtre ederken birden fazla parametre gönderme ihtimali olduğu için params kullanılıyor. dizi yapısı olur
         {                                                                                     //execute etme işlemi olarak düşünebiliriz
             SqlCommand cmd = new SqlCommand();  //SqlCommand nesnesinden türeme yapılıyor
             cmd.CommandText = commandText;      // sorgu(komut) cümlem. commandText parametresine(özelliğine) atama yaptım
@@ -63,7 +63,7 @@ namespace DataAccess.Abstract
             return cmd;
         }
         //sql okuma sorgulama işlemi olarak düşünülebilir.
-        protected SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)// değer okuma işlemi olarak düşünebiliriz
+        public SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)// değer okuma işlemi olarak düşünebiliriz
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = commandText;
@@ -77,7 +77,7 @@ namespace DataAccess.Abstract
             return sqlDataReader;// okuduğun sonucu gönder
         }
 
-        protected SqlCommand Stored(string commandText, params SqlParameter[] sqlParameters)
+        public SqlCommand Stored(string commandText, params SqlParameter[] sqlParameters)
         {
 
             SqlCommand cmd = new SqlCommand();
@@ -93,7 +93,7 @@ namespace DataAccess.Abstract
             return cmd;
 
         }
-        protected SqlDataReader StoreReader(string commandText, params SqlParameter[] sqlParameters)
+        public SqlDataReader StoreReader(string commandText, params SqlParameter[] sqlParameters)
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = commandText;
@@ -106,7 +106,7 @@ namespace DataAccess.Abstract
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             return sqlDataReader;
         }
-        protected DataTable GetDataTable(string commandText, params SqlParameter[] sqlParameters)// select tablosundan aldığımız değeri tablo haline getireceğiz
+        public DataTable GetDataTable(string commandText, params SqlParameter[] sqlParameters)// select tablosundan aldığımız değeri tablo haline getireceğiz
         {
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();//sqldataadapter bir depo gibi düşünebiliriz.
             sqlDataAdapter.SelectCommand = Stored(commandText, sqlParameters);//hazır olan(kendi yazdığım) stored metodumu kullanacağım
