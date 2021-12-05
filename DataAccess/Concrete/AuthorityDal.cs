@@ -1,4 +1,5 @@
 ﻿using DataAccess.Abstract;
+using DataAccess.Database;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,11 @@ namespace DataAccess.Concrete
 {
     public class AuthorityDal : IRepository<Authority>
     {
+        SqlService sqlService;
+        public AuthorityDal()
+        {
+            sqlService = SqlDatabase.GetInstance();
+        }
         public string Add(Authority entity)
         {
             throw new NotImplementedException();
