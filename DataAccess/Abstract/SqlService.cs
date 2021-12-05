@@ -10,26 +10,35 @@ namespace DataAccess.Abstract
 {
     public abstract class SqlService
     {
-        // veritabanı adresini connectionString tutacak
+        /* veritabanı adresini connectionString tutacak readonly olması sadece okunabilir ve müdahala edilemez. aynı bilgisayarda sunucuda çalışıyorsak(local sql) server=. şeklinde yazılabilir
+        uzak sql ise ip adresi yazılabilir. Integrated security=true dersek şifre vermeye gerek kalmaz. False ise userid ve password belirtmek gerekecektir
+         */
         readonly string connectionString = "Server=KARABAY;Database=CONTROLAPP;Integrated Security=True;";
-        SqlConnection connection;
+
+        SqlConnection connection;// sql bağlantı nesnesidir
+
+
         public SqlService()
-        {
-            connection = new SqlConnection(connectionString);
+        {    //her seferinde yeni nesne türetmeyecek. bir kez çalışınca türetecek. her sqlcommand'ın içine koymaktansa buraya aldık.
+            connection = new SqlConnection(connectionString);// bağlanma işlemini adres değişkenine göre yapacaktır
         }
+
+        //bu metodun sonucu olarak SqlConnection dönecektir. SqlConnectin nesnesinden türetilen connection'u return ederiz
         protected SqlConnection OpenConnection()
         {
-
+            // bağlantının durumu kapalıysa aç
             if (connection.State == ConnectionState.Closed)
             {
                 connection.Open();
 
             }
+            //kapalı durumunu açtı ve açılan bağlantıyı dönderdi
             return connection;
         }
+        //void olmasının sebebi geriye değer döndermeyecek. yalnızca bağlantıyı kapatıyoruz.OpenConnection'da açıp. sonra açılanı gönbderiyorduk
         void CloseConnection()
         {
-
+            // bağlantının durumu açıksa kapat
             if (connection.State == ConnectionState.Open)
             {
                 connection.Close();
@@ -38,23 +47,23 @@ namespace DataAccess.Abstract
 
         }
 
-        protected SqlCommand Execute(string commandText, params SqlParameter[] sqlParameters)
-        {
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = commandText;
-            cmd.Connection = OpenConnection();
-            cmd.CommandType = CommandType.Text;
+        //SqlCommand "sql komutu" parametreye göre sql komutunu çalıştırmak olarak düşünülebilir.
+        protected SqlCommand Execute(string commandText, params SqlParameter[] sqlParameters) // filtre ederken birden fazla parametre gönderme ihtimali olduğu için params kullanılıyor. dizi yapısı olur
+        {                                                                                     //execute etme işlemi olarak düşünebiliriz
+            SqlCommand cmd = new SqlCommand();  //SqlCommand nesnesinden türeme yapılıyor
+            cmd.CommandText = commandText;      // sorgu(komut) cümlem. commandText parametresine(özelliğine) atama yaptım
+            cmd.Connection = OpenConnection();  // bu komuta veritabaanının bağlantısını gönderdik "OpenConnection()" metodu ile.
+            cmd.CommandType = CommandType.Text;// komut tipi text (bu yazılmasa da olur bu değer default olarak text gelir)
             if (sqlParameters != null)
             {
-                cmd.Parameters.AddRange(sqlParameters);
+                cmd.Parameters.AddRange(sqlParameters);//birden fazla parametre addrange ile eklenebilir.
             }
-            cmd.ExecuteNonQuery();
-            CloseConnection();
+            cmd.ExecuteNonQuery();// komutu execute et" sorguyu çalıştırmak"
+            CloseConnection();//bağlantı kaldırılıyor
             return cmd;
-
         }
-        protected SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)
+        //sql okuma sorgulama işlemi olarak düşünülebilir.
+        protected SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)// değer okuma işlemi olarak düşünebiliriz
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = commandText;
@@ -64,8 +73,8 @@ namespace DataAccess.Abstract
             {
                 cmd.Parameters.AddRange(sqlParameters);
             }
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            return sqlDataReader;
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();// SqlDataReader sqlden gelen sonuçlarıu okuyan nesne.ExecuteReader metodu ile. oraya git execute et" sorgula" ve oku "read".
+            return sqlDataReader;// okuduğun sonucu gönder
         }
 
         protected SqlCommand Stored(string commandText, params SqlParameter[] sqlParameters)
@@ -74,7 +83,7 @@ namespace DataAccess.Abstract
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = commandText;
             cmd.Connection = OpenConnection();
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;//text yerine stored prosedürlerimizi kullanacağız.  execute işlemlerini olarak sınıflandırabiliriz. hazır prosedürlerimizi göndereceğiz
             if (sqlParameters != null)
             {
                 cmd.Parameters.AddRange(sqlParameters);
@@ -89,7 +98,7 @@ namespace DataAccess.Abstract
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = commandText;
             cmd.Connection = OpenConnection();
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure;// prosedürlerderden okuma olanları kullanacağız.
             if (sqlParameters != null)
             {
                 cmd.Parameters.AddRange(sqlParameters);
@@ -97,13 +106,13 @@ namespace DataAccess.Abstract
             SqlDataReader sqlDataReader = cmd.ExecuteReader();
             return sqlDataReader;
         }
-        protected DataTable GetDataTable(string commandText, params SqlParameter[] sqlParameters)
+        protected DataTable GetDataTable(string commandText, params SqlParameter[] sqlParameters)// select tablosundan aldığımız değeri tablo haline getireceğiz
         {
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-            sqlDataAdapter.SelectCommand = Stored(commandText, sqlParameters);
-            DataTable dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-            return dataTable;
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();//sqldataadapter bir depo gibi düşünebiliriz.
+            sqlDataAdapter.SelectCommand = Stored(commandText, sqlParameters);//hazır olan(kendi yazdığım) stored metodumu kullanacağım
+            DataTable dataTable = new DataTable();//geriye bir datatable dönderecğim için oluşturuyorum.
+            sqlDataAdapter.Fill(dataTable);//dataadapterden geleni datatable'i doldur
+            return dataTable;//doldurduğunu dönder
 
         }
     }

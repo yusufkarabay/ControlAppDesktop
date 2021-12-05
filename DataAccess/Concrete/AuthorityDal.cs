@@ -12,7 +12,7 @@ namespace DataAccess.Concrete
 {
     public class AuthorityDal : IRepository<Authority>
     {
-        SqlService sqlService;
+        SqlService sqlService;//sql servisimi burada türettim
         public AuthorityDal()
         {
             sqlService = SqlDatabase.GetInstance();

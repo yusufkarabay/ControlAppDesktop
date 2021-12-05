@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccess.Database
-{
+{       //SqlService'de ki her metodu artık burada kullanabilecğeim
     class SqlDatabase : SqlService
     {
         static SqlDatabase sqlDatabase;
