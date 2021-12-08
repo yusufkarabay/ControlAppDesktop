@@ -52,7 +52,7 @@ namespace DataAccess.Concrete
             try
             {
                 sqlService.StoreReader("AuthorityDelete", new SqlParameter("@authortyid", id));
-                return "Yetki Başarı İle Silindi"
+                return "Yetki Başarı İle Silindi";
             }
             catch (Exception ex)
             {

@@ -14,7 +14,11 @@ namespace DataAccess.Concrete
         }
         public static bool ConBool(this object param)
         {
-            return Convert.ToBoolean(param);    
+            return Convert.ToBoolean(param);
+        }
+        public static DateTime ConDate(this object param)
+        {
+            return Convert.ToDateTime(param);
         }
     }
 }

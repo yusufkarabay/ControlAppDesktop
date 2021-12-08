@@ -21,9 +21,9 @@ namespace Entities
         string departmentName;
         string authorityName;
 
-        public Employee(Guid id, string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, Guid departmentId, Guid authorityId, string departmentName, string authorityName)
+        public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName, string authorityName)
         {
-            this.id = id;
+
             this.tc = tc;
             this.name = name;
             this.surname = surname;
@@ -31,28 +31,15 @@ namespace Entities
             this.adress = adress;
             this.tel = tel;
             this.mail = mail;
-            this.departmentId = departmentId;
-            this.authorityId = authorityId;
             this.departmentName = departmentName;
             this.authorityName = authorityName;
         }
 
-        public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, Guid departmentId, Guid authorityId, string departmentName, string authorityName)
-        {
-            this.tc = tc;
-            this.name = name;
-            this.surname = surname;
-            this.bdate = bdate;
-            this.adress = adress;
-            this.tel = tel;
-            this.mail = mail;
-            this.departmentId = departmentId;
-            this.authorityId = authorityId;
-            this.departmentName = departmentName;
-            this.authorityName = authorityName;
-        }
+
 
         public Guid Id { get => id; set => id = value; }
+        public Guid DepartmentId { get => departmentId; set => departmentId = value; }
+        public Guid AuthorityId { get => authorityId; set => authorityId = value; }
         public string Tc { get => tc; set => tc = value; }
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
@@ -60,8 +47,6 @@ namespace Entities
         public string Adress { get => adress; set => adress = value; }
         public string Tel { get => tel; set => tel = value; }
         public string Mail { get => mail; set => mail = value; }
-        public Guid DepartmentId { get => departmentId; set => departmentId = value; }
-        public Guid AuthorıtyId { get => authorityId; set => authorityId = value; }
         public string DepartmentName { get => departmentName; set => departmentName = value; }
         public string AuthorityName { get => authorityName; set => authorityName = value; }
     }
