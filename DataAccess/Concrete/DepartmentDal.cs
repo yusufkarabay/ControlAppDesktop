@@ -13,6 +13,7 @@ namespace DataAccess.Concrete
 {
     public class DepartmentDal : IRepository<Department>
     {
+        static DepartmentDal departmentDal;
         SqlService sqlService;
         SqlDataReader dataReader;
         bool result;
@@ -108,6 +109,14 @@ namespace DataAccess.Concrete
 
                 return ex.Message;
             }
+        }
+        public static DepartmentDal GetInstance()
+        {
+            if (departmentDal == null)
+            {
+                departmentDal = new DepartmentDal();
+            }
+            return departmentDal;
         }
     }
 }
