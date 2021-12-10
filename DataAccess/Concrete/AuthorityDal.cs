@@ -13,10 +13,11 @@ namespace DataAccess.Concrete
 {
     public class AuthorityDal : SqlService, IRepository<Authority>
     {
+        static AuthorityDal authorityDal;//getinstance değişkeni
         SqlService sqlService;//sql servisimi burada türettim
         SqlDataReader dataReader;//okuma  işlemi için oluşturduk
         bool result;
-        public AuthorityDal()
+        private AuthorityDal()
         {
             sqlService = SqlDatabase.GetInstance();
         }
@@ -80,22 +81,22 @@ namespace DataAccess.Concrete
                 dataReader.Close();
                 return list;
             }
-            catch 
+            catch
             {
 
                 return new List<Authority>();
             }
         }
 
-        public string Update(Authority entity,string oldName)
+        public string Update(Authority entity, string oldName)
         {
             try
             {
-                dataReader = sqlService.StoreReader("AuthorityUpdate", new SqlParameter("@authorityid", entity.AuthorityId), new SqlParameter("@authorityName", entity.AuthorityName), new SqlParameter("@authorityOldName",oldName));
+                dataReader = sqlService.StoreReader("AuthorityUpdate", new SqlParameter("@authorityid", entity.AuthorityId), new SqlParameter("@authorityName", entity.AuthorityName), new SqlParameter("@authorityOldName", oldName));
                 if (dataReader.Read())
                 {
-                    result=dataReader[0].ConBool();
-                    
+                    result = dataReader[0].ConBool();
+
                 }
                 if (result)
                 {
@@ -108,9 +109,17 @@ namespace DataAccess.Concrete
             }
             catch (Exception ex)
             {
-                
+
                 return ex.Message;
             }
+        }
+        public static AuthorityDal GetInstance()
+        {
+            if (authorityDal == null)
+            {
+                authorityDal = new AuthorityDal();
+            }
+            return authorityDal;
         }
     }
 }
