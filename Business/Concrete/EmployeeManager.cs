@@ -137,7 +137,7 @@ namespace Business.Concrete
                 {
                     return " Personel Bilgileri Bulunamadı";
                 }
-                return employeeDal.Update(entity, oldName); 
+                return employeeDal.Update(entity, oldName);
             }
             catch (Exception ex)
             {
@@ -151,5 +151,17 @@ namespace Business.Concrete
             return employeeManager;
         }
 
+        public object[] Login(string tc, string password)
+        {
+            try
+            {
+                return employeeDal.Login(tc.Trim(), password.Trim());
+            }
+            catch
+            {
+
+                return null;
+            }
+        }
     }
 }

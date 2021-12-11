@@ -115,11 +115,39 @@ namespace DataAccess.Concrete
         }
         public static EmployeeDal GetInstance()
         {
-            if (employeeDal==null)
+            if (employeeDal == null)
             {
                 employeeDal = new EmployeeDal();
             }
             return employeeDal;
+        }
+        public object[] Login(string tc, string password)
+        {
+            try
+            {
+                object[] infos = null;
+                dataReader = sqlService.StoreReader("EmployeeLogin", new SqlParameter("@tc", tc), new SqlParameter("@password", password));
+                if (dataReader.Read())
+                {
+                    string name, surname, departmentName, authorityName;
+                    Guid departmentId, authorityId;
+                    name = dataReader["NAME"].ToString();
+                    surname = dataReader["SURNAME"].ToString();
+                    departmentName = dataReader["DEPARTMENTNAME"].ToString();
+                    authorityName = dataReader["AUTHORITYNAME"].ToString();
+                    departmentId = (Guid)dataReader["DEPARTMENTID"];
+                    authorityId = (Guid)dataReader["AUTHORITYID"];
+                    infos = new object[] { name, surname, departmentName, authorityName, departmentId, authorityId };
+
+                }
+
+                dataReader.Close();
+                return infos;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
