@@ -14,6 +14,7 @@ namespace DataAccess.Concrete
 {
     public class RequestDetailDal : IRepository<RequestDetail>
     {
+        static RequestDetailDal requestDetailDal;
         SqlService sqlService;
         SqlDataReader dataReader;
         bool result;
@@ -64,6 +65,14 @@ namespace DataAccess.Concrete
         public string Update(RequestDetail entity, string oldName)
         {
             throw new NotImplementedException();
+        }
+        public static RequestDetailDal GetInstance()
+        {
+            if (requestDetailDal == null)
+            {
+                requestDetailDal = new RequestDetailDal();
+            }
+            return requestDetailDal;
         }
     }
 }

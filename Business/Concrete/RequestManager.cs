@@ -96,18 +96,15 @@ namespace Business.Concrete
             {
                 if (entity.RequestTitle == null)
                 {
-                    return "Güncellemek İçin Talep Başlığını Doldurunuz";
+                    return "Talep Konu Alanı Boş Geçilemez";
                 }
                 controlText = IsRequestComplete(entity);
                 if (controlText != "")
                 {
                     return controlText;
                 }
-                if (string.IsNullOrEmpty(oldName))
-                {
-                    return "Talep Bilgileri Bulunamadı";
-                }
-                return requestDal.Update(entity, oldName);
+                
+                return requestDal.Update(entity,"");
             }
             catch (Exception ex)
             {
