@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Concrete\AuthorityManager.cs" />
     <Compile Include="Concrete\DepartmentManager.cs" />
+    <Compile Include="Concrete\EmployeeManager.cs" />
+    <Compile Include="Concrete\RequestDetailManager.cs" />
+    <Compile Include="Concrete\RequestManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

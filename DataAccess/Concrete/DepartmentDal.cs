@@ -11,7 +11,7 @@ using MySqlX.XDevAPI.Common;
 
 namespace DataAccess.Concrete
 {
-    public class DepartmentDal : IRepository<Department>
+    public class DepartmentDal 
     {
         static DepartmentDal departmentDal;
         SqlService sqlService;

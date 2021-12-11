@@ -14,6 +14,7 @@ namespace DataAccess.Concrete
 {
     public class EmployeeDal : SqlService, IRepository<Employee>
     {
+        static EmployeeDal employeeDal;
         SqlService sqlService;
         SqlDataReader dataReader;
         bool result;
@@ -28,7 +29,7 @@ namespace DataAccess.Concrete
             {
                 dataReader = sqlService.StoreReader("EmployeeCreate", new SqlParameter("@tc", entity.Tc),
            new SqlParameter("@surname", entity.Surname), new SqlParameter("@bdate", entity.Bdate), new SqlParameter("@adrees", entity.Adress), new SqlParameter("@tel", entity.Tel), new SqlParameter("@mail", entity.Mail),
-           new SqlParameter("@departmanid", entity.DepartmentId), new SqlParameter("@@authorityid", entity.AuthorıtyId));
+           new SqlParameter("@departmanid", entity.DepartmentId), new SqlParameter("@authorityid", entity.AuthorityId));
                 if (dataReader.Read())
                 {
                     result = dataReader[0].ConBool();
@@ -56,7 +57,7 @@ namespace DataAccess.Concrete
         {
             try
             {
-                sqlService.StoreReader("EmployeeDelete", new SqlParameter("@id", id);
+                sqlService.StoreReader("EmployeeDelete", new SqlParameter("@id", id));
                 return "Personel Başarı İle Silindi";
             }
             catch (Exception ex)
@@ -111,6 +112,14 @@ namespace DataAccess.Concrete
 
                 return ex.Message;
             }
+        }
+        public static EmployeeDal GetInstance()
+        {
+            if (employeeDal==null)
+            {
+                employeeDal = new EmployeeDal();
+            }
+            return employeeDal;
         }
     }
 }

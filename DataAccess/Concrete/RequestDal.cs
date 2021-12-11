@@ -13,6 +13,7 @@ namespace DataAccess.Concrete
 {
     public class RequestDal : IRepository<Request>
     {
+        static RequestDal requestDal;
         SqlService sqlService;
         SqlDataReader dataReader;
         bool result;
@@ -110,6 +111,14 @@ namespace DataAccess.Concrete
                 return ex.Message;
 
             }
+        }
+        public static RequestDal GetInstance()
+        {
+            if (requestDal == null)
+            {
+                requestDal = new RequestDal();  
+            }
+            return requestDal;
         }
     }
 }
