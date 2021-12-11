@@ -11,6 +11,8 @@ using MySqlX.XDevAPI.Common;
 
 namespace DataAccess.Concrete
 {
+    // dalyarak! ben sana soruyo muyum sen kimi sikiyosun diye?
+    // ya feridun abi..
     public class DepartmentDal 
     {
         static DepartmentDal departmentDal;
