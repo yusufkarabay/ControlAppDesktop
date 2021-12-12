@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
-            this.pnlTopMenu = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
+            this.pnlActive = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
             this.btnDirectory = new System.Windows.Forms.Button();
             this.btnGenarator = new System.Windows.Forms.Button();
@@ -45,14 +44,17 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSentry = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlTopMenu = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.pnlLeftMenu.SuspendLayout();
-            this.pnlTopMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeftMenu
             // 
             this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.pnlLeftMenu.Controls.Add(this.pnlActive);
             this.pnlLeftMenu.Controls.Add(this.btnUserName);
             this.pnlLeftMenu.Controls.Add(this.btnDirectory);
             this.pnlLeftMenu.Controls.Add(this.btnGenarator);
@@ -73,26 +75,13 @@
             this.pnlLeftMenu.Size = new System.Drawing.Size(180, 703);
             this.pnlLeftMenu.TabIndex = 0;
             // 
-            // pnlTopMenu
+            // pnlActive
             // 
-            this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.pnlTopMenu.Controls.Add(this.lblTime);
-            this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
-            this.pnlTopMenu.Name = "pnlTopMenu";
-            this.pnlTopMenu.Size = new System.Drawing.Size(966, 35);
-            this.pnlTopMenu.TabIndex = 1;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTime.Location = new System.Drawing.Point(15, 5);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 19);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "Zaman";
+            this.pnlActive.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnlActive.Location = new System.Drawing.Point(0, 57);
+            this.pnlActive.Name = "pnlActive";
+            this.pnlActive.Size = new System.Drawing.Size(12, 48);
+            this.pnlActive.TabIndex = 2;
             // 
             // btnUserName
             // 
@@ -117,9 +106,11 @@
             this.btnDirectory.TabIndex = 2;
             this.btnDirectory.Text = "            Telefon Rehberi";
             this.btnDirectory.UseVisualStyleBackColor = true;
+            this.btnDirectory.Click += new System.EventHandler(this.btnDirectory_Click);
             // 
             // btnGenarator
             // 
+            this.btnGenarator.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnGenarator.FlatAppearance.BorderSize = 0;
             this.btnGenarator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenarator.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -132,9 +123,11 @@
             this.btnGenarator.TabIndex = 2;
             this.btnGenarator.Text = "    Jeneratör";
             this.btnGenarator.UseVisualStyleBackColor = true;
+            this.btnGenarator.Click += new System.EventHandler(this.btnGenarator_Click);
             // 
             // btnGuestCard
             // 
+            this.btnGuestCard.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnGuestCard.FlatAppearance.BorderSize = 0;
             this.btnGuestCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuestCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -147,9 +140,11 @@
             this.btnGuestCard.TabIndex = 2;
             this.btnGuestCard.Text = "         Misafir Kart";
             this.btnGuestCard.UseVisualStyleBackColor = true;
+            this.btnGuestCard.Click += new System.EventHandler(this.btnGuestCard_Click);
             // 
             // btnCabinet
             // 
+            this.btnCabinet.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnCabinet.FlatAppearance.BorderSize = 0;
             this.btnCabinet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCabinet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -162,9 +157,11 @@
             this.btnCabinet.TabIndex = 2;
             this.btnCabinet.Text = " Dolap";
             this.btnCabinet.UseVisualStyleBackColor = true;
+            this.btnCabinet.Click += new System.EventHandler(this.btnCabinet_Click);
             // 
             // btnDrawer
             // 
+            this.btnDrawer.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnDrawer.FlatAppearance.BorderSize = 0;
             this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrawer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -177,9 +174,11 @@
             this.btnDrawer.TabIndex = 2;
             this.btnDrawer.Text = "      Çekmece";
             this.btnDrawer.UseVisualStyleBackColor = true;
+            this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
             // 
             // btnIdCard
             // 
+            this.btnIdCard.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnIdCard.FlatAppearance.BorderSize = 0;
             this.btnIdCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIdCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -192,9 +191,11 @@
             this.btnIdCard.TabIndex = 2;
             this.btnIdCard.Text = "       Giriş Kartı";
             this.btnIdCard.UseVisualStyleBackColor = true;
+            this.btnIdCard.Click += new System.EventHandler(this.btnIdCard_Click);
             // 
             // btnHeadset
             // 
+            this.btnHeadset.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnHeadset.FlatAppearance.BorderSize = 0;
             this.btnHeadset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeadset.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -207,9 +208,11 @@
             this.btnHeadset.TabIndex = 2;
             this.btnHeadset.Text = "      Kulaklık";
             this.btnHeadset.UseVisualStyleBackColor = true;
+            this.btnHeadset.Click += new System.EventHandler(this.btnHeadset_Click);
             // 
             // btnMaintenance
             // 
+            this.btnMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnMaintenance.FlatAppearance.BorderSize = 0;
             this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintenance.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -222,9 +225,11 @@
             this.btnMaintenance.TabIndex = 2;
             this.btnMaintenance.Text = "   Bakım";
             this.btnMaintenance.UseVisualStyleBackColor = true;
+            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
             // 
             // btnRequest
             // 
+            this.btnRequest.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnRequest.FlatAppearance.BorderSize = 0;
             this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRequest.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -237,9 +242,11 @@
             this.btnRequest.TabIndex = 2;
             this.btnRequest.Text = " Talep";
             this.btnRequest.UseVisualStyleBackColor = true;
+            this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
             // btnEmployee
             // 
+            this.btnEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnEmployee.FlatAppearance.BorderSize = 0;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -252,9 +259,11 @@
             this.btnEmployee.TabIndex = 2;
             this.btnEmployee.Text = "     Personel";
             this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
             // 
             // btnInventory
             // 
+            this.btnInventory.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -267,9 +276,11 @@
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "     Envanter";
             this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnSentry
             // 
+            this.btnSentry.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
             this.btnSentry.FlatAppearance.BorderSize = 0;
             this.btnSentry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSentry.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -282,6 +293,7 @@
             this.btnSentry.TabIndex = 2;
             this.btnSentry.Text = "Nöbet";
             this.btnSentry.UseVisualStyleBackColor = true;
+            this.btnSentry.Click += new System.EventHandler(this.btnSentry_Click);
             // 
             // pictureBox1
             // 
@@ -293,6 +305,27 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pnlTopMenu
+            // 
+            this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.pnlTopMenu.Controls.Add(this.lblTime);
+            this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
+            this.pnlTopMenu.Name = "pnlTopMenu";
+            this.pnlTopMenu.Size = new System.Drawing.Size(966, 35);
+            this.pnlTopMenu.TabIndex = 1;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTime.Location = new System.Drawing.Point(15, 5);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(65, 19);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "Zaman";
+            // 
             // homePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -303,14 +336,15 @@
             this.Controls.Add(this.pnlLeftMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "homePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "homePage";
+            this.Load += new System.EventHandler(this.homePage_Load);
             this.pnlLeftMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTopMenu.ResumeLayout(false);
             this.pnlTopMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,5 +368,6 @@
         private System.Windows.Forms.Button btnMaintenance;
         private System.Windows.Forms.Button btnUserName;
         private System.Windows.Forms.Button btnDirectory;
+        private System.Windows.Forms.Panel pnlActive;
     }
 }
