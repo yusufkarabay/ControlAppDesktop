@@ -183,9 +183,11 @@
             this.dgvRequest.MultiSelect = false;
             this.dgvRequest.Name = "dgvRequest";
             this.dgvRequest.ReadOnly = true;
+            this.dgvRequest.RowHeadersVisible = false;
             this.dgvRequest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRequest.Size = new System.Drawing.Size(941, 253);
             this.dgvRequest.TabIndex = 0;
+            this.dgvRequest.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRequest_CellMouseDoubleClick);
             // 
             // groupBox1
             // 
@@ -271,6 +273,7 @@
             this.btnRequestRefresh.TabIndex = 0;
             this.btnRequestRefresh.Text = "Listeyi Yenile";
             this.btnRequestRefresh.UseVisualStyleBackColor = true;
+            this.btnRequestRefresh.Click += new System.EventHandler(this.btnRequestRefresh_Click);
             // 
             // btnRequestPrint
             // 

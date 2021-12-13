@@ -71,7 +71,7 @@
             this.txtPassword.Location = new System.Drawing.Point(174, 90);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(129, 20);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "123456";
             // 
             // LnkForgot
@@ -102,7 +102,7 @@
             this.mtxtTC.Mask = "00000000000";
             this.mtxtTC.Name = "mtxtTC";
             this.mtxtTC.Size = new System.Drawing.Size(129, 20);
-            this.mtxtTC.TabIndex = 7;
+            this.mtxtTC.TabIndex = 0;
             this.mtxtTC.Text = "22420015174";
             this.mtxtTC.ValidatingType = typeof(int);
             // 
@@ -117,6 +117,7 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 302);

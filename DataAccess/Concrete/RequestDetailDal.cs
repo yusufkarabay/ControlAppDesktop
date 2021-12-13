@@ -82,15 +82,15 @@ namespace DataAccess.Concrete
                 dataReader = sqlService.StoreReader("RequestDetailList", new SqlParameter("@tc", tc));
                 while (dataReader.Read())
                 {
-                    RequestDetail requestDetail = new RequestDetail((Guid)dataReader["REQUESTDETAILID"], (Guid)dataReader["REQUESTID"], dataReader["REQUESTING"].ToString(), dataReader["REQUESTED"].ToString(),
+                    RequestDetail requestDetail = new RequestDetail((Guid)dataReader["REQUESTDETAILID"], (Guid)dataReader["REQUESTID"], dataReader["NAME"].ToString() + " " + dataReader["SURNAME"].ToString(), 
                         dataReader["REQUESTTITLE"].ToString(), dataReader["REQUESTCONTENT"].ToString());
-                    
+
                     requestDetails.Add(requestDetail);
                 }
                 dataReader.Close();
-                return requestDetails;  
+                return requestDetails;
             }
-            catch 
+            catch
             {
                 return new List<RequestDetail>();
             }

@@ -34,12 +34,40 @@ namespace ControlAppDesktop.Forms
         {
 
             dgvRequest.DataSource = requestDetailManager.GetAll(tc);
-
+            DataGridDisplay();
         }
         private void Request_Load(object sender, EventArgs e)
         {
             Fillİnfos();
             tlblTime.Text = DateTime.Now.ToString("f");
+            RequestList();
+
+        }
+        void DataGridDisplay()
+        {
+            dgvRequest.Columns[0].Visible = false;
+            dgvRequest.Columns[1].Visible = false;
+            dgvRequest.Columns[2].Visible = false;
+            dgvRequest.Columns[3].Visible = false;
+            dgvRequest.Columns["RequestTitle"].HeaderText = "Talep Başlığı";
+            dgvRequest.Columns["RequestContent"].HeaderText = "Talep Açıklaması";
+            dgvRequest.Columns["RequestingName"].HeaderText = "Talep Eden";
+        }
+
+        private void dgvRequest_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dgvRequest.CurrentRow==null)
+            {
+                MessageBox.Show("Detaylarını Görmek İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            txtRequestTitle.Text = dgvRequest.CurrentRow.Cells["RequestTitle"].Value.ToString();
+            richTxtRequestContent.Text = dgvRequest.CurrentRow.Cells["RequestContent"].Value.ToString();
+            txtRequested.Text = dgvRequest.CurrentRow.Cells["RequestingName"].Value.ToString();
+        }
+
+        private void btnRequestRefresh_Click(object sender, EventArgs e)
+        {
             RequestList();
         }
     }
