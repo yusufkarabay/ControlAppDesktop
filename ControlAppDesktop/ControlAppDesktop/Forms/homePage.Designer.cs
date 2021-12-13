@@ -1,6 +1,6 @@
 ﻿namespace ControlAppDesktop.Forms
 {
-    partial class homePage
+    partial class HomePage
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             this.pnlLeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeftMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlLeftMenu.Name = "pnlLeftMenu";
-            this.pnlLeftMenu.Size = new System.Drawing.Size(180, 703);
+            this.pnlLeftMenu.Size = new System.Drawing.Size(180, 768);
             this.pnlLeftMenu.TabIndex = 0;
             // 
             // pnlActive
@@ -85,11 +85,11 @@
             // 
             // btnUserName
             // 
-            this.btnUserName.Location = new System.Drawing.Point(0, 677);
+            this.btnUserName.Location = new System.Drawing.Point(0, 733);
             this.btnUserName.Name = "btnUserName";
             this.btnUserName.Size = new System.Drawing.Size(180, 23);
             this.btnUserName.TabIndex = 3;
-            this.btnUserName.Text = "button1";
+            this.btnUserName.Text = "Personel Adı";
             this.btnUserName.UseVisualStyleBackColor = true;
             // 
             // btnDirectory
@@ -312,7 +312,7 @@
             this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
             this.pnlTopMenu.Name = "pnlTopMenu";
-            this.pnlTopMenu.Size = new System.Drawing.Size(966, 35);
+            this.pnlTopMenu.Size = new System.Drawing.Size(1186, 35);
             this.pnlTopMenu.TabIndex = 1;
             // 
             // lblTime
@@ -331,7 +331,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1146, 703);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.pnlTopMenu);
             this.Controls.Add(this.pnlLeftMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

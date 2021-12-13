@@ -36,9 +36,9 @@ namespace DataAccess.Concrete
                 dataReader.Close();
                 if (result)
                 {
-                    return "Bu Talep Daha Önce " + entity.RequestedName + " İsimli Personele İletilmiştir.";
+                    return "Bu Talep Daha Önce " + entity.Requested + " İsimli Personele İletilmiştir.";
                 }
-                return entity.RequestedName+ " İsimli Personele Talep Başarıyla Oluşturulmuştur";
+                return entity.Requested + " İsimli Personele Talep Başarıyla Oluşturulmuştur";
             }
             catch (Exception ex)
             {
@@ -73,6 +73,28 @@ namespace DataAccess.Concrete
                 requestDetailDal = new RequestDetailDal();
             }
             return requestDetailDal;
+        }
+        public List<RequestDetail> GetByTc(string tc)
+        {
+            try
+            {
+                List<RequestDetail> requestDetails = new List<RequestDetail>();
+                dataReader = sqlService.StoreReader("RequestDetailList", new SqlParameter("@tc", tc));
+                while (dataReader.Read())
+                {
+                    RequestDetail requestDetail = new RequestDetail((Guid)dataReader["REQUESTDETAILID"], (Guid)dataReader["REQUESTID"], dataReader["REQUESTING"].ToString(), dataReader["REQUESTED"].ToString(),
+                        dataReader["REQUESTTITLE"].ToString(), dataReader["REQUESTCONTENT"].ToString());
+                    
+                    requestDetails.Add(requestDetail);
+                }
+                dataReader.Close();
+                return requestDetails;  
+            }
+            catch 
+            {
+                return new List<RequestDetail>();
+            }
+
         }
     }
 }

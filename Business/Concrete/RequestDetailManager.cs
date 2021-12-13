@@ -21,7 +21,7 @@ namespace Business.Concrete
 
         string IsRequestDetailComplete(RequestDetail requestDetail)
         {
-            if (string.IsNullOrEmpty(requestDetail.RequestedName))
+            if (string.IsNullOrEmpty(requestDetail.Requested))
             {
                 return "Lütfen Talep Ettiğiniz Kişiyi Seçiniz";
             }
@@ -55,11 +55,11 @@ namespace Business.Concrete
             return null;
         }
 
-        public List<RequestDetail> GetAll()
+        public List<RequestDetail> GetAll(string tc)
         {
             try
             {
-                return requestDetailDal.GetAll();
+                return requestDetailDal.GetByTc(tc);
             }
             catch
             {

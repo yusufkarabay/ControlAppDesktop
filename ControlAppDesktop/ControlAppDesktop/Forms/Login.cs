@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using ControlAppDesktop.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,7 @@ namespace ControlAppDesktop
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             if (mtxtTC.Text.Trim() == "")
             {
                 MessageBox.Show("TC Kimlik Numarası Boş Geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -47,7 +49,13 @@ namespace ControlAppDesktop
                 MessageBox.Show("Hatalı TC Kimlik Numarası veya Şifre Girdiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            MessageBox.Show("Sayın " + infos[0] + " " + infos[1] + " Hoşgeldiniz");
+            HomePage homePage = new HomePage();
+            homePage.infos = infos;
+            homePage.Show();
+            this.Hide();    
+
+            MessageBox.Show("Sayın " + infos[1] + " " + infos[2] + " Hoşgeldiniz");
+                       
         }
     }
 }

@@ -131,13 +131,15 @@ namespace DataAccess.Concrete
                 {
                     string name, surname, departmentName, authorityName;
                     Guid departmentId, authorityId;
+
+                   
                     name = dataReader["NAME"].ToString();
                     surname = dataReader["SURNAME"].ToString();
                     departmentName = dataReader["DEPARTMENTNAME"].ToString();
                     authorityName = dataReader["AUTHORITYNAME"].ToString();
                     departmentId = (Guid)dataReader["DEPARTMENTID"];
                     authorityId = (Guid)dataReader["AUTHORITYID"];
-                    infos = new object[] { name, surname, departmentName, authorityName, departmentId, authorityId };
+                    infos = new object[] {tc, name, surname, departmentName, authorityName, departmentId, authorityId };
 
                 }
 
