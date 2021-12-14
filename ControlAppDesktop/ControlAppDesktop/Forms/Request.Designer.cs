@@ -49,12 +49,14 @@
             this.requestDetail = new System.Windows.Forms.Label();
             this.requestName = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
+            this.btnCompleteRequest = new System.Windows.Forms.Button();
+            this.btnMyRequest = new System.Windows.Forms.Button();
+            this.btnCreateRequest = new System.Windows.Forms.Button();
             this.btnWeb = new System.Windows.Forms.Button();
             this.btnRequestRefresh = new System.Windows.Forms.Button();
             this.btnRequestEnd = new System.Windows.Forms.Button();
-            this.btnMyRequest = new System.Windows.Forms.Button();
-            this.btnCreateRequest = new System.Windows.Forms.Button();
-            this.btnCompleteRequest = new System.Windows.Forms.Button();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.lblCountInfo = new System.Windows.Forms.Label();
             this.grpInfo.SuspendLayout();
             this.grpRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).BeginInit();
@@ -214,6 +216,8 @@
             this.richTxtRequestContent.Size = new System.Drawing.Size(282, 96);
             this.richTxtRequestContent.TabIndex = 5;
             this.richTxtRequestContent.Text = "";
+            this.richTxtRequestContent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTxtRequestContent_KeyDown);
+            this.richTxtRequestContent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTxtRequestContent_KeyPress);
             // 
             // txtRequested
             // 
@@ -221,6 +225,8 @@
             this.txtRequested.Name = "txtRequested";
             this.txtRequested.Size = new System.Drawing.Size(282, 20);
             this.txtRequested.TabIndex = 4;
+            this.txtRequested.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequested_KeyDown);
+            this.txtRequested.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRequested_KeyPress);
             // 
             // txtRequestTitle
             // 
@@ -228,6 +234,8 @@
             this.txtRequestTitle.Name = "txtRequestTitle";
             this.txtRequestTitle.Size = new System.Drawing.Size(282, 20);
             this.txtRequestTitle.TabIndex = 3;
+            this.txtRequestTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequestTitle_KeyDown);
+            this.txtRequestTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRequestTitle_KeyPress);
             // 
             // requested
             // 
@@ -271,6 +279,34 @@
             this.grpAction.TabStop = false;
             this.grpAction.Text = "Aksiyonlar";
             // 
+            // btnCompleteRequest
+            // 
+            this.btnCompleteRequest.Location = new System.Drawing.Point(13, 172);
+            this.btnCompleteRequest.Name = "btnCompleteRequest";
+            this.btnCompleteRequest.Size = new System.Drawing.Size(137, 23);
+            this.btnCompleteRequest.TabIndex = 5;
+            this.btnCompleteRequest.Text = "Tamamlanan Talepler";
+            this.btnCompleteRequest.UseVisualStyleBackColor = true;
+            // 
+            // btnMyRequest
+            // 
+            this.btnMyRequest.Location = new System.Drawing.Point(6, 135);
+            this.btnMyRequest.Name = "btnMyRequest";
+            this.btnMyRequest.Size = new System.Drawing.Size(109, 23);
+            this.btnMyRequest.TabIndex = 5;
+            this.btnMyRequest.Text = "Talep Ettiklerim";
+            this.btnMyRequest.UseVisualStyleBackColor = true;
+            this.btnMyRequest.Click += new System.EventHandler(this.btnMyRequest_Click);
+            // 
+            // btnCreateRequest
+            // 
+            this.btnCreateRequest.Location = new System.Drawing.Point(6, 106);
+            this.btnCreateRequest.Name = "btnCreateRequest";
+            this.btnCreateRequest.Size = new System.Drawing.Size(144, 23);
+            this.btnCreateRequest.TabIndex = 6;
+            this.btnCreateRequest.Text = "Talep Oluştur";
+            this.btnCreateRequest.UseVisualStyleBackColor = true;
+            // 
             // btnWeb
             // 
             this.btnWeb.Location = new System.Drawing.Point(6, 77);
@@ -300,39 +336,31 @@
             this.btnRequestEnd.Text = "İşi Bitir";
             this.btnRequestEnd.UseVisualStyleBackColor = true;
             // 
-            // btnMyRequest
+            // lblCount
             // 
-            this.btnMyRequest.Location = new System.Drawing.Point(6, 135);
-            this.btnMyRequest.Name = "btnMyRequest";
-            this.btnMyRequest.Size = new System.Drawing.Size(109, 23);
-            this.btnMyRequest.TabIndex = 5;
-            this.btnMyRequest.Text = "Talep Ettiklerim";
-            this.btnMyRequest.UseVisualStyleBackColor = true;
-            this.btnMyRequest.Click += new System.EventHandler(this.btnMyRequest_Click);
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(368, 37);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(132, 13);
+            this.lblCount.TabIndex = 11;
+            this.lblCount.Text = "Devam Eden Talep Sayısı:";
             // 
-            // btnCreateRequest
+            // lblCountInfo
             // 
-            this.btnCreateRequest.Location = new System.Drawing.Point(6, 106);
-            this.btnCreateRequest.Name = "btnCreateRequest";
-            this.btnCreateRequest.Size = new System.Drawing.Size(144, 23);
-            this.btnCreateRequest.TabIndex = 6;
-            this.btnCreateRequest.Text = "Talep Oluştur";
-            this.btnCreateRequest.UseVisualStyleBackColor = true;
-            // 
-            // btnCompleteRequest
-            // 
-            this.btnCompleteRequest.Location = new System.Drawing.Point(13, 172);
-            this.btnCompleteRequest.Name = "btnCompleteRequest";
-            this.btnCompleteRequest.Size = new System.Drawing.Size(137, 23);
-            this.btnCompleteRequest.TabIndex = 5;
-            this.btnCompleteRequest.Text = "Tamamlanan Talepler";
-            this.btnCompleteRequest.UseVisualStyleBackColor = true;
+            this.lblCountInfo.AutoSize = true;
+            this.lblCountInfo.Location = new System.Drawing.Point(508, 37);
+            this.lblCountInfo.Name = "lblCountInfo";
+            this.lblCountInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblCountInfo.TabIndex = 12;
+            this.lblCountInfo.Text = "00";
             // 
             // Request
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 776);
+            this.Controls.Add(this.lblCountInfo);
+            this.Controls.Add(this.lblCount);
             this.Controls.Add(this.grpAction);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpRequest);
@@ -382,5 +410,7 @@
         private System.Windows.Forms.Button btnMyRequest;
         private System.Windows.Forms.Button btnCreateRequest;
         private System.Windows.Forms.Button btnCompleteRequest;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Label lblCountInfo;
     }
 }

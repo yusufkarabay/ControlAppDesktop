@@ -35,11 +35,13 @@ namespace ControlAppDesktop.Forms
         {
             dgvRequest.DataSource = requestDetailManager.GetAll("MyRequestList", tc);
             DataGridDisplay();
+            lblCountInfo.Text =dgvRequest.RowCount.ToString();
         }
         void MyRequest()
         {
             dgvRequest.DataSource = requestDetailManager.GetAll("RequestDetailList", tc);
             DataGridDisplay();
+            lblCountInfo.Text = dgvRequest.RowCount.ToString();
         }
 
         private void Request_Load(object sender, EventArgs e)
@@ -115,6 +117,36 @@ namespace ControlAppDesktop.Forms
             grpRequest.Text = "Taleplerim";
             MyRequest();
             dgvRequest.Columns["RequestingName"].HeaderText = "Talep Edilen";
+        }
+
+        private void txtRequestTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void txtRequested_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void richTxtRequestContent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void richTxtRequestContent_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void txtRequested_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void txtRequestTitle_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

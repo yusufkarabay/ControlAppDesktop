@@ -46,6 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTopMenu = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlLeftMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTopMenu.SuspendLayout();
@@ -308,6 +309,7 @@
             // pnlTopMenu
             // 
             this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.pnlTopMenu.Controls.Add(this.btnClose);
             this.pnlTopMenu.Controls.Add(this.lblTime);
             this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
@@ -326,7 +328,17 @@
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Zaman";
             // 
-            // homePage
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(802, 9);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -337,7 +349,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "homePage";
+            this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "homePage";
             this.Load += new System.EventHandler(this.homePage_Load);
@@ -369,5 +381,6 @@
         private System.Windows.Forms.Button btnUserName;
         private System.Windows.Forms.Button btnDirectory;
         private System.Windows.Forms.Panel pnlActive;
+        private System.Windows.Forms.Button btnClose;
     }
 }
