@@ -52,6 +52,7 @@
             this.btnRequestRefresh = new System.Windows.Forms.Button();
             this.btnRequestPrint = new System.Windows.Forms.Button();
             this.btnRequestEnd = new System.Windows.Forms.Button();
+            this.btnWeb = new System.Windows.Forms.Button();
             this.grpInfo.SuspendLayout();
             this.grpRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).BeginInit();
@@ -255,6 +256,7 @@
             // 
             // grpAction
             // 
+            this.grpAction.Controls.Add(this.btnWeb);
             this.grpAction.Controls.Add(this.btnRequestRefresh);
             this.grpAction.Controls.Add(this.btnRequestPrint);
             this.grpAction.Controls.Add(this.btnRequestEnd);
@@ -267,7 +269,7 @@
             // 
             // btnRequestRefresh
             // 
-            this.btnRequestRefresh.Location = new System.Drawing.Point(22, 56);
+            this.btnRequestRefresh.Location = new System.Drawing.Point(22, 65);
             this.btnRequestRefresh.Name = "btnRequestRefresh";
             this.btnRequestRefresh.Size = new System.Drawing.Size(135, 23);
             this.btnRequestRefresh.TabIndex = 0;
@@ -277,7 +279,7 @@
             // 
             // btnRequestPrint
             // 
-            this.btnRequestPrint.Location = new System.Drawing.Point(22, 94);
+            this.btnRequestPrint.Location = new System.Drawing.Point(145, 27);
             this.btnRequestPrint.Name = "btnRequestPrint";
             this.btnRequestPrint.Size = new System.Drawing.Size(75, 23);
             this.btnRequestPrint.TabIndex = 0;
@@ -292,6 +294,16 @@
             this.btnRequestEnd.TabIndex = 0;
             this.btnRequestEnd.Text = "İşi Bitir";
             this.btnRequestEnd.UseVisualStyleBackColor = true;
+            // 
+            // btnWeb
+            // 
+            this.btnWeb.Location = new System.Drawing.Point(44, 102);
+            this.btnWeb.Name = "btnWeb";
+            this.btnWeb.Size = new System.Drawing.Size(176, 23);
+            this.btnWeb.TabIndex = 1;
+            this.btnWeb.Text = "Web\'de Görüntüle";
+            this.btnWeb.UseVisualStyleBackColor = true;
+            this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
             // 
             // Request
             // 
@@ -344,5 +356,6 @@
         private System.Windows.Forms.Button btnRequestPrint;
         private System.Windows.Forms.Button btnRequestEnd;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnWeb;
     }
 }

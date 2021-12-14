@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ControlAppDesktop.Forms
 {
@@ -56,7 +57,7 @@ namespace ControlAppDesktop.Forms
 
         private void dgvRequest_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dgvRequest.CurrentRow==null)
+            if (dgvRequest.CurrentRow == null)
             {
                 MessageBox.Show("Detaylarını Görmek İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -69,6 +70,46 @@ namespace ControlAppDesktop.Forms
         private void btnRequestRefresh_Click(object sender, EventArgs e)
         {
             RequestList();
+        }
+
+        private void btnWeb_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Talepleri HTML Ortamında Masaüstü'ne Kaydetmek İstiyor Musunuz?", "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string content= Html_Out(dgvRequest);
+                string desktopPath=Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                File.WriteAllText(desktopPath+"\\" +infos[1]+" "+infos[2]+" adına gelen talepler.html", content);    
+            }
+
+
+        }
+        public string Html_Out(DataGridView dg)
+        {
+            StringBuilder strB = new StringBuilder();
+            //create html & table
+            strB.AppendLine("<html><head><meta charset=utf-8><style>table{padding:10px;} th,td{padding:8px;}</style></head><body><center><table border='1' cellpadding='0' cellspacing='0'>");
+            strB.AppendLine("<tr>");
+            //create table header
+            for (int i = 0; i < dg.Columns.Count; i++) { if (dg.Columns[i].Visible == true) { strB.AppendLine("<th align='center' valign='middle'>" + dg.Columns[i].HeaderText + "</th>"); } }
+            //create table body
+            strB.AppendLine("</tr>");
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                if (dg.Rows[i].Visible)
+                {
+                    strB.AppendLine("<tr>");
+                    foreach (DataGridViewCell dgvc in dg.Rows[i].Cells)
+                    {
+                        if (dgvc.OwningColumn.Visible == true) { strB.AppendLine("<td align='center' valign='middle'>" + dgvc.Value.ToString() + "</td>"); }
+                    }
+                    strB.AppendLine("</tr>");
+                }
+            }
+            //table footer & end of html file
+            strB.AppendLine("</table></center>");
+            strB.AppendLine("</body></html>");
+            return strB.ToString();
         }
     }
 }
