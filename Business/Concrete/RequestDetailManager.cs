@@ -55,11 +55,11 @@ namespace Business.Concrete
             return null;
         }
 
-        public List<RequestDetail> GetAll(string tc)
+        public List<RequestDetail> GetAll(string procuderName, string tc)
         {
             try
             {
-                return requestDetailDal.GetByTc(tc);
+                return requestDetailDal.GetByTc(procuderName,tc);
             }
             catch
             {

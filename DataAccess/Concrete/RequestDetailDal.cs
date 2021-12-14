@@ -74,15 +74,16 @@ namespace DataAccess.Concrete
             }
             return requestDetailDal;
         }
-        public List<RequestDetail> GetByTc(string tc)
+
+        public List<RequestDetail> GetByTc(string procuderName, string tc)
         {
             try
             {
                 List<RequestDetail> requestDetails = new List<RequestDetail>();
-                dataReader = sqlService.StoreReader("RequestDetailList", new SqlParameter("@tc", tc));
+                dataReader = sqlService.StoreReader(procuderName, new SqlParameter("@tc", tc));
                 while (dataReader.Read())
                 {
-                    RequestDetail requestDetail = new RequestDetail((Guid)dataReader["REQUESTDETAILID"], (Guid)dataReader["REQUESTID"], dataReader["NAME"].ToString() + " " + dataReader["SURNAME"].ToString(), 
+                    RequestDetail requestDetail = new RequestDetail((Guid)dataReader["REQUESTDETAILID"], (Guid)dataReader["REQUESTID"], dataReader["NAME"].ToString() + " " + dataReader["SURNAME"].ToString(),
                         dataReader["REQUESTTITLE"].ToString(), dataReader["REQUESTCONTENT"].ToString());
 
                     requestDetails.Add(requestDetail);

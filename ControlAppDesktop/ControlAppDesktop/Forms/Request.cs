@@ -31,17 +31,22 @@ namespace ControlAppDesktop.Forms
             lblTcInfo.Text = tc;
 
         }
-        void RequestList()
+        void RequestForMeList()
         {
-
-            dgvRequest.DataSource = requestDetailManager.GetAll(tc);
+            dgvRequest.DataSource = requestDetailManager.GetAll("MyRequestList", tc);
             DataGridDisplay();
         }
+        void MyRequest()
+        {
+            dgvRequest.DataSource = requestDetailManager.GetAll("RequestDetailList", tc);
+            DataGridDisplay();
+        }
+
         private void Request_Load(object sender, EventArgs e)
         {
             Fillİnfos();
             tlblTime.Text = DateTime.Now.ToString("f");
-            RequestList();
+            RequestForMeList();
 
         }
         void DataGridDisplay()
@@ -66,20 +71,18 @@ namespace ControlAppDesktop.Forms
             richTxtRequestContent.Text = dgvRequest.CurrentRow.Cells["RequestContent"].Value.ToString();
             txtRequested.Text = dgvRequest.CurrentRow.Cells["RequestingName"].Value.ToString();
         }
-
         private void btnRequestRefresh_Click(object sender, EventArgs e)
         {
-            RequestList();
+            RequestForMeList();
         }
-
         private void btnWeb_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Talepleri HTML Ortamında Masaüstü'ne Kaydetmek İstiyor Musunuz?", "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                string content= Html_Out(dgvRequest);
-                string desktopPath=Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                File.WriteAllText(desktopPath+"\\" +infos[1]+" "+infos[2]+" adına gelen talepler.html", content);    
+                string content = Html_Out(dgvRequest);
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                File.WriteAllText(desktopPath + "\\" + infos[1] + " " + infos[2] + " adına gelen talepler.html", content);
             }
 
 
@@ -87,12 +90,9 @@ namespace ControlAppDesktop.Forms
         public string Html_Out(DataGridView dg)
         {
             StringBuilder strB = new StringBuilder();
-            //create html & table
             strB.AppendLine("<html><head><meta charset=utf-8><style>table{padding:10px;} th,td{padding:8px;}</style></head><body><center><table border='1' cellpadding='0' cellspacing='0'>");
             strB.AppendLine("<tr>");
-            //create table header
             for (int i = 0; i < dg.Columns.Count; i++) { if (dg.Columns[i].Visible == true) { strB.AppendLine("<th align='center' valign='middle'>" + dg.Columns[i].HeaderText + "</th>"); } }
-            //create table body
             strB.AppendLine("</tr>");
             for (int i = 0; i < dg.Rows.Count; i++)
             {
@@ -106,10 +106,15 @@ namespace ControlAppDesktop.Forms
                     strB.AppendLine("</tr>");
                 }
             }
-            //table footer & end of html file
             strB.AppendLine("</table></center>");
             strB.AppendLine("</body></html>");
             return strB.ToString();
+        }
+        private void btnMyRequest_Click(object sender, EventArgs e)
+        {
+            grpRequest.Text = "Taleplerim";
+            MyRequest();
+            dgvRequest.Columns["RequestingName"].HeaderText = "Talep Edilen";
         }
     }
 }
