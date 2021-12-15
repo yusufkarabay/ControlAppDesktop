@@ -1,6 +1,6 @@
 ﻿namespace ControlAppDesktop.Forms
 {
-    partial class Request
+    partial class RequestForm
     {
         /// <summary>
         /// Required designer variable.

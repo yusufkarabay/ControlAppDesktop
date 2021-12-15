@@ -81,8 +81,8 @@ namespace DataAccess.Concrete
                 dataReader = sqlService.StoreReader("EmployeeList");
                 while (dataReader.Read())
                 {
-                    list.Add(new Employee(dataReader["TC"].ToString(), dataReader["NAME"].ToString(), dataReader["SURNAME"].ToString(), dataReader["BDATE"].ConDate(), dataReader["ADRESS"].ToString(),
-                         dataReader["TEL"].ToString(), dataReader["MAIL"].ToString(), dataReader["DEPARTMENTNAME"].ToString(), dataReader["AUTHORITYNAME"].ToString()));
+                    list.Add(new Employee((Guid)dataReader["ID"],dataReader["TC"].ToString(), dataReader["NAME"].ToString(), dataReader["SURNAME"].ToString(), dataReader["BDATE"].ConDate(), dataReader["ADRESS"].ToString(),
+                         dataReader["TEL"].ToString(), dataReader["MAIL"].ToString(), dataReader["DEPARTMENTNAME"].ToString(), dataReader["AUTHORITYNAME"].ToString(), (Guid)dataReader["DEPARTMENTID"],(Guid)dataReader["AUTHORITYID"]));
 
                 }
                 dataReader.Close();

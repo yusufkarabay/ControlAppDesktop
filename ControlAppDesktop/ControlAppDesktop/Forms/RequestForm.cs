@@ -12,12 +12,12 @@ using System.IO;
 
 namespace ControlAppDesktop.Forms
 {
-    public partial class Request : Form
+    public partial class RequestForm : Form
     {
         RequestDetailManager requestDetailManager;
         public object[] infos;
         string tc;
-        public Request()
+        public RequestForm()
         {
             InitializeComponent();
             requestDetailManager = RequestDetailManager.GetInstance();

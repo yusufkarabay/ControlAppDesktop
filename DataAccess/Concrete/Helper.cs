@@ -18,7 +18,12 @@ namespace DataAccess.Concrete
         }
         public static DateTime ConDate(this object param)
         {
-            return Convert.ToDateTime(param);
+           return Convert.ToDateTime(param);
+           
+        }
+        public static Guid ConGuidToString(this object param)
+        {
+            return Guid.Parse(param.ToString());
         }
     }
 }

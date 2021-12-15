@@ -25,15 +25,15 @@ namespace ControlAppDesktop.Forms
         {
             pnlActive.Visible = false;
             lblTime.Text = DateTime.Now.ToString("f");
-            btnUserName.Text=infos[1]+ " "+ infos[2].ToString();
+            btnUserName.Text = infos[1] + " " + infos[2].ToString();
         }
         private void btnSentry_Click(object sender, EventArgs e)
         {
             panelActiveVisible();
             pnlActive.Height = btnSentry.Height;
             pnlActive.Top = btnSentry.Top;
-            
-            
+
+
             //borderColored(sender);
 
         }
@@ -43,7 +43,7 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnInventory.Height;
             pnlActive.Top = btnInventory.Top;
-           // borderColored(sender);
+            // borderColored(sender);
         }
 
         private void btnEmployee_Click(object sender, EventArgs e)
@@ -51,14 +51,17 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnEmployee.Height;
             pnlActive.Top = btnEmployee.Top;
-           // borderColored(sender);
+            EmployeeForm employeeForm = new EmployeeForm();
+            employeeForm.infos = infos;
+            employeeForm.Show();
+            // borderColored(sender);
         }
         private void btnRequest_Click(object sender, EventArgs e)
         {
             panelActiveVisible();
             pnlActive.Height = btnRequest.Height;
             pnlActive.Top = btnRequest.Top;
-            Request request = new Request();
+            RequestForm request = new RequestForm();
             request.infos = infos;
             request.Show();
             // borderColored(sender);
@@ -68,7 +71,7 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnMaintenance.Height;
             pnlActive.Top = btnMaintenance.Top;
-          //  borderColored(sender);
+            //  borderColored(sender);
         }
 
         private void btnHeadset_Click(object sender, EventArgs e)
@@ -76,7 +79,7 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnHeadset.Height;
             pnlActive.Top = btnHeadset.Top;
-           // borderColored(sender);
+            // borderColored(sender);
         }
 
         private void btnIdCard_Click(object sender, EventArgs e)
@@ -84,7 +87,7 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnIdCard.Height; ;
             pnlActive.Top = btnIdCard.Top;
-          //  borderColored(sender);
+            //  borderColored(sender);
         }
 
         private void btnDrawer_Click(object sender, EventArgs e)
@@ -92,7 +95,7 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnDrawer.Height; ;
             pnlActive.Top = btnDrawer.Top;
-           // borderColored(sender);
+            // borderColored(sender);
         }
 
         private void btnCabinet_Click(object sender, EventArgs e)
@@ -117,7 +120,7 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnGenarator.Height; ;
             pnlActive.Top = btnGenarator.Top;
-           // borderColored(sender);
+            // borderColored(sender);
         }
 
         private void btnDirectory_Click(object sender, EventArgs e)
@@ -125,8 +128,8 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnDirectory.Height; ;
             pnlActive.Top = btnDirectory.Top;
-           // borderColored(sender);
-           
+            // borderColored(sender);
+
         }
         void borderColored(object sender)
         {
