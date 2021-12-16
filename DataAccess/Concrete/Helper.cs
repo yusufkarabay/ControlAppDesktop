@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete
 {
+
     public static class Helper
     {//metotlarla çevirme işlemi yapacak. Her seferinde kod içerisine çevirme işlemi yapılmayacak.
         public static int ContInt(this object param)

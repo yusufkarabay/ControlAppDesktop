@@ -65,6 +65,26 @@ namespace DataAccess.Concrete
         {
             return null;
         }
+        public List<Department> GetByName(string procuderName, string departmentName)
+        {
+            try
+            {
+                List<Department> departments = new List<Department>();
+                dataReader = sqlService.StoreReader("DepartmentList");
+                while (dataReader.Read())
+                {
+                    Department department = new Department(dataReader["DEPARTMENTNAME"].ToString());
+                    departments.Add(department);
+                }
+                dataReader.Close();
+                return departments;
+            }
+            catch (Exception)
+            {
+
+                return new List<Department>();
+            }
+        }
 
         public List<Department> GetAll()
         {
@@ -91,7 +111,7 @@ namespace DataAccess.Concrete
         {
             try
             {
-                dataReader = sqlService.StoreReader("DepartmentUpdate", new SqlParameter("@departmentid", entity.DepartmentId), new SqlParameter("@departmentName", entity.DepartmentName), new SqlParameter("@@departmentOldName", oldName));
+                dataReader = sqlService.StoreReader("DepartmentUpdate", new SqlParameter("@departmentid", entity.DepartmentId), new SqlParameter("@departmentName", entity.DepartmentName), new SqlParameter("@departmentOldName", oldName));
                 if (dataReader.Read())
                 {
                     result = dataReader[0].ConBool();

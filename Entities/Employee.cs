@@ -21,7 +21,8 @@ namespace Entities
         string departmentName;
         string authorityName;
 
-        public Employee(Guid id,string tc, string name, string surname, DateTime bdate,
+        public Employee() { }
+        public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
         string adress, string tel, string mail, string departmentName, string authorityName,
         Guid departmentId,
         Guid authorityId)
@@ -39,12 +40,12 @@ namespace Entities
             this.departmentId = departmentId;
             this.authorityId = authorityId;
         }
-        public Employee(Guid id,string tc, string name, string surname, DateTime bdate,
+        public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
        string adress, string tel, string mail, string departmentName,
        Guid departmentId,
        Guid authorityId)
         {
-            this.id=id; 
+            this.id = id;
             this.tc = tc;
             this.name = name;
             this.surname = surname;
@@ -53,12 +54,12 @@ namespace Entities
             this.tel = tel;
             this.mail = mail;
             this.departmentName = departmentName;
-    
+
             this.departmentId = departmentId;
             this.authorityId = authorityId;
         }
 
-        public Employee(Guid id,string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName, string authorityName)
+        public Employee(Guid id, string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName, string authorityName)
         {
             this.id = id;
             this.tc = tc;
@@ -70,6 +71,17 @@ namespace Entities
             this.mail = mail;
             this.departmentName = departmentName;
             this.authorityName = authorityName;
+        }
+        public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName)
+        {
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+            this.departmentName = departmentName;
         }
 
 

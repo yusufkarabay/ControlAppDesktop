@@ -28,10 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpEmployee = new System.Windows.Forms.GroupBox();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.lblMailInfo = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.lblTelInfo = new System.Windows.Forms.Label();
+            this.lblTel = new System.Windows.Forms.Label();
+            this.lblBdateInfo = new System.Windows.Forms.Label();
+            this.lblBdate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.department = new System.Windows.Forms.Label();
             this.employeeSurname = new System.Windows.Forms.Label();
@@ -40,15 +51,10 @@
             this.lblSurnameInfo = new System.Windows.Forms.Label();
             this.lblNameInfo = new System.Windows.Forms.Label();
             this.lblTcInfo = new System.Windows.Forms.Label();
-            this.lblBdate = new System.Windows.Forms.Label();
-            this.lblBdateInfo = new System.Windows.Forms.Label();
-            this.lblTel = new System.Windows.Forms.Label();
-            this.lblTelInfo = new System.Windows.Forms.Label();
-            this.lblMail = new System.Windows.Forms.Label();
-            this.lblMailInfo = new System.Windows.Forms.Label();
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
             this.grpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,10 +74,11 @@
             this.dgvEmployee.AllowUserToDeleteRows = false;
             this.dgvEmployee.AllowUserToResizeColumns = false;
             this.dgvEmployee.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvEmployee.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployee.Location = new System.Drawing.Point(3, 16);
@@ -82,7 +89,37 @@
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmployee.Size = new System.Drawing.Size(1008, 253);
             this.dgvEmployee.TabIndex = 0;
-            this.dgvEmployee.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployee_CellMouseDoubleClick);
+            this.dgvEmployee.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployee_CellMouseClick);
+            this.dgvEmployee.SelectionChanged += new System.EventHandler(this.dgvEmployee_SelectionChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.silToolStripMenuItem,
+            this.yenileToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 70);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.updateToolStripMenuItem.Text = "Güncelle";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
             // grpInfo
             // 
@@ -106,6 +143,60 @@
             this.grpInfo.TabIndex = 4;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
+            // 
+            // lblMailInfo
+            // 
+            this.lblMailInfo.AutoSize = true;
+            this.lblMailInfo.Location = new System.Drawing.Point(103, 199);
+            this.lblMailInfo.Name = "lblMailInfo";
+            this.lblMailInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblMailInfo.TabIndex = 16;
+            this.lblMailInfo.Text = "00";
+            // 
+            // lblMail
+            // 
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(6, 199);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(29, 13);
+            this.lblMail.TabIndex = 15;
+            this.lblMail.Text = "Mail:";
+            // 
+            // lblTelInfo
+            // 
+            this.lblTelInfo.AutoSize = true;
+            this.lblTelInfo.Location = new System.Drawing.Point(103, 170);
+            this.lblTelInfo.Name = "lblTelInfo";
+            this.lblTelInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblTelInfo.TabIndex = 14;
+            this.lblTelInfo.Text = "00";
+            // 
+            // lblTel
+            // 
+            this.lblTel.AutoSize = true;
+            this.lblTel.Location = new System.Drawing.Point(6, 170);
+            this.lblTel.Name = "lblTel";
+            this.lblTel.Size = new System.Drawing.Size(46, 13);
+            this.lblTel.TabIndex = 13;
+            this.lblTel.Text = "Telefon:";
+            // 
+            // lblBdateInfo
+            // 
+            this.lblBdateInfo.AutoSize = true;
+            this.lblBdateInfo.Location = new System.Drawing.Point(103, 141);
+            this.lblBdateInfo.Name = "lblBdateInfo";
+            this.lblBdateInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblBdateInfo.TabIndex = 12;
+            this.lblBdateInfo.Text = "00";
+            // 
+            // lblBdate
+            // 
+            this.lblBdate.AutoSize = true;
+            this.lblBdate.Location = new System.Drawing.Point(6, 141);
+            this.lblBdate.Name = "lblBdate";
+            this.lblBdate.Size = new System.Drawing.Size(73, 13);
+            this.lblBdate.TabIndex = 11;
+            this.lblBdate.Text = "Doğum Tarihi:";
             // 
             // label1
             // 
@@ -179,60 +270,6 @@
             this.lblTcInfo.TabIndex = 1;
             this.lblTcInfo.Text = "00";
             // 
-            // lblBdate
-            // 
-            this.lblBdate.AutoSize = true;
-            this.lblBdate.Location = new System.Drawing.Point(6, 141);
-            this.lblBdate.Name = "lblBdate";
-            this.lblBdate.Size = new System.Drawing.Size(73, 13);
-            this.lblBdate.TabIndex = 11;
-            this.lblBdate.Text = "Doğum Tarihi:";
-            // 
-            // lblBdateInfo
-            // 
-            this.lblBdateInfo.AutoSize = true;
-            this.lblBdateInfo.Location = new System.Drawing.Point(103, 141);
-            this.lblBdateInfo.Name = "lblBdateInfo";
-            this.lblBdateInfo.Size = new System.Drawing.Size(19, 13);
-            this.lblBdateInfo.TabIndex = 12;
-            this.lblBdateInfo.Text = "00";
-            // 
-            // lblTel
-            // 
-            this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(6, 170);
-            this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(46, 13);
-            this.lblTel.TabIndex = 13;
-            this.lblTel.Text = "Telefon:";
-            // 
-            // lblTelInfo
-            // 
-            this.lblTelInfo.AutoSize = true;
-            this.lblTelInfo.Location = new System.Drawing.Point(103, 170);
-            this.lblTelInfo.Name = "lblTelInfo";
-            this.lblTelInfo.Size = new System.Drawing.Size(19, 13);
-            this.lblTelInfo.TabIndex = 14;
-            this.lblTelInfo.Text = "00";
-            // 
-            // lblMail
-            // 
-            this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(6, 199);
-            this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(29, 13);
-            this.lblMail.TabIndex = 15;
-            this.lblMail.Text = "Mail:";
-            // 
-            // lblMailInfo
-            // 
-            this.lblMailInfo.AutoSize = true;
-            this.lblMailInfo.Location = new System.Drawing.Point(103, 199);
-            this.lblMailInfo.Name = "lblMailInfo";
-            this.lblMailInfo.Size = new System.Drawing.Size(19, 13);
-            this.lblMailInfo.TabIndex = 16;
-            this.lblMailInfo.Text = "00";
-            // 
             // btnEmployeeAdd
             // 
             this.btnEmployeeAdd.Location = new System.Drawing.Point(680, 197);
@@ -241,8 +278,9 @@
             this.btnEmployeeAdd.TabIndex = 5;
             this.btnEmployeeAdd.Text = "Personel Ekle";
             this.btnEmployeeAdd.UseVisualStyleBackColor = true;
+            this.btnEmployeeAdd.Click += new System.EventHandler(this.btnEmployeeAdd_Click);
             // 
-            // Employee
+            // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -250,11 +288,12 @@
             this.Controls.Add(this.btnEmployeeAdd);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.grpEmployee);
-            this.Name = "Employee";
+            this.Name = "EmployeeForm";
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.grpEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -281,5 +320,9 @@
         private System.Windows.Forms.Label lblNameInfo;
         private System.Windows.Forms.Label lblTcInfo;
         private System.Windows.Forms.Button btnEmployeeAdd;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
     }
 }

@@ -67,9 +67,29 @@ namespace DataAccess.Concrete
             }
         }
 
-        public Employee Get(Guid id)
+        public List<Employee> GetByTc(string procuderName, string tc)
         {
-            return null;
+            try
+            {
+                List<Employee> employees = new List<Employee>();
+                dataReader = sqlService.StoreReader(procuderName, new SqlParameter("@tc", tc));
+                while (dataReader.Read())
+                {
+                    Employee employee = new Employee(dataReader["TC"].ToString(), dataReader["NAME"].ToString(), dataReader["SURNAME"].ToString(),
+                        dataReader["BDATE"].ConDate(), dataReader["ADRESS"].ToString(),
+                        dataReader["TEL"].ToString(), dataReader["MAIL"].ToString(), dataReader["DEPARTMENTNAME"].ToString());
+                    employees.Add(employee);
+                }
+                dataReader.Close();
+                return employees;
+
+
+            }
+            catch
+            {
+
+                return new List<Employee>();
+            }
         }
 
         public List<Employee> GetAll()
@@ -81,8 +101,8 @@ namespace DataAccess.Concrete
                 dataReader = sqlService.StoreReader("EmployeeList");
                 while (dataReader.Read())
                 {
-                    list.Add(new Employee((Guid)dataReader["ID"],dataReader["TC"].ToString(), dataReader["NAME"].ToString(), dataReader["SURNAME"].ToString(), dataReader["BDATE"].ConDate(), dataReader["ADRESS"].ToString(),
-                         dataReader["TEL"].ToString(), dataReader["MAIL"].ToString(), dataReader["DEPARTMENTNAME"].ToString(), dataReader["AUTHORITYNAME"].ToString(), (Guid)dataReader["DEPARTMENTID"],(Guid)dataReader["AUTHORITYID"]));
+                    list.Add(new Employee((Guid)dataReader["ID"], dataReader["TC"].ToString(), dataReader["NAME"].ToString(), dataReader["SURNAME"].ToString(), dataReader["BDATE"].ConDate(), dataReader["ADRESS"].ToString(),
+                         dataReader["TEL"].ToString(), dataReader["MAIL"].ToString(), dataReader["DEPARTMENTNAME"].ToString(), dataReader["AUTHORITYNAME"].ToString(), (Guid)dataReader["DEPARTMENTID"], (Guid)dataReader["AUTHORITYID"]));
 
                 }
                 dataReader.Close();
@@ -150,6 +170,62 @@ namespace DataAccess.Concrete
             {
                 return null;
             }
+        }
+
+        public Employee Get(Guid id)
+        {
+            Employee employee = null;
+            SqlDataReader dr = null;
+
+            try
+            {
+                dr = sqlService.StoreReader("EmployeeGet", new SqlParameter("@id", id));
+
+                if (dr.Read())
+                {
+                    string tc, name, surname, departmentName, authorityName, address, mail, tel;
+                    DateTime bdate;
+                    Guid departmentId, authorityId;
+
+                    tc = dataReader["TC"].ToString();
+                    name = dataReader["NAME"].ToString();
+                    surname = dataReader["SURNAME"].ToString();
+                    departmentName = dataReader["DEPARTMENTNAME"].ToString();
+                    authorityName = dataReader["AUTHORITYNAME"].ToString();
+                    departmentId = (Guid)dataReader["DEPARTMENTID"];
+                    authorityId = (Guid)dataReader["AUTHORITYID"];
+                    address = dataReader["ADRESS"].ToString();
+                    mail = dataReader["MAIL"].ToString();
+                    tel = dataReader["TEL"].ToString();
+                    bdate = dataReader["BDATE"].ConDate();
+
+                    employee = new Employee
+                    {
+                        Tc = tc,
+                        Name = name,
+                        Surname = surname,
+                        DepartmentId = departmentId,
+                        AuthorityId = authorityId,
+                        Id = id,
+                        AuthorityName = authorityName,
+                        DepartmentName = departmentName,
+                        Adress = address,
+                        Mail = mail,
+                        Tel = tel,
+                        Bdate = bdate
+                    };
+                }                
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                dr.Close();
+            }
+
+            return employee;
         }
     }
 }

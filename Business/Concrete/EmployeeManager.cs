@@ -90,7 +90,7 @@ namespace Business.Concrete
         {
             try
             {
-                if (id == null)
+                if (id == Guid.Empty)
                 {
                     return "Silmek İçin Lütfen Geçerli Bir Personel Seçiniz.";
                 }
@@ -102,7 +102,24 @@ namespace Business.Concrete
             }
         }
 
-        public Employee Get(Guid id)
+        public Employee GetById(Guid id)
+        {
+            try
+            {
+                if(id == Guid.Empty)
+                {
+                    return null;
+                }
+
+                return employeeDal.Get(id);
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public Employee Get(string tc)
         {
             return null;
         }
@@ -119,11 +136,11 @@ namespace Business.Concrete
             }
         }
 
-        public string Update(Employee entity, string oldName)
+        public string Update(Employee entity)
         {
             try
             {
-                if (entity.Id == null)
+                if (entity.Tc == null)
                 {
                     return " Güncellemek İstediğiniz Personeli Seçiniz";
 
@@ -133,11 +150,7 @@ namespace Business.Concrete
                 {
                     return controlText;
                 }
-                if (string.IsNullOrEmpty(oldName))
-                {
-                    return " Personel Bilgileri Bulunamadı";
-                }
-                return employeeDal.Update(entity, oldName);
+                return employeeDal.Update(entity, "");
             }
             catch (Exception ex)
             {
