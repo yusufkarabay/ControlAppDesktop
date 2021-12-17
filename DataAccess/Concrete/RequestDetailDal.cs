@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
-
+using System.Data;
 
 namespace DataAccess.Concrete
 {
@@ -28,17 +27,15 @@ namespace DataAccess.Concrete
         {
             try
             {
-                dataReader = sqlService.StoreReader("RequestAssignmentCreate", new SqlParameter("@requestid", entity.RequestId), new SqlParameter("@requesting", entity.Requesting), new SqlParameter("@requested", entity.Requested));
-                if (dataReader.Read())
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestAssignmentCreate", new SqlParameter("@requestid", entity.RequestId), new SqlParameter("@requesting", entity.Requesting), new SqlParameter("@requested", entity.Requested));
+                if (isSuccess)
                 {
-                    result = dataReader[0].ConBool();
+                    return entity.Requested + " İsimli Personele Talep Başarıyla Oluşturulmuştur";
                 }
-                dataReader.Close();
-                if (result)
+                else
                 {
-                    return "Bu Talep Daha Önce " + entity.Requested + " İsimli Personele İletilmiştir.";
+                    return msg;
                 }
-                return entity.Requested + " İsimli Personele Talep Başarıyla Oluşturulmuştur";
             }
             catch (Exception ex)
             {
@@ -77,25 +74,34 @@ namespace DataAccess.Concrete
 
         public List<RequestDetail> GetByTc(string procuderName, string tc)
         {
+            List<RequestDetail> list = null;
+
             try
             {
-                List<RequestDetail> requestDetails = new List<RequestDetail>();
-                dataReader = sqlService.StoreReader(procuderName, new SqlParameter("@tc", tc));
-                while (dataReader.Read())
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@tc", tc));
+                if (msg != null)
                 {
-                    RequestDetail requestDetail = new RequestDetail((Guid)dataReader["REQUESTDETAILID"], (Guid)dataReader["REQUESTID"], dataReader["NAME"].ToString() + " " + dataReader["SURNAME"].ToString(),
-                        dataReader["REQUESTTITLE"].ToString(), dataReader["REQUESTCONTENT"].ToString());
-
-                    requestDetails.Add(requestDetail);
+                    return null;
                 }
-                dataReader.Close();
-                return requestDetails;
-            }
-            catch
-            {
-                return new List<RequestDetail>();
-            }
 
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<RequestDetail>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        RequestDetail requestDetail = new RequestDetail((Guid)dataRow["REQUESTDETAILID"], (Guid)dataRow["REQUESTID"], dataRow["NAME"].ToString() + " " + dataRow["SURNAME"].ToString(),
+                        dataRow["REQUESTTITLE"].ToString(), dataRow["REQUESTCONTENT"].ToString());
+
+                        list.Add(requestDetail);
+                    }
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return list;
         }
     }
 }

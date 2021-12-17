@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using System.Data;
 
 namespace DataAccess.Concrete
 {
@@ -26,17 +26,11 @@ namespace DataAccess.Concrete
             try
             {//ekleme işlemi için veritabanında oluşturduğum  AuthorityCreate prosedürünü çoğırdım ve orada prosedürün istediği nvarchar(50) dğerini gönderceğim
 
-                dataReader = sqlService.StoreReader("AuthorityCreate", new SqlParameter("@authorityName", entity.AuthorityName));
-                if (dataReader.Read())
-                {//sorguda ki ilk değeri alırım. sorguyu dizi eşekline çevirecektir. Tek verinin peşinde olduğumuz için if kullandık. eğer liste isteseydin while kullanacaktık.
-                    result = dataReader[0].ConBool();
-                    dataReader.Close();
-                }
-                if (result)
+                var (isSuccess, msg) = sqlService.StoreReaderV2("AuthorityCreate", new SqlParameter("@authorityName", entity.AuthorityName));
+                if(isSuccess)
                 {
                     return entity.AuthorityName + " Yetki Tipi Daha Önce Eklendi";
-                }
-                else
+                } else
                 {
                     return entity.AuthorityName + " Yetki Başarıyla  Eklendi";
                 }
@@ -52,59 +46,94 @@ namespace DataAccess.Concrete
         {
             try
             {
-                sqlService.StoreReader("AuthorityDelete", new SqlParameter("@authortyid", id));
-                return "Yetki Başarı İle Silindi";
+                var (isSuccess, msg) = sqlService.StoreReaderV2("AuthorityDelete", new SqlParameter("@authortyid", id));
+                if (isSuccess)
+                {
+                    return "Yetki Başarı İle Silindi";
+                }
+                else
+                {
+                    return "Yetki alınamadı";
+                }
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
         }
 
         public Authority Get(Guid id)
         {
-            return null;//!!!!!!!!!!!!!!!!!!!! diğer metodlarda öğrenince gel doldur.
+            Authority authority = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2("AuthorityList", new SqlParameter("@authorityid", id));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        authority = new Authority(dataRow["AUTHORITYNAME"].ToString());//id'i görüntelemedik yalnızca yetki adını görüntüledik.
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return authority;
         }
 
         public List<Authority> GetAll()
         {
+            List<Authority> list = null;
+
             try
             {
-                List<Authority> list = new List<Authority>();   // liste oluşturacağız
-                dataReader = sqlService.StoreReader("AuthorityList");
-                while (dataReader.Read())
+                var (dt, msg) = sqlService.StoredV2("AuthorityList");
+                if (msg != null)
                 {
-                    Authority authority = new Authority(dataReader["AUTHORITYNAME"].ToString());//id'i görüntelemedik yalnızca yetki adını görüntüledik.
-                    list.Add(authority);// oluşturduğum """"listeye ekliyorum"""""
+                    return null;
                 }
-                dataReader.Close();
-                return list;
-            }
-            catch
-            {
 
-                return new List<Authority>();
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<Authority>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        Authority authority = new Authority(dataRow["AUTHORITYNAME"].ToString());//id'i görüntelemedik yalnızca yetki adını görüntüledik.
+                        list.Add(authority);// oluşturduğum """"listeye ekliyorum"""""
+                    }
+                }
+
             }
+            catch (Exception ex) { }
+            finally { }
+
+            return list;
         }
 
         public string Update(Authority entity, string oldName)
         {
+            string result = null;
+
             try
             {
-                dataReader = sqlService.StoreReader("AuthorityUpdate", new SqlParameter("@authorityid", entity.AuthorityId), new SqlParameter("@authorityName", entity.AuthorityName), new SqlParameter("@authorityOldName", oldName));
-                if (dataReader.Read())
-                {
-                    result = dataReader[0].ConBool();
+                var (isSuccess, msg) = sqlService.StoreReaderV2("AuthorityUpdate", new SqlParameter("@authorityid", entity.AuthorityId), new SqlParameter("@authorityName", entity.AuthorityName), new SqlParameter("@authorityOldName", oldName));
 
-                }
-                if (result)
+                if (isSuccess)
                 {
-                    return entity.AuthorityName + "  İsimli Aktif Bir Kayıt Bulanmaktadır!";
+                    result = entity.AuthorityName + "  İsimli YetkiBaşarıyla Güncellendi";
                 }
                 else
                 {
-                    return entity.AuthorityName + "  İsimli YetkiBaşarıyla Güncellendi";
+                    result = msg;
                 }
             }
             catch (Exception ex)
@@ -112,7 +141,10 @@ namespace DataAccess.Concrete
 
                 return ex.Message;
             }
+
+            return result;
         }
+
         public static AuthorityDal GetInstance()
         {
             if (authorityDal == null)

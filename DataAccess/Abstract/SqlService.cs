@@ -62,6 +62,48 @@ namespace DataAccess.Abstract
             CloseConnection();//bağlantı kaldırılıyor
             return cmd;
         }
+
+        public (bool, string) ExecuteV2(string commandText, params SqlParameter[] sqlParameters)
+        {
+            bool isSuccess = false;
+            string message = null;
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection connection = null;
+
+            try
+            {
+                connection = OpenConnection();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = commandText;
+                sqlCommand.Connection = connection;
+                if (sqlParameters != null)
+                    sqlCommand.Parameters.AddRange(sqlParameters);
+
+                int affectedRows = sqlCommand.ExecuteNonQuery();
+                if (affectedRows > 0) { 
+                    isSuccess = true;
+                } else
+                {
+                    isSuccess = false;
+                    message = "Verilen kriterlere göre istenilen işlem yapılamadı.";
+                }
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
+            finally
+            {
+                sqlCommand.Dispose();
+
+                if (connection != null) connection.Close();
+            }
+
+            return (isSuccess, message);
+
+        }
+
         //sql okuma sorgulama işlemi olarak düşünülebilir.
         public SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)// değer okuma işlemi olarak düşünebiliriz
         {
@@ -73,8 +115,45 @@ namespace DataAccess.Abstract
             {
                 cmd.Parameters.AddRange(sqlParameters);
             }
+            
             SqlDataReader sqlDataReader = cmd.ExecuteReader();// SqlDataReader sqlden gelen sonuçlarıu okuyan nesne.ExecuteReader metodu ile. oraya git execute et" sorgula" ve oku "read".
+            
             return sqlDataReader;// okuduğun sonucu gönder
+        }
+
+        public (DataTable, string) StoredV2(string commandText, params SqlParameter[] sqlParameters)
+        {
+            DataTable results = null;
+            string message = null;
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection connection = null;
+
+            try
+            {
+                connection = OpenConnection();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = commandText;
+                sqlCommand.Connection = connection;
+                if(sqlParameters != null)
+                    sqlCommand.Parameters.AddRange(sqlParameters);
+
+                results = new DataTable("Results");
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(results);
+            }
+            catch(Exception ex)
+            {
+                message = ex.Message;
+            }
+            finally
+            {
+                sqlCommand.Dispose();
+
+                if(connection != null) connection.Close();
+            }
+
+            return (results, message);
         }
 
         public SqlCommand Stored(string commandText, params SqlParameter[] sqlParameters)
@@ -93,19 +172,12 @@ namespace DataAccess.Abstract
             return cmd;
 
         }
-        public SqlDataReader StoreReader(string commandText, params SqlParameter[] sqlParameters)
+
+        public (bool, string) StoreReaderV2(string commandText, params SqlParameter[] sqlParameters)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = commandText;
-            cmd.Connection = OpenConnection();
-            cmd.CommandType = CommandType.StoredProcedure;// prosedürlerderden okuma olanları kullanacağız.
-            if (sqlParameters != null)
-            {
-                cmd.Parameters.AddRange(sqlParameters);
-            }
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            return sqlDataReader;
+            return ExecuteV2(commandText, sqlParameters);
         }
+
         public DataTable GetDataTable(string commandText, params SqlParameter[] sqlParameters)// select tablosundan aldığımız değeri tablo haline getireceğiz
         {
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();//sqldataadapter bir depo gibi düşünebiliriz.

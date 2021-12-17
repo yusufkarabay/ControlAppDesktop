@@ -25,20 +25,14 @@ namespace DataAccess.Concrete
         {
             try
             {
-                dataReader = sqlService.StoreReader("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle), new SqlParameter("@requestcontent", entity.RequestContent));
-                if (dataReader.Read())
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle), new SqlParameter("@requestcontent", entity.RequestContent));
+                if (isSuccess)
                 {
-                    result = dataReader[0].ConBool();
-                }
-                dataReader.Close();
-                if (result)
-                {
-                    return entity.RequestTitle + " Başlığıyle Farklı Bir Talep Bulunmaktadır..";
-
+                    return entity.RequestTitle + " Talep Başarıyla Oluşturuldu";
                 }
                 else
                 {
-                    return entity.RequestTitle + " Talep Başarıyla Oluşturuldu";
+                    return msg;
                 }
             }
             catch (Exception ex)
@@ -52,9 +46,15 @@ namespace DataAccess.Concrete
         {
             try
             {
-                sqlService.Stored("RequestDelete", new SqlParameter("@requestid", id));
-                return "Talep Kaydı Başarıyla Silindi";
-
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestDelete", new SqlParameter("@requestid", id));
+                if (isSuccess)
+                {
+                    return "Talep Kaydı Başarıyla Silindi";
+                }
+                else
+                {
+                    return msg;
+                }
             }
             catch (Exception ex)
             {
@@ -65,53 +65,80 @@ namespace DataAccess.Concrete
 
         public Request Get(Guid id)
         {
-            return null;
+            Request request = null;
+            try
+            {
+                // veritabanındaki requestList prosdürü id parametresi almıyor. alması gerek, Id'ye göre request seçebilmek için
+                // sonra o requestId parametresini storedV2 prosedürüne göndermek gerek.
+                var (dt, msg) = sqlService.StoredV2("RequestList");
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        request = new Request(dataRow["REQUESTTITLE"].ToString(), dataRow["REQUESTCONTENT"].ToString(), dataRow["DATE"].ConDate());
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            finally { }
+            return request;
         }
 
         public List<Request> GetAll()
         {
+            List<Request> list = null;
+
             try
             {
-
-                List<Request> list = new List<Request>();
-                dataReader = sqlService.StoreReader("RequestList");
-                while (dataReader.Read())
+                var (dt, msg) = sqlService.StoredV2("RequestList");
+                if (msg != null)
                 {
-                    list.Add(new Request(dataReader["REQUESTTITLE"].ToString(), dataReader["REQUESTCONTENT"].ToString(), dataReader["DATE"].ConDate()));
+                    return null;
                 }
-                dataReader.Close();
-                return list;
-            }
-            catch
-            {
 
-                return new List<Request>();
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<Request>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        list.Add(new Request(dataRow["REQUESTTITLE"].ToString(), dataRow["REQUESTCONTENT"].ToString(), dataRow["DATE"].ConDate()));
+                    }
+                }
+
             }
+            catch (Exception ex) { }
+            finally { }
+
+            return list;
         }
 
         public string Update(Request entity, string oldName)
         {
             try
             {
-                dataReader = sqlService.StoreReader("RequestUpdate", new SqlParameter("@requestid", entity.RequestId),
-                    new SqlParameter("@rewusttitle", entity.RequestTitle), new SqlParameter("@rewustcontent", entity.RequestContent));
-                if (dataReader.Read())
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestUpdate", new SqlParameter("@requestid", entity.RequestId),
+                    new SqlParameter("@requsttitle", entity.RequestTitle), new SqlParameter("@requstcontent", entity.RequestContent));
+                if (isSuccess)
                 {
-                    result = dataReader[0].ConBool();
+                    return entity.RequestTitle + " Talep Başarıyla Güncellendi";
                 }
-                if (result)
+                else
                 {
-                    return entity.RequestTitle + " Adıyla Başka Bir Talep Oluşturulmuştur";
+                    return msg;
                 }
-                return entity.RequestTitle + " Talep Başarıyla Güncellendi";
             }
             catch (Exception ex)
             {
 
                 return ex.Message;
-
             }
         }
+
         public static RequestDal GetInstance()
         {
             if (requestDal == null)

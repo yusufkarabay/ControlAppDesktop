@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySqlX.XDevAPI.Common;
+using System.Data;
 
 namespace DataAccess.Concrete
 {
-    public class DepartmentDal 
+    public class DepartmentDal
     {
         static DepartmentDal departmentDal;
         SqlService sqlService;
@@ -23,112 +24,150 @@ namespace DataAccess.Concrete
         }
         public string Add(Department entity)
         {
+            string result = null;
             try
             {
-                dataReader = sqlService.StoreReader("@DepartmentCreate", new SqlParameter("@departmentName", entity.DepartmentName));
-                if (dataReader.Read())
+                var (isSuccess, msg) = sqlService.StoreReaderV2("@DepartmentCreate", new SqlParameter("@departmentName", entity.DepartmentName));
+                if (isSuccess)
                 {
-                    result = dataReader[0].ConBool();
-                }
-                dataReader.Close();
-                if (result)
-                {
-                    return entity.DepartmentName + " Adında Başka Bir Departman Bulunmaktadır.";
+                    result = entity.DepartmentName + " Departmanı Başarıyla Kaydedildi.";
                 }
                 else
                 {
-                    return entity.DepartmentName + " Departmanı Başarıyla Kaydedildi.";
+                    result = msg;
                 }
             }
             catch (Exception ex)
             {
-
                 return ex.Message;
             }
+            return result;
         }
 
         public string Delete(Guid id)
         {
+            string result = null;
             try
             {
-                sqlService.Stored("DepartmentDelete", new SqlParameter("@departmentid", id));
-                return "Departman Başarıyla Silindi";
+                var (isSuccess, msg) = sqlService.StoreReaderV2("DepartmentDelete", new SqlParameter("@departmentid", id));
+                if (isSuccess)
+                {
+                    result = "Departman Başarıyla Silindi";
+                }
+                else
+                {
+                    result = msg;
+                }
             }
             catch (Exception ex)
             {
-
-                return ex.Message; ;
+                return ex.Message;
             }
+            return result;
         }
-
         public Department Get(Guid id)
         {
-            return null;
+            Department department = null;
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2("DepartmentList", new SqlParameter("@departmentId", id));
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        department = new Department(Guid.Parse(dataRow["DEPARTMENTID"].ToString()), dataRow["DEPARTMENTNAME"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            finally { }
+            return department;
         }
+
         public List<Department> GetByName(string procuderName, string departmentName)
         {
+            List<Department> list = null;
             try
             {
-                List<Department> departments = new List<Department>();
-                dataReader = sqlService.StoreReader("DepartmentList");
-                while (dataReader.Read())
+                var (dt, msg) = sqlService.StoredV2("DepartmentList", new SqlParameter("@departmentName", departmentName));
+                if (msg != null)
                 {
-                    Department department = new Department(dataReader["DEPARTMENTNAME"].ToString());
-                    departments.Add(department);
+                    return null;
                 }
-                dataReader.Close();
-                return departments;
-            }
-            catch (Exception)
-            {
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<Department>();
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        Department department = new Department(dataRow["DEPARTMENTNAME"].ToString());
+                        list.Add(department);
+                    }
+                }
 
-                return new List<Department>();
             }
+            catch (Exception ex) { }
+            finally { }
+            return list;
         }
-
         public List<Department> GetAll()
         {
+            List<Department> list = null;
+
             try
             {
-                List<Department> list = new List<Department>();
-                dataReader = sqlService.StoreReader("DepartmentList");
-                while (dataReader.Read())
+                var (dt, msg) = sqlService.StoredV2("DepartmentList");
+                if (msg != null)
                 {
-                    Department department = new Department(dataReader["DEPARTMENTNAME"].ToString());
-                    list.Add(department);
+                    return null;
                 }
-                dataReader.Close();
-                return list;
-            }
-            catch (Exception)
-            {
 
-                return new List<Department>();
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<Department>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        Department department = new Department(dataRow["DEPARTMENTNAME"].ToString());
+                        list.Add(department);
+                    }
+                }
+
             }
+            catch (Exception ex) { }
+            finally { }
+
+            return list;
+
         }
 
         public string Update(Department entity, string oldName)
         {
+            string result = null;
+
             try
             {
-                dataReader = sqlService.StoreReader("DepartmentUpdate", new SqlParameter("@departmentid", entity.DepartmentId), new SqlParameter("@departmentName", entity.DepartmentName), new SqlParameter("@departmentOldName", oldName));
-                if (dataReader.Read())
+                var (isSuccess, msg) = sqlService.StoreReaderV2("DepartmentUpdate", new SqlParameter("@departmentid", entity.DepartmentId), new SqlParameter("@departmentName", entity.DepartmentName), new SqlParameter("@departmentOldName", oldName));
+                if (isSuccess)
                 {
-                    result = dataReader[0].ConBool();
-
+                    result = entity.DepartmentName + " Departmanı Başarıyla Güncellendi";
                 }
-                dataReader.Close();
-                if (result)
+                else
                 {
-                    return entity.DepartmentName + " Adında Başka Bir Departman Bulunmaktadır.";
+                    result = msg;
                 }
-                return entity.DepartmentName + " Departmanı Başarıyla Güncellendi";
             }
             catch (Exception ex)
             {
 
                 return ex.Message;
             }
+
+            return result;
+
         }
         public static DepartmentDal GetInstance()
         {
