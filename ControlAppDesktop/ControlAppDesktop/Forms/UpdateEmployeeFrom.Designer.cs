@@ -119,7 +119,6 @@
             this.cbAuthorityInfo.Name = "cbAuthorityInfo";
             this.cbAuthorityInfo.Size = new System.Drawing.Size(149, 21);
             this.cbAuthorityInfo.TabIndex = 20;
-            this.cbAuthorityInfo.SelectedIndexChanged += new System.EventHandler(this.cbAuthorityInfo_SelectedIndexChanged);
             // 
             // txtSurnmaeInfo
             // 

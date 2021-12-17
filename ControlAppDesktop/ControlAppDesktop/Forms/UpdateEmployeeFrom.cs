@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using DataAccess.Concrete;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace ControlAppDesktop.Forms
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
         }
-       
+
         public UpdateEmployeeFrom(Guid employeeId)
         {
             this.InitializeComponent();
@@ -42,18 +43,27 @@ namespace ControlAppDesktop.Forms
             if (isEmployeeLoaded == true)
             {
                 FillCbAuthority();
+
             }
         }
 
         bool GetEmployeeById()
         {
             employee = employeeManager.GetById(_employeeId);
-            if(employee == null)
+            if (employee == null)
             {
                 MessageBox.Show("personel yüklenemedi ve ya bulunamadı.");
                 return false;
             }
-            
+            mtxtTcInfo.Text = employee.Tc;
+            txtNameInfo.Text = employee.Name;
+            txtSurnmaeInfo.Text = employee.Surname;
+          //  cbAuthorityInfo.SelectedText = employee.DepartmentName;
+            mtxtBdate.Text = employee.Bdate.ToString();
+            mtxtTel.Text = employee.Tel;
+            mtxtMail.Text = employee.Mail;
+            rtbxAdressInfo.Text = employee.Adress;
+
             return true;
         }
 
@@ -64,28 +74,42 @@ namespace ControlAppDesktop.Forms
             var bindingSource1 = new BindingSource();
             bindingSource1.DataSource = _departmentList;
 
-           cbAuthorityInfo.DataSource = bindingSource1;
-           cbAuthorityInfo.ValueMember = "DepartmentId";
-           cbAuthorityInfo.DisplayMember = "DepartmentName";
-           cbAuthorityInfo.SelectedValue = employee.DepartmentId;
+            cbAuthorityInfo.DataSource = bindingSource1;
+            cbAuthorityInfo.ValueMember = "DepartmentId";
+            cbAuthorityInfo.DisplayMember = "DepartmentName";
+            cbAuthorityInfo.SelectedValue = employee.DepartmentId;
         }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(cbAuthorityInfo.SelectedIndex == -1)
+            employee = employeeManager.GetById(_employeeId);
+            if (cbAuthorityInfo.SelectedIndex == -1)
             {
                 MessageBox.Show("department seçiniz");
                 return;
             }
+            UpdadeteEmployee();
+            MessageBox.Show("a");
 
-            Department selectedDeparment = _departmentList[cbAuthorityInfo.SelectedIndex];
-            MessageBox.Show(selectedDeparment.DepartmentName.ToString() + " - " + selectedDeparment.DepartmentId.ToString());
-           
+
+
+            //Department selectedDeparment = _departmentList[cbAuthorityInfo.SelectedIndex];
+            //MessageBox.Show(selectedDeparment.DepartmentName.ToString() + " - " + selectedDeparment.DepartmentId.ToString());
+
         }
-
-        private void cbAuthorityInfo_SelectedIndexChanged(object sender, EventArgs e)
+        bool UpdadeteEmployee()
         {
-            
+
+             employeeManager.Update(employee);
+            if (employee == null)
+            {
+                MessageBox.Show("personel güncellenemedi");
+                return false;
+            }
+            return true;
         }
+
+
     }
 }
