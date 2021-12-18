@@ -147,12 +147,12 @@ namespace DataAccess.Concrete
 
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeUpdate", new SqlParameter("@tc", entity.Tc), new SqlParameter("name", entity.Name), new SqlParameter("bdate", entity.Bdate), new SqlParameter("ædress", entity.Adress),
-                    new SqlParameter("@tel", entity.Tel), new SqlParameter("@mail", entity.Mail), new SqlParameter(), new SqlParameter("departmentId", entity.DepartmentId), new SqlParameter(@"authorityId", entity.AuthorityId));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeUpdate", new SqlParameter("@tc", entity.Tc), new SqlParameter("name", entity.Name), new SqlParameter("surname", entity.Surname), new SqlParameter("bdate", entity.Bdate), new SqlParameter("adress", entity.Adress),
+                    new SqlParameter("@tel", entity.Tel), new SqlParameter("@mail", entity.Mail), new SqlParameter("departmentid", entity.DepartmentId), new SqlParameter(@"authorityid", entity.AuthorityId));
 
                 if (isSuccess)
                 {
-                    result = entity.Tc + " Departmanı Başarıyla Güncellendi";
+                    result = entity.Tc + " Personeli Başarıyla Güncellendi";
                 }
                 else
                 {

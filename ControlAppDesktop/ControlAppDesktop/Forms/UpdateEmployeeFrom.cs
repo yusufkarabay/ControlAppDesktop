@@ -58,7 +58,7 @@ namespace ControlAppDesktop.Forms
             mtxtTcInfo.Text = employee.Tc;
             txtNameInfo.Text = employee.Name;
             txtSurnmaeInfo.Text = employee.Surname;
-          //  cbAuthorityInfo.SelectedText = employee.DepartmentName;
+
             mtxtBdate.Text = employee.Bdate.ToString();
             mtxtTel.Text = employee.Tel;
             mtxtMail.Text = employee.Mail;
@@ -83,31 +83,37 @@ namespace ControlAppDesktop.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            employee = employeeManager.GetById(_employeeId);
             if (cbAuthorityInfo.SelectedIndex == -1)
             {
                 MessageBox.Show("department seçiniz");
                 return;
             }
             UpdadeteEmployee();
-            MessageBox.Show("a");
-
-
-
-            //Department selectedDeparment = _departmentList[cbAuthorityInfo.SelectedIndex];
-            //MessageBox.Show(selectedDeparment.DepartmentName.ToString() + " - " + selectedDeparment.DepartmentId.ToString());
+            MessageBox.Show(employee.Name + " " + employee.Surname + " Bilgileri Güncellendi");
 
         }
-        bool UpdadeteEmployee()
+        void UpdadeteEmployee()
         {
-
-             employeeManager.Update(employee);
             if (employee == null)
             {
                 MessageBox.Show("personel güncellenemedi");
-                return false;
+                return;
             }
-            return true;
+            DialogResult dialogResult = MessageBox.Show(employee.Name + " " + employee.Surname + " Personeli İçin Güncelleme İşlemi Yapmak İstediğinize Emin Misiniz?",
+               "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                employee.Tc = mtxtTcInfo.Text;
+                txtNameInfo.Text = employee.Name;
+                employee.Surname = txtSurnmaeInfo.Text;
+                employee.Bdate = mtxtBdate.Text.ConDate();
+                employee.Tel = mtxtTel.Text;
+                employee.Mail = mtxtMail.Text;
+                employee.Adress = rtbxAdressInfo.Text;
+                MessageBox.Show(employeeManager.Update(employee));
+            }
+
+
         }
 
 

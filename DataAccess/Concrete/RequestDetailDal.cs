@@ -59,7 +59,7 @@ namespace DataAccess.Concrete
             throw new NotImplementedException();
         }
 
-        public string Update(RequestDetail entity, string oldName)
+        public string Update(RequestDetail entity,string oldName)
         {
             throw new NotImplementedException();
         }

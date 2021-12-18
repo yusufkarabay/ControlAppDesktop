@@ -150,7 +150,7 @@ namespace Business.Concrete
                 {
                     return controlText;
                 }
-                return employeeDal.Update(entity, "");
+                return employeeDal.Update(entity,"");
             }
             catch (Exception ex)
             {

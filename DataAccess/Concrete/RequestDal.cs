@@ -117,7 +117,7 @@ namespace DataAccess.Concrete
             return list;
         }
 
-        public string Update(Request entity, string oldName)
+        public string Update(Request entity,string oldName)
         {
             try
             {
