@@ -354,7 +354,7 @@
             this.lblCountInfo.TabIndex = 12;
             this.lblCountInfo.Text = "00";
             // 
-            // Request
+            // RequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,7 +366,7 @@
             this.Controls.Add(this.grpRequest);
             this.Controls.Add(this.tlblTime);
             this.Controls.Add(this.grpInfo);
-            this.Name = "Request";
+            this.Name = "RequestForm";
             this.Text = "Talep";
             this.Load += new System.EventHandler(this.Request_Load);
             this.grpInfo.ResumeLayout(false);

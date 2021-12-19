@@ -104,14 +104,14 @@ namespace ControlAppDesktop.Forms
             if (dialogResult == DialogResult.Yes)
             {
                 employee.Tc = mtxtTcInfo.Text;
-                txtNameInfo.Text = employee.Name;
+                employee.Name = txtNameInfo.Text;
                 employee.Surname = txtSurnmaeInfo.Text;
                 employee.Bdate = mtxtBdate.Text.ConDate();
                 employee.Tel = mtxtTel.Text;
                 employee.Mail = mtxtMail.Text;
                 employee.Adress = rtbxAdressInfo.Text;
-                MessageBox.Show(employeeManager.Update(employee));
-            }
+               
+            } MessageBox.Show(employeeManager.UpdateEmployee(employee));
 
 
         }

@@ -89,6 +89,7 @@
     <Compile Include="Concrete\AuthorityDal.cs" />
     <Compile Include="Concrete\DepartmentDal.cs" />
     <Compile Include="Concrete\EmployeeDal.cs" />
+    <Compile Include="Concrete\HeadsetDal.cs" />
     <Compile Include="Concrete\Helper.cs" />
     <Compile Include="Concrete\RequestDal.cs" />
     <Compile Include="Concrete\RequestDetailDal.cs" />

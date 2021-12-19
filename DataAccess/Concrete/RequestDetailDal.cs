@@ -103,5 +103,10 @@ namespace DataAccess.Concrete
 
             return list;
         }
+
+        public string UpdateEmployee(RequestDetail entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

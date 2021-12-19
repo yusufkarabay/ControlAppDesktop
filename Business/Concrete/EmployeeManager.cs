@@ -50,7 +50,7 @@ namespace Business.Concrete
             }
             if (employee.Adress.Length > 200)
             {
-                return " Adress Bilgisi 300 karakterden fazla Olamaz";
+                return " Adress Bilgisi 200 karakterden fazla Olamaz";
             }
             if (employee.Tel.Length > 10)
             {
@@ -136,6 +136,8 @@ namespace Business.Concrete
             }
         }
 
+
+
         public string Update(Employee entity)
         {
             try
@@ -151,6 +153,28 @@ namespace Business.Concrete
                     return controlText;
                 }
                 return employeeDal.Update(entity,"");
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        public string UpdateEmployee(Employee entity)
+        {
+            try
+            {
+                if (entity.Tc == null)
+                {
+                    return " Güncellemek İstediğiniz Personeli Seçiniz";
+
+                }
+                controlText = IsEmployeeComplete(entity);
+                if (controlText != "")
+                {
+                    return controlText;
+                }
+                return employeeDal.UpdateEmployee(entity);
             }
             catch (Exception ex)
             {

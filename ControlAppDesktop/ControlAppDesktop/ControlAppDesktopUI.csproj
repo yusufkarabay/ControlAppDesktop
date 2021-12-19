@@ -53,6 +53,12 @@
     <Compile Include="Forms\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeadsetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeadsetForm.Designer.cs">
+      <DependentUpon>HeadsetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeadsetForm.resx">
+      <DependentUpon>HeadsetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequestForm.resx">
       <DependentUpon>RequestForm.cs</DependentUpon>

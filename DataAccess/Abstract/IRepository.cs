@@ -12,6 +12,7 @@ namespace DataAccess.Abstract
         T Get(Guid id);
         string Add(T entity);
         string Update(T entity, string oldName);
+        string UpdateEmployee(T entity);
         string Delete(Guid id);
 
     }
