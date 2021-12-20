@@ -71,13 +71,16 @@ namespace ControlAppDesktop.Forms
         {
             _departmentList = departmentManager.GetAll();
 
-            var bindingSource1 = new BindingSource();
-            bindingSource1.DataSource = _departmentList;
+            //var bindingSource1 = new BindingSource();
+            //bindingSource1.DataSource = _departmentList;
 
-            cbAuthorityInfo.DataSource = bindingSource1;
+            cbAuthorityInfo.DataSource = _departmentList;
             cbAuthorityInfo.ValueMember = "DepartmentId";
             cbAuthorityInfo.DisplayMember = "DepartmentName";
             cbAuthorityInfo.SelectedValue = employee.DepartmentId;
+
+            //int _selectedCbAuthorityIndex = _departmentList.IndexOf(new Department(employee.DepartmentId, employee.DepartmentName));
+            //cbAuthorityInfo.SelectedIndex = _selectedCbAuthorityIndex;
         }
 
 
@@ -110,6 +113,8 @@ namespace ControlAppDesktop.Forms
                 employee.Tel = mtxtTel.Text;
                 employee.Mail = mtxtMail.Text;
                 employee.Adress = rtbxAdressInfo.Text;
+                employee.DepartmentId = Guid.Parse(cbAuthorityInfo.SelectedValue.ToString());
+                employee.DepartmentName = cbAuthorityInfo.SelectedText.ToString();
                
             } MessageBox.Show(employeeManager.UpdateEmployee(employee));
 

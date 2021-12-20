@@ -174,6 +174,7 @@
             this.Controls.Add(this.gbHeadset);
             this.Name = "HeadsetForm";
             this.Text = "HeadsetForm";
+            this.Load += new System.EventHandler(this.HeadsetForm_Load);
             this.gbHeadset.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeadset)).EndInit();
             this.grpInfo.ResumeLayout(false);

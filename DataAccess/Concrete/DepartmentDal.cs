@@ -131,7 +131,9 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        Department department = new Department(dataRow["DEPARTMENTNAME"].ToString());
+                        Department department = new Department(
+                            Guid.Parse(dataRow["DEPARTMENTID"].ToString()),
+                            dataRow["DEPARTMENTNAME"].ToString());
                         list.Add(department);
                     }
                 }

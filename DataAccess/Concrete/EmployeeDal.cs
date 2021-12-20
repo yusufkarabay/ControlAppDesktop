@@ -16,8 +16,8 @@ namespace DataAccess.Concrete
     {
         static EmployeeDal employeeDal;
         SqlService sqlService;
-        SqlDataReader dataReader;
-        bool result;
+     
+ 
         public EmployeeDal()
         {
             sqlService = SqlDatabase.GetInstance();
@@ -82,7 +82,7 @@ namespace DataAccess.Concrete
             {
 
                 var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@tc", tc));
-                if(msg != null)
+                if (msg != null)
                 {
                     return null;
                 }
@@ -102,7 +102,7 @@ namespace DataAccess.Concrete
                 }
 
             }
-            catch (Exception ex)  {  }
+            catch (Exception ex) { }
             finally { }
 
             return employeesList;
@@ -128,8 +128,19 @@ namespace DataAccess.Concrete
                     foreach (DataRow dataRow in dt.Rows)
                     {
 
-                        employeesList.Add(new Employee((Guid)dataRow["ID"], dataRow["TC"].ToString(), dataRow["NAME"].ToString(), dataRow["SURNAME"].ToString(), dataRow["BDATE"].ConDate(), dataRow["ADRESS"].ToString(),
-                             dataRow["TEL"].ToString(), dataRow["MAIL"].ToString(), dataRow["DEPARTMENTNAME"].ToString(), dataRow["AUTHORITYNAME"].ToString(), (Guid)dataRow["DEPARTMENTID"], (Guid)dataRow["AUTHORITYID"]));
+                        employeesList.Add(new Employee(
+                         (Guid)dataRow["ID"],
+                        dataRow["TC"].ToString(),
+                        dataRow["NAME"].ToString(),
+                        dataRow["SURNAME"].ToString(),
+                        dataRow["BDATE"].ConDate(),
+                        dataRow["ADRESS"].ToString(),
+                       dataRow["TEL"].ToString(),
+                       dataRow["MAIL"].ToString(),
+                       dataRow["DEPARTMENTNAME"].ToString(),
+                       dataRow["AUTHORITYNAME"].ToString(),
+                       (Guid)dataRow["DEPARTMENTID"],
+                       (Guid)dataRow["AUTHORITYID"]));
                     }
                 }
 
@@ -167,7 +178,7 @@ namespace DataAccess.Concrete
 
             return result;
         }
-        
+
         public static EmployeeDal GetInstance()
         {
             if (employeeDal == null)
@@ -176,7 +187,7 @@ namespace DataAccess.Concrete
             }
             return employeeDal;
         }
-        
+
         public object[] Login(string tc, string password)
         {
 
@@ -222,7 +233,7 @@ namespace DataAccess.Concrete
             try
             {
                 var (dt, msg) = sqlService.StoredV2("EmployeeGet", new SqlParameter("@id", id));
-                if(msg != null)
+                if (msg != null)
                 {
                     return null;
                 }
@@ -263,9 +274,9 @@ namespace DataAccess.Concrete
                             Bdate = bdate
                         };
                     }
-                }                
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }

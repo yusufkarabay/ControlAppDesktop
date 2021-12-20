@@ -52,7 +52,7 @@ namespace ControlAppDesktop
             HomePage homePage = new HomePage();
             homePage.infos = infos;
             homePage.Show();
-            this.Hide();    
+            this.Hide();
 
             MessageBox.Show("Sayın " + infos[1] + " " + infos[2] + " Hoşgeldiniz");
                        

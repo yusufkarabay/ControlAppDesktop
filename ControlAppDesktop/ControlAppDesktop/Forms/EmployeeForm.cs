@@ -95,7 +95,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Personel Seçiniz");
                 return;
             }
-            employee = new Employee(dgvEmployee.CurrentRow.Cells["Id"].Value.ConGuidToString(), dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
+                  employee = new Employee(dgvEmployee.CurrentRow.Cells["Id"].Value.ConGuidToString(), dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
                   dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
                   dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
                   dgvEmployee.CurrentRow.Cells["Bdate"].Value.ConDate(),

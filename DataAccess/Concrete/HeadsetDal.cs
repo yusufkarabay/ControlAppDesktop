@@ -16,8 +16,8 @@ namespace DataAccess.Concrete
     {
         static HeadsetDal headsetDal;
         SqlService sqlService;
-        static Employee employee;
-        bool result;
+         Employee employee;
+
 
         public HeadsetDal()
         {
@@ -71,9 +71,15 @@ namespace DataAccess.Concrete
             return result;
         }
 
-       
+
         public Headset GetByEmployeeName(string procuderName, string receiverPerson)
         {
+            if (string.IsNullOrEmpty(procuderName))
+                throw new ArgumentNullException("Prosedür name null geçilemez");
+
+            if (string.IsNullOrEmpty(receiverPerson))
+                throw new ArgumentNullException("Receiver person null geçilemez");
+
             Headset headset = null;
 
             try
@@ -129,7 +135,6 @@ namespace DataAccess.Concrete
             List<Headset> headsetList = null;
             try
             {
-
                 var (dt, msg) = sqlService.StoredV2("HeadsetList");
                 if (msg != null)
                 {
@@ -140,8 +145,14 @@ namespace DataAccess.Concrete
                     headsetList = new List<Headset>();
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        headsetList.Add(new Headset((Guid)dataRow["HEADSETID"], dataRow["HEADSETSERINO"].ToString(), dataRow["RECEIVERPERSON"].ToString(),
-                            dataRow["DELIVERYPERSON"].ToString(), dataRow["HEADSETSTATUSINFO"].ToString(), dataRow["DELIVERYDATE"].ConDate()));
+
+                             headsetList.Add(new Headset(
+                            Guid.Parse(dataRow["HEADSETID"].ToString()),
+                            dataRow["HEADSETSERINO"].ToString(),
+                            dataRow["RECEIVERPERSON"].ToString(),
+                            dataRow["DELIVERYPERSON"].ToString(),
+                            dataRow["HEADSETSTATUSINFO"].ToString(),
+                            dataRow["DELIVERYDATE"].ConDate()));
                     }
                 }
             }
@@ -151,9 +162,9 @@ namespace DataAccess.Concrete
             return headsetList;
         }
 
-       
 
-        
+
+
         public static HeadsetDal GetInstance()
         {
             if (headsetDal == null)
