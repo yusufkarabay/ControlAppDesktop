@@ -160,7 +160,7 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public string UpdateEmployee(Employee entity)
+        public string UpdateNew(Employee entity)
         {
             try
             {
@@ -174,7 +174,7 @@ namespace Business.Concrete
                 {
                     return controlText;
                 }
-                return employeeDal.UpdateEmployee(entity);
+                return employeeDal.UpdateNew(entity);
             }
             catch (Exception ex)
             {

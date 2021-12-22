@@ -47,6 +47,7 @@
     <Compile Include="Concrete\HeadsetManager.cs" />
     <Compile Include="Concrete\RequestDetailManager.cs" />
     <Compile Include="Concrete\RequestManager.cs" />
+    <Compile Include="Concrete\SentryDoneManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

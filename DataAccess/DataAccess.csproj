@@ -93,6 +93,7 @@
     <Compile Include="Concrete\Helper.cs" />
     <Compile Include="Concrete\RequestDal.cs" />
     <Compile Include="Concrete\RequestDetailDal.cs" />
+    <Compile Include="Concrete\SentryDoneDal.cs" />
     <Compile Include="Database\SqlDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -154,7 +154,7 @@ namespace DataAccess.Concrete
             return authorityDal;
         }
 
-        public string UpdateEmployee(Authority entity)
+        public string UpdateNew(Authority entity)
         {
             throw new NotImplementedException();
         }

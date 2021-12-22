@@ -53,7 +53,7 @@ namespace DataAccess.Concrete
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("HeadsetReturnDelivery", new SqlParameter("headsetserino", id));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("HeadsetReturnDelivery", new SqlParameter("@headsetserino", id));
                 if (isSuccess)
                 {
                     result = "Kulaklık" + employee.Name + " " + employee.Surname + " İsimli Personelden Başarı İle Teslim Alındı";
@@ -173,7 +173,7 @@ namespace DataAccess.Concrete
             }
             return headsetDal;
         }
-        public string UpdateEmployee(Headset entity)
+        public string UpdateNew(Headset entity)
         {
             throw new NotImplementedException();
         }

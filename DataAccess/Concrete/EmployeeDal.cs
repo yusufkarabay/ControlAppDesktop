@@ -287,7 +287,7 @@ namespace DataAccess.Concrete
             return employee;
         }
 
-        public string UpdateEmployee(Employee entity)
+        public string UpdateNew(Employee entity)
         {
 
             string result = null;

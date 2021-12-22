@@ -148,7 +148,7 @@ namespace DataAccess.Concrete
             return requestDal;
         }
 
-        public string UpdateEmployee(Request entity)
+        public string UpdateNew(Request entity)
         {
             throw new NotImplementedException();
         }
