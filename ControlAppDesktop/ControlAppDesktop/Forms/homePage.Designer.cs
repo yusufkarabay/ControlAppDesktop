@@ -45,8 +45,8 @@
             this.btnSentry = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTopMenu = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblTime = new System.Windows.Forms.Label();
             this.pnlLeftMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTopMenu.SuspendLayout();
@@ -57,6 +57,7 @@
             this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.pnlLeftMenu.Controls.Add(this.pnlActive);
             this.pnlLeftMenu.Controls.Add(this.btnUserName);
+            this.pnlLeftMenu.Controls.Add(this.pictureBox1);
             this.pnlLeftMenu.Controls.Add(this.btnDirectory);
             this.pnlLeftMenu.Controls.Add(this.btnGenarator);
             this.pnlLeftMenu.Controls.Add(this.btnGuestCard);
@@ -69,7 +70,6 @@
             this.pnlLeftMenu.Controls.Add(this.btnEmployee);
             this.pnlLeftMenu.Controls.Add(this.btnInventory);
             this.pnlLeftMenu.Controls.Add(this.btnSentry);
-            this.pnlLeftMenu.Controls.Add(this.pictureBox1);
             this.pnlLeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeftMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlLeftMenu.Name = "pnlLeftMenu";
@@ -299,7 +299,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ControlAppDesktop.Properties.Resources.mail_send;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,6 +316,17 @@
             this.pnlTopMenu.Name = "pnlTopMenu";
             this.pnlTopMenu.Size = new System.Drawing.Size(1186, 35);
             this.pnlTopMenu.TabIndex = 1;
+            this.pnlTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopMenu_MouseDown);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(802, 9);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTime
             // 
@@ -327,16 +338,6 @@
             this.lblTime.Size = new System.Drawing.Size(65, 19);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Zaman";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(802, 9);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Kapat";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // HomePage
             // 

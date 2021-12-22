@@ -41,46 +41,38 @@ namespace DataAccess.Concrete
         }
 
 
-        public string GetSetryByDate(string procuderName, DateTime dateTime)
+        public List<SentryDone> GetSetryByDate(string procuderName, DateTime dateTime)
         {
             List<SentryDone> sentryDones = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2("SentryDoneGetByDate", new SqlParameter("@createdtime", dateTime));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", dateTime));
                 if (msg != null)
                 {
                     return null;
                 }
                 if (dt.Rows.Count > 0)
                 {
+                    sentryDones = new List<SentryDone>();
+
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        Guid sentrydoneId;
-                        string done;
-                        DateTime createdTime;
-                        string createdEmployee;
 
-                        sentrydoneId = (Guid)dataRow["SENTRYDONEID"];
-                        done = dataRow["DONE"].ToString();
-                        createdTime = dataRow["CREATEDTIME"].ConDate();
-                        createdEmployee = dataRow["CREATEDEMPLOYEE"].ToString();
-                        sentryDone = new SentryDone
-                        {
-                            SentrydoneId = sentrydoneId,
-                            Done = done,
-                            CreatedTime = createdTime,
-                            CreatedEmployee = createdEmployee
-                        };
-
+                        sentryDones.Add(new SentryDone(
+                           (Guid)dataRow["SENTRYDONEID"],
+                          dataRow["DONE"].ToString(),
+                          dataRow["CREATEDTIME"].ConDate(),
+                          dataRow["CREATEDEMPLOYEE"].ToString()));
                     }
                 }
             }
             catch (Exception ex)
             {
-                return ex.Message;
+               
             }
-            return sentryDones.ToString();//**************** bu kısmı sor?
+            return sentryDones;//**************** bu kısmı sor?
         }
+
 
 
         public string Delete(Guid id)

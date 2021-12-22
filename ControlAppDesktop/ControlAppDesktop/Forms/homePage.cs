@@ -7,16 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ControlAppDesktop.Forms
 {
     public partial class HomePage : Form
     {
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+      (
+          int nLeftRect,
+          int nTopRect,
+          int nRightRect,
+          int nBottomRect,
+          int nWidthEllipse,
+          int nHeightEllipse
+      );
         public object[] infos;
         public HomePage()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
         }
+        
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int Iparam);
         void panelActiveVisible()
         {
             pnlActive.Visible = true;
@@ -32,6 +52,9 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnSentry.Height;
             pnlActive.Top = btnSentry.Top;
+            
+            SentryForm sentryForm = new SentryForm();
+            sentryForm.Show();
 
 
             //borderColored(sender);
@@ -158,6 +181,13 @@ namespace ControlAppDesktop.Forms
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pnlTopMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -116,7 +116,7 @@ namespace ControlAppDesktop.Forms
                 employee.DepartmentId = Guid.Parse(cbAuthorityInfo.SelectedValue.ToString());
                 employee.DepartmentName = cbAuthorityInfo.SelectedText.ToString();
                
-            } MessageBox.Show(employeeManager.UpdateEmployee(employee));
+            } MessageBox.Show(employeeManager.UpdateNew(employee));
 
 
         }

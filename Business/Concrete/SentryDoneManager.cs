@@ -105,5 +105,24 @@ namespace Business.Concrete
             if (sentryDoneManager == null) { sentryDoneManager = new SentryDoneManager(); }
             return sentryDoneManager;
         }
+
+
+        public List<SentryDone> GetSetryByDate(string procuderName, DateTime dateTime)
+        {
+            try
+            {
+                if (dateTime == null)
+                {
+                    return null;
+                }
+                return sentryDoneDal.GetSetryByDate(procuderName, dateTime);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
