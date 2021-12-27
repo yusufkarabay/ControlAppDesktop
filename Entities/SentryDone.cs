@@ -15,7 +15,7 @@ namespace Entities
 
         public SentryDone(Guid sentrydoneId, string done, DateTime createdTime, string createdEmployee)
         {
-            this.sentrydoneId = sentrydoneId;;
+            this.sentrydoneId = sentrydoneId; 
             this.done = done;
             this.createdTime = createdTime;
             this.createdEmployee = createdEmployee;
@@ -26,10 +26,22 @@ namespace Entities
         }
         public SentryDone(string done, DateTime createdTime, string createdEmployee)
         {
-
             this.done = done;
             this.createdTime = createdTime;
             this.createdEmployee = createdEmployee;
+        }
+        public SentryDone(string done, DateTime createdTime)
+        {
+            this.done = done;
+            this.createdTime = createdTime;
+            
+        }
+        public SentryDone(Guid sentrydoneId, string done, DateTime createdTime)
+        {
+            this.done = done;
+            this.createdTime = createdTime;
+            this.sentrydoneId = sentrydoneId;
+
         }
 
         public Guid SentrydoneId { get => sentrydoneId; set => sentrydoneId = value; }

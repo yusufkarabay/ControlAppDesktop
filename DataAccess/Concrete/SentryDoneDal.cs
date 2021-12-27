@@ -41,12 +41,12 @@ namespace DataAccess.Concrete
         }
 
 
-        public List<SentryDone> GetSetryByDate(string procuderName, DateTime dateTime)
+        public List<SentryDone> GetSentryByDate(string procuderName, DateTime date)
         {
             List<SentryDone> sentryDones = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", dateTime));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date));
                 if (msg != null)
                 {
                     return null;
@@ -58,21 +58,67 @@ namespace DataAccess.Concrete
                     foreach (DataRow dataRow in dt.Rows)
                     {
 
-                        sentryDones.Add(new SentryDone(
-                           (Guid)dataRow["SENTRYDONEID"],
+                        sentryDones.Add
+                           (new SentryDone(
+                           (Guid)dataRow["DONESENTRYID"],
                           dataRow["DONE"].ToString(),
                           dataRow["CREATEDTIME"].ConDate(),
                           dataRow["CREATEDEMPLOYEE"].ToString()));
+
                     }
                 }
             }
             catch (Exception ex)
             {
-               
+
             }
+            finally { }
             return sentryDones;//**************** bu kısmı sor?
         }
 
+        public SentryDone GetSentryDone(Guid donesentryid)
+        {
+            SentryDone sentryDone = null;
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2("SentryDoneGet", new SqlParameter("@donesentryid", donesentryid));
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (sentryDone != null)
+                {
+
+                    string done;
+                    DateTime createdTime;
+                    string createdEmployee;
+
+                    donesentryid = sentryDone.SentrydoneId;
+                    done = sentryDone.Done;
+                    createdTime = sentryDone.CreatedTime;
+                    createdEmployee = sentryDone.CreatedEmployee;
+
+                    sentryDone = new SentryDone
+                    {
+                        SentrydoneId = donesentryid,
+                        CreatedTime = createdTime,
+                        CreatedEmployee = createdEmployee,
+                        Done = done
+                    };
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+            }
+            return sentryDone;
+
+        }
 
 
         public string Delete(Guid id)
@@ -119,10 +165,10 @@ namespace DataAccess.Concrete
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("SentryDoneUpdate", new SqlParameter("@donesentryid", entity.SentrydoneId),
-                    new SqlParameter("done", entity.Done), new SqlParameter("createdtime", entity.CreatedTime), new SqlParameter("createdemployee", entity.CreatedEmployee));
+                    new SqlParameter("@done", entity.Done), new SqlParameter("@createdtime", entity.CreatedTime));
                 if (isSuccess)
                 {
-                    return "Yapılan İş Başarı İle Güncellendi";
+                    result= "Yapılan İş Başarı İle Güncellendi";
                 }
                 else
                 {

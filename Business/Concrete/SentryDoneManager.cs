@@ -107,22 +107,39 @@ namespace Business.Concrete
         }
 
 
-        public List<SentryDone> GetSetryByDate(string procuderName, DateTime dateTime)
+        public List<SentryDone> GetSentryByDate(string procuderName, DateTime date)
         {
             try
             {
-                if (dateTime == null)
+                if (date == null)
                 {
                     return null;
                 }
-                return sentryDoneDal.GetSetryByDate(procuderName, dateTime);
+                return sentryDoneDal.GetSentryByDate(procuderName, date);
 
             }
             catch (Exception)
             {
 
-                throw;
+                return new List<SentryDone>();
             }
+        }
+        public SentryDone GetSentryDone(Guid donesentryid)
+        {
+            try
+            {
+                if (donesentryid == Guid.Empty)
+                {
+                    return null;
+                }
+                return sentryDoneDal.GetSentryDone(donesentryid);
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+            
         }
     }
 }

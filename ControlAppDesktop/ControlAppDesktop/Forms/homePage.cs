@@ -52,8 +52,10 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnSentry.Height;
             pnlActive.Top = btnSentry.Top;
+        
             
             SentryForm sentryForm = new SentryForm();
+            sentryForm.infos = infos;
             sentryForm.Show();
 
 

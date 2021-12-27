@@ -71,16 +71,11 @@ namespace ControlAppDesktop.Forms
         {
             _departmentList = departmentManager.GetAll();
 
-            //var bindingSource1 = new BindingSource();
-            //bindingSource1.DataSource = _departmentList;
-
             cbAuthorityInfo.DataSource = _departmentList;
             cbAuthorityInfo.ValueMember = "DepartmentId";
             cbAuthorityInfo.DisplayMember = "DepartmentName";
             cbAuthorityInfo.SelectedValue = employee.DepartmentId;
 
-            //int _selectedCbAuthorityIndex = _departmentList.IndexOf(new Department(employee.DepartmentId, employee.DepartmentName));
-            //cbAuthorityInfo.SelectedIndex = _selectedCbAuthorityIndex;
         }
 
 

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
@@ -38,8 +39,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnSentryListToDo = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSentryDoneUpdate = new System.Windows.Forms.Button();
             this.gbSentry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -73,10 +79,11 @@
             this.dgvSentry.AllowUserToDeleteRows = false;
             this.dgvSentry.AllowUserToResizeColumns = false;
             this.dgvSentry.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSentry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSentry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSentry.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvSentry.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvSentry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSentry.Location = new System.Drawing.Point(3, 16);
@@ -106,6 +113,7 @@
             this.btnSentryDoneAdd.TabIndex = 5;
             this.btnSentryDoneAdd.Text = "Yapılan İş Ekle";
             this.btnSentryDoneAdd.UseVisualStyleBackColor = true;
+            this.btnSentryDoneAdd.Click += new System.EventHandler(this.btnSentryDoneAdd_Click);
             // 
             // button1
             // 
@@ -133,11 +141,43 @@
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "Takip edilecek işlemler...";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.güncelleToolStripMenuItem,
+            this.silToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.güncelleToolStripMenuItem.Text = "Güncelle";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            // 
+            // btnSentryDoneUpdate
+            // 
+            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(306, 349);
+            this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
+            this.btnSentryDoneUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnSentryDoneUpdate.TabIndex = 9;
+            this.btnSentryDoneUpdate.Text = "Güncelle";
+            this.btnSentryDoneUpdate.UseVisualStyleBackColor = true;
+            this.btnSentryDoneUpdate.Click += new System.EventHandler(this.btnSentryDoneUpdate_Click);
+            // 
             // SentryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 811);
+            this.Controls.Add(this.btnSentryDoneUpdate);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnSentryListToDo);
             this.Controls.Add(this.button1);
@@ -150,6 +190,7 @@
             this.Text = "SentryForm";
             this.gbSentry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -165,5 +206,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSentryListToDo;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.Button btnSentryDoneUpdate;
     }
 }
