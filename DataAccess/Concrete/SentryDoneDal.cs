@@ -16,7 +16,7 @@ namespace DataAccess.Concrete
         static SentryDoneDal sentryDoneDal;
         SqlService sqlService;
         SentryDone sentryDone;
-        Employee employee;
+       
 
         public SentryDoneDal()
         {
@@ -127,9 +127,10 @@ namespace DataAccess.Concrete
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("SentryDoneDelete", new SqlParameter("@donesentryid", id));
+               
                 if (isSuccess)
                 {
-                    result = "Yapılan İş " + employee.Name + " " + employee.Surname + " İsimli Personel Tarafondan Başarı İle Silindi";
+                    result = "Yapılan İş  Başarı İle Silindi";
                 }
                 else
                 {
@@ -165,7 +166,8 @@ namespace DataAccess.Concrete
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("SentryDoneUpdate", new SqlParameter("@donesentryid", entity.SentrydoneId),
-                    new SqlParameter("@done", entity.Done), new SqlParameter("@createdtime", entity.CreatedTime));
+                    new SqlParameter("@done", entity.Done), new SqlParameter("@createdtime", entity.CreatedTime)
+                    /*, new SqlParameter("@createdemployee", entity.CreatedEmployee)*/);
                 if (isSuccess)
                 {
                     result= "Yapılan İş Başarı İle Güncellendi";

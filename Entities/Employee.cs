@@ -22,6 +22,10 @@ namespace Entities
         string authorityName;
 
         public Employee() { }
+        public Employee(string name,string surname) {
+            this.name=name;
+            this.surname = surname;
+        }
         public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
         string adress, string tel, string mail, string departmentName, string authorityName,
         Guid departmentId,

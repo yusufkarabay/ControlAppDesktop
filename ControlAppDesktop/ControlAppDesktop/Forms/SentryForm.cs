@@ -33,16 +33,18 @@ namespace ControlAppDesktop.Forms
         public SentryForm(Guid sentrydoneId)
         {
             this.InitializeComponent();
-            _sentryDoneId=sentrydoneId;
+            _sentryDoneId = sentrydoneId;
 
         }
 
         private void btnSentryListDone_Click(object sender, EventArgs e)
         {
             thisDate();
+            sentryDone = null;
         }
         void thisDate()
         {
+                       
             dgvSentry.DataSource = sentryDoneManager.GetSentryByDate("SentryDoneGetByDate",
             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
             dgvSentry.Columns[0].Visible = false;
@@ -68,31 +70,30 @@ namespace ControlAppDesktop.Forms
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool getSentry = GetSentryDone();
-            if (getSentry == true)
-            {
-                if (dgvSentry.SelectedRows == null)
-                {
-                    MessageBox.Show("Güncellenecek İş Seçiniz");
-                    return;
-                }
-                else
-                {
-                    DialogResult dialogResult = MessageBox.Show("Seçili İş İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
-                                 "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        rtbxSentry.Text = dgvSentry.CurrentRow.Cells[1].Value.ToString();
 
-                    }
-                }
+            if (dgvSentry.SelectedRows == null)
+            {
+                MessageBox.Show("Listeden Güncellenecek İş seçiniz");
+                return;
             }
+            sentryDone = new SentryDone(
+                 Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
+                 dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
+                 DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
+                 dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString());
+
+            DialogResult dialogResult = MessageBox.Show("Seçili İş İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                rtbxSentry.Text = sentryDone.Done;
+            }
+
 
         }
 
         private void btnSentryDoneUpdate_Click(object sender, EventArgs e)
         {
-
 
             if (rtbxSentry.Text == null)
             {
@@ -102,29 +103,29 @@ namespace ControlAppDesktop.Forms
 
             updateSentryDone();
 
-
-
-        }
-
-        bool GetSentryDone()
-        {
-            sentryDone = sentryDoneManager.GetSentryDone(_sentryDoneId);
-            if (sentryDone == null)
-            {
-                MessageBox.Show("Yapılan İş Yüklenemedi");
-                return false;
-            }
-
-            sentryDone.SentrydoneId = Guid.Parse(dgvSentry.CurrentRow.Cells[0].Value.ToString());
-            sentryDone.Done = rtbxSentry.Text;
-            sentryDone.CreatedTime = DateTime.Parse(dateTimePicker1.Value.ToString());
-            sentryDone.CreatedEmployee = infos[1].ToString();
-            return true;
+            thisDate();
 
         }
+
+        //bool GetSentryDone()
+        //{
+        //    sentryDone = sentryDoneManager.GetSentryDone(_sentryDoneId);
+        //    if (sentryDone == null)
+        //    {
+        //        MessageBox.Show("Yapılan İş Yüklenemedi");
+        //        return false;
+        //    }
+
+        //    sentryDone.SentrydoneId = Guid.Parse(dgvSentry.CurrentRow.Cells[0].Value.ToString());
+        //    sentryDone.Done = rtbxSentry.Text;
+        //    sentryDone.CreatedTime = DateTime.Parse(dateTimePicker1.Value.ToString());
+        //    sentryDone.CreatedEmployee = infos[1].ToString();
+        //    return true;
+
+        //}
+
         void updateSentryDone()
         {
-
             if (sentryDone == null)
             {
                 MessageBox.Show("İş Kaydı Güncellenemedi");
@@ -134,14 +135,54 @@ namespace ControlAppDesktop.Forms
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+
                 sentryDone.Done = rtbxSentry.Text.ToString();
-                sentryDone.CreatedTime=Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                sentryDone.CreatedTime = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+
+                MessageBox.Show(sentryDoneManager.UpdateNew(sentryDone));
+
             }
 
-            MessageBox.Show(sentryDoneManager.UpdateNew(sentryDone));
 
         }
+        void deleteSentyrDone()
+        {
 
+            if (sentryDone == null)
+            {
+                MessageBox.Show("İş Kaydı Silinemedi");
+                return;
+            }
+            sentryDone = new SentryDone(
+                Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
+                dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
+                DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
+                dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString());
+           
+
+            DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
+                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+               
+
+                MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId));
+                thisDate();
+
+            }
+
+        }
+        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thisDate();
+            sentryDone = null;
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteSentyrDone();
+        }
     }
 }
 
