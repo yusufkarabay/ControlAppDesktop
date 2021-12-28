@@ -44,10 +44,21 @@ namespace ControlAppDesktop.Forms
         }
         void thisDate()
         {
-                       
             dgvSentry.DataSource = sentryDoneManager.GetSentryByDate("SentryDoneGetByDate",
             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
-            dgvSentry.Columns[0].Visible = false;
+
+            if (dgvSentry.Rows.Count < 1)
+            {
+
+                MessageBox.Show("Bu Tarihte Bir İş Kaydı Yok");
+            }
+            else
+            {
+                dgvSentry.Columns[0].Visible = false;
+            }
+
+
+
         }
 
         private void btnSentryDoneAdd_Click(object sender, EventArgs e)
@@ -158,14 +169,14 @@ namespace ControlAppDesktop.Forms
                 dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
                 DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
                 dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString());
-           
+
 
             DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
 
-               
+
 
                 MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId));
                 thisDate();
