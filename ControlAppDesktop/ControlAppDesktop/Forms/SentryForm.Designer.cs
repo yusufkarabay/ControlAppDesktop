@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
@@ -37,16 +38,18 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSentryListDone = new System.Windows.Forms.Button();
             this.btnSentryDoneAdd = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSentryListToDo = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnSentryDoneUpdate = new System.Windows.Forms.Button();
-            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvSentryTodo = new System.Windows.Forms.DataGridView();
             this.gbSentry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -66,6 +69,7 @@
             // 
             // gbSentry
             // 
+            this.gbSentry.Controls.Add(this.dgvSentryTodo);
             this.gbSentry.Controls.Add(this.dgvSentry);
             this.gbSentry.Location = new System.Drawing.Point(108, 413);
             this.gbSentry.Name = "gbSentry";
@@ -119,9 +123,16 @@
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
+            // 
             // btnSentryListDone
             // 
-            this.btnSentryListDone.Location = new System.Drawing.Point(445, 292);
+            this.btnSentryListDone.Location = new System.Drawing.Point(306, 292);
             this.btnSentryListDone.Name = "btnSentryListDone";
             this.btnSentryListDone.Size = new System.Drawing.Size(75, 23);
             this.btnSentryListDone.TabIndex = 3;
@@ -131,7 +142,7 @@
             // 
             // btnSentryDoneAdd
             // 
-            this.btnSentryDoneAdd.Location = new System.Drawing.Point(306, 292);
+            this.btnSentryDoneAdd.Location = new System.Drawing.Point(172, 292);
             this.btnSentryDoneAdd.Name = "btnSentryDoneAdd";
             this.btnSentryDoneAdd.Size = new System.Drawing.Size(114, 23);
             this.btnSentryDoneAdd.TabIndex = 5;
@@ -156,6 +167,7 @@
             this.btnSentryListToDo.TabIndex = 7;
             this.btnSentryListToDo.Text = "Listele";
             this.btnSentryListToDo.UseVisualStyleBackColor = true;
+            this.btnSentryListToDo.Click += new System.EventHandler(this.btnSentryListToDo_Click);
             // 
             // richTextBox1
             // 
@@ -167,7 +179,7 @@
             // 
             // btnSentryDoneUpdate
             // 
-            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(306, 349);
+            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(414, 292);
             this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
             this.btnSentryDoneUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnSentryDoneUpdate.TabIndex = 9;
@@ -175,12 +187,27 @@
             this.btnSentryDoneUpdate.UseVisualStyleBackColor = true;
             this.btnSentryDoneUpdate.Click += new System.EventHandler(this.btnSentryDoneUpdate_Click);
             // 
-            // yenileToolStripMenuItem
+            // dgvSentryTodo
             // 
-            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.yenileToolStripMenuItem.Text = "Yenile";
-            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
+            this.dgvSentryTodo.AllowUserToAddRows = false;
+            this.dgvSentryTodo.AllowUserToDeleteRows = false;
+            this.dgvSentryTodo.AllowUserToResizeColumns = false;
+            this.dgvSentryTodo.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSentryTodo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSentryTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSentryTodo.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvSentryTodo.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.dgvSentryTodo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSentryTodo.Location = new System.Drawing.Point(3, 16);
+            this.dgvSentryTodo.MultiSelect = false;
+            this.dgvSentryTodo.Name = "dgvSentryTodo";
+            this.dgvSentryTodo.ReadOnly = true;
+            this.dgvSentryTodo.RowHeadersVisible = false;
+            this.dgvSentryTodo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 247);
+            this.dgvSentryTodo.TabIndex = 2;
             // 
             // SentryForm
             // 
@@ -201,6 +228,7 @@
             this.gbSentry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +249,6 @@
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.Button btnSentryDoneUpdate;
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvSentryTodo;
     }
 }

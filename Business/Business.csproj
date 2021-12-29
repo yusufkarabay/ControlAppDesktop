@@ -48,6 +48,7 @@
     <Compile Include="Concrete\RequestDetailManager.cs" />
     <Compile Include="Concrete\RequestManager.cs" />
     <Compile Include="Concrete\SentryDoneManager.cs" />
+    <Compile Include="Concrete\SentryToDoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

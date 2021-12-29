@@ -49,6 +49,7 @@
     <Compile Include="Request.cs" />
     <Compile Include="RequestDetail.cs" />
     <Compile Include="SentryDone.cs" />
+    <Compile Include="SentryToDo.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Users.cs" />
   </ItemGroup>

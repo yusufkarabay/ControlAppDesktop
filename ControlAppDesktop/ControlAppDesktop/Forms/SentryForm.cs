@@ -39,28 +39,9 @@ namespace ControlAppDesktop.Forms
 
         private void btnSentryListDone_Click(object sender, EventArgs e)
         {
-            thisDate();
+            thisDateDone();
             sentryDone = null;
         }
-        void thisDate()
-        {
-            dgvSentry.DataSource = sentryDoneManager.GetSentryByDate("SentryDoneGetByDate",
-            Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
-
-            if (dgvSentry.Rows.Count < 1)
-            {
-
-                MessageBox.Show("Bu Tarihte Bir İş Kaydı Yok");
-            }
-            else
-            {
-                dgvSentry.Columns[0].Visible = false;
-            }
-
-
-
-        }
-
         private void btnSentryDoneAdd_Click(object sender, EventArgs e)
         {
 
@@ -76,9 +57,8 @@ namespace ControlAppDesktop.Forms
             sentryDoneManager.Add(sentryDone);
             MessageBox.Show("İş Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             rtbxSentry.Text = "Nöbet sırasında yapılan işler...";
-            thisDate();
+            thisDateDone();
         }
-
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -102,39 +82,51 @@ namespace ControlAppDesktop.Forms
 
 
         }
-
         private void btnSentryDoneUpdate_Click(object sender, EventArgs e)
         {
-
             if (rtbxSentry.Text == null)
             {
                 MessageBox.Show("Yapılan İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
-
             updateSentryDone();
-
-            thisDate();
+            thisDateDone();
 
         }
+        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thisDateDone();
+            sentryDone = null;
+        }
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteSentyrDone();
+        }
+        private void btnSentryListToDo_Click(object sender, EventArgs e)
+        {
+            gbSentry.Text = "Yapılacak İşler";
+        }
+        void thisDateDone()
+        {
+            dgvSentry.DataSource = sentryDoneManager.GetSentryByDate("SentryDoneGetByDate",
+            Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
 
-        //bool GetSentryDone()
-        //{
-        //    sentryDone = sentryDoneManager.GetSentryDone(_sentryDoneId);
-        //    if (sentryDone == null)
-        //    {
-        //        MessageBox.Show("Yapılan İş Yüklenemedi");
-        //        return false;
-        //    }
+            if (dgvSentry.Rows.Count < 1)
+            {
 
-        //    sentryDone.SentrydoneId = Guid.Parse(dgvSentry.CurrentRow.Cells[0].Value.ToString());
-        //    sentryDone.Done = rtbxSentry.Text;
-        //    sentryDone.CreatedTime = DateTime.Parse(dateTimePicker1.Value.ToString());
-        //    sentryDone.CreatedEmployee = infos[1].ToString();
-        //    return true;
+                MessageBox.Show("Bu Tarihte Bir İş Kaydı Yok");
+            }
+            else
+            {
+                dgvSentry.Columns[0].Visible = false;
+            }
 
-        //}
 
+
+        }
+        void thisDateTodo()
+        {
+        }
         void updateSentryDone()
         {
             if (sentryDone == null)
@@ -175,24 +167,11 @@ namespace ControlAppDesktop.Forms
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-
-
-
                 MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId));
-                thisDate();
+                thisDateDone();
 
             }
 
-        }
-        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            thisDate();
-            sentryDone = null;
-        }
-
-        private void silToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            deleteSentyrDone();
         }
     }
 }

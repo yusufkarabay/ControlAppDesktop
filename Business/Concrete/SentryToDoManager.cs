@@ -9,35 +9,35 @@ using Entities;
 
 namespace Business.Concrete
 {
-    public class SentryDoneManager
+    public class SentryToDoManager
     {
-        static SentryDoneManager sentryDoneManager;
-        SentryDoneDal sentryDoneDal;
+        static SentryToDoManager sentryToDoManager;
+        SentryToDoDal sentryToDoDal;
         string controlText;
-        public SentryDoneManager()
+        public SentryToDoManager()
         {
-            sentryDoneDal = SentryDoneDal.GetInstance();
+            sentryToDoDal = SentryToDoDal.GetInstance();
         }
 
-        string IsSentryDoneComplete(SentryDone sentryDone)
+        string IsSentryToDoComplete(SentryToDo sentryToDo)
         {
-            if (string.IsNullOrEmpty(sentryDone.Done))
+            if (string.IsNullOrEmpty(sentryToDo.ToDo))
             {
                 return "Lütfen Bir İş Giriniz. Boş Kayıt Girilemez";
             }
             return "";
 
         }
-        public string Add(SentryDone entity)
+        public string Add(SentryToDo entity)
         {
             try
             {
-                controlText = IsSentryDoneComplete(entity);
+                controlText = IsSentryToDoComplete(entity);
                 if (controlText != "")
                 {
                     return controlText;
                 }
-                return sentryDoneDal.Add(entity);
+                return sentryToDoDal.Add(entity);
             }
             catch (Exception ex)
             {
@@ -53,28 +53,28 @@ namespace Business.Concrete
                 {
                     return "Silmek İçin Lütfen Geçerli İş Seçiniz.";
                 }
-                return sentryDoneDal.Delete(id);
+                return sentryToDoDal.Delete(id);
             }
             catch (Exception ex)
             {
                 return ex.Message;
             }
         }
-        public string UpdateNew(SentryDone entity)
+        public string UpdateNew(SentryToDo entity)
         {
             try
             {
-                if (entity.Done == null)
+                if (entity.ToDo == null)
                 {
                     return " Güncellemek İstediğiniz İşi Seçiniz";
 
                 }
-                controlText = IsSentryDoneComplete(entity);
+                controlText = IsSentryToDoComplete(entity);
                 if (controlText != "")
                 {
                     return controlText;
                 }
-                return sentryDoneDal.UpdateNew(entity);
+                return sentryToDoDal.UpdateNew(entity);
             }
             catch (Exception ex)
             {
@@ -82,12 +82,12 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public static SentryDoneManager GetInstance()
+        public static SentryToDoManager GetInstance()
         {
-            if (sentryDoneManager == null) { sentryDoneManager = new SentryDoneManager(); }
-            return sentryDoneManager;
+            if (sentryToDoManager == null) { sentryToDoManager = new SentryToDoManager(); }
+            return sentryToDoManager;
         }
-        public List<SentryDone> GetSentryByDate(string procuderName, DateTime date)
+        public List<SentryToDo> GetSentryToDoByDate(string procuderName, DateTime date)
         {
             try
             {
@@ -95,24 +95,24 @@ namespace Business.Concrete
                 {
                     return null;
                 }
-                return sentryDoneDal.GetSentryByDate(procuderName, date);
+                return sentryToDoDal.GetSentryToDoByDate(procuderName, date);
 
             }
             catch (Exception)
             {
 
-                return new List<SentryDone>();
+                return new List<SentryToDo>();
             }
         }
-        public SentryDone GetSentryDone(Guid donesentryid)
+        public SentryToDo GetSentryToDo(Guid todoSentryId)
         {
             try
             {
-                if (donesentryid == Guid.Empty)
+                if (todoSentryId == Guid.Empty)
                 {
                     return null;
                 }
-                return sentryDoneDal.GetSentryDone(donesentryid);
+                return sentryToDoDal.GetSentryToDo(todoSentryId);
             }
             catch (Exception)
             {
@@ -120,22 +120,6 @@ namespace Business.Concrete
                 return null;
             }
 
-        }
-
-
-
-
-        public SentryDone Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-        public List<SentryDone> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-        public string Update(SentryDone entity, string oldName)
-        {
-            throw new NotImplementedException();
         }
     }
 }
