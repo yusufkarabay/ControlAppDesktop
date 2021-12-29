@@ -161,8 +161,8 @@ namespace DataAccess.Concrete
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("SentryToDoUpdate", new SqlParameter("@donesentryid", entity.SentryToDoId),
-                    new SqlParameter("@done", entity.ToDo), new SqlParameter("@createdtime", entity.CreatedTime)
+                var (isSuccess, msg) = sqlService.StoreReaderV2("SentryToDoUpdate", new SqlParameter("@todosentryid", entity.SentryToDoId),
+                    new SqlParameter("@todo", entity.ToDo), new SqlParameter("@createdtime", entity.CreatedTime)
                     /*, new SqlParameter("@createdemployee", entity.CreatedEmployee)*/);
                 if (isSuccess)
                 {

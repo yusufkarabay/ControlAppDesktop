@@ -35,27 +35,27 @@
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
             this.dgvSentryTodo = new System.Windows.Forms.DataGridView();
+            this.rightMenuToDo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvSentry = new System.Windows.Forms.DataGridView();
             this.rightMenuDone = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvSentry = new System.Windows.Forms.DataGridView();
             this.btnSentryListDone = new System.Windows.Forms.Button();
             this.btnSentryDoneAdd = new System.Windows.Forms.Button();
             this.btnSentryToDoAdd = new System.Windows.Forms.Button();
             this.btnSentryListToDo = new System.Windows.Forms.Button();
             this.rtbxSentryToDo = new System.Windows.Forms.RichTextBox();
             this.btnSentryDoneUpdate = new System.Windows.Forms.Button();
-            this.rightMenuToDo = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.yenileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSentryToDoUpdate = new System.Windows.Forms.Button();
             this.gbSentry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).BeginInit();
-            this.rightMenuDone.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).BeginInit();
             this.rightMenuToDo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).BeginInit();
+            this.rightMenuDone.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -106,115 +106,6 @@
             this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 247);
             this.dgvSentryTodo.TabIndex = 2;
             // 
-            // rightMenuDone
-            // 
-            this.rightMenuDone.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.güncelleToolStripMenuItem,
-            this.silToolStripMenuItem,
-            this.yenileToolStripMenuItem});
-            this.rightMenuDone.Name = "contextMenuStrip1";
-            this.rightMenuDone.Size = new System.Drawing.Size(205, 70);
-            // 
-            // güncelleToolStripMenuItem
-            // 
-            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.güncelleToolStripMenuItem.Text = "Güncellenecek Kaydı Seç";
-            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // yenileToolStripMenuItem
-            // 
-            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.yenileToolStripMenuItem.Text = "Yenile";
-            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
-            // 
-            // dgvSentry
-            // 
-            this.dgvSentry.AllowUserToAddRows = false;
-            this.dgvSentry.AllowUserToDeleteRows = false;
-            this.dgvSentry.AllowUserToResizeColumns = false;
-            this.dgvSentry.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSentry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSentry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSentry.ContextMenuStrip = this.rightMenuDone;
-            this.dgvSentry.Cursor = System.Windows.Forms.Cursors.PanWest;
-            this.dgvSentry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSentry.Location = new System.Drawing.Point(3, 16);
-            this.dgvSentry.MultiSelect = false;
-            this.dgvSentry.Name = "dgvSentry";
-            this.dgvSentry.ReadOnly = true;
-            this.dgvSentry.RowHeadersVisible = false;
-            this.dgvSentry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSentry.Size = new System.Drawing.Size(1033, 247);
-            this.dgvSentry.TabIndex = 1;
-            // 
-            // btnSentryListDone
-            // 
-            this.btnSentryListDone.Location = new System.Drawing.Point(306, 292);
-            this.btnSentryListDone.Name = "btnSentryListDone";
-            this.btnSentryListDone.Size = new System.Drawing.Size(75, 23);
-            this.btnSentryListDone.TabIndex = 3;
-            this.btnSentryListDone.Text = "Listele";
-            this.btnSentryListDone.UseVisualStyleBackColor = true;
-            this.btnSentryListDone.Click += new System.EventHandler(this.btnSentryListDone_Click);
-            // 
-            // btnSentryDoneAdd
-            // 
-            this.btnSentryDoneAdd.Location = new System.Drawing.Point(172, 292);
-            this.btnSentryDoneAdd.Name = "btnSentryDoneAdd";
-            this.btnSentryDoneAdd.Size = new System.Drawing.Size(114, 23);
-            this.btnSentryDoneAdd.TabIndex = 5;
-            this.btnSentryDoneAdd.Text = "Yapılan İş Ekle";
-            this.btnSentryDoneAdd.UseVisualStyleBackColor = true;
-            this.btnSentryDoneAdd.Click += new System.EventHandler(this.btnSentryDoneAdd_Click);
-            // 
-            // btnSentryToDoAdd
-            // 
-            this.btnSentryToDoAdd.Location = new System.Drawing.Point(675, 302);
-            this.btnSentryToDoAdd.Name = "btnSentryToDoAdd";
-            this.btnSentryToDoAdd.Size = new System.Drawing.Size(162, 23);
-            this.btnSentryToDoAdd.TabIndex = 6;
-            this.btnSentryToDoAdd.Text = "Takip Edilecek İş Ekle";
-            this.btnSentryToDoAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnSentryListToDo
-            // 
-            this.btnSentryListToDo.Location = new System.Drawing.Point(859, 302);
-            this.btnSentryListToDo.Name = "btnSentryListToDo";
-            this.btnSentryListToDo.Size = new System.Drawing.Size(75, 23);
-            this.btnSentryListToDo.TabIndex = 7;
-            this.btnSentryListToDo.Text = "Listele";
-            this.btnSentryListToDo.UseVisualStyleBackColor = true;
-            this.btnSentryListToDo.Click += new System.EventHandler(this.btnSentryListToDo_Click);
-            // 
-            // rtbxSentryToDo
-            // 
-            this.rtbxSentryToDo.Location = new System.Drawing.Point(675, 137);
-            this.rtbxSentryToDo.Name = "rtbxSentryToDo";
-            this.rtbxSentryToDo.Size = new System.Drawing.Size(472, 149);
-            this.rtbxSentryToDo.TabIndex = 8;
-            this.rtbxSentryToDo.Text = "Takip edilecek işlemler...";
-            // 
-            // btnSentryDoneUpdate
-            // 
-            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(414, 292);
-            this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
-            this.btnSentryDoneUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnSentryDoneUpdate.TabIndex = 9;
-            this.btnSentryDoneUpdate.Text = "Güncelle";
-            this.btnSentryDoneUpdate.UseVisualStyleBackColor = true;
-            this.btnSentryDoneUpdate.Click += new System.EventHandler(this.btnSentryDoneUpdate_Click);
-            // 
             // rightMenuToDo
             // 
             this.rightMenuToDo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -245,6 +136,116 @@
             this.yenileToolStripMenuItem1.Text = "Yenile";
             this.yenileToolStripMenuItem1.Click += new System.EventHandler(this.yenileToolStripMenuItem1_Click);
             // 
+            // dgvSentry
+            // 
+            this.dgvSentry.AllowUserToAddRows = false;
+            this.dgvSentry.AllowUserToDeleteRows = false;
+            this.dgvSentry.AllowUserToResizeColumns = false;
+            this.dgvSentry.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSentry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSentry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSentry.ContextMenuStrip = this.rightMenuDone;
+            this.dgvSentry.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.dgvSentry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSentry.Location = new System.Drawing.Point(3, 16);
+            this.dgvSentry.MultiSelect = false;
+            this.dgvSentry.Name = "dgvSentry";
+            this.dgvSentry.ReadOnly = true;
+            this.dgvSentry.RowHeadersVisible = false;
+            this.dgvSentry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSentry.Size = new System.Drawing.Size(1033, 247);
+            this.dgvSentry.TabIndex = 1;
+            // 
+            // rightMenuDone
+            // 
+            this.rightMenuDone.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.güncelleToolStripMenuItem,
+            this.silToolStripMenuItem,
+            this.yenileToolStripMenuItem});
+            this.rightMenuDone.Name = "contextMenuStrip1";
+            this.rightMenuDone.Size = new System.Drawing.Size(205, 70);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.güncelleToolStripMenuItem.Text = "Güncellenecek Kaydı Seç";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
+            // 
+            // btnSentryListDone
+            // 
+            this.btnSentryListDone.Location = new System.Drawing.Point(306, 292);
+            this.btnSentryListDone.Name = "btnSentryListDone";
+            this.btnSentryListDone.Size = new System.Drawing.Size(75, 23);
+            this.btnSentryListDone.TabIndex = 3;
+            this.btnSentryListDone.Text = "Listele";
+            this.btnSentryListDone.UseVisualStyleBackColor = true;
+            this.btnSentryListDone.Click += new System.EventHandler(this.btnSentryListDone_Click);
+            // 
+            // btnSentryDoneAdd
+            // 
+            this.btnSentryDoneAdd.Location = new System.Drawing.Point(172, 292);
+            this.btnSentryDoneAdd.Name = "btnSentryDoneAdd";
+            this.btnSentryDoneAdd.Size = new System.Drawing.Size(114, 23);
+            this.btnSentryDoneAdd.TabIndex = 5;
+            this.btnSentryDoneAdd.Text = "Yapılan İş Ekle";
+            this.btnSentryDoneAdd.UseVisualStyleBackColor = true;
+            this.btnSentryDoneAdd.Click += new System.EventHandler(this.btnSentryDoneAdd_Click);
+            // 
+            // btnSentryToDoAdd
+            // 
+            this.btnSentryToDoAdd.Location = new System.Drawing.Point(675, 302);
+            this.btnSentryToDoAdd.Name = "btnSentryToDoAdd";
+            this.btnSentryToDoAdd.Size = new System.Drawing.Size(162, 23);
+            this.btnSentryToDoAdd.TabIndex = 6;
+            this.btnSentryToDoAdd.Text = "Takip Edilecek İş Ekle";
+            this.btnSentryToDoAdd.UseVisualStyleBackColor = true;
+            this.btnSentryToDoAdd.Click += new System.EventHandler(this.btnSentryToDoAdd_Click);
+            // 
+            // btnSentryListToDo
+            // 
+            this.btnSentryListToDo.Location = new System.Drawing.Point(859, 302);
+            this.btnSentryListToDo.Name = "btnSentryListToDo";
+            this.btnSentryListToDo.Size = new System.Drawing.Size(75, 23);
+            this.btnSentryListToDo.TabIndex = 7;
+            this.btnSentryListToDo.Text = "Listele";
+            this.btnSentryListToDo.UseVisualStyleBackColor = true;
+            this.btnSentryListToDo.Click += new System.EventHandler(this.btnSentryListToDo_Click);
+            // 
+            // rtbxSentryToDo
+            // 
+            this.rtbxSentryToDo.Location = new System.Drawing.Point(675, 137);
+            this.rtbxSentryToDo.Name = "rtbxSentryToDo";
+            this.rtbxSentryToDo.Size = new System.Drawing.Size(472, 149);
+            this.rtbxSentryToDo.TabIndex = 8;
+            this.rtbxSentryToDo.Text = "Takip edilecek işlemler...";
+            // 
+            // btnSentryDoneUpdate
+            // 
+            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(414, 292);
+            this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
+            this.btnSentryDoneUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnSentryDoneUpdate.TabIndex = 9;
+            this.btnSentryDoneUpdate.Text = "Güncelle";
+            this.btnSentryDoneUpdate.UseVisualStyleBackColor = true;
+            this.btnSentryDoneUpdate.Click += new System.EventHandler(this.btnSentryDoneUpdate_Click);
+            // 
             // btnSentryToDoUpdate
             // 
             this.btnSentryToDoUpdate.Location = new System.Drawing.Point(961, 302);
@@ -272,11 +273,12 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "SentryForm";
             this.Text = "SentryForm";
+            this.Load += new System.EventHandler(this.SentryForm_Load);
             this.gbSentry.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).EndInit();
-            this.rightMenuDone.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).EndInit();
             this.rightMenuToDo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).EndInit();
+            this.rightMenuDone.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
