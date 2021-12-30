@@ -45,6 +45,7 @@
     <Compile Include="Concrete\DepartmentManager.cs" />
     <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\HeadsetManager.cs" />
+    <Compile Include="Concrete\InventoryManager.cs" />
     <Compile Include="Concrete\RequestDetailManager.cs" />
     <Compile Include="Concrete\RequestManager.cs" />
     <Compile Include="Concrete\SentryDoneManager.cs" />

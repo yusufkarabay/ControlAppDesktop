@@ -91,6 +91,7 @@
     <Compile Include="Concrete\EmployeeDal.cs" />
     <Compile Include="Concrete\HeadsetDal.cs" />
     <Compile Include="Concrete\Helper.cs" />
+    <Compile Include="Concrete\InventoryDal.cs" />
     <Compile Include="Concrete\RequestDal.cs" />
     <Compile Include="Concrete\RequestDetailDal.cs" />
     <Compile Include="Concrete\SentryDoneDal.cs" />
