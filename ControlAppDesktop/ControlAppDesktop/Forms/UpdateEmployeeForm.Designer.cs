@@ -1,6 +1,6 @@
 ﻿namespace ControlAppDesktop.Forms
 {
-    partial class UpdateEmployeeFrom
+    partial class UpdateEmployeeForm
     {
         /// <summary>
         /// Required designer variable.

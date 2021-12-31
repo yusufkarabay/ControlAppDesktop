@@ -28,10 +28,12 @@ namespace DataAccess.Concrete
             {
                 var (isSucces, msg) = sqlService.StoredV2("InventoryAdd",
                    new SqlParameter("@inventoryserino", entity.InventorySeriNo),
-                   new SqlParameter("@inventoryname", entity.InventorySeriNo),
+                   new SqlParameter("@inventoryname", entity.InventoryName),
                    new SqlParameter("@amount", entity.Amount),
+                   new SqlParameter("@info",entity.Info),
                    new SqlParameter("@createdtime", entity.CreatedTime),
                    new SqlParameter("@createdemployee", entity.CreatedEmployee));
+             
                 return "Envanter Başarı İle Eklendi";
 
             }

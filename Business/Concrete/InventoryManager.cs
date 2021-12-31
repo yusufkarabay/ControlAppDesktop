@@ -13,28 +13,28 @@ namespace Business.Concrete
     {
         static InventoryManager inventoryManager;
         InventoryDal inventorydal;
-        string controlText;
+       // string controlText;
         public InventoryManager()
         {
             inventorydal = InventoryDal.GetInstance();
         }
-        string IsInventoryComplete(Inventory inventory)
-        {
-            if (string.IsNullOrEmpty(inventory.InventorySeriNo))
-            {
-                return "Lütfen Bir İş Giriniz. Boş Kayıt Girilemez";
-            }
-            return "";
-        }
+        //string IsInventoryComplete(Inventory inventory)
+        //{
+        //    if (string.IsNullOrEmpty(inventory.InventorySeriNo))
+        //    {
+        //        return "Lütfen Bir İş Giriniz. Boş Kayıt Girilemez";
+        //    }
+        //    return "";
+        //}
         public string Add(Inventory entity)
         {
             try
             {
-                controlText = IsInventoryComplete(entity);
-                if (controlText != "")
-                {
-                    return controlText;
-                }
+                //    controlText = IsInventoryComplete(entity);
+                //    if (controlText != "")
+                //    {
+                //        return controlText;
+                //    }
                 return inventorydal.Add(entity);
             }
             catch (Exception ex)
@@ -147,11 +147,11 @@ namespace Business.Concrete
                     return " Güncellemek İstediğiniz Envanteri Seçiniz";
 
                 }
-                controlText = IsInventoryComplete(entity);
-                if (controlText != "")
-                {
-                    return controlText;
-                }
+                //controlText = IsInventoryComplete(entity);
+                //if (controlText != "")
+                //{
+                //    return controlText;
+                //}
                 return inventorydal.UpdateNew(entity);
             }
             catch (Exception ex)

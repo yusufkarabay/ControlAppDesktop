@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ControlAppDesktop.Forms
 {
-    public partial class UpdateEmployeeFrom : Form
+    public partial class UpdateEmployeeForm : Form
     {
         EmployeeManager employeeManager;
         public object[] infos;
@@ -22,13 +22,13 @@ namespace ControlAppDesktop.Forms
         DepartmentManager departmentManager;
         List<Department> _departmentList;
 
-        public UpdateEmployeeFrom()
+        public UpdateEmployeeForm()
         {
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
         }
 
-        public UpdateEmployeeFrom(Guid employeeId)
+        public UpdateEmployeeForm(Guid employeeId)
         {
             this.InitializeComponent();
 

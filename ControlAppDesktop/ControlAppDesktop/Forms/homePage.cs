@@ -68,6 +68,10 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnInventory.Height;
             pnlActive.Top = btnInventory.Top;
+
+            InventoryForm inventoryForm = new InventoryForm();
+            inventoryForm.infos = infos;
+            inventoryForm.Show(); 
             // borderColored(sender);
         }
 
