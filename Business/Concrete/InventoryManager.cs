@@ -58,24 +58,121 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date) { throw new NotImplementedException(); }
-        public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string createdEmployee) { throw new NotImplementedException(); }
-        public List<Inventory> GetInventoryByName(string procuderName, string inventoryName) { throw new NotImplementedException(); }
-        public Inventory GetInventoryBySeriNo(string procuderName, string inventorySeriNo) { throw new NotImplementedException(); }
+        public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date)
+        {
+            try
+            {
+                if (date == null)
+                {
+                    return null;
+                }
+                return inventorydal.GetInventoryByCreatedDate(procuderName, date);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Inventory>();
+            }
+        }
+        public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string createdEmployee)
+        {
+            try
+            {
+                if (createdEmployee == null)
+                {
+                    return null;
+                }
+                return inventorydal.GetInventoryByCreatedEmployee(procuderName, createdEmployee);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Inventory>();
+            }
+        }
+        public List<Inventory> GetInventoryByName(string procuderName, string inventoryName)
+        {
+
+            try
+            {
+                if (inventoryName == null)
+                {
+                    return null;
+                }
+                return inventorydal.GetInventoryByName(procuderName, inventoryName);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Inventory>();
+            }
+        }
+        public Inventory GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
+        {
+            try
+            {
+                if (inventorySeriNo == null)
+                {
+                    return null;
+                }
+                return inventorydal.GetInventoryBySeriNo(procuderName, inventorySeriNo);
+
+            }
+            catch (Exception)
+            {
+
+                return new Inventory();
+            }
+        }
         public List<Inventory> GetAll()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return inventorydal.GetAll();
+            }
+            catch
+            {
+                return new List<Inventory>();
+            }
         }
         public string UpdateNew(Inventory entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (entity.InventoryName == null)
+                {
+                    return " Güncellemek İstediğiniz Envanteri Seçiniz";
+
+                }
+                controlText = IsInventoryComplete(entity);
+                if (controlText != "")
+                {
+                    return controlText;
+                }
+                return inventorydal.UpdateNew(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
         }
 
 
 
 
 
-
+        public static InventoryManager GetInstance()
+        {
+            if (inventoryManager == null)
+            {
+                inventoryManager = new InventoryManager();
+            }
+            return inventoryManager;
+        }
         public Inventory Get(Guid id)
         {
             throw new NotImplementedException();
