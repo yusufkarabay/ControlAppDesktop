@@ -32,11 +32,6 @@ namespace ControlAppDesktop.Forms
             dgvInventory.DataSource = inventoryManager.GetInventoryByCreatedDate("InventoryGetByCreatedTime",
             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
 
-            inventory = new Inventory(Guid.Parse(inventory.InventoryId.ToString()));
-                //inventory.InventorySeriNo.ToString(),inventory.InventoryName.ToString(),
-                //Int32.Parse(inventory.Amount.ToString()),inventory.Info.ToString(),inventory.CreatedEmployee.ToString(),
-                //DateTime.Parse(inventory.CreatedTime.ToString()));
-
             if (dgvInventory.Rows.Count < 1)
             {
                 MessageBox.Show("Seçili Tarihte Eklenmiş Envanter Kaydı Bulunamadı");
@@ -62,25 +57,21 @@ namespace ControlAppDesktop.Forms
               rtxbxInventoryInfo.Text.ToString(),
               infos[0].ToString(),
              Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+
             inventoryManager.Add(inventory);
+
             MessageBox.Show("Envanter Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         void deleteInventory()
         {
-            
+          
 
-
-            if (inventory == null)
-            {
-                MessageBox.Show("Envanter Silinemedi");
-                return;
-            }
             inventory = new Inventory(
             Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
-            dgvInventory.CurrentRow.Cells["InventorySeriNo"].ToString(),
-            dgvInventory.CurrentRow.Cells["InventoryName"].ToString(),
-            Int32.Parse(dgvInventory.CurrentRow.Cells["Amount"].ToString()),
-            dgvInventory.CurrentRow.Cells["Info"].ToString(),
+            dgvInventory.CurrentRow.Cells["InventorySeriNo"].Value.ToString(),
+            dgvInventory.CurrentRow.Cells["InventoryName"].Value.ToString(),
+            Int32.Parse(dgvInventory.CurrentRow.Cells["Amount"].Value.ToString()),
+            dgvInventory.CurrentRow.Cells["Info"].Value.ToString(),
             DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()),
             dgvInventory.CurrentRow.Cells["CreatedEmployee"].ToString(),
             dgvInventory.CurrentRow.Cells["EmployeeName"].ToString());
@@ -131,19 +122,19 @@ namespace ControlAppDesktop.Forms
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtbxInventorySeriNo == null)
+            if (txtbxInventorySeriNo.Text =="")
             {
                 MessageBox.Show("Seri Numarası Alanı Boş Bırakılamaz");
             }
-            else if (txtbxInventoryName == null)
+            else if (txtbxInventoryName.Text =="")
             {
                 MessageBox.Show("Envanter Adı Alanı Boş Bırakılamaz");
             }
-            else if (txtbxAmount == null)
+            else if (txtbxAmount.Text =="")
             {
                 MessageBox.Show("Envanter Miktarı Boş Bırakılamaz");
             }
-            else
+            else 
             {
                 addInventory();
             }
@@ -169,6 +160,10 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
+            }
+            if (btnAdd.Visible=true)
+            {
+                btnAdd.Visible = false;
             }
             inventory = new Inventory(
                 Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
@@ -207,11 +202,17 @@ namespace ControlAppDesktop.Forms
             {
                 updateInventory();
             }
+            
             txtbxAmount.Text = "";
             txtbxInventoryName.Text = "";
             txtbxInventorySeriNo.Text = "";
             rtxbxInventoryInfo.Text = "";
             allInventoryList();
+            if (btnAdd.Visible=false)
+            {
+                btnAdd.Visible = true;
+            }
+
 
         }
         private void InventoryForm_Load(object sender, EventArgs e)
