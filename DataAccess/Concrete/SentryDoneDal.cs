@@ -57,13 +57,15 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-
-                        sentryDones.Add
-                           (new SentryDone(
-                           (Guid)dataRow["DONESENTRYID"],
-                          dataRow["DONE"].ToString(),
-                          dataRow["CREATEDTIME"].ConDate(),
-                          dataRow["CREATEDEMPLOYEE"].ToString()));
+                        sentryDones.Add(
+                            new SentryDone(
+                               (Guid)dataRow["DONESENTRYID"],
+                              dataRow["DONE"].ToString(),
+                              dataRow["CREATEDTIME"].ConDate(),
+                              dataRow["TC"].ToString(),
+                              $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"
+                            )
+                        );
 
                     }
                 }
@@ -73,7 +75,7 @@ namespace DataAccess.Concrete
 
             }
             finally { }
-            return sentryDones;//**************** bu kısmı sor?
+            return sentryDones;
         }
 
         public SentryDone GetSentryDone(Guid donesentryid)
@@ -167,7 +169,7 @@ namespace DataAccess.Concrete
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("SentryDoneUpdate", new SqlParameter("@donesentryid", entity.SentrydoneId),
                     new SqlParameter("@done", entity.Done), new SqlParameter("@createdtime", entity.CreatedTime)
-                    /*, new SqlParameter("@createdemployee", entity.CreatedEmployee)*/);
+                    , new SqlParameter("@createdemployee", entity.CreatedEmployee));
                 if (isSuccess)
                 {
                     result= "Yapılan İş Başarı İle Güncellendi";

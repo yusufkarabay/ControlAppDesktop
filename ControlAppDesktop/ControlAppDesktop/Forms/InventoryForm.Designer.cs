@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInventoryInfo = new System.Windows.Forms.GroupBox();
             this.rtxbxInventoryInfo = new System.Windows.Forms.RichTextBox();
             this.txtbxAmount = new System.Windows.Forms.TextBox();
@@ -45,18 +49,13 @@
             this.btnList = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnInventoryPdf = new System.Windows.Forms.Button();
             this.btnInventoryWeb = new System.Windows.Forms.Button();
             this.btnAllList = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
-            this.grpInventoryInfo.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.grpInventoryInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInventory
@@ -75,8 +74,8 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToResizeColumns = false;
             this.dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
@@ -90,6 +89,36 @@
             this.dgvInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventory.Size = new System.Drawing.Size(1008, 253);
             this.dgvInventory.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateInventoryToolStripMenuItem,
+            this.deleteInventoryToolStripMenuItem,
+            this.refreshInventoryToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 70);
+            // 
+            // updateInventoryToolStripMenuItem
+            // 
+            this.updateInventoryToolStripMenuItem.Name = "updateInventoryToolStripMenuItem";
+            this.updateInventoryToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.updateInventoryToolStripMenuItem.Text = "Güncellenecek Envanteri Seç";
+            this.updateInventoryToolStripMenuItem.Click += new System.EventHandler(this.updateInventoryToolStripMenuItem_Click);
+            // 
+            // deleteInventoryToolStripMenuItem
+            // 
+            this.deleteInventoryToolStripMenuItem.Name = "deleteInventoryToolStripMenuItem";
+            this.deleteInventoryToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.deleteInventoryToolStripMenuItem.Text = "Sil";
+            this.deleteInventoryToolStripMenuItem.Click += new System.EventHandler(this.deleteInventoryToolStripMenuItem_Click);
+            // 
+            // refreshInventoryToolStripMenuItem
+            // 
+            this.refreshInventoryToolStripMenuItem.Name = "refreshInventoryToolStripMenuItem";
+            this.refreshInventoryToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.refreshInventoryToolStripMenuItem.Text = "Yenile";
+            this.refreshInventoryToolStripMenuItem.Click += new System.EventHandler(this.refreshInventoryToolStripMenuItem_Click);
             // 
             // grpInventoryInfo
             // 
@@ -192,12 +221,13 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(580, 74);
+            this.btnUpdate.Location = new System.Drawing.Point(499, 168);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -208,16 +238,6 @@
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(661, 74);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Sil";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnInventoryPdf
             // 
@@ -239,41 +259,13 @@
             // 
             // btnAllList
             // 
-            this.btnAllList.Location = new System.Drawing.Point(418, 134);
+            this.btnAllList.Location = new System.Drawing.Point(590, 74);
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(111, 23);
             this.btnAllList.TabIndex = 13;
             this.btnAllList.Text = "Tümünü Listele";
             this.btnAllList.UseVisualStyleBackColor = true;
             this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateInventoryToolStripMenuItem,
-            this.deleteInventoryToolStripMenuItem,
-            this.refreshInventoryToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(225, 70);
-            // 
-            // updateInventoryToolStripMenuItem
-            // 
-            this.updateInventoryToolStripMenuItem.Name = "updateInventoryToolStripMenuItem";
-            this.updateInventoryToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.updateInventoryToolStripMenuItem.Text = "Güncellenecek Envanteri Seç";
-            // 
-            // deleteInventoryToolStripMenuItem
-            // 
-            this.deleteInventoryToolStripMenuItem.Name = "deleteInventoryToolStripMenuItem";
-            this.deleteInventoryToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.deleteInventoryToolStripMenuItem.Text = "Sil";
-            this.deleteInventoryToolStripMenuItem.Click += new System.EventHandler(this.deleteInventoryToolStripMenuItem_Click);
-            // 
-            // refreshInventoryToolStripMenuItem
-            // 
-            this.refreshInventoryToolStripMenuItem.Name = "refreshInventoryToolStripMenuItem";
-            this.refreshInventoryToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.refreshInventoryToolStripMenuItem.Text = "Yenile";
             // 
             // InventoryForm
             // 
@@ -283,7 +275,6 @@
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.btnInventoryWeb);
             this.Controls.Add(this.btnInventoryPdf);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnList);
@@ -294,9 +285,9 @@
             this.Text = "InventoryForm";
             this.grpInventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.grpInventoryInfo.ResumeLayout(false);
             this.grpInventoryInfo.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -318,7 +309,6 @@
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnInventoryPdf;
         private System.Windows.Forms.Button btnInventoryWeb;
         private System.Windows.Forms.Button btnAllList;

@@ -30,10 +30,10 @@ namespace DataAccess.Concrete
                    new SqlParameter("@inventoryserino", entity.InventorySeriNo),
                    new SqlParameter("@inventoryname", entity.InventoryName),
                    new SqlParameter("@amount", entity.Amount),
-                   new SqlParameter("@info",entity.Info),
+                   new SqlParameter("@info", entity.Info),
                    new SqlParameter("@createdtime", entity.CreatedTime),
                    new SqlParameter("@createdemployee", entity.CreatedEmployee));
-             
+
                 return "Envanter Başarı İle Eklendi";
 
             }
@@ -241,6 +241,7 @@ namespace DataAccess.Concrete
                     {
 
                         inventoryList.Add(new Inventory(
+                           Guid.Parse(dataRow["INVENTORYID"].ToString()),
                            dataRow["INVENTORYSERINO"].ToString(),
                             dataRow["INVENTORYNAME"].ToString(),
                             dataRow["AMOUNT"].ContInt(),

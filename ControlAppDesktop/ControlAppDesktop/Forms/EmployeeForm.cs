@@ -132,7 +132,8 @@ namespace ControlAppDesktop.Forms
 
         private void btnEmployeeAdd_Click(object sender, EventArgs e)
         {
-
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
+            addEmployeeForm.Show();
         }
     }
 }

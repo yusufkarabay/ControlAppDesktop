@@ -21,15 +21,15 @@ namespace Entities
 
         }
 
-        public Inventory(Guid inventoryId, string inventorySeriNo, string inventoryName, int amount, string info, string createdEmployee, DateTime createdTime)
+        public Inventory(Guid inventoryId, string inventorySeriNo, string inventoryName, int amount,string info, string createdEmployee, DateTime createdTime)
         {
             this.inventoryId = inventoryId;
             this.inventorySeriNo = inventorySeriNo;
             this.inventoryName = inventoryName;
-            this.amount = amount;
-            this.info = info;
+            this.amount = amount;           
             this.createdEmployee = createdEmployee;
-            this.createdTime = createdTime;
+            this.createdTime = createdTime; 
+            this.info = info;
         }
         public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, string createdEmployee, DateTime createdTime)
         {

@@ -43,6 +43,7 @@ namespace ControlAppDesktop.Forms
         void allInventoryList()
         {
             dgvInventory.DataSource = inventoryManager.GetAll();
+            dgvInventory.Columns[0].Visible = false;
         }
         void addInventory()
         {
@@ -78,6 +79,31 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show(inventoryManager.Delete(inventory.InventoryId));
             }
 
+        }
+        void updateInventory()
+        {
+            if (inventory==null)
+            {
+
+                MessageBox.Show("Envanter Güncellenemedi");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Seçili Envanteri Güncellemek İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                inventory.InventorySeriNo=txtbxInventorySeriNo.Text;
+                inventory.CreatedTime = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                inventory.Amount = txtbxAmount.Text.ContInt();
+                inventory.Info = rtxbxInventoryInfo.Text;
+                inventory.InventoryName=txtbxInventoryName.Text;
+                inventory.CreatedEmployee = infos[0].ToString();
+
+
+                MessageBox.Show(inventoryManager.UpdateNew(inventory));
+
+            }
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -116,14 +142,69 @@ namespace ControlAppDesktop.Forms
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void deleteInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             deleteInventory();
+        }
+
+        private void refreshInventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            allInventoryList();
+        }
+
+        private void updateInventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvInventory.SelectedRows == null)
+            {
+                MessageBox.Show("Listeden Güncellenecek İş seçiniz");
+                return;
+            }
+            inventory = new Inventory(
+                Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
+                dgvInventory.CurrentRow.Cells["InventorySeriNo"].Value.ToString(),
+               dgvInventory.CurrentRow.Cells["InventoryName"].Value.ToString(),
+               dgvInventory.CurrentRow.Cells["Amount"].Value.ContInt(),
+               dgvInventory.CurrentRow.Cells["Info"].Value.ToString(),
+               dgvInventory.CurrentRow.Cells["CreatedEmployee"].ToString(),
+               DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()));
+
+            DialogResult dialogResult = MessageBox.Show("Seçili Envanteri Güncelleme Yapmak İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                rtxbxInventoryInfo.Text = inventory.Info;
+                txtbxAmount.Text = inventory.Amount.ToString();
+                txtbxInventoryName.Text = inventory.InventoryName;
+                txtbxInventorySeriNo.Text = inventory.InventorySeriNo;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtbxInventorySeriNo == null)
+            {
+                MessageBox.Show("Seri Numarası Alanı Boş Bırakılamaz");
+            }
+            else if (txtbxInventoryName == null)
+            {
+                MessageBox.Show("Envanter Adı Alanı Boş Bırakılamaz");
+            }
+            else if (txtbxAmount == null)
+            {
+                MessageBox.Show("Envanter Miktarı Boş Bırakılamaz");
+            }
+            else
+            {
+                updateInventory();
+            }
+            txtbxAmount.Text = "";
+            txtbxInventoryName.Text = "";
+            txtbxInventorySeriNo.Text = "";
+            rtxbxInventoryInfo.Text = "";
+            allInventoryList();
+
         }
     }
 }

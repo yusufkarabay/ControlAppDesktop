@@ -1,6 +1,6 @@
 ﻿namespace ControlAppDesktop.Forms
 {
-    partial class UpdateEmployeeForm
+    partial class AddEmployeeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,6 @@
             this.lblAdress = new System.Windows.Forms.Label();
             this.mtxtMail = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtBdate = new System.Windows.Forms.MaskedTextBox();
             this.cbAuthorityInfo = new System.Windows.Forms.ComboBox();
             this.txtSurnmaeInfo = new System.Windows.Forms.TextBox();
             this.txtNameInfo = new System.Windows.Forms.TextBox();
@@ -45,17 +44,18 @@
             this.department = new System.Windows.Forms.Label();
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEmployeeAdd = new System.Windows.Forms.Button();
+            this.dtpEmployeeBDate = new System.Windows.Forms.DateTimePicker();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.dtpEmployeeBDate);
             this.grpInfo.Controls.Add(this.rtbxAdressInfo);
             this.grpInfo.Controls.Add(this.lblAdress);
             this.grpInfo.Controls.Add(this.mtxtMail);
             this.grpInfo.Controls.Add(this.mtxtTel);
-            this.grpInfo.Controls.Add(this.mtxtBdate);
             this.grpInfo.Controls.Add(this.cbAuthorityInfo);
             this.grpInfo.Controls.Add(this.txtSurnmaeInfo);
             this.grpInfo.Controls.Add(this.txtNameInfo);
@@ -67,10 +67,10 @@
             this.grpInfo.Controls.Add(this.department);
             this.grpInfo.Controls.Add(this.employeeSurname);
             this.grpInfo.Controls.Add(this.employeeName);
-            this.grpInfo.Location = new System.Drawing.Point(161, 35);
+            this.grpInfo.Location = new System.Drawing.Point(176, 41);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(435, 303);
-            this.grpInfo.TabIndex = 5;
+            this.grpInfo.TabIndex = 6;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
             // 
@@ -104,13 +104,6 @@
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(149, 20);
             this.mtxtTel.TabIndex = 22;
-            // 
-            // mtxtBdate
-            // 
-            this.mtxtBdate.Location = new System.Drawing.Point(189, 141);
-            this.mtxtBdate.Name = "mtxtBdate";
-            this.mtxtBdate.Size = new System.Drawing.Size(149, 20);
-            this.mtxtBdate.TabIndex = 21;
             // 
             // cbAuthorityInfo
             // 
@@ -204,26 +197,33 @@
             this.employeeName.TabIndex = 2;
             this.employeeName.Text = "Ad:";
             // 
-            // btnUpdate
+            // btnEmployeeAdd
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(382, 396);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 6;
-            this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnEmployeeAdd.Location = new System.Drawing.Point(412, 406);
+            this.btnEmployeeAdd.Name = "btnEmployeeAdd";
+            this.btnEmployeeAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnEmployeeAdd.TabIndex = 7;
+            this.btnEmployeeAdd.Text = "Oluştur";
+            this.btnEmployeeAdd.UseVisualStyleBackColor = true;
+            this.btnEmployeeAdd.Click += new System.EventHandler(this.btnEmployeeAdd_Click);
             // 
-            // UpdateEmployeeForm
+            // dtpEmployeeBDate
+            // 
+            this.dtpEmployeeBDate.Location = new System.Drawing.Point(189, 141);
+            this.dtpEmployeeBDate.Name = "dtpEmployeeBDate";
+            this.dtpEmployeeBDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpEmployeeBDate.TabIndex = 26;
+            // 
+            // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnEmployeeAdd);
             this.Controls.Add(this.grpInfo);
-            this.Name = "UpdateEmployeeForm";
-            this.Text = "updateEmployeeFrom";
-            this.Load += new System.EventHandler(this.updateEmployeeFrom_Load);
+            this.Name = "AddEmployeeForm";
+            this.Text = "AddEmployeeForm";
+            this.Load += new System.EventHandler(this.AddEmployeeForm_Load);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -233,6 +233,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpInfo;
+        public System.Windows.Forms.RichTextBox rtbxAdressInfo;
+        private System.Windows.Forms.Label lblAdress;
+        public System.Windows.Forms.MaskedTextBox mtxtMail;
+        public System.Windows.Forms.MaskedTextBox mtxtTel;
+        public System.Windows.Forms.ComboBox cbAuthorityInfo;
+        public System.Windows.Forms.TextBox txtSurnmaeInfo;
+        public System.Windows.Forms.TextBox txtNameInfo;
+        public System.Windows.Forms.MaskedTextBox mtxtTcInfo;
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.Label lblBdate;
@@ -240,15 +248,7 @@
         private System.Windows.Forms.Label department;
         private System.Windows.Forms.Label employeeSurname;
         private System.Windows.Forms.Label employeeName;
-        private System.Windows.Forms.Label lblAdress;
-        public System.Windows.Forms.ComboBox cbAuthorityInfo;
-        public System.Windows.Forms.TextBox txtSurnmaeInfo;
-        public System.Windows.Forms.TextBox txtNameInfo;
-        public System.Windows.Forms.MaskedTextBox mtxtTcInfo;
-        public System.Windows.Forms.MaskedTextBox mtxtMail;
-        public System.Windows.Forms.MaskedTextBox mtxtTel;
-        public System.Windows.Forms.MaskedTextBox mtxtBdate;
-        public System.Windows.Forms.RichTextBox rtbxAdressInfo;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnEmployeeAdd;
+        private System.Windows.Forms.DateTimePicker dtpEmployeeBDate;
     }
 }

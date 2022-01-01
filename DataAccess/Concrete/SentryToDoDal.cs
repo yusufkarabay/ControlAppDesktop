@@ -97,7 +97,10 @@ namespace DataAccess.Concrete
                            (Guid)dataRow["TODOSENTRYID"],
                           dataRow["TODO"].ToString(),
                           dataRow["CREATEDTIME"].ConDate(),
-                          dataRow["CREATEDEMPLOYEE"].ToString()));
+                          dataRow["TC"].ToString(),
+                          $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"
+                          )
+                       );
 
                     }
                 }
@@ -162,8 +165,8 @@ namespace DataAccess.Concrete
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("SentryToDoUpdate", new SqlParameter("@todosentryid", entity.SentryToDoId),
-                    new SqlParameter("@todo", entity.ToDo), new SqlParameter("@createdtime", entity.CreatedTime)
-                    /*, new SqlParameter("@createdemployee", entity.CreatedEmployee)*/);
+                    new SqlParameter("@todo", entity.ToDo), new SqlParameter("@createdtime", entity.CreatedTime),
+                     new SqlParameter("@createdemployee", entity.CreatedEmployee));
                 if (isSuccess)
                 {
                     result = "Yapılacak İş Başarı İle Güncellendi";

@@ -48,6 +48,10 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSentryDoneAdd_Click(object sender, EventArgs e)
         {
+            if (dgvSentryTodo.Visible = true)
+            {
+                dgvSentryTodo.Visible = false;
+            }
             dgvSentry.Visible = true;
             if (rtbxSentry.Text == null)
             {
@@ -118,6 +122,7 @@ namespace ControlAppDesktop.Forms
         {
             dgvSentry.DataSource = sentryDoneManager.GetSentryByDate("SentryDoneGetByDate",
             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+
             if (dgvSentry.Rows.Count < 1)
             {
                 MessageBox.Show("Bu Tarihte Bir İş Kaydı Yok");
@@ -125,6 +130,7 @@ namespace ControlAppDesktop.Forms
             else
             {
                 dgvSentry.Columns[0].Visible = false;
+                dgvSentry.Columns[3].Visible = false;
             }
 
         }
@@ -142,6 +148,7 @@ namespace ControlAppDesktop.Forms
 
                 sentryDone.Done = rtbxSentry.Text.ToString();
                 sentryDone.CreatedTime = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                sentryDone.CreatedEmployee = infos[0].ToString();
 
                 MessageBox.Show(sentryDoneManager.UpdateNew(sentryDone));
 
@@ -189,6 +196,7 @@ namespace ControlAppDesktop.Forms
             else
             {
                 dgvSentryTodo.Columns[0].Visible = false;
+                dgvSentryTodo.Columns[3].Visible = false;
             }
 
 
@@ -230,6 +238,7 @@ namespace ControlAppDesktop.Forms
 
                 sentryToDo.ToDo = rtbxSentryToDo.Text.ToString();
                 sentryToDo.CreatedTime = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
+                sentryToDo.CreatedEmployee = infos[0].ToString();
 
                 MessageBox.Show(sentryToDoManager.UpdateNew(sentryToDo));
 
@@ -291,7 +300,13 @@ namespace ControlAppDesktop.Forms
 
         private void btnSentryToDoAdd_Click(object sender, EventArgs e)
         {
+            if (dgvSentry.Visible = true)
+            {
+                dgvSentry.Visible = false;
+            }
+
             dgvSentryTodo.Visible = true;
+
             if (rtbxSentryToDo.Text == null)
             {
                 MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
