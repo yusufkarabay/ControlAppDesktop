@@ -31,6 +31,12 @@ namespace ControlAppDesktop.Forms
         {
             dgvInventory.DataSource = inventoryManager.GetInventoryByCreatedDate("InventoryGetByCreatedTime",
             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+
+            inventory = new Inventory(Guid.Parse(inventory.InventoryId.ToString()));
+                //inventory.InventorySeriNo.ToString(),inventory.InventoryName.ToString(),
+                //Int32.Parse(inventory.Amount.ToString()),inventory.Info.ToString(),inventory.CreatedEmployee.ToString(),
+                //DateTime.Parse(inventory.CreatedTime.ToString()));
+
             if (dgvInventory.Rows.Count < 1)
             {
                 MessageBox.Show("Seçili Tarihte Eklenmiş Envanter Kaydı Bulunamadı");
@@ -38,12 +44,15 @@ namespace ControlAppDesktop.Forms
             else
             {
                 dgvInventory.Columns[0].Visible = false;
+                dgvInventory.Columns[4].Visible = false;
             }
+            
         }
         void allInventoryList()
         {
             dgvInventory.DataSource = inventoryManager.GetAll();
             dgvInventory.Columns[0].Visible = false;
+            dgvInventory.Columns[4].Visible = false;
         }
         void addInventory()
         {
@@ -58,6 +67,9 @@ namespace ControlAppDesktop.Forms
         }
         void deleteInventory()
         {
+            
+
+
             if (inventory == null)
             {
                 MessageBox.Show("Envanter Silinemedi");
@@ -67,16 +79,19 @@ namespace ControlAppDesktop.Forms
             Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
             dgvInventory.CurrentRow.Cells["InventorySeriNo"].ToString(),
             dgvInventory.CurrentRow.Cells["InventoryName"].ToString(),
-            dgvInventory.CurrentRow.Cells["Amount"].ContInt(),
+            Int32.Parse(dgvInventory.CurrentRow.Cells["Amount"].ToString()),
             dgvInventory.CurrentRow.Cells["Info"].ToString(),
+            DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()),
             dgvInventory.CurrentRow.Cells["CreatedEmployee"].ToString(),
-            DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()));
+            dgvInventory.CurrentRow.Cells["EmployeeName"].ToString());
+
 
             DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show(inventoryManager.Delete(inventory.InventoryId));
+                thisDateAddedInventoryList();
             }
 
         }
@@ -114,7 +129,6 @@ namespace ControlAppDesktop.Forms
         {
             allInventoryList();
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (txtbxInventorySeriNo == null)
@@ -141,19 +155,14 @@ namespace ControlAppDesktop.Forms
             allInventoryList();
 
         }
-
-
-
         private void deleteInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             deleteInventory();
         }
-
         private void refreshInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             allInventoryList();
         }
-
         private void updateInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvInventory.SelectedRows == null)
@@ -180,7 +189,6 @@ namespace ControlAppDesktop.Forms
                 txtbxInventorySeriNo.Text = inventory.InventorySeriNo;
             }
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (txtbxInventorySeriNo == null)
@@ -204,6 +212,10 @@ namespace ControlAppDesktop.Forms
             txtbxInventorySeriNo.Text = "";
             rtxbxInventoryInfo.Text = "";
             allInventoryList();
+
+        }
+        private void InventoryForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

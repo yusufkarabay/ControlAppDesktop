@@ -69,7 +69,7 @@ namespace DataAccess.Concrete
         }
         public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date)
         {
-            List<Inventory> inventories = null;
+            List<Inventory> inventoryList = null;
             try
             {
                 var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date));
@@ -79,17 +79,20 @@ namespace DataAccess.Concrete
                 }
                 if (dt.Rows.Count > 0)
                 {
-                    inventories = new List<Inventory>();
+                    inventoryList = new List<Inventory>();
                     foreach
                          (DataRow dataRow in dt.Rows)
                     {
-                        inventories.Add(new Inventory
-                            (dataRow["INVENTORYSERINO"].ToString(),
-                            dataRow["INVENTORYNAME"].ToString(),
-                            dataRow["AMOUNT"].ContInt(),
-                            dataRow["INFO"].ToString(),
-                            dataRow["CREATEDEMPLOYEE"].ToString(),
-                            dataRow["CREATEDTIME"].ConDate()));
+                        inventoryList.Add(new Inventory(
+                          Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                          dataRow["INVENTORYSERINO"].ToString(),
+                           dataRow["INVENTORYNAME"].ToString(),
+                           dataRow["AMOUNT"].ContInt(),
+                           dataRow["INFO"].ToString(),
+                           dataRow["CREATEDTIME"].ConDate(),
+                           dataRow["TC"].ToString(),
+                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+                           );
                     }
                 }
             }
@@ -99,7 +102,7 @@ namespace DataAccess.Concrete
 
             }
             finally { }
-            return inventories;
+            return inventoryList;
         }
         public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string createdEmployee)
         {
@@ -246,8 +249,10 @@ namespace DataAccess.Concrete
                             dataRow["INVENTORYNAME"].ToString(),
                             dataRow["AMOUNT"].ContInt(),
                             dataRow["INFO"].ToString(),
-                            dataRow["CREATEDEMPLOYEE"].ToString(),
-                            dataRow["CREATEDTIME"].ConDate()));
+                            dataRow["CREATEDTIME"].ConDate(),
+                            dataRow["TC"].ToString(),
+                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+                            );
                     }
                 }
 

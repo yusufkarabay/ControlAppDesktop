@@ -33,26 +33,27 @@ namespace ControlAppDesktop.Forms
             sentryToDoManager = SentryToDoManager.GetInstance();
 
         }
-        public SentryForm(Guid sentrydoneId)
-        {
-            this.InitializeComponent();
-            _sentryDoneId = sentrydoneId;
 
-        }
 
         private void btnSentryListDone_Click(object sender, EventArgs e)
         {
-            dgvSentry.Visible = true;
-            thisDateDone();
-            sentryDone = null;
-        }
-        private void btnSentryDoneAdd_Click(object sender, EventArgs e)
-        {
-            if (dgvSentryTodo.Visible = true)
+            if (dgvSentry.Visible = true)
             {
                 dgvSentryTodo.Visible = false;
             }
             dgvSentry.Visible = true;
+
+            thisDateDone();
+
+        }
+        private void btnSentryDoneAdd_Click(object sender, EventArgs e)
+        {
+            if (dgvSentry.Visible = true)
+            {
+                dgvSentryTodo.Visible = false;
+            }
+            dgvSentry.Visible = true;
+
             if (rtbxSentry.Text == null)
             {
                 MessageBox.Show("Yapılan İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -92,6 +93,10 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSentryDoneUpdate_Click(object sender, EventArgs e)
         {
+             if (dgvSentry.Visible = true)
+            {
+                dgvSentryTodo.Visible = false;
+            }
             dgvSentry.Visible = true;
             if (rtbxSentry.Text == null)
             {
@@ -109,19 +114,108 @@ namespace ControlAppDesktop.Forms
         }
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             deleteSentyrDone();
         }
         private void btnSentryListToDo_Click(object sender, EventArgs e)
         {
+            if (dgvSentryTodo.Visible=true)
+            {
+                dgvSentry.Visible = false;
+            }
             dgvSentryTodo.Visible = true;
+            thisDateToDo();
+          
+        }
+
+
+        private void gToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (dgvSentryTodo.SelectedRows == null)
+            {
+                MessageBox.Show("Listeden Güncellenecek İş seçiniz");
+                return;
+            }
+            sentryToDo = new SentryToDo(
+                 Guid.Parse(dgvSentryTodo.CurrentRow.Cells["SentryToDoId"].Value.ToString()),
+                 dgvSentryTodo.CurrentRow.Cells["ToDo"].Value.ToString(),
+                 DateTime.Parse(dgvSentryTodo.CurrentRow.Cells["CreatedTime"].Value.ToString()),
+                 dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].ToString());
+
+            DialogResult dialogResult = MessageBox.Show("Seçili İş İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                rtbxSentryToDo.Text = sentryToDo.ToDo;
+            }
+
+        }
+        private void silToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            deleteSentryToDo();
+        }
+        private void yenileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             thisDateToDo();
             sentryToDo = null;
         }
+        private void btnSentryToDoUpdate_Click(object sender, EventArgs e)
+        {
+            if (dgvSentryTodo.Visible = true)
+            {
+                dgvSentry.Visible = false;
+            }
+            dgvSentryTodo.Visible = true;
+            if (rtbxSentryToDo.Text == null)
+            {
+                MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            updateSentyToDo();
+            thisDateToDo();
+        }
+        private void SentryForm_Load(object sender, EventArgs e)
+        {
+            dgvSentry.Visible = true;
+            dgvSentryTodo.Visible = false;
+        }
+        private void btnSentryToDoAdd_Click(object sender, EventArgs e)
+        {
+            if (dgvSentryTodo.Visible = true)
+            {
+                dgvSentry.Visible = false;
+            }
+            dgvSentryTodo.Visible = true;
+
+            if (rtbxSentryToDo.Text == null)
+            {
+                MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+
+                sentryToDo = new SentryToDo(rtbxSentryToDo.Text.ToString(),
+               Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")), infos[0].ToString());
+
+                sentryToDoManager.Add(sentryToDo);
+                MessageBox.Show("Yapılacak İş Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                rtbxSentryToDo.Text = "Takip Edilecek İşlemler...";
+            }
+
+            thisDateToDo();
+        }
+
+
         //*********************************
         void thisDateDone()
         {
             dgvSentry.DataSource = sentryDoneManager.GetSentryByDate("SentryDoneGetByDate",
             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+
+            sentryDone = new SentryDone(rtbxSentry.Text.ToString(),
+           Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")), infos[0].ToString());
 
             if (dgvSentry.Rows.Count < 1)
             {
@@ -158,17 +252,18 @@ namespace ControlAppDesktop.Forms
         }
         void deleteSentyrDone()
         {
-
             if (sentryDone == null)
             {
                 MessageBox.Show("İş Kaydı Silinemedi");
                 return;
             }
+
             sentryDone = new SentryDone(
                 Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
                 dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
                 DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
-                dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString());
+                dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString(),
+                dgvSentry.CurrentRow.Cells["EmployeeName"].ToString());
 
 
             DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
@@ -182,12 +277,14 @@ namespace ControlAppDesktop.Forms
 
         }
         //************************************
-
         void thisDateToDo()
         {
 
             dgvSentryTodo.DataSource = sentryToDoManager.GetSentryToDoByDate("SentryToDoGetByDate",
              Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+
+            sentryToDo = new SentryToDo(rtbxSentryToDo.Text.ToString(),
+           Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")), infos[0].ToString());
 
             if (dgvSentryTodo.Rows.Count < 1)
             {
@@ -244,86 +341,6 @@ namespace ControlAppDesktop.Forms
 
             }
 
-        }
-
-        private void gToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (dgvSentryTodo.SelectedRows == null)
-            {
-                MessageBox.Show("Listeden Güncellenecek İş seçiniz");
-                return;
-            }
-            sentryToDo = new SentryToDo(
-                 Guid.Parse(dgvSentryTodo.CurrentRow.Cells["SentryToDoId"].Value.ToString()),
-                 dgvSentryTodo.CurrentRow.Cells["ToDo"].Value.ToString(),
-                 DateTime.Parse(dgvSentryTodo.CurrentRow.Cells["CreatedTime"].Value.ToString()),
-                 dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].ToString());
-
-            DialogResult dialogResult = MessageBox.Show("Seçili İş İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
-                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                rtbxSentryToDo.Text = sentryToDo.ToDo;
-            }
-
-        }
-
-        private void silToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            deleteSentryToDo();
-        }
-
-        private void yenileToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            thisDateToDo();
-            sentryToDo = null;
-        }
-
-        private void btnSentryToDoUpdate_Click(object sender, EventArgs e)
-        {
-            dgvSentryTodo.Visible = true;
-            if (rtbxSentryToDo.Text == null)
-            {
-                MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                return;
-            }
-            updateSentyToDo();
-            thisDateToDo();
-        }
-
-        private void SentryForm_Load(object sender, EventArgs e)
-        {
-            dgvSentry.Visible = false;
-            dgvSentryTodo.Visible = false;
-        }
-
-        private void btnSentryToDoAdd_Click(object sender, EventArgs e)
-        {
-            if (dgvSentry.Visible = true)
-            {
-                dgvSentry.Visible = false;
-            }
-
-            dgvSentryTodo.Visible = true;
-
-            if (rtbxSentryToDo.Text == null)
-            {
-                MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                return;
-            }
-            else
-            {
-
-                sentryToDo = new SentryToDo(rtbxSentryToDo.Text.ToString(),
-               Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")), infos[0].ToString());
-
-                sentryToDoManager.Add(sentryToDo);
-                MessageBox.Show("Yapılacak İş Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                rtbxSentryToDo.Text = "Takip Edilecek İşlemler...";
-            }
-
-            thisDateToDo();
         }
     }
 }

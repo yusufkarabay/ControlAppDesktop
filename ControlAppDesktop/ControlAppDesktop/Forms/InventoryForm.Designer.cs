@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -74,8 +74,8 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToResizeColumns = false;
             this.dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
@@ -283,6 +283,7 @@
             this.Controls.Add(this.grpInventory);
             this.Name = "InventoryForm";
             this.Text = "InventoryForm";
+            this.Load += new System.EventHandler(this.InventoryForm_Load);
             this.grpInventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

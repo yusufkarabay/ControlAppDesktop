@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
@@ -90,8 +90,8 @@
             this.dgvSentryTodo.AllowUserToDeleteRows = false;
             this.dgvSentryTodo.AllowUserToResizeColumns = false;
             this.dgvSentryTodo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSentryTodo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSentryTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSentryTodo.ContextMenuStrip = this.rightMenuToDo;
@@ -142,8 +142,8 @@
             this.dgvSentry.AllowUserToDeleteRows = false;
             this.dgvSentry.AllowUserToResizeColumns = false;
             this.dgvSentry.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSentry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSentry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSentry.ContextMenuStrip = this.rightMenuDone;
@@ -165,7 +165,7 @@
             this.silToolStripMenuItem,
             this.yenileToolStripMenuItem});
             this.rightMenuDone.Name = "contextMenuStrip1";
-            this.rightMenuDone.Size = new System.Drawing.Size(205, 70);
+            this.rightMenuDone.Size = new System.Drawing.Size(205, 92);
             // 
             // güncelleToolStripMenuItem
             // 
