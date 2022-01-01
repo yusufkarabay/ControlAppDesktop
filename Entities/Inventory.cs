@@ -48,7 +48,7 @@ namespace Entities
             this.employeeName = employeeName;
         }
         
-        public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, string createdEmployee, DateTime createdTime)
+        public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, DateTime createdTime, string createdEmployee, string employeeName)
         {
             this.inventorySeriNo = inventorySeriNo;
             this.inventoryName = inventoryName;
@@ -56,6 +56,16 @@ namespace Entities
             this.info = info;
             this.createdEmployee = createdEmployee;
             this.createdTime = createdTime;
+            this.employeeName=employeeName;
+        }
+        public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, string createdEmployee, DateTime createdTime)
+        {
+            this.inventorySeriNo = inventorySeriNo;
+            this.inventoryName = inventoryName;
+            this.amount = amount;
+            this.info = info;
+            this.createdEmployee = createdEmployee;
+          
         }
 
         public Guid InventoryId { get => inventoryId; set => inventoryId = value; }

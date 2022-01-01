@@ -111,6 +111,11 @@ namespace ControlAppDesktop.Forms
 
             }
         }
+        void searchInventory()
+        {
+            //inventory.InventoryName = txtbzxSearchInventory.Text;
+            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName",txtbxtSearchInventoryName.Text);
+        }
 
         private void btnList_Click(object sender, EventArgs e)
         {
@@ -215,9 +220,15 @@ namespace ControlAppDesktop.Forms
 
 
         }
-        private void InventoryForm_Load(object sender, EventArgs e)
+        private void txtbzxSearchInventory_MouseClick(object sender, MouseEventArgs e)
         {
-
+            txtbxtSearchInventoryName.Text = "";
+        }
+        private void btnSearchInventory_Click(object sender, EventArgs e)
+        {
+            searchInventory();
+            dgvInventory.Columns[0].Visible = false;
+            dgvInventory.Columns[4].Visible = false;
         }
     }
 }

@@ -154,12 +154,14 @@ namespace DataAccess.Concrete
                     foreach (DataRow dataRow in dt.Rows)
                     {
                         inventories.Add(new Inventory
-                            (dataRow["INVENTORYSERINO"].ToString(),
+                            (Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                            dataRow["INVENTORYSERINO"].ToString(),
                             dataRow["INVENTORYNAME"].ToString(),
                             dataRow["AMOUNT"].ContInt(),
                             dataRow["INFO"].ToString(),
-                            dataRow["CREATEDEMPLOYEE"].ToString(),
-                            dataRow["CREATEDTIME"].ConDate()));
+                            dataRow["CREATEDTIME"].ConDate(),
+                            dataRow["TC"].ToString(),
+                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"));
                     }
                 }
             }
