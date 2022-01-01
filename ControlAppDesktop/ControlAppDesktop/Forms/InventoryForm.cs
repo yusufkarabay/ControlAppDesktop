@@ -41,7 +41,7 @@ namespace ControlAppDesktop.Forms
                 dgvInventory.Columns[0].Visible = false;
                 dgvInventory.Columns[4].Visible = false;
             }
-            
+
         }
         void allInventoryList()
         {
@@ -51,12 +51,14 @@ namespace ControlAppDesktop.Forms
         }
         void addInventory()
         {
-            inventory = new Inventory(txtbxInventorySeriNo.Text.ToString(),
+            inventory = new Inventory(
+              txtbxInventorySeriNo.Text.ToString(),
               txtbxInventoryName.Text.ToString(),
-              txtbxAmount.Text.ContInt(),
+              Int32.Parse(txtbxAmount.Text.ToString()),
               rtxbxInventoryInfo.Text.ToString(),
               infos[0].ToString(),
-             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+               Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"))
+             );
 
             inventoryManager.Add(inventory);
 
@@ -64,7 +66,7 @@ namespace ControlAppDesktop.Forms
         }
         void deleteInventory()
         {
-          
+
 
             inventory = new Inventory(
             Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
@@ -82,13 +84,13 @@ namespace ControlAppDesktop.Forms
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show(inventoryManager.Delete(inventory.InventoryId));
-                thisDateAddedInventoryList();
+
             }
 
         }
         void updateInventory()
         {
-            if (inventory==null)
+            if (inventory == null)
             {
 
                 MessageBox.Show("Envanter Güncellenemedi");
@@ -99,11 +101,11 @@ namespace ControlAppDesktop.Forms
             if (dialogResult == DialogResult.Yes)
             {
 
-                inventory.InventorySeriNo=txtbxInventorySeriNo.Text;
+                inventory.InventorySeriNo = txtbxInventorySeriNo.Text;
                 inventory.CreatedTime = Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"));
                 inventory.Amount = txtbxAmount.Text.ContInt();
                 inventory.Info = rtxbxInventoryInfo.Text;
-                inventory.InventoryName=txtbxInventoryName.Text;
+                inventory.InventoryName = txtbxInventoryName.Text;
                 inventory.CreatedEmployee = infos[0].ToString();
 
 
@@ -113,8 +115,9 @@ namespace ControlAppDesktop.Forms
         }
         void searchInventory()
         {
-            //inventory.InventoryName = txtbzxSearchInventory.Text;
-            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName",txtbxtSearchInventoryName.Text);
+            
+                dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventoryName.Text);
+           
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -127,19 +130,19 @@ namespace ControlAppDesktop.Forms
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtbxInventorySeriNo.Text =="")
+            if (txtbxInventorySeriNo.Text == "")
             {
                 MessageBox.Show("Seri Numarası Alanı Boş Bırakılamaz");
             }
-            else if (txtbxInventoryName.Text =="")
+            else if (txtbxInventoryName.Text == "")
             {
                 MessageBox.Show("Envanter Adı Alanı Boş Bırakılamaz");
             }
-            else if (txtbxAmount.Text =="")
+            else if (txtbxAmount.Text == "")
             {
                 MessageBox.Show("Envanter Miktarı Boş Bırakılamaz");
             }
-            else 
+            else
             {
                 addInventory();
             }
@@ -154,6 +157,7 @@ namespace ControlAppDesktop.Forms
         private void deleteInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             deleteInventory();
+            allInventoryList();
         }
         private void refreshInventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -166,7 +170,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
-            if (btnAdd.Visible=true)
+            if (btnAdd.Visible = true)
             {
                 btnAdd.Visible = false;
             }
@@ -207,16 +211,18 @@ namespace ControlAppDesktop.Forms
             {
                 updateInventory();
             }
-            
+
             txtbxAmount.Text = "";
             txtbxInventoryName.Text = "";
             txtbxInventorySeriNo.Text = "";
             rtxbxInventoryInfo.Text = "";
             allInventoryList();
-            if (btnAdd.Visible=false)
+            if (btnAdd.Visible = false)
             {
                 btnAdd.Visible = true;
             }
+            btnAdd.Visible = true;
+
 
 
         }
@@ -227,6 +233,12 @@ namespace ControlAppDesktop.Forms
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
             searchInventory();
+            if (dgvInventory.RowCount<1)
+            {
+                MessageBox.Show("Aranan Ürün Bulunamadı");
+                return;
+            }
+
             dgvInventory.Columns[0].Visible = false;
             dgvInventory.Columns[4].Visible = false;
         }

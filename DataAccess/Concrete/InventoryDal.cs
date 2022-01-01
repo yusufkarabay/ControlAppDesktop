@@ -164,11 +164,13 @@ namespace DataAccess.Concrete
                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"));
                     }
                 }
+                else inventories = null;
+               
+               
             }
-            catch (Exception)
+            catch (Exception )
             {
-
-
+               
             }
             finally { }
             return inventories;

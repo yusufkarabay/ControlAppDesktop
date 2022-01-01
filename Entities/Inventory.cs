@@ -65,6 +65,7 @@ namespace Entities
             this.amount = amount;
             this.info = info;
             this.createdEmployee = createdEmployee;
+            this.createdTime=createdTime;
           
         }
 
