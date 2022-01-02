@@ -22,8 +22,9 @@ namespace Entities
         string authorityName;
 
         public Employee() { }
-        public Employee(string name,string surname) {
-            this.name=name;
+        public Employee(string name, string surname)
+        {
+            this.name = name;
             this.surname = surname;
         }
         public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
@@ -76,6 +77,19 @@ namespace Entities
             this.departmentName = departmentName;
             this.authorityName = authorityName;
         }
+        public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName, string authorityName)
+        {
+
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+            this.departmentName = departmentName;
+            this.authorityName = authorityName;
+        }
         public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName)
         {
             this.tc = tc;
@@ -87,6 +101,22 @@ namespace Entities
             this.mail = mail;
             this.departmentName = departmentName;
         }
+        public Employee(string tc, string name, string surname,
+            DateTime bdate, string adress, string tel, string mail, Guid departmentId, Guid authorityId)
+        {
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+            this.departmentId = departmentId;
+            this.authorityId = authorityId;
+            this.authorityName = authorityName;
+            this.departmentName = departmentName;
+        }
+
 
 
         public Guid Id { get => id; set => id = value; }

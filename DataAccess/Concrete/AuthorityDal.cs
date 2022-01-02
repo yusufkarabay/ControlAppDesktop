@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using MySqlX.XDevAPI.Common;
 using System.Data;
 
 namespace DataAccess.Concrete
@@ -27,10 +28,11 @@ namespace DataAccess.Concrete
             {//ekleme işlemi için veritabanında oluşturduğum  AuthorityCreate prosedürünü çoğırdım ve orada prosedürün istediği nvarchar(50) dğerini gönderceğim
 
                 var (isSuccess, msg) = sqlService.StoreReaderV2("AuthorityCreate", new SqlParameter("@authorityName", entity.AuthorityName));
-                if(isSuccess)
+                if (isSuccess)
                 {
                     return entity.AuthorityName + " Yetki Tipi Daha Önce Eklendi";
-                } else
+                }
+                else
                 {
                     return entity.AuthorityName + " Yetki Başarıyla  Eklendi";
                 }
@@ -106,9 +108,10 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-
-                        Authority authority = new Authority(dataRow["AUTHORITYNAME"].ToString());//id'i görüntelemedik yalnızca yetki adını görüntüledik.
-                        list.Add(authority);// oluşturduğum """"listeye ekliyorum"""""
+                        Authority authority = new Authority
+                            (Guid.Parse(dataRow["AUTHORITYID"].ToString()),
+                            dataRow["AUTHORITYNAME"].ToString());
+                        list.Add(authority);
                     }
                 }
 
@@ -117,6 +120,7 @@ namespace DataAccess.Concrete
             finally { }
 
             return list;
+
         }
 
         public string Update(Authority entity, string oldName)

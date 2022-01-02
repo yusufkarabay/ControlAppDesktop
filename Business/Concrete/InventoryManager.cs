@@ -75,15 +75,15 @@ namespace Business.Concrete
                 return new List<Inventory>();
             }
         }
-        public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string createdEmployee)
+        public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string employeeName)
         {
             try
             {
-                if (createdEmployee == null)
+                if (employeeName == null)
                 {
                     return null;
                 }
-                return inventorydal.GetInventoryByCreatedEmployee(procuderName, createdEmployee);
+                return inventorydal.GetInventoryByCreatedEmployee(procuderName, employeeName);
 
             }
             catch (Exception)
@@ -110,7 +110,7 @@ namespace Business.Concrete
                 return new List<Inventory>();
             }
         }
-        public Inventory GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
+        public List<Inventory> GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace Business.Concrete
             catch (Exception)
             {
 
-                return new Inventory();
+                return new List<Inventory>();
             }
         }
         public List<Inventory> GetAll()

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -52,12 +52,16 @@
             this.btnInventoryPdf = new System.Windows.Forms.Button();
             this.btnInventoryWeb = new System.Windows.Forms.Button();
             this.btnAllList = new System.Windows.Forms.Button();
-            this.txtbxtSearchInventoryName = new System.Windows.Forms.TextBox();
+            this.txtbxtSearchInventory = new System.Windows.Forms.TextBox();
             this.btnSearchInventory = new System.Windows.Forms.Button();
+            this.rbtnSeriNo = new System.Windows.Forms.RadioButton();
+            this.rBtnName = new System.Windows.Forms.RadioButton();
+            this.grpBoxSearch = new System.Windows.Forms.GroupBox();
             this.grpInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpInventoryInfo.SuspendLayout();
+            this.grpBoxSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInventory
@@ -76,8 +80,8 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToResizeColumns = false;
             this.dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
@@ -258,6 +262,7 @@
             this.btnInventoryWeb.TabIndex = 12;
             this.btnInventoryWeb.Text = "Web\'de Görüntüle";
             this.btnInventoryWeb.UseVisualStyleBackColor = true;
+            this.btnInventoryWeb.Click += new System.EventHandler(this.btnInventoryWeb_Click);
             // 
             // btnAllList
             // 
@@ -269,15 +274,15 @@
             this.btnAllList.UseVisualStyleBackColor = true;
             this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
             // 
-            // txtbxtSearchInventoryName
+            // txtbxtSearchInventory
             // 
-            this.txtbxtSearchInventoryName.Location = new System.Drawing.Point(646, 147);
-            this.txtbxtSearchInventoryName.Multiline = true;
-            this.txtbxtSearchInventoryName.Name = "txtbxtSearchInventoryName";
-            this.txtbxtSearchInventoryName.Size = new System.Drawing.Size(276, 30);
-            this.txtbxtSearchInventoryName.TabIndex = 14;
-            this.txtbxtSearchInventoryName.Text = "Envanter Ara...";
-            this.txtbxtSearchInventoryName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbzxSearchInventory_MouseClick);
+            this.txtbxtSearchInventory.Location = new System.Drawing.Point(646, 147);
+            this.txtbxtSearchInventory.Multiline = true;
+            this.txtbxtSearchInventory.Name = "txtbxtSearchInventory";
+            this.txtbxtSearchInventory.Size = new System.Drawing.Size(276, 30);
+            this.txtbxtSearchInventory.TabIndex = 14;
+            this.txtbxtSearchInventory.Text = "Envanter Ara...";
+            this.txtbxtSearchInventory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbzxSearchInventory_MouseClick);
             // 
             // btnSearchInventory
             // 
@@ -289,13 +294,49 @@
             this.btnSearchInventory.UseVisualStyleBackColor = true;
             this.btnSearchInventory.Click += new System.EventHandler(this.btnSearchInventory_Click);
             // 
+            // rbtnSeriNo
+            // 
+            this.rbtnSeriNo.AutoSize = true;
+            this.rbtnSeriNo.Location = new System.Drawing.Point(6, 28);
+            this.rbtnSeriNo.Name = "rbtnSeriNo";
+            this.rbtnSeriNo.Size = new System.Drawing.Size(118, 17);
+            this.rbtnSeriNo.TabIndex = 16;
+            this.rbtnSeriNo.TabStop = true;
+            this.rbtnSeriNo.Text = "Seri No\'ya Göre Ara";
+            this.rbtnSeriNo.UseVisualStyleBackColor = true;
+            this.rbtnSeriNo.CheckedChanged += new System.EventHandler(this.rbtnSeriNo_CheckedChanged);
+            // 
+            // rBtnName
+            // 
+            this.rBtnName.AutoSize = true;
+            this.rBtnName.Location = new System.Drawing.Point(6, 54);
+            this.rBtnName.Name = "rBtnName";
+            this.rBtnName.Size = new System.Drawing.Size(143, 17);
+            this.rBtnName.TabIndex = 17;
+            this.rBtnName.TabStop = true;
+            this.rBtnName.Text = "Envanter Adına Göre Ara";
+            this.rBtnName.UseVisualStyleBackColor = true;
+            this.rBtnName.CheckedChanged += new System.EventHandler(this.rBtnName_CheckedChanged);
+            // 
+            // grpBoxSearch
+            // 
+            this.grpBoxSearch.Controls.Add(this.rBtnName);
+            this.grpBoxSearch.Controls.Add(this.rbtnSeriNo);
+            this.grpBoxSearch.Location = new System.Drawing.Point(429, 132);
+            this.grpBoxSearch.Name = "grpBoxSearch";
+            this.grpBoxSearch.Size = new System.Drawing.Size(200, 100);
+            this.grpBoxSearch.TabIndex = 18;
+            this.grpBoxSearch.TabStop = false;
+            this.grpBoxSearch.Text = "Arama Seçeneği";
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 608);
+            this.Controls.Add(this.grpBoxSearch);
             this.Controls.Add(this.btnSearchInventory);
-            this.Controls.Add(this.txtbxtSearchInventoryName);
+            this.Controls.Add(this.txtbxtSearchInventory);
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.btnInventoryWeb);
             this.Controls.Add(this.btnInventoryPdf);
@@ -312,6 +353,8 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.grpInventoryInfo.ResumeLayout(false);
             this.grpInventoryInfo.PerformLayout();
+            this.grpBoxSearch.ResumeLayout(false);
+            this.grpBoxSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,7 +384,10 @@
         private System.Windows.Forms.ToolStripMenuItem updateInventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteInventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshInventoryToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtbxtSearchInventoryName;
+        private System.Windows.Forms.TextBox txtbxtSearchInventory;
         private System.Windows.Forms.Button btnSearchInventory;
+        private System.Windows.Forms.RadioButton rbtnSeriNo;
+        private System.Windows.Forms.RadioButton rBtnName;
+        private System.Windows.Forms.GroupBox grpBoxSearch;
     }
 }

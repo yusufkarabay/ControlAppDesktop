@@ -85,7 +85,9 @@ namespace ControlAppDesktop.Forms
                 string content = Html_Out(dgvRequest);
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 File.WriteAllText(desktopPath + "\\" + infos[1] + " " + infos[2] + " adına gelen talepler.html", content);
+               
             }
+           
 
 
         }

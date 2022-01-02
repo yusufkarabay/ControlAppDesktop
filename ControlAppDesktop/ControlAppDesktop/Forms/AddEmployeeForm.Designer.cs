@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.dtpEmployeeBDate = new System.Windows.Forms.DateTimePicker();
             this.rtbxAdressInfo = new System.Windows.Forms.RichTextBox();
             this.lblAdress = new System.Windows.Forms.Label();
             this.mtxtMail = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
-            this.cbAuthorityInfo = new System.Windows.Forms.ComboBox();
+            this.cbDepartmentInfo = new System.Windows.Forms.ComboBox();
             this.txtSurnmaeInfo = new System.Windows.Forms.TextBox();
             this.txtNameInfo = new System.Windows.Forms.TextBox();
             this.mtxtTcInfo = new System.Windows.Forms.MaskedTextBox();
@@ -45,18 +46,21 @@
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
-            this.dtpEmployeeBDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbAuthority = new System.Windows.Forms.ComboBox();
+            this.authority = new System.Windows.Forms.Label();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.cmbAuthority);
+            this.grpInfo.Controls.Add(this.authority);
             this.grpInfo.Controls.Add(this.dtpEmployeeBDate);
             this.grpInfo.Controls.Add(this.rtbxAdressInfo);
             this.grpInfo.Controls.Add(this.lblAdress);
             this.grpInfo.Controls.Add(this.mtxtMail);
             this.grpInfo.Controls.Add(this.mtxtTel);
-            this.grpInfo.Controls.Add(this.cbAuthorityInfo);
+            this.grpInfo.Controls.Add(this.cbDepartmentInfo);
             this.grpInfo.Controls.Add(this.txtSurnmaeInfo);
             this.grpInfo.Controls.Add(this.txtNameInfo);
             this.grpInfo.Controls.Add(this.mtxtTcInfo);
@@ -69,14 +73,21 @@
             this.grpInfo.Controls.Add(this.employeeName);
             this.grpInfo.Location = new System.Drawing.Point(176, 41);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(435, 303);
+            this.grpInfo.Size = new System.Drawing.Size(435, 369);
             this.grpInfo.TabIndex = 6;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
             // 
+            // dtpEmployeeBDate
+            // 
+            this.dtpEmployeeBDate.Location = new System.Drawing.Point(196, 176);
+            this.dtpEmployeeBDate.Name = "dtpEmployeeBDate";
+            this.dtpEmployeeBDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpEmployeeBDate.TabIndex = 26;
+            // 
             // rtbxAdressInfo
             // 
-            this.rtbxAdressInfo.Location = new System.Drawing.Point(172, 218);
+            this.rtbxAdressInfo.Location = new System.Drawing.Point(179, 253);
             this.rtbxAdressInfo.Name = "rtbxAdressInfo";
             this.rtbxAdressInfo.Size = new System.Drawing.Size(100, 96);
             this.rtbxAdressInfo.TabIndex = 25;
@@ -85,7 +96,7 @@
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
-            this.lblAdress.Location = new System.Drawing.Point(16, 251);
+            this.lblAdress.Location = new System.Drawing.Point(23, 286);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(39, 13);
             this.lblAdress.TabIndex = 24;
@@ -93,25 +104,25 @@
             // 
             // mtxtMail
             // 
-            this.mtxtMail.Location = new System.Drawing.Point(189, 192);
+            this.mtxtMail.Location = new System.Drawing.Point(196, 227);
             this.mtxtMail.Name = "mtxtMail";
             this.mtxtMail.Size = new System.Drawing.Size(149, 20);
             this.mtxtMail.TabIndex = 23;
             // 
             // mtxtTel
             // 
-            this.mtxtTel.Location = new System.Drawing.Point(189, 166);
+            this.mtxtTel.Location = new System.Drawing.Point(196, 201);
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(149, 20);
             this.mtxtTel.TabIndex = 22;
             // 
-            // cbAuthorityInfo
+            // cbDepartmentInfo
             // 
-            this.cbAuthorityInfo.FormattingEnabled = true;
-            this.cbAuthorityInfo.Location = new System.Drawing.Point(189, 112);
-            this.cbAuthorityInfo.Name = "cbAuthorityInfo";
-            this.cbAuthorityInfo.Size = new System.Drawing.Size(149, 21);
-            this.cbAuthorityInfo.TabIndex = 20;
+            this.cbDepartmentInfo.FormattingEnabled = true;
+            this.cbDepartmentInfo.Location = new System.Drawing.Point(189, 112);
+            this.cbDepartmentInfo.Name = "cbDepartmentInfo";
+            this.cbDepartmentInfo.Size = new System.Drawing.Size(149, 21);
+            this.cbDepartmentInfo.TabIndex = 20;
             // 
             // txtSurnmaeInfo
             // 
@@ -137,7 +148,7 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(6, 199);
+            this.lblMail.Location = new System.Drawing.Point(13, 234);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(29, 13);
             this.lblMail.TabIndex = 15;
@@ -146,7 +157,7 @@
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(6, 170);
+            this.lblTel.Location = new System.Drawing.Point(13, 205);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(46, 13);
             this.lblTel.TabIndex = 13;
@@ -155,7 +166,7 @@
             // lblBdate
             // 
             this.lblBdate.AutoSize = true;
-            this.lblBdate.Location = new System.Drawing.Point(6, 141);
+            this.lblBdate.Location = new System.Drawing.Point(13, 176);
             this.lblBdate.Name = "lblBdate";
             this.lblBdate.Size = new System.Drawing.Size(73, 13);
             this.lblBdate.TabIndex = 11;
@@ -207,12 +218,22 @@
             this.btnEmployeeAdd.UseVisualStyleBackColor = true;
             this.btnEmployeeAdd.Click += new System.EventHandler(this.btnEmployeeAdd_Click);
             // 
-            // dtpEmployeeBDate
+            // cmbAuthority
             // 
-            this.dtpEmployeeBDate.Location = new System.Drawing.Point(189, 141);
-            this.dtpEmployeeBDate.Name = "dtpEmployeeBDate";
-            this.dtpEmployeeBDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpEmployeeBDate.TabIndex = 26;
+            this.cmbAuthority.FormattingEnabled = true;
+            this.cmbAuthority.Location = new System.Drawing.Point(196, 147);
+            this.cmbAuthority.Name = "cmbAuthority";
+            this.cmbAuthority.Size = new System.Drawing.Size(149, 21);
+            this.cmbAuthority.TabIndex = 28;
+            // 
+            // authority
+            // 
+            this.authority.AutoSize = true;
+            this.authority.Location = new System.Drawing.Point(13, 147);
+            this.authority.Name = "authority";
+            this.authority.Size = new System.Drawing.Size(37, 13);
+            this.authority.TabIndex = 27;
+            this.authority.Text = "Yetki :";
             // 
             // AddEmployeeForm
             // 
@@ -237,7 +258,7 @@
         private System.Windows.Forms.Label lblAdress;
         public System.Windows.Forms.MaskedTextBox mtxtMail;
         public System.Windows.Forms.MaskedTextBox mtxtTel;
-        public System.Windows.Forms.ComboBox cbAuthorityInfo;
+        public System.Windows.Forms.ComboBox cbDepartmentInfo;
         public System.Windows.Forms.TextBox txtSurnmaeInfo;
         public System.Windows.Forms.TextBox txtNameInfo;
         public System.Windows.Forms.MaskedTextBox mtxtTcInfo;
@@ -250,5 +271,7 @@
         private System.Windows.Forms.Label employeeName;
         private System.Windows.Forms.Button btnEmployeeAdd;
         private System.Windows.Forms.DateTimePicker dtpEmployeeBDate;
+        public System.Windows.Forms.ComboBox cmbAuthority;
+        private System.Windows.Forms.Label authority;
     }
 }

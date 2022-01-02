@@ -18,25 +18,39 @@ namespace ControlAppDesktop.Forms
     {
         EmployeeManager employeeManager;
         DepartmentManager departmentManager;
+        AuthorityManager authorityManager;
         public object[] infos;
         Employee employee;
         List<Department> departmentList;
+        List<Authority> authorityList;
+
+        private Guid _employeeId = Guid.Empty;
+
+
         public AddEmployeeForm()
         {
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
             departmentManager = DepartmentManager.GetInstance();
+            authorityManager = AuthorityManager.GetInstance();
+
         }
         void EmployeeAdd()
         {
-            employee = new Employee(mtxtTcInfo.Text.ToString(),
-                txtNameInfo.Text.ToString(),
-                txtSurnmaeInfo.Text.ToString(),
-                DateTime.Parse(dtpEmployeeBDate.Value.ToString("yyyy-MM-dd")),
-                 rtbxAdressInfo.Text.ToString(),
-                  mtxtTel.Text.ToString(),
-                  mtxtMail.Text.ToString(),
-                cbAuthorityInfo.SelectedValue.ToString());
+            employee = new Employee(
+             mtxtTcInfo.Text.ToString(),
+             txtNameInfo.Text.ToString(),
+             txtSurnmaeInfo.Text.ToString(),
+             DateTime.Parse(dtpEmployeeBDate.Value.ToString("yyyy-MM-dd")),
+              rtbxAdressInfo.Text.ToString(),
+               mtxtTel.Text.ToString(),
+               mtxtMail.Text.ToString(), 
+               Guid.Parse(cbDepartmentInfo.SelectedValue.ToString()),
+
+             Guid.Parse(cmbAuthority.SelectedValue.ToString()));
+
+
+
             employeeManager.Add(employee);
             MessageBox.Show("Personel Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -55,7 +69,7 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Soyad Alanı Boş Geçilemez");
             }
-            if (cbAuthorityInfo.SelectedIndex == -1)
+            if (cbDepartmentInfo.SelectedIndex == -1)
             {
                 MessageBox.Show("Departman Seçiniz");
             }
@@ -72,14 +86,14 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Adres Alanı Boş Geçilemez");
             }
-            else
-            {
-                EmployeeAdd();
-            }
+
+            EmployeeAdd();
+
             mtxtTcInfo.Text = "";
             txtNameInfo.Text = "";
             txtSurnmaeInfo.Text = "";
-            cbAuthorityInfo.SelectedIndex = 0;
+            cbDepartmentInfo.SelectedIndex = -1;
+            cmbAuthority.SelectedIndex = -1;
             mtxtTel.Text = "";
             mtxtMail.Text = "";
             rtbxAdressInfo.Text = "";
@@ -89,10 +103,17 @@ namespace ControlAppDesktop.Forms
         void FillCbAuthority()
         {
             departmentList = departmentManager.GetAll();
-            cbAuthorityInfo.DataSource = departmentList;
-            cbAuthorityInfo.ValueMember = "DepartmentId";
-            cbAuthorityInfo.DisplayMember = "DepartmentName";
-           
+            authorityList = authorityManager.GetAll();
+
+            cbDepartmentInfo.DataSource = departmentList;
+            cbDepartmentInfo.ValueMember = "DepartmentId";
+            cbDepartmentInfo.DisplayMember = "DepartmentName";
+
+            cmbAuthority.DataSource = authorityList;
+            cmbAuthority.ValueMember = "AuthorityId";
+            cmbAuthority.DisplayMember = "AuthorityName";
+
+
 
         }
 

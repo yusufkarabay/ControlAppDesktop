@@ -54,7 +54,7 @@ namespace ControlAppDesktop.Forms
             }
             dgvSentry.Visible = true;
 
-            if (rtbxSentry.Text == null)
+            if (rtbxSentry.Text =="")
             {
                 MessageBox.Show("Yapılan İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;

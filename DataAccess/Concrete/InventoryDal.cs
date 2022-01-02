@@ -104,28 +104,31 @@ namespace DataAccess.Concrete
             finally { }
             return inventoryList;
         }
-        public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string createdEmployee)
+        public List<Inventory> GetInventoryByCreatedEmployee(string procuderName, string employeeName)
         {
-            List<Inventory> inventories = null;
+            List<Inventory> inventoryList = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdemployee", createdEmployee));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdemployee", employeeName));
                 if (msg != null)
                 {
                     return null;
                 }
                 if (dt.Rows.Count > 0)
                 {
-                    inventories = new List<Inventory>();
+                    inventoryList = new List<Inventory>();
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        inventories.Add(new Inventory
-                            (dataRow["INVENTORYSERINO"].ToString(),
+                        inventoryList.Add(new Inventory(
+                           Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                           dataRow["INVENTORYSERINO"].ToString(),
                             dataRow["INVENTORYNAME"].ToString(),
                             dataRow["AMOUNT"].ContInt(),
                             dataRow["INFO"].ToString(),
-                            dataRow["CREATEDEMPLOYEE"].ToString(),
-                            dataRow["CREATEDTIME"].ConDate()));
+                            dataRow["CREATEDTIME"].ConDate(),
+                            dataRow["TC"].ToString(),
+                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+                            );
                     }
                 }
             }
@@ -135,7 +138,7 @@ namespace DataAccess.Concrete
 
             }
             finally { }
-            return inventories;
+            return inventoryList;
 
         }
         public List<Inventory> GetInventoryByName(string procuderName, string inventoryName)
@@ -165,21 +168,20 @@ namespace DataAccess.Concrete
                     }
                 }
                 else inventories = null;
-               
-               
+
+
             }
-            catch (Exception )
+            catch (Exception)
             {
-               
+
             }
             finally { }
             return inventories;
 
         }
-        public Inventory GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
+        public List<Inventory> GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
         {
-
-            Inventory inventory = null;
+            List<Inventory> inventories = null;
             try
             {
                 var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@inventoryserino", inventorySeriNo));
@@ -189,130 +191,118 @@ namespace DataAccess.Concrete
                 }
                 if (dt.Rows.Count > 0)
                 {
-
+                    inventories = new List<Inventory>();
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        string inventoryName, info, createdEmployee;
-                        int amount;
-                        DateTime createdTime;
-
-
-                        inventorySeriNo = dataRow["INVENTORYSERINO"].ToString();
-                        inventoryName = dataRow["INVENTORYNAME"].ToString();
-                        amount = dataRow["AMOUNT"].ContInt();
-                        info = dataRow["INFO"].ToString();
-                        createdEmployee = dataRow["CREATEDEMPLOYEE"].ToString();
-                        createdTime = dataRow["CREATEDTIME"].ConDate();
-
-                        inventory = new Inventory
-                        {
-                            InventoryName = inventoryName,
-                            InventorySeriNo = inventorySeriNo,
-                            Amount = amount,
-                            Info = info,
-                            CreatedEmployee = createdEmployee,
-                            CreatedTime = createdTime
-
-                        };
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-            }
-            return inventory;
-        }
-        public List<Inventory> GetAll()
-        {
-            List<Inventory> inventoryList = null;
-
-            try
-            {
-                var (dt, msg) = sqlService.StoredV2("InventoryList");
-                if (msg != null)
-                {
-                    return null;
-                }
-
-                if (dt.Rows.Count > 0)
-                {
-                    inventoryList = new List<Inventory>();
-
-                    foreach (DataRow dataRow in dt.Rows)
-                    {
-
-                        inventoryList.Add(new Inventory(
-                           Guid.Parse(dataRow["INVENTORYID"].ToString()),
-                           dataRow["INVENTORYSERINO"].ToString(),
+                        inventories.Add(new Inventory
+                            (Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                            dataRow["INVENTORYSERINO"].ToString(),
                             dataRow["INVENTORYNAME"].ToString(),
                             dataRow["AMOUNT"].ContInt(),
                             dataRow["INFO"].ToString(),
                             dataRow["CREATEDTIME"].ConDate(),
                             dataRow["TC"].ToString(),
-                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
-                            );
+                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"));
                     }
                 }
+                else inventories = null;
+
 
             }
-            catch (Exception ex) { }
+            catch (Exception)
+            {
+
+            }
             finally { }
+            return inventories;
 
-            return inventoryList;
-        }
-        public string UpdateNew(Inventory entity)
-        {
-            string result = null;
-            try
-            {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("InventoryUpdate", new SqlParameter("@inventoryid", entity.InventoryId),
-                    new SqlParameter("@inventoryserino", entity.InventorySeriNo), new SqlParameter("@inverntoryname", entity.InventoryName),
-                    new SqlParameter("@amount", entity.Amount), new SqlParameter("@info", entity.Info),
-                    new SqlParameter("@createdtime", entity.CreatedTime)
-                    , new SqlParameter("@createdemployee", entity.CreatedEmployee));
-                if (isSuccess)
-                {
-                    result = "Envanter  Başarı İle Güncellendi";
-                }
-                else
-                {
-                    result = msg;
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                return ex.Message;
-            }
-            return result;
-        }
-
-
-
-        public string Update(Inventory entity, string oldName)
-        {
-            throw new NotImplementedException();
-        }
-        public Inventory Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static InventoryDal GetInstance()
-        {
-            if (inventoryDal == null)
-            {
-                inventoryDal = new InventoryDal();
-            }
-            return inventoryDal;
-        }
-
+        
     }
+    public List<Inventory> GetAll()
+    {
+        List<Inventory> inventoryList = null;
+
+        try
+        {
+            var (dt, msg) = sqlService.StoredV2("InventoryList");
+            if (msg != null)
+            {
+                return null;
+            }
+
+            if (dt.Rows.Count > 0)
+            {
+                inventoryList = new List<Inventory>();
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+
+                    inventoryList.Add(new Inventory(
+                       Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                       dataRow["INVENTORYSERINO"].ToString(),
+                        dataRow["INVENTORYNAME"].ToString(),
+                        dataRow["AMOUNT"].ContInt(),
+                        dataRow["INFO"].ToString(),
+                        dataRow["CREATEDTIME"].ConDate(),
+                        dataRow["TC"].ToString(),
+                        $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+                        );
+                }
+            }
+
+        }
+        catch (Exception ex) { }
+        finally { }
+
+        return inventoryList;
+    }
+    public string UpdateNew(Inventory entity)
+    {
+        string result = null;
+        try
+        {
+            var (isSuccess, msg) = sqlService.StoreReaderV2("InventoryUpdate", new SqlParameter("@inventoryid", entity.InventoryId),
+                new SqlParameter("@inventoryserino", entity.InventorySeriNo), new SqlParameter("@inverntoryname", entity.InventoryName),
+                new SqlParameter("@amount", entity.Amount), new SqlParameter("@info", entity.Info),
+                new SqlParameter("@createdtime", entity.CreatedTime)
+                , new SqlParameter("@createdemployee", entity.CreatedEmployee));
+            if (isSuccess)
+            {
+                result = "Envanter  Başarı İle Güncellendi";
+            }
+            else
+            {
+                result = msg;
+            }
+        }
+
+        catch (Exception ex)
+        {
+
+            return ex.Message;
+        }
+        return result;
+    }
+
+
+
+    public string Update(Inventory entity, string oldName)
+    {
+        throw new NotImplementedException();
+    }
+    public Inventory Get(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public static InventoryDal GetInstance()
+    {
+        if (inventoryDal == null)
+        {
+            inventoryDal = new InventoryDal();
+        }
+        return inventoryDal;
+    }
+
+}
 }

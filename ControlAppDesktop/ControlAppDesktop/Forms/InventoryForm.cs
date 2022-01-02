@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Concrete;
+using System.IO;
 
 namespace ControlAppDesktop.Forms
 {
@@ -113,11 +114,17 @@ namespace ControlAppDesktop.Forms
 
             }
         }
-        void searchInventory()
+        void searchInventoryByName()
         {
-            
-                dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventoryName.Text);
-           
+
+            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventory.Text);
+
+        }
+        void searchInventoryBySeriNo()
+        {
+
+            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtbxtSearchInventory.Text);
+
         }
 
         private void btnList_Click(object sender, EventArgs e)
@@ -217,7 +224,7 @@ namespace ControlAppDesktop.Forms
             txtbxInventorySeriNo.Text = "";
             rtxbxInventoryInfo.Text = "";
             allInventoryList();
-            if (btnAdd.Visible = false)
+            if (btnAdd.Visible == false)
             {
                 btnAdd.Visible = true;
             }
@@ -228,19 +235,84 @@ namespace ControlAppDesktop.Forms
         }
         private void txtbzxSearchInventory_MouseClick(object sender, MouseEventArgs e)
         {
-            txtbxtSearchInventoryName.Text = "";
+            txtbxtSearchInventory.Text = "";
         }
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
-            searchInventory();
-            if (dgvInventory.RowCount<1)
+            if (rBtnName.Checked == true)
             {
-                MessageBox.Show("Aranan Ürün Bulunamadı");
-                return;
+                searchInventoryByName();
+                if (dgvInventory.RowCount < 1)
+                {
+                    MessageBox.Show("Aranan Ürün Bulunamadı");
+                    return;
+                }
             }
+            if (rbtnSeriNo.Checked == true)
+            {
+                searchInventoryBySeriNo();
+                if (dgvInventory.RowCount < 1)
+                {
+                    MessageBox.Show("Aranan Ürün Bulunamadı");
+                    return;
+                }
+            }
+
 
             dgvInventory.Columns[0].Visible = false;
             dgvInventory.Columns[4].Visible = false;
+        }
+
+        private void rBtnName_CheckedChanged(object sender, EventArgs e)
+        {
+            txtbxtSearchInventory.Text = "Envanter Adı Giriniz...";
+        }
+
+        private void rbtnSeriNo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtbxtSearchInventory.Text = "Envanter Seri No Giriniz...";
+        }
+
+        private void rBtnCreatedEmployee_CheckedChanged(object sender, EventArgs e)
+        {
+            txtbxtSearchInventory.Text = "Personel Adı Giriniz...";
+        }
+
+        private void btnInventoryWeb_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Envanter Listesini HTML Ortamında Masaüstü'ne Kaydetmek İstiyor Musunuz?", "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                allInventoryList();
+                string content = Html_Out(dgvInventory);
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                File.WriteAllText(desktopPath + "\\ Envanter Listesi.html", content);
+                MessageBox.Show("Envanter Listesi HTML Formatında Masaüstüne Kaydedildi...");
+            }
+        }
+        public string Html_Out(DataGridView dg)
+        {
+            StringBuilder strB = new StringBuilder();
+            strB.AppendLine("<html><head><meta charset=utf-8><style>table{padding:10px;} th,td{padding:8px;}</style></head><body><center><table border='1' cellpadding='0' cellspacing='0'>");
+            strB.AppendLine("<tr>");
+            for (int i = 0; i < dg.Columns.Count; i++) { if (dg.Columns[i].Visible == true) { strB.AppendLine("<th align='center' valign='middle'>" + dg.Columns[i].HeaderText + "</th>"); } }
+            strB.AppendLine("</tr>");
+            for (int i = 0; i < dg.Rows.Count; i++)
+            {
+                if (dg.Rows[i].Visible)
+                {
+                    strB.AppendLine("<tr>");
+                    foreach (DataGridViewCell dgvc in dg.Rows[i].Cells)
+                    {
+                        if (dgvc.OwningColumn.Visible == true) { strB.AppendLine("<td align='center' valign='middle'>" + dgvc.Value.ToString() + "</td>"); }
+                    }
+                    strB.AppendLine("</tr>");
+                }
+            }
+            strB.AppendLine("</table></center>");
+            strB.AppendLine("</body></html>");
+            return strB.ToString();
         }
     }
 }
