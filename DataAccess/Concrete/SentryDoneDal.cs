@@ -27,8 +27,10 @@ namespace DataAccess.Concrete
             string result = null;
             try
             {
-                var (isSucces, msg) = sqlService.StoredV2("SentryDoneCreate", new SqlParameter("@done", entity.Done),
-                    new SqlParameter("@createdtime", entity.CreatedTime), new SqlParameter("@createdemployee", entity.CreatedEmployee));
+                var (isSucces, msg) = sqlService.StoredV2("SentryDoneCreate",
+                    new SqlParameter("@done", entity.Done),
+                    new SqlParameter("@createdtime", entity.CreatedTime),
+                    new SqlParameter("@createdemployee", entity.CreatedEmployee));
                 return "Yapılan İş Başarı ile Eklendi";
             }
 

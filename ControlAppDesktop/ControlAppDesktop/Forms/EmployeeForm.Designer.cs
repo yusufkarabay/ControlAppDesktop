@@ -52,10 +52,22 @@
             this.lblNameInfo = new System.Windows.Forms.Label();
             this.lblTcInfo = new System.Windows.Forms.Label();
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
+            this.btnSearchEmployee = new System.Windows.Forms.Button();
+            this.txtbxSearchEmloyee = new System.Windows.Forms.TextBox();
+            this.gbEmployeeSearch = new System.Windows.Forms.GroupBox();
+            this.rbMail = new System.Windows.Forms.RadioButton();
+            this.rbTel = new System.Windows.Forms.RadioButton();
+            this.rbSurname = new System.Windows.Forms.RadioButton();
+            this.rbDepartment = new System.Windows.Forms.RadioButton();
+            this.rbName = new System.Windows.Forms.RadioButton();
+            this.rbTc = new System.Windows.Forms.RadioButton();
+            this.cbDepartment = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.grpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpInfo.SuspendLayout();
+            this.gbEmployeeSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpEmployee
@@ -90,7 +102,7 @@
             this.dgvEmployee.Size = new System.Drawing.Size(1008, 253);
             this.dgvEmployee.TabIndex = 0;
             this.dgvEmployee.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployee_CellMouseClick);
-            this.dgvEmployee.SelectionChanged += new System.EventHandler(this.dgvEmployee_SelectionChanged);
+           // this.dgvEmployee.SelectionChanged += new System.EventHandler(this.dgvEmployee_SelectionChanged);
             // 
             // contextMenuStrip1
             // 
@@ -113,6 +125,7 @@
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
             this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // yenileToolStripMenuItem
             // 
@@ -272,7 +285,7 @@
             // 
             // btnEmployeeAdd
             // 
-            this.btnEmployeeAdd.Location = new System.Drawing.Point(680, 197);
+            this.btnEmployeeAdd.Location = new System.Drawing.Point(235, 12);
             this.btnEmployeeAdd.Name = "btnEmployeeAdd";
             this.btnEmployeeAdd.Size = new System.Drawing.Size(92, 23);
             this.btnEmployeeAdd.TabIndex = 5;
@@ -280,11 +293,140 @@
             this.btnEmployeeAdd.UseVisualStyleBackColor = true;
             this.btnEmployeeAdd.Click += new System.EventHandler(this.btnEmployeeAdd_Click);
             // 
+            // btnSearchEmployee
+            // 
+            this.btnSearchEmployee.Location = new System.Drawing.Point(814, 32);
+            this.btnSearchEmployee.Name = "btnSearchEmployee";
+            this.btnSearchEmployee.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchEmployee.TabIndex = 6;
+            this.btnSearchEmployee.Text = "Ara";
+            this.btnSearchEmployee.UseVisualStyleBackColor = true;
+            this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
+            // 
+            // txtbxSearchEmloyee
+            // 
+            this.txtbxSearchEmloyee.Location = new System.Drawing.Point(585, 35);
+            this.txtbxSearchEmloyee.Name = "txtbxSearchEmloyee";
+            this.txtbxSearchEmloyee.Size = new System.Drawing.Size(200, 20);
+            this.txtbxSearchEmloyee.TabIndex = 7;
+            this.txtbxSearchEmloyee.Text = "Personel Ara...";
+            // 
+            // gbEmployeeSearch
+            // 
+            this.gbEmployeeSearch.Controls.Add(this.rbMail);
+            this.gbEmployeeSearch.Controls.Add(this.rbTel);
+            this.gbEmployeeSearch.Controls.Add(this.rbSurname);
+            this.gbEmployeeSearch.Controls.Add(this.rbDepartment);
+            this.gbEmployeeSearch.Controls.Add(this.rbName);
+            this.gbEmployeeSearch.Controls.Add(this.rbTc);
+            this.gbEmployeeSearch.Location = new System.Drawing.Point(365, 38);
+            this.gbEmployeeSearch.Name = "gbEmployeeSearch";
+            this.gbEmployeeSearch.Size = new System.Drawing.Size(200, 199);
+            this.gbEmployeeSearch.TabIndex = 8;
+            this.gbEmployeeSearch.TabStop = false;
+            this.gbEmployeeSearch.Text = "Arama Seçeneği";
+            // 
+            // rbMail
+            // 
+            this.rbMail.AutoSize = true;
+            this.rbMail.Location = new System.Drawing.Point(29, 135);
+            this.rbMail.Name = "rbMail";
+            this.rbMail.Size = new System.Drawing.Size(97, 17);
+            this.rbMail.TabIndex = 6;
+            this.rbMail.TabStop = true;
+            this.rbMail.Text = "Mail\'e Göre Ara";
+            this.rbMail.UseVisualStyleBackColor = true;
+            this.rbMail.CheckedChanged += new System.EventHandler(this.rbMail_CheckedChanged);
+            // 
+            // rbTel
+            // 
+            this.rbTel.AutoSize = true;
+            this.rbTel.Location = new System.Drawing.Point(29, 112);
+            this.rbTel.Name = "rbTel";
+            this.rbTel.Size = new System.Drawing.Size(114, 17);
+            this.rbTel.TabIndex = 5;
+            this.rbTel.TabStop = true;
+            this.rbTel.Text = "Telefon\'a Göre Ara";
+            this.rbTel.UseVisualStyleBackColor = true;
+            this.rbTel.CheckedChanged += new System.EventHandler(this.rbTel_CheckedChanged);
+            // 
+            // rbSurname
+            // 
+            this.rbSurname.AutoSize = true;
+            this.rbSurname.Location = new System.Drawing.Point(29, 66);
+            this.rbSurname.Name = "rbSurname";
+            this.rbSurname.Size = new System.Drawing.Size(108, 17);
+            this.rbSurname.TabIndex = 3;
+            this.rbSurname.TabStop = true;
+            this.rbSurname.Text = "Soyad\'a Göre Ara";
+            this.rbSurname.UseVisualStyleBackColor = true;
+            this.rbSurname.CheckedChanged += new System.EventHandler(this.rbSurname_CheckedChanged);
+            // 
+            // rbDepartment
+            // 
+            this.rbDepartment.AutoSize = true;
+            this.rbDepartment.Location = new System.Drawing.Point(29, 89);
+            this.rbDepartment.Name = "rbDepartment";
+            this.rbDepartment.Size = new System.Drawing.Size(130, 17);
+            this.rbDepartment.TabIndex = 2;
+            this.rbDepartment.TabStop = true;
+            this.rbDepartment.Text = "Departman\'a Göre Ara";
+            this.rbDepartment.UseVisualStyleBackColor = true;
+            this.rbDepartment.CheckedChanged += new System.EventHandler(this.rbDepartment_CheckedChanged);
+            // 
+            // rbName
+            // 
+            this.rbName.AutoSize = true;
+            this.rbName.Location = new System.Drawing.Point(29, 43);
+            this.rbName.Name = "rbName";
+            this.rbName.Size = new System.Drawing.Size(91, 17);
+            this.rbName.TabIndex = 1;
+            this.rbName.TabStop = true;
+            this.rbName.Text = "Ad\'a Göre Ara";
+            this.rbName.UseVisualStyleBackColor = true;
+            this.rbName.CheckedChanged += new System.EventHandler(this.rbName_CheckedChanged);
+            // 
+            // rbTc
+            // 
+            this.rbTc.AutoSize = true;
+            this.rbTc.Location = new System.Drawing.Point(29, 20);
+            this.rbTc.Name = "rbTc";
+            this.rbTc.Size = new System.Drawing.Size(97, 17);
+            this.rbTc.TabIndex = 0;
+            this.rbTc.TabStop = true;
+            this.rbTc.Text = "TC\'ye Göre Ara";
+            this.rbTc.UseVisualStyleBackColor = true;
+            this.rbTc.CheckedChanged += new System.EventHandler(this.rbTc_CheckedChanged);
+            // 
+            // cbDepartment
+            // 
+            this.cbDepartment.FormattingEnabled = true;
+            this.cbDepartment.Location = new System.Drawing.Point(585, 36);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Size = new System.Drawing.Size(200, 21);
+            this.cbDepartment.TabIndex = 10;
+            this.cbDepartment.Text = "Departman Seçiniz...";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(709, 127);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 11;
+            this.btnRefresh.Text = "Yenile";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 669);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.cbDepartment);
+            this.Controls.Add(this.gbEmployeeSearch);
+            this.Controls.Add(this.txtbxSearchEmloyee);
+            this.Controls.Add(this.btnSearchEmployee);
             this.Controls.Add(this.btnEmployeeAdd);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.grpEmployee);
@@ -296,7 +438,10 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
+            this.gbEmployeeSearch.ResumeLayout(false);
+            this.gbEmployeeSearch.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -324,5 +469,16 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
+        private System.Windows.Forms.Button btnSearchEmployee;
+        private System.Windows.Forms.TextBox txtbxSearchEmloyee;
+        private System.Windows.Forms.GroupBox gbEmployeeSearch;
+        private System.Windows.Forms.RadioButton rbMail;
+        private System.Windows.Forms.RadioButton rbTel;
+        private System.Windows.Forms.RadioButton rbSurname;
+        private System.Windows.Forms.RadioButton rbDepartment;
+        private System.Windows.Forms.RadioButton rbName;
+        private System.Windows.Forms.RadioButton rbTc;
+        private System.Windows.Forms.ComboBox cbDepartment;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

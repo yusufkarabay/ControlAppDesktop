@@ -16,8 +16,8 @@ namespace DataAccess.Concrete
     {
         static EmployeeDal employeeDal;
         SqlService sqlService;
-     
- 
+
+
         public EmployeeDal()
         {
             sqlService = SqlDatabase.GetInstance();
@@ -29,9 +29,16 @@ namespace DataAccess.Concrete
 
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeCreate", new SqlParameter("@tc", entity.Tc),
-                   new SqlParameter("@surname", entity.Surname), new SqlParameter("@bdate", entity.Bdate), new SqlParameter("@adrees", entity.Adress), new SqlParameter("@tel", entity.Tel), new SqlParameter("@mail", entity.Mail),
-                   new SqlParameter("@departmanid", entity.DepartmentId), new SqlParameter("@authorityid", entity.AuthorityId));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeCreate",
+                    new SqlParameter("@tc", entity.Tc),
+                    new SqlParameter("name", entity.Name),
+                   new SqlParameter("@surname", entity.Surname),
+                   new SqlParameter("@bdate", entity.Bdate),
+                   new SqlParameter("@adress", entity.Adress),
+                   new SqlParameter("@tel", entity.Tel),
+                   new SqlParameter("@mail", entity.Mail),
+                   new SqlParameter("@departmentid", entity.DepartmentId),
+                   new SqlParameter("@authorityid", entity.AuthorityId));
 
                 if (isSuccess)
                 {
@@ -59,7 +66,7 @@ namespace DataAccess.Concrete
                 var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeDelete", new SqlParameter("@id", id));
                 if (isSuccess)
                 {
-                    result = "Departman Başarıyla Silindi";
+                    result = "Personel Başarıyla Silindi";
                 }
                 else
                 {
@@ -93,16 +100,29 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        Employee employee = new Employee(dataRow["TC"].ToString(), dataRow["NAME"].ToString(), dataRow["SURNAME"].ToString(),
-                            dataRow["BDATE"].ConDate(), dataRow["ADRESS"].ToString(),
-                            dataRow["TEL"].ToString(), dataRow["MAIL"].ToString(), dataRow["DEPARTMENTNAME"].ToString());
 
-                        employeesList.Add(employee);
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                   dataRow["DEPARTMENTNAME"].ToString(),
+                   dataRow["AUTHORITYNAME"].ToString(),
+                   (Guid)dataRow["DEPARTMENTID"],
+                   (Guid)dataRow["AUTHORITYID"]));
+
                     }
+
                 }
+                else employeesList = null;
+
 
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
             finally { }
 
             return employeesList;
@@ -294,8 +314,16 @@ namespace DataAccess.Concrete
 
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeUpdate", new SqlParameter("@tc", entity.Tc), new SqlParameter("name", entity.Name), new SqlParameter("surname", entity.Surname), new SqlParameter("bdate", entity.Bdate), new SqlParameter("adress", entity.Adress),
-                    new SqlParameter("@tel", entity.Tel), new SqlParameter("@mail", entity.Mail), new SqlParameter("departmentid", entity.DepartmentId), new SqlParameter(@"authorityid", entity.AuthorityId));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeUpdate",
+                    new SqlParameter("@tc", entity.Tc),
+                    new SqlParameter("name", entity.Name),
+                    new SqlParameter("surname", entity.Surname),
+                    new SqlParameter("bdate", entity.Bdate),
+                    new SqlParameter("adress", entity.Adress),
+                    new SqlParameter("@tel", entity.Tel),
+                    new SqlParameter("@mail", entity.Mail),
+                    new SqlParameter("departmentid", entity.DepartmentId),
+                    new SqlParameter(@"authorityid", entity.AuthorityId));
 
                 if (isSuccess)
                 {

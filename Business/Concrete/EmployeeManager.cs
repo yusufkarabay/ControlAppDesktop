@@ -106,16 +106,34 @@ namespace Business.Concrete
         {
             try
             {
-                if(id == Guid.Empty)
+                if (id == Guid.Empty)
                 {
                     return null;
                 }
 
                 return employeeDal.Get(id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
+            }
+        }
+
+        public List<Employee> GetByTc(string procuderName, string tc)
+        {
+            try
+            {
+                if (tc == null)
+                {
+                    return null;
+                }
+                return employeeDal.GetByTc(procuderName, tc);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
             }
         }
 
@@ -152,7 +170,7 @@ namespace Business.Concrete
                 {
                     return controlText;
                 }
-                return employeeDal.Update(entity,"");
+                return employeeDal.Update(entity, "");
             }
             catch (Exception ex)
             {

@@ -154,6 +154,7 @@ namespace DataAccess.Concrete
                 if (dt.Rows.Count > 0)
                 {
                     inventories = new List<Inventory>();
+
                     foreach (DataRow dataRow in dt.Rows)
                     {
                         inventories.Add(new Inventory

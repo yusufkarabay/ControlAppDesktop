@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.cmbAuthority = new System.Windows.Forms.ComboBox();
+            this.authority = new System.Windows.Forms.Label();
             this.dtpEmployeeBDate = new System.Windows.Forms.DateTimePicker();
             this.rtbxAdressInfo = new System.Windows.Forms.RichTextBox();
             this.lblAdress = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
-            this.cmbAuthority = new System.Windows.Forms.ComboBox();
-            this.authority = new System.Windows.Forms.Label();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,23 @@
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
             // 
+            // cmbAuthority
+            // 
+            this.cmbAuthority.FormattingEnabled = true;
+            this.cmbAuthority.Location = new System.Drawing.Point(196, 147);
+            this.cmbAuthority.Name = "cmbAuthority";
+            this.cmbAuthority.Size = new System.Drawing.Size(149, 21);
+            this.cmbAuthority.TabIndex = 28;
+            // 
+            // authority
+            // 
+            this.authority.AutoSize = true;
+            this.authority.Location = new System.Drawing.Point(13, 147);
+            this.authority.Name = "authority";
+            this.authority.Size = new System.Drawing.Size(37, 13);
+            this.authority.TabIndex = 27;
+            this.authority.Text = "Yetki :";
+            // 
             // dtpEmployeeBDate
             // 
             this.dtpEmployeeBDate.Location = new System.Drawing.Point(196, 176);
@@ -91,7 +108,7 @@
             this.rtbxAdressInfo.Name = "rtbxAdressInfo";
             this.rtbxAdressInfo.Size = new System.Drawing.Size(100, 96);
             this.rtbxAdressInfo.TabIndex = 25;
-            this.rtbxAdressInfo.Text = "";
+            this.rtbxAdressInfo.Text = "ziyapaşa mah";
             // 
             // lblAdress
             // 
@@ -105,6 +122,7 @@
             // mtxtMail
             // 
             this.mtxtMail.Location = new System.Drawing.Point(196, 227);
+            this.mtxtMail.Mask = "a@gmail.com";
             this.mtxtMail.Name = "mtxtMail";
             this.mtxtMail.Size = new System.Drawing.Size(149, 20);
             this.mtxtMail.TabIndex = 23;
@@ -112,6 +130,7 @@
             // mtxtTel
             // 
             this.mtxtTel.Location = new System.Drawing.Point(196, 201);
+            this.mtxtTel.Mask = "5555555555";
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(149, 20);
             this.mtxtTel.TabIndex = 22;
@@ -130,6 +149,7 @@
             this.txtSurnmaeInfo.Name = "txtSurnmaeInfo";
             this.txtSurnmaeInfo.Size = new System.Drawing.Size(149, 20);
             this.txtSurnmaeInfo.TabIndex = 19;
+            this.txtSurnmaeInfo.Text = "denemekarabay";
             // 
             // txtNameInfo
             // 
@@ -137,6 +157,7 @@
             this.txtNameInfo.Name = "txtNameInfo";
             this.txtNameInfo.Size = new System.Drawing.Size(149, 20);
             this.txtNameInfo.TabIndex = 18;
+            this.txtNameInfo.Text = "deneme";
             // 
             // mtxtTcInfo
             // 
@@ -144,6 +165,7 @@
             this.mtxtTcInfo.Name = "mtxtTcInfo";
             this.mtxtTcInfo.Size = new System.Drawing.Size(149, 20);
             this.mtxtTcInfo.TabIndex = 17;
+            this.mtxtTcInfo.Text = "99999999999";
             // 
             // lblMail
             // 
@@ -217,23 +239,6 @@
             this.btnEmployeeAdd.Text = "Oluştur";
             this.btnEmployeeAdd.UseVisualStyleBackColor = true;
             this.btnEmployeeAdd.Click += new System.EventHandler(this.btnEmployeeAdd_Click);
-            // 
-            // cmbAuthority
-            // 
-            this.cmbAuthority.FormattingEnabled = true;
-            this.cmbAuthority.Location = new System.Drawing.Point(196, 147);
-            this.cmbAuthority.Name = "cmbAuthority";
-            this.cmbAuthority.Size = new System.Drawing.Size(149, 21);
-            this.cmbAuthority.TabIndex = 28;
-            // 
-            // authority
-            // 
-            this.authority.AutoSize = true;
-            this.authority.Location = new System.Drawing.Point(13, 147);
-            this.authority.Name = "authority";
-            this.authority.Size = new System.Drawing.Size(37, 13);
-            this.authority.TabIndex = 27;
-            this.authority.Text = "Yetki :";
             // 
             // AddEmployeeForm
             // 

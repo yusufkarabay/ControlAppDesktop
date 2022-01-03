@@ -30,18 +30,27 @@ namespace ControlAppDesktop.Forms
             employeeManager = EmployeeManager.GetInstance();
             departmentManager = DepartmentManager.GetInstance();
         }
-
         private void Employee_Load(object sender, EventArgs e)
         {
-            EmployeeList();
+            employeeList();
+            cbDepartment.Visible = false;
+
         }
-        void EmployeeList()
+        //****************************
+        void employeeList()
         {
             dgvEmployee.DataSource = employeeManager.GetAll();
-            if(dgvEmployee.Rows.Count > 0)
+            if (dgvEmployee.Rows.Count > 0)
+            {
                 dgvEmployee.Rows[0].Selected = true;
+            }
+
+            dgvEmployee.Columns[0].Visible = false;
+            dgvEmployee.Columns[1].Visible = false;
+            dgvEmployee.Columns[2].Visible = false;
+
         }
-        void Fillİnfos()
+        void fillInfos()
         {
             lblTcInfo.Text = employee.Tc;
             lblNameInfo.Text = employee.Name; ;
@@ -51,8 +60,45 @@ namespace ControlAppDesktop.Forms
             lblTelInfo.Text = employee.Tel;
             lblMailInfo.Text = employee.Mail;
         }
+        void deleteEmployee()
+        {
+            employee = new Employee(
+               Guid.Parse(dgvEmployee.CurrentRow.Cells["Id"].Value.ToString()),
+               dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
+               DateTime.Parse(dgvEmployee.CurrentRow.Cells["Bdate"].Value.ToString()),
+               dgvEmployee.CurrentRow.Cells["Adress"].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells["Tel"].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells["Mail"].Value.ToString(),
+               dgvEmployee.CurrentRow.Cells["DepartmentName"].Value.ToString(),
+               Guid.Parse(dgvEmployee.CurrentRow.Cells["DepartmentId"].Value.ToString()),
+               Guid.Parse(dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ToString()));
 
 
+
+            DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
+                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show(employeeManager.Delete(employee.Id));
+
+            }
+
+        }
+        void UpdateToEmployeeForm()
+        {
+            UpdateEmployeeForm updateEmployeeFrom = new UpdateEmployeeForm(employee.Id);
+
+            updateEmployeeFrom.Show();
+
+
+        }
+        void getEmployeeByTc()
+        {
+            dgvEmployee.DataSource = employeeManager.GetByTc("EmployeeListByTc", txtbxSearchEmloyee.Text);
+        }
+        //***************************************
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvEmployee.SelectedRows == null)
@@ -75,19 +121,10 @@ namespace ControlAppDesktop.Forms
 
 
         }
-        void UpdateToEmployeeForm()
-        {
-            UpdateEmployeeForm updateEmployeeFrom = new UpdateEmployeeForm(employee.Id);
-           
-            updateEmployeeFrom.Show();
-
-           
-        }
         private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EmployeeList();
+            employeeList();
         }
-
         private void dgvEmployee_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvEmployee.CurrentRow == null)
@@ -95,45 +132,177 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Personel Seçiniz");
                 return;
             }
-                  employee = new Employee(dgvEmployee.CurrentRow.Cells["Id"].Value.ConGuidToString(), dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Bdate"].Value.ConDate(),
-                  dgvEmployee.CurrentRow.Cells["Adress"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Tel"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Mail"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["DepartmentName"].Value.ToString(),
-                  // dgvEmployee.CurrentRow.Cells["AuthorityName"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["DepartmentId"].Value.ConGuidToString(),
-                  dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ConGuidToString());
-            Fillİnfos();
-        }
-
-        private void dgvEmployee_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvEmployee.CurrentRow == null)
-            {
-                MessageBox.Show("Listeden Personel Seçiniz");
-                return;
-            }
             employee = new Employee(dgvEmployee.CurrentRow.Cells["Id"].Value.ConGuidToString(), dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Bdate"].Value.ConDate(),
-                  dgvEmployee.CurrentRow.Cells["Adress"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Tel"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["Mail"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["DepartmentName"].Value.ToString(),
-                  // dgvEmployee.CurrentRow.Cells["AuthorityName"].Value.ToString(),
-                  dgvEmployee.CurrentRow.Cells["DepartmentId"].Value.ConGuidToString(),
-                  dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ConGuidToString());
-            Fillİnfos();
+            dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
+            dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
+            dgvEmployee.CurrentRow.Cells["Bdate"].Value.ConDate(),
+            dgvEmployee.CurrentRow.Cells["Adress"].Value.ToString(),
+            dgvEmployee.CurrentRow.Cells["Tel"].Value.ToString(),
+            dgvEmployee.CurrentRow.Cells["Mail"].Value.ToString(),
+            dgvEmployee.CurrentRow.Cells["DepartmentName"].Value.ToString(),
+            // dgvEmployee.CurrentRow.Cells["AuthorityName"].Value.ToString(),
+            dgvEmployee.CurrentRow.Cells["DepartmentId"].Value.ConGuidToString(),
+            dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ConGuidToString());
+            fillInfos();
         }
-
+        
         private void btnEmployeeAdd_Click(object sender, EventArgs e)
         {
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
             addEmployeeForm.Show();
+        }
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteEmployee();
+            employeeList();
+        }
+        private void rbTc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtbxSearchEmloyee.Visible == false)
+            {
+                txtbxSearchEmloyee.Visible = true;
+            }
+            if (cbDepartment.Visible == true)
+            {
+                cbDepartment.Visible = false;
+            }
+
+
+            txtbxSearchEmloyee.Text = "TC Giriniz...";
+        }
+        private void rbName_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtbxSearchEmloyee.Visible == false)
+            {
+                txtbxSearchEmloyee.Visible = true;
+            }
+            if (cbDepartment.Visible == true)
+            {
+                cbDepartment.Visible = false;
+            }
+
+            txtbxSearchEmloyee.Text = "Personel Adı Giriniz...";
+        }
+        private void rbSurname_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtbxSearchEmloyee.Visible == false)
+            {
+                txtbxSearchEmloyee.Visible = true;
+            }
+            if (cbDepartment.Visible == true)
+            {
+                cbDepartment.Visible = false;
+            }
+
+            txtbxSearchEmloyee.Text = "Personel Soyadı Giriniz...";
+        }
+        private void rbDepartment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbDepartment.Visible == false)
+            {
+                cbDepartment.Visible = true;
+            }
+            if (txtbxSearchEmloyee.Visible == true)
+            {
+                txtbxSearchEmloyee.Visible = false;
+            }
+
+
+        }
+        private void rbTel_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtbxSearchEmloyee.Visible == false)
+            {
+                txtbxSearchEmloyee.Visible = true;
+            }
+            if (cbDepartment.Visible == true)
+            {
+                cbDepartment.Visible = false;
+            }
+
+            txtbxSearchEmloyee.Text = "Personele Ait Telefon Numarası Giriniz...";
+        }
+        private void rbMail_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtbxSearchEmloyee.Visible == false)
+            {
+                txtbxSearchEmloyee.Visible = true;
+            }
+            if (cbDepartment.Visible == true)
+            {
+                cbDepartment.Visible = false;
+            }
+
+            txtbxSearchEmloyee.Text = "Personele Ait Mail Adresi Giriniz...";
+        }
+        private void rbBdate_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbDepartment.Visible == true)
+            {
+                cbDepartment.Visible = false;
+            }
+
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            employeeList();
+        }
+        private void btnSearchEmployee_Click(object sender, EventArgs e)
+        {
+            if (rbTc.Checked == true)
+            {
+                getEmployeeByTc();
+
+                if (dgvEmployee.RowCount < 1)
+                {
+                    MessageBox.Show("Girilin TC Kimlik Numarasına Göre Personel Bulunamadı...");
+                    return;
+                }
+            }
+            else if (rbName.Checked == true)
+            {
+                if (dgvEmployee.Rows.Count < 1)
+                {
+                    MessageBox.Show("Girilin Ada Göre Personel Bulunamadı...");
+                    return;
+                }
+            }
+            else if (rbSurname.Checked == true)
+            {
+                if (dgvEmployee.Rows.Count < 1)
+                {
+                    MessageBox.Show("Girilin Ada Göre Personel Bulunamadı...");
+                    return;
+                }
+            }
+            else if (rbDepartment.Checked == true)
+            {
+                if (dgvEmployee.Rows.Count < 1)
+                {
+                    MessageBox.Show("Seçilen Departmanda Çalışan  Personel Bulunamadı...");
+                    return;
+                }
+            }
+            else if (rbTc.Checked == true)
+            {
+                if (dgvEmployee.Rows.Count < 1)
+                {
+                    MessageBox.Show("Girilin Telefon Numarasına Göre Personel Bulunamadı...");
+                    return;
+                }
+            }
+            else if (rbMail.Checked == true)
+            {
+                if (dgvEmployee.Rows.Count < 1)
+                {
+                    MessageBox.Show("Girilin Mail Adresine Göre Personel Bulunamadı...");
+                    return;
+                }
+            }
+            dgvEmployee.Columns[1].Visible = false;
+            dgvEmployee.Columns[2].Visible = false;
+
         }
     }
 }

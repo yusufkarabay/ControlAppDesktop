@@ -59,7 +59,6 @@ namespace Entities
             this.tel = tel;
             this.mail = mail;
             this.departmentName = departmentName;
-
             this.departmentId = departmentId;
             this.authorityId = authorityId;
         }
@@ -77,7 +76,9 @@ namespace Entities
             this.departmentName = departmentName;
             this.authorityName = authorityName;
         }
-        public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName, string authorityName)
+        public Employee(string tc, string name, string surname,
+            DateTime bdate, string adress, string tel,
+            string mail, Guid departmentId, Guid authorityId, string departmentName, string authorityName)
         {
 
             this.tc = tc;
@@ -87,8 +88,10 @@ namespace Entities
             this.adress = adress;
             this.tel = tel;
             this.mail = mail;
+            this.departmentId = departmentId;
             this.departmentName = departmentName;
             this.authorityName = authorityName;
+            this.authorityId = authorityId;
         }
         public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName)
         {
@@ -101,8 +104,16 @@ namespace Entities
             this.mail = mail;
             this.departmentName = departmentName;
         }
-        public Employee(string tc, string name, string surname,
-            DateTime bdate, string adress, string tel, string mail, Guid departmentId, Guid authorityId)
+        public Employee(
+            string tc,
+            string name,
+            string surname,
+            DateTime bdate,
+            string adress,
+            string tel,
+            string mail,
+            Guid departmentId,
+            Guid authorityId)
         {
             this.tc = tc;
             this.name = name;
@@ -113,8 +124,36 @@ namespace Entities
             this.mail = mail;
             this.departmentId = departmentId;
             this.authorityId = authorityId;
-            this.authorityName = authorityName;
+
+        }
+        public Employee(
+            Guid id, 
+            Guid departmentId,
+            Guid authorityId,
+            string tc,
+            string name,
+            string surname,
+            DateTime bdate,
+            string adress,
+            string tel,
+            string mail, 
+            string departmentName,
+            string authorityName
+
+       )
+        {
+            this.id = id;
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
             this.departmentName = departmentName;
+            this.departmentId = departmentId;
+            this.authorityId = authorityId;
+            this.authorityName = authorityName;
         }
 
 
