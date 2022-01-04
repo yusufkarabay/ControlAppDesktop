@@ -81,9 +81,9 @@
             // cmbAuthority
             // 
             this.cmbAuthority.FormattingEnabled = true;
-            this.cmbAuthority.Location = new System.Drawing.Point(196, 147);
+            this.cmbAuthority.Location = new System.Drawing.Point(179, 144);
             this.cmbAuthority.Name = "cmbAuthority";
-            this.cmbAuthority.Size = new System.Drawing.Size(149, 21);
+            this.cmbAuthority.Size = new System.Drawing.Size(200, 21);
             this.cmbAuthority.TabIndex = 28;
             // 
             // authority
@@ -97,7 +97,7 @@
             // 
             // dtpEmployeeBDate
             // 
-            this.dtpEmployeeBDate.Location = new System.Drawing.Point(196, 176);
+            this.dtpEmployeeBDate.Location = new System.Drawing.Point(179, 174);
             this.dtpEmployeeBDate.Name = "dtpEmployeeBDate";
             this.dtpEmployeeBDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEmployeeBDate.TabIndex = 26;
@@ -106,9 +106,9 @@
             // 
             this.rtbxAdressInfo.Location = new System.Drawing.Point(179, 253);
             this.rtbxAdressInfo.Name = "rtbxAdressInfo";
-            this.rtbxAdressInfo.Size = new System.Drawing.Size(100, 96);
+            this.rtbxAdressInfo.Size = new System.Drawing.Size(200, 96);
             this.rtbxAdressInfo.TabIndex = 25;
-            this.rtbxAdressInfo.Text = "ziyapaşa mah";
+            this.rtbxAdressInfo.Text = "";
             // 
             // lblAdress
             // 
@@ -121,51 +121,49 @@
             // 
             // mtxtMail
             // 
-            this.mtxtMail.Location = new System.Drawing.Point(196, 227);
-            this.mtxtMail.Mask = "a@gmail.com";
+            this.mtxtMail.Location = new System.Drawing.Point(179, 227);
             this.mtxtMail.Name = "mtxtMail";
-            this.mtxtMail.Size = new System.Drawing.Size(149, 20);
+            this.mtxtMail.Size = new System.Drawing.Size(200, 20);
             this.mtxtMail.TabIndex = 23;
             // 
             // mtxtTel
             // 
-            this.mtxtTel.Location = new System.Drawing.Point(196, 201);
-            this.mtxtTel.Mask = "5555555555";
+            this.mtxtTel.Location = new System.Drawing.Point(179, 202);
+            this.mtxtTel.Mask = "(999) 000-0000";
             this.mtxtTel.Name = "mtxtTel";
-            this.mtxtTel.Size = new System.Drawing.Size(149, 20);
+            this.mtxtTel.Size = new System.Drawing.Size(200, 20);
             this.mtxtTel.TabIndex = 22;
             // 
             // cbDepartmentInfo
             // 
             this.cbDepartmentInfo.FormattingEnabled = true;
-            this.cbDepartmentInfo.Location = new System.Drawing.Point(189, 112);
+            this.cbDepartmentInfo.Location = new System.Drawing.Point(179, 109);
             this.cbDepartmentInfo.Name = "cbDepartmentInfo";
-            this.cbDepartmentInfo.Size = new System.Drawing.Size(149, 21);
+            this.cbDepartmentInfo.Size = new System.Drawing.Size(200, 21);
             this.cbDepartmentInfo.TabIndex = 20;
             // 
             // txtSurnmaeInfo
             // 
-            this.txtSurnmaeInfo.Location = new System.Drawing.Point(189, 83);
+            this.txtSurnmaeInfo.Location = new System.Drawing.Point(179, 76);
             this.txtSurnmaeInfo.Name = "txtSurnmaeInfo";
-            this.txtSurnmaeInfo.Size = new System.Drawing.Size(149, 20);
+            this.txtSurnmaeInfo.Size = new System.Drawing.Size(200, 20);
             this.txtSurnmaeInfo.TabIndex = 19;
-            this.txtSurnmaeInfo.Text = "denemekarabay";
             // 
             // txtNameInfo
             // 
-            this.txtNameInfo.Location = new System.Drawing.Point(189, 46);
+            this.txtNameInfo.Location = new System.Drawing.Point(179, 43);
             this.txtNameInfo.Name = "txtNameInfo";
-            this.txtNameInfo.Size = new System.Drawing.Size(149, 20);
+            this.txtNameInfo.Size = new System.Drawing.Size(200, 20);
             this.txtNameInfo.TabIndex = 18;
-            this.txtNameInfo.Text = "deneme";
             // 
             // mtxtTcInfo
             // 
-            this.mtxtTcInfo.Location = new System.Drawing.Point(189, 17);
+            this.mtxtTcInfo.Location = new System.Drawing.Point(179, 17);
+            this.mtxtTcInfo.Mask = "00000000000";
             this.mtxtTcInfo.Name = "mtxtTcInfo";
-            this.mtxtTcInfo.Size = new System.Drawing.Size(149, 20);
+            this.mtxtTcInfo.Size = new System.Drawing.Size(200, 20);
             this.mtxtTcInfo.TabIndex = 17;
-            this.mtxtTcInfo.Text = "99999999999";
+            this.mtxtTcInfo.ValidatingType = typeof(int);
             // 
             // lblMail
             // 

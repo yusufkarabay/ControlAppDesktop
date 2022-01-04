@@ -136,6 +136,94 @@ namespace Business.Concrete
                 return new List<Employee>();
             }
         }
+        public List<Employee> GetByName(string procuderName, string name)
+        {
+            try
+            {
+                if (name == null)
+                {
+                    return null;
+                }
+                return employeeDal.GetByName(procuderName, name);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
+            }
+        }
+        public List<Employee> GetByTel(string procuderName, string tel)
+        {
+            try
+            {
+                if (tel == null)
+                {
+                    return null;
+                }
+                return employeeDal.GetByTel(procuderName, tel);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
+            }
+        }
+        
+        public List<Employee> GetByMail(string procuderName, string mail)
+        {
+            try
+            {
+                if (mail == null)
+                {
+                    return null;
+                }
+                return employeeDal.GetByMail(procuderName, mail);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
+            }
+        }
+
+        public List<Employee> GetBySurname(string procuderName, string surname)
+        {
+            try
+            {
+                if (surname == null)
+                {
+                    return null;
+                }
+                return employeeDal.GetBySurname(procuderName, surname);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
+            }
+        }
+        public List<Employee> GetByDepartment(string procuderName, string departmentid)
+        {
+            try
+            {
+                if (departmentid == null)
+                {
+                    return null;
+                }
+                return employeeDal.GetByDepartment(procuderName, departmentid);
+
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
+            }
+        }
+
 
         public Employee Get(string tc)
         {

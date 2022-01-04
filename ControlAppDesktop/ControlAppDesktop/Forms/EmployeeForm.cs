@@ -23,6 +23,7 @@ namespace ControlAppDesktop.Forms
         DepartmentManager departmentManager;
         public object[] infos;
         Employee employee;
+        List<Department> departmentList;
 
         public EmployeeForm()
         {
@@ -94,10 +95,42 @@ namespace ControlAppDesktop.Forms
 
 
         }
+        void FillCbDepartment()
+        {
+            departmentList = departmentManager.GetAll();
+
+            cbDepartment.DataSource = departmentList;
+
+            cbDepartment.ValueMember = "DepartmentId";
+            cbDepartment.DisplayMember = "DepartmentName";
+            cbDepartment.SelectedIndex = -1;
+        }
+
         void getEmployeeByTc()
         {
             dgvEmployee.DataSource = employeeManager.GetByTc("EmployeeListByTc", txtbxSearchEmloyee.Text);
         }
+        void getEmployeeByName()
+        {
+            dgvEmployee.DataSource = employeeManager.GetByName("EmployeeListByName", txtbxSearchEmloyee.Text);
+        }
+        void getEmployeeBySurname()
+        {
+            dgvEmployee.DataSource = employeeManager.GetBySurname("EmployeeListBySurname", txtbxSearchEmloyee.Text);
+        }
+        void getEmployeeByDepartment()
+        {
+            dgvEmployee.DataSource = employeeManager.GetByDepartment("EmployeeListByDepartment", cbDepartment.SelectedValue.ToString());
+        }
+        void getEmployyeByMail()
+        {
+            dgvEmployee.DataSource = employeeManager.GetByMail("EmployeeListByMail", txtbxSearchEmloyee.Text);
+        }
+        void getEmployyeByTel()
+        {
+            dgvEmployee.DataSource = employeeManager.GetByTel("EmployeeListByTel", txtbxSearchEmloyee.Text);
+        }
+
         //***************************************
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -132,7 +165,9 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Personel Seçiniz");
                 return;
             }
-            employee = new Employee(dgvEmployee.CurrentRow.Cells["Id"].Value.ConGuidToString(), dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
+            employee = new Employee(
+            dgvEmployee.CurrentRow.Cells["Id"].Value.ConGuidToString(),
+            dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
             dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
             dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
             dgvEmployee.CurrentRow.Cells["Bdate"].Value.ConDate(),
@@ -145,7 +180,7 @@ namespace ControlAppDesktop.Forms
             dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ConGuidToString());
             fillInfos();
         }
-        
+
         private void btnEmployeeAdd_Click(object sender, EventArgs e)
         {
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
@@ -206,6 +241,7 @@ namespace ControlAppDesktop.Forms
             {
                 txtbxSearchEmloyee.Visible = false;
             }
+            FillCbDepartment();
 
 
         }
@@ -250,7 +286,13 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSearchEmployee_Click(object sender, EventArgs e)
         {
-            if (rbTc.Checked == true)
+            if (rbTc.Checked == false & rbName.Checked == false &
+                rbSurname.Checked == false & rbDepartment.Checked == false
+                & rbTel.Checked == false & rbMail.Checked == false)
+            {
+                MessageBox.Show("Lütfen Bir Arama Kriteri Seçiniz");
+            }
+            else if (rbTc.Checked == true )
             {
                 getEmployeeByTc();
 
@@ -262,6 +304,7 @@ namespace ControlAppDesktop.Forms
             }
             else if (rbName.Checked == true)
             {
+                getEmployeeByName();
                 if (dgvEmployee.Rows.Count < 1)
                 {
                     MessageBox.Show("Girilin Ada Göre Personel Bulunamadı...");
@@ -270,6 +313,7 @@ namespace ControlAppDesktop.Forms
             }
             else if (rbSurname.Checked == true)
             {
+                getEmployeeBySurname();
                 if (dgvEmployee.Rows.Count < 1)
                 {
                     MessageBox.Show("Girilin Ada Göre Personel Bulunamadı...");
@@ -278,14 +322,16 @@ namespace ControlAppDesktop.Forms
             }
             else if (rbDepartment.Checked == true)
             {
+                getEmployeeByDepartment();
                 if (dgvEmployee.Rows.Count < 1)
                 {
                     MessageBox.Show("Seçilen Departmanda Çalışan  Personel Bulunamadı...");
                     return;
                 }
             }
-            else if (rbTc.Checked == true)
+            else if (rbTel.Checked == true)
             {
+                getEmployyeByTel();
                 if (dgvEmployee.Rows.Count < 1)
                 {
                     MessageBox.Show("Girilin Telefon Numarasına Göre Personel Bulunamadı...");
@@ -294,6 +340,7 @@ namespace ControlAppDesktop.Forms
             }
             else if (rbMail.Checked == true)
             {
+                getEmployyeByMail();
                 if (dgvEmployee.Rows.Count < 1)
                 {
                     MessageBox.Show("Girilin Mail Adresine Göre Personel Bulunamadı...");
@@ -303,6 +350,11 @@ namespace ControlAppDesktop.Forms
             dgvEmployee.Columns[1].Visible = false;
             dgvEmployee.Columns[2].Visible = false;
 
+        }
+
+        private void txtbxSearchEmloyee_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtbxSearchEmloyee.Text = "";
         }
     }
 }

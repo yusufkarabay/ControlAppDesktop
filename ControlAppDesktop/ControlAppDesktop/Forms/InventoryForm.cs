@@ -314,5 +314,10 @@ namespace ControlAppDesktop.Forms
             strB.AppendLine("</body></html>");
             return strB.ToString();
         }
+
+        private void InventoryForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

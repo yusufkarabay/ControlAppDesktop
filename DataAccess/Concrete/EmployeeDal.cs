@@ -127,7 +127,238 @@ namespace DataAccess.Concrete
 
             return employeesList;
         }
+        public List<Employee> GetByName(string procuderName, string name)
+        {
+            List<Employee> employeesList = null;
 
+            try
+            {
+
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@name", name));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                   dataRow["DEPARTMENTNAME"].ToString(),
+                   dataRow["AUTHORITYNAME"].ToString(),
+                   (Guid)dataRow["DEPARTMENTID"],
+                   (Guid)dataRow["AUTHORITYID"]));
+
+                    }
+
+                }
+                else employeesList = null;
+
+
+            }
+            catch (Exception) { }
+            finally { }
+
+            return employeesList;
+        }
+        public List<Employee> GetBySurname(string procuderName, string surname)
+        {
+            List<Employee> employeesList = null;
+
+            try
+            {
+
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@surname", surname));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                   dataRow["DEPARTMENTNAME"].ToString(),
+                   dataRow["AUTHORITYNAME"].ToString(),
+                   (Guid)dataRow["DEPARTMENTID"],
+                   (Guid)dataRow["AUTHORITYID"]));
+
+                    }
+
+                }
+                else employeesList = null;
+
+
+            }
+            catch (Exception) { }
+            finally { }
+
+            return employeesList;
+        }
+
+        public List<Employee> GetByMail(string procuderName, string mail)
+        {
+            List<Employee> employeesList = null;
+
+            try
+            {
+
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@mail", mail));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                   dataRow["DEPARTMENTNAME"].ToString(),
+                   dataRow["AUTHORITYNAME"].ToString(),
+                   (Guid)dataRow["DEPARTMENTID"],
+                   (Guid)dataRow["AUTHORITYID"]));
+
+                    }
+
+                }
+                else employeesList = null;
+
+
+            }
+            catch (Exception) { }
+            finally { }
+
+            return employeesList;
+        }
+        public List<Employee> GetByTel(string procuderName, string tel)
+        {
+            List<Employee> employeesList = null;
+
+            try
+            {
+
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@tel", tel));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                   dataRow["DEPARTMENTNAME"].ToString(),
+                   dataRow["AUTHORITYNAME"].ToString(),
+                   (Guid)dataRow["DEPARTMENTID"],
+                   (Guid)dataRow["AUTHORITYID"]));
+
+                    }
+
+                }
+                else employeesList = null;
+
+
+            }
+            catch (Exception) { }
+            finally { }
+
+            return employeesList;
+        }
+        
+        public List<Employee> GetByDepartment(string procuderName, string departmentid)
+        {
+            List<Employee> employeesList = null;
+
+            try
+            {
+
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@departmentid", departmentid));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                   dataRow["DEPARTMENTNAME"].ToString(),
+                   dataRow["AUTHORITYNAME"].ToString(),
+                   (Guid)dataRow["DEPARTMENTID"],
+                   (Guid)dataRow["AUTHORITYID"]));
+
+                    }
+
+                }
+                else employeesList = null;
+
+
+            }
+            catch (Exception) { }
+            finally { }
+
+            return employeesList;
+        }
         public List<Employee> GetAll()
         {
 
@@ -327,7 +558,7 @@ namespace DataAccess.Concrete
 
                 if (isSuccess)
                 {
-                    result = entity.Tc + " Personeli Başarıyla Güncellendi";
+                    result = entity.Name+" "+entity.Surname +" Adlı Personeli Başarıyla Güncellendi";
                 }
                 else
                 {

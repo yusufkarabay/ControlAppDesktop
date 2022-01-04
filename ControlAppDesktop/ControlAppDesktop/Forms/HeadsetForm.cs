@@ -17,8 +17,8 @@ namespace ControlAppDesktop.Forms
     {
         HeadsetManager headsetManager;
         Headset headset;
-  
-     
+
+
 
         public HeadsetForm()
         {
@@ -40,7 +40,26 @@ namespace ControlAppDesktop.Forms
         private void HeadsetForm_Load(object sender, EventArgs e)
         {
             AllReceiverHeadset();
-           // FillInfos();
+             
+        }
+
+        private void dgvHeadset_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (dgvHeadset.CurrentRow == null)
+            {
+                MessageBox.Show("Teslim Almak İçin Bir Kulaklık Seçiniz");
+                return;
+            }
+            //headset = new Headset(
+            //    Guid.Parse(dgvHeadset.CurrentRow.Cells["HEADSETID"].Value.ToString()),
+            //    dgvHeadset.CurrentRow.Cells["HEADSETSERINO"].Value.ToString(),
+            //    dgvHeadset.CurrentRow.Cells["RECEIVERPERSON"].Value.ToString(),
+            //    dgvHeadset.CurrentRow.Cells["DELIVERYPERSON"].Value.ToString(),
+            //    dgvHeadset.CurrentRow.Cells["HEADSETSTATUSINFO"].Value.ToString(),
+            //    DateTime.Parse(dgvHeadset.CurrentRow.Cells["DELIVERYDATE"].Value.ToString()));
+
+            FillInfos();
         }
     }
 }

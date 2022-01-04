@@ -33,7 +33,6 @@
             this.lblAdress = new System.Windows.Forms.Label();
             this.mtxtMail = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtBdate = new System.Windows.Forms.MaskedTextBox();
             this.cbAuthorityInfo = new System.Windows.Forms.ComboBox();
             this.txtSurnmaeInfo = new System.Windows.Forms.TextBox();
             this.txtNameInfo = new System.Windows.Forms.TextBox();
@@ -46,16 +45,17 @@
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.dateTimePicker1);
             this.grpInfo.Controls.Add(this.rtbxAdressInfo);
             this.grpInfo.Controls.Add(this.lblAdress);
             this.grpInfo.Controls.Add(this.mtxtMail);
             this.grpInfo.Controls.Add(this.mtxtTel);
-            this.grpInfo.Controls.Add(this.mtxtBdate);
             this.grpInfo.Controls.Add(this.cbAuthorityInfo);
             this.grpInfo.Controls.Add(this.txtSurnmaeInfo);
             this.grpInfo.Controls.Add(this.txtNameInfo);
@@ -69,16 +69,16 @@
             this.grpInfo.Controls.Add(this.employeeName);
             this.grpInfo.Location = new System.Drawing.Point(161, 35);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(435, 303);
+            this.grpInfo.Size = new System.Drawing.Size(522, 355);
             this.grpInfo.TabIndex = 5;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
             // 
             // rtbxAdressInfo
             // 
-            this.rtbxAdressInfo.Location = new System.Drawing.Point(172, 218);
+            this.rtbxAdressInfo.Location = new System.Drawing.Point(189, 218);
             this.rtbxAdressInfo.Name = "rtbxAdressInfo";
-            this.rtbxAdressInfo.Size = new System.Drawing.Size(100, 96);
+            this.rtbxAdressInfo.Size = new System.Drawing.Size(200, 96);
             this.rtbxAdressInfo.TabIndex = 25;
             this.rtbxAdressInfo.Text = "";
             // 
@@ -95,50 +95,43 @@
             // 
             this.mtxtMail.Location = new System.Drawing.Point(189, 192);
             this.mtxtMail.Name = "mtxtMail";
-            this.mtxtMail.Size = new System.Drawing.Size(149, 20);
+            this.mtxtMail.Size = new System.Drawing.Size(200, 20);
             this.mtxtMail.TabIndex = 23;
             // 
             // mtxtTel
             // 
             this.mtxtTel.Location = new System.Drawing.Point(189, 166);
             this.mtxtTel.Name = "mtxtTel";
-            this.mtxtTel.Size = new System.Drawing.Size(149, 20);
+            this.mtxtTel.Size = new System.Drawing.Size(200, 20);
             this.mtxtTel.TabIndex = 22;
-            // 
-            // mtxtBdate
-            // 
-            this.mtxtBdate.Location = new System.Drawing.Point(189, 141);
-            this.mtxtBdate.Name = "mtxtBdate";
-            this.mtxtBdate.Size = new System.Drawing.Size(149, 20);
-            this.mtxtBdate.TabIndex = 21;
             // 
             // cbAuthorityInfo
             // 
             this.cbAuthorityInfo.FormattingEnabled = true;
             this.cbAuthorityInfo.Location = new System.Drawing.Point(189, 112);
             this.cbAuthorityInfo.Name = "cbAuthorityInfo";
-            this.cbAuthorityInfo.Size = new System.Drawing.Size(149, 21);
+            this.cbAuthorityInfo.Size = new System.Drawing.Size(200, 21);
             this.cbAuthorityInfo.TabIndex = 20;
             // 
             // txtSurnmaeInfo
             // 
             this.txtSurnmaeInfo.Location = new System.Drawing.Point(189, 83);
             this.txtSurnmaeInfo.Name = "txtSurnmaeInfo";
-            this.txtSurnmaeInfo.Size = new System.Drawing.Size(149, 20);
+            this.txtSurnmaeInfo.Size = new System.Drawing.Size(200, 20);
             this.txtSurnmaeInfo.TabIndex = 19;
             // 
             // txtNameInfo
             // 
             this.txtNameInfo.Location = new System.Drawing.Point(189, 46);
             this.txtNameInfo.Name = "txtNameInfo";
-            this.txtNameInfo.Size = new System.Drawing.Size(149, 20);
+            this.txtNameInfo.Size = new System.Drawing.Size(200, 20);
             this.txtNameInfo.TabIndex = 18;
             // 
             // mtxtTcInfo
             // 
             this.mtxtTcInfo.Location = new System.Drawing.Point(189, 17);
             this.mtxtTcInfo.Name = "mtxtTcInfo";
-            this.mtxtTcInfo.Size = new System.Drawing.Size(149, 20);
+            this.mtxtTcInfo.Size = new System.Drawing.Size(200, 20);
             this.mtxtTcInfo.TabIndex = 17;
             // 
             // lblMail
@@ -214,6 +207,13 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(189, 140);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 26;
+            // 
             // UpdateEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,8 +247,8 @@
         public System.Windows.Forms.MaskedTextBox mtxtTcInfo;
         public System.Windows.Forms.MaskedTextBox mtxtMail;
         public System.Windows.Forms.MaskedTextBox mtxtTel;
-        public System.Windows.Forms.MaskedTextBox mtxtBdate;
         public System.Windows.Forms.RichTextBox rtbxAdressInfo;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

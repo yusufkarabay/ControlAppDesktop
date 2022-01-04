@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpEmployee = new System.Windows.Forms.GroupBox();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -86,8 +86,8 @@
             this.dgvEmployee.AllowUserToDeleteRows = false;
             this.dgvEmployee.AllowUserToResizeColumns = false;
             this.dgvEmployee.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.ContextMenuStrip = this.contextMenuStrip1;
@@ -102,7 +102,6 @@
             this.dgvEmployee.Size = new System.Drawing.Size(1008, 253);
             this.dgvEmployee.TabIndex = 0;
             this.dgvEmployee.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployee_CellMouseClick);
-           // this.dgvEmployee.SelectionChanged += new System.EventHandler(this.dgvEmployee_SelectionChanged);
             // 
             // contextMenuStrip1
             // 
@@ -310,6 +309,7 @@
             this.txtbxSearchEmloyee.Size = new System.Drawing.Size(200, 20);
             this.txtbxSearchEmloyee.TabIndex = 7;
             this.txtbxSearchEmloyee.Text = "Personel Ara...";
+            this.txtbxSearchEmloyee.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbxSearchEmloyee_MouseClick);
             // 
             // gbEmployeeSearch
             // 
@@ -401,7 +401,7 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(585, 36);
+            this.cbDepartment.Location = new System.Drawing.Point(584, 38);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(200, 21);
             this.cbDepartment.TabIndex = 10;

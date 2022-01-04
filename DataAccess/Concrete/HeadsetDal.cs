@@ -16,7 +16,7 @@ namespace DataAccess.Concrete
     {
         static HeadsetDal headsetDal;
         SqlService sqlService;
-         Employee employee;
+        Employee employee;
 
 
         public HeadsetDal()
@@ -146,13 +146,15 @@ namespace DataAccess.Concrete
                     foreach (DataRow dataRow in dt.Rows)
                     {
 
-                             headsetList.Add(new Headset(
-                            Guid.Parse(dataRow["HEADSETID"].ToString()),
-                            dataRow["HEADSETSERINO"].ToString(),
-                            dataRow["RECEIVERPERSON"].ToString(),
-                            dataRow["DELIVERYPERSON"].ToString(),
-                            dataRow["HEADSETSTATUSINFO"].ToString(),
-                            dataRow["DELIVERYDATE"].ConDate()));
+                        headsetList.Add(new Headset(
+                       Guid.Parse(dataRow["HEADSETID"].ToString()),
+                       dataRow["HEADSETSERINO"].ToString(),
+                       dataRow["RECEIVERPERSON"].ToString(),
+                       $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                       dataRow["DELIVERYPERSON"].ToString(),
+                     $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                       dataRow["HEADSETSTATUSINFO"].ToString(),
+                       DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
                     }
                 }
             }

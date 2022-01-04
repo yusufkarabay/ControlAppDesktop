@@ -14,6 +14,8 @@ namespace Entities
         string deliveryPerson;
         string headsetStatusInfo;
         DateTime deliveryDate;
+        string receiverPersonName;
+        string deliveryPersonName;
 
         public Headset()
         {
@@ -23,7 +25,9 @@ namespace Entities
         Guid headsetId,
         string headsetSeriNo,
         string receiverPerson,
+        string receiverPersonName,
         string deliveryPerson,
+        string deliveryPersonName,
         string headsetStatusInfo,
         DateTime deliveryDate)
 
@@ -34,6 +38,8 @@ namespace Entities
             this.headsetStatusInfo = headsetStatusInfo; 
             this.headsetSeriNo = headsetSeriNo;
             this.deliveryPerson = deliveryPerson;
+            this.receiverPersonName = receiverPersonName;
+            this.deliveryPersonName = deliveryPersonName;   
 
         }
 
@@ -43,5 +49,7 @@ namespace Entities
         public string DeliveryPerson { get => deliveryPerson; set => deliveryPerson = value; }
         public string HeadsetStatusInfo { get => headsetStatusInfo; set => headsetStatusInfo = value; }
         public DateTime DeliveryDate { get => deliveryDate; set => deliveryDate = value; }
+        public string ReceiverPersonName { get => receiverPersonName; set => receiverPersonName = value; }
+        public string DeliveryPersonName { get => deliveryPersonName; set => deliveryPersonName = value; }
     }
 }

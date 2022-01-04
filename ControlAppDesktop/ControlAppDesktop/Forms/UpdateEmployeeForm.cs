@@ -59,7 +59,7 @@ namespace ControlAppDesktop.Forms
             txtNameInfo.Text = employee.Name;
             txtSurnmaeInfo.Text = employee.Surname;
 
-            mtxtBdate.Text = employee.Bdate.ToString();
+            dateTimePicker1.Value = employee.Bdate;
             mtxtTel.Text = employee.Tel;
             mtxtMail.Text = employee.Mail;
             rtbxAdressInfo.Text = employee.Adress;
@@ -81,13 +81,36 @@ namespace ControlAppDesktop.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (cbAuthorityInfo.SelectedIndex == -1)
+            if (txtNameInfo.Text == "")
+            {
+                MessageBox.Show("TC Kimlik No Alanı Boş Bırakılamaz"); return;
+            }
+            else if (txtNameInfo.Text == "")
+            {
+                MessageBox.Show("Ad Alanı Boş Bırakılamaz"); return;
+            }
+            else if (txtSurnmaeInfo.Text == "")
+            {
+                MessageBox.Show("Soyad Alanı Boş Bırakılamaz"); return;
+            }
+            else if (txtNameInfo.Text == "")
+            {
+                MessageBox.Show("Ad Alanı Boş Bırakılamaz");
+                return;
+            }
+
+            else if (cbAuthorityInfo.SelectedIndex == -1)
             {
                 MessageBox.Show("department seçiniz");
                 return;
             }
-            UpdadeteEmployee();
-            MessageBox.Show(employee.Name + " " + employee.Surname + " Bilgileri Güncellendi");
+            else
+            {
+                UpdadeteEmployee();
+            }
+
+            this.Close();
+
 
         }
         void UpdadeteEmployee()
@@ -104,14 +127,15 @@ namespace ControlAppDesktop.Forms
                 employee.Tc = mtxtTcInfo.Text;
                 employee.Name = txtNameInfo.Text;
                 employee.Surname = txtSurnmaeInfo.Text;
-                employee.Bdate = mtxtBdate.Text.ConDate();
+                employee.Bdate = dateTimePicker1.Value;
                 employee.Tel = mtxtTel.Text;
                 employee.Mail = mtxtMail.Text;
                 employee.Adress = rtbxAdressInfo.Text;
                 employee.DepartmentId = Guid.Parse(cbAuthorityInfo.SelectedValue.ToString());
                 employee.DepartmentName = cbAuthorityInfo.SelectedText.ToString();
-               
-            } MessageBox.Show(employeeManager.UpdateNew(employee));
+
+            }
+            MessageBox.Show(employeeManager.UpdateNew(employee));
 
 
         }

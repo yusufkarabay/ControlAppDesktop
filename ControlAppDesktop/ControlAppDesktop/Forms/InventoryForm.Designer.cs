@@ -348,6 +348,7 @@
             this.Controls.Add(this.grpInventory);
             this.Name = "InventoryForm";
             this.Text = "InventoryForm";
+            this.Load += new System.EventHandler(this.InventoryForm_Load);
             this.grpInventory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
