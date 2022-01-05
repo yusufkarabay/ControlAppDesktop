@@ -312,7 +312,7 @@ namespace DataAccess.Concrete
 
             return employeesList;
         }
-        
+
         public List<Employee> GetByDepartment(string procuderName, string departmentid)
         {
             List<Employee> employeesList = null;
@@ -392,6 +392,39 @@ namespace DataAccess.Concrete
                        dataRow["AUTHORITYNAME"].ToString(),
                        (Guid)dataRow["DEPARTMENTID"],
                        (Guid)dataRow["AUTHORITYID"]));
+                    }
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return employeesList;
+        }
+        public List<Employee> GetEmployeeMiniList()
+        {
+
+            List<Employee> employeesList = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2("EmployeeMiniList");
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                            dataRow["TC"].ToString(),
+                        dataRow["NAME"].ToString(),
+                        dataRow["SURNAME"].ToString()));
                     }
                 }
 
@@ -558,7 +591,7 @@ namespace DataAccess.Concrete
 
                 if (isSuccess)
                 {
-                    result = entity.Name+" "+entity.Surname +" Adlı Personeli Başarıyla Güncellendi";
+                    result = entity.Name + " " + entity.Surname + " Adlı Personeli Başarıyla Güncellendi";
                 }
                 else
                 {

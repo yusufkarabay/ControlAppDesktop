@@ -53,10 +53,10 @@ namespace DataAccess.Concrete
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("HeadsetReturnDelivery", new SqlParameter("@headsetserino", id));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("HeadsetReturnDelivery", new SqlParameter("@headsetid", id));
                 if (isSuccess)
                 {
-                    result = "Kulaklık" + employee.Name + " " + employee.Surname + " İsimli Personelden Başarı İle Teslim Alındı";
+                    result = "Kulaklık Başarı İle Teslim Alındı";
                 }
                 else
                 {
@@ -145,16 +145,16 @@ namespace DataAccess.Concrete
                     headsetList = new List<Headset>();
                     foreach (DataRow dataRow in dt.Rows)
                     {
-
                         headsetList.Add(new Headset(
                        Guid.Parse(dataRow["HEADSETID"].ToString()),
                        dataRow["HEADSETSERINO"].ToString(),
                        dataRow["RECEIVERPERSON"].ToString(),
-                       $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                       $"{dataRow["RECEIVERPERSON_NAME"].ToString()} {dataRow["RECEIVERPERSON_SURNAME"].ToString()}",
                        dataRow["DELIVERYPERSON"].ToString(),
-                     $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                        $"{dataRow["DELIVERYPERSON_NAME"].ToString()} {dataRow["DELIVERYPERSON_SURNAME"].ToString()}",
                        dataRow["HEADSETSTATUSINFO"].ToString(),
                        DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
+
                     }
                 }
             }

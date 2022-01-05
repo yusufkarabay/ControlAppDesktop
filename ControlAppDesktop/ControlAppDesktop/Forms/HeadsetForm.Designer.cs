@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbHeadset = new System.Windows.Forms.GroupBox();
             this.dgvHeadset = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.returnDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.lblHeadsetSeriNo = new System.Windows.Forms.Label();
             this.headsetstatus = new System.Windows.Forms.Label();
@@ -42,12 +44,11 @@
             this.lblReceiverPersonInfo = new System.Windows.Forms.Label();
             this.lblHeadsetSeriNoInfo = new System.Windows.Forms.Label();
             this.btnHeadsetDelivery = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.teslimAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHeadsetList = new System.Windows.Forms.Button();
             this.gbHeadset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeadset)).BeginInit();
-            this.grpInfo.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbHeadset
@@ -66,8 +67,8 @@
             this.dgvHeadset.AllowUserToDeleteRows = false;
             this.dgvHeadset.AllowUserToResizeColumns = false;
             this.dgvHeadset.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHeadset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHeadset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHeadset.ContextMenuStrip = this.contextMenuStrip1;
@@ -82,6 +83,20 @@
             this.dgvHeadset.Size = new System.Drawing.Size(761, 236);
             this.dgvHeadset.TabIndex = 1;
             this.dgvHeadset.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHeadset_CellMouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.returnDeliveryToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 26);
+            // 
+            // returnDeliveryToolStripMenuItem
+            // 
+            this.returnDeliveryToolStripMenuItem.Name = "returnDeliveryToolStripMenuItem";
+            this.returnDeliveryToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.returnDeliveryToolStripMenuItem.Text = "Teslim Al";
+            this.returnDeliveryToolStripMenuItem.Click += new System.EventHandler(this.returnDeliveryToolStripMenuItem_Click);
             // 
             // grpInfo
             // 
@@ -174,31 +189,30 @@
             // 
             // btnHeadsetDelivery
             // 
-            this.btnHeadsetDelivery.Location = new System.Drawing.Point(615, 59);
+            this.btnHeadsetDelivery.Location = new System.Drawing.Point(639, 64);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
             this.btnHeadsetDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnHeadsetDelivery.TabIndex = 3;
             this.btnHeadsetDelivery.Text = "Kulaklık Teslim Et";
             this.btnHeadsetDelivery.UseVisualStyleBackColor = true;
+            this.btnHeadsetDelivery.Click += new System.EventHandler(this.btnHeadsetDelivery_Click);
             // 
-            // contextMenuStrip1
+            // btnHeadsetList
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.teslimAlToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 26);
-            // 
-            // teslimAlToolStripMenuItem
-            // 
-            this.teslimAlToolStripMenuItem.Name = "teslimAlToolStripMenuItem";
-            this.teslimAlToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.teslimAlToolStripMenuItem.Text = "Teslim Al";
+            this.btnHeadsetList.Location = new System.Drawing.Point(639, 153);
+            this.btnHeadsetList.Name = "btnHeadsetList";
+            this.btnHeadsetList.Size = new System.Drawing.Size(75, 23);
+            this.btnHeadsetList.TabIndex = 4;
+            this.btnHeadsetList.Text = "Listele";
+            this.btnHeadsetList.UseVisualStyleBackColor = true;
+            this.btnHeadsetList.Click += new System.EventHandler(this.btnHeadsetList_Click);
             // 
             // HeadsetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 690);
+            this.Controls.Add(this.btnHeadsetList);
             this.Controls.Add(this.btnHeadsetDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbHeadset);
@@ -207,9 +221,9 @@
             this.Load += new System.EventHandler(this.HeadsetForm_Load);
             this.gbHeadset.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeadset)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -229,6 +243,7 @@
         private System.Windows.Forms.Label lblHeadsetSeriNoInfo;
         private System.Windows.Forms.Button btnHeadsetDelivery;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem teslimAlToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnDeliveryToolStripMenuItem;
+        private System.Windows.Forms.Button btnHeadsetList;
     }
 }

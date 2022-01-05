@@ -22,8 +22,9 @@ namespace Entities
         string authorityName;
 
         public Employee() { }
-        public Employee(string name, string surname)
+        public Employee(string tc,string name, string surname)
         {
+            this.tc= tc;
             this.name = name;
             this.surname = surname;
         }

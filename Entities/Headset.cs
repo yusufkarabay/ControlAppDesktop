@@ -32,16 +32,52 @@ namespace Entities
         DateTime deliveryDate)
 
         {
-            this.headsetId = headsetId; 
+            this.headsetId = headsetId;
             this.deliveryDate = deliveryDate;
             this.receiverPerson = receiverPerson;
-            this.headsetStatusInfo = headsetStatusInfo; 
+            this.headsetStatusInfo = headsetStatusInfo;
             this.headsetSeriNo = headsetSeriNo;
             this.deliveryPerson = deliveryPerson;
             this.receiverPersonName = receiverPersonName;
-            this.deliveryPersonName = deliveryPersonName;   
+            this.deliveryPersonName = deliveryPersonName;
 
         }
+        public Headset(
+        string headsetSeriNo,
+        string receiverPerson,
+        string deliveryPerson,
+        string headsetStatusInfo,
+        DateTime deliveryDate)
+
+        {
+            this.deliveryDate = deliveryDate;
+            this.receiverPerson = receiverPerson;
+            this.headsetStatusInfo = headsetStatusInfo;
+            this.headsetSeriNo = headsetSeriNo;
+            this.deliveryPerson = deliveryPerson;
+        }
+        public Headset(
+       Guid headsetId,
+       string headsetSeriNo,
+       //string receiverPerson,
+       string receiverPersonName,
+       // string deliveryPerson,
+       string deliveryPersonName,
+       string headsetStatusInfo,
+       DateTime deliveryDate)
+
+        {
+            this.headsetId = headsetId;
+            this.deliveryDate = deliveryDate;
+            // this.receiverPerson = receiverPerson;
+            this.headsetStatusInfo = headsetStatusInfo;
+            this.headsetSeriNo = headsetSeriNo;
+            // this.deliveryPerson = deliveryPerson;
+            this.receiverPersonName = receiverPersonName;
+            this.deliveryPersonName = deliveryPersonName;
+
+        }
+
 
         public Guid HeadsetId { get => headsetId; set => headsetId = value; }
         public string HeadsetSeriNo { get => headsetSeriNo; set => headsetSeriNo = value; }

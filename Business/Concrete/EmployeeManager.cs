@@ -241,6 +241,17 @@ namespace Business.Concrete
                 return new List<Employee>();
             }
         }
+        public List<Employee> GetEmployeeMiniList()
+        {
+            try
+            {
+                return employeeDal.GetEmployeeMiniList();
+            }
+            catch
+            {
+                return new List<Employee>();
+            }
+        }
 
 
 
