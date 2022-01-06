@@ -72,7 +72,6 @@ namespace ControlAppDesktop.Forms
         {
             dgvHeadset.DataSource = headsetManager.HeadsetByReceiverEmployee("HeadsetByReceiverEmployee", txtHeadsetSearch.Text);
         }
-
         private void HeadsetForm_Load(object sender, EventArgs e)
         {
 
@@ -129,13 +128,13 @@ namespace ControlAppDesktop.Forms
         }
         private void btnHeadsetSearch_Click(object sender, EventArgs e)
         {
-            if (rbDeliveryEmployee.Checked==false & rbHeadsetSeriNo.Checked==false 
-                & rbReciverEmployee.Checked==false)
+            if (rbDeliveryEmployee.Checked == false & rbHeadsetSeriNo.Checked == false
+                & rbReciverEmployee.Checked == false)
             {
                 MessageBox.Show("Lütfen Bir Arama Kriteri Seçiniz");
                 return;
             }
-           else if (rbDeliveryEmployee.Checked == true)
+            else if (rbDeliveryEmployee.Checked == true)
             {
                 searchHeadsetByDeliveryEmployee();
                 if (dgvHeadset.RowCount < 1)
@@ -171,7 +170,6 @@ namespace ControlAppDesktop.Forms
             dgvHeadset.Columns[2].Visible = false;
             dgvHeadset.Columns[3].Visible = false;
         }
-
         private void txtHeadsetSearch_MouseClick(object sender, MouseEventArgs e)
         {
             txtHeadsetSearch.Text = "";

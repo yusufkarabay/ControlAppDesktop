@@ -120,6 +120,9 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnIdCard.Height; ;
             pnlActive.Top = btnIdCard.Top;
+            EntranceCardForm entranceCardForm=new EntranceCardForm();
+            entranceCardForm.infos = infos;
+            entranceCardForm.Show();
             //  borderColored(sender);
         }
 
