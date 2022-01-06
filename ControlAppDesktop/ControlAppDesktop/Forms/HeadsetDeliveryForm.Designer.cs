@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.gbxHeadsetDelivery = new System.Windows.Forms.GroupBox();
-            this.lblHeadsetSeriNoInfo = new System.Windows.Forms.Label();
-            this.lblDeliveryEmployee = new System.Windows.Forms.Label();
-            this.lblHeadsetInfo = new System.Windows.Forms.Label();
-            this.txtHeadsetSeriNo = new System.Windows.Forms.TextBox();
-            this.cbxDeliveryEmployee = new System.Windows.Forms.ComboBox();
-            this.txtHeadsetInfo = new System.Windows.Forms.TextBox();
             this.btnHeadsetDelivery = new System.Windows.Forms.Button();
+            this.txtHeadsetInfo = new System.Windows.Forms.TextBox();
+            this.cbxDeliveryEmployee = new System.Windows.Forms.ComboBox();
+            this.txtHeadsetSeriNo = new System.Windows.Forms.TextBox();
+            this.lblHeadsetInfo = new System.Windows.Forms.Label();
+            this.lblDeliveryEmployee = new System.Windows.Forms.Label();
+            this.lblHeadsetSeriNoInfo = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gbxHeadsetDelivery.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,55 +56,6 @@
             this.gbxHeadsetDelivery.TabStop = false;
             this.gbxHeadsetDelivery.Text = "Kulaklık Teslim Et";
             // 
-            // lblHeadsetSeriNoInfo
-            // 
-            this.lblHeadsetSeriNoInfo.AutoSize = true;
-            this.lblHeadsetSeriNoInfo.Location = new System.Drawing.Point(6, 40);
-            this.lblHeadsetSeriNoInfo.Name = "lblHeadsetSeriNoInfo";
-            this.lblHeadsetSeriNoInfo.Size = new System.Drawing.Size(88, 13);
-            this.lblHeadsetSeriNoInfo.TabIndex = 0;
-            this.lblHeadsetSeriNoInfo.Text = "Kulaklık Seri No :";
-            // 
-            // lblDeliveryEmployee
-            // 
-            this.lblDeliveryEmployee.AutoSize = true;
-            this.lblDeliveryEmployee.Location = new System.Drawing.Point(6, 69);
-            this.lblDeliveryEmployee.Name = "lblDeliveryEmployee";
-            this.lblDeliveryEmployee.Size = new System.Drawing.Size(111, 13);
-            this.lblDeliveryEmployee.TabIndex = 1;
-            this.lblDeliveryEmployee.Text = "Teslim Alan Personel :";
-            // 
-            // lblHeadsetInfo
-            // 
-            this.lblHeadsetInfo.AutoSize = true;
-            this.lblHeadsetInfo.Location = new System.Drawing.Point(7, 103);
-            this.lblHeadsetInfo.Name = "lblHeadsetInfo";
-            this.lblHeadsetInfo.Size = new System.Drawing.Size(90, 13);
-            this.lblHeadsetInfo.TabIndex = 2;
-            this.lblHeadsetInfo.Text = "Kulaklık Durumu :";
-            // 
-            // txtHeadsetSeriNo
-            // 
-            this.txtHeadsetSeriNo.Location = new System.Drawing.Point(122, 33);
-            this.txtHeadsetSeriNo.Name = "txtHeadsetSeriNo";
-            this.txtHeadsetSeriNo.Size = new System.Drawing.Size(195, 20);
-            this.txtHeadsetSeriNo.TabIndex = 3;
-            // 
-            // cbxDeliveryEmployee
-            // 
-            this.cbxDeliveryEmployee.FormattingEnabled = true;
-            this.cbxDeliveryEmployee.Location = new System.Drawing.Point(123, 66);
-            this.cbxDeliveryEmployee.Name = "cbxDeliveryEmployee";
-            this.cbxDeliveryEmployee.Size = new System.Drawing.Size(194, 21);
-            this.cbxDeliveryEmployee.TabIndex = 4;
-            // 
-            // txtHeadsetInfo
-            // 
-            this.txtHeadsetInfo.Location = new System.Drawing.Point(122, 100);
-            this.txtHeadsetInfo.Name = "txtHeadsetInfo";
-            this.txtHeadsetInfo.Size = new System.Drawing.Size(195, 20);
-            this.txtHeadsetInfo.TabIndex = 5;
-            // 
             // btnHeadsetDelivery
             // 
             this.btnHeadsetDelivery.Location = new System.Drawing.Point(174, 221);
@@ -114,11 +66,68 @@
             this.btnHeadsetDelivery.UseVisualStyleBackColor = true;
             this.btnHeadsetDelivery.Click += new System.EventHandler(this.btnHeadsetDelivery_Click);
             // 
+            // txtHeadsetInfo
+            // 
+            this.txtHeadsetInfo.Location = new System.Drawing.Point(122, 100);
+            this.txtHeadsetInfo.Name = "txtHeadsetInfo";
+            this.txtHeadsetInfo.Size = new System.Drawing.Size(195, 20);
+            this.txtHeadsetInfo.TabIndex = 5;
+            // 
+            // cbxDeliveryEmployee
+            // 
+            this.cbxDeliveryEmployee.FormattingEnabled = true;
+            this.cbxDeliveryEmployee.Location = new System.Drawing.Point(123, 66);
+            this.cbxDeliveryEmployee.Name = "cbxDeliveryEmployee";
+            this.cbxDeliveryEmployee.Size = new System.Drawing.Size(194, 21);
+            this.cbxDeliveryEmployee.TabIndex = 4;
+            // 
+            // txtHeadsetSeriNo
+            // 
+            this.txtHeadsetSeriNo.Location = new System.Drawing.Point(122, 33);
+            this.txtHeadsetSeriNo.Name = "txtHeadsetSeriNo";
+            this.txtHeadsetSeriNo.Size = new System.Drawing.Size(195, 20);
+            this.txtHeadsetSeriNo.TabIndex = 3;
+            // 
+            // lblHeadsetInfo
+            // 
+            this.lblHeadsetInfo.AutoSize = true;
+            this.lblHeadsetInfo.Location = new System.Drawing.Point(7, 103);
+            this.lblHeadsetInfo.Name = "lblHeadsetInfo";
+            this.lblHeadsetInfo.Size = new System.Drawing.Size(90, 13);
+            this.lblHeadsetInfo.TabIndex = 2;
+            this.lblHeadsetInfo.Text = "Kulaklık Durumu :";
+            // 
+            // lblDeliveryEmployee
+            // 
+            this.lblDeliveryEmployee.AutoSize = true;
+            this.lblDeliveryEmployee.Location = new System.Drawing.Point(6, 69);
+            this.lblDeliveryEmployee.Name = "lblDeliveryEmployee";
+            this.lblDeliveryEmployee.Size = new System.Drawing.Size(111, 13);
+            this.lblDeliveryEmployee.TabIndex = 1;
+            this.lblDeliveryEmployee.Text = "Teslim Alan Personel :";
+            // 
+            // lblHeadsetSeriNoInfo
+            // 
+            this.lblHeadsetSeriNoInfo.AutoSize = true;
+            this.lblHeadsetSeriNoInfo.Location = new System.Drawing.Point(6, 40);
+            this.lblHeadsetSeriNoInfo.Name = "lblHeadsetSeriNoInfo";
+            this.lblHeadsetSeriNoInfo.Size = new System.Drawing.Size(88, 13);
+            this.lblHeadsetSeriNoInfo.TabIndex = 0;
+            this.lblHeadsetSeriNoInfo.Text = "Kulaklık Seri No :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(31, 74);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
             // HeadsetDeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxHeadsetDelivery);
             this.Name = "HeadsetDeliveryForm";
             this.Text = "HeadsetDeliveryForm";
@@ -139,5 +148,6 @@
         private System.Windows.Forms.Label lblHeadsetInfo;
         private System.Windows.Forms.Label lblDeliveryEmployee;
         private System.Windows.Forms.Label lblHeadsetSeriNoInfo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

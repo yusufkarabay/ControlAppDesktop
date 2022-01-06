@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbHeadset = new System.Windows.Forms.GroupBox();
             this.dgvHeadset = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -45,10 +45,17 @@
             this.lblHeadsetSeriNoInfo = new System.Windows.Forms.Label();
             this.btnHeadsetDelivery = new System.Windows.Forms.Button();
             this.btnHeadsetList = new System.Windows.Forms.Button();
+            this.btnHeadsetSearch = new System.Windows.Forms.Button();
+            this.txtHeadsetSearch = new System.Windows.Forms.TextBox();
+            this.rbHeadsetSeriNo = new System.Windows.Forms.RadioButton();
+            this.rbDeliveryEmployee = new System.Windows.Forms.RadioButton();
+            this.gbSearchInfo = new System.Windows.Forms.GroupBox();
+            this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
             this.gbHeadset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeadset)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpInfo.SuspendLayout();
+            this.gbSearchInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbHeadset
@@ -67,8 +74,8 @@
             this.dgvHeadset.AllowUserToDeleteRows = false;
             this.dgvHeadset.AllowUserToResizeColumns = false;
             this.dgvHeadset.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHeadset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHeadset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHeadset.ContextMenuStrip = this.contextMenuStrip1;
@@ -189,7 +196,7 @@
             // 
             // btnHeadsetDelivery
             // 
-            this.btnHeadsetDelivery.Location = new System.Drawing.Point(639, 64);
+            this.btnHeadsetDelivery.Location = new System.Drawing.Point(689, 80);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
             this.btnHeadsetDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnHeadsetDelivery.TabIndex = 3;
@@ -199,7 +206,7 @@
             // 
             // btnHeadsetList
             // 
-            this.btnHeadsetList.Location = new System.Drawing.Point(639, 153);
+            this.btnHeadsetList.Location = new System.Drawing.Point(689, 39);
             this.btnHeadsetList.Name = "btnHeadsetList";
             this.btnHeadsetList.Size = new System.Drawing.Size(75, 23);
             this.btnHeadsetList.TabIndex = 4;
@@ -207,11 +214,81 @@
             this.btnHeadsetList.UseVisualStyleBackColor = true;
             this.btnHeadsetList.Click += new System.EventHandler(this.btnHeadsetList_Click);
             // 
+            // btnHeadsetSearch
+            // 
+            this.btnHeadsetSearch.Location = new System.Drawing.Point(445, 204);
+            this.btnHeadsetSearch.Name = "btnHeadsetSearch";
+            this.btnHeadsetSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnHeadsetSearch.TabIndex = 5;
+            this.btnHeadsetSearch.Text = "Ara";
+            this.btnHeadsetSearch.UseVisualStyleBackColor = true;
+            this.btnHeadsetSearch.Click += new System.EventHandler(this.btnHeadsetSearch_Click);
+            // 
+            // txtHeadsetSearch
+            // 
+            this.txtHeadsetSearch.Location = new System.Drawing.Point(406, 178);
+            this.txtHeadsetSearch.Name = "txtHeadsetSearch";
+            this.txtHeadsetSearch.Size = new System.Drawing.Size(165, 20);
+            this.txtHeadsetSearch.TabIndex = 6;
+            this.txtHeadsetSearch.Text = "Kulaklık Ara...";
+            this.txtHeadsetSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtHeadsetSearch_MouseClick);
+            // 
+            // rbHeadsetSeriNo
+            // 
+            this.rbHeadsetSeriNo.AutoSize = true;
+            this.rbHeadsetSeriNo.Location = new System.Drawing.Point(16, 52);
+            this.rbHeadsetSeriNo.Name = "rbHeadsetSeriNo";
+            this.rbHeadsetSeriNo.Size = new System.Drawing.Size(158, 17);
+            this.rbHeadsetSeriNo.TabIndex = 7;
+            this.rbHeadsetSeriNo.TabStop = true;
+            this.rbHeadsetSeriNo.Text = "Kulaklık Seri No\'ya Göre Ara";
+            this.rbHeadsetSeriNo.UseVisualStyleBackColor = true;
+            this.rbHeadsetSeriNo.CheckedChanged += new System.EventHandler(this.rbHeadsetSeriNo_CheckedChanged);
+            // 
+            // rbDeliveryEmployee
+            // 
+            this.rbDeliveryEmployee.AutoSize = true;
+            this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
+            this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(178, 17);
+            this.rbDeliveryEmployee.TabIndex = 8;
+            this.rbDeliveryEmployee.TabStop = true;
+            this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
+            this.rbDeliveryEmployee.UseVisualStyleBackColor = true;
+            this.rbDeliveryEmployee.CheckedChanged += new System.EventHandler(this.rbDeliveryEmployee_CheckedChanged);
+            // 
+            // gbSearchInfo
+            // 
+            this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
+            this.gbSearchInfo.Controls.Add(this.rbHeadsetSeriNo);
+            this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
+            this.gbSearchInfo.Location = new System.Drawing.Point(397, 39);
+            this.gbSearchInfo.Name = "gbSearchInfo";
+            this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
+            this.gbSearchInfo.TabIndex = 9;
+            this.gbSearchInfo.TabStop = false;
+            this.gbSearchInfo.Text = "Arama Seçeneği";
+            // 
+            // rbReciverEmployee
+            // 
+            this.rbReciverEmployee.AutoSize = true;
+            this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
+            this.rbReciverEmployee.Name = "rbReciverEmployee";
+            this.rbReciverEmployee.Size = new System.Drawing.Size(140, 17);
+            this.rbReciverEmployee.TabIndex = 9;
+            this.rbReciverEmployee.TabStop = true;
+            this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
+            this.rbReciverEmployee.UseVisualStyleBackColor = true;
+            this.rbReciverEmployee.CheckedChanged += new System.EventHandler(this.rbReciverEmployee_CheckedChanged);
+            // 
             // HeadsetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 690);
+            this.Controls.Add(this.gbSearchInfo);
+            this.Controls.Add(this.txtHeadsetSearch);
+            this.Controls.Add(this.btnHeadsetSearch);
             this.Controls.Add(this.btnHeadsetList);
             this.Controls.Add(this.btnHeadsetDelivery);
             this.Controls.Add(this.grpInfo);
@@ -224,7 +301,10 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
+            this.gbSearchInfo.ResumeLayout(false);
+            this.gbSearchInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -245,5 +325,11 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem returnDeliveryToolStripMenuItem;
         private System.Windows.Forms.Button btnHeadsetList;
+        private System.Windows.Forms.Button btnHeadsetSearch;
+        private System.Windows.Forms.TextBox txtHeadsetSearch;
+        private System.Windows.Forms.RadioButton rbHeadsetSeriNo;
+        private System.Windows.Forms.RadioButton rbDeliveryEmployee;
+        private System.Windows.Forms.GroupBox gbSearchInfo;
+        private System.Windows.Forms.RadioButton rbReciverEmployee;
     }
 }

@@ -108,7 +108,9 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnHeadset.Height;
             pnlActive.Top = btnHeadset.Top;
+
             HeadsetForm headsetForm = new HeadsetForm();
+            headsetForm.infos = infos;
             headsetForm.Show();
             // borderColored(sender);
         }

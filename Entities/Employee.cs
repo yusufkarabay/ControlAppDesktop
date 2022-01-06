@@ -11,6 +11,9 @@ namespace Entities
         Guid id;
         string tc;
         string name;
+        string employeeName;
+        string employeeSurname;
+
         string surname;
         DateTime bdate;
         string adress;
@@ -21,12 +24,21 @@ namespace Entities
         string departmentName;
         string authorityName;
 
+        string employeeFullName;
+
         public Employee() { }
-        public Employee(string tc,string name, string surname)
+        public string FullName
+        {
+            get
+            {
+                return employeeName + " " + employeeSurname;
+            }
+        }
+        public Employee(string tc,string employeeName, string employeeSurname)
         {
             this.tc= tc;
-            this.name = name;
-            this.surname = surname;
+            this.employeeName = employeeName;
+            this.employeeSurname = employeeSurname;
         }
         public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
         string adress, string tel, string mail, string departmentName, string authorityName,
@@ -156,10 +168,11 @@ namespace Entities
             this.authorityId = authorityId;
             this.authorityName = authorityName;
         }
+       
+       
 
 
-
-        public Guid Id { get => id; set => id = value; }
+    public Guid Id { get => id; set => id = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }
         public Guid AuthorityId { get => authorityId; set => authorityId = value; }
         public string Tc { get => tc; set => tc = value; }
@@ -171,5 +184,9 @@ namespace Entities
         public string Mail { get => mail; set => mail = value; }
         public string DepartmentName { get => departmentName; set => departmentName = value; }
         public string AuthorityName { get => authorityName; set => authorityName = value; }
+        public string EmployeeName { get => employeeName; set => employeeName = value; }
+        public string EmployeeSurname { get => employeeSurname; set => employeeSurname = value; }
+      
+
     }
 }

@@ -33,12 +33,9 @@ namespace DataAccess.Concrete
                     new SqlParameter("@headsetstatusinfo", entity.HeadsetStatusInfo), new SqlParameter("@deliverydate", entity.DeliveryDate));
                 if (isSuccess)
                 {
-                    return entity.HeadsetSeriNo + "  Seri Numaralı Kulaklık Bir Personele Aittir";
+                    return entity.HeadsetSeriNo + " Seri Numaralı Kulaklık Teslim Edilmişitir";
                 }
-                else
-                {
-                    return entity.HeadsetSeriNo + " Seri Numaralı Kulaklık" + employee.Name + " İsimli Personele Teslim Edilmişitir";
-                }
+
             }
             catch (Exception ex)
             {
@@ -47,7 +44,6 @@ namespace DataAccess.Concrete
             }
             return result;
         }
-
         public string Delete(Guid id)
         {
             string result = null;
@@ -70,8 +66,6 @@ namespace DataAccess.Concrete
             }
             return result;
         }
-
-
         public Headset GetByEmployeeName(string procuderName, string receiverPerson)
         {
             if (string.IsNullOrEmpty(procuderName))
@@ -129,7 +123,6 @@ namespace DataAccess.Concrete
 
             return headset;
         }
-
         public List<Headset> GetAll()
         {
             List<Headset> headsetList = null;
@@ -163,9 +156,121 @@ namespace DataAccess.Concrete
 
             return headsetList;
         }
+        public List<Headset> HeadsetByDeliveryEmployee(string procuderName, string deliverypersonName)
+        {
 
 
+            List<Headset> headsetList = null;
 
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@deliverypersonName", deliverypersonName));
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    headsetList = new List<Headset>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        headsetList.Add(new Headset(
+                       Guid.Parse(dataRow["HEADSETID"].ToString()),
+                       dataRow["HEADSETSERINO"].ToString(),
+                       dataRow["RECEIVERPERSON"].ToString(),
+                       $"{dataRow["RECEIVERPERSON_NAME"].ToString()} {dataRow["RECEIVERPERSON_SURNAME"].ToString()}",
+                       dataRow["DELIVERYPERSON"].ToString(),
+                        $"{dataRow["DELIVERYPERSON_NAME"].ToString()} {dataRow["DELIVERYPERSON_SURNAME"].ToString()}",
+                       dataRow["HEADSETSTATUSINFO"].ToString(),
+                       DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
+
+                    }
+                }
+                else headsetList = null;
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return headsetList;
+        }
+        public List<Headset> HeadsetByReceiverEmployee(string procuderName, string receiverpersonName)
+        {
+
+
+            List<Headset> headsetList = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@receiverpersonName", receiverpersonName));
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    headsetList = new List<Headset>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        headsetList.Add(new Headset(
+                       Guid.Parse(dataRow["HEADSETID"].ToString()),
+                       dataRow["HEADSETSERINO"].ToString(),
+                       dataRow["RECEIVERPERSON"].ToString(),
+                       $"{dataRow["RECEIVERPERSON_NAME"].ToString()} {dataRow["RECEIVERPERSON_SURNAME"].ToString()}",
+                       dataRow["DELIVERYPERSON"].ToString(),
+                        $"{dataRow["DELIVERYPERSON_NAME"].ToString()} {dataRow["DELIVERYPERSON_SURNAME"].ToString()}",
+                       dataRow["HEADSETSTATUSINFO"].ToString(),
+                       DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
+
+                    }
+                }
+                else headsetList = null;
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return headsetList;
+        }
+        public List<Headset> HeadsetBySeriNo(string procuderName, string headsetserino)
+        {
+
+
+            List<Headset> headsetList = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@headsetserino", headsetserino));
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    headsetList = new List<Headset>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        headsetList.Add(new Headset(
+                       Guid.Parse(dataRow["HEADSETID"].ToString()),
+                       dataRow["HEADSETSERINO"].ToString(),
+                       dataRow["RECEIVERPERSON"].ToString(),
+                       $"{dataRow["RECEIVERPERSON_NAME"].ToString()} {dataRow["RECEIVERPERSON_SURNAME"].ToString()}",
+                       dataRow["DELIVERYPERSON"].ToString(),
+                        $"{dataRow["DELIVERYPERSON_NAME"].ToString()} {dataRow["DELIVERYPERSON_SURNAME"].ToString()}",
+                       dataRow["HEADSETSTATUSINFO"].ToString(),
+                       DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
+
+                    }
+                }
+                else headsetList = null;
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return headsetList;
+        }
+        
 
         public static HeadsetDal GetInstance()
         {

@@ -36,10 +36,7 @@ namespace Business.Concrete
             {
                 return "Lütfen Kulaklık Seri Numarasını Giriniz";
             }
-            if (DateTime.Now != (headset.DeliveryDate))
-            {
-                return "Sistem Saatini Kaydedemedi Lütfen Sistem Yöneticisine Bilgi Veriniz";
-            }
+            
             return "";
         }
         public string Add(Headset entity)
@@ -101,6 +98,61 @@ namespace Business.Concrete
                 return new List<Headset>();
             }
         }
+
+        public List<Headset> HeadsetByDeliveryEmployee(string procuderName, string deliverypersonName)
+        {
+
+            try
+            {
+                if (deliverypersonName == null)
+                {
+                    return null;
+                }
+                return headsetDal.HeadsetByDeliveryEmployee(procuderName, deliverypersonName);
+            }
+            catch (Exception)
+            {
+
+                return new List<Headset>();
+            }
+        }
+        public List<Headset> HeadsetByReceiverEmployee(string procuderName, string receiverpersonName)
+        {
+
+            try
+            {
+                if (receiverpersonName == null)
+                {
+                    return null;
+                }
+                return headsetDal.HeadsetByReceiverEmployee(procuderName, receiverpersonName);
+            }
+            catch (Exception)
+            {
+
+                return new List<Headset>();
+            }
+        }
+        public List<Headset> HeadsetBySeriNo(string procuderName, string headsetserino)
+        {
+
+            try
+            {
+                if (headsetserino == null)
+                {
+                    return null;
+                }
+                return headsetDal.HeadsetBySeriNo(procuderName, headsetserino);
+            }
+            catch (Exception)
+            {
+
+                return new List<Headset>();
+            }
+        }
+        
+
+
         public static HeadsetManager GetInstance()
         {
             if (headsetManager == null) { headsetManager = new HeadsetManager(); }

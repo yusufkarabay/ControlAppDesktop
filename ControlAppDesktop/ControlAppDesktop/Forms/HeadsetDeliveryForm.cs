@@ -22,6 +22,7 @@ namespace ControlAppDesktop.Forms
         Headset headset;
         EmployeeManager employeeManager;
         public object[] infos;
+
         List<Employee> employees;
         public HeadsetDeliveryForm()
         {
@@ -29,36 +30,39 @@ namespace ControlAppDesktop.Forms
             headsetManager = HeadsetManager.GetInstance();
             employeeManager = EmployeeManager.GetInstance();
         }
+
         void cbxFill()
         {
 
             employees = employeeManager.GetEmployeeMiniList();
 
+
             cbxDeliveryEmployee.DataSource = employees;
             cbxDeliveryEmployee.ValueMember = "Tc";
-            cbxDeliveryEmployee.DisplayMember ="Name"+" "+"Surname";
-            //$"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+            cbxDeliveryEmployee.DisplayMember = "FullName";
+
 
         }
 
         private void btnHeadsetDelivery_Click(object sender, EventArgs e)
         {
-            headset = new Headset(
+             headset = new Headset(
              txtHeadsetSeriNo.Text.ToString(),
              infos[0].ToString(),
              cbxDeliveryEmployee.SelectedValue.ToString(),
              txtHeadsetInfo.Text.ToString(),
-             Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")));
-
-            headsetManager.Add(headset);
-            MessageBox.Show("Kulaklık Başarı İle Teslim Edildi",
-                "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+            
+            MessageBox.Show(headsetManager.Add(headset));
+            
+            this.Close();
 
         }
 
         private void HeadsetDeliveryForm_Load(object sender, EventArgs e)
         {
             cbxFill();
+            cbxDeliveryEmployee.SelectedIndex = -1;
         }
     }
 }
