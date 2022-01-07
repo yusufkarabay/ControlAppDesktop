@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchInfo = new System.Windows.Forms.GroupBox();
             this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
             this.rbEntranceCardSeriNo = new System.Windows.Forms.RadioButton();
@@ -78,6 +78,7 @@
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
             this.rbReciverEmployee.UseVisualStyleBackColor = true;
+            this.rbReciverEmployee.CheckedChanged += new System.EventHandler(this.rbReciverEmployee_CheckedChanged);
             // 
             // rbEntranceCardSeriNo
             // 
@@ -89,6 +90,7 @@
             this.rbEntranceCardSeriNo.TabStop = true;
             this.rbEntranceCardSeriNo.Text = "Giriş Kart Seri No\'ya Göre Ara";
             this.rbEntranceCardSeriNo.UseVisualStyleBackColor = true;
+            this.rbEntranceCardSeriNo.CheckedChanged += new System.EventHandler(this.rbEntranceCardSeriNo_CheckedChanged);
             // 
             // rbDeliveryEmployee
             // 
@@ -100,6 +102,7 @@
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
             this.rbDeliveryEmployee.UseVisualStyleBackColor = true;
+            this.rbDeliveryEmployee.CheckedChanged += new System.EventHandler(this.rbDeliveryEmployee_CheckedChanged);
             // 
             // txtEntranceCardSearch
             // 
@@ -108,6 +111,7 @@
             this.txtEntranceCardSearch.Size = new System.Drawing.Size(165, 20);
             this.txtEntranceCardSearch.TabIndex = 15;
             this.txtEntranceCardSearch.Text = "Giriş Kartı Ara...";
+            this.txtEntranceCardSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEntranceCardSearch_MouseClick);
             // 
             // btnEntranceCardSearch
             // 
@@ -137,6 +141,7 @@
             this.btnEntranceCardDelivery.TabIndex = 12;
             this.btnEntranceCardDelivery.Text = "Giriş Kartı Teslim Et";
             this.btnEntranceCardDelivery.UseVisualStyleBackColor = true;
+            this.btnEntranceCardDelivery.Click += new System.EventHandler(this.btnEntranceCardDelivery_Click);
             // 
             // grpInfo
             // 
@@ -223,10 +228,11 @@
             this.dgvEntranceCard.AllowUserToDeleteRows = false;
             this.dgvEntranceCard.AllowUserToResizeColumns = false;
             this.dgvEntranceCard.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvEntranceCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvEntranceCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEntranceCard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntranceCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntranceCard.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvEntranceCard.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvEntranceCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEntranceCard.Location = new System.Drawing.Point(3, 16);
@@ -251,6 +257,7 @@
             this.teslimAlToolStripMenuItem.Name = "teslimAlToolStripMenuItem";
             this.teslimAlToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.teslimAlToolStripMenuItem.Text = "Teslim Al";
+            this.teslimAlToolStripMenuItem.Click += new System.EventHandler(this.teslimAlToolStripMenuItem_Click);
             // 
             // EntranceCardForm
             // 

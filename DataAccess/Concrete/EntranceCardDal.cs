@@ -103,38 +103,9 @@ namespace DataAccess.Concrete
             return entranceCards;
         }
 
-        public List<EntranceCard> EntranceCardByDeliveryEmployee(string procuderName, string receiveremployee)
+        public List<EntranceCard> EntranceCardByDeliveryEmployee(string procuderName, string deliveryEmployeeName)
         {
 
-            List<EntranceCard> entranceCards = null;
-
-            try
-            {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@receiveremployee", receiveremployee));
-                if (dt.Rows.Count > 0)
-                {
-                    entranceCards = new List<EntranceCard>();
-                    foreach (DataRow dataRow in dt.Rows)
-                    {
-                        entranceCards.Add(new EntranceCard(
-                       Guid.Parse(dataRow["ENTRANCECARDID"].ToString()),
-                       dataRow["ENTRANCECARDSERINO"].ToString(),
-                       dataRow["RECEIVEREMPLOYEE"].ToString(),
-                       $"{dataRow["RECEIVERPERSON_NAME"].ToString()} {dataRow["RECEIVERPERSON_SURNAME"].ToString()}",
-                       dataRow["DELIVERYEMPLOYEE"].ToString(),
-                        $"{dataRow["DELIVERYPERSON_NAME"].ToString()} {dataRow["DELIVERYPERSON_SURNAME"].ToString()}",
-                       DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
-
-                    }
-                }
-            }
-            catch (Exception ex) { }
-            finally { }
-
-            return entranceCards;
-        }
-        public List<EntranceCard> EntranceCardByReceiverEmployee(string procuderName, string deliveryEmployeeName)
-        {
             List<EntranceCard> entranceCards = null;
 
             try
@@ -156,6 +127,38 @@ namespace DataAccess.Concrete
 
                     }
                 }
+                else entranceCards = null;
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return entranceCards;
+        }
+        public List<EntranceCard> EntranceCardByReceiverEmployee(string procuderName, string receiverEmployeeName)
+        {
+            List<EntranceCard> entranceCards = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@receiveremployee", receiverEmployeeName));
+                if (dt.Rows.Count > 0)
+                {
+                    entranceCards = new List<EntranceCard>();
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        entranceCards.Add(new EntranceCard(
+                       Guid.Parse(dataRow["ENTRANCECARDID"].ToString()),
+                       dataRow["ENTRANCECARDSERINO"].ToString(),
+                       dataRow["RECEIVEREMPLOYEE"].ToString(),
+                       $"{dataRow["RECEIVERPERSON_NAME"].ToString()} {dataRow["RECEIVERPERSON_SURNAME"].ToString()}",
+                       dataRow["DELIVERYEMPLOYEE"].ToString(),
+                        $"{dataRow["DELIVERYPERSON_NAME"].ToString()} {dataRow["DELIVERYPERSON_SURNAME"].ToString()}",
+                       DateTime.Parse(dataRow["DELIVERYDATE"].ToString())));
+
+                   
+                    }
+                   
+                } else entranceCards = null;
             }
             catch (Exception ex) { }
             finally { }
@@ -167,7 +170,7 @@ namespace DataAccess.Concrete
 
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@deliveryemployee", entranceCardSeriNo));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@entrancecardserino", entranceCardSeriNo));
                 if (dt.Rows.Count > 0)
                 {
                     entranceCards = new List<EntranceCard>();

@@ -67,6 +67,7 @@
             this.btnHeadsetDelivery.TabIndex = 6;
             this.btnHeadsetDelivery.Text = "Teslim Et";
             this.btnHeadsetDelivery.UseVisualStyleBackColor = true;
+            this.btnHeadsetDelivery.Click += new System.EventHandler(this.btnHeadsetDelivery_Click);
             // 
             // cbxDeliveryEmployee
             // 
@@ -101,15 +102,16 @@
             this.lblEntranceCardSeriNoInfo.TabIndex = 0;
             this.lblEntranceCardSeriNoInfo.Text = "Giriş Kartı Seri No :";
             // 
-            // EntranceCardDelivery
+            // EntranceCardDeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxEntranceCardDelivery);
-            this.Name = "EntranceCardDelivery";
+            this.Name = "EntranceCardDeliveryForm";
             this.Text = "EntranceCardDelivery";
+            this.Load += new System.EventHandler(this.EntranceCardDeliveryForm_Load);
             this.gbxEntranceCardDelivery.ResumeLayout(false);
             this.gbxEntranceCardDelivery.PerformLayout();
             this.ResumeLayout(false);
