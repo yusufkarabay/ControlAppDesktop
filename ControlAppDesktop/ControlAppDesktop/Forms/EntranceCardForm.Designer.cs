@@ -163,9 +163,9 @@
             this.lblEntranceCardSeriNo.AutoSize = true;
             this.lblEntranceCardSeriNo.Location = new System.Drawing.Point(6, 25);
             this.lblEntranceCardSeriNo.Name = "lblEntranceCardSeriNo";
-            this.lblEntranceCardSeriNo.Size = new System.Drawing.Size(85, 13);
+            this.lblEntranceCardSeriNo.Size = new System.Drawing.Size(92, 13);
             this.lblEntranceCardSeriNo.TabIndex = 10;
-            this.lblEntranceCardSeriNo.Text = "Kulaklık Seri No:";
+            this.lblEntranceCardSeriNo.Text = "Giriş Kartı Seri No:";
             // 
             // lblDeliveryPerson
             // 

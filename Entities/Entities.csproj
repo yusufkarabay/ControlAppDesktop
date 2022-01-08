@@ -42,9 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authority.cs" />
+    <Compile Include="Cabinet.cs" />
     <Compile Include="Department.cs" />
+    <Compile Include="Drawer.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EntranceCard.cs" />
+    <Compile Include="GuestCard.cs" />
     <Compile Include="Headset.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

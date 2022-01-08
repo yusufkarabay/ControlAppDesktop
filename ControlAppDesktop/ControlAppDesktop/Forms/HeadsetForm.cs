@@ -128,8 +128,7 @@ namespace ControlAppDesktop.Forms
         }
         private void btnHeadsetSearch_Click(object sender, EventArgs e)
         {
-            if (rbDeliveryEmployee.Checked == false & rbHeadsetSeriNo.Checked == false
-                & rbReciverEmployee.Checked == false)
+            if (rbDeliveryEmployee.Checked == false & rbHeadsetSeriNo.Checked == false & rbReciverEmployee.Checked == false)
             {
                 MessageBox.Show("Lütfen Bir Arama Kriteri Seçiniz");
                 return;

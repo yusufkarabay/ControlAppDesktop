@@ -131,6 +131,9 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnDrawer.Height; ;
             pnlActive.Top = btnDrawer.Top;
+            DrawerForm drawerForm = new DrawerForm();
+            drawerForm.infos = infos;
+            drawerForm.Show();
             // borderColored(sender);
         }
 
@@ -139,6 +142,9 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnCabinet.Height; ;
             pnlActive.Top = btnCabinet.Top;
+            CabinetForm cabinetForm= new CabinetForm();
+            cabinetForm.infos = infos;
+            cabinetForm.Show();
             //borderColored(sender);
         }
 
@@ -148,6 +154,10 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnGuestCard.Height; ;
             pnlActive.Top = btnGuestCard.Top;
+            GuestCardForm guestCardForm=new GuestCardForm();
+            guestCardForm.infos = infos;
+            guestCardForm.Show();
+           
 
         }
 

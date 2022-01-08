@@ -53,6 +53,30 @@
     <Compile Include="Forms\AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CabinetDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CabinetDeliveryForm.Designer.cs">
+      <DependentUpon>CabinetDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CabinetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CabinetForm.Designer.cs">
+      <DependentUpon>CabinetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrawerDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrawerDeliveryForm.Designer.cs">
+      <DependentUpon>DrawerDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrawerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DrawerForm.Designer.cs">
+      <DependentUpon>DrawerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +94,18 @@
     </Compile>
     <Compile Include="Forms\EntranceCardForm.Designer.cs">
       <DependentUpon>EntranceCardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GuestCardDeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GuestCardDeliveryForm.Designer.cs">
+      <DependentUpon>GuestCardDeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GuestCardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GuestCardForm.Designer.cs">
+      <DependentUpon>GuestCardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HeadsetDeliveryForm.cs">
       <SubType>Form</SubType>
@@ -124,6 +160,18 @@
     <EmbeddedResource Include="Forms\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CabinetDeliveryForm.resx">
+      <DependentUpon>CabinetDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CabinetForm.resx">
+      <DependentUpon>CabinetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrawerDeliveryForm.resx">
+      <DependentUpon>DrawerDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DrawerForm.resx">
+      <DependentUpon>DrawerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EntranceCardForm.resx">
       <DependentUpon>EntranceCardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GuestCardDeliveryForm.resx">
+      <DependentUpon>GuestCardDeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GuestCardForm.resx">
+      <DependentUpon>GuestCardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeadsetDeliveryForm.resx">
       <DependentUpon>HeadsetDeliveryForm.cs</DependentUpon>

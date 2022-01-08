@@ -10,57 +10,43 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Concrete;
-
+using Business;
 
 namespace ControlAppDesktop.Forms
 {
-    public partial class HeadsetDeliveryForm : Form
+    public partial class GuestCardDeliveryForm : Form
     {
-
-        Employee employee;
-        HeadsetManager headsetManager;
-        Headset headset;
-        EmployeeManager employeeManager;
         public object[] infos;
-
+        GuestCardManager guestCardManager;
+        EmployeeManager employeeManager;
         List<Employee> employees;
-        public HeadsetDeliveryForm()
+        GuestCard guestCard;
+        public GuestCardDeliveryForm()
         {
             InitializeComponent();
-            headsetManager = HeadsetManager.GetInstance();
             employeeManager = EmployeeManager.GetInstance();
+            guestCardManager = GuestCardManager.GetInstance();
         }
-
         void cbxFill()
         {
-
             employees = employeeManager.GetEmployeeMiniList();
-
-
             cbxDeliveryEmployee.DataSource = employees;
             cbxDeliveryEmployee.ValueMember = "Tc";
             cbxDeliveryEmployee.DisplayMember = "FullName";
-
-
         }
 
-        private void btnHeadsetDelivery_Click(object sender, EventArgs e)
+        private void btnGuestCardDelivery_Click(object sender, EventArgs e)
         {
-             headset = new Headset(
-             txtHeadsetSeriNo.Text.ToString(),
-           
-             cbxDeliveryEmployee.SelectedValue.ToString(),
-               infos[0].ToString(),
-             txtHeadsetInfo.Text.ToString(),
-             Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
-            
-            MessageBox.Show(headsetManager.Add(headset));
-            
+             guestCard = new GuestCard(
+           txtGuestCardNo.Text.ToString(),
+          cbxDeliveryEmployee.SelectedValue.ToString(),
+           infos[0].ToString(),
+          Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+            MessageBox.Show(guestCardManager.Add(guestCard));
             this.Close();
-
         }
 
-        private void HeadsetDeliveryForm_Load(object sender, EventArgs e)
+        private void GuestCardDeliveryForm_Load(object sender, EventArgs e)
         {
             cbxFill();
             cbxDeliveryEmployee.SelectedIndex = -1;

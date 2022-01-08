@@ -75,9 +75,10 @@ namespace ControlAppDesktop.Forms
         }
         private void btnEntranceCardSearch_Click(object sender, EventArgs e)
         {
-            if (rbDeliveryEmployee.Checked == false & rbEntranceCardSeriNo.Checked == false & rbReciverEmployee.Checked == false)
+                if (rbDeliveryEmployee.Checked == false & rbEntranceCardSeriNo.Checked == false & rbReciverEmployee.Checked == false)
             {
                 MessageBox.Show("Lütfen Bir Arama Kriteri Seçiniz");
+                return;
             }
             else if (rbDeliveryEmployee.Checked == true)
             {
@@ -85,6 +86,7 @@ namespace ControlAppDesktop.Forms
                 if (dgvEntranceCard.RowCount < 1)
                 {
                     MessageBox.Show("Girilen Personel Kart Teslim Etmemiştir...");
+                    return;
                 }
             }
             else if (rbEntranceCardSeriNo.Checked == true)
@@ -93,6 +95,7 @@ namespace ControlAppDesktop.Forms
                 if (dgvEntranceCard.RowCount < 1)
                 {
                     MessageBox.Show("Girilen Seri No'ya Ait Kart Bulunamadı...");
+                    return;
                 }
             }
             else if (rbReciverEmployee.Checked == true)
@@ -101,11 +104,12 @@ namespace ControlAppDesktop.Forms
                 if (dgvEntranceCard.RowCount < 1)
                 {
                     MessageBox.Show("Personele Kart Teslim Edilmemiştir...");
+                    return;
                 }
             }
-            //dgvEntranceCard.Columns[0].Visible = false;
-            //dgvEntranceCard.Columns[2].Visible = false;
-            //dgvEntranceCard.Columns[3].Visible = false;
+            dgvEntranceCard.Columns[0].Visible = false;
+            dgvEntranceCard.Columns[2].Visible = false;
+            dgvEntranceCard.Columns[3].Visible = false;
 
         }
         private void btnEntranceCardList_Click(object sender, EventArgs e)

@@ -40,8 +40,9 @@ namespace ControlAppDesktop.Forms
         {
             entranceCard= new EntranceCard(
                 txtEntranceCardSeriNo.Text.ToString(),
-                infos[0].ToString(),
+                
                 cbxDeliveryEmployee.SelectedValue.ToString(),
+                infos[0].ToString(),
                 Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
             MessageBox.Show(entranceCardManager.Add(entranceCard));
             this.Close();

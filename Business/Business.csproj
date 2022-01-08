@@ -42,15 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\AuthorityManager.cs" />
+    <Compile Include="Concrete\CabinetManager.cs" />
     <Compile Include="Concrete\DepartmentManager.cs" />
     <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\EntranceCardManager.cs" />
+    <Compile Include="Concrete\GuestCardManager.cs" />
     <Compile Include="Concrete\HeadsetManager.cs" />
     <Compile Include="Concrete\InventoryManager.cs" />
     <Compile Include="Concrete\RequestDetailManager.cs" />
     <Compile Include="Concrete\RequestManager.cs" />
     <Compile Include="Concrete\SentryDoneManager.cs" />
     <Compile Include="Concrete\SentryToDoManager.cs" />
+    <Compile Include="Concrete\DrawerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

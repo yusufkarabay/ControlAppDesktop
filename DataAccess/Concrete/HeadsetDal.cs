@@ -159,7 +159,6 @@ namespace DataAccess.Concrete
         public List<Headset> HeadsetByDeliveryEmployee(string procuderName, string deliverypersonName)
         {
 
-
             List<Headset> headsetList = null;
 
             try
@@ -270,7 +269,7 @@ namespace DataAccess.Concrete
 
             return headsetList;
         }
-        
+
 
         public static HeadsetDal GetInstance()
         {
