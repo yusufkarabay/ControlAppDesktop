@@ -166,6 +166,9 @@ namespace ControlAppDesktop.Forms
             panelActiveVisible();
             pnlActive.Height = btnGenarator.Height; ;
             pnlActive.Top = btnGenarator.Top;
+            GeneratorForm generatorForm = new GeneratorForm();
+            generatorForm.infos = infos;
+            generatorForm.Show();
             // borderColored(sender);
         }
 

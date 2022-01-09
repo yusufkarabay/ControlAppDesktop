@@ -12,7 +12,7 @@ namespace Entities
         string guestCardNo, receiverEmployee, deliveryEmployee, receiverPersonName, deliveryPersonName;
         DateTime deliveryDate;
 
-        public GuestCard(Guid guestCardId, string guestCardNo, string receiverEmployee, string deliveryEmployee, string receiverPersonName, string deliveryPersonName, DateTime deliveryDate)
+        public GuestCard(Guid guestCardId, string guestCardNo, string receiverEmployee, string receiverPersonName, string deliveryEmployee, string deliveryPersonName, DateTime deliveryDate)
         {
             this.guestCardId = guestCardId;
             this.guestCardNo = guestCardNo;

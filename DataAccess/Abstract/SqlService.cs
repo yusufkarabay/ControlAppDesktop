@@ -103,6 +103,7 @@ namespace DataAccess.Abstract
             return (isSuccess, message);
 
         }
+       
 
         //sql okuma sorgulama işlemi olarak düşünülebilir.
         public SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)// değer okuma işlemi olarak düşünebiliriz
@@ -155,6 +156,8 @@ namespace DataAccess.Abstract
 
             return (results, message);
         }
+        
+
 
         public SqlCommand Stored(string commandText, params SqlParameter[] sqlParameters)
         {

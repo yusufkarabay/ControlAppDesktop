@@ -95,6 +95,12 @@
     <Compile Include="Forms\EntranceCardForm.Designer.cs">
       <DependentUpon>EntranceCardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GeneratorForm.Designer.cs">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GuestCardDeliveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EntranceCardForm.resx">
       <DependentUpon>EntranceCardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GeneratorForm.resx">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GuestCardDeliveryForm.resx">
       <DependentUpon>GuestCardDeliveryForm.cs</DependentUpon>
