@@ -26,14 +26,16 @@ namespace ControlAppDesktop.Forms
         }
         void alWorkedTimeList()
         {
-             
-
-            lblAllWorkedTimeInfo.Text = generatorManager.AllWorkedTime().ToString(); ;
-          
-            
+            lblAllWorkedTimeInfo.Text = generatorManager.AllWorkedTime();
+        }
+        void betweenTimeList()
+        {
+            lblListByTwoTimeInfo.Text = generatorManager.BetweemTimeList("GeneratorBetweenTimeWorked", dtpFirst.Value, dtpSecond.Value).ToString();
+        }
+        void betweenTimeListDataGrid()
+        {
 
         }
-      
 
         private void btnAllTime_Click(object sender, EventArgs e)
         {
@@ -49,7 +51,22 @@ namespace ControlAppDesktop.Forms
             MessageBox.Show(generatorManager.Add(generator));
 
             txtWorkedTime.Text = "";
-            
+
+        }
+
+        private void GeneratorForm_Load(object sender, EventArgs e)
+        {
+            alWorkedTimeList();
+        }
+
+        private void btnEmployeeList_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimeSearch_Click(object sender, EventArgs e)
+        {
+            betweenTimeList();
         }
     }
 }

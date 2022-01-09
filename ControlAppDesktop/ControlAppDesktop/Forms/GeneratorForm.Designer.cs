@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpFirst = new System.Windows.Forms.DateTimePicker();
             this.dtpSecond = new System.Windows.Forms.DateTimePicker();
             this.txtWorkedTime = new System.Windows.Forms.TextBox();
             this.gbGenerator = new System.Windows.Forms.GroupBox();
             this.dgvGenerator = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddWorkedTime = new System.Windows.Forms.Button();
             this.btnTimeSearch = new System.Windows.Forms.Button();
             this.lblWorkedTime = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.lblLast3MonthInfo = new System.Windows.Forms.Label();
             this.lblLastWorkedInfo = new System.Windows.Forms.Label();
             this.lblLastFullEmployeeInfo = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAllTime = new System.Windows.Forms.Button();
             this.gbGenerator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGenerator)).BeginInit();
@@ -104,8 +104,8 @@
             this.dgvGenerator.AllowUserToDeleteRows = false;
             this.dgvGenerator.AllowUserToResizeColumns = false;
             this.dgvGenerator.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvGenerator.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvGenerator.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGenerator.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGenerator.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGenerator.ContextMenuStrip = this.contextMenuStrip1;
@@ -119,6 +119,19 @@
             this.dgvGenerator.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGenerator.Size = new System.Drawing.Size(761, 236);
             this.dgvGenerator.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.editToolStripMenuItem.Text = "Düzenle";
             // 
             // btnAddWorkedTime
             // 
@@ -138,6 +151,7 @@
             this.btnTimeSearch.TabIndex = 20;
             this.btnTimeSearch.Text = "Listele";
             this.btnTimeSearch.UseVisualStyleBackColor = true;
+            this.btnTimeSearch.Click += new System.EventHandler(this.btnTimeSearch_Click);
             // 
             // lblWorkedTime
             // 
@@ -271,6 +285,7 @@
             this.btnEmployeeList.TabIndex = 35;
             this.btnEmployeeList.Text = "Listele";
             this.btnEmployeeList.UseVisualStyleBackColor = true;
+            this.btnEmployeeList.Click += new System.EventHandler(this.btnEmployeeList_Click);
             // 
             // lblListByTwoTimeInfo
             // 
@@ -335,19 +350,6 @@
             this.lblLastFullEmployeeInfo.TabIndex = 42;
             this.lblLastFullEmployeeInfo.Text = "Employee";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 26);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.editToolStripMenuItem.Text = "Düzenle";
-            // 
             // btnAllTime
             // 
             this.btnAllTime.Location = new System.Drawing.Point(196, 41);
@@ -394,6 +396,7 @@
             this.Controls.Add(this.dtpFirst);
             this.Name = "GeneratorForm";
             this.Text = "GeneratorForm";
+            this.Load += new System.EventHandler(this.GeneratorForm_Load);
             this.gbGenerator.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGenerator)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

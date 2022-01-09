@@ -3,6 +3,7 @@ using DataAccess.Database;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -45,7 +46,7 @@ namespace DataAccess.Concrete
             string workedTime;
             try
             {
-                workedTime = sqlService.Reader("GeneratorAllTimeWorkedSum").ToString();
+                workedTime = sqlService.Reader("GeneratorAllTimeWorkedSum");
 
 
             }
@@ -56,6 +57,24 @@ namespace DataAccess.Concrete
             return workedTime;
 
         }
+        public object BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
+        {
+            object betweenTime;
+
+            try
+            {
+                 betweenTime = sqlService.ReaderV2(procuderName, new SqlParameter("@firstdate", firstdate),
+                    new SqlParameter("@seconddate", seconddate));
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return betweenTime.ToString();
+        }
+        
 
         public string Delete(Guid id)
         {

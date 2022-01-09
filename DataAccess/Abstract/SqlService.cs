@@ -81,9 +81,11 @@ namespace DataAccess.Abstract
                     sqlCommand.Parameters.AddRange(sqlParameters);
 
                 int affectedRows = sqlCommand.ExecuteNonQuery();
-                if (affectedRows > 0) { 
+                if (affectedRows > 0)
+                {
                     isSuccess = true;
-                } else
+                }
+                else
                 {
                     isSuccess = false;
                     message = "Verilen kriterlere göre istenilen işlem yapılamadı.";
@@ -103,24 +105,35 @@ namespace DataAccess.Abstract
             return (isSuccess, message);
 
         }
-       
 
-        //sql okuma sorgulama işlemi olarak düşünülebilir.
-        public SqlDataReader Reader(string commandText, params SqlParameter[] sqlParameters)// değer okuma işlemi olarak düşünebiliriz
+
+        
+        public string Reader(string commandText)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = commandText;
-            cmd.Connection = OpenConnection();
-            cmd.CommandType = CommandType.Text;
-            if (sqlParameters != null)
+            int result;
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection connection = null;
+            try
             {
-                cmd.Parameters.AddRange(sqlParameters);
+                connection = OpenConnection();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = commandText;
+                sqlCommand.Connection = connection;
+                 result = int.Parse(sqlCommand.ExecuteScalar().ToString());
             }
-            
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();// SqlDataReader sqlden gelen sonuçlarıu okuyan nesne.ExecuteReader metodu ile. oraya git execute et" sorgula" ve oku "read".
-            
-            return sqlDataReader;// okuduğun sonucu gönder
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                sqlCommand.Dispose();
+
+                if (connection != null) connection.Close();
+            }
+            return result.ToString()+" Dakika Çalışmıştır";
         }
+       
 
         public (DataTable, string) StoredV2(string commandText, params SqlParameter[] sqlParameters)
         {
@@ -136,14 +149,14 @@ namespace DataAccess.Abstract
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.CommandText = commandText;
                 sqlCommand.Connection = connection;
-                if(sqlParameters != null)
+                if (sqlParameters != null)
                     sqlCommand.Parameters.AddRange(sqlParameters);
 
                 results = new DataTable("Results");
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 sqlDataAdapter.Fill(results);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 message = ex.Message;
             }
@@ -151,13 +164,11 @@ namespace DataAccess.Abstract
             {
                 sqlCommand.Dispose();
 
-                if(connection != null) connection.Close();
+                if (connection != null) connection.Close();
             }
 
             return (results, message);
         }
-        
-
 
         public SqlCommand Stored(string commandText, params SqlParameter[] sqlParameters)
         {

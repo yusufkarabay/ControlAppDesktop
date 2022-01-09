@@ -24,9 +24,10 @@ namespace Entities
             this.createdEmployee = createdEmployee;
             this.addedTime = addedTime;
         }
-        public Generator(  int generatorIWorkedTime, string createdEmployee, DateTime addedTime)
+       
+        public Generator(int generatorIWorkedTime, string createdEmployee, DateTime addedTime)
         {
-            
+
             this.generatorIWorkedTime = generatorIWorkedTime;
             this.createdEmployee = createdEmployee;
             this.addedTime = addedTime;
@@ -35,5 +36,6 @@ namespace Entities
         public int GeneratorIWorkedTime { get => generatorIWorkedTime; set => generatorIWorkedTime = value; }
         public string CreatedEmployee { get => createdEmployee; set => createdEmployee = value; }
         public DateTime AddedTime { get => addedTime; set => addedTime = value; }
+       
     }
 }

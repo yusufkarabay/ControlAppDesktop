@@ -64,7 +64,7 @@ namespace Business.Concrete
             string workedTime;
             try
             {
-                return workedTime = generatorDal.AllWorkedTime().ToString();
+                return workedTime = generatorDal.AllWorkedTime();
             }
             catch (Exception ex)
             {
@@ -73,6 +73,28 @@ namespace Business.Concrete
 
             }
 
+        }
+        public object BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
+        {
+            object betweenTime;
+            try
+            {
+                if (firstdate == null)
+                {
+                    return null;
+                }
+                else if (seconddate == null)
+                {
+                    return null;
+                }
+                betweenTime= generatorDal.BetweemTimeList(procuderName, firstdate,seconddate);
+            }
+            catch (Exception)
+            {
+                throw;
+                
+            }
+            return betweenTime;
         }
 
         public List<Generator> GetAll()
