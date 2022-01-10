@@ -133,5 +133,10 @@ namespace ControlAppDesktop.Forms
             cbDepartmentInfo.SelectedIndex = -1;
             cmbAuthority.SelectedIndex = -1;
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

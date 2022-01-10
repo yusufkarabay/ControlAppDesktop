@@ -35,6 +35,7 @@
             this.txtCabinetNo = new System.Windows.Forms.TextBox();
             this.lblDeliveryEmployee = new System.Windows.Forms.Label();
             this.lblCabinetNoInfo = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbxCabinetDelivery.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,11 +103,22 @@
             this.lblCabinetNoInfo.TabIndex = 0;
             this.lblCabinetNoInfo.Text = "Çekmece No :";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(157, 43);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // CabinetDeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxCabinetDelivery);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -128,5 +140,6 @@
         private System.Windows.Forms.TextBox txtCabinetNo;
         private System.Windows.Forms.Label lblDeliveryEmployee;
         private System.Windows.Forms.Label lblCabinetNoInfo;
+        private System.Windows.Forms.Button btnClose;
     }
 }

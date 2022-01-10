@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -143,6 +144,18 @@
     <Compile Include="Forms\MaintenanceForm.Designer.cs">
       <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MessageCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageCreateForm.Designer.cs">
+      <DependentUpon>MessageCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaintenanceForm.resx">
       <DependentUpon>MaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageCreateForm.resx">
+      <DependentUpon>MessageCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequestForm.resx">
       <DependentUpon>RequestForm.cs</DependentUpon>

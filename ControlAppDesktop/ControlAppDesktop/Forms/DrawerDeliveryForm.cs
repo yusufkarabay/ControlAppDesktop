@@ -52,5 +52,10 @@ namespace ControlAppDesktop.Forms
             MessageBox.Show(drawerManager.Add(drawer));
             this.Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -165,7 +165,7 @@
             // grpRequest
             // 
             this.grpRequest.Controls.Add(this.dgvRequest);
-            this.grpRequest.Location = new System.Drawing.Point(23, 190);
+            this.grpRequest.Location = new System.Drawing.Point(23, 191);
             this.grpRequest.Name = "grpRequest";
             this.grpRequest.Size = new System.Drawing.Size(1014, 272);
             this.grpRequest.TabIndex = 2;

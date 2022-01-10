@@ -35,6 +35,7 @@
             this.txtGuestCardNo = new System.Windows.Forms.TextBox();
             this.lblDeliveryEmployee = new System.Windows.Forms.Label();
             this.lblNoInfo = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbxGuestCardDelivery.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,11 +103,22 @@
             this.lblNoInfo.TabIndex = 0;
             this.lblNoInfo.Text = "Çekmece No :";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(133, 181);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // GuestCardDeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 335);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxGuestCardDelivery);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -128,5 +140,6 @@
         private System.Windows.Forms.TextBox txtGuestCardNo;
         private System.Windows.Forms.Label lblDeliveryEmployee;
         private System.Windows.Forms.Label lblNoInfo;
+        private System.Windows.Forms.Button btnClose;
     }
 }

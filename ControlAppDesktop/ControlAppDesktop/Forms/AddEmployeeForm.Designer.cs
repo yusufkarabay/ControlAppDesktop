@@ -48,6 +48,7 @@
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -238,11 +239,22 @@
             this.btnEmployeeAdd.UseVisualStyleBackColor = true;
             this.btnEmployeeAdd.Click += new System.EventHandler(this.btnEmployeeAdd_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(695, 28);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEmployeeAdd);
             this.Controls.Add(this.grpInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -277,5 +289,6 @@
         private System.Windows.Forms.DateTimePicker dtpEmployeeBDate;
         public System.Windows.Forms.ComboBox cmbAuthority;
         private System.Windows.Forms.Label authority;
+        private System.Windows.Forms.Button btnClose;
     }
 }
