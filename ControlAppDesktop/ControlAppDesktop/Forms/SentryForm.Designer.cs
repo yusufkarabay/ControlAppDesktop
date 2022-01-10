@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
@@ -60,14 +60,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(520, 28);
+            this.dateTimePicker1.Location = new System.Drawing.Point(467, 13);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // rtbxSentry
             // 
-            this.rtbxSentry.Location = new System.Drawing.Point(65, 137);
+            this.rtbxSentry.Location = new System.Drawing.Point(12, 122);
             this.rtbxSentry.Name = "rtbxSentry";
             this.rtbxSentry.Size = new System.Drawing.Size(472, 149);
             this.rtbxSentry.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             this.gbSentry.Controls.Add(this.dgvSentryTodo);
             this.gbSentry.Controls.Add(this.dgvSentry);
-            this.gbSentry.Location = new System.Drawing.Point(108, 413);
+            this.gbSentry.Location = new System.Drawing.Point(55, 398);
             this.gbSentry.Name = "gbSentry";
             this.gbSentry.Size = new System.Drawing.Size(1039, 266);
             this.gbSentry.TabIndex = 2;
@@ -90,8 +90,8 @@
             this.dgvSentryTodo.AllowUserToDeleteRows = false;
             this.dgvSentryTodo.AllowUserToResizeColumns = false;
             this.dgvSentryTodo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSentryTodo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSentryTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSentryTodo.ContextMenuStrip = this.rightMenuToDo;
@@ -142,8 +142,8 @@
             this.dgvSentry.AllowUserToDeleteRows = false;
             this.dgvSentry.AllowUserToResizeColumns = false;
             this.dgvSentry.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSentry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSentry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSentry.ContextMenuStrip = this.rightMenuDone;
@@ -165,7 +165,7 @@
             this.silToolStripMenuItem,
             this.yenileToolStripMenuItem});
             this.rightMenuDone.Name = "contextMenuStrip1";
-            this.rightMenuDone.Size = new System.Drawing.Size(205, 92);
+            this.rightMenuDone.Size = new System.Drawing.Size(205, 70);
             // 
             // güncelleToolStripMenuItem
             // 
@@ -190,7 +190,7 @@
             // 
             // btnSentryListDone
             // 
-            this.btnSentryListDone.Location = new System.Drawing.Point(306, 292);
+            this.btnSentryListDone.Location = new System.Drawing.Point(253, 277);
             this.btnSentryListDone.Name = "btnSentryListDone";
             this.btnSentryListDone.Size = new System.Drawing.Size(75, 23);
             this.btnSentryListDone.TabIndex = 3;
@@ -200,7 +200,7 @@
             // 
             // btnSentryDoneAdd
             // 
-            this.btnSentryDoneAdd.Location = new System.Drawing.Point(172, 292);
+            this.btnSentryDoneAdd.Location = new System.Drawing.Point(119, 277);
             this.btnSentryDoneAdd.Name = "btnSentryDoneAdd";
             this.btnSentryDoneAdd.Size = new System.Drawing.Size(114, 23);
             this.btnSentryDoneAdd.TabIndex = 5;
@@ -210,7 +210,7 @@
             // 
             // btnSentryToDoAdd
             // 
-            this.btnSentryToDoAdd.Location = new System.Drawing.Point(675, 302);
+            this.btnSentryToDoAdd.Location = new System.Drawing.Point(622, 287);
             this.btnSentryToDoAdd.Name = "btnSentryToDoAdd";
             this.btnSentryToDoAdd.Size = new System.Drawing.Size(162, 23);
             this.btnSentryToDoAdd.TabIndex = 6;
@@ -220,7 +220,7 @@
             // 
             // btnSentryListToDo
             // 
-            this.btnSentryListToDo.Location = new System.Drawing.Point(859, 302);
+            this.btnSentryListToDo.Location = new System.Drawing.Point(806, 287);
             this.btnSentryListToDo.Name = "btnSentryListToDo";
             this.btnSentryListToDo.Size = new System.Drawing.Size(75, 23);
             this.btnSentryListToDo.TabIndex = 7;
@@ -230,7 +230,7 @@
             // 
             // rtbxSentryToDo
             // 
-            this.rtbxSentryToDo.Location = new System.Drawing.Point(675, 137);
+            this.rtbxSentryToDo.Location = new System.Drawing.Point(622, 122);
             this.rtbxSentryToDo.Name = "rtbxSentryToDo";
             this.rtbxSentryToDo.Size = new System.Drawing.Size(472, 149);
             this.rtbxSentryToDo.TabIndex = 8;
@@ -238,7 +238,7 @@
             // 
             // btnSentryDoneUpdate
             // 
-            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(414, 292);
+            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(361, 277);
             this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
             this.btnSentryDoneUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnSentryDoneUpdate.TabIndex = 9;
@@ -258,9 +258,8 @@
             // 
             // SentryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 811);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnSentryToDoUpdate);
             this.Controls.Add(this.btnSentryDoneUpdate);
             this.Controls.Add(this.rtbxSentryToDo);
@@ -271,7 +270,9 @@
             this.Controls.Add(this.gbSentry);
             this.Controls.Add(this.rtbxSentry);
             this.Controls.Add(this.dateTimePicker1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SentryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SentryForm";
             this.Load += new System.EventHandler(this.SentryForm_Load);
             this.gbSentry.ResumeLayout(false);

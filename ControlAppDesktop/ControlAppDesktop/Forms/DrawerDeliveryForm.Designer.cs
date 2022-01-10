@@ -109,6 +109,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxDrawerDelivery);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DrawerDeliveryForm";
             this.Text = "DrawerDeliveryForm";
             this.Load += new System.EventHandler(this.DrawerDeliveryForm_Load);

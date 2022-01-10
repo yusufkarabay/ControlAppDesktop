@@ -36,8 +36,10 @@
             this.returnDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.lblHeadsetSeriNo = new System.Windows.Forms.Label();
+            this.headsetstatus = new System.Windows.Forms.Label();
             this.lblDeliveryPerson = new System.Windows.Forms.Label();
             this.lblReceiverPerson = new System.Windows.Forms.Label();
+            this.lblHeadsetStatusInfo = new System.Windows.Forms.Label();
             this.lblDeliveryPersonInfo = new System.Windows.Forms.Label();
             this.lblReceiverPersonInfo = new System.Windows.Forms.Label();
             this.lblHeadsetSeriNoInfo = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.rbDeliveryEmployee = new System.Windows.Forms.RadioButton();
             this.gbSearchInfo = new System.Windows.Forms.GroupBox();
             this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
-            this.lblHeadsetStatusInfo = new System.Windows.Forms.Label();
-            this.headsetstatus = new System.Windows.Forms.Label();
             this.gbHeadset.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHeadset)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -131,6 +131,15 @@
             this.lblHeadsetSeriNo.TabIndex = 10;
             this.lblHeadsetSeriNo.Text = "Kulaklık Seri No:";
             // 
+            // headsetstatus
+            // 
+            this.headsetstatus.AutoSize = true;
+            this.headsetstatus.Location = new System.Drawing.Point(6, 103);
+            this.headsetstatus.Name = "headsetstatus";
+            this.headsetstatus.Size = new System.Drawing.Size(84, 13);
+            this.headsetstatus.TabIndex = 8;
+            this.headsetstatus.Text = "Kulaklık Durumu";
+            // 
             // lblDeliveryPerson
             // 
             this.lblDeliveryPerson.AutoSize = true;
@@ -148,6 +157,15 @@
             this.lblReceiverPerson.Size = new System.Drawing.Size(64, 13);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
+            // 
+            // lblHeadsetStatusInfo
+            // 
+            this.lblHeadsetStatusInfo.AutoSize = true;
+            this.lblHeadsetStatusInfo.Location = new System.Drawing.Point(100, 103);
+            this.lblHeadsetStatusInfo.Name = "lblHeadsetStatusInfo";
+            this.lblHeadsetStatusInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblHeadsetStatusInfo.TabIndex = 9;
+            this.lblHeadsetStatusInfo.Text = "00";
             // 
             // lblDeliveryPersonInfo
             // 
@@ -263,29 +281,10 @@
             this.rbReciverEmployee.UseVisualStyleBackColor = true;
             this.rbReciverEmployee.CheckedChanged += new System.EventHandler(this.rbReciverEmployee_CheckedChanged);
             // 
-            // lblHeadsetStatusInfo
-            // 
-            this.lblHeadsetStatusInfo.AutoSize = true;
-            this.lblHeadsetStatusInfo.Location = new System.Drawing.Point(100, 103);
-            this.lblHeadsetStatusInfo.Name = "lblHeadsetStatusInfo";
-            this.lblHeadsetStatusInfo.Size = new System.Drawing.Size(19, 13);
-            this.lblHeadsetStatusInfo.TabIndex = 9;
-            this.lblHeadsetStatusInfo.Text = "00";
-            // 
-            // headsetstatus
-            // 
-            this.headsetstatus.AutoSize = true;
-            this.headsetstatus.Location = new System.Drawing.Point(6, 103);
-            this.headsetstatus.Name = "headsetstatus";
-            this.headsetstatus.Size = new System.Drawing.Size(84, 13);
-            this.headsetstatus.TabIndex = 8;
-            this.headsetstatus.Text = "Kulaklık Durumu";
-            // 
             // HeadsetForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 690);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(876, 650);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.txtHeadsetSearch);
             this.Controls.Add(this.btnHeadsetSearch);
@@ -293,6 +292,7 @@
             this.Controls.Add(this.btnHeadsetDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbHeadset);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HeadsetForm";
             this.Text = "HeadsetForm";
             this.Load += new System.EventHandler(this.HeadsetForm_Load);

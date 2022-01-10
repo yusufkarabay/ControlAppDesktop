@@ -261,9 +261,8 @@
             // 
             // EntranceCardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 689);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(944, 640);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.txtEntranceCardSearch);
             this.Controls.Add(this.btnEntranceCardSearch);
@@ -271,6 +270,7 @@
             this.Controls.Add(this.btnEntranceCardDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbHeadset);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EntranceCardForm";
             this.Text = "EntranceCardForm";
             this.gbSearchInfo.ResumeLayout(false);

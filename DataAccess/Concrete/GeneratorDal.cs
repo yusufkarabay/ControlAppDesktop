@@ -57,9 +57,25 @@ namespace DataAccess.Concrete
             return workedTime;
 
         }
-        public object BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
+        public string LastYeaWorkedTime()
         {
-            object betweenTime;
+            string workedTime;
+            try
+            {
+                workedTime = sqlService.Reader("GeneretorLastOneYear");
+
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return workedTime;
+        }
+
+        public string BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
+        {
+            string betweenTime;
 
             try
             {

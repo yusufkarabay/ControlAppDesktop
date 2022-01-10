@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.teslimAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvDrawer = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -59,7 +59,7 @@
             // teslimAlToolStripMenuItem
             // 
             this.teslimAlToolStripMenuItem.Name = "teslimAlToolStripMenuItem";
-            this.teslimAlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.teslimAlToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.teslimAlToolStripMenuItem.Text = "Teslim Al";
             this.teslimAlToolStripMenuItem.Click += new System.EventHandler(this.teslimAlToolStripMenuItem_Click);
             // 
@@ -69,8 +69,8 @@
             this.dgvDrawer.AllowUserToDeleteRows = false;
             this.dgvDrawer.AllowUserToResizeColumns = false;
             this.dgvDrawer.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvDrawer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvDrawer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDrawer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDrawer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDrawer.ContextMenuStrip = this.contextMenuStrip1;
@@ -261,9 +261,8 @@
             // 
             // DrawerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 709);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1012, 665);
             this.Controls.Add(this.gbHeadset);
             this.Controls.Add(this.btnDrawerDelivery);
             this.Controls.Add(this.grpInfo);
@@ -271,6 +270,7 @@
             this.Controls.Add(this.btnDrawerSearch);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.btnDrawerList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DrawerForm";
             this.Text = "DrawerForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrawer)).EndInit();

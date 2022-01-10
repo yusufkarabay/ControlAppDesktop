@@ -74,9 +74,9 @@ namespace Business.Concrete
             }
 
         }
-        public object BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
+        public string BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
         {
-            object betweenTime;
+            string betweenTime;
             try
             {
                 if (firstdate == null)
@@ -96,18 +96,20 @@ namespace Business.Concrete
             }
             return betweenTime;
         }
-
-        public List<Generator> GetAll()
+        public string LastYeaWorkedTime()
         {
+            string workedTime;
             try
             {
-                return generatorDal.GetAll();
+                return workedTime = generatorDal.LastYeaWorkedTime();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                return new List<Generator>();
+                return ex.Message;
+
             }
+
         }
 
         public string Update(Generator entity, string oldName)

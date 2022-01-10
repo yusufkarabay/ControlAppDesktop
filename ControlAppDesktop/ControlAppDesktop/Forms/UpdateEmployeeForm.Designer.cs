@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxAdressInfo = new System.Windows.Forms.RichTextBox();
             this.lblAdress = new System.Windows.Forms.Label();
             this.mtxtMail = new System.Windows.Forms.MaskedTextBox();
@@ -45,7 +46,6 @@
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,13 @@
             this.grpInfo.TabIndex = 5;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(189, 140);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 26;
             // 
             // rtbxAdressInfo
             // 
@@ -207,13 +214,6 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 140);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 26;
-            // 
             // UpdateEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,6 +221,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.grpInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UpdateEmployeeForm";
             this.Text = "updateEmployeeFrom";
             this.Load += new System.EventHandler(this.updateEmployeeFrom_Load);

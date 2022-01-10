@@ -58,7 +58,7 @@
             // 
             // btnGuestCardDelivery
             // 
-            this.btnGuestCardDelivery.Location = new System.Drawing.Point(822, 120);
+            this.btnGuestCardDelivery.Location = new System.Drawing.Point(722, 69);
             this.btnGuestCardDelivery.Name = "btnGuestCardDelivery";
             this.btnGuestCardDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnGuestCardDelivery.TabIndex = 33;
@@ -71,7 +71,7 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbGuestCardNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(530, 79);
+            this.gbSearchInfo.Location = new System.Drawing.Point(430, 28);
             this.gbSearchInfo.Name = "gbSearchInfo";
             this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
             this.gbSearchInfo.TabIndex = 37;
@@ -117,7 +117,7 @@
             // teslimAlToolStripMenuItem
             // 
             this.teslimAlToolStripMenuItem.Name = "teslimAlToolStripMenuItem";
-            this.teslimAlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.teslimAlToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.teslimAlToolStripMenuItem.Text = "Teslim Al";
             this.teslimAlToolStripMenuItem.Click += new System.EventHandler(this.teslimAlToolStripMenuItem_Click);
             // 
@@ -154,7 +154,7 @@
             // gbCabinet
             // 
             this.gbCabinet.Controls.Add(this.dgvGuestCard);
-            this.gbCabinet.Location = new System.Drawing.Point(183, 371);
+            this.gbCabinet.Location = new System.Drawing.Point(83, 320);
             this.gbCabinet.Name = "gbCabinet";
             this.gbCabinet.Size = new System.Drawing.Size(767, 255);
             this.gbCabinet.TabIndex = 31;
@@ -217,7 +217,7 @@
             // 
             // txtGuestCardearch
             // 
-            this.txtGuestCardearch.Location = new System.Drawing.Point(539, 218);
+            this.txtGuestCardearch.Location = new System.Drawing.Point(439, 167);
             this.txtGuestCardearch.Name = "txtGuestCardearch";
             this.txtGuestCardearch.Size = new System.Drawing.Size(165, 20);
             this.txtGuestCardearch.TabIndex = 36;
@@ -226,7 +226,7 @@
             // 
             // btnGuestCardSearch
             // 
-            this.btnGuestCardSearch.Location = new System.Drawing.Point(578, 244);
+            this.btnGuestCardSearch.Location = new System.Drawing.Point(478, 193);
             this.btnGuestCardSearch.Name = "btnGuestCardSearch";
             this.btnGuestCardSearch.Size = new System.Drawing.Size(75, 23);
             this.btnGuestCardSearch.TabIndex = 35;
@@ -236,7 +236,7 @@
             // 
             // btnGuestCardList
             // 
-            this.btnGuestCardList.Location = new System.Drawing.Point(822, 79);
+            this.btnGuestCardList.Location = new System.Drawing.Point(722, 28);
             this.btnGuestCardList.Name = "btnGuestCardList";
             this.btnGuestCardList.Size = new System.Drawing.Size(75, 23);
             this.btnGuestCardList.TabIndex = 34;
@@ -252,7 +252,7 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblGuestCardNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(126, 79);
+            this.grpInfo.Location = new System.Drawing.Point(26, 28);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(349, 152);
             this.grpInfo.TabIndex = 32;
@@ -261,9 +261,8 @@
             // 
             // GuestCardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 784);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(928, 607);
             this.Controls.Add(this.btnGuestCardDelivery);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.gbCabinet);
@@ -271,6 +270,7 @@
             this.Controls.Add(this.btnGuestCardSearch);
             this.Controls.Add(this.btnGuestCardList);
             this.Controls.Add(this.grpInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuestCardForm";
             this.Text = "GuestCardForm";
             this.gbSearchInfo.ResumeLayout(false);

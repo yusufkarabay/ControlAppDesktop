@@ -14,6 +14,7 @@ namespace ControlAppDesktop.Forms
     public partial class HomePage : Form
     {
 
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
       (
@@ -32,7 +33,7 @@ namespace ControlAppDesktop.Forms
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
         }
-        
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -47,159 +48,137 @@ namespace ControlAppDesktop.Forms
             lblTime.Text = DateTime.Now.ToString("f");
             btnUserName.Text = infos[1] + " " + infos[2].ToString();
         }
+        void FormGet(Form form)
+        {
+            form.MdiParent = this;
+            pnlCenter.Controls.Add(form);
+            form.Show();
+        }
+        void LeftWhitePanel(Button button)
+        {
+            pnlActive.Visible = true;
+            pnlActive.Height = button.Height;
+            pnlActive.Top = button.Top;
+        }
         private void btnSentry_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnSentry.Height;
-            pnlActive.Top = btnSentry.Top;
-        
-            
+            LeftWhitePanel(btnSentry);
+            pnlCenter.Controls.Clear();
             SentryForm sentryForm = new SentryForm();
             sentryForm.infos = infos;
-            sentryForm.Show();
-
-
-            //borderColored(sender);
-
+            FormGet(sentryForm);
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnInventory.Height;
-            pnlActive.Top = btnInventory.Top;
 
+            LeftWhitePanel(btnInventory);
+            pnlCenter.Controls.Clear();
             InventoryForm inventoryForm = new InventoryForm();
             inventoryForm.infos = infos;
-            inventoryForm.Show(); 
-            // borderColored(sender);
-        }
+            FormGet(inventoryForm);
 
+
+        }
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnEmployee.Height;
-            pnlActive.Top = btnEmployee.Top;
+
+            LeftWhitePanel(btnEmployee);
+            pnlCenter.Controls.Clear();
             EmployeeForm employeeForm = new EmployeeForm();
             employeeForm.infos = infos;
-            employeeForm.Show();
-            // borderColored(sender);
+            FormGet(employeeForm);
+
         }
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnRequest.Height;
-            pnlActive.Top = btnRequest.Top;
-            RequestForm request = new RequestForm();
-            request.infos = infos;
-            request.Show();
-            // borderColored(sender);
+            LeftWhitePanel(btnRequest);
+            pnlCenter.Controls.Clear();
+            RequestForm requestForm = new RequestForm();
+            requestForm.infos = infos;
+            FormGet(requestForm);
+
         }
         private void btnMaintenance_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnMaintenance.Height;
-            pnlActive.Top = btnMaintenance.Top;
-            //  borderColored(sender);
+            LeftWhitePanel(btnMaintenance);
+            pnlCenter.Controls.Clear();
+            MaintenanceForm maintenanceForm = new MaintenanceForm();
+            maintenanceForm.infos = infos;
+            FormGet(maintenanceForm);
+
         }
 
         private void btnHeadset_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnHeadset.Height;
-            pnlActive.Top = btnHeadset.Top;
-
+            LeftWhitePanel(btnHeadset);
+            pnlCenter.Controls.Clear();
             HeadsetForm headsetForm = new HeadsetForm();
             headsetForm.infos = infos;
-            headsetForm.Show();
-            // borderColored(sender);
+            FormGet(headsetForm);
+
         }
 
         private void btnIdCard_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnIdCard.Height; ;
-            pnlActive.Top = btnIdCard.Top;
-            EntranceCardForm entranceCardForm=new EntranceCardForm();
+            LeftWhitePanel(btnIdCard);
+            pnlCenter.Controls.Clear();
+            EntranceCardForm entranceCardForm = new EntranceCardForm();
             entranceCardForm.infos = infos;
-            entranceCardForm.Show();
-            //  borderColored(sender);
+            FormGet(entranceCardForm);
+
         }
 
         private void btnDrawer_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnDrawer.Height; ;
-            pnlActive.Top = btnDrawer.Top;
+            LeftWhitePanel(btnDrawer);
+            pnlCenter.Controls.Clear();
+
             DrawerForm drawerForm = new DrawerForm();
             drawerForm.infos = infos;
-            drawerForm.Show();
+            FormGet(drawerForm);
             // borderColored(sender);
         }
 
         private void btnCabinet_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnCabinet.Height; ;
-            pnlActive.Top = btnCabinet.Top;
-            CabinetForm cabinetForm= new CabinetForm();
+            LeftWhitePanel(btnCabinet);
+            pnlCenter.Controls.Clear();
+            CabinetForm cabinetForm = new CabinetForm();
             cabinetForm.infos = infos;
-            cabinetForm.Show();
-            //borderColored(sender);
+            FormGet(cabinetForm);
         }
 
         private void btnGuestCard_Click(object sender, EventArgs e)
         {
-            borderColored(sender);
-            panelActiveVisible();
-            pnlActive.Height = btnGuestCard.Height; ;
-            pnlActive.Top = btnGuestCard.Top;
-            GuestCardForm guestCardForm=new GuestCardForm();
+            LeftWhitePanel(btnGuestCard);
+            pnlCenter.Controls.Clear();
+            GuestCardForm guestCardForm = new GuestCardForm();
             guestCardForm.infos = infos;
-            guestCardForm.Show();
-           
+            FormGet(guestCardForm);
+
 
         }
 
         private void btnGenarator_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnGenarator.Height; ;
-            pnlActive.Top = btnGenarator.Top;
+            LeftWhitePanel(btnGenarator);
+            pnlCenter.Controls.Clear();
             GeneratorForm generatorForm = new GeneratorForm();
             generatorForm.infos = infos;
-            generatorForm.Show();
-            // borderColored(sender);
+            FormGet(generatorForm);
+         
         }
 
         private void btnDirectory_Click(object sender, EventArgs e)
         {
-            panelActiveVisible();
-            pnlActive.Height = btnDirectory.Height; ;
-            pnlActive.Top = btnDirectory.Top;
-            // borderColored(sender);
+            LeftWhitePanel(btnDirectory);
+            pnlCenter.Controls.Clear();
+            DirectoryForm directoryForm = new DirectoryForm();
+            directoryForm.infos = infos;
+            FormGet(directoryForm);
 
-        }
-        void borderColored(object sender)
-        {
-            Button btn = sender as Button;
 
-            if (btn.FlatAppearance.BorderSize == 0)
-            {
-                btn.FlatAppearance.BorderSize = 1;
-                btn.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            }
-        }
-        void borderClear(object sender)
-        {
-            Button btn = sender as Button;
-
-            if (btn.FlatAppearance.BorderSize == 1)
-            {
-                btn.FlatAppearance.BorderSize = 0;
-                btn.FlatAppearance.BorderColor = System.Drawing.Color.Transparent;
-
-            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

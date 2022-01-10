@@ -356,9 +356,8 @@
             // 
             // RequestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 776);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1049, 747);
             this.Controls.Add(this.lblCountInfo);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.grpAction);
@@ -366,6 +365,7 @@
             this.Controls.Add(this.grpRequest);
             this.Controls.Add(this.tlblTime);
             this.Controls.Add(this.grpInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RequestForm";
             this.Text = "Talep";
             this.Load += new System.EventHandler(this.Request_Load);

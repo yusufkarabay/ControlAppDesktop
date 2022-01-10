@@ -109,6 +109,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxEntranceCardDelivery);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EntranceCardDeliveryForm";
             this.Text = "EntranceCardDelivery";
             this.Load += new System.EventHandler(this.EntranceCardDeliveryForm_Load);

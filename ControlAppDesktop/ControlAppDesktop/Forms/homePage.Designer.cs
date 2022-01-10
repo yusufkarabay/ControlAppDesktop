@@ -31,6 +31,7 @@
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
             this.pnlActive = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDirectory = new System.Windows.Forms.Button();
             this.btnGenarator = new System.Windows.Forms.Button();
             this.btnGuestCard = new System.Windows.Forms.Button();
@@ -43,10 +44,10 @@
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSentry = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTopMenu = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
+            this.pnlCenter = new System.Windows.Forms.Panel();
             this.pnlLeftMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTopMenu.SuspendLayout();
@@ -92,6 +93,16 @@
             this.btnUserName.TabIndex = 3;
             this.btnUserName.Text = "Personel Adı";
             this.btnUserName.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ControlAppDesktop.Properties.Resources.mail_send;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnDirectory
             // 
@@ -296,16 +307,6 @@
             this.btnSentry.UseVisualStyleBackColor = true;
             this.btnSentry.Click += new System.EventHandler(this.btnSentry_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ControlAppDesktop.Properties.Resources.mail_send;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // pnlTopMenu
             // 
             this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
@@ -339,16 +340,25 @@
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Zaman";
             // 
+            // pnlCenter
+            // 
+            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
+            this.pnlCenter.Name = "pnlCenter";
+            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
+            this.pnlCenter.TabIndex = 3;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pnlCenter);
             this.Controls.Add(this.pnlTopMenu);
             this.Controls.Add(this.pnlLeftMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -383,5 +393,6 @@
         private System.Windows.Forms.Button btnDirectory;
         private System.Windows.Forms.Panel pnlActive;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel pnlCenter;
     }
 }

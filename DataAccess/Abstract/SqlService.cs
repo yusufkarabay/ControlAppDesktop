@@ -106,8 +106,6 @@ namespace DataAccess.Abstract
 
         }
 
-
-        
         public string Reader(string commandText)
         {
             int result;
@@ -119,7 +117,7 @@ namespace DataAccess.Abstract
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.CommandText = commandText;
                 sqlCommand.Connection = connection;
-                 result = int.Parse(sqlCommand.ExecuteScalar().ToString());
+                result = int.Parse(sqlCommand.ExecuteScalar().ToString());
             }
             catch (Exception)
             {
@@ -131,9 +129,44 @@ namespace DataAccess.Abstract
 
                 if (connection != null) connection.Close();
             }
-            return result.ToString()+" Dakika Çalışmıştır";
+            return result.ToString() + " Dakika Çalışmıştır";
         }
-       
+        public string ReaderV2(string commandText, params SqlParameter[] sqlParameters)
+        {
+            string result;
+
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection connection = null;
+            try
+            {
+                connection = OpenConnection();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = commandText;
+                sqlCommand.Connection = connection;
+
+                if (sqlParameters != null)
+                {
+                    sqlCommand.Parameters.AddRange(sqlParameters);
+                }
+                 result=sqlCommand.ExecuteScalar().ToString();
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                sqlCommand.Dispose();
+
+                if (connection != null) connection.Close();
+            }
+            return result.ToString() + " Dakika Çalışmıştır";
+        }
+        
+
 
         public (DataTable, string) StoredV2(string commandText, params SqlParameter[] sqlParameters)
         {

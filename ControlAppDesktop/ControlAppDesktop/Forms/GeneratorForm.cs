@@ -32,9 +32,9 @@ namespace ControlAppDesktop.Forms
         {
             lblListByTwoTimeInfo.Text = generatorManager.BetweemTimeList("GeneratorBetweenTimeWorked", dtpFirst.Value, dtpSecond.Value).ToString();
         }
-        void betweenTimeListDataGrid()
+        void lastYeaWorkedTime()
         {
-
+            lblLastYearInfo.Text = generatorManager.LastYeaWorkedTime();
         }
 
         private void btnAllTime_Click(object sender, EventArgs e)
@@ -49,6 +49,7 @@ namespace ControlAppDesktop.Forms
                 infos[0].ToString(),
                 DateTime.Parse(DateTime.Now.ToString()));
             MessageBox.Show(generatorManager.Add(generator));
+            alWorkedTimeList();
 
             txtWorkedTime.Text = "";
 
@@ -57,12 +58,10 @@ namespace ControlAppDesktop.Forms
         private void GeneratorForm_Load(object sender, EventArgs e)
         {
             alWorkedTimeList();
+            lastYeaWorkedTime();
         }
 
-        private void btnEmployeeList_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnTimeSearch_Click(object sender, EventArgs e)
         {

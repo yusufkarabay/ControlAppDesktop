@@ -109,6 +109,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxCabinetDelivery);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CabinetDeliveryForm";
             this.Text = "CabinetDeliveryForm";
             this.Load += new System.EventHandler(this.CabinetDeliveryForm_Load);

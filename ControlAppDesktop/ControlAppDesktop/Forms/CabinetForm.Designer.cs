@@ -58,7 +58,7 @@
             // 
             // btnCabinetList
             // 
-            this.btnCabinetList.Location = new System.Drawing.Point(858, 74);
+            this.btnCabinetList.Location = new System.Drawing.Point(743, 36);
             this.btnCabinetList.Name = "btnCabinetList";
             this.btnCabinetList.Size = new System.Drawing.Size(75, 23);
             this.btnCabinetList.TabIndex = 27;
@@ -104,7 +104,7 @@
             // 
             // txtDrawerSearch
             // 
-            this.txtDrawerSearch.Location = new System.Drawing.Point(575, 213);
+            this.txtDrawerSearch.Location = new System.Drawing.Point(460, 175);
             this.txtDrawerSearch.Name = "txtDrawerSearch";
             this.txtDrawerSearch.Size = new System.Drawing.Size(165, 20);
             this.txtDrawerSearch.TabIndex = 29;
@@ -113,7 +113,7 @@
             // 
             // btnCabinetSearch
             // 
-            this.btnCabinetSearch.Location = new System.Drawing.Point(614, 239);
+            this.btnCabinetSearch.Location = new System.Drawing.Point(499, 201);
             this.btnCabinetSearch.Name = "btnCabinetSearch";
             this.btnCabinetSearch.Size = new System.Drawing.Size(75, 23);
             this.btnCabinetSearch.TabIndex = 28;
@@ -178,7 +178,7 @@
             // gbCabinet
             // 
             this.gbCabinet.Controls.Add(this.dgvCabinet);
-            this.gbCabinet.Location = new System.Drawing.Point(219, 366);
+            this.gbCabinet.Location = new System.Drawing.Point(74, 280);
             this.gbCabinet.Name = "gbCabinet";
             this.gbCabinet.Size = new System.Drawing.Size(767, 255);
             this.gbCabinet.TabIndex = 24;
@@ -194,6 +194,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.dgvCabinet.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCabinet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCabinet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCabinet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCabinet.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvCabinet.Cursor = System.Windows.Forms.Cursors.PanWest;
@@ -224,7 +225,7 @@
             // 
             // btnCabinetDelivery
             // 
-            this.btnCabinetDelivery.Location = new System.Drawing.Point(858, 115);
+            this.btnCabinetDelivery.Location = new System.Drawing.Point(743, 77);
             this.btnCabinetDelivery.Name = "btnCabinetDelivery";
             this.btnCabinetDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnCabinetDelivery.TabIndex = 26;
@@ -240,7 +241,7 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblCabinetNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(162, 74);
+            this.grpInfo.Location = new System.Drawing.Point(47, 36);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(349, 152);
             this.grpInfo.TabIndex = 25;
@@ -252,7 +253,7 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbCabinetNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(566, 74);
+            this.gbSearchInfo.Location = new System.Drawing.Point(451, 36);
             this.gbSearchInfo.Name = "gbSearchInfo";
             this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
             this.gbSearchInfo.TabIndex = 30;
@@ -261,9 +262,9 @@
             // 
             // CabinetForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 721);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(936, 612);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCabinetList);
             this.Controls.Add(this.txtDrawerSearch);
             this.Controls.Add(this.btnCabinetSearch);
@@ -271,6 +272,9 @@
             this.Controls.Add(this.btnCabinetDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbSearchInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CabinetForm";
             this.Text = "CabinetForm";
             this.gbCabinet.ResumeLayout(false);

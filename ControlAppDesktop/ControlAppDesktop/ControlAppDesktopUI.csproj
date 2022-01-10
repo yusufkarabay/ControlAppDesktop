@@ -65,6 +65,12 @@
     <Compile Include="Forms\CabinetForm.Designer.cs">
       <DependentUpon>CabinetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DirectoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DirectoryForm.Designer.cs">
+      <DependentUpon>DirectoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DrawerDeliveryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     <Compile Include="Forms\InventoryForm.Designer.cs">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MaintenanceForm.Designer.cs">
+      <DependentUpon>MaintenanceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +184,9 @@
     <EmbeddedResource Include="Forms\CabinetForm.resx">
       <DependentUpon>CabinetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectoryForm.resx">
+      <DependentUpon>DirectoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrawerDeliveryForm.resx">
       <DependentUpon>DrawerDeliveryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MaintenanceForm.resx">
+      <DependentUpon>MaintenanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequestForm.resx">
       <DependentUpon>RequestForm.cs</DependentUpon>

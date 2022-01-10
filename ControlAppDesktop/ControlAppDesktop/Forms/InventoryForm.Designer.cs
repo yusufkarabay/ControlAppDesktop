@@ -331,9 +331,8 @@
             // 
             // InventoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 608);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1153, 562);
             this.Controls.Add(this.grpBoxSearch);
             this.Controls.Add(this.btnSearchInventory);
             this.Controls.Add(this.txtbxtSearchInventory);
@@ -346,6 +345,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.grpInventoryInfo);
             this.Controls.Add(this.grpInventory);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InventoryForm";
             this.Text = "InventoryForm";
             this.Load += new System.EventHandler(this.InventoryForm_Load);

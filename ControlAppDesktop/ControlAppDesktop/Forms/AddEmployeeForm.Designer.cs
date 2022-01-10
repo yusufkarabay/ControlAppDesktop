@@ -245,6 +245,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnEmployeeAdd);
             this.Controls.Add(this.grpInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEmployeeForm";
             this.Text = "AddEmployeeForm";
             this.Load += new System.EventHandler(this.AddEmployeeForm_Load);

@@ -40,7 +40,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(73, 89);
+            this.dateTimePicker1.Location = new System.Drawing.Point(25, 65);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 9;
@@ -52,9 +52,9 @@
             this.gbxGuestCardDelivery.Controls.Add(this.txtGuestCardNo);
             this.gbxGuestCardDelivery.Controls.Add(this.lblDeliveryEmployee);
             this.gbxGuestCardDelivery.Controls.Add(this.lblNoInfo);
-            this.gbxGuestCardDelivery.Location = new System.Drawing.Point(307, 56);
+            this.gbxGuestCardDelivery.Location = new System.Drawing.Point(259, 32);
             this.gbxGuestCardDelivery.Name = "gbxGuestCardDelivery";
-            this.gbxGuestCardDelivery.Size = new System.Drawing.Size(421, 339);
+            this.gbxGuestCardDelivery.Size = new System.Drawing.Size(421, 197);
             this.gbxGuestCardDelivery.TabIndex = 8;
             this.gbxGuestCardDelivery.TabStop = false;
             this.gbxGuestCardDelivery.Text = "Misafir Kart Teslim Et";
@@ -106,9 +106,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(722, 335);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxGuestCardDelivery);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuestCardDeliveryForm";
             this.Text = "GuestCardDeliveryForm";
             this.Load += new System.EventHandler(this.GuestCardDeliveryForm_Load);

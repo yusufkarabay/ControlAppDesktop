@@ -126,9 +126,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 437);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxHeadsetDelivery);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HeadsetDeliveryForm";
             this.Text = "HeadsetDeliveryForm";
             this.Load += new System.EventHandler(this.HeadsetDeliveryForm_Load);
