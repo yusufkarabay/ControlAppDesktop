@@ -61,7 +61,7 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbEntranceCardSeriNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(416, 51);
+            this.gbSearchInfo.Location = new System.Drawing.Point(557, 74);
             this.gbSearchInfo.Name = "gbSearchInfo";
             this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
             this.gbSearchInfo.TabIndex = 16;
@@ -106,7 +106,7 @@
             // 
             // txtEntranceCardSearch
             // 
-            this.txtEntranceCardSearch.Location = new System.Drawing.Point(425, 190);
+            this.txtEntranceCardSearch.Location = new System.Drawing.Point(566, 213);
             this.txtEntranceCardSearch.Name = "txtEntranceCardSearch";
             this.txtEntranceCardSearch.Size = new System.Drawing.Size(165, 20);
             this.txtEntranceCardSearch.TabIndex = 15;
@@ -115,7 +115,7 @@
             // 
             // btnEntranceCardSearch
             // 
-            this.btnEntranceCardSearch.Location = new System.Drawing.Point(464, 216);
+            this.btnEntranceCardSearch.Location = new System.Drawing.Point(605, 239);
             this.btnEntranceCardSearch.Name = "btnEntranceCardSearch";
             this.btnEntranceCardSearch.Size = new System.Drawing.Size(75, 23);
             this.btnEntranceCardSearch.TabIndex = 14;
@@ -125,7 +125,7 @@
             // 
             // btnEntranceCardList
             // 
-            this.btnEntranceCardList.Location = new System.Drawing.Point(708, 51);
+            this.btnEntranceCardList.Location = new System.Drawing.Point(849, 74);
             this.btnEntranceCardList.Name = "btnEntranceCardList";
             this.btnEntranceCardList.Size = new System.Drawing.Size(75, 23);
             this.btnEntranceCardList.TabIndex = 13;
@@ -135,7 +135,7 @@
             // 
             // btnEntranceCardDelivery
             // 
-            this.btnEntranceCardDelivery.Location = new System.Drawing.Point(708, 92);
+            this.btnEntranceCardDelivery.Location = new System.Drawing.Point(849, 115);
             this.btnEntranceCardDelivery.Name = "btnEntranceCardDelivery";
             this.btnEntranceCardDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnEntranceCardDelivery.TabIndex = 12;
@@ -151,7 +151,7 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblEntranceCardNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(12, 51);
+            this.grpInfo.Location = new System.Drawing.Point(153, 74);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(349, 152);
             this.grpInfo.TabIndex = 11;
@@ -215,7 +215,7 @@
             // gbHeadset
             // 
             this.gbHeadset.Controls.Add(this.dgvEntranceCard);
-            this.gbHeadset.Location = new System.Drawing.Point(69, 343);
+            this.gbHeadset.Location = new System.Drawing.Point(210, 366);
             this.gbHeadset.Name = "gbHeadset";
             this.gbHeadset.Size = new System.Drawing.Size(767, 255);
             this.gbHeadset.TabIndex = 10;
@@ -262,7 +262,7 @@
             // EntranceCardForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(944, 640);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.txtEntranceCardSearch);
             this.Controls.Add(this.btnEntranceCardSearch);

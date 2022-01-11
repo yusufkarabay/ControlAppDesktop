@@ -58,7 +58,7 @@
             // 
             // btnGuestCardDelivery
             // 
-            this.btnGuestCardDelivery.Location = new System.Drawing.Point(722, 69);
+            this.btnGuestCardDelivery.Location = new System.Drawing.Point(816, 113);
             this.btnGuestCardDelivery.Name = "btnGuestCardDelivery";
             this.btnGuestCardDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnGuestCardDelivery.TabIndex = 33;
@@ -71,7 +71,7 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbGuestCardNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(430, 28);
+            this.gbSearchInfo.Location = new System.Drawing.Point(524, 72);
             this.gbSearchInfo.Name = "gbSearchInfo";
             this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
             this.gbSearchInfo.TabIndex = 37;
@@ -154,7 +154,7 @@
             // gbCabinet
             // 
             this.gbCabinet.Controls.Add(this.dgvGuestCard);
-            this.gbCabinet.Location = new System.Drawing.Point(83, 320);
+            this.gbCabinet.Location = new System.Drawing.Point(177, 364);
             this.gbCabinet.Name = "gbCabinet";
             this.gbCabinet.Size = new System.Drawing.Size(767, 255);
             this.gbCabinet.TabIndex = 31;
@@ -217,7 +217,7 @@
             // 
             // txtGuestCardearch
             // 
-            this.txtGuestCardearch.Location = new System.Drawing.Point(439, 167);
+            this.txtGuestCardearch.Location = new System.Drawing.Point(533, 211);
             this.txtGuestCardearch.Name = "txtGuestCardearch";
             this.txtGuestCardearch.Size = new System.Drawing.Size(165, 20);
             this.txtGuestCardearch.TabIndex = 36;
@@ -226,7 +226,7 @@
             // 
             // btnGuestCardSearch
             // 
-            this.btnGuestCardSearch.Location = new System.Drawing.Point(478, 193);
+            this.btnGuestCardSearch.Location = new System.Drawing.Point(572, 237);
             this.btnGuestCardSearch.Name = "btnGuestCardSearch";
             this.btnGuestCardSearch.Size = new System.Drawing.Size(75, 23);
             this.btnGuestCardSearch.TabIndex = 35;
@@ -236,7 +236,7 @@
             // 
             // btnGuestCardList
             // 
-            this.btnGuestCardList.Location = new System.Drawing.Point(722, 28);
+            this.btnGuestCardList.Location = new System.Drawing.Point(816, 72);
             this.btnGuestCardList.Name = "btnGuestCardList";
             this.btnGuestCardList.Size = new System.Drawing.Size(75, 23);
             this.btnGuestCardList.TabIndex = 34;
@@ -252,7 +252,7 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblGuestCardNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(26, 28);
+            this.grpInfo.Location = new System.Drawing.Point(120, 72);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(349, 152);
             this.grpInfo.TabIndex = 32;
@@ -262,7 +262,7 @@
             // GuestCardForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(928, 607);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnGuestCardDelivery);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.gbCabinet);

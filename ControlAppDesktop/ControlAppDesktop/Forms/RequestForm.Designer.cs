@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.department = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             this.grpInfo.Controls.Add(this.lblSurnameInfo);
             this.grpInfo.Controls.Add(this.lblNameInfo);
             this.grpInfo.Controls.Add(this.lblTcInfo);
-            this.grpInfo.Location = new System.Drawing.Point(23, 12);
+            this.grpInfo.Location = new System.Drawing.Point(82, 12);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(300, 159);
             this.grpInfo.TabIndex = 0;
@@ -156,7 +156,7 @@
             // tlblTime
             // 
             this.tlblTime.AutoSize = true;
-            this.tlblTime.Location = new System.Drawing.Point(882, 9);
+            this.tlblTime.Location = new System.Drawing.Point(941, 9);
             this.tlblTime.Name = "tlblTime";
             this.tlblTime.Size = new System.Drawing.Size(40, 13);
             this.tlblTime.TabIndex = 1;
@@ -165,7 +165,7 @@
             // grpRequest
             // 
             this.grpRequest.Controls.Add(this.dgvRequest);
-            this.grpRequest.Location = new System.Drawing.Point(23, 191);
+            this.grpRequest.Location = new System.Drawing.Point(82, 191);
             this.grpRequest.Name = "grpRequest";
             this.grpRequest.Size = new System.Drawing.Size(1014, 272);
             this.grpRequest.TabIndex = 2;
@@ -178,8 +178,8 @@
             this.dgvRequest.AllowUserToDeleteRows = false;
             this.dgvRequest.AllowUserToResizeColumns = false;
             this.dgvRequest.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
@@ -202,7 +202,7 @@
             this.groupBox1.Controls.Add(this.requested);
             this.groupBox1.Controls.Add(this.requestDetail);
             this.groupBox1.Controls.Add(this.requestName);
-            this.groupBox1.Location = new System.Drawing.Point(26, 482);
+            this.groupBox1.Location = new System.Drawing.Point(85, 482);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(538, 240);
             this.groupBox1.TabIndex = 3;
@@ -272,7 +272,7 @@
             this.grpAction.Controls.Add(this.btnWeb);
             this.grpAction.Controls.Add(this.btnRequestRefresh);
             this.grpAction.Controls.Add(this.btnRequestEnd);
-            this.grpAction.Location = new System.Drawing.Point(628, 482);
+            this.grpAction.Location = new System.Drawing.Point(687, 482);
             this.grpAction.Name = "grpAction";
             this.grpAction.Size = new System.Drawing.Size(245, 211);
             this.grpAction.TabIndex = 4;
@@ -339,7 +339,7 @@
             // lblCount
             // 
             this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(368, 37);
+            this.lblCount.Location = new System.Drawing.Point(427, 37);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(132, 13);
             this.lblCount.TabIndex = 11;
@@ -348,7 +348,7 @@
             // lblCountInfo
             // 
             this.lblCountInfo.AutoSize = true;
-            this.lblCountInfo.Location = new System.Drawing.Point(508, 37);
+            this.lblCountInfo.Location = new System.Drawing.Point(567, 37);
             this.lblCountInfo.Name = "lblCountInfo";
             this.lblCountInfo.Size = new System.Drawing.Size(19, 13);
             this.lblCountInfo.TabIndex = 12;
@@ -357,7 +357,7 @@
             // RequestForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1049, 747);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.lblCountInfo);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.grpAction);

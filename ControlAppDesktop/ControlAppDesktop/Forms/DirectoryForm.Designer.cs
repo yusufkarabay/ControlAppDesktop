@@ -114,7 +114,7 @@
             // gbDirectory
             // 
             this.gbDirectory.Controls.Add(this.dgvDirectory);
-            this.gbDirectory.Location = new System.Drawing.Point(86, 190);
+            this.gbDirectory.Location = new System.Drawing.Point(88, 219);
             this.gbDirectory.Name = "gbDirectory";
             this.gbDirectory.Size = new System.Drawing.Size(1025, 362);
             this.gbDirectory.TabIndex = 25;
@@ -144,7 +144,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(959, 47);
+            this.txtSearch.Location = new System.Drawing.Point(961, 76);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(187, 20);
             this.txtSearch.TabIndex = 26;
@@ -156,7 +156,7 @@
             this.gbSearch.Controls.Add(this.rbtInfo);
             this.gbSearch.Controls.Add(this.rbtPhone);
             this.gbSearch.Controls.Add(this.rbtName);
-            this.gbSearch.Location = new System.Drawing.Point(733, 28);
+            this.gbSearch.Location = new System.Drawing.Point(735, 57);
             this.gbSearch.Name = "gbSearch";
             this.gbSearch.Size = new System.Drawing.Size(200, 100);
             this.gbSearch.TabIndex = 27;
@@ -201,7 +201,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(1013, 80);
+            this.btnSearch.Location = new System.Drawing.Point(1015, 109);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 28;
@@ -212,7 +212,7 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(717, 603);
+            this.lblMessage.Location = new System.Drawing.Point(719, 632);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(394, 13);
             this.lblMessage.TabIndex = 29;
@@ -228,7 +228,7 @@
             this.gbAdd.Controls.Add(this.txtName);
             this.gbAdd.Controls.Add(this.txtInfo);
             this.gbAdd.Controls.Add(this.btnDirectoryAdd);
-            this.gbAdd.Location = new System.Drawing.Point(39, 12);
+            this.gbAdd.Location = new System.Drawing.Point(41, 41);
             this.gbAdd.Name = "gbAdd";
             this.gbAdd.Size = new System.Drawing.Size(287, 161);
             this.gbAdd.TabIndex = 30;
@@ -237,7 +237,7 @@
             // 
             // btnAllList
             // 
-            this.btnAllList.Location = new System.Drawing.Point(419, 28);
+            this.btnAllList.Location = new System.Drawing.Point(421, 57);
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(75, 23);
             this.btnAllList.TabIndex = 31;
@@ -248,7 +248,7 @@
             // DirectoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1226, 715);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.gbAdd);
             this.Controls.Add(this.lblMessage);

@@ -342,6 +342,16 @@ namespace ControlAppDesktop.Forms
             }
 
         }
+
+        private void rtbxSentry_MouseClick(object sender, MouseEventArgs e)
+        {
+            rtbxSentry.Text = "";
+        }
+
+        private void rtbxSentryToDo_MouseClick(object sender, MouseEventArgs e)
+        {
+            rtbxSentryToDo.Text = "";
+        }
     }
 }
 

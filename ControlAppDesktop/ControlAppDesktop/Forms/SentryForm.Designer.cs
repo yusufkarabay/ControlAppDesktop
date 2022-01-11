@@ -72,6 +72,7 @@
             this.rtbxSentry.Size = new System.Drawing.Size(472, 149);
             this.rtbxSentry.TabIndex = 1;
             this.rtbxSentry.Text = "Nöbet sırasında yapılan işler...";
+            this.rtbxSentry.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rtbxSentry_MouseClick);
             // 
             // gbSentry
             // 
@@ -235,6 +236,7 @@
             this.rtbxSentryToDo.Size = new System.Drawing.Size(472, 149);
             this.rtbxSentryToDo.TabIndex = 8;
             this.rtbxSentryToDo.Text = "Takip edilecek işlemler...";
+            this.rtbxSentryToDo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rtbxSentryToDo_MouseClick);
             // 
             // btnSentryDoneUpdate
             // 

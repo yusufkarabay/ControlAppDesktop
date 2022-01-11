@@ -96,7 +96,7 @@
             // gbHeadset
             // 
             this.gbHeadset.Controls.Add(this.dgvDrawer);
-            this.gbHeadset.Location = new System.Drawing.Point(101, 333);
+            this.gbHeadset.Location = new System.Drawing.Point(202, 371);
             this.gbHeadset.Name = "gbHeadset";
             this.gbHeadset.Size = new System.Drawing.Size(767, 255);
             this.gbHeadset.TabIndex = 17;
@@ -105,7 +105,7 @@
             // 
             // btnDrawerDelivery
             // 
-            this.btnDrawerDelivery.Location = new System.Drawing.Point(740, 82);
+            this.btnDrawerDelivery.Location = new System.Drawing.Point(841, 120);
             this.btnDrawerDelivery.Name = "btnDrawerDelivery";
             this.btnDrawerDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnDrawerDelivery.TabIndex = 19;
@@ -121,7 +121,7 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblDrawerNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(44, 41);
+            this.grpInfo.Location = new System.Drawing.Point(145, 79);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(349, 152);
             this.grpInfo.TabIndex = 18;
@@ -184,7 +184,7 @@
             // 
             // txtDrawerSearch
             // 
-            this.txtDrawerSearch.Location = new System.Drawing.Point(457, 180);
+            this.txtDrawerSearch.Location = new System.Drawing.Point(558, 218);
             this.txtDrawerSearch.Name = "txtDrawerSearch";
             this.txtDrawerSearch.Size = new System.Drawing.Size(165, 20);
             this.txtDrawerSearch.TabIndex = 22;
@@ -193,7 +193,7 @@
             // 
             // btnDrawerSearch
             // 
-            this.btnDrawerSearch.Location = new System.Drawing.Point(496, 206);
+            this.btnDrawerSearch.Location = new System.Drawing.Point(597, 244);
             this.btnDrawerSearch.Name = "btnDrawerSearch";
             this.btnDrawerSearch.Size = new System.Drawing.Size(75, 23);
             this.btnDrawerSearch.TabIndex = 21;
@@ -242,7 +242,7 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbDrawerNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(448, 41);
+            this.gbSearchInfo.Location = new System.Drawing.Point(549, 79);
             this.gbSearchInfo.Name = "gbSearchInfo";
             this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
             this.gbSearchInfo.TabIndex = 23;
@@ -251,7 +251,7 @@
             // 
             // btnDrawerList
             // 
-            this.btnDrawerList.Location = new System.Drawing.Point(740, 41);
+            this.btnDrawerList.Location = new System.Drawing.Point(841, 79);
             this.btnDrawerList.Name = "btnDrawerList";
             this.btnDrawerList.Size = new System.Drawing.Size(75, 23);
             this.btnDrawerList.TabIndex = 20;
@@ -262,7 +262,7 @@
             // DrawerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1012, 665);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.gbHeadset);
             this.Controls.Add(this.btnDrawerDelivery);
             this.Controls.Add(this.grpInfo);

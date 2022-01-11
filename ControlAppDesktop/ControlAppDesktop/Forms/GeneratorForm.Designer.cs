@@ -61,21 +61,21 @@
             // 
             // dtpFirst
             // 
-            this.dtpFirst.Location = new System.Drawing.Point(46, 46);
+            this.dtpFirst.Location = new System.Drawing.Point(255, 100);
             this.dtpFirst.Name = "dtpFirst";
             this.dtpFirst.Size = new System.Drawing.Size(200, 20);
             this.dtpFirst.TabIndex = 0;
             // 
             // dtpSecond
             // 
-            this.dtpSecond.Location = new System.Drawing.Point(274, 46);
+            this.dtpSecond.Location = new System.Drawing.Point(483, 100);
             this.dtpSecond.Name = "dtpSecond";
             this.dtpSecond.Size = new System.Drawing.Size(200, 20);
             this.dtpSecond.TabIndex = 1;
             // 
             // txtWorkedTime
             // 
-            this.txtWorkedTime.Location = new System.Drawing.Point(144, 292);
+            this.txtWorkedTime.Location = new System.Drawing.Point(353, 346);
             this.txtWorkedTime.Name = "txtWorkedTime";
             this.txtWorkedTime.Size = new System.Drawing.Size(59, 20);
             this.txtWorkedTime.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             // btnAddWorkedTime
             // 
-            this.btnAddWorkedTime.Location = new System.Drawing.Point(128, 326);
+            this.btnAddWorkedTime.Location = new System.Drawing.Point(337, 380);
             this.btnAddWorkedTime.Name = "btnAddWorkedTime";
             this.btnAddWorkedTime.Size = new System.Drawing.Size(38, 23);
             this.btnAddWorkedTime.TabIndex = 19;
@@ -105,7 +105,7 @@
             // 
             // btnTimeSearch
             // 
-            this.btnTimeSearch.Location = new System.Drawing.Point(222, 91);
+            this.btnTimeSearch.Location = new System.Drawing.Point(431, 145);
             this.btnTimeSearch.Name = "btnTimeSearch";
             this.btnTimeSearch.Size = new System.Drawing.Size(75, 23);
             this.btnTimeSearch.TabIndex = 20;
@@ -116,7 +116,7 @@
             // lblWorkedTime
             // 
             this.lblWorkedTime.AutoSize = true;
-            this.lblWorkedTime.Location = new System.Drawing.Point(51, 295);
+            this.lblWorkedTime.Location = new System.Drawing.Point(260, 349);
             this.lblWorkedTime.Name = "lblWorkedTime";
             this.lblWorkedTime.Size = new System.Drawing.Size(87, 13);
             this.lblWorkedTime.TabIndex = 21;
@@ -125,7 +125,7 @@
             // lblLastFullTime
             // 
             this.lblLastFullTime.AutoSize = true;
-            this.lblLastFullTime.Location = new System.Drawing.Point(250, 197);
+            this.lblLastFullTime.Location = new System.Drawing.Point(459, 251);
             this.lblLastFullTime.Name = "lblLastFullTime";
             this.lblLastFullTime.Size = new System.Drawing.Size(123, 13);
             this.lblLastFullTime.TabIndex = 22;
@@ -134,7 +134,7 @@
             // lblLastFullTimeInfo
             // 
             this.lblLastFullTimeInfo.AutoSize = true;
-            this.lblLastFullTimeInfo.Location = new System.Drawing.Point(404, 197);
+            this.lblLastFullTimeInfo.Location = new System.Drawing.Point(613, 251);
             this.lblLastFullTimeInfo.Name = "lblLastFullTimeInfo";
             this.lblLastFullTimeInfo.Size = new System.Drawing.Size(49, 13);
             this.lblLastFullTimeInfo.TabIndex = 23;
@@ -143,7 +143,7 @@
             // lblLastFullEmployee
             // 
             this.lblLastFullEmployee.AutoSize = true;
-            this.lblLastFullEmployee.Location = new System.Drawing.Point(253, 236);
+            this.lblLastFullEmployee.Location = new System.Drawing.Point(462, 290);
             this.lblLastFullEmployee.Name = "lblLastFullEmployee";
             this.lblLastFullEmployee.Size = new System.Drawing.Size(127, 13);
             this.lblLastFullEmployee.TabIndex = 24;
@@ -152,7 +152,7 @@
             // lblAllWorkedTime
             // 
             this.lblAllWorkedTime.AutoSize = true;
-            this.lblAllWorkedTime.Location = new System.Drawing.Point(46, 143);
+            this.lblAllWorkedTime.Location = new System.Drawing.Point(255, 197);
             this.lblAllWorkedTime.Name = "lblAllWorkedTime";
             this.lblAllWorkedTime.Size = new System.Drawing.Size(90, 13);
             this.lblAllWorkedTime.TabIndex = 25;
@@ -161,7 +161,7 @@
             // lblLastYear
             // 
             this.lblLastYear.AutoSize = true;
-            this.lblLastYear.Location = new System.Drawing.Point(46, 164);
+            this.lblLastYear.Location = new System.Drawing.Point(255, 218);
             this.lblLastYear.Name = "lblLastYear";
             this.lblLastYear.Size = new System.Drawing.Size(55, 13);
             this.lblLastYear.TabIndex = 26;
@@ -170,7 +170,7 @@
             // lblLast3Month
             // 
             this.lblLast3Month.AutoSize = true;
-            this.lblLast3Month.Location = new System.Drawing.Point(46, 206);
+            this.lblLast3Month.Location = new System.Drawing.Point(255, 260);
             this.lblLast3Month.Name = "lblLast3Month";
             this.lblLast3Month.Size = new System.Drawing.Size(56, 13);
             this.lblLast3Month.TabIndex = 27;
@@ -179,7 +179,7 @@
             // lblLast6Month
             // 
             this.lblLast6Month.AutoSize = true;
-            this.lblLast6Month.Location = new System.Drawing.Point(46, 185);
+            this.lblLast6Month.Location = new System.Drawing.Point(255, 239);
             this.lblLast6Month.Name = "lblLast6Month";
             this.lblLast6Month.Size = new System.Drawing.Size(53, 13);
             this.lblLast6Month.TabIndex = 28;
@@ -188,7 +188,7 @@
             // lblLastWorked
             // 
             this.lblLastWorked.AutoSize = true;
-            this.lblLastWorked.Location = new System.Drawing.Point(46, 227);
+            this.lblLastWorked.Location = new System.Drawing.Point(255, 281);
             this.lblLastWorked.Name = "lblLastWorked";
             this.lblLastWorked.Size = new System.Drawing.Size(74, 13);
             this.lblLastWorked.TabIndex = 29;
@@ -197,7 +197,7 @@
             // lblListByTwoTime
             // 
             this.lblListByTwoTime.AutoSize = true;
-            this.lblListByTwoTime.Location = new System.Drawing.Point(347, 96);
+            this.lblListByTwoTime.Location = new System.Drawing.Point(556, 150);
             this.lblListByTwoTime.Name = "lblListByTwoTime";
             this.lblListByTwoTime.Size = new System.Drawing.Size(138, 13);
             this.lblListByTwoTime.TabIndex = 30;
@@ -206,7 +206,7 @@
             // lblFirstTime
             // 
             this.lblFirstTime.AutoSize = true;
-            this.lblFirstTime.Location = new System.Drawing.Point(46, 27);
+            this.lblFirstTime.Location = new System.Drawing.Point(255, 81);
             this.lblFirstTime.Name = "lblFirstTime";
             this.lblFirstTime.Size = new System.Drawing.Size(82, 13);
             this.lblFirstTime.TabIndex = 31;
@@ -215,7 +215,7 @@
             // lblSecondTime
             // 
             this.lblSecondTime.AutoSize = true;
-            this.lblSecondTime.Location = new System.Drawing.Point(291, 27);
+            this.lblSecondTime.Location = new System.Drawing.Point(500, 81);
             this.lblSecondTime.Name = "lblSecondTime";
             this.lblSecondTime.Size = new System.Drawing.Size(55, 13);
             this.lblSecondTime.TabIndex = 32;
@@ -224,7 +224,7 @@
             // lblListByTwoTimeInfo
             // 
             this.lblListByTwoTimeInfo.AutoSize = true;
-            this.lblListByTwoTimeInfo.Location = new System.Drawing.Point(504, 96);
+            this.lblListByTwoTimeInfo.Location = new System.Drawing.Point(713, 150);
             this.lblListByTwoTimeInfo.Name = "lblListByTwoTimeInfo";
             this.lblListByTwoTimeInfo.Size = new System.Drawing.Size(19, 13);
             this.lblListByTwoTimeInfo.TabIndex = 36;
@@ -233,7 +233,7 @@
             // lblAllWorkedTimeInfo
             // 
             this.lblAllWorkedTimeInfo.AutoSize = true;
-            this.lblAllWorkedTimeInfo.Location = new System.Drawing.Point(141, 143);
+            this.lblAllWorkedTimeInfo.Location = new System.Drawing.Point(350, 197);
             this.lblAllWorkedTimeInfo.Name = "lblAllWorkedTimeInfo";
             this.lblAllWorkedTimeInfo.Size = new System.Drawing.Size(19, 13);
             this.lblAllWorkedTimeInfo.TabIndex = 37;
@@ -242,7 +242,7 @@
             // lblLastYearInfo
             // 
             this.lblLastYearInfo.AutoSize = true;
-            this.lblLastYearInfo.Location = new System.Drawing.Point(141, 164);
+            this.lblLastYearInfo.Location = new System.Drawing.Point(350, 218);
             this.lblLastYearInfo.Name = "lblLastYearInfo";
             this.lblLastYearInfo.Size = new System.Drawing.Size(19, 13);
             this.lblLastYearInfo.TabIndex = 38;
@@ -251,7 +251,7 @@
             // lblLast6MonthInfo
             // 
             this.lblLast6MonthInfo.AutoSize = true;
-            this.lblLast6MonthInfo.Location = new System.Drawing.Point(141, 185);
+            this.lblLast6MonthInfo.Location = new System.Drawing.Point(350, 239);
             this.lblLast6MonthInfo.Name = "lblLast6MonthInfo";
             this.lblLast6MonthInfo.Size = new System.Drawing.Size(19, 13);
             this.lblLast6MonthInfo.TabIndex = 39;
@@ -260,7 +260,7 @@
             // lblLast3MonthInfo
             // 
             this.lblLast3MonthInfo.AutoSize = true;
-            this.lblLast3MonthInfo.Location = new System.Drawing.Point(141, 206);
+            this.lblLast3MonthInfo.Location = new System.Drawing.Point(350, 260);
             this.lblLast3MonthInfo.Name = "lblLast3MonthInfo";
             this.lblLast3MonthInfo.Size = new System.Drawing.Size(19, 13);
             this.lblLast3MonthInfo.TabIndex = 40;
@@ -269,7 +269,7 @@
             // lblLastWorkedInfo
             // 
             this.lblLastWorkedInfo.AutoSize = true;
-            this.lblLastWorkedInfo.Location = new System.Drawing.Point(141, 227);
+            this.lblLastWorkedInfo.Location = new System.Drawing.Point(350, 281);
             this.lblLastWorkedInfo.Name = "lblLastWorkedInfo";
             this.lblLastWorkedInfo.Size = new System.Drawing.Size(19, 13);
             this.lblLastWorkedInfo.TabIndex = 41;
@@ -278,7 +278,7 @@
             // lblLastFullEmployeeInfo
             // 
             this.lblLastFullEmployeeInfo.AutoSize = true;
-            this.lblLastFullEmployeeInfo.Location = new System.Drawing.Point(407, 236);
+            this.lblLastFullEmployeeInfo.Location = new System.Drawing.Point(616, 290);
             this.lblLastFullEmployeeInfo.Name = "lblLastFullEmployeeInfo";
             this.lblLastFullEmployeeInfo.Size = new System.Drawing.Size(53, 13);
             this.lblLastFullEmployeeInfo.TabIndex = 42;
@@ -286,7 +286,7 @@
             // 
             // btnFull
             // 
-            this.btnFull.Location = new System.Drawing.Point(234, 143);
+            this.btnFull.Location = new System.Drawing.Point(443, 197);
             this.btnFull.Name = "btnFull";
             this.btnFull.Size = new System.Drawing.Size(75, 23);
             this.btnFull.TabIndex = 43;
@@ -296,7 +296,7 @@
             // GeneratorForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(653, 430);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnFull);
             this.Controls.Add(this.lblLastFullEmployeeInfo);
             this.Controls.Add(this.lblLastWorkedInfo);

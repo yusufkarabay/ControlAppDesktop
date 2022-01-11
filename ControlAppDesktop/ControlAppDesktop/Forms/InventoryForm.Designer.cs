@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -67,7 +67,7 @@
             // grpInventory
             // 
             this.grpInventory.Controls.Add(this.dgvInventory);
-            this.grpInventory.Location = new System.Drawing.Point(51, 238);
+            this.grpInventory.Location = new System.Drawing.Point(69, 310);
             this.grpInventory.Name = "grpInventory";
             this.grpInventory.Size = new System.Drawing.Size(1014, 272);
             this.grpInventory.TabIndex = 4;
@@ -80,8 +80,8 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToResizeColumns = false;
             this.dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
@@ -136,7 +136,7 @@
             this.grpInventoryInfo.Controls.Add(this.lblInventoryAmount);
             this.grpInventoryInfo.Controls.Add(this.lblInventoryName);
             this.grpInventoryInfo.Controls.Add(this.lblInventorySeriNo);
-            this.grpInventoryInfo.Location = new System.Drawing.Point(51, 12);
+            this.grpInventoryInfo.Location = new System.Drawing.Point(69, 84);
             this.grpInventoryInfo.Name = "grpInventoryInfo";
             this.grpInventoryInfo.Size = new System.Drawing.Size(345, 198);
             this.grpInventoryInfo.TabIndex = 5;
@@ -210,14 +210,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(571, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(589, 84);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(418, 74);
+            this.btnList.Location = new System.Drawing.Point(436, 146);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 7;
@@ -227,7 +227,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(697, 74);
+            this.btnUpdate.Location = new System.Drawing.Point(715, 146);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
@@ -237,7 +237,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(499, 74);
+            this.btnAdd.Location = new System.Drawing.Point(517, 146);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
@@ -247,7 +247,7 @@
             // 
             // btnInventoryPdf
             // 
-            this.btnInventoryPdf.Location = new System.Drawing.Point(917, 42);
+            this.btnInventoryPdf.Location = new System.Drawing.Point(935, 114);
             this.btnInventoryPdf.Name = "btnInventoryPdf";
             this.btnInventoryPdf.Size = new System.Drawing.Size(124, 23);
             this.btnInventoryPdf.TabIndex = 11;
@@ -256,7 +256,7 @@
             // 
             // btnInventoryWeb
             // 
-            this.btnInventoryWeb.Location = new System.Drawing.Point(917, 74);
+            this.btnInventoryWeb.Location = new System.Drawing.Point(935, 146);
             this.btnInventoryWeb.Name = "btnInventoryWeb";
             this.btnInventoryWeb.Size = new System.Drawing.Size(124, 23);
             this.btnInventoryWeb.TabIndex = 12;
@@ -266,7 +266,7 @@
             // 
             // btnAllList
             // 
-            this.btnAllList.Location = new System.Drawing.Point(580, 74);
+            this.btnAllList.Location = new System.Drawing.Point(598, 146);
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(111, 23);
             this.btnAllList.TabIndex = 13;
@@ -276,7 +276,7 @@
             // 
             // txtbxtSearchInventory
             // 
-            this.txtbxtSearchInventory.Location = new System.Drawing.Point(646, 147);
+            this.txtbxtSearchInventory.Location = new System.Drawing.Point(664, 219);
             this.txtbxtSearchInventory.Multiline = true;
             this.txtbxtSearchInventory.Name = "txtbxtSearchInventory";
             this.txtbxtSearchInventory.Size = new System.Drawing.Size(276, 30);
@@ -286,7 +286,7 @@
             // 
             // btnSearchInventory
             // 
-            this.btnSearchInventory.Location = new System.Drawing.Point(741, 183);
+            this.btnSearchInventory.Location = new System.Drawing.Point(759, 255);
             this.btnSearchInventory.Name = "btnSearchInventory";
             this.btnSearchInventory.Size = new System.Drawing.Size(75, 23);
             this.btnSearchInventory.TabIndex = 15;
@@ -322,7 +322,7 @@
             // 
             this.grpBoxSearch.Controls.Add(this.rBtnName);
             this.grpBoxSearch.Controls.Add(this.rbtnSeriNo);
-            this.grpBoxSearch.Location = new System.Drawing.Point(429, 132);
+            this.grpBoxSearch.Location = new System.Drawing.Point(447, 204);
             this.grpBoxSearch.Name = "grpBoxSearch";
             this.grpBoxSearch.Size = new System.Drawing.Size(200, 100);
             this.grpBoxSearch.TabIndex = 18;
@@ -332,7 +332,7 @@
             // InventoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1153, 562);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.grpBoxSearch);
             this.Controls.Add(this.btnSearchInventory);
             this.Controls.Add(this.txtbxtSearchInventory);

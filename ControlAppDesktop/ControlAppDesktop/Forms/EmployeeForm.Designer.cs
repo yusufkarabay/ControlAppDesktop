@@ -73,7 +73,7 @@
             // grpEmployee
             // 
             this.grpEmployee.Controls.Add(this.dgvEmployee);
-            this.grpEmployee.Location = new System.Drawing.Point(38, 278);
+            this.grpEmployee.Location = new System.Drawing.Point(79, 312);
             this.grpEmployee.Name = "grpEmployee";
             this.grpEmployee.Size = new System.Drawing.Size(1014, 272);
             this.grpEmployee.TabIndex = 3;
@@ -149,7 +149,7 @@
             this.grpInfo.Controls.Add(this.lblSurnameInfo);
             this.grpInfo.Controls.Add(this.lblNameInfo);
             this.grpInfo.Controls.Add(this.lblTcInfo);
-            this.grpInfo.Location = new System.Drawing.Point(41, 38);
+            this.grpInfo.Location = new System.Drawing.Point(82, 72);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(300, 220);
             this.grpInfo.TabIndex = 4;
@@ -284,7 +284,7 @@
             // 
             // btnEmployeeAdd
             // 
-            this.btnEmployeeAdd.Location = new System.Drawing.Point(235, 12);
+            this.btnEmployeeAdd.Location = new System.Drawing.Point(276, 46);
             this.btnEmployeeAdd.Name = "btnEmployeeAdd";
             this.btnEmployeeAdd.Size = new System.Drawing.Size(92, 23);
             this.btnEmployeeAdd.TabIndex = 5;
@@ -294,7 +294,7 @@
             // 
             // btnSearchEmployee
             // 
-            this.btnSearchEmployee.Location = new System.Drawing.Point(814, 32);
+            this.btnSearchEmployee.Location = new System.Drawing.Point(855, 66);
             this.btnSearchEmployee.Name = "btnSearchEmployee";
             this.btnSearchEmployee.Size = new System.Drawing.Size(75, 23);
             this.btnSearchEmployee.TabIndex = 6;
@@ -304,7 +304,7 @@
             // 
             // txtbxSearchEmloyee
             // 
-            this.txtbxSearchEmloyee.Location = new System.Drawing.Point(585, 35);
+            this.txtbxSearchEmloyee.Location = new System.Drawing.Point(626, 69);
             this.txtbxSearchEmloyee.Name = "txtbxSearchEmloyee";
             this.txtbxSearchEmloyee.Size = new System.Drawing.Size(200, 20);
             this.txtbxSearchEmloyee.TabIndex = 7;
@@ -319,7 +319,7 @@
             this.gbEmployeeSearch.Controls.Add(this.rbDepartment);
             this.gbEmployeeSearch.Controls.Add(this.rbName);
             this.gbEmployeeSearch.Controls.Add(this.rbTc);
-            this.gbEmployeeSearch.Location = new System.Drawing.Point(365, 38);
+            this.gbEmployeeSearch.Location = new System.Drawing.Point(406, 72);
             this.gbEmployeeSearch.Name = "gbEmployeeSearch";
             this.gbEmployeeSearch.Size = new System.Drawing.Size(200, 199);
             this.gbEmployeeSearch.TabIndex = 8;
@@ -401,7 +401,7 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(584, 38);
+            this.cbDepartment.Location = new System.Drawing.Point(625, 72);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(200, 21);
             this.cbDepartment.TabIndex = 10;
@@ -409,7 +409,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(709, 127);
+            this.btnRefresh.Location = new System.Drawing.Point(750, 161);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 11;
@@ -420,7 +420,7 @@
             // EmployeeForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1138, 669);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.gbEmployeeSearch);

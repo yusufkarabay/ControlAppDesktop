@@ -61,7 +61,7 @@
             // gbHeadset
             // 
             this.gbHeadset.Controls.Add(this.dgvHeadset);
-            this.gbHeadset.Location = new System.Drawing.Point(50, 331);
+            this.gbHeadset.Location = new System.Drawing.Point(118, 391);
             this.gbHeadset.Name = "gbHeadset";
             this.gbHeadset.Size = new System.Drawing.Size(767, 255);
             this.gbHeadset.TabIndex = 0;
@@ -115,7 +115,7 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblHeadsetSeriNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(41, 39);
+            this.grpInfo.Location = new System.Drawing.Point(109, 99);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Size = new System.Drawing.Size(300, 159);
             this.grpInfo.TabIndex = 1;
@@ -196,7 +196,7 @@
             // 
             // btnHeadsetDelivery
             // 
-            this.btnHeadsetDelivery.Location = new System.Drawing.Point(689, 80);
+            this.btnHeadsetDelivery.Location = new System.Drawing.Point(757, 140);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
             this.btnHeadsetDelivery.Size = new System.Drawing.Size(108, 23);
             this.btnHeadsetDelivery.TabIndex = 3;
@@ -206,7 +206,7 @@
             // 
             // btnHeadsetList
             // 
-            this.btnHeadsetList.Location = new System.Drawing.Point(689, 39);
+            this.btnHeadsetList.Location = new System.Drawing.Point(757, 99);
             this.btnHeadsetList.Name = "btnHeadsetList";
             this.btnHeadsetList.Size = new System.Drawing.Size(75, 23);
             this.btnHeadsetList.TabIndex = 4;
@@ -216,7 +216,7 @@
             // 
             // btnHeadsetSearch
             // 
-            this.btnHeadsetSearch.Location = new System.Drawing.Point(445, 204);
+            this.btnHeadsetSearch.Location = new System.Drawing.Point(513, 264);
             this.btnHeadsetSearch.Name = "btnHeadsetSearch";
             this.btnHeadsetSearch.Size = new System.Drawing.Size(75, 23);
             this.btnHeadsetSearch.TabIndex = 5;
@@ -226,7 +226,7 @@
             // 
             // txtHeadsetSearch
             // 
-            this.txtHeadsetSearch.Location = new System.Drawing.Point(406, 178);
+            this.txtHeadsetSearch.Location = new System.Drawing.Point(474, 238);
             this.txtHeadsetSearch.Name = "txtHeadsetSearch";
             this.txtHeadsetSearch.Size = new System.Drawing.Size(165, 20);
             this.txtHeadsetSearch.TabIndex = 6;
@@ -262,7 +262,7 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbHeadsetSeriNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(397, 39);
+            this.gbSearchInfo.Location = new System.Drawing.Point(465, 99);
             this.gbSearchInfo.Name = "gbSearchInfo";
             this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
             this.gbSearchInfo.TabIndex = 9;
@@ -284,7 +284,7 @@
             // HeadsetForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(876, 650);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.txtHeadsetSearch);
             this.Controls.Add(this.btnHeadsetSearch);
