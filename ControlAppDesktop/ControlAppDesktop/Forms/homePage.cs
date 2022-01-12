@@ -42,13 +42,13 @@ namespace ControlAppDesktop.Forms
         {
             pnlActive.Visible = true;
         }
-        private void homePage_Load(object sender, EventArgs e)
+        public void homePage_Load(object sender, EventArgs e)
         {
             pnlActive.Visible = false;
             lblTime.Text = DateTime.Now.ToString("f");
             btnUserName.Text = infos[1] + " " + infos[2].ToString();
         }
-        void FormGet(Form form)
+        public void FormGet(Form form)
         {
             form.MdiParent = this;
             pnlCenter.Controls.Add(form);
@@ -60,7 +60,7 @@ namespace ControlAppDesktop.Forms
             pnlActive.Height = button.Height;
             pnlActive.Top = button.Top;
         }
-        private void btnSentry_Click(object sender, EventArgs e)
+        public void btnSentry_Click(object sender, EventArgs e)
         {
             LeftWhitePanel(btnSentry);
             pnlCenter.Controls.Clear();
@@ -69,7 +69,7 @@ namespace ControlAppDesktop.Forms
             FormGet(sentryForm);
         }
 
-        private void btnInventory_Click(object sender, EventArgs e)
+        public void btnInventory_Click(object sender, EventArgs e)
         {
 
             LeftWhitePanel(btnInventory);
@@ -80,7 +80,7 @@ namespace ControlAppDesktop.Forms
 
 
         }
-        private void btnEmployee_Click(object sender, EventArgs e)
+        public void btnEmployee_Click(object sender, EventArgs e)
         {
 
             LeftWhitePanel(btnEmployee);
@@ -167,7 +167,7 @@ namespace ControlAppDesktop.Forms
             GeneratorForm generatorForm = new GeneratorForm();
             generatorForm.infos = infos;
             FormGet(generatorForm);
-         
+
         }
 
         private void btnDirectory_Click(object sender, EventArgs e)
@@ -193,9 +193,15 @@ namespace ControlAppDesktop.Forms
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void pbMessage_Click(object sender, EventArgs e)
-        {
 
+
+        private void btnAdminForm_Click(object sender, EventArgs e)
+        {
+            LeftWhitePanel(btnAdminForm);
+            pnlCenter.Controls.Clear();
+            AdminForm adminForm = new AdminForm();
+            adminForm.infos = infos;
+            FormGet(adminForm);
         }
     }
 }

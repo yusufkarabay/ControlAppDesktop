@@ -76,6 +76,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
+            btnSentryDoneUpdate.Visible = true;
             sentryDone = new SentryDone(
                  Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
                  dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
@@ -104,6 +105,7 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             updateSentryDone();
+            rtbxSentry.Text = "Nöbet sırasında yapılan işler...";
             thisDateDone();
 
         }
@@ -137,6 +139,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
+            btnSentryToDoUpdate.Visible=true;
             sentryToDo = new SentryToDo(
                  Guid.Parse(dgvSentryTodo.CurrentRow.Cells["SentryToDoId"].Value.ToString()),
                  dgvSentryTodo.CurrentRow.Cells["ToDo"].Value.ToString(),
@@ -173,10 +176,13 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             updateSentyToDo();
+            rtbxSentryToDo.Text = "Takip edilecek İşlemler...";
             thisDateToDo();
         }
         private void SentryForm_Load(object sender, EventArgs e)
         {
+            btnSentryToDoUpdate.Visible = false;
+            btnSentryDoneUpdate.Visible = false;    
             dgvSentry.Visible = true;
             dgvSentryTodo.Visible = false;
         }

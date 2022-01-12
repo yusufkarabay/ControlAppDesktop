@@ -27,7 +27,7 @@ namespace DataAccess.Concrete
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("@DepartmentCreate", new SqlParameter("@departmentName", entity.DepartmentName));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("DepartmentCreate", new SqlParameter("@departmentName", entity.DepartmentName));
                 if (isSuccess)
                 {
                     result = entity.DepartmentName + " Departmanı Başarıyla Kaydedildi.";

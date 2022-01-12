@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
+            this.btnAdminForm = new System.Windows.Forms.Button();
             this.pnlActive = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
-            this.pbMessage = new System.Windows.Forms.PictureBox();
             this.btnDirectory = new System.Windows.Forms.Button();
             this.btnGenarator = new System.Windows.Forms.Button();
             this.btnGuestCard = new System.Windows.Forms.Button();
@@ -49,16 +49,15 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlCenter = new System.Windows.Forms.Panel();
             this.pnlLeftMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMessage)).BeginInit();
             this.pnlTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeftMenu
             // 
             this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.pnlLeftMenu.Controls.Add(this.btnAdminForm);
             this.pnlLeftMenu.Controls.Add(this.pnlActive);
             this.pnlLeftMenu.Controls.Add(this.btnUserName);
-            this.pnlLeftMenu.Controls.Add(this.pbMessage);
             this.pnlLeftMenu.Controls.Add(this.btnDirectory);
             this.pnlLeftMenu.Controls.Add(this.btnGenarator);
             this.pnlLeftMenu.Controls.Add(this.btnGuestCard);
@@ -77,6 +76,22 @@
             this.pnlLeftMenu.Size = new System.Drawing.Size(180, 768);
             this.pnlLeftMenu.TabIndex = 0;
             // 
+            // btnAdminForm
+            // 
+            this.btnAdminForm.BackColor = System.Drawing.Color.Red;
+            this.btnAdminForm.FlatAppearance.BorderSize = 0;
+            this.btnAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdminForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminForm.Location = new System.Drawing.Point(12, 639);
+            this.btnAdminForm.Name = "btnAdminForm";
+            this.btnAdminForm.Size = new System.Drawing.Size(164, 48);
+            this.btnAdminForm.TabIndex = 4;
+            this.btnAdminForm.Text = " Yönetici Ekranı";
+            this.btnAdminForm.UseVisualStyleBackColor = false;
+            this.btnAdminForm.Click += new System.EventHandler(this.btnAdminForm_Click);
+            // 
             // pnlActive
             // 
             this.pnlActive.BackColor = System.Drawing.Color.Gainsboro;
@@ -93,17 +108,6 @@
             this.btnUserName.TabIndex = 3;
             this.btnUserName.Text = "Personel Adı";
             this.btnUserName.UseVisualStyleBackColor = true;
-            // 
-            // pbMessage
-            // 
-            this.pbMessage.Image = global::ControlAppDesktop.Properties.Resources.mail_send;
-            this.pbMessage.Location = new System.Drawing.Point(12, 5);
-            this.pbMessage.Name = "pbMessage";
-            this.pbMessage.Size = new System.Drawing.Size(32, 32);
-            this.pbMessage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMessage.TabIndex = 0;
-            this.pbMessage.TabStop = false;
-            this.pbMessage.Click += new System.EventHandler(this.pbMessage_Click);
             // 
             // btnDirectory
             // 
@@ -366,7 +370,6 @@
             this.Text = "homePage";
             this.Load += new System.EventHandler(this.homePage_Load);
             this.pnlLeftMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMessage)).EndInit();
             this.pnlTopMenu.ResumeLayout(false);
             this.pnlTopMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -374,9 +377,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlLeftMenu;
-        private System.Windows.Forms.PictureBox pbMessage;
         private System.Windows.Forms.Panel pnlTopMenu;
         private System.Windows.Forms.Button btnSentry;
         private System.Windows.Forms.Label lblTime;
@@ -394,6 +394,8 @@
         private System.Windows.Forms.Button btnDirectory;
         private System.Windows.Forms.Panel pnlActive;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel pnlCenter;
+        private System.Windows.Forms.Button btnAdminForm;
+        public System.Windows.Forms.Panel pnlCenter;
+        public System.Windows.Forms.Panel pnlLeftMenu;
     }
 }
