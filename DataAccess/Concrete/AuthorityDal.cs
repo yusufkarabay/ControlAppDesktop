@@ -160,7 +160,27 @@ namespace DataAccess.Concrete
 
         public string UpdateNew(Authority entity)
         {
-            throw new NotImplementedException();
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("AuthorityUpdate", new SqlParameter("@authorityid", entity.AuthorityId),
+                    new SqlParameter("@authorityName", entity.AuthorityName));
+                if (isSuccess)
+                {
+                    result = "Yetki Başarı İle Güncellendi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
         }
     }
 }

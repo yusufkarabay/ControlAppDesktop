@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbAuthorityList = new System.Windows.Forms.GroupBox();
             this.dgvAuthority = new System.Windows.Forms.DataGridView();
             this.btnAuthorityList = new System.Windows.Forms.Button();
@@ -40,9 +41,12 @@
             this.lblAuthorityName = new System.Windows.Forms.Label();
             this.lblAuthorityNameInfo = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateAuthorityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbAuthorityList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthority)).BeginInit();
             this.gbAuthorityInfo.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbAuthorityList
@@ -61,10 +65,11 @@
             this.dgvAuthority.AllowUserToDeleteRows = false;
             this.dgvAuthority.AllowUserToResizeColumns = false;
             this.dgvAuthority.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGray;
-            this.dgvAuthority.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvAuthority.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAuthority.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAuthority.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAuthority.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvAuthority.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvAuthority.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAuthority.Location = new System.Drawing.Point(3, 16);
@@ -75,6 +80,7 @@
             this.dgvAuthority.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAuthority.Size = new System.Drawing.Size(908, 250);
             this.dgvAuthority.TabIndex = 2;
+            this.dgvAuthority.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAuthority_CellMouseClick);
             // 
             // btnAuthorityList
             // 
@@ -88,12 +94,14 @@
             // 
             // btnAuthorityUpdate
             // 
-            this.btnAuthorityUpdate.Location = new System.Drawing.Point(446, 255);
+            this.btnAuthorityUpdate.Location = new System.Drawing.Point(710, 88);
             this.btnAuthorityUpdate.Name = "btnAuthorityUpdate";
             this.btnAuthorityUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnAuthorityUpdate.TabIndex = 30;
             this.btnAuthorityUpdate.Text = "Güncelle";
             this.btnAuthorityUpdate.UseVisualStyleBackColor = true;
+            this.btnAuthorityUpdate.Visible = false;
+            this.btnAuthorityUpdate.Click += new System.EventHandler(this.btnAuthorityUpdate_Click);
             // 
             // lblAuthorityNameEdit
             // 
@@ -162,6 +170,20 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateAuthorityToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(180, 26);
+            // 
+            // updateAuthorityToolStripMenuItem
+            // 
+            this.updateAuthorityToolStripMenuItem.Name = "updateAuthorityToolStripMenuItem";
+            this.updateAuthorityToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.updateAuthorityToolStripMenuItem.Text = "Yetki Adını Güncelle";
+            this.updateAuthorityToolStripMenuItem.Click += new System.EventHandler(this.updateAuthorityToolStripMenuItem_Click);
+            // 
             // AuthorityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +205,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthority)).EndInit();
             this.gbAuthorityInfo.ResumeLayout(false);
             this.gbAuthorityInfo.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +224,7 @@
         private System.Windows.Forms.Label lblAuthorityName;
         private System.Windows.Forms.Label lblAuthorityNameInfo;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem updateAuthorityToolStripMenuItem;
     }
 }

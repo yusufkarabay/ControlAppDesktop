@@ -115,6 +115,28 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
+        public string UpdateNew(Authority entity)
+        {
+            try
+            {
+                if (entity.AuthorityName == null)
+                {
+                    return " Güncellemek İstediğiniz Departmanı Seçiniz";
+
+                }
+                controlText = IsAuthorityComplete(entity);
+                if (controlText != "")
+                {
+                    return controlText;
+                }
+                return authorityDal.UpdateNew(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
         public static AuthorityManager GetInstance()
         {
             if (authorityManager == null)

@@ -39,14 +39,14 @@
             this.lblDepartmentName = new System.Windows.Forms.Label();
             this.lblDepartmentNameInfo = new System.Windows.Forms.Label();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
-            this.gbDepartmentList = new System.Windows.Forms.GroupBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.departmentNameUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbDepartmentList = new System.Windows.Forms.GroupBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbDepartmentInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
-            this.gbDepartmentList.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.gbDepartmentList.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDepartmentList
@@ -68,6 +68,7 @@
             this.btnDepartmentUpdate.Text = "Güncelle";
             this.btnDepartmentUpdate.UseVisualStyleBackColor = true;
             this.btnDepartmentUpdate.Visible = false;
+            this.btnDepartmentUpdate.Click += new System.EventHandler(this.btnDepartmentUpdate_Click);
             // 
             // lblDepartmentNameEdit
             // 
@@ -149,6 +150,20 @@
             this.dgvDepartment.TabIndex = 2;
             this.dgvDepartment.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDepartment_CellMouseClick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.departmentNameUpdateToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
+            // 
+            // departmentNameUpdateToolStripMenuItem
+            // 
+            this.departmentNameUpdateToolStripMenuItem.Name = "departmentNameUpdateToolStripMenuItem";
+            this.departmentNameUpdateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.departmentNameUpdateToolStripMenuItem.Text = "Departman Adını Güncelle";
+            this.departmentNameUpdateToolStripMenuItem.Click += new System.EventHandler(this.departmentNameUpdateToolStripMenuItem_Click);
+            // 
             // gbDepartmentList
             // 
             this.gbDepartmentList.Controls.Add(this.dgvDepartment);
@@ -169,20 +184,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.departmentNameUpdateToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(214, 26);
-            // 
-            // departmentNameUpdateToolStripMenuItem
-            // 
-            this.departmentNameUpdateToolStripMenuItem.Name = "departmentNameUpdateToolStripMenuItem";
-            this.departmentNameUpdateToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.departmentNameUpdateToolStripMenuItem.Text = "Departman Adını Güncelle";
-            this.departmentNameUpdateToolStripMenuItem.Click += new System.EventHandler(this.departmentNameUpdateToolStripMenuItem_Click);
-            // 
             // DepartmentForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -198,11 +199,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DepartmentForm";
             this.Text = "DepartmentForm";
+            this.Load += new System.EventHandler(this.DepartmentForm_Load);
             this.gbDepartmentInfo.ResumeLayout(false);
             this.gbDepartmentInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).EndInit();
-            this.gbDepartmentList.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.gbDepartmentList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -109,6 +109,28 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
+        public string UpdateNew(Department entity)
+        {
+            try
+            {
+                if (entity.DepartmentName == null)
+                {
+                    return " Güncellemek İstediğiniz Departmanı Seçiniz";
+
+                }
+                controlText = IsDepartmentComplete(entity);
+                if (controlText != "")
+                {
+                    return controlText;
+                }
+                return departmentDal.UpdateNew(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
         public static DepartmentManager GetInstance()
         {
             if (departmentManager == null) { departmentManager = new DepartmentManager(); }

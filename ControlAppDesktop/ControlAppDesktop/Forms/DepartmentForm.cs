@@ -68,6 +68,21 @@ namespace ControlAppDesktop.Forms
         {
             lblDepartmentNameInfo.Text = department.DepartmentName;
         }
+        void updateDepartment()
+        {
+            if (department == null)
+            {
+                MessageBox.Show("Departman Güncellenemedi");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Seçili Departman Değişikliğini Güncellemek İstediğinize Emin Misiniz?",
+                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                department.DepartmentName = txtDepartmentName.Text.ToString();
+                MessageBox.Show(departmentManager.UpdateNew(department));
+            }
+        }
 
         private void departmentNameUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -76,14 +91,14 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek Departman seçiniz");
                 return;
             }
-            
+
             btnDepartmentUpdate.Visible = true;
 
             department = new Department(
                  Guid.Parse(dgvDepartment.CurrentRow.Cells["DepartmentId"].Value.ToString()),
                  dgvDepartment.CurrentRow.Cells["DepartmentName"].Value.ToString());
 
-            DialogResult dialogResult = MessageBox.Show("Seçili Depatman İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
+            DialogResult dialogResult = MessageBox.Show("Seçili Departman İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
@@ -94,7 +109,7 @@ namespace ControlAppDesktop.Forms
 
         private void dgvDepartment_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dgvDepartment.CurrentRow==null)
+            if (dgvDepartment.CurrentRow == null)
             {
 
                 MessageBox.Show("Listeden Departman Seçiniz");
@@ -103,6 +118,25 @@ namespace ControlAppDesktop.Forms
             department = new Department(
                 dgvDepartment.CurrentRow.Cells["DepartmentName"].Value.ToString());
             fillInfos();
+        }
+
+        private void btnDepartmentUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtDepartmentName.Text == null)
+            {
+                MessageBox.Show("Departman Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                return;
+            }
+            updateDepartment();
+            txtDepartmentName.Text = "Departman Adı Giriniz...";
+            allDepartmentList();
+            btnDepartmentUpdate.Visible = false;
+
+        }
+
+        private void DepartmentForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

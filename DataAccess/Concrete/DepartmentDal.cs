@@ -145,7 +145,30 @@ namespace DataAccess.Concrete
             return list;
 
         }
+        public string UpdateNew(Department entity)
+        {
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("DepartmentUpdate", new SqlParameter("@departmentid", entity.DepartmentId),
+                    new SqlParameter("@departmentName", entity.DepartmentName));
+                if (isSuccess)
+                {
+                    result = "Departman Başarı İle Güncellendi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
 
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
+        }
         public string Update(Department entity, string oldName)
         {
             string result = null;
