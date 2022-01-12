@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccess.Concrete;
 
 namespace ControlAppDesktop
 {
@@ -49,13 +50,20 @@ namespace ControlAppDesktop
                 MessageBox.Show("Hatalı TC Kimlik Numarası veya Şifre Girdiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            HomePage homePage = new HomePage();
-            homePage.infos = infos;
-            homePage.Show();
-            this.Hide();
+           
+                HomePage homePage = new HomePage();
+                homePage.infos = infos;
+                homePage.Show();
+                
+                this.Hide();
+              
 
+           
+           
             MessageBox.Show("Sayın " + infos[1] + " " + infos[2] + " Hoşgeldiniz");
-                       
+
+
+
         }
     }
 }

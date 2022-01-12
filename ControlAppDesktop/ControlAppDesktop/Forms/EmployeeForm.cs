@@ -35,6 +35,11 @@ namespace ControlAppDesktop.Forms
         {
             employeeList();
             cbDepartment.Visible = false;
+            if (infos[4].ToString() == "Bilgi İşlem Yetkisi".ToString())
+            {
+                label2.Text = "Teestttt Başarılııı";
+            }
+            
 
         }
         //****************************
@@ -49,6 +54,9 @@ namespace ControlAppDesktop.Forms
             dgvEmployee.Columns[0].Visible = false;
             dgvEmployee.Columns[1].Visible = false;
             dgvEmployee.Columns[2].Visible = false;
+            dgvEmployee.Columns[3].Visible = false;
+            dgvEmployee.Columns[13].Visible = false;
+            dgvEmployee.Columns[14].Visible = false;
 
         }
         void fillInfos()

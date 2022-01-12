@@ -180,6 +180,12 @@
     <Compile Include="Forms\SentryForm.Designer.cs">
       <DependentUpon>SentryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SentryForm.resx">
       <DependentUpon>SentryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateEmployeeForm.resx">
       <DependentUpon>UpdateEmployeeForm.cs</DependentUpon>

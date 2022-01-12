@@ -43,7 +43,7 @@
             this.lblTel = new System.Windows.Forms.Label();
             this.lblBdateInfo = new System.Windows.Forms.Label();
             this.lblBdate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTc = new System.Windows.Forms.Label();
             this.department = new System.Windows.Forms.Label();
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.rbTc = new System.Windows.Forms.RadioButton();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -141,7 +142,7 @@
             this.grpInfo.Controls.Add(this.lblTel);
             this.grpInfo.Controls.Add(this.lblBdateInfo);
             this.grpInfo.Controls.Add(this.lblBdate);
-            this.grpInfo.Controls.Add(this.label1);
+            this.grpInfo.Controls.Add(this.lblTc);
             this.grpInfo.Controls.Add(this.department);
             this.grpInfo.Controls.Add(this.employeeSurname);
             this.grpInfo.Controls.Add(this.employeeName);
@@ -210,14 +211,14 @@
             this.lblBdate.TabIndex = 11;
             this.lblBdate.Text = "Doğum Tarihi:";
             // 
-            // label1
+            // lblTc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "TC:";
+            this.lblTc.AutoSize = true;
+            this.lblTc.Location = new System.Drawing.Point(6, 25);
+            this.lblTc.Name = "lblTc";
+            this.lblTc.Size = new System.Drawing.Size(24, 13);
+            this.lblTc.TabIndex = 10;
+            this.lblTc.Text = "TC:";
             // 
             // department
             // 
@@ -417,10 +418,20 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(418, 620);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "yönetici testii";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.gbEmployeeSearch);
@@ -456,7 +467,7 @@
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.Label lblBdateInfo;
         private System.Windows.Forms.Label lblBdate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTc;
         private System.Windows.Forms.Label department;
         private System.Windows.Forms.Label employeeSurname;
         private System.Windows.Forms.Label employeeName;
@@ -480,5 +491,6 @@
         private System.Windows.Forms.RadioButton rbTc;
         private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label label2;
     }
 }

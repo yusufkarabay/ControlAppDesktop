@@ -281,18 +281,18 @@
             // 
             // btnCompleteRequest
             // 
-            this.btnCompleteRequest.Location = new System.Drawing.Point(13, 172);
+            this.btnCompleteRequest.Location = new System.Drawing.Point(13, 169);
             this.btnCompleteRequest.Name = "btnCompleteRequest";
-            this.btnCompleteRequest.Size = new System.Drawing.Size(137, 23);
+            this.btnCompleteRequest.Size = new System.Drawing.Size(176, 23);
             this.btnCompleteRequest.TabIndex = 5;
             this.btnCompleteRequest.Text = "Tamamlanan Talepler";
             this.btnCompleteRequest.UseVisualStyleBackColor = true;
             // 
             // btnMyRequest
             // 
-            this.btnMyRequest.Location = new System.Drawing.Point(6, 135);
+            this.btnMyRequest.Location = new System.Drawing.Point(13, 139);
             this.btnMyRequest.Name = "btnMyRequest";
-            this.btnMyRequest.Size = new System.Drawing.Size(109, 23);
+            this.btnMyRequest.Size = new System.Drawing.Size(176, 23);
             this.btnMyRequest.TabIndex = 5;
             this.btnMyRequest.Text = "Talep Ettiklerim";
             this.btnMyRequest.UseVisualStyleBackColor = true;
@@ -300,16 +300,16 @@
             // 
             // btnCreateRequest
             // 
-            this.btnCreateRequest.Location = new System.Drawing.Point(6, 106);
+            this.btnCreateRequest.Location = new System.Drawing.Point(13, 109);
             this.btnCreateRequest.Name = "btnCreateRequest";
-            this.btnCreateRequest.Size = new System.Drawing.Size(144, 23);
+            this.btnCreateRequest.Size = new System.Drawing.Size(176, 23);
             this.btnCreateRequest.TabIndex = 6;
             this.btnCreateRequest.Text = "Talep Oluştur";
             this.btnCreateRequest.UseVisualStyleBackColor = true;
             // 
             // btnWeb
             // 
-            this.btnWeb.Location = new System.Drawing.Point(6, 77);
+            this.btnWeb.Location = new System.Drawing.Point(13, 79);
             this.btnWeb.Name = "btnWeb";
             this.btnWeb.Size = new System.Drawing.Size(176, 23);
             this.btnWeb.TabIndex = 1;
@@ -319,9 +319,9 @@
             // 
             // btnRequestRefresh
             // 
-            this.btnRequestRefresh.Location = new System.Drawing.Point(6, 48);
+            this.btnRequestRefresh.Location = new System.Drawing.Point(13, 49);
             this.btnRequestRefresh.Name = "btnRequestRefresh";
-            this.btnRequestRefresh.Size = new System.Drawing.Size(91, 23);
+            this.btnRequestRefresh.Size = new System.Drawing.Size(176, 23);
             this.btnRequestRefresh.TabIndex = 0;
             this.btnRequestRefresh.Text = "Listeyi Yenile";
             this.btnRequestRefresh.UseVisualStyleBackColor = true;
@@ -329,9 +329,9 @@
             // 
             // btnRequestEnd
             // 
-            this.btnRequestEnd.Location = new System.Drawing.Point(6, 19);
+            this.btnRequestEnd.Location = new System.Drawing.Point(13, 19);
             this.btnRequestEnd.Name = "btnRequestEnd";
-            this.btnRequestEnd.Size = new System.Drawing.Size(59, 23);
+            this.btnRequestEnd.Size = new System.Drawing.Size(176, 23);
             this.btnRequestEnd.TabIndex = 0;
             this.btnRequestEnd.Text = "İşi Bitir";
             this.btnRequestEnd.UseVisualStyleBackColor = true;
@@ -348,7 +348,7 @@
             // lblCountInfo
             // 
             this.lblCountInfo.AutoSize = true;
-            this.lblCountInfo.Location = new System.Drawing.Point(567, 37);
+            this.lblCountInfo.Location = new System.Drawing.Point(667, 37);
             this.lblCountInfo.Name = "lblCountInfo";
             this.lblCountInfo.Size = new System.Drawing.Size(19, 13);
             this.lblCountInfo.TabIndex = 12;
