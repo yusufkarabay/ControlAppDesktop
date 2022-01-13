@@ -33,6 +33,7 @@ namespace DataAccess.Concrete
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("MaintenanceAdd", new SqlParameter("@contractid", entity.ContractId),
+                    new SqlParameter("@contractname", entity.ContractName),
                     new SqlParameter("@maintenancemonth", entity.MaintenanceMonth), new SqlParameter("@firstmaintenancedate", entity.FirstMaintenanceDate));
                 if (isSuccess)
                 {
@@ -74,8 +75,11 @@ namespace DataAccess.Concrete
                     foreach (DataRow dataRow in dt.Rows)
                     {
                         maintenances.Add(new Maintenance(
-                              Guid.Parse(dataRow["MAINTENANCEID"].ToString()),
+
+                       
                        Guid.Parse(dataRow["CONTRACTID"].ToString()),
+                       dataRow["CONTRACTNAME"].ToString(),
+                        Guid.Parse(dataRow["MAINTENANCEID"].ToString()),
                        int.Parse(dataRow["MAINTENANCEMONTH"].ToString()),
                        DateTime.Parse(dataRow["FIRSTMAINTENANCEDATE"].ToString())));
 

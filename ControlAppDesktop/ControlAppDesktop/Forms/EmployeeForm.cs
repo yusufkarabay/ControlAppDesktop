@@ -97,7 +97,7 @@ namespace ControlAppDesktop.Forms
         }
         void UpdateToEmployeeForm()
         {
-            UpdateEmployeeForm updateEmployeeFrom = new UpdateEmployeeForm(employee.Id);
+            EmployeeUpdateForm updateEmployeeFrom = new EmployeeUpdateForm(employee.Id);
 
             updateEmployeeFrom.Show();
 

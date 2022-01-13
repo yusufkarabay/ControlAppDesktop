@@ -52,7 +52,9 @@
     <Compile Include="Concrete\GuestCardManager.cs" />
     <Compile Include="Concrete\HeadsetManager.cs" />
     <Compile Include="Concrete\InventoryManager.cs" />
+    <Compile Include="Concrete\MaintenanceMailManager.cs" />
     <Compile Include="Concrete\MaintenanceManager.cs" />
+    <Compile Include="Concrete\MaintenanceMonthManager.cs" />
     <Compile Include="Concrete\RequestDetailManager.cs" />
     <Compile Include="Concrete\RequestManager.cs" />
     <Compile Include="Concrete\SentryDoneManager.cs" />

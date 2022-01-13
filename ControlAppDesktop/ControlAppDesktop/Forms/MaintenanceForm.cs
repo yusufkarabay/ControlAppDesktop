@@ -17,12 +17,22 @@ namespace ControlAppDesktop.Forms
         public object[] infos;
         ContractManager contractManager;
         Contract contract;
+
         Maintenance maintenance;
+
         MaintenanceManager maintenanceManager;
+
+        MaintenanceMonthManager maintenanceMonthManager;
+
+        MaintenanceMonth maintenanceMonth;
+        List<Contract> _contracts;
+        List<MaintenanceMonth> _maintenanceMonths;
         public MaintenanceForm()
         {
             InitializeComponent();
             contractManager = ContractManager.GetInstance();
+            maintenanceManager = MaintenanceManager.GetInstance();
+            maintenanceMonthManager = MaintenanceMonthManager.GetInstance();
         }
         void allContractList()
         {
@@ -33,6 +43,16 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             dgvContract.Columns[0].Visible = false;
+        }
+        void allMaintenanceList()
+        {
+            dgvMaintenance.DataSource = maintenanceManager.GetAll();
+            if (dgvMaintenance.Rows.Count < 1)
+            {
+                MessageBox.Show("Bakım Bulunmamaktadır");
+                return;
+            }
+            dgvMaintenance.Columns[0].Visible = false;
         }
         void updateContract()
         {
@@ -47,13 +67,13 @@ namespace ControlAppDesktop.Forms
             {
                 contract.ContractName = txtContractName.Text.ToString();
                 contract.ContractStart = dtpContractStartTime.Value;
-                contract.ContractEnd = dtpContractEndTime.Value;  
-                contract.Company=txtContractCompany.Text.ToString();
+                contract.ContractEnd = dtpContractEndTime.Value;
+                contract.Company = txtContractCompany.Text.ToString();
                 contract.CompanyAdress = txtCompanyAdress.Text.ToString();
                 contract.CompanyTel = txtCompanyTel.Text.ToString();
                 contract.Notes = rtbContractNotes.Text.ToString();
-               
-               
+
+
 
                 MessageBox.Show(contractManager.UpdateNew(contract));
             }
@@ -64,6 +84,23 @@ namespace ControlAppDesktop.Forms
             txtContractCompany.Text = "Firma Adı...";
             txtCompanyTel.Text = "Firma Telefon...";
             txtCompanyAdress.Text = "Firma Adresi...";
+        }
+        void cbContractFill()
+        {
+            _contracts = contractManager.GetAll();
+            cbContractSelect.DataSource = _contracts;
+            cbContractSelect.ValueMember = "ContractId";
+            cbContractSelect.DisplayMember = "ContractName";
+            cbContractSelect.SelectedIndex = -1;
+        }
+        void cbMonthFill()
+        {
+            _maintenanceMonths = maintenanceMonthManager.GetAll();
+            cbMonth.DataSource = _maintenanceMonths;
+            cbMonth.ValueMember = "MainTenanceMonth";
+            cbMonth.DisplayMember = "MainTenanceMonth";
+            cbMonth.SelectedIndex = -1;
+
         }
         private void btnContractAdd_Click(object sender, EventArgs e)
         {
@@ -92,6 +129,16 @@ namespace ControlAppDesktop.Forms
         }
         private void btnContractList_Click(object sender, EventArgs e)
         {
+            if (gbContract.Visible==false)
+            {
+                gbContract.Visible = true;
+            }
+           
+             if (gbMaintanance.Visible == true)
+            {
+                gbMaintanance.Visible = false;  
+            }
+            
             allContractList();
         }
         private void txtContractName_MouseClick(object sender, MouseEventArgs e)
@@ -143,7 +190,6 @@ namespace ControlAppDesktop.Forms
             }
 
         }
-
         private void btnContractUpdate_Click(object sender, EventArgs e)
         {
             if (txtContractName.Text == "" | txtContractName.Text == "Sözleşme Adı...")
@@ -162,6 +208,56 @@ namespace ControlAppDesktop.Forms
             btnContractUpdate.Visible = false;
 
 
+        }
+        private void MaintenanceForm_Load(object sender, EventArgs e)
+        {
+           
+            cbContractFill();
+            cbMonthFill();
+        }
+
+        private void btnMaintananceAdd_Click(object sender, EventArgs e)
+        {
+            if (cbContractSelect.SelectedValue == null || cbMonth.SelectedValue == null)
+            {
+                MessageBox.Show("Sözleşme Seçimi Boş Bırakılamaz");
+                return;
+            }
+            else if ( cbMonth.SelectedValue == null)
+            {
+                MessageBox.Show("Bakım Aralığı Boş Bırakılamaz");
+                return;
+            }
+            maintenance = new Maintenance(
+                Guid.Parse(cbContractSelect.SelectedValue.ToString()),
+                cbContractSelect.Text.ToString(),
+                int.Parse(cbMonth.SelectedValue.ToString()),
+                DateTime.Parse(dtpFirstMaintenance.Value.ToString()));
+            maintenanceManager.Add(maintenance);
+            MessageBox.Show("Bakım Hatırlatması Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnMaintananceList_Click(object sender, EventArgs e)
+        {
+           
+            
+            if (gbMaintanance.Visible == false)
+            {
+                gbMaintanance.Visible = true;
+            }
+            else if (gbContract.Visible == true)
+            {
+                gbContract.Visible = false;
+            }
+            allMaintenanceList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MaintenanceMailAddForm maintenanceMailAddForm= new MaintenanceMailAddForm();
+            maintenanceMailAddForm.infos = infos;
+            maintenanceMailAddForm.Show();
         }
     }
 }

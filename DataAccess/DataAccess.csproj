@@ -100,6 +100,8 @@
     <Compile Include="Concrete\Helper.cs" />
     <Compile Include="Concrete\InventoryDal.cs" />
     <Compile Include="Concrete\MaintenanceDal.cs" />
+    <Compile Include="Concrete\MaintenanceMailDal.cs" />
+    <Compile Include="Concrete\MaintenanceMonthDal.cs" />
     <Compile Include="Concrete\RequestDal.cs" />
     <Compile Include="Concrete\RequestDetailDal.cs" />
     <Compile Include="Concrete\SentryDoneDal.cs" />
