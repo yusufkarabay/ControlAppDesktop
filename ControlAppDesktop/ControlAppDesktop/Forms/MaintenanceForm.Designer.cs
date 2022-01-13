@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblContractName = new System.Windows.Forms.Label();
             this.lblContractStartTime = new System.Windows.Forms.Label();
             this.lblContractCompany = new System.Windows.Forms.Label();
@@ -38,30 +39,35 @@
             this.gbContact = new System.Windows.Forms.GroupBox();
             this.dgvContract = new System.Windows.Forms.DataGridView();
             this.gbContract = new System.Windows.Forms.GroupBox();
+            this.rtbContractNotes = new System.Windows.Forms.RichTextBox();
+            this.txtCompanyTel = new System.Windows.Forms.TextBox();
+            this.dtpContractStartTime = new System.Windows.Forms.DateTimePicker();
+            this.txtCompanyAdress = new System.Windows.Forms.TextBox();
+            this.txtContractCompany = new System.Windows.Forms.TextBox();
+            this.txtContractName = new System.Windows.Forms.TextBox();
             this.btnContractList = new System.Windows.Forms.Button();
             this.btnContractUpdate = new System.Windows.Forms.Button();
             this.gbMaintanance = new System.Windows.Forms.GroupBox();
+            this.cbMonth = new System.Windows.Forms.ComboBox();
+            this.cbContractSelect = new System.Windows.Forms.ComboBox();
+            this.dtpFirstMaintenance = new System.Windows.Forms.DateTimePicker();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.lblContractSelect = new System.Windows.Forms.Label();
             this.lblFirstMaintenance = new System.Windows.Forms.Label();
-            this.lblMonth = new System.Windows.Forms.Label();
             this.btnContractAdd = new System.Windows.Forms.Button();
             this.btnMaintananceAdd = new System.Windows.Forms.Button();
             this.btnMaintananceList = new System.Windows.Forms.Button();
             this.btnMaintananceUpdate = new System.Windows.Forms.Button();
-            this.txtContractName = new System.Windows.Forms.TextBox();
-            this.txtContractCompany = new System.Windows.Forms.TextBox();
-            this.txtCompanyAdress = new System.Windows.Forms.TextBox();
-            this.dtpContractStartTime = new System.Windows.Forms.DateTimePicker();
-            this.dtpFirstMaintenance = new System.Windows.Forms.DateTimePicker();
-            this.cbContractSelect = new System.Windows.Forms.ComboBox();
-            this.cbMonth = new System.Windows.Forms.ComboBox();
-            this.txtCompanyTel = new System.Windows.Forms.TextBox();
-            this.rtbContractNotes = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblContractEndTime = new System.Windows.Forms.Label();
+            this.dtpContractEndTime = new System.Windows.Forms.DateTimePicker();
+            this.contextMenuStripContract = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.gbContract.SuspendLayout();
             this.gbMaintanance.SuspendLayout();
+            this.contextMenuStripContract.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblContractName
@@ -85,7 +91,7 @@
             // lblContractCompany
             // 
             this.lblContractCompany.AutoSize = true;
-            this.lblContractCompany.Location = new System.Drawing.Point(19, 96);
+            this.lblContractCompany.Location = new System.Drawing.Point(19, 126);
             this.lblContractCompany.Name = "lblContractCompany";
             this.lblContractCompany.Size = new System.Drawing.Size(124, 13);
             this.lblContractCompany.TabIndex = 2;
@@ -94,7 +100,7 @@
             // lblCompanyAdress
             // 
             this.lblCompanyAdress.AutoSize = true;
-            this.lblCompanyAdress.Location = new System.Drawing.Point(19, 129);
+            this.lblCompanyAdress.Location = new System.Drawing.Point(19, 159);
             this.lblCompanyAdress.Name = "lblCompanyAdress";
             this.lblCompanyAdress.Size = new System.Drawing.Size(68, 13);
             this.lblCompanyAdress.TabIndex = 3;
@@ -103,7 +109,7 @@
             // lblContractCompanyTel
             // 
             this.lblContractCompanyTel.AutoSize = true;
-            this.lblContractCompanyTel.Location = new System.Drawing.Point(19, 162);
+            this.lblContractCompanyTel.Location = new System.Drawing.Point(19, 192);
             this.lblContractCompanyTel.Name = "lblContractCompanyTel";
             this.lblContractCompanyTel.Size = new System.Drawing.Size(77, 13);
             this.lblContractCompanyTel.TabIndex = 4;
@@ -112,7 +118,7 @@
             // lblContractNotes
             // 
             this.lblContractNotes.AutoSize = true;
-            this.lblContractNotes.Location = new System.Drawing.Point(19, 195);
+            this.lblContractNotes.Location = new System.Drawing.Point(19, 225);
             this.lblContractNotes.Name = "lblContractNotes";
             this.lblContractNotes.Size = new System.Drawing.Size(91, 13);
             this.lblContractNotes.TabIndex = 5;
@@ -134,10 +140,11 @@
             this.dgvContract.AllowUserToDeleteRows = false;
             this.dgvContract.AllowUserToResizeColumns = false;
             this.dgvContract.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContract.ContextMenuStrip = this.contextMenuStripContract;
             this.dgvContract.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContract.Location = new System.Drawing.Point(3, 16);
@@ -151,6 +158,8 @@
             // 
             // gbContract
             // 
+            this.gbContract.Controls.Add(this.dtpContractEndTime);
+            this.gbContract.Controls.Add(this.lblContractEndTime);
             this.gbContract.Controls.Add(this.rtbContractNotes);
             this.gbContract.Controls.Add(this.txtCompanyTel);
             this.gbContract.Controls.Add(this.dtpContractStartTime);
@@ -170,6 +179,57 @@
             this.gbContract.TabStop = false;
             this.gbContract.Text = "Sözleşme Bilgileri";
             // 
+            // rtbContractNotes
+            // 
+            this.rtbContractNotes.Location = new System.Drawing.Point(141, 215);
+            this.rtbContractNotes.Name = "rtbContractNotes";
+            this.rtbContractNotes.Size = new System.Drawing.Size(157, 71);
+            this.rtbContractNotes.TabIndex = 15;
+            this.rtbContractNotes.Text = "";
+            // 
+            // txtCompanyTel
+            // 
+            this.txtCompanyTel.Location = new System.Drawing.Point(141, 189);
+            this.txtCompanyTel.Name = "txtCompanyTel";
+            this.txtCompanyTel.Size = new System.Drawing.Size(187, 20);
+            this.txtCompanyTel.TabIndex = 14;
+            this.txtCompanyTel.Text = "Firma Telefon...";
+            this.txtCompanyTel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCompanyTel_MouseClick);
+            // 
+            // dtpContractStartTime
+            // 
+            this.dtpContractStartTime.Location = new System.Drawing.Point(141, 60);
+            this.dtpContractStartTime.Name = "dtpContractStartTime";
+            this.dtpContractStartTime.Size = new System.Drawing.Size(200, 20);
+            this.dtpContractStartTime.TabIndex = 13;
+            // 
+            // txtCompanyAdress
+            // 
+            this.txtCompanyAdress.Location = new System.Drawing.Point(141, 159);
+            this.txtCompanyAdress.Name = "txtCompanyAdress";
+            this.txtCompanyAdress.Size = new System.Drawing.Size(187, 20);
+            this.txtCompanyAdress.TabIndex = 9;
+            this.txtCompanyAdress.Text = "Firma Adresi...";
+            this.txtCompanyAdress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCompanyAdress_MouseClick);
+            // 
+            // txtContractCompany
+            // 
+            this.txtContractCompany.Location = new System.Drawing.Point(141, 123);
+            this.txtContractCompany.Name = "txtContractCompany";
+            this.txtContractCompany.Size = new System.Drawing.Size(187, 20);
+            this.txtContractCompany.TabIndex = 8;
+            this.txtContractCompany.Text = "Firma Adı...";
+            this.txtContractCompany.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtContractCompany_MouseClick);
+            // 
+            // txtContractName
+            // 
+            this.txtContractName.Location = new System.Drawing.Point(141, 27);
+            this.txtContractName.Name = "txtContractName";
+            this.txtContractName.Size = new System.Drawing.Size(187, 20);
+            this.txtContractName.TabIndex = 7;
+            this.txtContractName.Text = "Sözleşme Adı...";
+            this.txtContractName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtContractName_MouseClick);
+            // 
             // btnContractList
             // 
             this.btnContractList.Location = new System.Drawing.Point(31, 329);
@@ -178,6 +238,7 @@
             this.btnContractList.TabIndex = 32;
             this.btnContractList.Text = "Listele";
             this.btnContractList.UseVisualStyleBackColor = true;
+            this.btnContractList.Click += new System.EventHandler(this.btnContractList_Click);
             // 
             // btnContractUpdate
             // 
@@ -187,6 +248,8 @@
             this.btnContractUpdate.TabIndex = 31;
             this.btnContractUpdate.Text = "Güncelle";
             this.btnContractUpdate.UseVisualStyleBackColor = true;
+            this.btnContractUpdate.Visible = false;
+            this.btnContractUpdate.Click += new System.EventHandler(this.btnContractUpdate_Click);
             // 
             // gbMaintanance
             // 
@@ -202,6 +265,38 @@
             this.gbMaintanance.TabIndex = 27;
             this.gbMaintanance.TabStop = false;
             this.gbMaintanance.Text = "Sözleşme Bilgileri";
+            // 
+            // cbMonth
+            // 
+            this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Location = new System.Drawing.Point(154, 46);
+            this.cbMonth.Name = "cbMonth";
+            this.cbMonth.Size = new System.Drawing.Size(121, 21);
+            this.cbMonth.TabIndex = 15;
+            // 
+            // cbContractSelect
+            // 
+            this.cbContractSelect.FormattingEnabled = true;
+            this.cbContractSelect.Location = new System.Drawing.Point(154, 19);
+            this.cbContractSelect.Name = "cbContractSelect";
+            this.cbContractSelect.Size = new System.Drawing.Size(121, 21);
+            this.cbContractSelect.TabIndex = 14;
+            // 
+            // dtpFirstMaintenance
+            // 
+            this.dtpFirstMaintenance.Location = new System.Drawing.Point(154, 75);
+            this.dtpFirstMaintenance.Name = "dtpFirstMaintenance";
+            this.dtpFirstMaintenance.Size = new System.Drawing.Size(200, 20);
+            this.dtpFirstMaintenance.TabIndex = 14;
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(17, 55);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(94, 13);
+            this.lblMonth.TabIndex = 2;
+            this.lblMonth.Text = "Bakım Aralığı (Ay) :";
             // 
             // lblContractSelect
             // 
@@ -221,15 +316,6 @@
             this.lblFirstMaintenance.TabIndex = 1;
             this.lblFirstMaintenance.Text = "İlk Bakım  Zamanı :";
             // 
-            // lblMonth
-            // 
-            this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(17, 55);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(94, 13);
-            this.lblMonth.TabIndex = 2;
-            this.lblMonth.Text = "Bakım Aralığı (Ay) :";
-            // 
             // btnContractAdd
             // 
             this.btnContractAdd.Location = new System.Drawing.Point(331, 329);
@@ -238,6 +324,7 @@
             this.btnContractAdd.TabIndex = 33;
             this.btnContractAdd.Text = "Ekle";
             this.btnContractAdd.UseVisualStyleBackColor = true;
+            this.btnContractAdd.Click += new System.EventHandler(this.btnContractAdd_Click);
             // 
             // btnMaintananceAdd
             // 
@@ -266,72 +353,6 @@
             this.btnMaintananceUpdate.Text = "Güncelle";
             this.btnMaintananceUpdate.UseVisualStyleBackColor = true;
             // 
-            // txtContractName
-            // 
-            this.txtContractName.Location = new System.Drawing.Point(141, 27);
-            this.txtContractName.Name = "txtContractName";
-            this.txtContractName.Size = new System.Drawing.Size(187, 20);
-            this.txtContractName.TabIndex = 7;
-            // 
-            // txtContractCompany
-            // 
-            this.txtContractCompany.Location = new System.Drawing.Point(141, 93);
-            this.txtContractCompany.Name = "txtContractCompany";
-            this.txtContractCompany.Size = new System.Drawing.Size(187, 20);
-            this.txtContractCompany.TabIndex = 8;
-            // 
-            // txtCompanyAdress
-            // 
-            this.txtCompanyAdress.Location = new System.Drawing.Point(141, 129);
-            this.txtCompanyAdress.Name = "txtCompanyAdress";
-            this.txtCompanyAdress.Size = new System.Drawing.Size(187, 20);
-            this.txtCompanyAdress.TabIndex = 9;
-            // 
-            // dtpContractStartTime
-            // 
-            this.dtpContractStartTime.Location = new System.Drawing.Point(141, 60);
-            this.dtpContractStartTime.Name = "dtpContractStartTime";
-            this.dtpContractStartTime.Size = new System.Drawing.Size(200, 20);
-            this.dtpContractStartTime.TabIndex = 13;
-            // 
-            // dtpFirstMaintenance
-            // 
-            this.dtpFirstMaintenance.Location = new System.Drawing.Point(154, 75);
-            this.dtpFirstMaintenance.Name = "dtpFirstMaintenance";
-            this.dtpFirstMaintenance.Size = new System.Drawing.Size(200, 20);
-            this.dtpFirstMaintenance.TabIndex = 14;
-            // 
-            // cbContractSelect
-            // 
-            this.cbContractSelect.FormattingEnabled = true;
-            this.cbContractSelect.Location = new System.Drawing.Point(154, 19);
-            this.cbContractSelect.Name = "cbContractSelect";
-            this.cbContractSelect.Size = new System.Drawing.Size(121, 21);
-            this.cbContractSelect.TabIndex = 14;
-            // 
-            // cbMonth
-            // 
-            this.cbMonth.FormattingEnabled = true;
-            this.cbMonth.Location = new System.Drawing.Point(154, 46);
-            this.cbMonth.Name = "cbMonth";
-            this.cbMonth.Size = new System.Drawing.Size(121, 21);
-            this.cbMonth.TabIndex = 15;
-            // 
-            // txtCompanyTel
-            // 
-            this.txtCompanyTel.Location = new System.Drawing.Point(141, 159);
-            this.txtCompanyTel.Name = "txtCompanyTel";
-            this.txtCompanyTel.Size = new System.Drawing.Size(187, 20);
-            this.txtCompanyTel.TabIndex = 14;
-            // 
-            // rtbContractNotes
-            // 
-            this.rtbContractNotes.Location = new System.Drawing.Point(141, 185);
-            this.rtbContractNotes.Name = "rtbContractNotes";
-            this.rtbContractNotes.Size = new System.Drawing.Size(157, 71);
-            this.rtbContractNotes.TabIndex = 15;
-            this.rtbContractNotes.Text = "";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(487, 22);
@@ -340,6 +361,36 @@
             this.button1.TabIndex = 37;
             this.button1.Text = "Bilgilendirme Mail İşlemleri";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lblContractEndTime
+            // 
+            this.lblContractEndTime.AutoSize = true;
+            this.lblContractEndTime.Location = new System.Drawing.Point(19, 96);
+            this.lblContractEndTime.Name = "lblContractEndTime";
+            this.lblContractEndTime.Size = new System.Drawing.Size(73, 13);
+            this.lblContractEndTime.TabIndex = 16;
+            this.lblContractEndTime.Text = "Bitiş  Zamanı :";
+            // 
+            // dtpContractEndTime
+            // 
+            this.dtpContractEndTime.Location = new System.Drawing.Point(141, 90);
+            this.dtpContractEndTime.Name = "dtpContractEndTime";
+            this.dtpContractEndTime.Size = new System.Drawing.Size(200, 20);
+            this.dtpContractEndTime.TabIndex = 17;
+            // 
+            // contextMenuStripContract
+            // 
+            this.contextMenuStripContract.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem});
+            this.contextMenuStripContract.Name = "contextMenuStripContract";
+            this.contextMenuStripContract.Size = new System.Drawing.Size(121, 26);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Text = "Güncelle";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // MaintenanceForm
             // 
@@ -364,6 +415,7 @@
             this.gbContract.PerformLayout();
             this.gbMaintanance.ResumeLayout(false);
             this.gbMaintanance.PerformLayout();
+            this.contextMenuStripContract.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,5 +451,9 @@
         private System.Windows.Forms.Button btnMaintananceUpdate;
         private System.Windows.Forms.RichTextBox rtbContractNotes;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dtpContractEndTime;
+        private System.Windows.Forms.Label lblContractEndTime;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripContract;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
     }
 }

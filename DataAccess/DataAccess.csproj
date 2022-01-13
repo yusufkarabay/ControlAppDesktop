@@ -88,6 +88,7 @@
     <Compile Include="Abstract\SqlService.cs" />
     <Compile Include="Concrete\AuthorityDal.cs" />
     <Compile Include="Concrete\CabinetDal.cs" />
+    <Compile Include="Concrete\ContractDal.cs" />
     <Compile Include="Concrete\DepartmentDal.cs" />
     <Compile Include="Concrete\DirectoryDal.cs" />
     <Compile Include="Concrete\DrawerDal.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Concrete\HeadsetDal.cs" />
     <Compile Include="Concrete\Helper.cs" />
     <Compile Include="Concrete\InventoryDal.cs" />
+    <Compile Include="Concrete\MaintenanceDal.cs" />
     <Compile Include="Concrete\RequestDal.cs" />
     <Compile Include="Concrete\RequestDetailDal.cs" />
     <Compile Include="Concrete\SentryDoneDal.cs" />
