@@ -32,7 +32,18 @@ namespace Business.Concrete
         {
             throw new NotImplementedException();
         }
+        public string RequestToDepartment(RequestDetail entity)
+        {
+            try
+            {
+                return requestDetailDal.RequestToDepartment(entity);
+            }
+            catch (Exception ex)
+            {
 
+                return ex.Message;
+            }
+        }
         public string Delete(Guid id)
         {
             try
@@ -67,6 +78,19 @@ namespace Business.Concrete
                 return new List<RequestDetail>();
             }
         }
+        public List<RequestDetail> GetByDepartmentId(string procuderName, Guid departmentId)
+        {
+            try
+            {
+                return requestDetailDal.GetByDepartmentId(procuderName, departmentId);
+            }
+            catch
+            {
+
+                return new List<RequestDetail>();
+            }
+        }
+        
 
         public string Update(RequestDetail entity)
         {

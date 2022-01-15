@@ -27,7 +27,7 @@ namespace DataAccess.Concrete
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle), 
                     new SqlParameter("@requestcontent", entity.RequestContent),
-                    new SqlParameter("@requesttime",entity.Date));
+                    new SqlParameter("@requesttime",entity.RequestTime));
                 if (isSuccess)
                 {
                     return entity.RequestTitle + " Talep Başarıyla Oluşturuldu";
@@ -108,7 +108,11 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        list.Add(new Request(dataRow["REQUESTTITLE"].ToString(), dataRow["REQUESTCONTENT"].ToString(), dataRow["DATE"].ConDate()));
+                        list.Add(new Request(
+                            Guid.Parse(dataRow["REQUESTID"].ToString()),
+                            dataRow["REQUESTTITLE"].ToString(),
+                            dataRow["REQUESTCONTENT"].ToString(), 
+                            DateTime.Parse(dataRow["REQUESTTIME"].ToString())));
                     }
                 }
 

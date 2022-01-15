@@ -157,5 +157,12 @@ namespace ControlAppDesktop.Forms
             requestCreateForm.infos = infos;
             requestCreateForm.Show();
         }
+
+        private void btnDepartmentRequest_Click(object sender, EventArgs e)
+        {
+            DepartmentRequestForm departmentRequestForm = new DepartmentRequestForm();  
+            departmentRequestForm.infos = infos;
+            departmentRequestForm.Show();
+        }
     }
 }

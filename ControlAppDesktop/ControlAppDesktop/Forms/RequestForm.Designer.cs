@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.department = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.btnRequestEnd = new System.Windows.Forms.Button();
             this.lblCount = new System.Windows.Forms.Label();
             this.lblCountInfo = new System.Windows.Forms.Label();
+            this.btnDepartmentRequest = new System.Windows.Forms.Button();
             this.grpInfo.SuspendLayout();
             this.grpRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).BeginInit();
@@ -178,8 +179,8 @@
             this.dgvRequest.AllowUserToDeleteRows = false;
             this.dgvRequest.AllowUserToResizeColumns = false;
             this.dgvRequest.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
@@ -355,10 +356,21 @@
             this.lblCountInfo.TabIndex = 12;
             this.lblCountInfo.Text = "00";
             // 
+            // btnDepartmentRequest
+            // 
+            this.btnDepartmentRequest.Location = new System.Drawing.Point(729, 115);
+            this.btnDepartmentRequest.Name = "btnDepartmentRequest";
+            this.btnDepartmentRequest.Size = new System.Drawing.Size(168, 23);
+            this.btnDepartmentRequest.TabIndex = 13;
+            this.btnDepartmentRequest.Text = "Departmana Gelen Talepler";
+            this.btnDepartmentRequest.UseVisualStyleBackColor = true;
+            this.btnDepartmentRequest.Click += new System.EventHandler(this.btnDepartmentRequest_Click);
+            // 
             // RequestForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.Controls.Add(this.btnDepartmentRequest);
             this.Controls.Add(this.lblCountInfo);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.grpAction);
@@ -413,5 +425,6 @@
         private System.Windows.Forms.Button btnCompleteRequest;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label lblCountInfo;
+        private System.Windows.Forms.Button btnDepartmentRequest;
     }
 }
