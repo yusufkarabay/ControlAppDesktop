@@ -67,6 +67,21 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
+        public string Delete(Guid id)
+        {
+            try
+            {
+                if (id == Guid.Empty)
+                {
+                    return "Silmek İçin Lütfen Geçerli Bir Mail Adresi Seçiniz.";
+                }
+                return maintenanceMailDal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
 
     }
 }

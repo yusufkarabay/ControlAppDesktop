@@ -96,12 +96,12 @@ namespace Business.Concrete
             }
             return betweenTime;
         }
-        public string LastYeaWorkedTime()
+        public string LastThreeMonthWorkedTime()
         {
             string workedTime;
             try
             {
-                return workedTime = generatorDal.LastYeaWorkedTime();
+                return workedTime = generatorDal.LastThreeMonthWorkedTime();
             }
             catch (Exception ex)
             {
@@ -111,6 +111,37 @@ namespace Business.Concrete
             }
 
         }
+        public string LastSixMonthWorkedTime()
+        {
+            string workedTime;
+            try
+            {
+                return workedTime = generatorDal.LastSixMonthWorkedTime();
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+
+            }
+
+        }
+        public string LastYearWorkedTime()
+        {
+            string workedTime;
+            try
+            {
+                return workedTime = generatorDal.LastYearWorkedTime();
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+
+            }
+        }
+        
+
 
         public string Update(Generator entity, string oldName)
         {

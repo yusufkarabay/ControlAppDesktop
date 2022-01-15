@@ -273,6 +273,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DrawerForm";
             this.Text = "DrawerForm";
+            this.Load += new System.EventHandler(this.DrawerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrawer)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.gbHeadset.ResumeLayout(false);

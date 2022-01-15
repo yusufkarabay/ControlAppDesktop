@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblMail = new System.Windows.Forms.Label();
             this.lblMailEmployee = new System.Windows.Forms.Label();
@@ -37,10 +38,14 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.gbMail = new System.Windows.Forms.GroupBox();
             this.dgvMail = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnList = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbMail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMail)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -111,10 +116,11 @@
             this.dgvMail.AllowUserToDeleteRows = false;
             this.dgvMail.AllowUserToResizeColumns = false;
             this.dgvMail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
-            this.dgvMail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvMail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMail.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvMail.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvMail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMail.Location = new System.Drawing.Point(3, 16);
@@ -126,9 +132,24 @@
             this.dgvMail.Size = new System.Drawing.Size(908, 250);
             this.dgvMail.TabIndex = 2;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateToolStripMenuItem.Text = "Güncelle";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(735, 18);
+            this.btnList.Location = new System.Drawing.Point(586, 31);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 28;
@@ -138,14 +159,23 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(851, 79);
+            this.btnUpdate.Location = new System.Drawing.Point(727, 31);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // MaintenanceMailAdd
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Sil";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // MaintenanceMailAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,10 +190,11 @@
             this.Controls.Add(this.lblMail);
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MaintenanceMailAdd";
+            this.Name = "MaintenanceMailAddForm";
             this.Text = "MaintenanceMailAdd";
             this.gbMail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMail)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +212,8 @@
         private System.Windows.Forms.DataGridView dgvMail;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

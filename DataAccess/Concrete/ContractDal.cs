@@ -43,7 +43,26 @@ namespace DataAccess.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("ContractDelete", new SqlParameter("@contractid", id));
+                if (isSuccess)
+                {
+                    result = "Sözleşme Başarı İle Silindi";
+                }
+                else
+                {
+                    result = msg;
+                    result = "Seçili Sözleşme Üzerine Bakım Tanımlanmıştır Öncelikle Bakım Hatırlatmasını Silmelisiniz...";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
         }
 
         public Contract Get(Guid id)

@@ -49,6 +49,7 @@
     <Compile Include="Drawer.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EntranceCard.cs" />
+    <Compile Include="Fuel.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="GuestCard.cs" />
     <Compile Include="Headset.cs" />

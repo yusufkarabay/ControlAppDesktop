@@ -53,6 +53,7 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             dgvMaintenance.Columns[0].Visible = false;
+            dgvMaintenance.Columns[1].Visible = false;
         }
         void updateContract()
         {
@@ -78,6 +79,22 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show(contractManager.UpdateNew(contract));
             }
         }
+        void updateMaintenance()
+        {
+            if (maintenance == null)
+            {
+                MessageBox.Show("Bakım Güncellenemedi");
+                return;
+            }
+            DialogResult dialogResult = MessageBox.Show("Seçili Bakım Değişikliğini Güncellemek İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                maintenance.MaintenanceMonth = int.Parse(cbMonth.SelectedValue.ToString());
+                maintenance.FirstMaintenanceDate = dtpFirstMaintenance.Value;
+                MessageBox.Show(maintenanceManager.UpdateNew(maintenance));
+            }
+        }
         void txtClear()
         {
             txtContractName.Text = "Sözleşme Adı...";
@@ -101,6 +118,43 @@ namespace ControlAppDesktop.Forms
             cbMonth.DisplayMember = "MainTenanceMonth";
             cbMonth.SelectedIndex = -1;
 
+        }
+        void deleteContract()
+        {
+            contract = new Contract(
+               Guid.Parse(dgvContract.CurrentRow.Cells["CONTRACTID"].Value.ToString()),
+                dgvContract.CurrentRow.Cells["CONTRACTNAME"].Value.ToString(),
+                 DateTime.Parse(dgvContract.CurrentRow.Cells["CONTRACTSTART"].Value.ToString()),
+                  DateTime.Parse(dgvContract.CurrentRow.Cells["CONTRACTEND"].Value.ToString()),
+                dgvContract.CurrentRow.Cells["COMPANY"].Value.ToString(),
+                dgvContract.CurrentRow.Cells["COMPANYADRESS"].Value.ToString(),
+                dgvContract.CurrentRow.Cells["COMPANYTEL"].Value.ToString(),
+                 dgvContract.CurrentRow.Cells["NOTES"].Value.ToString());
+
+            DialogResult dialogResult = MessageBox.Show("Seçili Sözleşmeyi Silmek İstediğinize Emin Misiniz?",
+                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show(contractManager.Delete(contract.ContractId));
+
+            }
+        }
+        void deleteMaintenance()
+        {
+            maintenance = new Maintenance(
+               Guid.Parse(dgvMaintenance.CurrentRow.Cells["MAINTENANCEID"].Value.ToString()),
+               Guid.Parse(dgvMaintenance.CurrentRow.Cells["CONTRACTID"].Value.ToString()),
+               dgvMaintenance.CurrentRow.Cells["CONTRACTNAME"].Value.ToString(),
+               int.Parse(dgvMaintenance.CurrentRow.Cells["MAINTENANCEMONTH"].Value.ToString()),
+                 DateTime.Parse(dgvMaintenance.CurrentRow.Cells["FIRSTMAINTENANCEDATE"].Value.ToString()));
+
+            DialogResult dialogResult = MessageBox.Show("Seçili Bakımı Silmek İstediğinize Emin Misiniz?",
+                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show(maintenanceManager.Delete(maintenance.MaintenanceId));
+
+            }
         }
         private void btnContractAdd_Click(object sender, EventArgs e)
         {
@@ -129,16 +183,16 @@ namespace ControlAppDesktop.Forms
         }
         private void btnContractList_Click(object sender, EventArgs e)
         {
-            if (gbContract.Visible==false)
+            if (gbContract.Visible == false)
             {
                 gbContract.Visible = true;
             }
-           
-             if (gbMaintanance.Visible == true)
+
+            if (gbMaintanance.Visible == true)
             {
-                gbMaintanance.Visible = false;  
+                gbMaintanance.Visible = false;
             }
-            
+
             allContractList();
         }
         private void txtContractName_MouseClick(object sender, MouseEventArgs e)
@@ -211,7 +265,7 @@ namespace ControlAppDesktop.Forms
         }
         private void MaintenanceForm_Load(object sender, EventArgs e)
         {
-           
+
             cbContractFill();
             cbMonthFill();
         }
@@ -223,7 +277,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Sözleşme Seçimi Boş Bırakılamaz");
                 return;
             }
-            else if ( cbMonth.SelectedValue == null)
+            else if (cbMonth.SelectedValue == null)
             {
                 MessageBox.Show("Bakım Aralığı Boş Bırakılamaz");
                 return;
@@ -235,29 +289,84 @@ namespace ControlAppDesktop.Forms
                 DateTime.Parse(dtpFirstMaintenance.Value.ToString()));
             maintenanceManager.Add(maintenance);
             MessageBox.Show("Bakım Hatırlatması Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            allMaintenanceList();
         }
 
         private void btnMaintananceList_Click(object sender, EventArgs e)
         {
-           
-            
+            if (gbContract.Visible == true)
+            {
+                gbContract.Visible = false;
+            }
+
             if (gbMaintanance.Visible == false)
             {
                 gbMaintanance.Visible = true;
             }
-            else if (gbContract.Visible == true)
-            {
-                gbContract.Visible = false;
-            }
+
             allMaintenanceList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MaintenanceMailAddForm maintenanceMailAddForm= new MaintenanceMailAddForm();
+            MaintenanceMailAddForm maintenanceMailAddForm = new MaintenanceMailAddForm();
             maintenanceMailAddForm.infos = infos;
             maintenanceMailAddForm.Show();
+        }
+
+        private void btnMaintananceUpdate_Click(object sender, EventArgs e)
+        {
+            if (cbMonth.SelectedValue==null)
+            {
+                MessageBox.Show("Bakım Aralığı Seçiniz");
+                return;
+            }
+            updateMaintenance();           
+            allMaintenanceList();
+            cbContractSelect.SelectedIndex = -1;
+            cbMonth.SelectedIndex = -1; 
+            cbContractSelect.Enabled = true;
+            btnMaintananceUpdate.Visible = false;
+        }
+
+        private void updateMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvMaintenance.SelectedRows == null)
+            {
+                MessageBox.Show("Güncellenecek Bakım Seçiniz");
+                return;
+            }
+            btnMaintananceUpdate.Visible = true;
+            maintenance = new Maintenance(
+                Guid.Parse(dgvMaintenance.CurrentRow.Cells["MaintenanceId"].Value.ToString()),
+                Guid.Parse(dgvMaintenance.CurrentRow.Cells["ContractId"].Value.ToString()),
+                int.Parse(dgvMaintenance.CurrentRow.Cells["MaintenanceMonth"].Value.ToString()),
+                DateTime.Parse(dgvMaintenance.CurrentRow.Cells["FirstMaintenanceDate"].Value.ToString()),
+                dgvMaintenance.CurrentRow.Cells["ContractName"].Value.ToString());
+
+            DialogResult dialogResult = MessageBox.Show("Seçili Bakım İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                cbContractSelect.Text = maintenance.ContractName.ToString();
+                cbMonth.Text = maintenance.MaintenanceMonth.ToString();
+                dtpFirstMaintenance.Value=maintenance.FirstMaintenanceDate;
+                cbContractSelect.Enabled = false;
+            }
+
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteContract();
+            txtClear();
+            allContractList();
+        }
+
+        private void deleteMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteMaintenance();
+            allMaintenanceList();
         }
     }
 }

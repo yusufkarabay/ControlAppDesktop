@@ -40,7 +40,18 @@ namespace Business.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (id == Guid.Empty)
+                {
+                    return "Silmek İçin Lütfen Geçerli Bir Sözleşme Seçiniz.";
+                }
+                return contractDal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         public Contract Get(Guid id)

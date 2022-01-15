@@ -94,6 +94,7 @@
     <Compile Include="Concrete\DrawerDal.cs" />
     <Compile Include="Concrete\EmployeeDal.cs" />
     <Compile Include="Concrete\EntranceCardDal.cs" />
+    <Compile Include="Concrete\FuelDal.cs" />
     <Compile Include="Concrete\GeneratorDal.cs" />
     <Compile Include="Concrete\GuestCardDal.cs" />
     <Compile Include="Concrete\HeadsetDal.cs" />

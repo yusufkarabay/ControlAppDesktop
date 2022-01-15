@@ -83,7 +83,18 @@ namespace Business.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (id == Guid.Empty)
+                {
+                    return "Silmek İçin Lütfen Geçerli Bir Bakım Seçiniz.";
+                }
+                return maintenanceDal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         

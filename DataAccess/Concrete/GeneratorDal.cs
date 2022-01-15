@@ -57,12 +57,12 @@ namespace DataAccess.Concrete
             return workedTime;
 
         }
-        public string LastYeaWorkedTime()
+        public string LastThreeMonthWorkedTime()
         {
             string workedTime;
             try
             {
-                workedTime = sqlService.Reader("GeneretorLastOneYear");
+                workedTime = sqlService.Reader("GeneretorLastThreeMonth");
 
 
             }
@@ -72,7 +72,36 @@ namespace DataAccess.Concrete
             }
             return workedTime;
         }
+        public string LastSixMonthWorkedTime()
+        {
+            string workedTime;
+            try
+            {
+                workedTime = sqlService.Reader("GeneratorLastSixMonth");
 
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return workedTime;
+        }
+        public string LastYearWorkedTime()
+        {
+            string workedTime;
+            try
+            {
+                workedTime = sqlService.Reader("GeneratorLastYear");
+
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            return workedTime;
+        }
         public string BetweemTimeList(string procuderName, DateTime firstdate, DateTime seconddate)
         {
             string betweenTime;
@@ -90,8 +119,7 @@ namespace DataAccess.Concrete
             }
             return betweenTime.ToString();
         }
-        
-
+       
         public string Delete(Guid id)
         {
             throw new NotImplementedException();

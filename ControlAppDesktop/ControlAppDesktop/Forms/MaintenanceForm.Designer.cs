@@ -43,6 +43,8 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbMaintanance = new System.Windows.Forms.GroupBox();
             this.dgvMaintenance = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbContractInfo = new System.Windows.Forms.GroupBox();
             this.dtpContractEndTime = new System.Windows.Forms.DateTimePicker();
             this.lblContractEndTime = new System.Windows.Forms.Label();
@@ -66,11 +68,14 @@
             this.btnMaintananceList = new System.Windows.Forms.Button();
             this.btnMaintananceUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbContract.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.contextMenuStripContract.SuspendLayout();
             this.gbMaintanance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.gbContractInfo.SuspendLayout();
             this.gbMaintananceInfo.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +137,6 @@
             // gbContract
             // 
             this.gbContract.Controls.Add(this.dgvContract);
-            this.gbContract.Controls.Add(this.gbMaintanance);
             this.gbContract.Location = new System.Drawing.Point(120, 363);
             this.gbContract.Name = "gbContract";
             this.gbContract.Size = new System.Drawing.Size(914, 269);
@@ -166,9 +170,10 @@
             // contextMenuStripContract
             // 
             this.contextMenuStripContract.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateToolStripMenuItem});
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
             this.contextMenuStripContract.Name = "contextMenuStripContract";
-            this.contextMenuStripContract.Size = new System.Drawing.Size(121, 26);
+            this.contextMenuStripContract.Size = new System.Drawing.Size(121, 48);
             // 
             // updateToolStripMenuItem
             // 
@@ -180,7 +185,7 @@
             // gbMaintanance
             // 
             this.gbMaintanance.Controls.Add(this.dgvMaintenance);
-            this.gbMaintanance.Location = new System.Drawing.Point(3, 0);
+            this.gbMaintanance.Location = new System.Drawing.Point(122, 362);
             this.gbMaintanance.Name = "gbMaintanance";
             this.gbMaintanance.Size = new System.Drawing.Size(914, 269);
             this.gbMaintanance.TabIndex = 26;
@@ -198,7 +203,7 @@
             this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaintenance.ContextMenuStrip = this.contextMenuStripContract;
+            this.dgvMaintenance.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvMaintenance.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvMaintenance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMaintenance.Location = new System.Drawing.Point(3, 16);
@@ -209,6 +214,21 @@
             this.dgvMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMaintenance.Size = new System.Drawing.Size(908, 250);
             this.dgvMaintenance.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateMaintenanceToolStripMenuItem,
+            this.deleteMaintenanceToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // updateMaintenanceToolStripMenuItem
+            // 
+            this.updateMaintenanceToolStripMenuItem.Name = "updateMaintenanceToolStripMenuItem";
+            this.updateMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMaintenanceToolStripMenuItem.Text = "Güncelle";
+            this.updateMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.updateMaintenanceToolStripMenuItem_Click);
             // 
             // gbContractInfo
             // 
@@ -334,7 +354,7 @@
             this.gbMaintananceInfo.Size = new System.Drawing.Size(366, 211);
             this.gbMaintananceInfo.TabIndex = 27;
             this.gbMaintananceInfo.TabStop = false;
-            this.gbMaintananceInfo.Text = "Sözleşme Bilgileri";
+            this.gbMaintananceInfo.Text = "Bakım Bilgileri";
             // 
             // cbMonth
             // 
@@ -424,6 +444,8 @@
             this.btnMaintananceUpdate.TabIndex = 34;
             this.btnMaintananceUpdate.Text = "Güncelle";
             this.btnMaintananceUpdate.UseVisualStyleBackColor = true;
+            this.btnMaintananceUpdate.Visible = false;
+            this.btnMaintananceUpdate.Click += new System.EventHandler(this.btnMaintananceUpdate_Click);
             // 
             // button1
             // 
@@ -435,10 +457,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.deleteToolStripMenuItem.Text = "Sil";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // deleteMaintenanceToolStripMenuItem
+            // 
+            this.deleteMaintenanceToolStripMenuItem.Name = "deleteMaintenanceToolStripMenuItem";
+            this.deleteMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMaintenanceToolStripMenuItem.Text = "Sil";
+            this.deleteMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.deleteMaintenanceToolStripMenuItem_Click);
+            // 
             // MaintenanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.Controls.Add(this.gbMaintanance);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMaintananceAdd);
             this.Controls.Add(this.btnMaintananceList);
@@ -458,6 +495,7 @@
             this.contextMenuStripContract.ResumeLayout(false);
             this.gbMaintanance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gbContractInfo.ResumeLayout(false);
             this.gbContractInfo.PerformLayout();
             this.gbMaintananceInfo.ResumeLayout(false);
@@ -503,5 +541,9 @@
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbMaintanance;
         private System.Windows.Forms.DataGridView dgvMaintenance;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem updateMaintenanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteMaintenanceToolStripMenuItem;
     }
 }

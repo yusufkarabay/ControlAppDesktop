@@ -131,6 +131,56 @@ namespace DataAccess.Abstract
             }
             return result.ToString() + " Dakika Çalışmıştır";
         }
+        public string ReaderString(string commandText)
+        {
+            string result;
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection connection = null;
+            try
+            {
+                connection = OpenConnection();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = commandText;
+                sqlCommand.Connection = connection;
+                result = (sqlCommand.ExecuteScalar().ToString());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                sqlCommand.Dispose();
+
+                if (connection != null) connection.Close();
+            }
+            return result.ToString() ;
+        }
+        public DateTime ReaderTime(string commandText)
+        {
+            DateTime result;
+            SqlCommand sqlCommand = new SqlCommand();
+            SqlConnection connection = null;
+            try
+            {
+                connection = OpenConnection();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = commandText;
+                sqlCommand.Connection = connection;
+                result = DateTime.Parse(sqlCommand.ExecuteScalar().ToString());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                sqlCommand.Dispose();
+
+                if (connection != null) connection.Close();
+            }
+            return DateTime.Parse(result.ToString());   
+        }
         public string ReaderV2(string commandText, params SqlParameter[] sqlParameters)
         {
             string result;
@@ -163,6 +213,7 @@ namespace DataAccess.Abstract
 
                 if (connection != null) connection.Close();
             }
+           
             return result.ToString() + " Dakika Çalışmıştır";
         }
         

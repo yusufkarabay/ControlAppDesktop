@@ -51,7 +51,25 @@ namespace DataAccess.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("MaintenanceDelete", new SqlParameter("@maintenanceid", id));
+                if (isSuccess)
+                {
+                    result = "Hatırlatma Başarı İle Silindi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
         }
 
         public Maintenance Get(Guid id)
@@ -105,8 +123,9 @@ namespace DataAccess.Concrete
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("ContractUpdate", new SqlParameter("@maintenanceid", entity.MaintenanceId),
-                    new SqlParameter("@contractid", entity.ContractId), new SqlParameter("@maintenancemonth", entity.MaintenanceMonth),
+                var (isSuccess, msg) = sqlService.StoreReaderV2("MaintenanceUpdate", new SqlParameter("@maintenanceid",
+                    entity.MaintenanceId), new SqlParameter("@contractid",
+                    entity.ContractId), new SqlParameter("@contractname", entity.ContractName), new SqlParameter("@maintenancemonth", entity.MaintenanceMonth),
                     new SqlParameter("@firstmaintenancedate", entity.FirstMaintenanceDate));
                 if (isSuccess)
                 {

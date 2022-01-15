@@ -19,10 +19,21 @@ namespace ControlAppDesktop.Forms
         public object[] infos;
         GeneratorManager generatorManager;
         Generator generator;
+        FuelManager fuelManager;
+        Fuel fuel;
         public GeneratorForm()
         {
             InitializeComponent();
             generatorManager = GeneratorManager.GetInstance();
+            fuelManager=FuelManager.GetInstance();  
+        }
+        void lastFuelTime()
+        {            
+              lblLastFullTimeInfo.Text = fuelManager.GetLastTime();
+        }
+        void lastFuelEmployee()
+        {
+            lblLastFullEmployeeInfo.Text = fuelManager.GetLastEmployee();   
         }
         void alWorkedTimeList()
         {
@@ -32,11 +43,25 @@ namespace ControlAppDesktop.Forms
         {
             lblListByTwoTimeInfo.Text = generatorManager.BetweemTimeList("GeneratorBetweenTimeWorked", dtpFirst.Value, dtpSecond.Value).ToString();
         }
-        void lastYeaWorkedTime()
+        void LastWorkedToFuel()
         {
-            lblLastYearInfo.Text = generatorManager.LastYeaWorkedTime();
+            lblLastWorkedInfo.Text = generatorManager.BetweemTimeList("GeneratorBetweenTimeWorked", DateTime.Parse(lblLastFullTimeInfo.Text.ToString())
+                , DateTime.Parse(DateTime.Now.ToString()));
+           
         }
-
+        void lastThreeMonthWorkedTime()
+        {
+            lblThreeMonthInfo.Text = generatorManager.LastThreeMonthWorkedTime();
+        }
+        void lastSixMonthWorkedTime()
+        {
+            lblSixMonthInfo.Text = generatorManager.LastSixMonthWorkedTime();
+        }
+        void lastYearWorkedTime()
+        {
+            lblLastYearInfo.Text = generatorManager.LastYearWorkedTime();
+        }
+      
         private void btnAllTime_Click(object sender, EventArgs e)
         {
             alWorkedTimeList();
@@ -50,7 +75,9 @@ namespace ControlAppDesktop.Forms
                 DateTime.Parse(DateTime.Now.ToString()));
             MessageBox.Show(generatorManager.Add(generator));
             alWorkedTimeList();
-
+            lastSixMonthWorkedTime();
+            lastThreeMonthWorkedTime();
+            LastWorkedToFuel();
             txtWorkedTime.Text = "";
 
         }
@@ -58,7 +85,16 @@ namespace ControlAppDesktop.Forms
         private void GeneratorForm_Load(object sender, EventArgs e)
         {
             alWorkedTimeList();
-            lastYeaWorkedTime();
+            lastYearWorkedTime();      
+            lastSixMonthWorkedTime();
+            lastThreeMonthWorkedTime();
+
+            lastFuelTime();
+            lastFuelEmployee();
+
+
+            LastWorkedToFuel();
+
         }
 
       
@@ -66,6 +102,18 @@ namespace ControlAppDesktop.Forms
         private void btnTimeSearch_Click(object sender, EventArgs e)
         {
             betweenTimeList();
+        }
+
+        private void btnFull_Click(object sender, EventArgs e)
+        {
+               fuel = new Fuel
+                (DateTime.Parse(DateTime.Now.ToString()),
+                infos[0].ToString());
+             MessageBox.Show(fuelManager.Add(fuel));
+
+            lastFuelTime();
+            lastFuelEmployee();
+            LastWorkedToFuel();
         }
     }
 }

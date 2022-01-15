@@ -42,8 +42,6 @@
             this.lblLastFullEmployee = new System.Windows.Forms.Label();
             this.lblAllWorkedTime = new System.Windows.Forms.Label();
             this.lblLastYear = new System.Windows.Forms.Label();
-            this.lblLast3Month = new System.Windows.Forms.Label();
-            this.lblLast6Month = new System.Windows.Forms.Label();
             this.lblLastWorked = new System.Windows.Forms.Label();
             this.lblListByTwoTime = new System.Windows.Forms.Label();
             this.lblFirstTime = new System.Windows.Forms.Label();
@@ -51,11 +49,13 @@
             this.lblListByTwoTimeInfo = new System.Windows.Forms.Label();
             this.lblAllWorkedTimeInfo = new System.Windows.Forms.Label();
             this.lblLastYearInfo = new System.Windows.Forms.Label();
-            this.lblLast6MonthInfo = new System.Windows.Forms.Label();
-            this.lblLast3MonthInfo = new System.Windows.Forms.Label();
             this.lblLastWorkedInfo = new System.Windows.Forms.Label();
             this.lblLastFullEmployeeInfo = new System.Windows.Forms.Label();
             this.btnFull = new System.Windows.Forms.Button();
+            this.lblThreeMonth = new System.Windows.Forms.Label();
+            this.lblThreeMonthInfo = new System.Windows.Forms.Label();
+            this.lblSixMonthInfo = new System.Windows.Forms.Label();
+            this.lblSixMonth = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             // 
             // txtWorkedTime
             // 
-            this.txtWorkedTime.Location = new System.Drawing.Point(353, 346);
+            this.txtWorkedTime.Location = new System.Drawing.Point(979, 401);
             this.txtWorkedTime.Name = "txtWorkedTime";
             this.txtWorkedTime.Size = new System.Drawing.Size(59, 20);
             this.txtWorkedTime.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             // btnAddWorkedTime
             // 
-            this.btnAddWorkedTime.Location = new System.Drawing.Point(337, 380);
+            this.btnAddWorkedTime.Location = new System.Drawing.Point(963, 435);
             this.btnAddWorkedTime.Name = "btnAddWorkedTime";
             this.btnAddWorkedTime.Size = new System.Drawing.Size(38, 23);
             this.btnAddWorkedTime.TabIndex = 19;
@@ -116,7 +116,7 @@
             // lblWorkedTime
             // 
             this.lblWorkedTime.AutoSize = true;
-            this.lblWorkedTime.Location = new System.Drawing.Point(260, 349);
+            this.lblWorkedTime.Location = new System.Drawing.Point(861, 408);
             this.lblWorkedTime.Name = "lblWorkedTime";
             this.lblWorkedTime.Size = new System.Drawing.Size(87, 13);
             this.lblWorkedTime.TabIndex = 21;
@@ -125,7 +125,7 @@
             // lblLastFullTime
             // 
             this.lblLastFullTime.AutoSize = true;
-            this.lblLastFullTime.Location = new System.Drawing.Point(459, 251);
+            this.lblLastFullTime.Location = new System.Drawing.Point(42, 512);
             this.lblLastFullTime.Name = "lblLastFullTime";
             this.lblLastFullTime.Size = new System.Drawing.Size(123, 13);
             this.lblLastFullTime.TabIndex = 22;
@@ -134,7 +134,7 @@
             // lblLastFullTimeInfo
             // 
             this.lblLastFullTimeInfo.AutoSize = true;
-            this.lblLastFullTimeInfo.Location = new System.Drawing.Point(613, 251);
+            this.lblLastFullTimeInfo.Location = new System.Drawing.Point(196, 512);
             this.lblLastFullTimeInfo.Name = "lblLastFullTimeInfo";
             this.lblLastFullTimeInfo.Size = new System.Drawing.Size(49, 13);
             this.lblLastFullTimeInfo.TabIndex = 23;
@@ -143,7 +143,7 @@
             // lblLastFullEmployee
             // 
             this.lblLastFullEmployee.AutoSize = true;
-            this.lblLastFullEmployee.Location = new System.Drawing.Point(462, 290);
+            this.lblLastFullEmployee.Location = new System.Drawing.Point(45, 551);
             this.lblLastFullEmployee.Name = "lblLastFullEmployee";
             this.lblLastFullEmployee.Size = new System.Drawing.Size(127, 13);
             this.lblLastFullEmployee.TabIndex = 24;
@@ -152,7 +152,7 @@
             // lblAllWorkedTime
             // 
             this.lblAllWorkedTime.AutoSize = true;
-            this.lblAllWorkedTime.Location = new System.Drawing.Point(255, 197);
+            this.lblAllWorkedTime.Location = new System.Drawing.Point(64, 167);
             this.lblAllWorkedTime.Name = "lblAllWorkedTime";
             this.lblAllWorkedTime.Size = new System.Drawing.Size(90, 13);
             this.lblAllWorkedTime.TabIndex = 25;
@@ -161,34 +161,16 @@
             // lblLastYear
             // 
             this.lblLastYear.AutoSize = true;
-            this.lblLastYear.Location = new System.Drawing.Point(255, 218);
+            this.lblLastYear.Location = new System.Drawing.Point(64, 198);
             this.lblLastYear.Name = "lblLastYear";
-            this.lblLastYear.Size = new System.Drawing.Size(55, 13);
+            this.lblLastYear.Size = new System.Drawing.Size(141, 13);
             this.lblLastYear.TabIndex = 26;
-            this.lblLastYear.Text = "Son 1 Yıl :";
-            // 
-            // lblLast3Month
-            // 
-            this.lblLast3Month.AutoSize = true;
-            this.lblLast3Month.Location = new System.Drawing.Point(255, 260);
-            this.lblLast3Month.Name = "lblLast3Month";
-            this.lblLast3Month.Size = new System.Drawing.Size(56, 13);
-            this.lblLast3Month.TabIndex = 27;
-            this.lblLast3Month.Text = "Son 3 Ay :";
-            // 
-            // lblLast6Month
-            // 
-            this.lblLast6Month.AutoSize = true;
-            this.lblLast6Month.Location = new System.Drawing.Point(255, 239);
-            this.lblLast6Month.Name = "lblLast6Month";
-            this.lblLast6Month.Size = new System.Drawing.Size(53, 13);
-            this.lblLast6Month.TabIndex = 28;
-            this.lblLast6Month.Text = "Son 6 Ay:";
+            this.lblLastYear.Text = "Bulunduğumuz Yıl Kullanımı :";
             // 
             // lblLastWorked
             // 
             this.lblLastWorked.AutoSize = true;
-            this.lblLastWorked.Location = new System.Drawing.Point(255, 281);
+            this.lblLastWorked.Location = new System.Drawing.Point(64, 316);
             this.lblLastWorked.Name = "lblLastWorked";
             this.lblLastWorked.Size = new System.Drawing.Size(74, 13);
             this.lblLastWorked.TabIndex = 29;
@@ -197,7 +179,7 @@
             // lblListByTwoTime
             // 
             this.lblListByTwoTime.AutoSize = true;
-            this.lblListByTwoTime.Location = new System.Drawing.Point(556, 150);
+            this.lblListByTwoTime.Location = new System.Drawing.Point(713, 106);
             this.lblListByTwoTime.Name = "lblListByTwoTime";
             this.lblListByTwoTime.Size = new System.Drawing.Size(138, 13);
             this.lblListByTwoTime.TabIndex = 30;
@@ -224,7 +206,7 @@
             // lblListByTwoTimeInfo
             // 
             this.lblListByTwoTimeInfo.AutoSize = true;
-            this.lblListByTwoTimeInfo.Location = new System.Drawing.Point(713, 150);
+            this.lblListByTwoTimeInfo.Location = new System.Drawing.Point(894, 107);
             this.lblListByTwoTimeInfo.Name = "lblListByTwoTimeInfo";
             this.lblListByTwoTimeInfo.Size = new System.Drawing.Size(19, 13);
             this.lblListByTwoTimeInfo.TabIndex = 36;
@@ -233,7 +215,7 @@
             // lblAllWorkedTimeInfo
             // 
             this.lblAllWorkedTimeInfo.AutoSize = true;
-            this.lblAllWorkedTimeInfo.Location = new System.Drawing.Point(350, 197);
+            this.lblAllWorkedTimeInfo.Location = new System.Drawing.Point(252, 167);
             this.lblAllWorkedTimeInfo.Name = "lblAllWorkedTimeInfo";
             this.lblAllWorkedTimeInfo.Size = new System.Drawing.Size(19, 13);
             this.lblAllWorkedTimeInfo.TabIndex = 37;
@@ -242,34 +224,16 @@
             // lblLastYearInfo
             // 
             this.lblLastYearInfo.AutoSize = true;
-            this.lblLastYearInfo.Location = new System.Drawing.Point(350, 218);
+            this.lblLastYearInfo.Location = new System.Drawing.Point(252, 198);
             this.lblLastYearInfo.Name = "lblLastYearInfo";
             this.lblLastYearInfo.Size = new System.Drawing.Size(19, 13);
             this.lblLastYearInfo.TabIndex = 38;
             this.lblLastYearInfo.Text = "00";
             // 
-            // lblLast6MonthInfo
-            // 
-            this.lblLast6MonthInfo.AutoSize = true;
-            this.lblLast6MonthInfo.Location = new System.Drawing.Point(350, 239);
-            this.lblLast6MonthInfo.Name = "lblLast6MonthInfo";
-            this.lblLast6MonthInfo.Size = new System.Drawing.Size(19, 13);
-            this.lblLast6MonthInfo.TabIndex = 39;
-            this.lblLast6MonthInfo.Text = "00";
-            // 
-            // lblLast3MonthInfo
-            // 
-            this.lblLast3MonthInfo.AutoSize = true;
-            this.lblLast3MonthInfo.Location = new System.Drawing.Point(350, 260);
-            this.lblLast3MonthInfo.Name = "lblLast3MonthInfo";
-            this.lblLast3MonthInfo.Size = new System.Drawing.Size(19, 13);
-            this.lblLast3MonthInfo.TabIndex = 40;
-            this.lblLast3MonthInfo.Text = "00";
-            // 
             // lblLastWorkedInfo
             // 
             this.lblLastWorkedInfo.AutoSize = true;
-            this.lblLastWorkedInfo.Location = new System.Drawing.Point(350, 281);
+            this.lblLastWorkedInfo.Location = new System.Drawing.Point(296, 316);
             this.lblLastWorkedInfo.Name = "lblLastWorkedInfo";
             this.lblLastWorkedInfo.Size = new System.Drawing.Size(19, 13);
             this.lblLastWorkedInfo.TabIndex = 41;
@@ -278,7 +242,7 @@
             // lblLastFullEmployeeInfo
             // 
             this.lblLastFullEmployeeInfo.AutoSize = true;
-            this.lblLastFullEmployeeInfo.Location = new System.Drawing.Point(616, 290);
+            this.lblLastFullEmployeeInfo.Location = new System.Drawing.Point(199, 551);
             this.lblLastFullEmployeeInfo.Name = "lblLastFullEmployeeInfo";
             this.lblLastFullEmployeeInfo.Size = new System.Drawing.Size(53, 13);
             this.lblLastFullEmployeeInfo.TabIndex = 42;
@@ -286,22 +250,61 @@
             // 
             // btnFull
             // 
-            this.btnFull.Location = new System.Drawing.Point(443, 197);
+            this.btnFull.Location = new System.Drawing.Point(112, 584);
             this.btnFull.Name = "btnFull";
-            this.btnFull.Size = new System.Drawing.Size(75, 23);
+            this.btnFull.Size = new System.Drawing.Size(133, 23);
             this.btnFull.TabIndex = 43;
             this.btnFull.Text = "Yakıt Alındı";
             this.btnFull.UseVisualStyleBackColor = true;
+            this.btnFull.Click += new System.EventHandler(this.btnFull_Click);
+            // 
+            // lblThreeMonth
+            // 
+            this.lblThreeMonth.AutoSize = true;
+            this.lblThreeMonth.Location = new System.Drawing.Point(64, 260);
+            this.lblThreeMonth.Name = "lblThreeMonth";
+            this.lblThreeMonth.Size = new System.Drawing.Size(100, 13);
+            this.lblThreeMonth.TabIndex = 44;
+            this.lblThreeMonth.Text = "Son 3 Ay Kullanımı :";
+            // 
+            // lblThreeMonthInfo
+            // 
+            this.lblThreeMonthInfo.AutoSize = true;
+            this.lblThreeMonthInfo.Location = new System.Drawing.Point(252, 260);
+            this.lblThreeMonthInfo.Name = "lblThreeMonthInfo";
+            this.lblThreeMonthInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblThreeMonthInfo.TabIndex = 45;
+            this.lblThreeMonthInfo.Text = "00";
+            // 
+            // lblSixMonthInfo
+            // 
+            this.lblSixMonthInfo.AutoSize = true;
+            this.lblSixMonthInfo.Location = new System.Drawing.Point(252, 229);
+            this.lblSixMonthInfo.Name = "lblSixMonthInfo";
+            this.lblSixMonthInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblSixMonthInfo.TabIndex = 47;
+            this.lblSixMonthInfo.Text = "00";
+            // 
+            // lblSixMonth
+            // 
+            this.lblSixMonth.AutoSize = true;
+            this.lblSixMonth.Location = new System.Drawing.Point(64, 229);
+            this.lblSixMonth.Name = "lblSixMonth";
+            this.lblSixMonth.Size = new System.Drawing.Size(100, 13);
+            this.lblSixMonth.TabIndex = 46;
+            this.lblSixMonth.Text = "Son 6 Ay Kullanımı :";
             // 
             // GeneratorForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.Controls.Add(this.lblSixMonthInfo);
+            this.Controls.Add(this.lblSixMonth);
+            this.Controls.Add(this.lblThreeMonthInfo);
+            this.Controls.Add(this.lblThreeMonth);
             this.Controls.Add(this.btnFull);
             this.Controls.Add(this.lblLastFullEmployeeInfo);
             this.Controls.Add(this.lblLastWorkedInfo);
-            this.Controls.Add(this.lblLast3MonthInfo);
-            this.Controls.Add(this.lblLast6MonthInfo);
             this.Controls.Add(this.lblLastYearInfo);
             this.Controls.Add(this.lblAllWorkedTimeInfo);
             this.Controls.Add(this.lblListByTwoTimeInfo);
@@ -309,8 +312,6 @@
             this.Controls.Add(this.lblFirstTime);
             this.Controls.Add(this.lblListByTwoTime);
             this.Controls.Add(this.lblLastWorked);
-            this.Controls.Add(this.lblLast6Month);
-            this.Controls.Add(this.lblLast3Month);
             this.Controls.Add(this.lblLastYear);
             this.Controls.Add(this.lblAllWorkedTime);
             this.Controls.Add(this.lblLastFullEmployee);
@@ -345,8 +346,6 @@
         private System.Windows.Forms.Label lblLastFullEmployee;
         private System.Windows.Forms.Label lblAllWorkedTime;
         private System.Windows.Forms.Label lblLastYear;
-        private System.Windows.Forms.Label lblLast3Month;
-        private System.Windows.Forms.Label lblLast6Month;
         private System.Windows.Forms.Label lblLastWorked;
         private System.Windows.Forms.Label lblListByTwoTime;
         private System.Windows.Forms.Label lblFirstTime;
@@ -354,12 +353,14 @@
         private System.Windows.Forms.Label lblListByTwoTimeInfo;
         private System.Windows.Forms.Label lblAllWorkedTimeInfo;
         private System.Windows.Forms.Label lblLastYearInfo;
-        private System.Windows.Forms.Label lblLast6MonthInfo;
-        private System.Windows.Forms.Label lblLast3MonthInfo;
         private System.Windows.Forms.Label lblLastWorkedInfo;
         private System.Windows.Forms.Label lblLastFullEmployeeInfo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.Button btnFull;
+        private System.Windows.Forms.Label lblThreeMonth;
+        private System.Windows.Forms.Label lblThreeMonthInfo;
+        private System.Windows.Forms.Label lblSixMonthInfo;
+        private System.Windows.Forms.Label lblSixMonth;
     }
 }

@@ -50,7 +50,25 @@ namespace DataAccess.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("MaintenanceMailDelete", new SqlParameter("@maintenancemailid", id));
+                if (isSuccess)
+                {
+                    result = "Mail Adresi Başarı İle Silindi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
         }
 
         public MaintenanceMail Get(Guid id)

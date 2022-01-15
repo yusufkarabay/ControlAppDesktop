@@ -176,5 +176,10 @@ namespace ControlAppDesktop.Forms
             drawerDeliveryForm.infos = infos;
             drawerDeliveryForm.Show();
         }
+
+        private void DrawerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
