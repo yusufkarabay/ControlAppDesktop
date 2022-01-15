@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.department = new System.Windows.Forms.Label();
@@ -178,8 +178,8 @@
             this.dgvRequest.AllowUserToDeleteRows = false;
             this.dgvRequest.AllowUserToResizeColumns = false;
             this.dgvRequest.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
@@ -306,6 +306,7 @@
             this.btnCreateRequest.TabIndex = 6;
             this.btnCreateRequest.Text = "Talep Oluştur";
             this.btnCreateRequest.UseVisualStyleBackColor = true;
+            this.btnCreateRequest.Click += new System.EventHandler(this.btnCreateRequest_Click);
             // 
             // btnWeb
             // 

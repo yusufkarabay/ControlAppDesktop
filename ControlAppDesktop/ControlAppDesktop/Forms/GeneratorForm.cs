@@ -47,7 +47,7 @@ namespace ControlAppDesktop.Forms
         {
             lblLastWorkedInfo.Text = generatorManager.BetweemTimeList("GeneratorBetweenTimeWorked", DateTime.Parse(lblLastFullTimeInfo.Text.ToString())
                 , DateTime.Parse(DateTime.Now.ToString()));
-           
+        
         }
         void lastThreeMonthWorkedTime()
         {

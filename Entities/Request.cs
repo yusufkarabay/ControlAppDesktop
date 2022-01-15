@@ -12,9 +12,7 @@ namespace Entities
         string requestTitle;
         string requestContent;
         DateTime date;
-        //string requestedName;
-        //string requestingName;
-
+     
         public Request(string requestTitle, string requestContent, DateTime date)
         {
             this.requestTitle = requestTitle;
@@ -22,21 +20,19 @@ namespace Entities
             this.date = date;
         }
 
-        public Request(Guid requestId, /*string requestedName,string requestingName,*/ string requestTitle, string requestContent, DateTime date)
+        public Request(Guid requestId, string requestTitle, string requestContent, DateTime date)
         {
             this.requestId = requestId;
             this.requestTitle = requestTitle;
             this.requestContent = requestContent;
             this.date = date;
-            //this.requestingName = requestingName;
-            //this.requestedName = requestedName; 
+            
         }
 
         public Guid RequestId { get => requestId; set => requestId = value; }
         public string RequestTitle { get => requestTitle; set => requestTitle = value; }
         public string RequestContent { get => requestContent; set => requestContent = value; }
         public DateTime Date { get => date; set => date = value; }
-        //public string RequestedName { get => requestedName; set => requestedName = value; }
-        //public string RequestingName { get => requestingName; set => requestingName = value; }
+        
     }
 }

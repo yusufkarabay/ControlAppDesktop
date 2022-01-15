@@ -77,7 +77,8 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Yetki Adı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            authority = new Authority(txtAuthorityName.Text.ToString());
+            authority = new Authority(
+                txtAuthorityName.Text.ToString());
             authorityManager.Add(authority);
             MessageBox.Show("Yetki Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             txtAuthorityName.Text = "Yetkis Adı Giriniz...";

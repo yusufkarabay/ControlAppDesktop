@@ -150,5 +150,12 @@ namespace ControlAppDesktop.Forms
         {
             e.Handled = true;
         }
+
+        private void btnCreateRequest_Click(object sender, EventArgs e)
+        {
+            RequestCreateForm requestCreateForm = new RequestCreateForm();
+            requestCreateForm.infos = infos;
+            requestCreateForm.Show();
+        }
     }
 }

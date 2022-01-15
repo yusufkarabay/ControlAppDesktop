@@ -25,7 +25,9 @@ namespace DataAccess.Concrete
         {
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle), new SqlParameter("@requestcontent", entity.RequestContent));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle), 
+                    new SqlParameter("@requestcontent", entity.RequestContent),
+                    new SqlParameter("@requesttime",entity.Date));
                 if (isSuccess)
                 {
                     return entity.RequestTitle + " Talep Başarıyla Oluşturuldu";

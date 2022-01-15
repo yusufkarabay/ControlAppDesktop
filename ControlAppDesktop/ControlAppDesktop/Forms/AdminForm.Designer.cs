@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAuthorityForm = new System.Windows.Forms.Button();
             this.btnDepartmentForm = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAuthorityForm
             // 
-            this.button1.Location = new System.Drawing.Point(89, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Yetki İşlemleri";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAuthorityForm.Location = new System.Drawing.Point(89, 126);
+            this.btnAuthorityForm.Name = "btnAuthorityForm";
+            this.btnAuthorityForm.Size = new System.Drawing.Size(164, 23);
+            this.btnAuthorityForm.TabIndex = 0;
+            this.btnAuthorityForm.Text = "Yetki İşlemleri";
+            this.btnAuthorityForm.UseVisualStyleBackColor = true;
+            this.btnAuthorityForm.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDepartmentForm
             // 
-            this.btnDepartmentForm.Location = new System.Drawing.Point(89, 155);
+            this.btnDepartmentForm.Location = new System.Drawing.Point(275, 126);
             this.btnDepartmentForm.Name = "btnDepartmentForm";
             this.btnDepartmentForm.Size = new System.Drawing.Size(164, 23);
             this.btnDepartmentForm.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(89, 184);
+            this.button3.Location = new System.Drawing.Point(579, 126);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 23);
             this.button3.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(89, 230);
+            this.button4.Location = new System.Drawing.Point(778, 126);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(191, 23);
             this.button4.TabIndex = 3;
@@ -80,7 +80,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnDepartmentForm);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAuthorityForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
             this.Text = "TestForm";
@@ -91,7 +91,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAuthorityForm;
         private System.Windows.Forms.Button btnDepartmentForm;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

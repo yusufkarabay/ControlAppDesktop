@@ -162,6 +162,12 @@
     <Compile Include="Forms\MaintenanceMailAddForm.Designer.cs">
       <DependentUpon>MaintenanceMailAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\RequestCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RequestCreateForm.Designer.cs">
+      <DependentUpon>RequestCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaintenanceMailAddForm.resx">
       <DependentUpon>MaintenanceMailAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RequestCreateForm.resx">
+      <DependentUpon>RequestCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RequestForm.resx">
       <DependentUpon>RequestForm.cs</DependentUpon>
