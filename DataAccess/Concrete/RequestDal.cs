@@ -122,7 +122,38 @@ namespace DataAccess.Concrete
 
             return list;
         }
+        public List<Request> GetByDepartmentId(string procuderName,Guid departmentId)        {
+            List<Request> list = null;
 
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName,new SqlParameter("@departmentid", departmentId));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<Request>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        list.Add(new Request(      
+                            Guid.Parse(dataRow["REQUESTID"].ToString()),
+                            dataRow["REQUESTTITLE"].ToString(),
+                            dataRow["REQUESTCONTENT"].ToString(),
+                            DateTime.Parse(dataRow["REQUESTTIME"].ToString())));
+                    }
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return list;
+        }
+        
         public string Update(Request entity,string oldName)
         {
             try

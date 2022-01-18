@@ -149,7 +149,7 @@ namespace ControlAppDesktop.Forms
 
             requestDetailManager.RequestToDepartment(requestDetail);
             MessageBox.Show("Talep Başarı İle gönderildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //deleteRequest();
+            deleteRequest();
         }
 
         private void dgvNotRequest_MouseClick(object sender, MouseEventArgs e)

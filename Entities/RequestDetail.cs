@@ -64,7 +64,38 @@ namespace Entities
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
         }
+        public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
+            Guid departmentId,Guid requestGroupId)
 
+        {
+            this.requestDetailId = requestDetailId;
+            this.requestId = requestId;
+            this.requestingName = requestingName;
+            this.requestContent = requestContent;
+            this.requestTitle = requestTitle;
+            this.departmentId = departmentId;
+            this.requestGroupId = requestGroupId;
+        }
+
+        public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
+           Guid departmentId)
+        {
+            this.requestDetailId = requestDetailId;
+            this.requestId = requestId;
+            this.requestingName = requestingName;
+            this.requestContent = requestContent;
+            this.requestTitle = requestTitle;
+            this.departmentId = departmentId;
+        }
+
+        public RequestDetail(  string requestContent, string requestTitle, string requesting )
+        {
+            this.requesting = requesting;
+            this.requestContent = requestContent;
+            this.requestTitle = requestTitle;
+          
+
+        }
         public Guid RequestDetailId { get => requestDetailId; set => requestDetailId = value; }
         public Guid RequestId { get => requestId; set => requestId = value; }
         public string Requesting { get => requesting; set => requesting = value; }

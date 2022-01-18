@@ -14,9 +14,13 @@ namespace Business.Concrete
         static RequestDetailManager requestDetailManager;
         RequestDetailDal requestDetailDal;
         string controlText;
+        Request request;
+        RequestDal requestDal;
+       List<Request> requestList;
         public RequestDetailManager()
         {
             requestDetailDal = RequestDetailDal.GetInstance();
+            requestDal=RequestDal.GetInstance();    
         }
 
         string IsRequestDetailComplete(RequestDetail requestDetail)
@@ -78,18 +82,7 @@ namespace Business.Concrete
                 return new List<RequestDetail>();
             }
         }
-        public List<RequestDetail> GetByDepartmentId(string procuderName, Guid departmentId)
-        {
-            try
-            {
-                return requestDetailDal.GetByDepartmentId(procuderName, departmentId);
-            }
-            catch
-            {
-
-                return new List<RequestDetail>();
-            }
-        }
+       
         
 
         public string Update(RequestDetail entity)

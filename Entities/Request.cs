@@ -20,13 +20,14 @@ namespace Entities
             this.requestTime = requestTime;
         }
 
+
         public Request(Guid requestId, string requestTitle, string requestContent, DateTime requestTime)
         {
             this.requestId = requestId;
             this.requestTitle = requestTitle;
             this.requestContent = requestContent;
             this.requestTime = requestTime;
-            
+
         }
 
         public Guid RequestId { get => requestId; set => requestId = value; }

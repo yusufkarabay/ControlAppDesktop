@@ -83,38 +83,7 @@ namespace DataAccess.Concrete
         {
             throw new NotImplementedException();
         }
-        public List<RequestDetail> GetByDepartmentId(string proceduerName, Guid departmentId)
-        {
-            List<RequestDetail> requestDetails = null;
-            try
-            {
-                var (dt, msg) = sqlService.StoredV2(proceduerName, new SqlParameter("@departmentid",departmentId));
-                if (msg != null)
-                {
-                    return null;
-                }
-                if (dt.Rows.Count > 0)
-                {
-                    requestDetails = new List<RequestDetail>();
-                    foreach (DataRow dataRow in dt.Rows)
-                    {
-                        requestDetails.Add(new RequestDetail(
-
-                       Guid.Parse(dataRow["REQUESTGROUPID"].ToString()),
-                        Guid.Parse(dataRow["REQUESTID"].ToString()),
-                         dataRow["REQUESTING"].ToString(),
-                        Guid.Parse(dataRow["DEPARTMENTID"].ToString()),
-                        dataRow["REQUESTED"].ToString()));
-
-
-                    }
-                }
-            }
-            catch (Exception ex) { }
-            finally { }
-
-            return requestDetails;
-        }
+       
 
         public string Update(RequestDetail entity,string oldName)
         {
@@ -147,8 +116,13 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        RequestDetail requestDetail = new RequestDetail((Guid)dataRow["REQUESTDETAILID"], (Guid)dataRow["REQUESTID"], dataRow["NAME"].ToString() + " " + dataRow["SURNAME"].ToString(),
-                        dataRow["REQUESTTITLE"].ToString(), dataRow["REQUESTCONTENT"].ToString());
+                        RequestDetail requestDetail = new RequestDetail(
+                        (Guid)dataRow["REQUESTDETAILID"],
+                        (Guid)dataRow["REQUESTID"], 
+                        dataRow["NAME"].ToString() + " " + dataRow["SURNAME"].ToString(),
+                        dataRow["REQUESTTITLE"].ToString(), 
+                        dataRow["REQUESTCONTENT"].ToString(),
+                       (Guid)dataRow["DEPARTMENTID"]);
 
                         list.Add(requestDetail);
                     }

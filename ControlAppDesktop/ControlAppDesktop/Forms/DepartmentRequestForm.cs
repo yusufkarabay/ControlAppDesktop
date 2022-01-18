@@ -22,6 +22,8 @@ namespace ControlAppDesktop
         Request request;
         RequestDetailManager requestDetailManager;
         RequestDetail requestDetail;
+        RequestOnDepartmentManager requestOnDepartmentManager;
+
         public DepartmentRequestForm()
         {
             InitializeComponent();
@@ -31,8 +33,8 @@ namespace ControlAppDesktop
         }
         void takeToMyDepartmentRequest()
         {
-            dgvMyDepartmentRequest.DataSource = requestDetailManager.GetByDepartmentId("RequestToDepartmentList", 
-                Guid.Parse(infos[5].ToString()));
+            dgvMyDepartmentRequest.DataSource = requestOnDepartmentManager.GetByDepartmentId("deneme", 
+               Guid.Parse(infos[5].ToString()));
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

@@ -113,6 +113,7 @@ namespace Business.Concrete
             }
 
         }
+        
         public static RequestManager GetInstance()
         {
             if (requestManager == null)
