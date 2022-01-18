@@ -22,6 +22,18 @@ namespace Business.Concrete
             requestDetailDal = RequestDetailDal.GetInstance();
             requestDal=RequestDal.GetInstance();    
         }
+        public List<RequestDetail> GetByDepartmentId(string procuderName, Guid departmentId)
+        {
+            try
+            {
+                return requestDetailDal.GetByDepartmentId(procuderName, departmentId);
+            }
+            catch
+            {
+
+                return new List<RequestDetail>();
+            }
+        }
 
         string IsRequestDetailComplete(RequestDetail requestDetail)
         {
@@ -82,8 +94,25 @@ namespace Business.Concrete
                 return new List<RequestDetail>();
             }
         }
-       
-        
+
+        public string UpdateBool(RequestDetail entity)
+        {
+            try
+            {
+                if (entity.RequestId == null)
+                {
+                    return " Talep Gönderilemedi";
+
+                }
+
+                return requestDetailManager.UpdateBool(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
 
         public string Update(RequestDetail entity)
         {

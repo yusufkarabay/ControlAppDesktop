@@ -58,7 +58,6 @@
     <Compile Include="Concrete\MaintenanceMonthManager.cs" />
     <Compile Include="Concrete\RequestDetailManager.cs" />
     <Compile Include="Concrete\RequestManager.cs" />
-    <Compile Include="Concrete\RequestOnDepartmentManager.cs" />
     <Compile Include="Concrete\SentryDoneManager.cs" />
     <Compile Include="Concrete\SentryToDoManager.cs" />
     <Compile Include="Concrete\DrawerManager.cs" />

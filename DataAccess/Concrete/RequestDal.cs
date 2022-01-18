@@ -25,9 +25,9 @@ namespace DataAccess.Concrete
         {
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle), 
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle),
                     new SqlParameter("@requestcontent", entity.RequestContent),
-                    new SqlParameter("@requesttime",entity.RequestTime));
+                    new SqlParameter("@requesttime", entity.RequestTime));
                 if (isSuccess)
                 {
                     return entity.RequestTitle + " Talep Başarıyla Oluşturuldu";
@@ -111,7 +111,7 @@ namespace DataAccess.Concrete
                         list.Add(new Request(
                             Guid.Parse(dataRow["REQUESTID"].ToString()),
                             dataRow["REQUESTTITLE"].ToString(),
-                            dataRow["REQUESTCONTENT"].ToString(), 
+                            dataRow["REQUESTCONTENT"].ToString(),
                             DateTime.Parse(dataRow["REQUESTTIME"].ToString())));
                     }
                 }
@@ -122,12 +122,13 @@ namespace DataAccess.Concrete
 
             return list;
         }
-        public List<Request> GetByDepartmentId(string procuderName,Guid departmentId)        {
+        public List<Request> GetByDepartmentId(string procuderName, Guid departmentId)
+        {
             List<Request> list = null;
 
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName,new SqlParameter("@departmentid", departmentId));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@departmentid", departmentId));
                 if (msg != null)
                 {
                     return null;
@@ -139,7 +140,7 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        list.Add(new Request(      
+                        list.Add(new Request(
                             Guid.Parse(dataRow["REQUESTID"].ToString()),
                             dataRow["REQUESTTITLE"].ToString(),
                             dataRow["REQUESTCONTENT"].ToString(),
@@ -153,8 +154,8 @@ namespace DataAccess.Concrete
 
             return list;
         }
-        
-        public string Update(Request entity,string oldName)
+
+        public string Update(Request entity, string oldName)
         {
             try
             {
@@ -180,9 +181,65 @@ namespace DataAccess.Concrete
         {
             if (requestDal == null)
             {
-                requestDal = new RequestDal();  
+                requestDal = new RequestDal();
             }
             return requestDal;
+        }
+        public string RequestISend(Request entity)
+        {
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestISend", new SqlParameter("@requestid", entity.RequestId),
+                     new SqlParameter("@issend", entity.IsSend));
+                if (isSuccess)
+                {
+                    result = "Talep   Başarı İle Gönderildi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
+        }
+        public List<Request>  RequestSendedList()
+        {
+            List<Request> list = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2("RequestSendedList");
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    list = new List<Request>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        list.Add(new Request(
+                            Guid.Parse(dataRow["REQUESTID"].ToString()),
+                            dataRow["REQUESTTITLE"].ToString(),
+                            dataRow["REQUESTCONTENT"].ToString(),
+                            DateTime.Parse(dataRow["REQUESTTIME"].ToString())));
+                    }
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return list;
         }
 
         public string UpdateNew(Request entity)

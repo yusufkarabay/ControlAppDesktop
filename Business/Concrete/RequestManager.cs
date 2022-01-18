@@ -56,6 +56,7 @@ namespace Business.Concrete
             }
         }
 
+
         public string Delete(Guid id)
         {
             try
@@ -89,6 +90,37 @@ namespace Business.Concrete
                 return new List<Request>();
             }
         }
+        public string RequestISend(Request entity)
+        {
+            try
+            {
+                if (entity.RequestId == null)
+                {
+                    return " Talep Gönderilemedi";
+
+                }
+               
+                return requestDal.RequestISend(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        public List<Request> RequestSendedList()
+        {
+            try
+            {
+                return requestDal.RequestSendedList();
+            }
+            catch
+            {
+
+                return new List<Request>();
+            }
+        }
+        
 
         public string Update(Request entity, string oldName)
         {

@@ -12,60 +12,76 @@ namespace Entities
         Guid requestId;
         string requesting;
         string requested;
+        string requestedName;
         string requestingName;
         string requestTitle;
         string requestContent;
         Guid departmentId;
-        Guid requestGroupId;
+        string departmentName;
+        DateTime requestTime;
+        bool isSend;
+
         public RequestDetail()
         {
 
         }
-        public RequestDetail(Guid requestId, string requesting, Guid departmentId,string requested)
+
+        public RequestDetail(Guid requestId, bool isSend)
         {
             this.requestId = requestId;
-            this.requesting = requesting;   
-            this.departmentId = departmentId;
-            this.requested = requested;
+            this.isSend = isSend;
         }
-        public RequestDetail(Guid requestGroupId,Guid requestId, string requesting, Guid departmentId, string requested)
+        public RequestDetail(Guid requestId, string requesting, Guid departmentId, string requested)
         {
             this.requestId = requestId;
             this.requesting = requesting;
             this.departmentId = departmentId;
             this.requested = requested;
-            this.requestGroupId=requestGroupId;
         }
-        public RequestDetail(Guid requestId, string requesting, Guid departmentId)
+        public RequestDetail(Guid requestDetailId, Guid requestId, string requesting, Guid departmentId, string requested)
         {
             this.requestId = requestId;
             this.requesting = requesting;
             this.departmentId = departmentId;
-          
+            this.requested = requested;
+            this.requestDetailId = requestDetailId;
+        }
+        public RequestDetail(Guid requestId, string requesting, Guid departmentId,bool isSend)
+        {
+            this.requestId = requestId;
+            this.requesting = requesting;
+            this.departmentId = departmentId;
+            this.isSend=isSend;
         }
 
 
-        public RequestDetail(Guid requestId, string requestingName,  string requestTitle, string requestContent)
+        public RequestDetail(Guid requestId, string requestingName, string requestTitle, string requestContent)
         {
             this.requestId = requestId;
-           
+
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
             this.requestingName = requestingName;
         }
-
-        public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName,  string requestTitle, string requestContent)
+        //******
+        public RequestDetail(Guid requestDetailId, Guid requestId, string requestTitle, string requestContent,
+            DateTime requestTime, Guid departmentId, string departmentName,string requesting ,string requestingName,string requested, string requestedName)
 
         {
+            this.departmentName = departmentName;
+            this.requestTime = requestTime;
+            this.requestedName = requestedName;
             this.requestDetailId = requestDetailId;
             this.requestId = requestId;
-          
             this.requestingName = requestingName;
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
+            this.departmentId = departmentId;
+            this.requesting= requesting; 
+            this.requested=requested;
         }
         public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
-            Guid departmentId,Guid requestGroupId)
+            Guid departmentId, Guid requestGroupId)
 
         {
             this.requestDetailId = requestDetailId;
@@ -74,7 +90,7 @@ namespace Entities
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
             this.departmentId = departmentId;
-            this.requestGroupId = requestGroupId;
+
         }
 
         public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
@@ -88,12 +104,12 @@ namespace Entities
             this.departmentId = departmentId;
         }
 
-        public RequestDetail(  string requestContent, string requestTitle, string requesting )
+        public RequestDetail(string requestContent, string requestTitle, string requesting)
         {
             this.requesting = requesting;
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
-          
+
 
         }
         public Guid RequestDetailId { get => requestDetailId; set => requestDetailId = value; }
@@ -104,6 +120,10 @@ namespace Entities
         public string RequestContent { get => requestContent; set => requestContent = value; }
         public string RequestingName { get => requestingName; set => requestingName = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }
-        public Guid RequestGroupId { get => requestGroupId; set => requestGroupId = value; }
+
+        public bool IsSend { get => isSend; set => isSend = value; }
+        public string DepartmentName { get => departmentName; set => departmentName = value; }
+        public DateTime RequestTime { get => requestTime; set => requestTime = value; }
+        public string RequestedName { get => requestedName; set => requestedName = value; }
     }
 }

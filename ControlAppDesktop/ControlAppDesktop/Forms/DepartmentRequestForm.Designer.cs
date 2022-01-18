@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpDepartmentRequest = new System.Windows.Forms.GroupBox();
             this.dgvMyDepartmentRequest = new System.Windows.Forms.DataGridView();
@@ -48,7 +48,7 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Kapat";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // grpDepartmentRequest
             // 
@@ -66,8 +66,8 @@
             this.dgvMyDepartmentRequest.AllowUserToDeleteRows = false;
             this.dgvMyDepartmentRequest.AllowUserToResizeColumns = false;
             this.dgvMyDepartmentRequest.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvMyDepartmentRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvMyDepartmentRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMyDepartmentRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMyDepartmentRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyDepartmentRequest.Cursor = System.Windows.Forms.Cursors.PanWest;

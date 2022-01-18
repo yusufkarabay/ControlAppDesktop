@@ -23,6 +23,51 @@ namespace DataAccess.Concrete
 
         }
 
+        public List<RequestDetail> GetByDepartmentId(string proceduerName, Guid departmentId)
+        {
+            List<RequestDetail> requestDetails = null;
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(proceduerName, new SqlParameter("@departmentid", departmentId));
+                if (msg != null)
+                {
+                    return null;
+                }
+                if (dt.Rows.Count > 0)
+                {
+                    requestDetails = new List<RequestDetail>();
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        requestDetails.Add(new RequestDetail(
+
+                        Guid.Parse(dataRow["REQUESTDETAILID"].ToString()),
+
+                        Guid.Parse(dataRow["REQUESTID"].ToString()),
+
+                        dataRow["REQUESTTITLE"].ToString(),
+
+                        dataRow["REQUESTCONTENT"].ToString(),
+
+                        DateTime.Parse(dataRow["REQUESTTIME"].ToString()),
+
+                        Guid.Parse(dataRow["DEPARTMENTID"].ToString()),
+                        $"{dataRow["DEPARTMENTNAME"]}",
+
+                        dataRow["REQUESTING"].ToString(),
+                        $"{dataRow["NAME"]}{dataRow["surname"]}",  
+                        
+                        dataRow["REQUESTED"].ToString(),
+                        $"{dataRow["NAME"]}{dataRow["surname"]}"));
+
+
+                    }
+                }
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return requestDetails;
+        }
         public string Add(RequestDetail entity)
         {
             try
@@ -45,29 +90,53 @@ namespace DataAccess.Concrete
         }
         public string RequestToDepartment(RequestDetail entity)
         {
+
+            string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestToDepartment",
+                var (isSuccess, msg) = sqlService.StoredV2("RequestToDepartment",
                     new SqlParameter("@requestid", entity.RequestId),
                     new SqlParameter("@requesting", entity.Requesting),
-                    new SqlParameter("@departmentid", entity.DepartmentId));
+                    new SqlParameter("@departmentid", entity.DepartmentId),
+                    new SqlParameter("@issend",entity.IsSend));
                    // new SqlParameter("@requested", entity.Requested));
-                if (isSuccess)
-                {
+               
                     return"  Talep Başarıyla Oluşturulmuştur";
-                }
-                else
-                {
-                    return msg;
-                }
+              
             }
             catch (Exception ex)
             {
 
                 return ex.Message;
             }
+            return result;
         }
-        
+        public string UpdateBool(RequestDetail entity)
+        {
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestChangeBool",
+                    new SqlParameter("@requestid", entity.RequestId),
+                     new SqlParameter("@issend", entity.IsSend));
+                if (isSuccess)
+                {
+                    result = "Talep   Başarı İle Gönderildi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
+        }
+
 
         public string Delete(Guid id)
         {

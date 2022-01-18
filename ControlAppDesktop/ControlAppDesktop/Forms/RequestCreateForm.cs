@@ -27,7 +27,7 @@ namespace ControlAppDesktop.Forms
             InitializeComponent();
             departmentManager = DepartmentManager.GetInstance();
             requestManager = RequestManager.GetInstance();
-            requestDetailManager=RequestDetailManager.GetInstance();    
+            requestDetailManager = RequestDetailManager.GetInstance();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -46,7 +46,40 @@ namespace ControlAppDesktop.Forms
         {
             dgvNotRequest.DataSource = requestManager.GetAll();
             dgvNotRequest.Columns[0].Visible = false;
+            dgvNotRequest.Columns[4].Visible = false;
 
+        }
+        void requestToDepartment()
+        {
+            
+            DialogResult dialogResult = MessageBox.Show("Seçili Görevi Atamak İstediğinize Emin Misiniz?",
+                            "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                requestDetail = new RequestDetail(
+             Guid.Parse(dgvNotRequest.CurrentRow.Cells[0].Value.ToString()),
+             infos[0].ToString(),
+             Guid.Parse(cbDepartment.SelectedValue.ToString()),
+             Convert.ToBoolean(dgvNotRequest.CurrentRow.Cells[4].Value = true));
+
+                request = new Request(Guid.Parse(dgvNotRequest.CurrentRow.Cells[0].Value.ToString()),
+                     Convert.ToBoolean(dgvNotRequest.CurrentRow.Cells[4].Value = true));
+                requestManager.RequestISend(request);
+                MessageBox.Show(requestDetailManager.RequestToDepartment(requestDetail));
+
+            }
+
+        }
+        void requestSendUpdate()
+        {
+            dgvNotRequest.DataSource = requestManager.RequestSendedList();
+            if (dgvNotRequest.Rows.Count < 0)
+            {
+               
+                return;
+            }
+            dgvNotRequest.Columns[0].Visible = false;
+            dgvNotRequest.Columns[4].Visible = false;
         }
         void requestAdd()
         {
@@ -60,13 +93,12 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Talep İçeriği Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             else
             {
                 request = new Request(
-                    txtRequestTitle.Text.ToString(),
-                    rtxtRequestContext.Text.ToString(),
-                    DateTime.Parse(DateTime.Now.ToString()));
+               txtRequestTitle.Text.ToString(),
+               rtxtRequestContext.Text.ToString(),
+               DateTime.Parse(DateTime.Now.ToString()));
 
                 requestManager.Add(request);
                 MessageBox.Show("Talep Başarı İle Kaydedildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -95,11 +127,15 @@ namespace ControlAppDesktop.Forms
 
             }
         }
+        //***********************************
 
+
+     
         private void RequestCreateForm_Load(object sender, EventArgs e)
         {
             cbFill();
-            notRequest();
+           
+            requestSendUpdate();
         }
 
         private void btnRequestCreate_Click(object sender, EventArgs e)
@@ -115,7 +151,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Göndermek  İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            txtRequestTitle.Text=dgvNotRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
+            txtRequestTitle.Text = dgvNotRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
             rtxtRequestContext.Text = dgvNotRequest.CurrentRow.Cells["REQUESTCONTENT"].Value.ToString();
 
             if (cbDepartment.Visible == false)
@@ -140,16 +176,11 @@ namespace ControlAppDesktop.Forms
             if (cbDepartment.SelectedItem == null)
             {
                 MessageBox.Show("Talep Edilecek Departman Boş Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                return;
             }
-            requestDetail = new RequestDetail(
-                Guid.Parse(dgvNotRequest.CurrentRow.Cells["REQUESTID"].Value.ToString()),
-                infos[0].ToString(),
-                Guid.Parse(cbDepartment.SelectedValue.ToString()));
-
-            requestDetailManager.RequestToDepartment(requestDetail);
-            MessageBox.Show("Talep Başarı İle gönderildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            deleteRequest();
+            
+            requestToDepartment();
+            requestSendUpdate();
         }
 
         private void dgvNotRequest_MouseClick(object sender, MouseEventArgs e)
