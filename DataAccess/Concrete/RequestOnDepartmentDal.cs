@@ -54,7 +54,9 @@ namespace DataAccess.Concrete
                         dataRow["REQUESTCONTENT"].ToString(),
                         DateTime.Parse(dataRow["REQUESTTIME"].ToString()),
                         dataRow["REQUESTING"].ToString(),
-                        Guid.Parse(dataRow["DEPATMENTID"].ToString())));
+                        $"{dataRow["NAME"]}{dataRow["surname"]}",
+                        Guid.Parse(dataRow["DEPARTMENTID"].ToString()),
+                        dataRow["REQUESTED"].ToString()));
 
 
                     }

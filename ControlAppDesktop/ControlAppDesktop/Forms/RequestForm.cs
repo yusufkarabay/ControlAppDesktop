@@ -34,6 +34,7 @@ namespace ControlAppDesktop.Forms
         void RequestForMeList()
         {
             dgvRequest.DataSource = requestDetailManager.GetAll("MyRequestList", tc);
+            
             DataGridDisplay();
             lblCountInfo.Text =dgvRequest.RowCount.ToString();
         }
@@ -53,13 +54,17 @@ namespace ControlAppDesktop.Forms
         }
         void DataGridDisplay()
         {
-            dgvRequest.Columns[0].Visible = false;
-            dgvRequest.Columns[1].Visible = false;
-            dgvRequest.Columns[2].Visible = false;
-            dgvRequest.Columns[3].Visible = false;
-            dgvRequest.Columns["RequestTitle"].HeaderText = "Talep Başlığı";
-            dgvRequest.Columns["RequestContent"].HeaderText = "Talep Açıklaması";
-            dgvRequest.Columns["RequestingName"].HeaderText = "Talep Eden";
+            if (dgvRequest.Rows.Count>0)
+            {
+                dgvRequest.Columns[0].Visible = false;
+                dgvRequest.Columns[1].Visible = false;
+                dgvRequest.Columns[2].Visible = false;
+                dgvRequest.Columns[3].Visible = false;
+                dgvRequest.Columns["RequestTitle"].HeaderText = "Talep Başlığı";
+                dgvRequest.Columns["RequestContent"].HeaderText = "Talep Açıklaması";
+                dgvRequest.Columns["RequestingName"].HeaderText = "Talep Eden";
+            }
+           
         }
 
         private void dgvRequest_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

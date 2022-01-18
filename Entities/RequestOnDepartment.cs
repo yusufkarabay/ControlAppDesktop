@@ -16,13 +16,14 @@ namespace Entities
         string requesting;
         Guid departmentId;
         string requested;
+        string requestingName;
         
 
         public RequestOnDepartment()
         {
 
         }
-        public RequestOnDepartment(Guid requestGroupId, Guid requestId,string requestTitle,string requestContent, DateTime requestTime, string requesting, Guid departmentId, string requested)
+        public RequestOnDepartment(Guid requestGroupId, Guid requestId,string requestTitle,string requestContent, DateTime requestTime, string requesting, string requestingName, Guid departmentId, string requested)
         {
             this.requestGroupId = requestGroupId;
             this.requestId = requestId;
@@ -32,6 +33,7 @@ namespace Entities
             this.requestContent = requestContent;
             this.requestTime = requestTime;
             this.requestTitle = requestTitle;
+            this.requestingName = requestingName;   
         }
         public RequestOnDepartment(Guid requestGroupId, Guid requestId, string requestTitle, string requestContent, DateTime requestTime, string requesting, Guid departmentId)
         {
@@ -45,6 +47,7 @@ namespace Entities
             this.requestTitle = requestTitle;
 
         }
+
         public Guid RequestGroupId { get => requestGroupId; set => requestGroupId = value; }
         public Guid RequestId { get => requestId; set => requestId = value; }
         public string Requesting { get => requesting; set => requesting = value; }
@@ -53,5 +56,6 @@ namespace Entities
         public string RequestTitle { get => requestTitle; set => requestTitle = value; }
         public string RequestContent { get => requestContent; set => requestContent = value; }
         public DateTime RequestTime { get => requestTime; set => requestTime = value; }
+        public string RequestingName { get => requestingName; set => requestingName = value; }
     }
 }
