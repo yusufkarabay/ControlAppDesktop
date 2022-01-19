@@ -18,6 +18,7 @@ namespace ControlAppDesktop
 
         RequestDetailManager requestDetailManager;
         RequestManager requestManager;
+        RequestDetail requestDetail;
 
         public DepartmentRequestForm()
         {
@@ -34,14 +35,14 @@ namespace ControlAppDesktop
                Guid.Parse(infos[5].ToString()));
             if (dgvMyDepartmentRequest.Rows.Count > 0)
             {
-                dgvMyDepartmentRequest.Columns[0].Visible = false;
-                dgvMyDepartmentRequest.Columns[1].Visible = false;
-                dgvMyDepartmentRequest.Columns[2].Visible = false;
+                // dgvMyDepartmentRequest.Columns[0].Visible = false;
+                //dgvMyDepartmentRequest.Columns[1].Visible = false;
+                //dgvMyDepartmentRequest.Columns[2].Visible = false;
 
-                dgvMyDepartmentRequest.Columns[3].Visible = false;
-                dgvMyDepartmentRequest.Columns[7].Visible = false;
-                dgvMyDepartmentRequest.Columns[8].Visible = false;
-                dgvMyDepartmentRequest.Columns[11].Visible = false;
+                //dgvMyDepartmentRequest.Columns[3].Visible = false;
+                //dgvMyDepartmentRequest.Columns[7].Visible = false;
+                //dgvMyDepartmentRequest.Columns[8].Visible = false;
+                //dgvMyDepartmentRequest.Columns[11].Visible = false;
 
 
                 dgvMyDepartmentRequest.Columns["Requesting"].HeaderText = "Talep Eden";
@@ -51,10 +52,8 @@ namespace ControlAppDesktop
                 dgvMyDepartmentRequest.Columns["RequestingName"].HeaderText = "Talep Eden Personel";
                 dgvMyDepartmentRequest.Columns["DepartmentName"].HeaderText = "Talep Edilen Departman";
 
-
-
-
             }
+           
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)
@@ -73,6 +72,10 @@ namespace ControlAppDesktop
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+             requestDetail= new RequestDetail(
+              Guid.Parse(dgvMyDepartmentRequest.CurrentRow.Cells[1].Value.ToString()),
+               infos[0].ToString());
+                MessageBox.Show(requestDetailManager.RequestTakeToMe(requestDetail));
             }
         }
 

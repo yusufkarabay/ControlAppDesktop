@@ -55,7 +55,11 @@ namespace DataAccess.Concrete
                           dataRow["DEPARTMENTNAME"].ToString(),
 
                         dataRow["REQUESTING"].ToString(),
-                        $"{dataRow["NAME"]}{dataRow["SURNAME"]}"));
+                        $"{dataRow["NAME"]}{dataRow["SURNAME"]}"
+                        //,
+                        //dataRow["REQUESTED"].ToString(),
+                        //$"{dataRow["NAME"]}{dataRow["SURNAME"]}"
+                        ));
 
 
                     }
@@ -136,6 +140,30 @@ namespace DataAccess.Concrete
         }
 
 
+        public string RequestTakeToMe(RequestDetail entity)
+        {
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestTakeToMe", new SqlParameter("@requestid", entity.RequestId),
+                    new SqlParameter("@requested", entity.Requested));
+                if (isSuccess)
+                {
+                    result = "Talep  Başarı İle Size Teslim Edildi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
+        }
         public string Delete(Guid id)
         {
             throw new NotImplementedException();

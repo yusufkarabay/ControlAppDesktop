@@ -113,7 +113,25 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
+        
+            public string RequestTakeToMe(RequestDetail entity)
+        {
+            try
+            {
+                if (entity.RequestId == null)
+                {
+                    return " Üzerinize Almak İstediğiniz Talep Seçiniz";
 
+                }
+               
+                return requestDetailDal.RequestTakeToMe(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
         public string Update(RequestDetail entity)
         {
             try

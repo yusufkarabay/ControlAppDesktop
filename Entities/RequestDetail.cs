@@ -25,7 +25,11 @@ namespace Entities
         {
 
         }
-
+        public RequestDetail(Guid requestId, string requested)
+        {
+            this.requestId = requestId;
+            this.requested = requested; 
+        }
         public RequestDetail(Guid requestId, bool isSend)
         {
             this.requestId = requestId;
@@ -73,7 +77,7 @@ namespace Entities
             Guid departmentId,
             string departmentName, 
             string requesting,
-            string requestingName)
+            string requestingName )
 
         {
             this.departmentName = departmentName;
@@ -85,6 +89,34 @@ namespace Entities
             this.requestTitle = requestTitle;
             this.departmentId = departmentId;
             this.requesting = requesting;
+            
+        }
+        // isim birleştirme için kulllanılabilir
+        public RequestDetail(
+            Guid requestDetailId,
+            Guid requestId,
+            string requestTitle,
+            string requestContent,
+            DateTime requestTime,
+            Guid departmentId,
+            string departmentName,
+            string requesting,
+            string requestingName,
+            string requested,
+            string requestedName)
+
+        {
+            this.departmentName = departmentName;
+            this.requestTime = requestTime;
+            this.requestDetailId = requestDetailId;
+            this.requestId = requestId;
+            this.requestingName = requestingName;
+            this.requestContent = requestContent;
+            this.requestTitle = requestTitle;
+            this.departmentId = departmentId;
+            this.requesting = requesting;
+            this.requested = requested;
+            this.requestedName = requestedName;
         }
         public RequestDetail(
             Guid requestDetailId,
