@@ -90,7 +90,7 @@ namespace Business.Concrete
                 return new List<Request>();
             }
         }
-        public string RequestISend(Request entity)
+        public string RequestIsSend(Request entity)
         {
             try
             {
@@ -100,7 +100,7 @@ namespace Business.Concrete
 
                 }
                
-                return requestDal.RequestISend(entity);
+                return requestDal.RequestIsSend(entity);
             }
             catch (Exception ex)
             {

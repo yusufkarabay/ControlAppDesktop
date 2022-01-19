@@ -185,12 +185,12 @@ namespace DataAccess.Concrete
             }
             return requestDal;
         }
-        public string RequestISend(Request entity)
+        public string RequestIsSend(Request entity)
         {
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestISend", new SqlParameter("@requestid", entity.RequestId),
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestIsSend", new SqlParameter("@requestid", entity.RequestId),
                      new SqlParameter("@issend", entity.IsSend));
                 if (isSuccess)
                 {

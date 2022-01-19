@@ -51,7 +51,7 @@ namespace ControlAppDesktop.Forms
         }
         void requestToDepartment()
         {
-            
+
             DialogResult dialogResult = MessageBox.Show("Seçili Görevi Atamak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
@@ -61,11 +61,12 @@ namespace ControlAppDesktop.Forms
              infos[0].ToString(),
              Guid.Parse(cbDepartment.SelectedValue.ToString()),
              Convert.ToBoolean(dgvNotRequest.CurrentRow.Cells[4].Value = true));
-
-                request = new Request(Guid.Parse(dgvNotRequest.CurrentRow.Cells[0].Value.ToString()),
-                     Convert.ToBoolean(dgvNotRequest.CurrentRow.Cells[4].Value = true));
-                requestManager.RequestISend(request);
                 MessageBox.Show(requestDetailManager.RequestToDepartment(requestDetail));
+
+                request = new Request(
+                Guid.Parse(dgvNotRequest.CurrentRow.Cells[0].Value.ToString()),
+                Convert.ToBoolean(dgvNotRequest.CurrentRow.Cells[4].Value = true));
+                requestManager.RequestIsSend(request);
 
             }
 
@@ -73,9 +74,8 @@ namespace ControlAppDesktop.Forms
         void requestSendUpdate()
         {
             dgvNotRequest.DataSource = requestManager.RequestSendedList();
-            if (dgvNotRequest.Rows.Count < 0)
+            if (dgvNotRequest.Rows.Count <= 0)
             {
-               
                 return;
             }
             dgvNotRequest.Columns[0].Visible = false;
@@ -130,18 +130,18 @@ namespace ControlAppDesktop.Forms
         //***********************************
 
 
-     
+
         private void RequestCreateForm_Load(object sender, EventArgs e)
         {
             cbFill();
-           
+
             requestSendUpdate();
         }
 
         private void btnRequestCreate_Click(object sender, EventArgs e)
         {
             requestAdd();
-            notRequest();
+            requestSendUpdate();
         }
 
         private void requestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Talep Edilecek Departman Boş Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
+
             requestToDepartment();
             requestSendUpdate();
         }
