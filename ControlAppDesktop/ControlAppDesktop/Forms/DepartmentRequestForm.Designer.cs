@@ -70,6 +70,7 @@
             this.dgvMyDepartmentRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMyDepartmentRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMyDepartmentRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMyDepartmentRequest.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvMyDepartmentRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvMyDepartmentRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMyDepartmentRequest.Location = new System.Drawing.Point(3, 16);
@@ -86,13 +87,14 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.takeToMeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(126, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
             // takeToMeToolStripMenuItem
             // 
             this.takeToMeToolStripMenuItem.Name = "takeToMeToolStripMenuItem";
-            this.takeToMeToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.takeToMeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.takeToMeToolStripMenuItem.Text = "Üstüne Al";
+            this.takeToMeToolStripMenuItem.Click += new System.EventHandler(this.takeToMeToolStripMenuItem_Click);
             // 
             // DepartmentRequestForm
             // 

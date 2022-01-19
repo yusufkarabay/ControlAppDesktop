@@ -36,6 +36,7 @@ namespace DataAccess.Concrete
                 if (dt.Rows.Count > 0)
                 {
                     requestDetails = new List<RequestDetail>();
+
                     foreach (DataRow dataRow in dt.Rows)
                     {
                         requestDetails.Add(new RequestDetail(
@@ -51,13 +52,10 @@ namespace DataAccess.Concrete
                         DateTime.Parse(dataRow["REQUESTTIME"].ToString()),
 
                         Guid.Parse(dataRow["DEPARTMENTID"].ToString()),
-                        $"{dataRow["DEPARTMENTNAME"]}",
+                          dataRow["DEPARTMENTNAME"].ToString(),
 
                         dataRow["REQUESTING"].ToString(),
-                        $"{dataRow["NAME"]}{dataRow["surname"]}",  
-                        
-                        dataRow["REQUESTED"].ToString(),
-                        $"{dataRow["NAME"]}{dataRow["surname"]}"));
+                        $"{dataRow["NAME"]}{dataRow["SURNAME"]}"));
 
 
                     }
@@ -98,11 +96,11 @@ namespace DataAccess.Concrete
                     new SqlParameter("@requestid", entity.RequestId),
                     new SqlParameter("@requesting", entity.Requesting),
                     new SqlParameter("@departmentid", entity.DepartmentId),
-                    new SqlParameter("@issend",entity.IsSend));
-                   // new SqlParameter("@requested", entity.Requested));
-               
-                    return"  Talep Başarıyla Oluşturulmuştur";
-              
+                    new SqlParameter("@issend", entity.IsSend));
+                // new SqlParameter("@requested", entity.Requested));
+
+                return "  Talep Başarıyla Oluşturulmuştur";
+
             }
             catch (Exception ex)
             {
@@ -152,9 +150,9 @@ namespace DataAccess.Concrete
         {
             throw new NotImplementedException();
         }
-       
 
-        public string Update(RequestDetail entity,string oldName)
+
+        public string Update(RequestDetail entity, string oldName)
         {
             throw new NotImplementedException();
         }
@@ -187,9 +185,9 @@ namespace DataAccess.Concrete
                     {
                         RequestDetail requestDetail = new RequestDetail(
                         (Guid)dataRow["REQUESTDETAILID"],
-                        (Guid)dataRow["REQUESTID"], 
+                        (Guid)dataRow["REQUESTID"],
                         dataRow["NAME"].ToString() + " " + dataRow["SURNAME"].ToString(),
-                        dataRow["REQUESTTITLE"].ToString(), 
+                        dataRow["REQUESTTITLE"].ToString(),
                         dataRow["REQUESTCONTENT"].ToString(),
                        (Guid)dataRow["DEPARTMENTID"]);
 
