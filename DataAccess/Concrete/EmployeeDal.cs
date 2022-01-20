@@ -26,28 +26,29 @@ namespace DataAccess.Concrete
         public string Add(Employee entity)
         {
             string result = null;
-
+            
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeCreate",
                     new SqlParameter("@tc", entity.Tc),
-                    new SqlParameter("name", entity.Name),
+                    new SqlParameter("@name", entity.Name),
                    new SqlParameter("@surname", entity.Surname),
                    new SqlParameter("@bdate", entity.Bdate),
                    new SqlParameter("@adress", entity.Adress),
                    new SqlParameter("@tel", entity.Tel),
                    new SqlParameter("@mail", entity.Mail),
-                   new SqlParameter("@departmentid", entity.DepartmentId),
-                   new SqlParameter("@authorityid", entity.AuthorityId));
+                   new SqlParameter("@password", entity.Password),
+                   new SqlParameter("@repassword", entity.RePassword));
 
                 if (isSuccess)
                 {
-                    return entity.Tc + " TC Kimlik Numaralı Personel Daha Önce Eklenmiştir";
+                    return entity.Name + " İsimli Personel Başarıyla Eklendi";
                 }
                 else
                 {
-                    return entity.Name + " İsimli Personel Başarıyla Eklendi";
+                    return entity.Tc + "Kimlik Numaralı Personel Bulunmaktadır";
                 }
+                
             }
             catch (Exception ex)
             {
@@ -488,8 +489,9 @@ namespace DataAccess.Concrete
                 {
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        string name, surname, departmentName, authorityName;
+                        string name, surname, departmentName, authorityName,firstPassword,rePassword;
                         Guid departmentId, authorityId;
+                        bool isAdmin, isDeleted;
 
                         name = dataRow["NAME"].ToString();
                         surname = dataRow["SURNAME"].ToString();
@@ -497,7 +499,13 @@ namespace DataAccess.Concrete
                         authorityName = dataRow["AUTHORITYNAME"].ToString();
                         departmentId = (Guid)dataRow["DEPARTMENTID"];
                         authorityId = (Guid)dataRow["AUTHORITYID"];
-                        infos = new object[] { tc, name, surname, departmentName, authorityName, departmentId, authorityId };
+                        firstPassword = dataRow["PASSWORD"].ToString();
+                        rePassword = dataRow["REPASSWORD"].ToString();
+                        isAdmin = Convert.ToBoolean(dataRow["ISADMIN"]);
+                        isDeleted = Convert.ToBoolean(dataRow["ISDELETED"]);
+
+
+                        infos = new object[] { tc, name, surname, departmentName, authorityName, departmentId, authorityId,isAdmin,isDeleted,firstPassword,rePassword };
                     }
                 }
             }

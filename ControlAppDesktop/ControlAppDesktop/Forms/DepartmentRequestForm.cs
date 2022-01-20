@@ -43,6 +43,8 @@ namespace ControlAppDesktop
                 dgvMyDepartmentRequest.Columns[7].Visible = false;
                 dgvMyDepartmentRequest.Columns[8].Visible = false;
                 dgvMyDepartmentRequest.Columns[11].Visible = false;
+                dgvMyDepartmentRequest.Columns[12].Visible = false;
+                dgvMyDepartmentRequest.Columns[13].Visible = false;
 
 
                 dgvMyDepartmentRequest.Columns["Requesting"].HeaderText = "Talep Eden";

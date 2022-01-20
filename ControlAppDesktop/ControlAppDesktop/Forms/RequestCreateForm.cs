@@ -151,8 +151,8 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Göndermek  İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            txtRequestTitle.Text = dgvNotRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
-            rtxtRequestContext.Text = dgvNotRequest.CurrentRow.Cells["REQUESTCONTENT"].Value.ToString();
+           dgvNotRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
+           dgvNotRequest.CurrentRow.Cells["REQUESTCONTENT"].Value.ToString();
 
             if (cbDepartment.Visible == false)
             {

@@ -140,14 +140,17 @@ namespace ControlAppDesktop.Forms
             if (txtbxInventorySeriNo.Text == "")
             {
                 MessageBox.Show("Seri Numarası Alanı Boş Bırakılamaz");
+                return;
             }
             else if (txtbxInventoryName.Text == "")
             {
                 MessageBox.Show("Envanter Adı Alanı Boş Bırakılamaz");
+                return;
             }
             else if (txtbxAmount.Text == "")
             {
                 MessageBox.Show("Envanter Miktarı Boş Bırakılamaz");
+                return;
             }
             else
             {

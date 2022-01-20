@@ -38,6 +38,7 @@ namespace ControlAppDesktop
                 MessageBox.Show("TC Kimlik Numarası Boş Geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
+
             if (txtPassword.Text.Trim() == "")
             {
                 MessageBox.Show("Şifre Boş Geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -64,6 +65,12 @@ namespace ControlAppDesktop
 
 
 
+        }
+
+        private void LnkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegisterForm registerForm= new RegisterForm();
+            registerForm.Show();
         }
     }
 }

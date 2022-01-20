@@ -16,11 +16,11 @@ namespace Business.Concrete
         string controlText;
         Request request;
         RequestDal requestDal;
-       List<Request> requestList;
+        List<Request> requestList;
         public RequestDetailManager()
         {
             requestDetailDal = RequestDetailDal.GetInstance();
-            requestDal=RequestDal.GetInstance();    
+            requestDal = RequestDal.GetInstance();
         }
         public List<RequestDetail> GetByDepartmentId(string procuderName, Guid departmentId)
         {
@@ -86,7 +86,7 @@ namespace Business.Concrete
         {
             try
             {
-                return requestDetailDal.GetByTc(procuderName,tc);
+                return requestDetailDal.GetByTc(procuderName, tc);
             }
             catch
             {
@@ -113,8 +113,8 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        
-            public string RequestTakeToMe(RequestDetail entity)
+
+        public string RequestTakeToMe(RequestDetail entity)
         {
             try
             {
@@ -123,8 +123,27 @@ namespace Business.Concrete
                     return " Üzerinize Almak İstediğiniz Talep Seçiniz";
 
                 }
-               
+
                 return requestDetailDal.RequestTakeToMe(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+
+        public string End(RequestDetail entity)
+        {
+            try
+            {
+                if (entity.RequestDetailId == null)
+                {
+                    return " Sonlandırmak İstediğiniz Talebi Seçiniz";
+
+                }
+
+                return requestDetailDal.End(entity);
             }
             catch (Exception ex)
             {
@@ -145,7 +164,7 @@ namespace Business.Concrete
                 {
                     return controlText;
                 }
-                return requestDetailDal.Update(entity,"");
+                return requestDetailDal.Update(entity, "");
             }
             catch (Exception ex)
             {

@@ -43,6 +43,30 @@ namespace ControlAppDesktop.Forms
 
         }
         //****************************
+        void GridDisplay()
+        {
+            if (dgvEmployee.Rows.Count>0)
+            {
+                dgvEmployee.Columns[0].Visible = false;
+                dgvEmployee.Columns[1].Visible = false;
+                dgvEmployee.Columns[2].Visible = false;
+                dgvEmployee.Columns[3].Visible = false;
+                dgvEmployee.Columns[12].Visible = false;
+                dgvEmployee.Columns[13].Visible = false;
+                dgvEmployee.Columns[14].Visible = false;
+
+                dgvEmployee.Columns[4].HeaderText = "T.C. Kimlik No";
+                dgvEmployee.Columns[5].HeaderText = "Ad";
+                dgvEmployee.Columns[6].HeaderText = "Soyad";
+                dgvEmployee.Columns[7].HeaderText = "Doğum Tarihi";
+                dgvEmployee.Columns[8].HeaderText = "Adres";
+                dgvEmployee.Columns[9].HeaderText = "Telefon";
+                dgvEmployee.Columns[10].HeaderText = "Mail";
+                dgvEmployee.Columns[11].HeaderText = "Departman";
+            }
+           
+
+        }
         void employeeList()
         {
             dgvEmployee.DataSource = employeeManager.GetAll();
@@ -50,15 +74,10 @@ namespace ControlAppDesktop.Forms
             {
                 dgvEmployee.Rows[0].Selected = true;
             }
-
-            dgvEmployee.Columns[0].Visible = false;
-            dgvEmployee.Columns[1].Visible = false;
-            dgvEmployee.Columns[2].Visible = false;
-            dgvEmployee.Columns[3].Visible = false;
-            dgvEmployee.Columns[13].Visible = false;
-            dgvEmployee.Columns[14].Visible = false;
+            GridDisplay();
 
         }
+       
         void fillInfos()
         {
             lblTcInfo.Text = employee.Tc;

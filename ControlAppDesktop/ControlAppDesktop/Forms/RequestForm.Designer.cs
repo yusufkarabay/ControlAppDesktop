@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,27 +42,32 @@
             this.tlblTime = new System.Windows.Forms.Label();
             this.grpRequest = new System.Windows.Forms.GroupBox();
             this.dgvRequest = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.requestEndToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbRequestRead = new System.Windows.Forms.GroupBox();
             this.richTxtRequestContent = new System.Windows.Forms.RichTextBox();
             this.txtRequested = new System.Windows.Forms.TextBox();
             this.txtRequestTitle = new System.Windows.Forms.TextBox();
             this.requested = new System.Windows.Forms.Label();
-            this.requestDetail = new System.Windows.Forms.Label();
+            this.lblrequestDetail = new System.Windows.Forms.Label();
             this.requestName = new System.Windows.Forms.Label();
             this.grpAction = new System.Windows.Forms.GroupBox();
             this.btnCompleteRequest = new System.Windows.Forms.Button();
+            this.btnDepartmentRequest = new System.Windows.Forms.Button();
             this.btnMyRequest = new System.Windows.Forms.Button();
             this.btnCreateRequest = new System.Windows.Forms.Button();
             this.btnWeb = new System.Windows.Forms.Button();
             this.btnRequestRefresh = new System.Windows.Forms.Button();
-            this.btnRequestEnd = new System.Windows.Forms.Button();
             this.lblCount = new System.Windows.Forms.Label();
             this.lblCountInfo = new System.Windows.Forms.Label();
-            this.btnDepartmentRequest = new System.Windows.Forms.Button();
+            this.lblEndText = new System.Windows.Forms.Label();
+            this.rtbEndText = new System.Windows.Forms.RichTextBox();
+            this.btnEndRequest = new System.Windows.Forms.Button();
             this.grpInfo.SuspendLayout();
             this.grpRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.gbRequestRead.SuspendLayout();
             this.grpAction.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,7 +172,7 @@
             // grpRequest
             // 
             this.grpRequest.Controls.Add(this.dgvRequest);
-            this.grpRequest.Location = new System.Drawing.Point(82, 191);
+            this.grpRequest.Location = new System.Drawing.Point(82, 229);
             this.grpRequest.Name = "grpRequest";
             this.grpRequest.Size = new System.Drawing.Size(1014, 272);
             this.grpRequest.TabIndex = 2;
@@ -183,6 +189,7 @@
             this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRequest.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRequest.Location = new System.Drawing.Point(3, 16);
@@ -193,27 +200,43 @@
             this.dgvRequest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRequest.Size = new System.Drawing.Size(1008, 253);
             this.dgvRequest.TabIndex = 0;
+            this.dgvRequest.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRequest_CellMouseClick);
             this.dgvRequest.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRequest_CellMouseDoubleClick);
             // 
-            // groupBox1
+            // contextMenuStrip1
             // 
-            this.groupBox1.Controls.Add(this.richTxtRequestContent);
-            this.groupBox1.Controls.Add(this.txtRequested);
-            this.groupBox1.Controls.Add(this.txtRequestTitle);
-            this.groupBox1.Controls.Add(this.requested);
-            this.groupBox1.Controls.Add(this.requestDetail);
-            this.groupBox1.Controls.Add(this.requestName);
-            this.groupBox1.Location = new System.Drawing.Point(85, 482);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(538, 240);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Talep Bilgileri";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.requestEndToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 26);
+            // 
+            // requestEndToolStripMenuItem
+            // 
+            this.requestEndToolStripMenuItem.Name = "requestEndToolStripMenuItem";
+            this.requestEndToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.requestEndToolStripMenuItem.Text = "İşi Sonlandır";
+            this.requestEndToolStripMenuItem.Click += new System.EventHandler(this.requestEndToolStripMenuItem_Click);
+            // 
+            // gbRequestRead
+            // 
+            this.gbRequestRead.Controls.Add(this.richTxtRequestContent);
+            this.gbRequestRead.Controls.Add(this.txtRequested);
+            this.gbRequestRead.Controls.Add(this.txtRequestTitle);
+            this.gbRequestRead.Controls.Add(this.requested);
+            this.gbRequestRead.Controls.Add(this.lblrequestDetail);
+            this.gbRequestRead.Controls.Add(this.requestName);
+            this.gbRequestRead.Location = new System.Drawing.Point(85, 520);
+            this.gbRequestRead.Name = "gbRequestRead";
+            this.gbRequestRead.Size = new System.Drawing.Size(538, 198);
+            this.gbRequestRead.TabIndex = 3;
+            this.gbRequestRead.TabStop = false;
+            this.gbRequestRead.Text = "Talep Bilgileri";
             // 
             // richTxtRequestContent
             // 
             this.richTxtRequestContent.Location = new System.Drawing.Point(183, 99);
             this.richTxtRequestContent.Name = "richTxtRequestContent";
+            this.richTxtRequestContent.ReadOnly = true;
             this.richTxtRequestContent.Size = new System.Drawing.Size(282, 96);
             this.richTxtRequestContent.TabIndex = 5;
             this.richTxtRequestContent.Text = "";
@@ -224,6 +247,7 @@
             // 
             this.txtRequested.Location = new System.Drawing.Point(183, 64);
             this.txtRequested.Name = "txtRequested";
+            this.txtRequested.ReadOnly = true;
             this.txtRequested.Size = new System.Drawing.Size(282, 20);
             this.txtRequested.TabIndex = 4;
             this.txtRequested.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequested_KeyDown);
@@ -233,6 +257,7 @@
             // 
             this.txtRequestTitle.Location = new System.Drawing.Point(183, 27);
             this.txtRequestTitle.Name = "txtRequestTitle";
+            this.txtRequestTitle.ReadOnly = true;
             this.txtRequestTitle.Size = new System.Drawing.Size(282, 20);
             this.txtRequestTitle.TabIndex = 3;
             this.txtRequestTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequestTitle_KeyDown);
@@ -247,14 +272,14 @@
             this.requested.TabIndex = 2;
             this.requested.Text = "Talep Eden";
             // 
-            // requestDetail
+            // lblrequestDetail
             // 
-            this.requestDetail.AutoSize = true;
-            this.requestDetail.Location = new System.Drawing.Point(16, 102);
-            this.requestDetail.Name = "requestDetail";
-            this.requestDetail.Size = new System.Drawing.Size(87, 13);
-            this.requestDetail.TabIndex = 1;
-            this.requestDetail.Text = "Talep Açıklaması";
+            this.lblrequestDetail.AutoSize = true;
+            this.lblrequestDetail.Location = new System.Drawing.Point(16, 102);
+            this.lblrequestDetail.Name = "lblrequestDetail";
+            this.lblrequestDetail.Size = new System.Drawing.Size(87, 13);
+            this.lblrequestDetail.TabIndex = 1;
+            this.lblrequestDetail.Text = "Talep Açıklaması";
             // 
             // requestName
             // 
@@ -268,12 +293,12 @@
             // grpAction
             // 
             this.grpAction.Controls.Add(this.btnCompleteRequest);
+            this.grpAction.Controls.Add(this.btnDepartmentRequest);
             this.grpAction.Controls.Add(this.btnMyRequest);
             this.grpAction.Controls.Add(this.btnCreateRequest);
             this.grpAction.Controls.Add(this.btnWeb);
             this.grpAction.Controls.Add(this.btnRequestRefresh);
-            this.grpAction.Controls.Add(this.btnRequestEnd);
-            this.grpAction.Location = new System.Drawing.Point(687, 482);
+            this.grpAction.Location = new System.Drawing.Point(453, 12);
             this.grpAction.Name = "grpAction";
             this.grpAction.Size = new System.Drawing.Size(245, 211);
             this.grpAction.TabIndex = 4;
@@ -288,6 +313,17 @@
             this.btnCompleteRequest.TabIndex = 5;
             this.btnCompleteRequest.Text = "Tamamlanan Talepler";
             this.btnCompleteRequest.UseVisualStyleBackColor = true;
+            this.btnCompleteRequest.Click += new System.EventHandler(this.btnCompleteRequest_Click);
+            // 
+            // btnDepartmentRequest
+            // 
+            this.btnDepartmentRequest.Location = new System.Drawing.Point(13, 24);
+            this.btnDepartmentRequest.Name = "btnDepartmentRequest";
+            this.btnDepartmentRequest.Size = new System.Drawing.Size(168, 23);
+            this.btnDepartmentRequest.TabIndex = 13;
+            this.btnDepartmentRequest.Text = "Departmana Gelen Talepler";
+            this.btnDepartmentRequest.UseVisualStyleBackColor = true;
+            this.btnDepartmentRequest.Click += new System.EventHandler(this.btnDepartmentRequest_Click);
             // 
             // btnMyRequest
             // 
@@ -325,23 +361,14 @@
             this.btnRequestRefresh.Name = "btnRequestRefresh";
             this.btnRequestRefresh.Size = new System.Drawing.Size(176, 23);
             this.btnRequestRefresh.TabIndex = 0;
-            this.btnRequestRefresh.Text = "Listeyi Yenile";
+            this.btnRequestRefresh.Text = "Aktif Talepler";
             this.btnRequestRefresh.UseVisualStyleBackColor = true;
             this.btnRequestRefresh.Click += new System.EventHandler(this.btnRequestRefresh_Click);
-            // 
-            // btnRequestEnd
-            // 
-            this.btnRequestEnd.Location = new System.Drawing.Point(13, 19);
-            this.btnRequestEnd.Name = "btnRequestEnd";
-            this.btnRequestEnd.Size = new System.Drawing.Size(176, 23);
-            this.btnRequestEnd.TabIndex = 0;
-            this.btnRequestEnd.Text = "İşi Bitir";
-            this.btnRequestEnd.UseVisualStyleBackColor = true;
             // 
             // lblCount
             // 
             this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(427, 37);
+            this.lblCount.Location = new System.Drawing.Point(780, 504);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(132, 13);
             this.lblCount.TabIndex = 11;
@@ -350,31 +377,53 @@
             // lblCountInfo
             // 
             this.lblCountInfo.AutoSize = true;
-            this.lblCountInfo.Location = new System.Drawing.Point(667, 37);
+            this.lblCountInfo.Location = new System.Drawing.Point(1047, 504);
             this.lblCountInfo.Name = "lblCountInfo";
             this.lblCountInfo.Size = new System.Drawing.Size(19, 13);
             this.lblCountInfo.TabIndex = 12;
             this.lblCountInfo.Text = "00";
             // 
-            // btnDepartmentRequest
+            // lblEndText
             // 
-            this.btnDepartmentRequest.Location = new System.Drawing.Point(729, 115);
-            this.btnDepartmentRequest.Name = "btnDepartmentRequest";
-            this.btnDepartmentRequest.Size = new System.Drawing.Size(168, 23);
-            this.btnDepartmentRequest.TabIndex = 13;
-            this.btnDepartmentRequest.Text = "Departmana Gelen Talepler";
-            this.btnDepartmentRequest.UseVisualStyleBackColor = true;
-            this.btnDepartmentRequest.Click += new System.EventHandler(this.btnDepartmentRequest_Click);
+            this.lblEndText.AutoSize = true;
+            this.lblEndText.Location = new System.Drawing.Point(721, 54);
+            this.lblEndText.Name = "lblEndText";
+            this.lblEndText.Size = new System.Drawing.Size(56, 13);
+            this.lblEndText.TabIndex = 15;
+            this.lblEndText.Text = "Açıklama :";
+            this.lblEndText.Visible = false;
+            // 
+            // rtbEndText
+            // 
+            this.rtbEndText.Location = new System.Drawing.Point(783, 47);
+            this.rtbEndText.Name = "rtbEndText";
+            this.rtbEndText.Size = new System.Drawing.Size(236, 81);
+            this.rtbEndText.TabIndex = 16;
+            this.rtbEndText.Text = "";
+            this.rtbEndText.Visible = false;
+            // 
+            // btnEndRequest
+            // 
+            this.btnEndRequest.Location = new System.Drawing.Point(915, 150);
+            this.btnEndRequest.Name = "btnEndRequest";
+            this.btnEndRequest.Size = new System.Drawing.Size(75, 23);
+            this.btnEndRequest.TabIndex = 17;
+            this.btnEndRequest.Text = "Bitir";
+            this.btnEndRequest.UseVisualStyleBackColor = true;
+            this.btnEndRequest.Visible = false;
+            this.btnEndRequest.Click += new System.EventHandler(this.btnEndRequest_Click);
             // 
             // RequestForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
-            this.Controls.Add(this.btnDepartmentRequest);
+            this.Controls.Add(this.btnEndRequest);
+            this.Controls.Add(this.rtbEndText);
+            this.Controls.Add(this.lblEndText);
             this.Controls.Add(this.lblCountInfo);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.grpAction);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbRequestRead);
             this.Controls.Add(this.grpRequest);
             this.Controls.Add(this.tlblTime);
             this.Controls.Add(this.grpInfo);
@@ -386,8 +435,9 @@
             this.grpInfo.PerformLayout();
             this.grpRequest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.gbRequestRead.ResumeLayout(false);
+            this.gbRequestRead.PerformLayout();
             this.grpAction.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -408,16 +458,15 @@
         private System.Windows.Forms.Label department;
         private System.Windows.Forms.GroupBox grpRequest;
         private System.Windows.Forms.DataGridView dgvRequest;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbRequestRead;
         private System.Windows.Forms.Label requested;
-        private System.Windows.Forms.Label requestDetail;
+        private System.Windows.Forms.Label lblrequestDetail;
         private System.Windows.Forms.Label requestName;
         private System.Windows.Forms.RichTextBox richTxtRequestContent;
         private System.Windows.Forms.TextBox txtRequested;
         private System.Windows.Forms.TextBox txtRequestTitle;
         private System.Windows.Forms.GroupBox grpAction;
         private System.Windows.Forms.Button btnRequestRefresh;
-        private System.Windows.Forms.Button btnRequestEnd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnWeb;
         private System.Windows.Forms.Button btnMyRequest;
@@ -426,5 +475,10 @@
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label lblCountInfo;
         private System.Windows.Forms.Button btnDepartmentRequest;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem requestEndToolStripMenuItem;
+        private System.Windows.Forms.Label lblEndText;
+        private System.Windows.Forms.RichTextBox rtbEndText;
+        private System.Windows.Forms.Button btnEndRequest;
     }
 }

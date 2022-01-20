@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Entities;
 
 namespace ControlAppDesktop.Forms
 {
@@ -17,10 +18,13 @@ namespace ControlAppDesktop.Forms
         RequestDetailManager requestDetailManager;
         public object[] infos;
         string tc;
+        RequestDetail requestDetail;
+        Request request;
         public RequestForm()
         {
             InitializeComponent();
             requestDetailManager = RequestDetailManager.GetInstance();
+
         }
         void Fillİnfos()
         {
@@ -34,28 +38,21 @@ namespace ControlAppDesktop.Forms
         void RequestForMeList()
         {
             dgvRequest.DataSource = requestDetailManager.GetAll("MyRequestList", tc);
-            
+
             DataGridDisplay();
-            lblCountInfo.Text =dgvRequest.RowCount.ToString();
-            if (dgvRequest.RowCount > 0)
-            {
-                dgvRequest.Columns[0].Visible = false;
-                dgvRequest.Columns[1].Visible = false;
-                dgvRequest.Columns[2].Visible = false;
-                dgvRequest.Columns[3].Visible = false;
-                dgvRequest.Columns[7].Visible = false;
-                dgvRequest.Columns[8].Visible = false;
-                dgvRequest.Columns[9].Visible = false;
-                dgvRequest.Columns[11].Visible = false;
-                dgvRequest.Columns["RequestTitle"].HeaderText = "Talep Başlığı";
-                dgvRequest.Columns["RequestContent"].HeaderText = "Talep Açıklaması";
-                dgvRequest.Columns["RequestingName"].HeaderText = "Talep Eden";
-                dgvRequest.Columns["RequestTime"].HeaderText = "Talep Zamanı";
-            }
+            lblCountInfo.Text = dgvRequest.RowCount.ToString();
+            
         }
         void MyRequest()
         {
             dgvRequest.DataSource = requestDetailManager.GetAll("MyRequestingList", tc);
+            DataGridDisplay();
+            lblCountInfo.Text = dgvRequest.RowCount.ToString();
+        }
+        void MyRequestEnded()
+        {
+            
+            dgvRequest.DataSource = requestDetailManager.GetAll("MyRequestEnded", tc);
             DataGridDisplay();
             lblCountInfo.Text = dgvRequest.RowCount.ToString();
         }
@@ -79,6 +76,8 @@ namespace ControlAppDesktop.Forms
                 dgvRequest.Columns[8].Visible = false;
                 dgvRequest.Columns[9].Visible = false;
                 dgvRequest.Columns[11].Visible = false;
+                dgvRequest.Columns[12].Visible = false;
+                dgvRequest.Columns[13].Visible = false;
                 dgvRequest.Columns["RequestTitle"].HeaderText = "Talep Başlığı";
                 dgvRequest.Columns["RequestContent"].HeaderText = "Talep Açıklaması";
                 dgvRequest.Columns["RequestingName"].HeaderText = "Talep Eden";
@@ -100,6 +99,10 @@ namespace ControlAppDesktop.Forms
         }
         private void btnRequestRefresh_Click(object sender, EventArgs e)
         {
+            if (dgvRequest.ContextMenuStrip == null)
+            {
+                dgvRequest.ContextMenuStrip = contextMenuStrip1;
+            }
             RequestForMeList();
         }
         private void btnWeb_Click(object sender, EventArgs e)
@@ -110,9 +113,9 @@ namespace ControlAppDesktop.Forms
                 string content = Html_Out(dgvRequest);
                 string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 File.WriteAllText(desktopPath + "\\" + infos[1] + " " + infos[2] + " adına gelen talepler.html", content);
-               
+
             }
-           
+
 
 
         }
@@ -141,58 +144,116 @@ namespace ControlAppDesktop.Forms
         }
         private void btnMyRequest_Click(object sender, EventArgs e)
         {
+            if (dgvRequest.ContextMenuStrip == contextMenuStrip1)
+            {
+                dgvRequest.ContextMenuStrip = null;
+            }
             grpRequest.Text = "Taleplerim";
             MyRequest();
             dgvRequest.Columns["RequestingName"].HeaderText = "Talep Edilen";
         }
-
         private void txtRequestTitle_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void txtRequested_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void richTxtRequestContent_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
         private void richTxtRequestContent_KeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
         }
-
         private void txtRequested_KeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
         }
-
         private void txtRequestTitle_KeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
         }
-
         private void btnCreateRequest_Click(object sender, EventArgs e)
         {
             RequestCreateForm requestCreateForm = new RequestCreateForm();
             requestCreateForm.infos = infos;
             requestCreateForm.Show();
         }
-
         private void btnDepartmentRequest_Click(object sender, EventArgs e)
         {
-            DepartmentRequestForm departmentRequestForm = new DepartmentRequestForm();  
+            DepartmentRequestForm departmentRequestForm = new DepartmentRequestForm();
             departmentRequestForm.infos = infos;
             departmentRequestForm.Show();
         }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             RequestForMeList();
+        }
+        private void requestEndToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvRequest.CurrentRow == null)
+            {
+                MessageBox.Show("Sonlandırmak İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (lblEndText.Visible == false &
+            rtbEndText.Visible == false &
+            btnEndRequest.Visible == false)
+            {
+                lblEndText.Visible = true;
+                rtbEndText.Visible = true;
+                btnEndRequest.Visible = true;
+            }
+           
+
+        }
+
+        void RequestEnd()
+        {
+            requestDetail = new RequestDetail(
+               Guid.Parse(dgvRequest.CurrentRow.Cells["RequestDetailId"].Value.ToString()),
+               rtbEndText.Text.ToString(),
+               Convert.ToBoolean(dgvRequest.CurrentRow.Cells[12].Value = true));
+
+            MessageBox.Show(requestDetailManager.End(requestDetail));
+        }
+
+        private void btnEndRequest_Click(object sender, EventArgs e)
+        {
+            RequestEnd();
+            if (lblEndText.Visible == true &
+           rtbEndText.Visible == true &
+           btnEndRequest.Visible == true)
+            {
+                lblEndText.Visible = false;
+                rtbEndText.Visible = false;
+                btnEndRequest.Visible = false;
+            }
+            RequestForMeList();
+
+        }
+
+        private void btnCompleteRequest_Click(object sender, EventArgs e)
+        {
+            if (dgvRequest.ContextMenuStrip == contextMenuStrip1)
+            {
+                dgvRequest.ContextMenuStrip = null;
+            }
+            grpRequest.Text = "Tamamlanan Talepler";
+            DataGridDisplay();
+            MyRequestEnded();
+
+        }
+
+        private void dgvRequest_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            txtRequestTitle.Text = dgvRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
+            richTxtRequestContent.Text = dgvRequest.CurrentRow.Cells["REQUESTCONTENT"].Value.ToString();
+            txtRequested.Text = dgvRequest.CurrentRow.Cells["RequestingName"].Value.ToString();
         }
     }
 }

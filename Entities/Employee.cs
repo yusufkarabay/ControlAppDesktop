@@ -10,21 +10,22 @@ namespace Entities
     {
         Guid id;
         string tc;
-        string name;
-        string employeeName;
-        string employeeSurname;
-
+        string name;       
         string surname;
+        string password;
+        string rePassword;
         DateTime bdate;
         string adress;
         string tel;
         string mail;
+
         Guid departmentId;
         Guid authorityId;
         string departmentName;
         string authorityName;
-
-        string employeeFullName;
+        string employeeFullName;        
+        string employeeName;
+        string employeeSurname;
 
         public Employee() { }
         public string FullName
@@ -34,9 +35,9 @@ namespace Entities
                 return employeeName + " " + employeeSurname;
             }
         }
-        public Employee(string tc,string employeeName, string employeeSurname)
+        public Employee(string tc, string employeeName, string employeeSurname)
         {
-            this.tc= tc;
+            this.tc = tc;
             this.employeeName = employeeName;
             this.employeeSurname = employeeSurname;
         }
@@ -140,7 +141,7 @@ namespace Entities
 
         }
         public Employee(
-            Guid id, 
+            Guid id,
             Guid departmentId,
             Guid authorityId,
             string tc,
@@ -149,7 +150,7 @@ namespace Entities
             DateTime bdate,
             string adress,
             string tel,
-            string mail, 
+            string mail,
             string departmentName,
             string authorityName
 
@@ -168,11 +169,22 @@ namespace Entities
             this.authorityId = authorityId;
             this.authorityName = authorityName;
         }
-       
-       
 
+        public Employee( string tc, string name, string surname, string password, string rePassword, DateTime bdate, string adress, string tel, string mail)
+        {
+            
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.password = password;
+            this.rePassword = rePassword;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+        }
 
-    public Guid Id { get => id; set => id = value; }
+        public Guid Id { get => id; set => id = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }
         public Guid AuthorityId { get => authorityId; set => authorityId = value; }
         public string Tc { get => tc; set => tc = value; }
@@ -186,7 +198,8 @@ namespace Entities
         public string AuthorityName { get => authorityName; set => authorityName = value; }
         public string EmployeeName { get => employeeName; set => employeeName = value; }
         public string EmployeeSurname { get => employeeSurname; set => employeeSurname = value; }
-      
-
+        public string EmployeeFullName { get => employeeFullName; set => employeeFullName = value; }
+        public string Password { get => password; set => password = value; }
+        public string RePassword { get => rePassword; set => rePassword = value; }
     }
 }

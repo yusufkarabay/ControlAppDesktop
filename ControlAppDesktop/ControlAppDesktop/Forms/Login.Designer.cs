@@ -95,6 +95,7 @@
             this.LnkSignUp.TabIndex = 6;
             this.LnkSignUp.TabStop = true;
             this.LnkSignUp.Text = "Kaydol";
+            this.LnkSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkSignUp_LinkClicked);
             // 
             // mtxtTC
             // 

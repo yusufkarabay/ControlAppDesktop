@@ -139,7 +139,6 @@ namespace DataAccess.Concrete
             return result;
         }
 
-
         public string RequestTakeToMe(RequestDetail entity)
         {
             string result = null;
@@ -150,6 +149,32 @@ namespace DataAccess.Concrete
                 if (isSuccess)
                 {
                     result = "Talep  Başarı İle Size Teslim Edildi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
+        }
+        public string End(RequestDetail entity)
+        {
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("RequestEnd",
+                    new SqlParameter("@requestdetailid", entity.RequestDetailId),
+                    new SqlParameter("@requestendtext", entity.RequestEndText),
+                    new SqlParameter("@isfinished", entity.IsEnd));
+                if (isSuccess)
+                {
+                    result = "Talep  Başarı İle Sonlandırılmıştır";
                 }
                 else
                 {

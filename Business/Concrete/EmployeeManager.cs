@@ -52,10 +52,7 @@ namespace Business.Concrete
             {
                 return " Adress Bilgisi 200 karakterden fazla Olamaz";
             }
-            if (employee.Tel.Length > 10)
-            {
-                return " Telefon Numarasını Başında Sıfır Olmadan 10 Hane Şeklinde Giriniz";
-            }
+           
             if (employee.DepartmentId == null)
             {
                 return " Personel İçin Lütfen Departman Seçiniz";

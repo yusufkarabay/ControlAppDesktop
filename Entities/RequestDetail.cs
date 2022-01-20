@@ -20,7 +20,17 @@ namespace Entities
         string departmentName;
         DateTime requestTime;
         bool isSend;
+        bool isEnd;
+        string requestEndText;
 
+        public RequestDetail(Guid requestDetailId, string requestEndText, bool isEnd)
+        {
+            this.requestDetailId = requestDetailId;
+            this.requestEndText = requestEndText;
+            this.isEnd = isEnd; 
+
+
+        }
         public RequestDetail()
         {
 
@@ -28,7 +38,7 @@ namespace Entities
         public RequestDetail(Guid requestId, string requested)
         {
             this.requestId = requestId;
-            this.requested = requested; 
+            this.requested = requested;
         }
         public RequestDetail(Guid requestId, bool isSend)
         {
@@ -73,11 +83,11 @@ namespace Entities
             Guid requestId,
             string requestTitle,
             string requestContent,
-            DateTime requestTime, 
+            DateTime requestTime,
             Guid departmentId,
-            string departmentName, 
+            string departmentName,
             string requesting,
-            string requestingName )
+            string requestingName)
 
         {
             this.departmentName = departmentName;
@@ -89,7 +99,7 @@ namespace Entities
             this.requestTitle = requestTitle;
             this.departmentId = departmentId;
             this.requesting = requesting;
-            
+
         }
         // isim birleştirme için kulllanılabilir
         public RequestDetail(
@@ -123,7 +133,7 @@ namespace Entities
             Guid requestId,
             string requestTitle,
             string requestContent,
-            DateTime requestTime,            
+            DateTime requestTime,
             string departmentName,
             string requesting,
             string requestingName)
@@ -136,7 +146,7 @@ namespace Entities
             this.requestingName = requestingName;
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
-           
+
             this.requesting = requesting;
         }
         public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
@@ -153,7 +163,7 @@ namespace Entities
         }
 
         public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
-           DateTime requestTime,Guid departmentId)
+           DateTime requestTime, Guid departmentId)
         {
             this.requestDetailId = requestDetailId;
             this.requestId = requestId;
@@ -185,5 +195,7 @@ namespace Entities
         public string DepartmentName { get => departmentName; set => departmentName = value; }
         public DateTime RequestTime { get => requestTime; set => requestTime = value; }
         public string RequestedName { get => requestedName; set => requestedName = value; }
+        public bool IsEnd { get => isEnd; set => isEnd = value; }
+        public string RequestEndText { get => requestEndText; set => requestEndText = value; }
     }
 }
