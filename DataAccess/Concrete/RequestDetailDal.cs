@@ -217,6 +217,7 @@ namespace DataAccess.Concrete
                         dataRow["NAME"].ToString() + " " + dataRow["SURNAME"].ToString(),
                         dataRow["REQUESTTITLE"].ToString(),
                         dataRow["REQUESTCONTENT"].ToString(),
+                        DateTime.Parse(dataRow["REQUESTTIME"].ToString()),
                        (Guid)dataRow["DEPARTMENTID"]);
 
                         list.Add(requestDetail);

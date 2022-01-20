@@ -35,14 +35,14 @@ namespace ControlAppDesktop
                Guid.Parse(infos[5].ToString()));
             if (dgvMyDepartmentRequest.Rows.Count > 0)
             {
-                // dgvMyDepartmentRequest.Columns[0].Visible = false;
-                //dgvMyDepartmentRequest.Columns[1].Visible = false;
-                //dgvMyDepartmentRequest.Columns[2].Visible = false;
+                dgvMyDepartmentRequest.Columns[0].Visible = false;
+                dgvMyDepartmentRequest.Columns[1].Visible = false;
+                dgvMyDepartmentRequest.Columns[2].Visible = false;
 
-                //dgvMyDepartmentRequest.Columns[3].Visible = false;
-                //dgvMyDepartmentRequest.Columns[7].Visible = false;
-                //dgvMyDepartmentRequest.Columns[8].Visible = false;
-                //dgvMyDepartmentRequest.Columns[11].Visible = false;
+                dgvMyDepartmentRequest.Columns[3].Visible = false;
+                dgvMyDepartmentRequest.Columns[7].Visible = false;
+                dgvMyDepartmentRequest.Columns[8].Visible = false;
+                dgvMyDepartmentRequest.Columns[11].Visible = false;
 
 
                 dgvMyDepartmentRequest.Columns["Requesting"].HeaderText = "Talep Eden";
@@ -67,6 +67,11 @@ namespace ControlAppDesktop
         }
         void requestToTakeMe()
         {
+            if (dgvMyDepartmentRequest.CurrentRow == null)
+            {
+                MessageBox.Show("Üstüne Almak İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             DialogResult dialogResult = MessageBox.Show("Seçili Görevi Üzerinize Almak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -77,6 +82,7 @@ namespace ControlAppDesktop
                infos[0].ToString());
                 MessageBox.Show(requestDetailManager.RequestTakeToMe(requestDetail));
             }
+            takeToMyDepartmentRequest();
         }
 
 

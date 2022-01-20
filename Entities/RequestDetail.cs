@@ -153,7 +153,7 @@ namespace Entities
         }
 
         public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
-           Guid departmentId)
+           DateTime requestTime,Guid departmentId)
         {
             this.requestDetailId = requestDetailId;
             this.requestId = requestId;
@@ -161,6 +161,7 @@ namespace Entities
             this.requestContent = requestContent;
             this.requestTitle = requestTitle;
             this.departmentId = departmentId;
+            this.requestTime = requestTime;
         }
 
         public RequestDetail(string requestContent, string requestTitle, string requesting)
