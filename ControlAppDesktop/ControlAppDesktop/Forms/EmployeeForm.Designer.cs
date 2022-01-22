@@ -64,6 +64,8 @@
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnPassiveEmploye = new System.Windows.Forms.Button();
+            this.btnActiveEmployee = new System.Windows.Forms.Button();
             this.grpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -79,7 +81,7 @@
             this.grpEmployee.Size = new System.Drawing.Size(1014, 272);
             this.grpEmployee.TabIndex = 3;
             this.grpEmployee.TabStop = false;
-            this.grpEmployee.Text = "Personel Listesi";
+            this.grpEmployee.Text = "Çalışan Personel Listesi";
             // 
             // dgvEmployee
             // 
@@ -285,9 +287,9 @@
             // 
             // btnEmployeeAdd
             // 
-            this.btnEmployeeAdd.Location = new System.Drawing.Point(276, 46);
+            this.btnEmployeeAdd.Location = new System.Drawing.Point(121, 23);
             this.btnEmployeeAdd.Name = "btnEmployeeAdd";
-            this.btnEmployeeAdd.Size = new System.Drawing.Size(92, 23);
+            this.btnEmployeeAdd.Size = new System.Drawing.Size(231, 23);
             this.btnEmployeeAdd.TabIndex = 5;
             this.btnEmployeeAdd.Text = "Personel Ekle";
             this.btnEmployeeAdd.UseVisualStyleBackColor = true;
@@ -427,10 +429,32 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "yönetici testii";
             // 
+            // btnPassiveEmploye
+            // 
+            this.btnPassiveEmploye.Location = new System.Drawing.Point(959, 285);
+            this.btnPassiveEmploye.Name = "btnPassiveEmploye";
+            this.btnPassiveEmploye.Size = new System.Drawing.Size(137, 23);
+            this.btnPassiveEmploye.TabIndex = 13;
+            this.btnPassiveEmploye.Text = "Ayrılmış Personeller";
+            this.btnPassiveEmploye.UseVisualStyleBackColor = true;
+            this.btnPassiveEmploye.Click += new System.EventHandler(this.btnPassiveEmploye_Click);
+            // 
+            // btnActiveEmployee
+            // 
+            this.btnActiveEmployee.Location = new System.Drawing.Point(764, 285);
+            this.btnActiveEmployee.Name = "btnActiveEmployee";
+            this.btnActiveEmployee.Size = new System.Drawing.Size(112, 23);
+            this.btnActiveEmployee.TabIndex = 14;
+            this.btnActiveEmployee.Text = "Çalışan Personeller";
+            this.btnActiveEmployee.UseVisualStyleBackColor = true;
+            this.btnActiveEmployee.Click += new System.EventHandler(this.btnActiveEmployee_Click);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.Controls.Add(this.btnActiveEmployee);
+            this.Controls.Add(this.btnPassiveEmploye);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbDepartment);
@@ -492,5 +516,7 @@
         private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPassiveEmploye;
+        private System.Windows.Forms.Button btnActiveEmployee;
     }
 }

@@ -58,6 +58,8 @@ namespace ControlAppDesktop.Forms
                 dgvEmployee.Columns[16].Visible = false;
                 dgvEmployee.Columns[17].Visible = false;
                 dgvEmployee.Columns[18].Visible = false;
+                dgvEmployee.Columns[19].Visible = false;
+
 
 
 
@@ -357,6 +359,11 @@ namespace ControlAppDesktop.Forms
             }
             else if (rbDepartment.Checked == true)
             {
+                if (cbDepartment.SelectedValue==null)
+                {
+                    MessageBox.Show("Lütfen Departman Seçiniz","Uyarı",MessageBoxButtons.OK);
+                    return;
+                }
                 getEmployeeByDepartment();
                 if (dgvEmployee.Rows.Count < 1)
                 {
@@ -390,6 +397,26 @@ namespace ControlAppDesktop.Forms
         private void txtbxSearchEmloyee_MouseClick(object sender, MouseEventArgs e)
         {
             txtbxSearchEmloyee.Text = "";
+        }
+        void employeePassiveList()
+        {
+            dgvEmployee.DataSource = employeeManager.EmployeePassiveList();
+            if (dgvEmployee.Rows.Count > 0)
+            {
+                dgvEmployee.Rows[0].Selected = true;
+            }
+            GridDisplay();
+        }
+
+        private void btnPassiveEmploye_Click(object sender, EventArgs e)
+        {
+            employeePassiveList();
+        }
+
+        private void btnActiveEmployee_Click(object sender, EventArgs e)
+        {
+            employeeList();
+            
         }
     }
 }

@@ -238,6 +238,17 @@ namespace Business.Concrete
                 return new List<Employee>();
             }
         }
+        public List<Employee> EmployeePassiveList()
+        {
+            try
+            {
+                return employeeDal.EmployeePassiveList();
+            }
+            catch
+            {
+                return new List<Employee>();
+            }
+        }
         public List<Employee> GetEmployeeMiniList()
         {
             try

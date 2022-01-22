@@ -114,7 +114,9 @@ namespace DataAccess.Concrete
                    dataRow["DEPARTMENTNAME"].ToString(),
                    dataRow["AUTHORITYNAME"].ToString(),
                    (Guid)dataRow["DEPARTMENTID"],
-                   (Guid)dataRow["AUTHORITYID"]));
+                   (Guid)dataRow["AUTHORITYID"],
+                   (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString()));
 
                     }
 
@@ -160,7 +162,9 @@ namespace DataAccess.Concrete
                    dataRow["DEPARTMENTNAME"].ToString(),
                    dataRow["AUTHORITYNAME"].ToString(),
                    (Guid)dataRow["DEPARTMENTID"],
-                   (Guid)dataRow["AUTHORITYID"]));
+                   (Guid)dataRow["AUTHORITYID"],
+                   (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString()));
 
                     }
 
@@ -193,7 +197,6 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-
                         employeesList.Add(new Employee(
                      (Guid)dataRow["ID"],
                     dataRow["TC"].ToString(),
@@ -206,7 +209,9 @@ namespace DataAccess.Concrete
                    dataRow["DEPARTMENTNAME"].ToString(),
                    dataRow["AUTHORITYNAME"].ToString(),
                    (Guid)dataRow["DEPARTMENTID"],
-                   (Guid)dataRow["AUTHORITYID"]));
+                   (Guid)dataRow["AUTHORITYID"],
+                   (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString()));
 
                     }
 
@@ -253,7 +258,9 @@ namespace DataAccess.Concrete
                    dataRow["DEPARTMENTNAME"].ToString(),
                    dataRow["AUTHORITYNAME"].ToString(),
                    (Guid)dataRow["DEPARTMENTID"],
-                   (Guid)dataRow["AUTHORITYID"]));
+                   (Guid)dataRow["AUTHORITYID"],
+                   (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString()));
 
                     }
 
@@ -299,7 +306,9 @@ namespace DataAccess.Concrete
                    dataRow["DEPARTMENTNAME"].ToString(),
                    dataRow["AUTHORITYNAME"].ToString(),
                    (Guid)dataRow["DEPARTMENTID"],
-                   (Guid)dataRow["AUTHORITYID"]));
+                   (Guid)dataRow["AUTHORITYID"],
+                   (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString()));
 
                     }
 
@@ -335,18 +344,20 @@ namespace DataAccess.Concrete
                     {
 
                         employeesList.Add(new Employee(
-                     (Guid)dataRow["ID"],
-                    dataRow["TC"].ToString(),
-                    dataRow["NAME"].ToString(),
-                    dataRow["SURNAME"].ToString(),
-                    dataRow["BDATE"].ConDate(),
-                    dataRow["ADRESS"].ToString(),
-                   dataRow["TEL"].ToString(),
-                   dataRow["MAIL"].ToString(),
-                   dataRow["DEPARTMENTNAME"].ToString(),
-                   dataRow["AUTHORITYNAME"].ToString(),
-                   (Guid)dataRow["DEPARTMENTID"],
-                   (Guid)dataRow["AUTHORITYID"]));
+                      (Guid)dataRow["ID"],
+                     dataRow["TC"].ToString(),
+                     dataRow["NAME"].ToString(),
+                     dataRow["SURNAME"].ToString(),
+                     dataRow["BDATE"].ConDate(),
+                     dataRow["ADRESS"].ToString(),
+                    dataRow["TEL"].ToString(),
+                    dataRow["MAIL"].ToString(),
+                    dataRow["DEPARTMENTNAME"].ToString(),
+                    dataRow["AUTHORITYNAME"].ToString(),
+                    (Guid)dataRow["DEPARTMENTID"],
+                    (Guid)dataRow["AUTHORITYID"],
+                    (Boolean)dataRow["ISDELETED"],
+                   dataRow["APPROVEDEMPLOYEE"].ToString()));
 
                     }
 
@@ -392,7 +403,55 @@ namespace DataAccess.Concrete
                        dataRow["DEPARTMENTNAME"].ToString(),
                        dataRow["AUTHORITYNAME"].ToString(),
                        (Guid)dataRow["DEPARTMENTID"],
-                       (Guid)dataRow["AUTHORITYID"]));
+                       (Guid)dataRow["AUTHORITYID"],
+                       (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString())
+                    );
+                    }
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return employeesList;
+        }
+        public List<Employee> EmployeePassiveList()
+        {
+
+            List<Employee> employeesList = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2("EmployeePassiveList");
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                         (Guid)dataRow["ID"],
+                        dataRow["TC"].ToString(),
+                        dataRow["NAME"].ToString(),
+                        dataRow["SURNAME"].ToString(),
+                        dataRow["BDATE"].ConDate(),
+                        dataRow["ADRESS"].ToString(),
+                       dataRow["TEL"].ToString(),
+                       dataRow["MAIL"].ToString(),
+                       dataRow["DEPARTMENTNAME"].ToString(),
+                       dataRow["AUTHORITYNAME"].ToString(),
+                       (Guid)dataRow["DEPARTMENTID"],
+                       (Guid)dataRow["AUTHORITYID"],
+                       (Boolean)dataRow["ISDELETED"],
+                  dataRow["APPROVEDEMPLOYEE"].ToString())
+                    );
                     }
                 }
 
@@ -677,11 +736,7 @@ namespace DataAccess.Concrete
                    dataRow["TEL"].ToString(),
                    dataRow["MAIL"].ToString(),
                     (Boolean)dataRow["ISDELETED"],
-                   dataRow["APPROVEDEMPLOYEE"].ToString()
-                   //(Guid)dataRow["DEPARTMENTID"],
-                   //dataRow["DEPARTMENTNAME"].ToString(),
-                   //(Guid)dataRow["AUTHORITYID"],
-                   // dataRow["AUTHORITYNAME"].ToString()
+                   dataRow["APPROVEDEMPLOYEE"].ToString()                 
                     ));
 
                     }

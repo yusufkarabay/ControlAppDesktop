@@ -48,9 +48,9 @@ namespace Entities
             this.employeeSurname = employeeSurname;
         }
         public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
-        string adress, string tel, string mail, string departmentName, string authorityName,
-        Guid departmentId,
-        Guid authorityId)
+       string adress, string tel, string mail, string departmentName, string authorityName,
+       Guid departmentId,
+       Guid authorityId)
         {
             this.id = id;
             this.tc = tc;
@@ -64,6 +64,29 @@ namespace Entities
             this.authorityName = authorityName;
             this.departmentId = departmentId;
             this.authorityId = authorityId;
+           
+        }
+        //onaylanmış personel listelemesi
+
+        public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
+        string adress, string tel, string mail, string departmentName, string authorityName,
+        Guid departmentId,
+        Guid authorityId,bool isDeleted, string approvedEmployee)
+        {
+            this.id = id;
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+            this.departmentName = departmentName;
+            this.authorityName = authorityName;
+            this.departmentId = departmentId;
+            this.authorityId = authorityId;
+            this.isDeleted=isDeleted;
+            this.approvedEmployee= approvedEmployee; 
         }
         // onaylanmamış personelin listelenmesi
         public Employee(Guid id, string tc, string name, string surname, DateTime bdate,

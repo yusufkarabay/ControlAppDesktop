@@ -37,7 +37,7 @@ namespace ControlAppDesktop.Forms
 
         private void btnSentryListDone_Click(object sender, EventArgs e)
         {
-            if (dgvSentry.Visible = true)
+            if (dgvSentry.Visible == true)
             {
                 dgvSentryTodo.Visible = false;
             }
@@ -48,13 +48,13 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSentryDoneAdd_Click(object sender, EventArgs e)
         {
-            if (dgvSentry.Visible = true)
+            if (dgvSentry.Visible == true)
             {
                 dgvSentryTodo.Visible = false;
             }
             dgvSentry.Visible = true;
 
-            if (rtbxSentry.Text =="")
+            if (rtbxSentry.Text =="" | rtbxSentry.Text== "Nöbet sırasında yapılan işler...")
             {
                 MessageBox.Show("Yapılan İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
@@ -94,12 +94,12 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSentryDoneUpdate_Click(object sender, EventArgs e)
         {
-             if (dgvSentry.Visible = true)
+             if (dgvSentry.Visible == true)
             {
                 dgvSentryTodo.Visible = false;
             }
             dgvSentry.Visible = true;
-            if (rtbxSentry.Text == null)
+            if (rtbxSentry.Text == "" | rtbxSentry.Text == "Nöbet sırasında yapılan işler...")
             {
                 MessageBox.Show("Yapılan İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
@@ -165,18 +165,18 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSentryToDoUpdate_Click(object sender, EventArgs e)
         {
-            if (dgvSentryTodo.Visible = true)
+            if (dgvSentryTodo.Visible== true)
             {
                 dgvSentry.Visible = false;
             }
             dgvSentryTodo.Visible = true;
-            if (rtbxSentryToDo.Text == null)
+            if (rtbxSentryToDo.Text == "" | rtbxSentryToDo.Text == "Takip edilecek işlemler...")
             {
                 MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
             updateSentyToDo();
-            rtbxSentryToDo.Text = "Takip edilecek İşlemler...";
+            rtbxSentryToDo.Text = "Takip edilecek işlemler...";
             thisDateToDo();
         }
         private void SentryForm_Load(object sender, EventArgs e)
@@ -188,13 +188,13 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSentryToDoAdd_Click(object sender, EventArgs e)
         {
-            if (dgvSentryTodo.Visible = true)
+            if (dgvSentryTodo.Visible == true)
             {
                 dgvSentry.Visible = false;
             }
             dgvSentryTodo.Visible = true;
 
-            if (rtbxSentryToDo.Text == null)
+            if (rtbxSentryToDo.Text == ""| rtbxSentryToDo.Text== "Takip Edilecek İşlemler...")
             {
                 MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
@@ -357,6 +357,7 @@ namespace ControlAppDesktop.Forms
         private void rtbxSentryToDo_MouseClick(object sender, MouseEventArgs e)
         {
             rtbxSentryToDo.Text = "";
+            btnSentryToDoAdd.Enabled = true;
         }
     }
 }
