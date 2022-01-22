@@ -102,6 +102,12 @@
     <Compile Include="Forms\DrawerForm.Designer.cs">
       <DependentUpon>DrawerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeCheckedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeCheckedForm.Designer.cs">
+      <DependentUpon>EmployeeCheckedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DrawerForm.resx">
       <DependentUpon>DrawerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeCheckedForm.resx">
+      <DependentUpon>EmployeeCheckedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>

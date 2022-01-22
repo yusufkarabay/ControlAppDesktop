@@ -40,5 +40,13 @@ namespace ControlAppDesktop.Forms
             AuthorityForm  authorityForm= new AuthorityForm();
             authorityForm.Show();
         }
+
+        private void btnEmployeeChecked_Click(object sender, EventArgs e)
+        {
+            EmployeeCheckedForm employeeCheckedForm= new EmployeeCheckedForm();
+            employeeCheckedForm.infos = infos;
+            employeeCheckedForm.Show();
+
+        }
     }
 }

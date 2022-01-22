@@ -32,7 +32,7 @@ namespace ControlAppDesktop
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+             
             if (mtxtTC.Text.Trim() == "")
             {
                 MessageBox.Show("TC Kimlik Numarası Boş Geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

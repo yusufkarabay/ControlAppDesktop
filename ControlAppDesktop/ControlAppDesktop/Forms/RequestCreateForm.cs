@@ -175,7 +175,7 @@ namespace ControlAppDesktop.Forms
 
             if (cbDepartment.SelectedItem == null)
             {
-                MessageBox.Show("Talep Edilecek Departman Boş Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Talep Edilecek Departmanı Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

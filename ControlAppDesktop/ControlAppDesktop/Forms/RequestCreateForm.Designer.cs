@@ -178,7 +178,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(999, 166);
+            this.btnSend.Location = new System.Drawing.Point(824, 53);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 10;

@@ -26,7 +26,7 @@ namespace DataAccess.Concrete
         public string Add(Employee entity)
         {
             string result = null;
-            
+
             try
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeCreate",
@@ -48,7 +48,7 @@ namespace DataAccess.Concrete
                 {
                     return entity.Tc + "Kimlik Numaralı Personel Bulunmaktadır";
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -489,9 +489,9 @@ namespace DataAccess.Concrete
                 {
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        string name, surname, departmentName, authorityName,firstPassword,rePassword;
+                        string name, surname, departmentName, authorityName, firstPassword, rePassword, approvedEmployee;
                         Guid departmentId, authorityId;
-                        bool isAdmin, isDeleted;
+                        bool isDeleted;
 
                         name = dataRow["NAME"].ToString();
                         surname = dataRow["SURNAME"].ToString();
@@ -501,11 +501,12 @@ namespace DataAccess.Concrete
                         authorityId = (Guid)dataRow["AUTHORITYID"];
                         firstPassword = dataRow["PASSWORD"].ToString();
                         rePassword = dataRow["REPASSWORD"].ToString();
-                        isAdmin = Convert.ToBoolean(dataRow["ISADMIN"]);
                         isDeleted = Convert.ToBoolean(dataRow["ISDELETED"]);
+                        approvedEmployee = dataRow["APPROVEDEMPLOYEE"].ToString();
 
 
-                        infos = new object[] { tc, name, surname, departmentName, authorityName, departmentId, authorityId,isAdmin,isDeleted,firstPassword,rePassword };
+
+                        infos = new object[] { tc, name, surname, departmentName, authorityName, departmentId, authorityId, isDeleted, firstPassword, rePassword, approvedEmployee };
                     }
                 }
             }
@@ -588,14 +589,14 @@ namespace DataAccess.Concrete
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeUpdate",
                     new SqlParameter("@tc", entity.Tc),
-                    new SqlParameter("name", entity.Name),
-                    new SqlParameter("surname", entity.Surname),
-                    new SqlParameter("bdate", entity.Bdate),
-                    new SqlParameter("adress", entity.Adress),
+                    new SqlParameter("@name", entity.Name),
+                    new SqlParameter("@surname", entity.Surname),
+                    new SqlParameter("@bdate", entity.Bdate),
+                    new SqlParameter("@adress", entity.Adress),
                     new SqlParameter("@tel", entity.Tel),
                     new SqlParameter("@mail", entity.Mail),
-                    new SqlParameter("departmentid", entity.DepartmentId),
-                    new SqlParameter(@"authorityid", entity.AuthorityId));
+                    new SqlParameter("@departmentid", entity.DepartmentId),
+                    new SqlParameter("@authorityid", entity.AuthorityId));
 
                 if (isSuccess)
                 {
@@ -613,6 +614,87 @@ namespace DataAccess.Concrete
             }
 
             return result;
+        }
+        public string Checked(Employee entity)
+        {
+
+            string result = null;
+
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeChecked",
+                    new SqlParameter("@tc", entity.Tc),
+                    new SqlParameter("@departmentid", entity.DepartmentId),
+                    new SqlParameter("@authorityid", entity.AuthorityId),
+                     new SqlParameter("@isdeleted", entity.IsDeleted),
+                      new SqlParameter("@approvedemployee", entity.ApprovedEmployee));
+
+                if (isSuccess)
+                {
+                    result = "Seçili Personel Başarıyla Onaylandı";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+            return result;
+        }
+
+        public List<Employee> NotCheckedEmployeeList()
+        {
+            List<Employee> employeesList = null;
+
+            try
+            {
+
+                var (dt, msg) = sqlService.StoredV2("EmployeeNotCheckedList");
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    employeesList = new List<Employee>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        employeesList.Add(new Employee(
+                     (Guid)dataRow["ID"],
+                    dataRow["TC"].ToString(),
+                    dataRow["NAME"].ToString(),
+                    dataRow["SURNAME"].ToString(),
+                    dataRow["BDATE"].ConDate(),
+                    dataRow["ADRESS"].ToString(),
+                   dataRow["TEL"].ToString(),
+                   dataRow["MAIL"].ToString(),
+                    (Boolean)dataRow["ISDELETED"],
+                   dataRow["APPROVEDEMPLOYEE"].ToString()
+                   //(Guid)dataRow["DEPARTMENTID"],
+                   //dataRow["DEPARTMENTNAME"].ToString(),
+                   //(Guid)dataRow["AUTHORITYID"],
+                   // dataRow["AUTHORITYNAME"].ToString()
+                    ));
+
+                    }
+
+                }
+                else employeesList = null;
+
+
+            }
+            catch (Exception) { }
+            finally { }
+
+            return employeesList;
         }
     }
 }

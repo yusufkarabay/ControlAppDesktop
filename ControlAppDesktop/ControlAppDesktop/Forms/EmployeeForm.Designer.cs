@@ -74,7 +74,7 @@
             // grpEmployee
             // 
             this.grpEmployee.Controls.Add(this.dgvEmployee);
-            this.grpEmployee.Location = new System.Drawing.Point(79, 312);
+            this.grpEmployee.Location = new System.Drawing.Point(82, 314);
             this.grpEmployee.Name = "grpEmployee";
             this.grpEmployee.Size = new System.Drawing.Size(1014, 272);
             this.grpEmployee.TabIndex = 3;

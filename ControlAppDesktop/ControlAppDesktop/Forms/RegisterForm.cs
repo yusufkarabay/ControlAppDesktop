@@ -20,7 +20,7 @@ namespace ControlAppDesktop.Forms
         public RegisterForm()
         {
             InitializeComponent();
-            employeeManager=EmployeeManager.GetInstance();  
+            employeeManager = EmployeeManager.GetInstance();
         }
 
         private void RegisterForm_Load(object sender, EventArgs e)
@@ -29,23 +29,23 @@ namespace ControlAppDesktop.Forms
         }
         void addEmployee()
         {
-             employee = new Employee(
-                mtxbTC.Text.ToString(),
-                txtName.Text.ToString(),
-                txtSurname.Text.ToString(),
-                txtPassword.Text.ToString(),
-                txtRepassword.Text.ToString(),                
-                DateTime.Parse(mtxtBDate.Text.ToString()),
+            employee = new Employee(
+               mtxbTC.Text.ToString(),
+               txtName.Text.ToString(),
+               txtSurname.Text.ToString(),
+               txtPassword.Text.ToString(),
+               txtRepassword.Text.ToString(),
+                DateTime.Parse(dtpBDate.Value.ToString()),
                 rtxtAdress.Text.ToString(),
                 mtxtTel.Text.ToString(),
                 txtMail.Text.ToString());
-                MessageBox.Show(employeeManager.Add(employee));
+            MessageBox.Show(employeeManager.Add(employee));
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (mtxbTC.Text=="")
+            if (mtxbTC.Text == "")
             {
-                MessageBox.Show("T.C. Kimlik Numarası Boş Bırakılamaz","Hata",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("T.C. Kimlik Numarası Boş Bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (mtxbTC.Text.Length != 11)
@@ -53,7 +53,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("T.C. Kimlik Numarasını Hatalı Girdiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else  if (txtName.Text == "")
+            else if (txtName.Text == "")
             {
                 MessageBox.Show("Ad Boş Bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -67,13 +67,13 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Parola Boş Bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }          
+            }
             else if (txtRepassword.Text == "")
             {
                 MessageBox.Show("Kontrol Parolası Boş Bırakılamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (txtPassword.Text.Length <1 & txtPassword.Text.Length>15 )
+            else if (txtPassword.Text.Length < 1 & txtPassword.Text.Length > 15)
             {
                 MessageBox.Show("Parola 15 Karakterden Fazla olamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -83,21 +83,26 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Parola 15 Karakterden Fazla olamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (txtRepassword.Text != txtPassword.Text )
+            else if (txtRepassword.Text != txtPassword.Text)
             {
                 MessageBox.Show("Şifreler Uyuşmamaktadır", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (mtxtBDate.Text.Length >10 )
-            {
-                MessageBox.Show("Doğum Tarihi Yanlış Girildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-           //else if (mtxtTel.Text.Length > 10)
-           // {
-           //     MessageBox.Show("Telefon Numarası Yanlış Girildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           //     return;
-           // }
+            //else if (dtpBDate.)
+            //{
+            //    MessageBox.Show("Doğum Tarihi Yanlış Girildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //else if (mtxtBDate.Text.Length > 10 | mtxtBDate.Text.Length < 1)
+            //{
+            //    MessageBox.Show("Doğum Tarihi Yanlış Girildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //else if (mtxtTel.Text.Length > 10)
+            // {
+            //     MessageBox.Show("Telefon Numarası Yanlış Girildi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //     return;
+            // }
             else if (mtxtTel.Text.Length > 80)
             {
                 MessageBox.Show("Mail Adresi 80 Karakterden Fazla Olamaz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -123,6 +128,11 @@ namespace ControlAppDesktop.Forms
         private void mtxtTel_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

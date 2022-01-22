@@ -52,7 +52,7 @@ namespace Business.Concrete
             {
                 return " Adress Bilgisi 200 karakterden fazla Olamaz";
             }
-           
+
             if (employee.DepartmentId == null)
             {
                 return " Personel İçin Lütfen Departman Seçiniz";
@@ -167,7 +167,7 @@ namespace Business.Concrete
                 return new List<Employee>();
             }
         }
-        
+
         public List<Employee> GetByMail(string procuderName, string mail)
         {
             try
@@ -250,7 +250,39 @@ namespace Business.Concrete
             }
         }
 
+        public List<Employee> NotCheckedEmployeeList()
+        {
+            try
+            {
+                
+                return employeeDal.NotCheckedEmployeeList();
 
+            }
+            catch (Exception)
+            {
+
+                return new List<Employee>();
+            }
+        }
+
+
+        public string Checked(Employee entity)
+        {
+            try
+            {
+                if (entity.Tc == null)
+                {
+                    return " Onaylamak İstediğiniz Personeli Seçiniz";
+                }
+                return employeeDal.Checked(entity);
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
 
         public string Update(Employee entity)
         {

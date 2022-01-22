@@ -51,9 +51,16 @@ namespace ControlAppDesktop.Forms
                 dgvEmployee.Columns[1].Visible = false;
                 dgvEmployee.Columns[2].Visible = false;
                 dgvEmployee.Columns[3].Visible = false;
-                dgvEmployee.Columns[12].Visible = false;
+                dgvEmployee.Columns[15].Visible = false;
                 dgvEmployee.Columns[13].Visible = false;
                 dgvEmployee.Columns[14].Visible = false;
+                dgvEmployee.Columns[15].Visible = false;
+                dgvEmployee.Columns[16].Visible = false;
+                dgvEmployee.Columns[17].Visible = false;
+                dgvEmployee.Columns[18].Visible = false;
+
+
+
 
                 dgvEmployee.Columns[4].HeaderText = "T.C. Kimlik No";
                 dgvEmployee.Columns[5].HeaderText = "Ad";
@@ -63,6 +70,7 @@ namespace ControlAppDesktop.Forms
                 dgvEmployee.Columns[9].HeaderText = "Telefon";
                 dgvEmployee.Columns[10].HeaderText = "Mail";
                 dgvEmployee.Columns[11].HeaderText = "Departman";
+                dgvEmployee.Columns[12].HeaderText = "Yetki";
             }
            
 

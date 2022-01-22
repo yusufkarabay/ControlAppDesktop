@@ -47,6 +47,8 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtRepassword = new System.Windows.Forms.TextBox();
             this.lblRePassword = new System.Windows.Forms.Label();
+            this.dtpBDate = new System.Windows.Forms.DateTimePicker();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTcInfo
@@ -117,7 +119,7 @@
             this.btnRegister.Location = new System.Drawing.Point(246, 496);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 7;
+            this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Kaydol";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -127,21 +129,21 @@
             this.txtName.Location = new System.Drawing.Point(203, 106);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(166, 20);
-            this.txtName.TabIndex = 9;
+            this.txtName.TabIndex = 1;
             // 
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(203, 145);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(166, 20);
-            this.txtSurname.TabIndex = 10;
+            this.txtSurname.TabIndex = 2;
             // 
             // rtxtAdress
             // 
             this.rtxtAdress.Location = new System.Drawing.Point(196, 290);
             this.rtxtAdress.Name = "rtxtAdress";
             this.rtxtAdress.Size = new System.Drawing.Size(186, 96);
-            this.rtxtAdress.TabIndex = 12;
+            this.rtxtAdress.TabIndex = 6;
             this.rtxtAdress.Text = "";
             // 
             // mtxtTel
@@ -150,17 +152,16 @@
             this.mtxtTel.Mask = "(999) 000-0000";
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(165, 20);
-            this.mtxtTel.TabIndex = 13;
+            this.mtxtTel.TabIndex = 7;
             this.mtxtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtTel_KeyPress);
             // 
             // mtxtBDate
             // 
-            this.mtxtBDate.Location = new System.Drawing.Point(203, 264);
+            this.mtxtBDate.Location = new System.Drawing.Point(622, 366);
             this.mtxtBDate.Mask = "00/00/0000";
             this.mtxtBDate.Name = "mtxtBDate";
             this.mtxtBDate.Size = new System.Drawing.Size(166, 20);
-            this.mtxtBDate.TabIndex = 14;
-            this.mtxtBDate.ValidatingType = typeof(System.DateTime);
+            this.mtxtBDate.TabIndex = 5;
             this.mtxtBDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtBDate_KeyPress);
             // 
             // txtMail
@@ -168,7 +169,7 @@
             this.txtMail.Location = new System.Drawing.Point(196, 440);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(166, 20);
-            this.txtMail.TabIndex = 15;
+            this.txtMail.TabIndex = 8;
             // 
             // mtxbTC
             // 
@@ -176,7 +177,7 @@
             this.mtxbTC.Mask = "00000000000";
             this.mtxbTC.Name = "mtxbTC";
             this.mtxbTC.Size = new System.Drawing.Size(165, 20);
-            this.mtxbTC.TabIndex = 16;
+            this.mtxbTC.TabIndex = 0;
             this.mtxbTC.ValidatingType = typeof(int);
             this.mtxbTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxbTC_KeyPress);
             // 
@@ -185,7 +186,7 @@
             this.txtPassword.Location = new System.Drawing.Point(204, 179);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(166, 20);
-            this.txtPassword.TabIndex = 18;
+            this.txtPassword.TabIndex = 3;
             // 
             // lblPassword
             // 
@@ -201,7 +202,7 @@
             this.txtRepassword.Location = new System.Drawing.Point(203, 212);
             this.txtRepassword.Name = "txtRepassword";
             this.txtRepassword.Size = new System.Drawing.Size(166, 20);
-            this.txtRepassword.TabIndex = 20;
+            this.txtRepassword.TabIndex = 4;
             // 
             // lblRePassword
             // 
@@ -212,11 +213,30 @@
             this.lblRePassword.TabIndex = 19;
             this.lblRePassword.Text = "Tekrar Parola :";
             // 
+            // dtpBDate
+            // 
+            this.dtpBDate.Location = new System.Drawing.Point(204, 257);
+            this.dtpBDate.Name = "dtpBDate";
+            this.dtpBDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpBDate.TabIndex = 20;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(529, 126);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 21;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 731);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.dtpBDate);
             this.Controls.Add(this.txtRepassword);
             this.Controls.Add(this.lblRePassword);
             this.Controls.Add(this.txtPassword);
@@ -266,5 +286,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtRepassword;
         private System.Windows.Forms.Label lblRePassword;
+        private System.Windows.Forms.DateTimePicker dtpBDate;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -9,7 +9,6 @@ namespace Entities
     public class Employee
     {
         Guid id;
-        string tc;
         string name;       
         string surname;
         string password;
@@ -19,13 +18,20 @@ namespace Entities
         string tel;
         string mail;
 
-        Guid departmentId;
-        Guid authorityId;
+     
         string departmentName;
         string authorityName;
         string employeeFullName;        
         string employeeName;
         string employeeSurname;
+
+
+        string tc;
+        Guid departmentId;
+        Guid authorityId;
+        bool isDeleted;
+        string approvedEmployee;
+
 
         public Employee() { }
         public string FullName
@@ -58,6 +64,25 @@ namespace Entities
             this.authorityName = authorityName;
             this.departmentId = departmentId;
             this.authorityId = authorityId;
+        }
+        // onaylanmamış personelin listelenmesi
+        public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
+        string adress, string tel, string mail, bool isDeleted, string approvedEmployee)/*, Guid departmentId, string departmentName, Guid authorityId, string authorityName)*/
+        {
+            this.id = id;
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+            this.departmentName = departmentName;
+            this.authorityName = authorityName;
+            this.departmentId = departmentId;
+            this.authorityId = authorityId;
+            this.isDeleted = isDeleted;
+            this.approvedEmployee = approvedEmployee;
         }
         public Employee(Guid id, string tc, string name, string surname, DateTime bdate,
        string adress, string tel, string mail, string departmentName,
@@ -184,6 +209,15 @@ namespace Entities
             this.mail = mail;
         }
 
+        public Employee(string tc, Guid departmentId, Guid authorityId, bool isDeleted, string approvedEmployee)
+        {
+            this.tc = tc;
+            this.departmentId = departmentId;
+            this.authorityId = authorityId;
+            this.isDeleted = isDeleted;
+            this.approvedEmployee = approvedEmployee;
+        }
+
         public Guid Id { get => id; set => id = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }
         public Guid AuthorityId { get => authorityId; set => authorityId = value; }
@@ -199,7 +233,10 @@ namespace Entities
         public string EmployeeName { get => employeeName; set => employeeName = value; }
         public string EmployeeSurname { get => employeeSurname; set => employeeSurname = value; }
         public string EmployeeFullName { get => employeeFullName; set => employeeFullName = value; }
-        public string Password { get => password; set => password = value; }
-        public string RePassword { get => rePassword; set => rePassword = value; }
+        public string Password { get => password;  }
+        public string RePassword { get => rePassword; }
+        public bool IsDeleted { get => isDeleted; set => isDeleted = value; }
+       
+        public string ApprovedEmployee { get => approvedEmployee; set => approvedEmployee = value; }
     }
 }

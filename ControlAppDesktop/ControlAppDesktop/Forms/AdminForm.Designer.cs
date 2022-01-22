@@ -30,7 +30,7 @@
         {
             this.btnAuthorityForm = new System.Windows.Forms.Button();
             this.btnDepartmentForm = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEmployeeChecked = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,14 +54,15 @@
             this.btnDepartmentForm.UseVisualStyleBackColor = true;
             this.btnDepartmentForm.Click += new System.EventHandler(this.btnDepartmentForm_Click);
             // 
-            // button3
+            // btnEmployeeChecked
             // 
-            this.button3.Location = new System.Drawing.Point(579, 126);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Personel Onaylama İşlemleri";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEmployeeChecked.Location = new System.Drawing.Point(579, 126);
+            this.btnEmployeeChecked.Name = "btnEmployeeChecked";
+            this.btnEmployeeChecked.Size = new System.Drawing.Size(164, 23);
+            this.btnEmployeeChecked.TabIndex = 2;
+            this.btnEmployeeChecked.Text = "Personel Onaylama İşlemleri";
+            this.btnEmployeeChecked.UseVisualStyleBackColor = true;
+            this.btnEmployeeChecked.Click += new System.EventHandler(this.btnEmployeeChecked_Click);
             // 
             // button4
             // 
@@ -78,7 +79,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEmployeeChecked);
             this.Controls.Add(this.btnDepartmentForm);
             this.Controls.Add(this.btnAuthorityForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -93,7 +94,7 @@
 
         private System.Windows.Forms.Button btnAuthorityForm;
         private System.Windows.Forms.Button btnDepartmentForm;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEmployeeChecked;
         private System.Windows.Forms.Button button4;
     }
 }
