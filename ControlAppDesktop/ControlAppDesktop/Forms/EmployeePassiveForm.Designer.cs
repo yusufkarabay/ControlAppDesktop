@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.gbEmployeeSearch = new System.Windows.Forms.GroupBox();
@@ -43,6 +43,8 @@
             this.btnSearchEmployee = new System.Windows.Forms.Button();
             this.grpEmployee = new System.Windows.Forms.GroupBox();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.returnActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.lblMailInfo = new System.Windows.Forms.Label();
             this.lblMail = new System.Windows.Forms.Label();
@@ -58,14 +60,12 @@
             this.lblSurnameInfo = new System.Windows.Forms.Label();
             this.lblNameInfo = new System.Windows.Forms.Label();
             this.lblTcInfo = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.returnActiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbEmployeeSearch.SuspendLayout();
             this.grpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
-            this.grpInfo.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -209,8 +209,8 @@
             this.dgvEmployee.AllowUserToDeleteRows = false;
             this.dgvEmployee.AllowUserToResizeColumns = false;
             this.dgvEmployee.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.ContextMenuStrip = this.contextMenuStrip1;
@@ -225,6 +225,20 @@
             this.dgvEmployee.Size = new System.Drawing.Size(1008, 253);
             this.dgvEmployee.TabIndex = 0;
             this.dgvEmployee.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmployee_CellMouseClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.returnActiveToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            // 
+            // returnActiveToolStripMenuItem
+            // 
+            this.returnActiveToolStripMenuItem.Name = "returnActiveToolStripMenuItem";
+            this.returnActiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.returnActiveToolStripMenuItem.Text = "Aktif Yap";
+            this.returnActiveToolStripMenuItem.Click += new System.EventHandler(this.returnActiveToolStripMenuItem_Click);
             // 
             // grpInfo
             // 
@@ -375,33 +389,22 @@
             this.lblTcInfo.TabIndex = 1;
             this.lblTcInfo.Text = "00";
             // 
-            // contextMenuStrip1
+            // btnClose
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.returnActiveToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 48);
-            // 
-            // returnActiveToolStripMenuItem
-            // 
-            this.returnActiveToolStripMenuItem.Name = "returnActiveToolStripMenuItem";
-            this.returnActiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.returnActiveToolStripMenuItem.Text = "Aktif Yap";
-            this.returnActiveToolStripMenuItem.Click += new System.EventHandler(this.returnActiveToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteToolStripMenuItem.Text = "Sil";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            this.btnClose.Location = new System.Drawing.Point(963, 165);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 19;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // EmployeePassiveForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 627);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbDepartment);
@@ -417,9 +420,9 @@
             this.gbEmployeeSearch.PerformLayout();
             this.grpEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,6 +460,6 @@
         private System.Windows.Forms.Label lblTcInfo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem returnActiveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -272,6 +272,12 @@ namespace Entities
             this.isDeleted = isDeleted;
             this.approvedEmployee = approvedEmployee;
         }
+        public Employee(string tc ,bool isDeleted, string approvedEmployee)
+        {
+            this.tc = tc;           
+            this.isDeleted = isDeleted;
+            this.approvedEmployee = approvedEmployee;
+        }
 
         public Guid Id { get => id; set => id = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }

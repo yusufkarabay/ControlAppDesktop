@@ -34,7 +34,6 @@
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpInfo = new System.Windows.Forms.GroupBox();
             this.lblMailInfo = new System.Windows.Forms.Label();
@@ -65,7 +64,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPassiveEmploye = new System.Windows.Forms.Button();
-            this.btnActiveEmployee = new System.Windows.Forms.Button();
+            this.passiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -110,29 +109,22 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateToolStripMenuItem,
-            this.silToolStripMenuItem,
-            this.yenileToolStripMenuItem});
+            this.yenileToolStripMenuItem,
+            this.passiveToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateToolStripMenuItem.Text = "Güncelle";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // yenileToolStripMenuItem
             // 
             this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.yenileToolStripMenuItem.Text = "Yenile";
             this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
@@ -439,21 +431,17 @@
             this.btnPassiveEmploye.UseVisualStyleBackColor = true;
             this.btnPassiveEmploye.Click += new System.EventHandler(this.btnPassiveEmploye_Click);
             // 
-            // btnActiveEmployee
+            // passiveToolStripMenuItem
             // 
-            this.btnActiveEmployee.Location = new System.Drawing.Point(764, 285);
-            this.btnActiveEmployee.Name = "btnActiveEmployee";
-            this.btnActiveEmployee.Size = new System.Drawing.Size(112, 23);
-            this.btnActiveEmployee.TabIndex = 14;
-            this.btnActiveEmployee.Text = "Çalışan Personeller";
-            this.btnActiveEmployee.UseVisualStyleBackColor = true;
-            this.btnActiveEmployee.Click += new System.EventHandler(this.btnActiveEmployee_Click);
+            this.passiveToolStripMenuItem.Name = "passiveToolStripMenuItem";
+            this.passiveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.passiveToolStripMenuItem.Text = "İşten Ayrıldı";
+            this.passiveToolStripMenuItem.Click += new System.EventHandler(this.passiveToolStripMenuItem_Click);
             // 
             // EmployeeForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
-            this.Controls.Add(this.btnActiveEmployee);
             this.Controls.Add(this.btnPassiveEmploye);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
@@ -502,7 +490,6 @@
         private System.Windows.Forms.Button btnEmployeeAdd;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
         private System.Windows.Forms.Button btnSearchEmployee;
         private System.Windows.Forms.TextBox txtbxSearchEmloyee;
@@ -517,6 +504,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPassiveEmploye;
-        private System.Windows.Forms.Button btnActiveEmployee;
+        private System.Windows.Forms.ToolStripMenuItem passiveToolStripMenuItem;
     }
 }

@@ -312,6 +312,24 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
+        
+            public string PassiveEmployeeToActive(Employee entity)
+        {
+            try
+            {
+                if (entity.Tc == null)
+                {
+                    return " Değiklik Yapmak İstediğiniz Personeli Seçiniz";
+                }
+                return employeeDal.PassiveEmployeeToActive(entity);
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
 
         public string Update(Employee entity)
         {

@@ -744,6 +744,35 @@ namespace DataAccess.Concrete
             return result;
         }
 
+        public string PassiveEmployeeToActive(Employee entity)
+        {
+
+            string result = null;
+
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("PassiveEmployeeToActive",
+                    new SqlParameter("@tc", entity.Tc),                    
+                     new SqlParameter("@isdeleted", entity.IsDeleted),
+                      new SqlParameter("@approvedemployee", entity.ApprovedEmployee));
+
+                if (isSuccess)
+                {
+                    result = "Seçili Personel Başarıyla Değiştirildi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+            return result;
+        }
         public List<Employee> NotCheckedEmployeeList()
         {
             List<Employee> employeesList = null;

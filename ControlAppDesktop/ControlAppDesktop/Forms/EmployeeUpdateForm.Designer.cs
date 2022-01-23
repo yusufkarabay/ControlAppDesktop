@@ -34,7 +34,7 @@
             this.lblAdress = new System.Windows.Forms.Label();
             this.mtxtMail = new System.Windows.Forms.MaskedTextBox();
             this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
-            this.cbAuthorityInfo = new System.Windows.Forms.ComboBox();
+            this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.txtSurnmaeInfo = new System.Windows.Forms.TextBox();
             this.txtNameInfo = new System.Windows.Forms.TextBox();
             this.mtxtTcInfo = new System.Windows.Forms.MaskedTextBox();
@@ -46,17 +46,22 @@
             this.employeeSurname = new System.Windows.Forms.Label();
             this.employeeName = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblAuthority = new System.Windows.Forms.Label();
+            this.cbAuthority = new System.Windows.Forms.ComboBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.lblAuthority);
+            this.grpInfo.Controls.Add(this.cbAuthority);
             this.grpInfo.Controls.Add(this.dateTimePicker1);
             this.grpInfo.Controls.Add(this.rtbxAdressInfo);
             this.grpInfo.Controls.Add(this.lblAdress);
             this.grpInfo.Controls.Add(this.mtxtMail);
             this.grpInfo.Controls.Add(this.mtxtTel);
-            this.grpInfo.Controls.Add(this.cbAuthorityInfo);
+            this.grpInfo.Controls.Add(this.cbDepartment);
             this.grpInfo.Controls.Add(this.txtSurnmaeInfo);
             this.grpInfo.Controls.Add(this.txtNameInfo);
             this.grpInfo.Controls.Add(this.mtxtTcInfo);
@@ -73,17 +78,18 @@
             this.grpInfo.TabIndex = 5;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
+            this.grpInfo.Enter += new System.EventHandler(this.grpInfo_Enter);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 140);
+            this.dateTimePicker1.Location = new System.Drawing.Point(189, 175);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 26;
             // 
             // rtbxAdressInfo
             // 
-            this.rtbxAdressInfo.Location = new System.Drawing.Point(189, 218);
+            this.rtbxAdressInfo.Location = new System.Drawing.Point(189, 253);
             this.rtbxAdressInfo.Name = "rtbxAdressInfo";
             this.rtbxAdressInfo.Size = new System.Drawing.Size(200, 96);
             this.rtbxAdressInfo.TabIndex = 25;
@@ -92,7 +98,7 @@
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
-            this.lblAdress.Location = new System.Drawing.Point(16, 251);
+            this.lblAdress.Location = new System.Drawing.Point(16, 286);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(39, 13);
             this.lblAdress.TabIndex = 24;
@@ -100,25 +106,25 @@
             // 
             // mtxtMail
             // 
-            this.mtxtMail.Location = new System.Drawing.Point(189, 192);
+            this.mtxtMail.Location = new System.Drawing.Point(189, 227);
             this.mtxtMail.Name = "mtxtMail";
             this.mtxtMail.Size = new System.Drawing.Size(200, 20);
             this.mtxtMail.TabIndex = 23;
             // 
             // mtxtTel
             // 
-            this.mtxtTel.Location = new System.Drawing.Point(189, 166);
+            this.mtxtTel.Location = new System.Drawing.Point(189, 201);
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(200, 20);
             this.mtxtTel.TabIndex = 22;
             // 
-            // cbAuthorityInfo
+            // cbDepartment
             // 
-            this.cbAuthorityInfo.FormattingEnabled = true;
-            this.cbAuthorityInfo.Location = new System.Drawing.Point(189, 112);
-            this.cbAuthorityInfo.Name = "cbAuthorityInfo";
-            this.cbAuthorityInfo.Size = new System.Drawing.Size(200, 21);
-            this.cbAuthorityInfo.TabIndex = 20;
+            this.cbDepartment.FormattingEnabled = true;
+            this.cbDepartment.Location = new System.Drawing.Point(189, 112);
+            this.cbDepartment.Name = "cbDepartment";
+            this.cbDepartment.Size = new System.Drawing.Size(200, 21);
+            this.cbDepartment.TabIndex = 20;
             // 
             // txtSurnmaeInfo
             // 
@@ -144,7 +150,7 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(6, 199);
+            this.lblMail.Location = new System.Drawing.Point(6, 234);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(29, 13);
             this.lblMail.TabIndex = 15;
@@ -153,7 +159,7 @@
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(6, 170);
+            this.lblTel.Location = new System.Drawing.Point(6, 205);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(46, 13);
             this.lblTel.TabIndex = 13;
@@ -162,7 +168,7 @@
             // lblBdate
             // 
             this.lblBdate.AutoSize = true;
-            this.lblBdate.Location = new System.Drawing.Point(6, 141);
+            this.lblBdate.Location = new System.Drawing.Point(6, 176);
             this.lblBdate.Name = "lblBdate";
             this.lblBdate.Size = new System.Drawing.Size(73, 13);
             this.lblBdate.TabIndex = 11;
@@ -206,7 +212,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(382, 396);
+            this.btnUpdate.Location = new System.Drawing.Point(382, 415);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 6;
@@ -214,15 +220,43 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // UpdateEmployeeForm
+            // lblAuthority
+            // 
+            this.lblAuthority.AutoSize = true;
+            this.lblAuthority.Location = new System.Drawing.Point(15, 146);
+            this.lblAuthority.Name = "lblAuthority";
+            this.lblAuthority.Size = new System.Drawing.Size(37, 13);
+            this.lblAuthority.TabIndex = 34;
+            this.lblAuthority.Text = "Yetki :";
+            // 
+            // cbAuthority
+            // 
+            this.cbAuthority.FormattingEnabled = true;
+            this.cbAuthority.Location = new System.Drawing.Point(170, 138);
+            this.cbAuthority.Name = "cbAuthority";
+            this.cbAuthority.Size = new System.Drawing.Size(216, 21);
+            this.cbAuthority.TabIndex = 33;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(689, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Kapat";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // EmployeeUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.grpInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateEmployeeForm";
+            this.Name = "EmployeeUpdateForm";
             this.Text = "updateEmployeeFrom";
             this.Load += new System.EventHandler(this.updateEmployeeFrom_Load);
             this.grpInfo.ResumeLayout(false);
@@ -242,7 +276,7 @@
         private System.Windows.Forms.Label employeeSurname;
         private System.Windows.Forms.Label employeeName;
         private System.Windows.Forms.Label lblAdress;
-        public System.Windows.Forms.ComboBox cbAuthorityInfo;
+        public System.Windows.Forms.ComboBox cbDepartment;
         public System.Windows.Forms.TextBox txtSurnmaeInfo;
         public System.Windows.Forms.TextBox txtNameInfo;
         public System.Windows.Forms.MaskedTextBox mtxtTcInfo;
@@ -251,5 +285,8 @@
         public System.Windows.Forms.RichTextBox rtbxAdressInfo;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblAuthority;
+        private System.Windows.Forms.ComboBox cbAuthority;
+        private System.Windows.Forms.Button btnClose;
     }
 }

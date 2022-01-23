@@ -43,10 +43,7 @@ namespace ControlAppDesktop.Forms
                 dgvEmployee.Columns[17].Visible = false;
                 dgvEmployee.Columns[18].Visible = false;
                 dgvEmployee.Columns[19].Visible = false;
-
-
-
-
+                dgvEmployee.Columns[20].Visible = false;
 
                 dgvEmployee.Columns[4].HeaderText = "T.C. Kimlik No";
                 dgvEmployee.Columns[5].HeaderText = "Ad";
@@ -74,10 +71,12 @@ namespace ControlAppDesktop.Forms
         //**** tekrar aktif yap güncellemesi hazırla
         void returnActiveEmployee()
         {
-
+            employee = new Employee(
+                    dgvEmployee.CurrentRow.Cells[4].Value.ToString(),
+                    Convert.ToBoolean(dgvEmployee.CurrentRow.Cells[20].Value = true),
+                    infos[0].ToString());
+            MessageBox.Show(employeeManager.PassiveEmployeeToActive(employee));
         }
-
-
         void fillInfos()
         {
             lblTcInfo.Text = employee.Tc;
@@ -88,32 +87,32 @@ namespace ControlAppDesktop.Forms
             lblTelInfo.Text = employee.Tel;
             lblMailInfo.Text = employee.Mail;
         }
-        void deleteEmployee()
-        {
-            employee = new Employee(
-               Guid.Parse(dgvEmployee.CurrentRow.Cells["Id"].Value.ToString()),
-               dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
-               dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
-               dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
-               DateTime.Parse(dgvEmployee.CurrentRow.Cells["Bdate"].Value.ToString()),
-               dgvEmployee.CurrentRow.Cells["Adress"].Value.ToString(),
-               dgvEmployee.CurrentRow.Cells["Tel"].Value.ToString(),
-               dgvEmployee.CurrentRow.Cells["Mail"].Value.ToString(),
-               dgvEmployee.CurrentRow.Cells["DepartmentName"].Value.ToString(),
-               Guid.Parse(dgvEmployee.CurrentRow.Cells["DepartmentId"].Value.ToString()),
-               Guid.Parse(dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ToString()));
+        //void deleteEmployee()
+        //{
+        //       employee = new Employee(
+        //       Guid.Parse(dgvEmployee.CurrentRow.Cells["Id"].Value.ToString()),
+        //       dgvEmployee.CurrentRow.Cells["Tc"].Value.ToString(),
+        //       dgvEmployee.CurrentRow.Cells["Name"].Value.ToString(),
+        //       dgvEmployee.CurrentRow.Cells["Surname"].Value.ToString(),
+        //       DateTime.Parse(dgvEmployee.CurrentRow.Cells["Bdate"].Value.ToString()),
+        //       dgvEmployee.CurrentRow.Cells["Adress"].Value.ToString(),
+        //       dgvEmployee.CurrentRow.Cells["Tel"].Value.ToString(),
+        //       dgvEmployee.CurrentRow.Cells["Mail"].Value.ToString(),
+        //       dgvEmployee.CurrentRow.Cells["DepartmentName"].Value.ToString(),
+        //       Guid.Parse(dgvEmployee.CurrentRow.Cells["DepartmentId"].Value.ToString()),
+        //       Guid.Parse(dgvEmployee.CurrentRow.Cells["AuthorityId"].Value.ToString()));
 
 
 
-            DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
-                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                MessageBox.Show(employeeManager.Delete(employee.Id));
+        //    DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
+        //                     "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //    if (dialogResult == DialogResult.Yes)
+        //    {
+        //        MessageBox.Show(employeeManager.Delete(employee.Id));
 
-            }
+        //    }
 
-        }
+        //}
         void FillCbDepartment()
         {
             departmentList = departmentManager.GetAll();
@@ -127,30 +126,31 @@ namespace ControlAppDesktop.Forms
         //**** silinmiş personellere göre prosedür yaz
         void getEmployeeByTc()
         {
-            dgvEmployee.DataSource = employeeManager.GetByTc("EmployeeListByTc", txtbxSearchEmloyee.Text);
+            dgvEmployee.DataSource = employeeManager.GetByTc("PassiveEmployeeListByTc", txtbxSearchEmloyee.Text);
         }
         void getEmployeeByName()
         {
-            dgvEmployee.DataSource = employeeManager.GetByName("EmployeeListByName", txtbxSearchEmloyee.Text);
+            dgvEmployee.DataSource = employeeManager.GetByName("PassiveEmployeeListByName", txtbxSearchEmloyee.Text);
         }
         void getEmployeeBySurname()
         {
-            dgvEmployee.DataSource = employeeManager.GetBySurname("EmployeeListBySurname", txtbxSearchEmloyee.Text);
+            dgvEmployee.DataSource = employeeManager.GetBySurname("PassiveEmployeeListBySurname", txtbxSearchEmloyee.Text);
         }
         void getEmployeeByDepartment()
         {
-            dgvEmployee.DataSource = employeeManager.GetByDepartment("EmployeeListByDepartment", cbDepartment.SelectedValue.ToString());
+            dgvEmployee.DataSource = employeeManager.GetByDepartment("PassiveEmployeeListByDepartment", cbDepartment.SelectedValue.ToString());
         }
         void getEmployyeByMail()
         {
-            dgvEmployee.DataSource = employeeManager.GetByMail("EmployeeListByMail", txtbxSearchEmloyee.Text);
+            dgvEmployee.DataSource = employeeManager.GetByMail("PassiveEmployeeListByMail", txtbxSearchEmloyee.Text);
         }
         void getEmployyeByTel()
         {
-            dgvEmployee.DataSource = employeeManager.GetByTel("EmployeeListByTel", txtbxSearchEmloyee.Text);
+            dgvEmployee.DataSource = employeeManager.GetByTel("PassiveEmployeeListByTel", txtbxSearchEmloyee.Text);
         }
         private void EmployeePassiveForm_Load(object sender, EventArgs e)
         {
+            cbDepartment.Visible = false;
             employeePassiveList();
         }
 
@@ -174,6 +174,7 @@ namespace ControlAppDesktop.Forms
                 if (dialogResult == DialogResult.Yes)
                 {
                     returnActiveEmployee();
+                    employeePassiveList();
                 }
 
 
@@ -205,7 +206,7 @@ namespace ControlAppDesktop.Forms
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            deleteEmployee();
+            
             employeePassiveList();
         }
 
@@ -303,8 +304,10 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Lütfen Bir Arama Kriteri Seçiniz");
             }
-            else if (rbTc.Checked == true)
+             if (rbTc.Checked == true)
             {
+                
+                
                 getEmployeeByTc();
 
                 if (dgvEmployee.RowCount < 1)
@@ -313,7 +316,7 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            else if (rbName.Checked == true)
+             if (rbName.Checked == true)
             {
                 getEmployeeByName();
                 if (dgvEmployee.Rows.Count < 1)
@@ -322,7 +325,7 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            else if (rbSurname.Checked == true)
+             if (rbSurname.Checked == true)
             {
                 getEmployeeBySurname();
                 if (dgvEmployee.Rows.Count < 1)
@@ -331,7 +334,7 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            else if (rbDepartment.Checked == true)
+             if (rbDepartment.Checked == true)
             {
                 if (cbDepartment.SelectedValue == null)
                 {
@@ -345,7 +348,7 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            else if (rbTel.Checked == true)
+             if (rbTel.Checked == true)
             {
                 getEmployyeByTel();
                 if (dgvEmployee.Rows.Count < 1)
@@ -354,7 +357,7 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            else if (rbMail.Checked == true)
+             if (rbMail.Checked == true)
             {
                 getEmployyeByMail();
                 if (dgvEmployee.Rows.Count < 1)
@@ -363,13 +366,17 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            dgvEmployee.Columns[1].Visible = false;
-            dgvEmployee.Columns[2].Visible = false;
+            GridDisplay();
         }
 
         private void txtbxSearchEmloyee_MouseClick(object sender, MouseEventArgs e)
         {
             txtbxSearchEmloyee.Text = "";
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

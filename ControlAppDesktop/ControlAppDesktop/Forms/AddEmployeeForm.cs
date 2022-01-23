@@ -129,8 +129,6 @@ namespace ControlAppDesktop.Forms
             cmbAuthority.DisplayMember = "AuthorityName";
             
 
-
-
         }
 
         private void AddEmployeeForm_Load(object sender, EventArgs e)

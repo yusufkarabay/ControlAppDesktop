@@ -21,11 +21,15 @@ namespace ControlAppDesktop.Forms
         Employee employee;
         DepartmentManager departmentManager;
         List<Department> _departmentList;
+        AuthorityManager authorityManager;
+        Authority authority;
+        List<Authority> _authorityList;
 
         public EmployeeUpdateForm()
         {
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
+           
         }
 
         public EmployeeUpdateForm(Guid employeeId)
@@ -35,6 +39,7 @@ namespace ControlAppDesktop.Forms
             _employeeId = employeeId;
             employeeManager = EmployeeManager.GetInstance();
             departmentManager = DepartmentManager.GetInstance();
+            authorityManager = AuthorityManager.GetInstance();
         }
 
         private void updateEmployeeFrom_Load(object sender, EventArgs e)
@@ -70,11 +75,18 @@ namespace ControlAppDesktop.Forms
         void FillCbAuthority()
         {
             _departmentList = departmentManager.GetAll();
+            _authorityList = authorityManager.GetAll();
 
-            cbAuthorityInfo.DataSource = _departmentList;
-            cbAuthorityInfo.ValueMember = "DepartmentId";
-            cbAuthorityInfo.DisplayMember = "DepartmentName";
-            cbAuthorityInfo.SelectedValue = employee.DepartmentId;
+            cbDepartment.DataSource = _departmentList;
+            cbDepartment.ValueMember = "DepartmentId";
+            cbDepartment.DisplayMember = "DepartmentName";
+            cbDepartment.SelectedValue = employee.DepartmentId;
+
+            cbAuthority.DataSource = _authorityList;
+
+            cbAuthority.ValueMember = "AuthorityId";
+            cbAuthority.DisplayMember = "AuthorityName";
+            cbAuthority.SelectedValue = employee.AuthorityId;
 
         }
 
@@ -99,9 +111,14 @@ namespace ControlAppDesktop.Forms
                 return;
             }
 
-            else if (cbAuthorityInfo.SelectedIndex == -1)
+            else if (cbDepartment.SelectedIndex == -1)
             {
-                MessageBox.Show("department seçiniz");
+                MessageBox.Show("Departman seçiniz");
+                return;
+            }
+            else if (cbAuthority.SelectedIndex == -1)
+            {
+                MessageBox.Show("Yetki seçiniz");
                 return;
             }
             else
@@ -131,8 +148,10 @@ namespace ControlAppDesktop.Forms
                 employee.Tel = mtxtTel.Text;
                 employee.Mail = mtxtMail.Text;
                 employee.Adress = rtbxAdressInfo.Text;
-                employee.DepartmentId = Guid.Parse(cbAuthorityInfo.SelectedValue.ToString());
-                employee.DepartmentName = cbAuthorityInfo.SelectedText.ToString();
+                employee.DepartmentId = Guid.Parse(cbDepartment.SelectedValue.ToString());
+                employee.DepartmentName = cbDepartment.SelectedText.ToString();
+                employee.AuthorityId = Guid.Parse(cbAuthority.SelectedValue.ToString());
+                employee.AuthorityName = cbAuthority.SelectedText.ToString();
 
             }
             MessageBox.Show(employeeManager.UpdateNew(employee));
@@ -140,6 +159,14 @@ namespace ControlAppDesktop.Forms
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void grpInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
