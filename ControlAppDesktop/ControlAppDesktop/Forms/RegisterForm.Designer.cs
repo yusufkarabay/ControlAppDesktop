@@ -40,7 +40,6 @@
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.rtxtAdress = new System.Windows.Forms.RichTextBox();
             this.mtxtTel = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtBDate = new System.Windows.Forms.MaskedTextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
             this.mtxbTC = new System.Windows.Forms.MaskedTextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -155,15 +154,6 @@
             this.mtxtTel.TabIndex = 7;
             this.mtxtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtTel_KeyPress);
             // 
-            // mtxtBDate
-            // 
-            this.mtxtBDate.Location = new System.Drawing.Point(622, 366);
-            this.mtxtBDate.Mask = "00/00/0000";
-            this.mtxtBDate.Name = "mtxtBDate";
-            this.mtxtBDate.Size = new System.Drawing.Size(166, 20);
-            this.mtxtBDate.TabIndex = 5;
-            this.mtxtBDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtBDate_KeyPress);
-            // 
             // txtMail
             // 
             this.txtMail.Location = new System.Drawing.Point(196, 440);
@@ -222,7 +212,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(529, 126);
+            this.btnClose.Location = new System.Drawing.Point(559, 57);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 21;
@@ -243,7 +233,6 @@
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.mtxbTC);
             this.Controls.Add(this.txtMail);
-            this.Controls.Add(this.mtxtBDate);
             this.Controls.Add(this.mtxtTel);
             this.Controls.Add(this.rtxtAdress);
             this.Controls.Add(this.txtSurname);
@@ -279,7 +268,6 @@
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.RichTextBox rtxtAdress;
         private System.Windows.Forms.MaskedTextBox mtxtTel;
-        private System.Windows.Forms.MaskedTextBox mtxtBDate;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.MaskedTextBox mtxbTC;
         private System.Windows.Forms.TextBox txtPassword;

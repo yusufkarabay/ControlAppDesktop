@@ -58,6 +58,44 @@ namespace DataAccess.Concrete
             return result;
         }
 
+        public string EmployeeInCreate(Employee entity)
+        {
+            string result = null;
+
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("EmployeeInCreate",
+                    new SqlParameter("@tc", entity.Tc),
+                    new SqlParameter("@name", entity.Name),
+                   new SqlParameter("@surname", entity.Surname),
+                   new SqlParameter("@bdate", entity.Bdate),
+                   new SqlParameter("@tel", entity.Tel),
+                   new SqlParameter("@mail", entity.Mail),
+                   new SqlParameter("@adress", entity.Adress),
+                   new SqlParameter("@departmentid", entity.DepartmentId),
+                   new SqlParameter("@authorityid", entity.AuthorityId),
+                   new SqlParameter("@isdeleted", entity.IsDeleted),
+                   new SqlParameter("@isuser", entity.IsUser),
+                   new SqlParameter("@password", entity.Password),
+                   new SqlParameter("@repassword", entity.RePassword));
+
+                if (isSuccess)
+                {
+                    return entity.Name + " İsimli Personel Başarıyla Eklendi";
+                }
+                else
+                {
+                    return entity.Tc + "Kimlik Numaralı Personel Bulunmaktadır";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+
+            return result;
+        }
         public string Delete(Guid id)
         {
             string result = null;
@@ -736,7 +774,7 @@ namespace DataAccess.Concrete
                    dataRow["TEL"].ToString(),
                    dataRow["MAIL"].ToString(),
                     (Boolean)dataRow["ISDELETED"],
-                   dataRow["APPROVEDEMPLOYEE"].ToString()                 
+                   dataRow["APPROVEDEMPLOYEE"].ToString()
                     ));
 
                     }

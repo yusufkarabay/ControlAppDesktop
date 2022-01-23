@@ -31,6 +31,7 @@ namespace Entities
         Guid authorityId;
         bool isDeleted;
         string approvedEmployee;
+        bool isUser;
 
 
         public Employee() { }
@@ -155,6 +156,37 @@ namespace Entities
             this.authorityName = authorityName;
             this.authorityId = authorityId;
         }
+        // İçerden kullanıcı yada personel ekleme
+        public Employee(
+            string tc, 
+            string name,
+            string surname,
+           DateTime bdate, 
+           string adress,
+           string tel,
+           string mail,
+           string password,
+           string rePassword,
+           Guid departmentId,
+           Guid authorityId,
+           bool isDeleted,
+           bool isUser)
+        {
+
+            this.tc = tc;
+            this.name = name;
+            this.surname = surname;
+            this.bdate = bdate;
+            this.adress = adress;
+            this.tel = tel;
+            this.mail = mail;
+            this.departmentId = departmentId;
+            this.password = password;
+            this.rePassword = rePassword;
+            this.authorityId = authorityId;
+            this.isDeleted = isDeleted;
+            this.isUser=isUser; 
+        }
         public Employee(string tc, string name, string surname, DateTime bdate, string adress, string tel, string mail, string departmentName)
         {
             this.tc = tc;
@@ -174,8 +206,8 @@ namespace Entities
             string adress,
             string tel,
             string mail,
-            Guid departmentId,
-            Guid authorityId)
+            Guid departmentId
+           )// Guid authorityId
         {
             this.tc = tc;
             this.name = name;
@@ -185,7 +217,7 @@ namespace Entities
             this.tel = tel;
             this.mail = mail;
             this.departmentId = departmentId;
-            this.authorityId = authorityId;
+            //this.authorityId = authorityId;
 
         }
         public Employee(
@@ -261,5 +293,6 @@ namespace Entities
         public bool IsDeleted { get => isDeleted; set => isDeleted = value; }
        
         public string ApprovedEmployee { get => approvedEmployee; set => approvedEmployee = value; }
+        public bool IsUser { get => isUser; set => isUser = value; }
     }
 }

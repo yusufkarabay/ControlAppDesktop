@@ -83,6 +83,24 @@ namespace Business.Concrete
             }
         }
 
+        public string EmployeeInCreate(Employee entity)
+        {
+            try
+            {
+                controlText = IsEmployeeComplete(entity);
+                if (controlText != "")
+                {
+                    return controlText;
+                }
+                return employeeDal.EmployeeInCreate(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+
         public string Delete(Guid id)
         {
             try
@@ -265,7 +283,7 @@ namespace Business.Concrete
         {
             try
             {
-                
+
                 return employeeDal.NotCheckedEmployeeList();
 
             }

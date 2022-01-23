@@ -12,40 +12,24 @@ using System.Windows.Forms;
 using DataAccess.Concrete;
 
 
-
-
 namespace ControlAppDesktop.Forms
 {
-
-    public partial class EmployeeForm : Form
+    public partial class EmployeePassiveForm : Form
     {
         EmployeeManager employeeManager;
         DepartmentManager departmentManager;
         public object[] infos;
         Employee employee;
         List<Department> departmentList;
-
-        public EmployeeForm()
+        public EmployeePassiveForm()
         {
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
             departmentManager = DepartmentManager.GetInstance();
         }
-        private void Employee_Load(object sender, EventArgs e)
-        {
-            employeeList();
-            cbDepartment.Visible = false;
-            if (infos[4].ToString() == "Bilgi İşlem Yetkisi".ToString())
-            {
-                label2.Text = "Teestttt Başarılııı";
-            }
-            
-
-        }
-        //****************************
         void GridDisplay()
         {
-            if (dgvEmployee.Rows.Count>0)
+            if (dgvEmployee.Rows.Count > 0)
             {
                 dgvEmployee.Columns[0].Visible = false;
                 dgvEmployee.Columns[1].Visible = false;
@@ -74,20 +58,26 @@ namespace ControlAppDesktop.Forms
                 dgvEmployee.Columns[11].HeaderText = "Departman";
                 dgvEmployee.Columns[12].HeaderText = "Yetki";
             }
-           
+
 
         }
-        void employeeList()
+        void employeePassiveList()
         {
-            dgvEmployee.DataSource = employeeManager.GetAll();
+            dgvEmployee.DataSource = employeeManager.EmployeePassiveList();
             if (dgvEmployee.Rows.Count > 0)
             {
                 dgvEmployee.Rows[0].Selected = true;
             }
             GridDisplay();
+        }
+
+        //**** tekrar aktif yap güncellemesi hazırla
+        void returnActiveEmployee()
+        {
 
         }
-       
+
+
         void fillInfos()
         {
             lblTcInfo.Text = employee.Tc;
@@ -124,14 +114,6 @@ namespace ControlAppDesktop.Forms
             }
 
         }
-        void UpdateToEmployeeForm()
-        {
-            EmployeeUpdateForm updateEmployeeFrom = new EmployeeUpdateForm(employee.Id);
-
-            updateEmployeeFrom.Show();
-
-
-        }
         void FillCbDepartment()
         {
             departmentList = departmentManager.GetAll();
@@ -142,7 +124,7 @@ namespace ControlAppDesktop.Forms
             cbDepartment.DisplayMember = "DepartmentName";
             cbDepartment.SelectedIndex = -1;
         }
-
+        //**** silinmiş personellere göre prosedür yaz
         void getEmployeeByTc()
         {
             dgvEmployee.DataSource = employeeManager.GetByTc("EmployeeListByTc", txtbxSearchEmloyee.Text);
@@ -167,34 +149,37 @@ namespace ControlAppDesktop.Forms
         {
             dgvEmployee.DataSource = employeeManager.GetByTel("EmployeeListByTel", txtbxSearchEmloyee.Text);
         }
+        private void EmployeePassiveForm_Load(object sender, EventArgs e)
+        {
+            employeePassiveList();
+        }
 
-        //***************************************
-        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            employeePassiveList();
+        }
+      
+        private void returnActiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvEmployee.SelectedRows == null)
             {
-                MessageBox.Show("Güncellenecek Personeli Seçiniz");
+                MessageBox.Show("Aktif Edilecek Personeli Seçiniz");
                 return;
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show(employee.Name + "" + employee.Surname + " Personeli İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
+                DialogResult dialogResult = MessageBox.Show(employee.Name + "" + employee.Surname + " Personeli İçin Aktif Etmek İstediğinize Emin Misiniz?",
                               "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    UpdateToEmployeeForm();
+                    returnActiveEmployee();
                 }
 
 
             }
-
-
         }
-        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            employeeList();
-        }
+
         private void dgvEmployee_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (dgvEmployee.CurrentRow == null)
@@ -218,16 +203,12 @@ namespace ControlAppDesktop.Forms
             fillInfos();
         }
 
-        private void btnEmployeeAdd_Click(object sender, EventArgs e)
-        {
-            AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
-            addEmployeeForm.Show();
-        }
-        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             deleteEmployee();
-            employeeList();
+            employeePassiveList();
         }
+
         private void rbTc_CheckedChanged(object sender, EventArgs e)
         {
             if (txtbxSearchEmloyee.Visible == false)
@@ -242,6 +223,7 @@ namespace ControlAppDesktop.Forms
 
             txtbxSearchEmloyee.Text = "TC Giriniz...";
         }
+
         private void rbName_CheckedChanged(object sender, EventArgs e)
         {
             if (txtbxSearchEmloyee.Visible == false)
@@ -255,6 +237,7 @@ namespace ControlAppDesktop.Forms
 
             txtbxSearchEmloyee.Text = "Personel Adı Giriniz...";
         }
+
         private void rbSurname_CheckedChanged(object sender, EventArgs e)
         {
             if (txtbxSearchEmloyee.Visible == false)
@@ -268,6 +251,7 @@ namespace ControlAppDesktop.Forms
 
             txtbxSearchEmloyee.Text = "Personel Soyadı Giriniz...";
         }
+
         private void rbDepartment_CheckedChanged(object sender, EventArgs e)
         {
             if (cbDepartment.Visible == false)
@@ -279,9 +263,8 @@ namespace ControlAppDesktop.Forms
                 txtbxSearchEmloyee.Visible = false;
             }
             FillCbDepartment();
-
-
         }
+
         private void rbTel_CheckedChanged(object sender, EventArgs e)
         {
             if (txtbxSearchEmloyee.Visible == false)
@@ -295,8 +278,10 @@ namespace ControlAppDesktop.Forms
 
             txtbxSearchEmloyee.Text = "Personele Ait Telefon Numarası Giriniz...";
         }
+
         private void rbMail_CheckedChanged(object sender, EventArgs e)
         {
+
             if (txtbxSearchEmloyee.Visible == false)
             {
                 txtbxSearchEmloyee.Visible = true;
@@ -308,28 +293,17 @@ namespace ControlAppDesktop.Forms
 
             txtbxSearchEmloyee.Text = "Personele Ait Mail Adresi Giriniz...";
         }
-        private void rbBdate_CheckedChanged(object sender, EventArgs e)
-        {
 
-            if (cbDepartment.Visible == true)
-            {
-                cbDepartment.Visible = false;
-            }
-
-        }
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            employeeList();
-        }
         private void btnSearchEmployee_Click(object sender, EventArgs e)
         {
+
             if (rbTc.Checked == false & rbName.Checked == false &
                 rbSurname.Checked == false & rbDepartment.Checked == false
                 & rbTel.Checked == false & rbMail.Checked == false)
             {
                 MessageBox.Show("Lütfen Bir Arama Kriteri Seçiniz");
             }
-            else if (rbTc.Checked == true )
+            else if (rbTc.Checked == true)
             {
                 getEmployeeByTc();
 
@@ -359,9 +333,9 @@ namespace ControlAppDesktop.Forms
             }
             else if (rbDepartment.Checked == true)
             {
-                if (cbDepartment.SelectedValue==null)
+                if (cbDepartment.SelectedValue == null)
                 {
-                    MessageBox.Show("Lütfen Departman Seçiniz","Uyarı",MessageBoxButtons.OK);
+                    MessageBox.Show("Lütfen Departman Seçiniz", "Uyarı", MessageBoxButtons.OK);
                     return;
                 }
                 getEmployeeByDepartment();
@@ -391,26 +365,11 @@ namespace ControlAppDesktop.Forms
             }
             dgvEmployee.Columns[1].Visible = false;
             dgvEmployee.Columns[2].Visible = false;
-
         }
 
         private void txtbxSearchEmloyee_MouseClick(object sender, MouseEventArgs e)
         {
             txtbxSearchEmloyee.Text = "";
-        }
-       
-
-        private void btnPassiveEmploye_Click(object sender, EventArgs e)
-        {
-           EmployeePassiveForm  employeePassiveForm = new EmployeePassiveForm();
-            employeePassiveForm.infos = infos;
-            employeePassiveForm.Show();
-        }
-
-        private void btnActiveEmployee_Click(object sender, EventArgs e)
-        {
-            employeeList();
-            
         }
     }
 }

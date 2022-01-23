@@ -29,8 +29,13 @@
         private void InitializeComponent()
         {
             this.grpInfo = new System.Windows.Forms.GroupBox();
+            this.lblAuthority = new System.Windows.Forms.Label();
             this.cmbAuthority = new System.Windows.Forms.ComboBox();
-            this.authority = new System.Windows.Forms.Label();
+            this.txtRepassword = new System.Windows.Forms.TextBox();
+            this.lblRePassword = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblIsUser = new System.Windows.Forms.Label();
             this.dtpEmployeeBDate = new System.Windows.Forms.DateTimePicker();
             this.rtbxAdressInfo = new System.Windows.Forms.RichTextBox();
             this.lblAdress = new System.Windows.Forms.Label();
@@ -49,13 +54,20 @@
             this.employeeName = new System.Windows.Forms.Label();
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.chebUser = new System.Windows.Forms.CheckBox();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInfo
             // 
+            this.grpInfo.Controls.Add(this.chebUser);
+            this.grpInfo.Controls.Add(this.lblAuthority);
             this.grpInfo.Controls.Add(this.cmbAuthority);
-            this.grpInfo.Controls.Add(this.authority);
+            this.grpInfo.Controls.Add(this.txtRepassword);
+            this.grpInfo.Controls.Add(this.lblRePassword);
+            this.grpInfo.Controls.Add(this.txtPassword);
+            this.grpInfo.Controls.Add(this.lblPassword);
+            this.grpInfo.Controls.Add(this.lblIsUser);
             this.grpInfo.Controls.Add(this.dtpEmployeeBDate);
             this.grpInfo.Controls.Add(this.rtbxAdressInfo);
             this.grpInfo.Controls.Add(this.lblAdress);
@@ -74,38 +86,85 @@
             this.grpInfo.Controls.Add(this.employeeName);
             this.grpInfo.Location = new System.Drawing.Point(176, 41);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(435, 369);
+            this.grpInfo.Size = new System.Drawing.Size(459, 495);
             this.grpInfo.TabIndex = 6;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Kişi Bilgileri";
             // 
+            // lblAuthority
+            // 
+            this.lblAuthority.AutoSize = true;
+            this.lblAuthority.Location = new System.Drawing.Point(25, 449);
+            this.lblAuthority.Name = "lblAuthority";
+            this.lblAuthority.Size = new System.Drawing.Size(37, 13);
+            this.lblAuthority.TabIndex = 32;
+            this.lblAuthority.Text = "Yetki :";
+            this.lblAuthority.Visible = false;
+            // 
             // cmbAuthority
             // 
             this.cmbAuthority.FormattingEnabled = true;
-            this.cmbAuthority.Location = new System.Drawing.Point(179, 144);
+            this.cmbAuthority.Location = new System.Drawing.Point(180, 441);
             this.cmbAuthority.Name = "cmbAuthority";
-            this.cmbAuthority.Size = new System.Drawing.Size(200, 21);
-            this.cmbAuthority.TabIndex = 28;
+            this.cmbAuthority.Size = new System.Drawing.Size(216, 21);
+            this.cmbAuthority.TabIndex = 31;
+            this.cmbAuthority.Visible = false;
             // 
-            // authority
+            // txtRepassword
             // 
-            this.authority.AutoSize = true;
-            this.authority.Location = new System.Drawing.Point(13, 147);
-            this.authority.Name = "authority";
-            this.authority.Size = new System.Drawing.Size(37, 13);
-            this.authority.TabIndex = 27;
-            this.authority.Text = "Yetki :";
+            this.txtRepassword.Location = new System.Drawing.Point(179, 410);
+            this.txtRepassword.Name = "txtRepassword";
+            this.txtRepassword.Size = new System.Drawing.Size(200, 20);
+            this.txtRepassword.TabIndex = 28;
+            this.txtRepassword.Visible = false;
+            // 
+            // lblRePassword
+            // 
+            this.lblRePassword.AutoSize = true;
+            this.lblRePassword.Location = new System.Drawing.Point(25, 410);
+            this.lblRePassword.Name = "lblRePassword";
+            this.lblRePassword.Size = new System.Drawing.Size(77, 13);
+            this.lblRePassword.TabIndex = 30;
+            this.lblRePassword.Text = "Tekrar Parola :";
+            this.lblRePassword.Visible = false;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(180, 377);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(200, 20);
+            this.txtPassword.TabIndex = 27;
+            this.txtPassword.Visible = false;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(25, 380);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(43, 13);
+            this.lblPassword.TabIndex = 29;
+            this.lblPassword.Text = "Parola :";
+            this.lblPassword.Visible = false;
+            // 
+            // lblIsUser
+            // 
+            this.lblIsUser.AutoSize = true;
+            this.lblIsUser.Location = new System.Drawing.Point(23, 346);
+            this.lblIsUser.Name = "lblIsUser";
+            this.lblIsUser.Size = new System.Drawing.Size(68, 13);
+            this.lblIsUser.TabIndex = 10;
+            this.lblIsUser.Text = "Kullanıcı mı ?";
             // 
             // dtpEmployeeBDate
             // 
-            this.dtpEmployeeBDate.Location = new System.Drawing.Point(179, 174);
+            this.dtpEmployeeBDate.Location = new System.Drawing.Point(179, 145);
             this.dtpEmployeeBDate.Name = "dtpEmployeeBDate";
             this.dtpEmployeeBDate.Size = new System.Drawing.Size(200, 20);
             this.dtpEmployeeBDate.TabIndex = 26;
             // 
             // rtbxAdressInfo
             // 
-            this.rtbxAdressInfo.Location = new System.Drawing.Point(179, 253);
+            this.rtbxAdressInfo.Location = new System.Drawing.Point(179, 224);
             this.rtbxAdressInfo.Name = "rtbxAdressInfo";
             this.rtbxAdressInfo.Size = new System.Drawing.Size(200, 96);
             this.rtbxAdressInfo.TabIndex = 25;
@@ -114,7 +173,7 @@
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
-            this.lblAdress.Location = new System.Drawing.Point(23, 286);
+            this.lblAdress.Location = new System.Drawing.Point(23, 257);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(39, 13);
             this.lblAdress.TabIndex = 24;
@@ -122,14 +181,14 @@
             // 
             // mtxtMail
             // 
-            this.mtxtMail.Location = new System.Drawing.Point(179, 227);
+            this.mtxtMail.Location = new System.Drawing.Point(179, 198);
             this.mtxtMail.Name = "mtxtMail";
             this.mtxtMail.Size = new System.Drawing.Size(200, 20);
             this.mtxtMail.TabIndex = 23;
             // 
             // mtxtTel
             // 
-            this.mtxtTel.Location = new System.Drawing.Point(179, 202);
+            this.mtxtTel.Location = new System.Drawing.Point(179, 173);
             this.mtxtTel.Mask = "(999) 000-0000";
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(200, 20);
@@ -169,7 +228,7 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(13, 234);
+            this.lblMail.Location = new System.Drawing.Point(13, 205);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(29, 13);
             this.lblMail.TabIndex = 15;
@@ -178,7 +237,7 @@
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(13, 205);
+            this.lblTel.Location = new System.Drawing.Point(13, 176);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(46, 13);
             this.lblTel.TabIndex = 13;
@@ -187,7 +246,7 @@
             // lblBdate
             // 
             this.lblBdate.AutoSize = true;
-            this.lblBdate.Location = new System.Drawing.Point(13, 176);
+            this.lblBdate.Location = new System.Drawing.Point(13, 147);
             this.lblBdate.Name = "lblBdate";
             this.lblBdate.Size = new System.Drawing.Size(73, 13);
             this.lblBdate.TabIndex = 11;
@@ -231,7 +290,7 @@
             // 
             // btnEmployeeAdd
             // 
-            this.btnEmployeeAdd.Location = new System.Drawing.Point(412, 406);
+            this.btnEmployeeAdd.Location = new System.Drawing.Point(385, 581);
             this.btnEmployeeAdd.Name = "btnEmployeeAdd";
             this.btnEmployeeAdd.Size = new System.Drawing.Size(75, 23);
             this.btnEmployeeAdd.TabIndex = 7;
@@ -249,13 +308,24 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // chebUser
+            // 
+            this.chebUser.AutoSize = true;
+            this.chebUser.Location = new System.Drawing.Point(179, 346);
+            this.chebUser.Name = "chebUser";
+            this.chebUser.Size = new System.Drawing.Size(48, 17);
+            this.chebUser.TabIndex = 33;
+            this.chebUser.Text = "Evet";
+            this.chebUser.UseVisualStyleBackColor = true;
+            this.chebUser.CheckedChanged += new System.EventHandler(this.chebUser_CheckedChanged);
+            // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnClose);
+            this.ClientSize = new System.Drawing.Size(1009, 736);
             this.Controls.Add(this.btnEmployeeAdd);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEmployeeForm";
@@ -287,8 +357,14 @@
         private System.Windows.Forms.Label employeeName;
         private System.Windows.Forms.Button btnEmployeeAdd;
         private System.Windows.Forms.DateTimePicker dtpEmployeeBDate;
-        public System.Windows.Forms.ComboBox cmbAuthority;
-        private System.Windows.Forms.Label authority;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblIsUser;
+        private System.Windows.Forms.TextBox txtRepassword;
+        private System.Windows.Forms.Label lblRePassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblAuthority;
+        private System.Windows.Forms.ComboBox cmbAuthority;
+        private System.Windows.Forms.CheckBox chebUser;
     }
 }

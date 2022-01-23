@@ -36,23 +36,33 @@ namespace ControlAppDesktop.Forms
             authorityManager = AuthorityManager.GetInstance();
 
         }
-        void EmployeeAdd()
+        void EmployeeInCreate()
         {
+
+
             employee = new Employee(
 
-             mtxtTcInfo.Text.ToString(),
-             txtNameInfo.Text.ToString(),
-             txtSurnmaeInfo.Text.ToString(),
-             DateTime.Parse(dtpEmployeeBDate.Value.ToString("yyyy-MM-dd")),
-              rtbxAdressInfo.Text.ToString(),
-               mtxtTel.Text.ToString(),
-               mtxtMail.Text.ToString(),
-               Guid.Parse(cbDepartmentInfo.SelectedValue.ToString()),
-             Guid.Parse(cmbAuthority.SelectedValue.ToString()));
+                mtxtTcInfo.Text.ToString(),
+                txtNameInfo.Text.ToString(),
+                txtSurnmaeInfo.Text.ToString(),
+                DateTime.Parse(dtpEmployeeBDate.Value.ToString("yyyy-MM-dd")),
+                rtbxAdressInfo.Text.ToString(),
+                mtxtTel.Text.ToString(),
+                mtxtMail.Text.ToString(),
+                txtPassword.Text.ToString(),
+                txtRepassword.Text.ToString(),
+                Guid.Parse(cbDepartmentInfo.SelectedValue.ToString()),
+                Guid.Parse(cmbAuthority.SelectedValue.ToString()),
+                true,
+                chebUser.Checked
+               );
+               
 
-            employeeManager.Add(employee);
+
+            employeeManager.EmployeeInCreate(employee);
             MessageBox.Show("Personel Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+       
 
         private void btnEmployeeAdd_Click(object sender, EventArgs e)
         {
@@ -72,39 +82,34 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Departman Seçiniz");return;
             }
-            if (mtxtTel.Text == "")
-            {
-                MessageBox.Show("Telefon Alanı Boş Geçilemez"); return;
-            }
+            //if (mtxtTel.Text == "")
+            //{
+            //    MessageBox.Show("Telefon Alanı Boş Geçilemez"); return;
+            //}
 
-            if (mtxtMail.Text == "")
+            //if (mtxtMail.Text == "")
+            //{
+            //    MessageBox.Show("Mail Alanı Boş Geçilemez"); return;
+            //}
+            //if (rtbxAdressInfo.Text == "")
+            //{
+            //    MessageBox.Show("Adres Alanı Boş Geçilemez"); return;
+            //}
+            if (txtPassword.Text!=txtRepassword.Text)
             {
-                MessageBox.Show("Mail Alanı Boş Geçilemez"); return;
+                MessageBox.Show("Parola Uyuşmamaktadır"); return;
             }
-            if (rtbxAdressInfo.Text == "")
-            {
-                MessageBox.Show("Adres Alanı Boş Geçilemez"); return;
-            }
-            if (cmbAuthority.SelectedValue==null)
-            {
-                MessageBox.Show("Yetki Alanı Seçiniz"); return;
-            }
+                 
+
             else
             {
-                EmployeeAdd();
+                EmployeeInCreate();
             }
 
 
-            mtxtTcInfo.Text = "";
-            txtNameInfo.Text = "";
-            txtSurnmaeInfo.Text = "";
-            cbDepartmentInfo.SelectedIndex = -1;
-            cmbAuthority.SelectedIndex = -1;
-            mtxtTel.Text = "";
-            mtxtMail.Text = "";
-            rtbxAdressInfo.Text = "";
            
-            this.Close();
+           
+           this.Close();
 
         }
         void FillCbAuthority()
@@ -116,11 +121,13 @@ namespace ControlAppDesktop.Forms
             
             cbDepartmentInfo.ValueMember = "DepartmentId";
             cbDepartmentInfo.DisplayMember = "DepartmentName";
+            cbDepartmentInfo.SelectedIndex =-1;
 
             cmbAuthority.DataSource = authorityList;
-            
+
             cmbAuthority.ValueMember = "AuthorityId";
             cmbAuthority.DisplayMember = "AuthorityName";
+            
 
 
 
@@ -130,13 +137,45 @@ namespace ControlAppDesktop.Forms
         {
            
             FillCbAuthority();
-            cbDepartmentInfo.SelectedIndex = -1;
-            cmbAuthority.SelectedIndex = -1;
+           
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbIsUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void chebUser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chebUser.Checked==true)
+            {
+                lblPassword.Visible = true;
+                txtPassword.Visible = true;
+                lblRePassword.Visible = true;
+                txtRepassword.Visible = true;
+                lblAuthority.Visible = true;
+                cmbAuthority.Visible = true;
+            }
+            else
+            {
+                lblPassword.Visible=false;  
+                txtPassword.Visible = false;
+                lblRePassword.Visible = false;
+                txtRepassword.Visible = false;
+                lblAuthority.Visible = false;
+                cmbAuthority.Visible = false;
+
+                txtPassword.Text = "";
+                txtRepassword.Text = "";
+            }
+
+
         }
     }
 }
