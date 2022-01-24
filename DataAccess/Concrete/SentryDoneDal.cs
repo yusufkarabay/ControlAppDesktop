@@ -16,28 +16,34 @@ namespace DataAccess.Concrete
         static SentryDoneDal sentryDoneDal;
         SqlService sqlService;
         SentryDone sentryDone;
+        LogService logService;
        
 
         public SentryDoneDal()
         {
             sqlService = SqlDatabase.GetInstance();
+            logService = LogService.GetIntance();
         }
         public string Add(SentryDone entity)
         {
             string result = null;
             try
             {
+               
                 var (isSucces, msg) = sqlService.StoredV2("SentryDoneCreate",
                     new SqlParameter("@done", entity.Done),
                     new SqlParameter("@createdtime", entity.CreatedTime),
                     new SqlParameter("@createdemployee", entity.CreatedEmployee));
-                return "Yapılan İş Başarı ile Eklendi";
+               // return "Yapılan İş Başarı ile Eklendi";
+
+                return logService.Info("Yapılan İş Ekleme","Yapılan İş: "+entity.Done,"Ekleme Zamanı: "+entity.CreatedTime,"Ekleyen Personel: " + entity.CreatedEmployee);
             }
 
             catch (Exception ex)
             {
 
-                return ex.Message;
+                // return ex.Message;
+             return   logService.Error(ex.Message, "Yapılan İş Ekleme", "Yapılan İş: " + entity.Done, "Ekleme Zamanı: " + entity.CreatedTime, "Ekleyen Personel: " + entity.CreatedEmployee);
             }
             return result;
         }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Concrete;
+using Entities;
 
 namespace ControlAppDesktop
 {
@@ -46,6 +47,8 @@ namespace ControlAppDesktop
             }
 
             object[] infos = employeeManager.Login(mtxtTC.Text, txtPassword.Text);
+            UserRealName.RealName = infos[1] + " " + infos[2].ToString();
+            
             if (infos == null)
             {
                 MessageBox.Show("Hatalı TC Kimlik Numarası veya Şifre Girdiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
