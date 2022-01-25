@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Concrete;
 using System.IO;
+using ClosedXML.Excel;
 
 namespace ControlAppDesktop.Forms
 {
@@ -21,6 +22,7 @@ namespace ControlAppDesktop.Forms
         Employee employee;
         Inventory inventory;
         public object[] infos;
+        string fullpath;
 
         public InventoryForm()
         {
@@ -263,7 +265,8 @@ namespace ControlAppDesktop.Forms
         }
         private void txtbzxSearchInventory_MouseClick(object sender, MouseEventArgs e)
         {
-            txtbxtSearchInventoryName.Text = "";
+            txtbxtSearchInventoryName.Clear();
+           // txtInventorySearchSeriNo.Text = "Seri No'ya Göre Ara...";
         }
         
 
@@ -338,6 +341,45 @@ namespace ControlAppDesktop.Forms
         private void txtInventorySearchSeriNo_MouseClick(object sender, MouseEventArgs e)
         {
            txtInventorySearchSeriNo.Clear();
+           // txtbxtSearchInventoryName.Text = "Envanter Adına Göre Ara...";
+        }
+
+        private void txtbxAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+
+
+            DialogResult dialogResult = saveFileDialog1.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+            fullpath= saveFileDialog1.FileName;
+                string oldName=Path.GetFileName(fullpath);
+                string newName = Path.GetFileNameWithoutExtension(oldName) + ".xlsx";
+                fullpath=fullpath.Replace(oldName, newName);
+                
+            }
+            if (dgvInventory.DataSource == null)
+            {
+                MessageBox.Show("Eklenmiş Envanter Bulunmamaktadır...");
+                return;
+            }
+            if (string.IsNullOrEmpty(fullpath))
+            {
+                return;
+            }
+           IXLWorkbook workbook= new XLWorkbook();
+            IXLWorksheet xLWorksheet = workbook.AddWorksheet(dgvInventory.,"Envanter");
+
+            IXLRow xLRow = xLWorksheet.Row(1);
+            
+            foreach (DataGridViewRow item in dgvInventory.Rows)
+            {
+
+            }
         }
     }
 }

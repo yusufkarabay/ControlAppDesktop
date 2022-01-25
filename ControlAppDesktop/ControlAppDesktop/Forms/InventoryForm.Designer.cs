@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -43,17 +43,22 @@
             this.txtbxInventorySeriNo = new System.Windows.Forms.TextBox();
             this.lblInventoryInfo = new System.Windows.Forms.Label();
             this.lblInventoryAmount = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.lblInventoryName = new System.Windows.Forms.Label();
             this.lblInventorySeriNo = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnList = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnInventoryPdf = new System.Windows.Forms.Button();
             this.btnInventoryWeb = new System.Windows.Forms.Button();
             this.btnAllList = new System.Windows.Forms.Button();
             this.txtbxtSearchInventoryName = new System.Windows.Forms.TextBox();
             this.txtInventorySearchSeriNo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.grpInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -76,8 +81,8 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToResizeColumns = false;
             this.dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
@@ -130,11 +135,13 @@
             this.grpInventoryInfo.Controls.Add(this.txtbxInventorySeriNo);
             this.grpInventoryInfo.Controls.Add(this.lblInventoryInfo);
             this.grpInventoryInfo.Controls.Add(this.lblInventoryAmount);
+            this.grpInventoryInfo.Controls.Add(this.btnUpdate);
+            this.grpInventoryInfo.Controls.Add(this.btnAdd);
             this.grpInventoryInfo.Controls.Add(this.lblInventoryName);
             this.grpInventoryInfo.Controls.Add(this.lblInventorySeriNo);
-            this.grpInventoryInfo.Location = new System.Drawing.Point(69, 84);
+            this.grpInventoryInfo.Location = new System.Drawing.Point(72, 38);
             this.grpInventoryInfo.Name = "grpInventoryInfo";
-            this.grpInventoryInfo.Size = new System.Drawing.Size(345, 198);
+            this.grpInventoryInfo.Size = new System.Drawing.Size(345, 227);
             this.grpInventoryInfo.TabIndex = 5;
             this.grpInventoryInfo.TabStop = false;
             this.grpInventoryInfo.Text = "Envanter Bilgileri";
@@ -151,21 +158,22 @@
             // 
             this.txtbxAmount.Location = new System.Drawing.Point(105, 96);
             this.txtbxAmount.Name = "txtbxAmount";
-            this.txtbxAmount.Size = new System.Drawing.Size(100, 20);
+            this.txtbxAmount.Size = new System.Drawing.Size(206, 20);
             this.txtbxAmount.TabIndex = 6;
+            this.txtbxAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxAmount_KeyPress);
             // 
             // txtbxInventoryName
             // 
             this.txtbxInventoryName.Location = new System.Drawing.Point(105, 59);
             this.txtbxInventoryName.Name = "txtbxInventoryName";
-            this.txtbxInventoryName.Size = new System.Drawing.Size(100, 20);
+            this.txtbxInventoryName.Size = new System.Drawing.Size(206, 20);
             this.txtbxInventoryName.TabIndex = 5;
             // 
             // txtbxInventorySeriNo
             // 
             this.txtbxInventorySeriNo.Location = new System.Drawing.Point(105, 22);
             this.txtbxInventorySeriNo.Name = "txtbxInventorySeriNo";
-            this.txtbxInventorySeriNo.Size = new System.Drawing.Size(100, 20);
+            this.txtbxInventorySeriNo.Size = new System.Drawing.Size(206, 20);
             this.txtbxInventorySeriNo.TabIndex = 4;
             // 
             // lblInventoryInfo
@@ -185,6 +193,27 @@
             this.lblInventoryAmount.Size = new System.Drawing.Size(42, 13);
             this.lblInventoryAmount.TabIndex = 2;
             this.lblInventoryAmount.Text = "Miktar :";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(18, 198);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(175, 185);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Ekle";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblInventoryName
             // 
@@ -213,34 +242,13 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(485, 103);
+            this.btnList.Location = new System.Drawing.Point(712, 90);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 7;
             this.btnList.Text = "Listele";
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(554, 180);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 8;
-            this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(566, 103);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Ekle";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnInventoryPdf
             // 
@@ -263,7 +271,7 @@
             // 
             // btnAllList
             // 
-            this.btnAllList.Location = new System.Drawing.Point(647, 103);
+            this.btnAllList.Location = new System.Drawing.Point(463, 42);
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(111, 23);
             this.btnAllList.TabIndex = 13;
@@ -273,7 +281,7 @@
             // 
             // txtbxtSearchInventoryName
             // 
-            this.txtbxtSearchInventoryName.Location = new System.Drawing.Point(807, 262);
+            this.txtbxtSearchInventoryName.Location = new System.Drawing.Point(804, 238);
             this.txtbxtSearchInventoryName.Multiline = true;
             this.txtbxtSearchInventoryName.Name = "txtbxtSearchInventoryName";
             this.txtbxtSearchInventoryName.Size = new System.Drawing.Size(276, 30);
@@ -284,7 +292,7 @@
             // 
             // txtInventorySearchSeriNo
             // 
-            this.txtInventorySearchSeriNo.Location = new System.Drawing.Point(511, 262);
+            this.txtInventorySearchSeriNo.Location = new System.Drawing.Point(463, 238);
             this.txtInventorySearchSeriNo.Multiline = true;
             this.txtInventorySearchSeriNo.Name = "txtInventorySearchSeriNo";
             this.txtInventorySearchSeriNo.Size = new System.Drawing.Size(276, 30);
@@ -293,17 +301,50 @@
             this.txtInventorySearchSeriNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtInventorySearchSeriNo_MouseClick);
             this.txtInventorySearchSeriNo.TextChanged += new System.EventHandler(this.txtInventorySearchSeriNo_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(460, 222);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Seri No";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(805, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Envanter Adı";
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(973, 160);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(135, 23);
+            this.btnExcel.TabIndex = 22;
+            this.btnExcel.Text = "Excel Olarak Dışarı Aktar";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // InventoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.Controls.Add(this.btnExcel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInventorySearchSeriNo);
             this.Controls.Add(this.txtbxtSearchInventoryName);
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.btnInventoryWeb);
             this.Controls.Add(this.btnInventoryPdf);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.grpInventoryInfo);
@@ -348,5 +389,10 @@
         private System.Windows.Forms.ToolStripMenuItem refreshInventoryToolStripMenuItem;
         private System.Windows.Forms.TextBox txtbxtSearchInventoryName;
         private System.Windows.Forms.TextBox txtInventorySearchSeriNo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

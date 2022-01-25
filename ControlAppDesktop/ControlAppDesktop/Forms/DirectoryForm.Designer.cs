@@ -47,6 +47,7 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.gbAdd = new System.Windows.Forms.GroupBox();
             this.btnAllList = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.gbDirectory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirectory)).BeginInit();
             this.gbSearch.SuspendLayout();
@@ -245,6 +246,10 @@
             this.btnAllList.UseVisualStyleBackColor = true;
             this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // DirectoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -291,5 +296,6 @@
         private System.Windows.Forms.Label lblMessage;
         private System.Windows.Forms.GroupBox gbAdd;
         private System.Windows.Forms.Button btnAllList;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

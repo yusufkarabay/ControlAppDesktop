@@ -67,15 +67,17 @@ namespace ControlAppDesktop.Forms
                 dgvNotCheckedEmployee.Columns[17].Visible = false;
                 dgvNotCheckedEmployee.Columns[18].Visible = false;
                 dgvNotCheckedEmployee.Columns[19].Visible = false;
+                dgvNotCheckedEmployee.Columns[20].Visible = false;
+
 
 
 
                 dgvNotCheckedEmployee.Columns["Tc"].HeaderText = "T.C. Kimlik No";
                 dgvNotCheckedEmployee.Columns["Name"].HeaderText = "Ad";
                 dgvNotCheckedEmployee.Columns["Surname"].HeaderText = "Soyad";
-                dgvNotCheckedEmployee.Columns["Bdate"].HeaderText = "Doğum Tarigi";
+                dgvNotCheckedEmployee.Columns["Bdate"].HeaderText = "Doğum Tarihi";
                 dgvNotCheckedEmployee.Columns["Tel"].HeaderText = "Telefon";
-                dgvNotCheckedEmployee.Columns["Tel"].HeaderText = "Telefon";
+               
             }
             return;
         }
