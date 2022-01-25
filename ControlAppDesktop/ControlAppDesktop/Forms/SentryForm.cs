@@ -85,19 +85,27 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
-            btnSentryDoneUpdate.Visible = true;
+
             sentryDone = new SentryDone(
                  Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
                  dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
                  DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
                  dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString());
+            if (infos[0].ToString() != dgvSentry.CurrentRow.Cells["CreatedEmployee"].Value.ToString())
+            {
+                MessageBox.Show("Yalnızca Kendi Oluşturduğunuz Kayıtları Güncelleyebilirsiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             DialogResult dialogResult = MessageBox.Show("Seçili İş İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                btnSentryDoneUpdate.Visible = true;
+                btnSentryDoneAdd.Visible = false;
                 rtbxSentry.Text = sentryDone.Done;
             }
+
 
 
         }
@@ -115,7 +123,9 @@ namespace ControlAppDesktop.Forms
             }
             updateSentryDone();
             rtbxSentry.Text = "Nöbet sırasında yapılan işler...";
+            btnSentryDoneAdd.Visible = true;
             thisDateDone();
+
 
         }
         private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,20 +158,25 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
-            btnSentryToDoUpdate.Visible = true;
+            
             sentryToDo = new SentryToDo(
                  Guid.Parse(dgvSentryTodo.CurrentRow.Cells["SentryToDoId"].Value.ToString()),
                  dgvSentryTodo.CurrentRow.Cells["ToDo"].Value.ToString(),
                  DateTime.Parse(dgvSentryTodo.CurrentRow.Cells["CreatedTime"].Value.ToString()),
                  dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].ToString());
-
+            if (infos[0].ToString() != dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].Value.ToString())
+            {
+                MessageBox.Show("Yalnızca Kendi Oluşturduğunuz Kayıtları Güncelleyebilirsiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DialogResult dialogResult = MessageBox.Show("Seçili İş İçin Güncelleme Yapmak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 rtbxSentryToDo.Text = sentryToDo.ToDo;
+                btnSentryToDoUpdate.Visible = true;
             }
-
+            
         }
         private void silToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -186,6 +201,7 @@ namespace ControlAppDesktop.Forms
             }
             updateSentyToDo();
             rtbxSentryToDo.Text = "Takip edilecek işlemler...";
+            btnSentryToDoUpdate.Visible = false;
             thisDateToDo();
         }
         private void SentryForm_Load(object sender, EventArgs e)
@@ -248,7 +264,6 @@ namespace ControlAppDesktop.Forms
 
                 GridDisplayDone();
             }
-
         }
         void updateSentryDone()
         {
@@ -293,12 +308,12 @@ namespace ControlAppDesktop.Forms
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                if (infos[0].ToString()!=dgvSentry.CurrentRow.Cells["CreatedEmployee"].Value.ToString())
+                if (infos[0].ToString() != dgvSentry.CurrentRow.Cells["CreatedEmployee"].Value.ToString())
                 {
-                    MessageBox.Show("Yalnızce Kendi Oluşturduğunuz Kayıtları Silebilirsiniz","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Yalnızce Kendi Oluşturduğunuz Kayıtları Silebilirsiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId,infos[0].ToString()));
+                MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId, infos[0].ToString()));
                 thisDateDone();
 
             }
@@ -329,7 +344,7 @@ namespace ControlAppDesktop.Forms
             }
             else
             {
-               GridDisplayToDo();
+                GridDisplayToDo();
             }
 
 
@@ -347,11 +362,16 @@ namespace ControlAppDesktop.Forms
                  DateTime.Parse(dgvSentryTodo.CurrentRow.Cells["CreatedTime"].Value.ToString()),
                  dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].ToString());
 
-
+            if (infos[0].ToString() != dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].Value.ToString())
+            {
+                MessageBox.Show("Yalnızce Kendi Oluşturduğunuz Kayıtları Silebilirsiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+               
                 MessageBox.Show(sentryToDoManager.Delete(sentryToDo.SentryToDoId));
                 thisDateToDo();
 
