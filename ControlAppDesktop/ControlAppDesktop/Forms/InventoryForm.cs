@@ -29,14 +29,30 @@ namespace ControlAppDesktop.Forms
         }
         void GridDisplay()
         {
-            dgvInventory.Columns[0].Visible = false;
-            dgvInventory.Columns[4].Visible = false;
+            if (dgvInventory.Rows.Count>0)
+            {
+                dgvInventory.Columns[0].Visible = false;
+                dgvInventory.Columns[4].Visible = false;
+                dgvInventory.Columns[8].Visible = false;
+                dgvInventory.Columns["InventorySeriNo"].HeaderText = "Envanter Seri No";
+                dgvInventory.Columns["InventoryName"].HeaderText = "Envanter Adı";
+                dgvInventory.Columns["Amount"].HeaderText = "Miktar";
+                dgvInventory.Columns["CreatedTime"].HeaderText = "Eklenme Zamanı";
+                dgvInventory.Columns["Info"].HeaderText = "Detay";
+                dgvInventory.Columns["EmployeeName"].HeaderText = "Oluşturan Personel";
+
+
+
+            }
+
+
         }
 
         void thisDateAddedInventoryList()
         {
             dgvInventory.DataSource = inventoryManager.GetInventoryByCreatedDate("InventoryGetByCreatedTime",
-            Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")));
+            Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")),
+            Guid.Parse(infos[5].ToString()));
 
             if (dgvInventory.Rows.Count < 1)
             {
@@ -44,7 +60,7 @@ namespace ControlAppDesktop.Forms
             }
             else
             {
-               // GridDisplay();
+                GridDisplay();
             }
 
         }
@@ -52,7 +68,7 @@ namespace ControlAppDesktop.Forms
         {
             dgvInventory.DataSource = inventoryManager.GetAllByDepartment("InventoryList", Guid.Parse(infos[5].ToString()));
             
-                // GridDisplay();
+                 GridDisplay();
            
         }
         void addInventory()
@@ -123,13 +139,14 @@ namespace ControlAppDesktop.Forms
         void searchInventoryByName()
         {
 
-            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventoryName.Text);
-
+            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventoryName.Text, Guid.Parse(infos[5].ToString()));
+            GridDisplay();
         }
         void searchInventoryBySeriNo()
         {
-
-            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtInventorySearchSeriNo.Text);
+         
+            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtInventorySearchSeriNo.Text,Guid.Parse(infos[5].ToString()));
+            GridDisplay();
 
         }
 
@@ -186,9 +203,9 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
-            if (btnAdd.Visible = true)
+            if (btnUpdate.Visible == false)
             {
-                btnAdd.Visible = false;
+                btnUpdate.Visible = true;
             }
             inventory = new Inventory(
                 Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
@@ -198,6 +215,8 @@ namespace ControlAppDesktop.Forms
                dgvInventory.CurrentRow.Cells["Info"].Value.ToString(),
                dgvInventory.CurrentRow.Cells["CreatedEmployee"].ToString(),
                DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()));
+            Guid.Parse(dgvInventory.CurrentRow.Cells["DepartmentId"].Value.ToString());
+            
 
             DialogResult dialogResult = MessageBox.Show("Seçili Envanteri Güncelleme Yapmak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -233,11 +252,11 @@ namespace ControlAppDesktop.Forms
             txtbxInventorySeriNo.Text = "";
             rtxbxInventoryInfo.Text = "";
             allInventoryList();
-            if (btnAdd.Visible == false)
+            if (btnUpdate.Visible == true)
             {
-                btnAdd.Visible = true;
+                btnUpdate.Visible = false;
             }
-            btnAdd.Visible = true;
+            btnUpdate.Visible = false;
 
 
 
@@ -301,8 +320,7 @@ namespace ControlAppDesktop.Forms
                 return;
             }
 
-            dgvInventory.Columns[0].Visible = false;
-            dgvInventory.Columns[4].Visible = false;
+           
         }
 
         private void txtInventorySearchSeriNo_TextChanged(object sender, EventArgs e)
@@ -314,13 +332,12 @@ namespace ControlAppDesktop.Forms
                 return;
             }
 
-            dgvInventory.Columns[0].Visible = false;
-            dgvInventory.Columns[4].Visible = false;
+           
         }
 
         private void txtInventorySearchSeriNo_MouseClick(object sender, MouseEventArgs e)
         {
-            txtInventorySearchSeriNo.Text = "";
+           txtInventorySearchSeriNo.Clear();
         }
     }
 }

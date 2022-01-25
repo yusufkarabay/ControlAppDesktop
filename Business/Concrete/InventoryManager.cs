@@ -58,7 +58,7 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date)
+        public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date,Guid departmentid)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace Business.Concrete
                 {
                     return null;
                 }
-                return inventorydal.GetInventoryByCreatedDate(procuderName, date);
+                return inventorydal.GetInventoryByCreatedDate(procuderName, date,departmentid);
 
             }
             catch (Exception)
@@ -92,7 +92,7 @@ namespace Business.Concrete
                 return new List<Inventory>();
             }
         }
-        public List<Inventory> GetInventoryByName(string procuderName, string inventoryName)
+        public List<Inventory> GetInventoryByName(string procuderName, string inventoryName,Guid departmentid)
         {
 
             try
@@ -101,7 +101,7 @@ namespace Business.Concrete
                 {
                     return null;
                 }
-                return inventorydal.GetInventoryByName(procuderName, inventoryName);
+                return inventorydal.GetInventoryByName(procuderName, inventoryName,departmentid);
 
             }
             catch (Exception)
@@ -110,7 +110,7 @@ namespace Business.Concrete
                 return new List<Inventory>();
             }
         }
-        public List<Inventory> GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
+        public List<Inventory> GetInventoryBySeriNo(string procuderName, string inventorySeriNo,Guid departmentid)
         {
             try
             {
@@ -118,7 +118,7 @@ namespace Business.Concrete
                 {
                     return null;
                 }
-                return inventorydal.GetInventoryBySeriNo(procuderName, inventorySeriNo);
+                return inventorydal.GetInventoryBySeriNo(procuderName, inventorySeriNo,departmentid);
 
             }
             catch (Exception)

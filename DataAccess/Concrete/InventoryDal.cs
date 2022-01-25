@@ -68,12 +68,12 @@ namespace DataAccess.Concrete
             }
             return result;
         }
-        public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date)
+        public List<Inventory> GetInventoryByCreatedDate(string procuderName, DateTime date,Guid departmentid)
         {
             List<Inventory> inventoryList = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date),new SqlParameter("@departmentid",departmentid));
                 if (msg != null)
                 {
                     return null;
@@ -144,12 +144,12 @@ namespace DataAccess.Concrete
             return inventoryList;
 
         }
-        public List<Inventory> GetInventoryByName(string procuderName, string inventoryName)
+        public List<Inventory> GetInventoryByName(string procuderName, string inventoryName, Guid departmentid)
         {
             List<Inventory> inventories = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@inventoryname", inventoryName));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@inventoryname", inventoryName), new SqlParameter("@departmentid", departmentid));
                 if (msg != null)
                 {
                     return null;
@@ -160,15 +160,15 @@ namespace DataAccess.Concrete
 
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                        inventories.Add(new Inventory
-                            (Guid.Parse(dataRow["INVENTORYID"].ToString()),
-                            dataRow["INVENTORYSERINO"].ToString(),
+                        inventories.Add(new Inventory(
+                           Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                           dataRow["INVENTORYSERINO"].ToString(),
                             dataRow["INVENTORYNAME"].ToString(),
                             dataRow["AMOUNT"].ContInt(),
                             dataRow["INFO"].ToString(),
                             dataRow["CREATEDTIME"].ConDate(),
                             dataRow["TC"].ToString(),
-                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
                             Guid.Parse(dataRow["DEPARTMENTID"].ToString())));
                     }
                 }
@@ -184,12 +184,12 @@ namespace DataAccess.Concrete
             return inventories;
 
         }
-        public List<Inventory> GetInventoryBySeriNo(string procuderName, string inventorySeriNo)
+        public List<Inventory> GetInventoryBySeriNo(string procuderName, string inventorySeriNo,Guid departmentid)
         {
             List<Inventory> inventories = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@inventoryserino", inventorySeriNo));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@inventoryserino", inventorySeriNo),new SqlParameter("@departmentid",departmentid));
                 if (msg != null)
                 {
                     return null;
