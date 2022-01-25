@@ -49,7 +49,7 @@ namespace DataAccess.Concrete
         public string Info(string methodName, params object[] parameters)
         {
             File.AppendAllText(logInfoPath, "\n" + UserInfos() +"("+ methodName + ") " + GetParameters(parameters));
-            return "1";
+            return "";
         }
         public string Error(string errorMessage, string methodName, params object[] parameters)
         {

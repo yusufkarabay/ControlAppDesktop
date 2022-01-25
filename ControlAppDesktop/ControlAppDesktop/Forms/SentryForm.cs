@@ -64,7 +64,7 @@ namespace ControlAppDesktop.Forms
            Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")), infos[0].ToString(), Guid.Parse(infos[5].ToString()));
 
             string result = sentryDoneManager.Add(sentryDone);
-            if (result == "1")
+            if (result == "")
             {
                 MessageBox.Show("İş Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -284,8 +284,8 @@ namespace ControlAppDesktop.Forms
                 Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
                 dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
                 DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
-                dgvSentry.CurrentRow.Cells["CreatedEmployee"].ToString(),
-                dgvSentry.CurrentRow.Cells["EmployeeName"].ToString(),
+                dgvSentry.CurrentRow.Cells["CreatedEmployee"].Value.ToString(),
+                dgvSentry.CurrentRow.Cells["EmployeeName"].Value.ToString(),
                 Guid.Parse(dgvSentry.CurrentRow.Cells["DepartmentId"].Value.ToString()));
 
 
@@ -293,7 +293,12 @@ namespace ControlAppDesktop.Forms
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId));
+                if (infos[0].ToString()!=dgvSentry.CurrentRow.Cells["CreatedEmployee"].Value.ToString())
+                {
+                    MessageBox.Show("Yalnızce Kendi Oluşturduğunuz Kayıtları Silebilirsiniz","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+                MessageBox.Show(sentryDoneManager.Delete(sentryDone.SentrydoneId,infos[0].ToString()));
                 thisDateDone();
 
             }

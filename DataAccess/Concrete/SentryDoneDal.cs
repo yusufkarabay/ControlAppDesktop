@@ -135,17 +135,18 @@ namespace DataAccess.Concrete
         }
 
 
-        public string Delete(Guid id)
+        public string Delete(Guid id,string createdemployee)
         {
             string result = null;
             try
             {
-                var (isSuccess, msg) = sqlService.StoreReaderV2("SentryDoneDelete", new SqlParameter("@donesentryid", id));
+                var (isSuccess, msg) = sqlService.StoreReaderV2("SentryDoneDelete", new SqlParameter("@donesentryid", id),new SqlParameter("@createdemployee", createdemployee));
                
                 if (isSuccess)
                 {
                     //  result = "Yapılan İş  Başarı İle Silindi";
-                 return   logService.Info("Yapılan İş Sil", "İş Id: " + id);
+                    
+                 return "Yapılan İş Silinmişitr" + logService.Info("Yapılan İş Sil", "İş Id: " + id);
                           
                 }
                 else
@@ -208,6 +209,11 @@ namespace DataAccess.Concrete
                 sentryDoneDal = new SentryDoneDal();
             }
             return sentryDoneDal;
+        }
+
+        public string Delete(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

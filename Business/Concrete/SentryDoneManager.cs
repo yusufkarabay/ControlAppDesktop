@@ -14,9 +14,11 @@ namespace Business.Concrete
         static SentryDoneManager sentryDoneManager;
         SentryDoneDal sentryDoneDal;
         string controlText;
+       
         public SentryDoneManager()
         {
             sentryDoneDal = SentryDoneDal.GetInstance();
+          
         }
 
         string IsSentryDoneComplete(SentryDone sentryDone)
@@ -45,7 +47,7 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public string Delete(Guid id)
+        public string Delete(Guid id,string createdemployee)
         {
             try
             {
@@ -53,7 +55,8 @@ namespace Business.Concrete
                 {
                     return "Silmek İçin Lütfen Geçerli İş Seçiniz.";
                 }
-                return sentryDoneDal.Delete(id);
+                
+                return sentryDoneDal.Delete(id,createdemployee);
             }
             catch (Exception ex)
             {

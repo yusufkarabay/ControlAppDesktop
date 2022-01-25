@@ -50,15 +50,10 @@ namespace ControlAppDesktop.Forms
         }
         void allInventoryList()
         {
-            dgvInventory.DataSource = inventoryManager.GetAllByDepartment("InventoryList",Guid.Parse(infos[5].ToString()));
-            if (dgvInventory.Rows.Count < 1)
-            {
-                MessageBox.Show("Seçili Tarihte Eklenmiş Envanter Kaydı Bulunamadı");
-            }
-            else
-            {
+            dgvInventory.DataSource = inventoryManager.GetAllByDepartment("InventoryList", Guid.Parse(infos[5].ToString()));
+            
                 // GridDisplay();
-            }
+           
         }
         void addInventory()
         {

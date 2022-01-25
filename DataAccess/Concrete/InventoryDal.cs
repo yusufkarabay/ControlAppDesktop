@@ -268,7 +268,7 @@ namespace DataAccess.Concrete
 
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@departmantid", departmentId));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@departmentid", departmentId));
                 if (msg != null)
                 {
                     return null;
