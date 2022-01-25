@@ -16,6 +16,7 @@ namespace Entities
         string createdEmployee;
         DateTime createdTime;
         string employeeName;
+        Guid departmentId;
 
         public Inventory()
         {
@@ -36,7 +37,7 @@ namespace Entities
             this.createdTime = createdTime;
             this.info = info;
         }
-        public Inventory(Guid inventoryId, string inventorySeriNo, string inventoryName, int amount, string info, DateTime createdTime, string createdEmployee, string employeeName)
+        public Inventory(Guid inventoryId, string inventorySeriNo, string inventoryName, int amount, string info, DateTime createdTime, string createdEmployee, string employeeName,Guid departmentId)
         {
             this.inventoryId = inventoryId;
             this.inventorySeriNo = inventorySeriNo;
@@ -46,6 +47,7 @@ namespace Entities
             this.createdTime = createdTime;
             this.info = info;
             this.employeeName = employeeName;
+            this.departmentId = departmentId;
         }
         
         public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, DateTime createdTime, string createdEmployee, string employeeName)
@@ -58,7 +60,7 @@ namespace Entities
             this.createdTime = createdTime;
             this.employeeName=employeeName;
         }
-        public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, string createdEmployee, DateTime createdTime)
+        public Inventory(string inventorySeriNo, string inventoryName, int amount, string info, string createdEmployee, DateTime createdTime,Guid departmentId)
         {
             this.inventorySeriNo = inventorySeriNo;
             this.inventoryName = inventoryName;
@@ -66,6 +68,7 @@ namespace Entities
             this.info = info;
             this.createdEmployee = createdEmployee;
             this.createdTime=createdTime;
+            this.departmentId = departmentId;   
           
         }
 
@@ -77,5 +80,6 @@ namespace Entities
         public DateTime CreatedTime { get => createdTime; set => createdTime = value; }
         public string Info { get => info; set => info = value; }
         public string EmployeeName { get => employeeName; set => employeeName = value; }
+        public Guid DepartmentId { get => departmentId; set => departmentId = value; }
     }
 }

@@ -52,16 +52,12 @@
             this.btnInventoryPdf = new System.Windows.Forms.Button();
             this.btnInventoryWeb = new System.Windows.Forms.Button();
             this.btnAllList = new System.Windows.Forms.Button();
-            this.txtbxtSearchInventory = new System.Windows.Forms.TextBox();
-            this.btnSearchInventory = new System.Windows.Forms.Button();
-            this.rbtnSeriNo = new System.Windows.Forms.RadioButton();
-            this.rBtnName = new System.Windows.Forms.RadioButton();
-            this.grpBoxSearch = new System.Windows.Forms.GroupBox();
+            this.txtbxtSearchInventoryName = new System.Windows.Forms.TextBox();
+            this.txtInventorySearchSeriNo = new System.Windows.Forms.TextBox();
             this.grpInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.grpInventoryInfo.SuspendLayout();
-            this.grpBoxSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpInventory
@@ -210,14 +206,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(589, 84);
+            this.dateTimePicker1.Location = new System.Drawing.Point(638, 41);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(436, 146);
+            this.btnList.Location = new System.Drawing.Point(485, 103);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 7;
@@ -227,7 +223,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(715, 146);
+            this.btnUpdate.Location = new System.Drawing.Point(764, 103);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
@@ -237,7 +233,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(517, 146);
+            this.btnAdd.Location = new System.Drawing.Point(566, 103);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
@@ -247,7 +243,7 @@
             // 
             // btnInventoryPdf
             // 
-            this.btnInventoryPdf.Location = new System.Drawing.Point(935, 114);
+            this.btnInventoryPdf.Location = new System.Drawing.Point(1007, 38);
             this.btnInventoryPdf.Name = "btnInventoryPdf";
             this.btnInventoryPdf.Size = new System.Drawing.Size(124, 23);
             this.btnInventoryPdf.TabIndex = 11;
@@ -256,7 +252,7 @@
             // 
             // btnInventoryWeb
             // 
-            this.btnInventoryWeb.Location = new System.Drawing.Point(935, 146);
+            this.btnInventoryWeb.Location = new System.Drawing.Point(1007, 70);
             this.btnInventoryWeb.Name = "btnInventoryWeb";
             this.btnInventoryWeb.Size = new System.Drawing.Size(124, 23);
             this.btnInventoryWeb.TabIndex = 12;
@@ -266,7 +262,7 @@
             // 
             // btnAllList
             // 
-            this.btnAllList.Location = new System.Drawing.Point(598, 146);
+            this.btnAllList.Location = new System.Drawing.Point(647, 103);
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(111, 23);
             this.btnAllList.TabIndex = 13;
@@ -274,68 +270,34 @@
             this.btnAllList.UseVisualStyleBackColor = true;
             this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
             // 
-            // txtbxtSearchInventory
+            // txtbxtSearchInventoryName
             // 
-            this.txtbxtSearchInventory.Location = new System.Drawing.Point(664, 219);
-            this.txtbxtSearchInventory.Multiline = true;
-            this.txtbxtSearchInventory.Name = "txtbxtSearchInventory";
-            this.txtbxtSearchInventory.Size = new System.Drawing.Size(276, 30);
-            this.txtbxtSearchInventory.TabIndex = 14;
-            this.txtbxtSearchInventory.Text = "Envanter Ara...";
-            this.txtbxtSearchInventory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbzxSearchInventory_MouseClick);
+            this.txtbxtSearchInventoryName.Location = new System.Drawing.Point(807, 262);
+            this.txtbxtSearchInventoryName.Multiline = true;
+            this.txtbxtSearchInventoryName.Name = "txtbxtSearchInventoryName";
+            this.txtbxtSearchInventoryName.Size = new System.Drawing.Size(276, 30);
+            this.txtbxtSearchInventoryName.TabIndex = 14;
+            this.txtbxtSearchInventoryName.Text = "Envanter Adına Göre Ara...";
+            this.txtbxtSearchInventoryName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtbzxSearchInventory_MouseClick);
+            this.txtbxtSearchInventoryName.TextChanged += new System.EventHandler(this.txtbxtSearchInventory_TextChanged);
             // 
-            // btnSearchInventory
+            // txtInventorySearchSeriNo
             // 
-            this.btnSearchInventory.Location = new System.Drawing.Point(759, 255);
-            this.btnSearchInventory.Name = "btnSearchInventory";
-            this.btnSearchInventory.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchInventory.TabIndex = 15;
-            this.btnSearchInventory.Text = "Ara";
-            this.btnSearchInventory.UseVisualStyleBackColor = true;
-            this.btnSearchInventory.Click += new System.EventHandler(this.btnSearchInventory_Click);
-            // 
-            // rbtnSeriNo
-            // 
-            this.rbtnSeriNo.AutoSize = true;
-            this.rbtnSeriNo.Location = new System.Drawing.Point(6, 28);
-            this.rbtnSeriNo.Name = "rbtnSeriNo";
-            this.rbtnSeriNo.Size = new System.Drawing.Size(118, 17);
-            this.rbtnSeriNo.TabIndex = 16;
-            this.rbtnSeriNo.TabStop = true;
-            this.rbtnSeriNo.Text = "Seri No\'ya Göre Ara";
-            this.rbtnSeriNo.UseVisualStyleBackColor = true;
-            this.rbtnSeriNo.CheckedChanged += new System.EventHandler(this.rbtnSeriNo_CheckedChanged);
-            // 
-            // rBtnName
-            // 
-            this.rBtnName.AutoSize = true;
-            this.rBtnName.Location = new System.Drawing.Point(6, 54);
-            this.rBtnName.Name = "rBtnName";
-            this.rBtnName.Size = new System.Drawing.Size(143, 17);
-            this.rBtnName.TabIndex = 17;
-            this.rBtnName.TabStop = true;
-            this.rBtnName.Text = "Envanter Adına Göre Ara";
-            this.rBtnName.UseVisualStyleBackColor = true;
-            this.rBtnName.CheckedChanged += new System.EventHandler(this.rBtnName_CheckedChanged);
-            // 
-            // grpBoxSearch
-            // 
-            this.grpBoxSearch.Controls.Add(this.rBtnName);
-            this.grpBoxSearch.Controls.Add(this.rbtnSeriNo);
-            this.grpBoxSearch.Location = new System.Drawing.Point(447, 204);
-            this.grpBoxSearch.Name = "grpBoxSearch";
-            this.grpBoxSearch.Size = new System.Drawing.Size(200, 100);
-            this.grpBoxSearch.TabIndex = 18;
-            this.grpBoxSearch.TabStop = false;
-            this.grpBoxSearch.Text = "Arama Seçeneği";
+            this.txtInventorySearchSeriNo.Location = new System.Drawing.Point(511, 262);
+            this.txtInventorySearchSeriNo.Multiline = true;
+            this.txtInventorySearchSeriNo.Name = "txtInventorySearchSeriNo";
+            this.txtInventorySearchSeriNo.Size = new System.Drawing.Size(276, 30);
+            this.txtInventorySearchSeriNo.TabIndex = 19;
+            this.txtInventorySearchSeriNo.Text = "Seri No\'ya Göre Ara...";
+            this.txtInventorySearchSeriNo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtInventorySearchSeriNo_MouseClick);
+            this.txtInventorySearchSeriNo.TextChanged += new System.EventHandler(this.txtInventorySearchSeriNo_TextChanged);
             // 
             // InventoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
-            this.Controls.Add(this.grpBoxSearch);
-            this.Controls.Add(this.btnSearchInventory);
-            this.Controls.Add(this.txtbxtSearchInventory);
+            this.Controls.Add(this.txtInventorySearchSeriNo);
+            this.Controls.Add(this.txtbxtSearchInventoryName);
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.btnInventoryWeb);
             this.Controls.Add(this.btnInventoryPdf);
@@ -354,8 +316,6 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.grpInventoryInfo.ResumeLayout(false);
             this.grpInventoryInfo.PerformLayout();
-            this.grpBoxSearch.ResumeLayout(false);
-            this.grpBoxSearch.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,10 +345,7 @@
         private System.Windows.Forms.ToolStripMenuItem updateInventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteInventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshInventoryToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtbxtSearchInventory;
-        private System.Windows.Forms.Button btnSearchInventory;
-        private System.Windows.Forms.RadioButton rbtnSeriNo;
-        private System.Windows.Forms.RadioButton rBtnName;
-        private System.Windows.Forms.GroupBox grpBoxSearch;
+        private System.Windows.Forms.TextBox txtbxtSearchInventoryName;
+        private System.Windows.Forms.TextBox txtInventorySearchSeriNo;
     }
 }

@@ -13,14 +13,16 @@ namespace Entities
         DateTime createdTime;
         string createdEmployee;
         string employeeName;
+        Guid departmentId;
 
-        public SentryDone(Guid sentrydoneId, string done, DateTime createdTime, string createdEmployee, string employeeName)
+        public SentryDone(Guid sentrydoneId, string done, DateTime createdTime, string createdEmployee, string employeeName,Guid departmentId)
         {
             this.sentrydoneId = sentrydoneId; 
             this.done = done;
             this.createdTime = createdTime;
             this.createdEmployee = createdEmployee;
             this.employeeName = employeeName;
+            this.departmentId = departmentId;
         }
 
         public SentryDone(Guid sentrydoneId, string done, DateTime createdTime, string createdEmployee)
@@ -35,11 +37,12 @@ namespace Entities
         {
 
         }
-        public SentryDone(string done, DateTime createdTime, string createdEmployee)
+        public SentryDone(string done, DateTime createdTime, string createdEmployee,Guid departmentId)
         {
             this.done = done;
             this.createdTime = createdTime;
             this.createdEmployee = createdEmployee;
+            this.departmentId = departmentId;
         }
         public SentryDone(string done, DateTime createdTime)
         {
@@ -60,5 +63,6 @@ namespace Entities
         public DateTime CreatedTime { get => createdTime; set => createdTime = value; }
         public string CreatedEmployee { get => createdEmployee; set => createdEmployee = value; }
         public string EmployeeName { get => employeeName; set => employeeName = value; }
+        public Guid DepartmentId { get => departmentId; set => departmentId = value; }
     }
 }

@@ -27,6 +27,11 @@ namespace ControlAppDesktop.Forms
             InitializeComponent();
             inventoryManager = InventoryManager.GetInstance();
         }
+        void GridDisplay()
+        {
+            dgvInventory.Columns[0].Visible = false;
+            dgvInventory.Columns[4].Visible = false;
+        }
 
         void thisDateAddedInventoryList()
         {
@@ -39,16 +44,21 @@ namespace ControlAppDesktop.Forms
             }
             else
             {
-                dgvInventory.Columns[0].Visible = false;
-                dgvInventory.Columns[4].Visible = false;
+               // GridDisplay();
             }
 
         }
         void allInventoryList()
         {
-            dgvInventory.DataSource = inventoryManager.GetAll();
-            dgvInventory.Columns[0].Visible = false;
-            dgvInventory.Columns[4].Visible = false;
+            dgvInventory.DataSource = inventoryManager.GetAllByDepartment("InventoryList",Guid.Parse(infos[5].ToString()));
+            if (dgvInventory.Rows.Count < 1)
+            {
+                MessageBox.Show("Seçili Tarihte Eklenmiş Envanter Kaydı Bulunamadı");
+            }
+            else
+            {
+                // GridDisplay();
+            }
         }
         void addInventory()
         {
@@ -58,8 +68,8 @@ namespace ControlAppDesktop.Forms
               Int32.Parse(txtbxAmount.Text.ToString()),
               rtxbxInventoryInfo.Text.ToString(),
               infos[0].ToString(),
-               Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd"))
-             );
+               Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy-MM-dd")),
+               Guid.Parse(infos[5].ToString()));
 
             inventoryManager.Add(inventory);
 
@@ -77,7 +87,8 @@ namespace ControlAppDesktop.Forms
             dgvInventory.CurrentRow.Cells["Info"].Value.ToString(),
             DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()),
             dgvInventory.CurrentRow.Cells["CreatedEmployee"].ToString(),
-            dgvInventory.CurrentRow.Cells["EmployeeName"].ToString());
+            dgvInventory.CurrentRow.Cells["EmployeeName"].ToString(),
+            Guid.Parse(dgvInventory.CurrentRow.Cells["DepartmentId"].Value.ToString()));
 
 
             DialogResult dialogResult = MessageBox.Show("Seçili İş Silmek İstediğinize Emin Misiniz?",
@@ -117,13 +128,13 @@ namespace ControlAppDesktop.Forms
         void searchInventoryByName()
         {
 
-            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventory.Text);
+            dgvInventory.DataSource = inventoryManager.GetInventoryByName("InventoryGetByName", txtbxtSearchInventoryName.Text);
 
         }
         void searchInventoryBySeriNo()
         {
 
-            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtbxtSearchInventory.Text);
+            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtInventorySearchSeriNo.Text);
 
         }
 
@@ -238,48 +249,10 @@ namespace ControlAppDesktop.Forms
         }
         private void txtbzxSearchInventory_MouseClick(object sender, MouseEventArgs e)
         {
-            txtbxtSearchInventory.Text = "";
+            txtbxtSearchInventoryName.Text = "";
         }
-        private void btnSearchInventory_Click(object sender, EventArgs e)
-        {
-            if (rBtnName.Checked == true)
-            {
-                searchInventoryByName();
-                if (dgvInventory.RowCount < 1)
-                {
-                    MessageBox.Show("Aranan Ürün Bulunamadı");
-                    return;
-                }
-            }
-            if (rbtnSeriNo.Checked == true)
-            {
-                searchInventoryBySeriNo();
-                if (dgvInventory.RowCount < 1)
-                {
-                    MessageBox.Show("Aranan Ürün Bulunamadı");
-                    return;
-                }
-            }
+        
 
-
-            dgvInventory.Columns[0].Visible = false;
-            dgvInventory.Columns[4].Visible = false;
-        }
-
-        private void rBtnName_CheckedChanged(object sender, EventArgs e)
-        {
-            txtbxtSearchInventory.Text = "Envanter Adı Giriniz...";
-        }
-
-        private void rbtnSeriNo_CheckedChanged(object sender, EventArgs e)
-        {
-            txtbxtSearchInventory.Text = "Envanter Seri No Giriniz...";
-        }
-
-        private void rBtnCreatedEmployee_CheckedChanged(object sender, EventArgs e)
-        {
-            txtbxtSearchInventory.Text = "Personel Adı Giriniz...";
-        }
 
         private void btnInventoryWeb_Click(object sender, EventArgs e)
         {
@@ -321,6 +294,38 @@ namespace ControlAppDesktop.Forms
         private void InventoryForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtbxtSearchInventory_TextChanged(object sender, EventArgs e)
+        {
+
+            searchInventoryByName();
+            if (dgvInventory.RowCount < 1)
+            {
+                MessageBox.Show("Aranan Ürün Bulunamadı");
+                return;
+            }
+
+            dgvInventory.Columns[0].Visible = false;
+            dgvInventory.Columns[4].Visible = false;
+        }
+
+        private void txtInventorySearchSeriNo_TextChanged(object sender, EventArgs e)
+        {
+            searchInventoryBySeriNo();
+            if (dgvInventory.RowCount < 1)
+            {
+                MessageBox.Show("Aranan Ürün Bulunamadı");
+                return;
+            }
+
+            dgvInventory.Columns[0].Visible = false;
+            dgvInventory.Columns[4].Visible = false;
+        }
+
+        private void txtInventorySearchSeriNo_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtInventorySearchSeriNo.Text = "";
         }
     }
 }

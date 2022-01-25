@@ -27,7 +27,7 @@ namespace DataAccess.Concrete
             try
             {
                 var (isSucces, msg) = sqlService.StoredV2("SentryToDoCreat", new SqlParameter("@todo", entity.ToDo),
-                    new SqlParameter("@createdtime", entity.CreatedTime), new SqlParameter("@createdemployee", entity.CreatedEmployee));
+                    new SqlParameter("@createdtime", entity.CreatedTime), new SqlParameter("@createdemployee", entity.CreatedEmployee),new SqlParameter("@departmentid",entity.DepartmentId));
                 return "Yapılacak İş Başarı ile Eklendi";
             }
 
@@ -75,12 +75,12 @@ namespace DataAccess.Concrete
 
             throw new NotImplementedException();
         }
-        public List<SentryToDo> GetSentryToDoByDate(string procuderName, DateTime date)
+        public List<SentryToDo> GetSentryToDoByDate(string procuderName, DateTime date,Guid departmentId)
         {
             List<SentryToDo> sentryTodos = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date),new SqlParameter("@departmentid",departmentId));
                 if (msg != null)
                 {
                     return null;
@@ -98,9 +98,10 @@ namespace DataAccess.Concrete
                           dataRow["TODO"].ToString(),
                           dataRow["CREATEDTIME"].ConDate(),
                           dataRow["TC"].ToString(),
-                          $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"
+                          $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                          (Guid)(dataRow["DEPARTMENTID"]
                           )
-                       );
+                       ));
 
                     }
                 }

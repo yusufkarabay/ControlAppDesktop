@@ -87,7 +87,7 @@ namespace Business.Concrete
             if (sentryToDoManager == null) { sentryToDoManager = new SentryToDoManager(); }
             return sentryToDoManager;
         }
-        public List<SentryToDo> GetSentryToDoByDate(string procuderName, DateTime date)
+        public List<SentryToDo> GetSentryToDoByDate(string procuderName, DateTime date,Guid departmentId)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace Business.Concrete
                 {
                     return null;
                 }
-                return sentryToDoDal.GetSentryToDoByDate(procuderName, date);
+                return sentryToDoDal.GetSentryToDoByDate(procuderName, date,departmentId);
 
             }
             catch (Exception)

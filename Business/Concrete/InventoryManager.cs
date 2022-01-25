@@ -13,7 +13,7 @@ namespace Business.Concrete
     {
         static InventoryManager inventoryManager;
         InventoryDal inventorydal;
-       // string controlText;
+        // string controlText;
         public InventoryManager()
         {
             inventorydal = InventoryDal.GetInstance();
@@ -132,6 +132,18 @@ namespace Business.Concrete
             try
             {
                 return inventorydal.GetAll();
+            }
+            catch
+            {
+                return new List<Inventory>();
+            }
+        }
+
+        public List<Inventory> GetAllByDepartment(string procuderName ,Guid departmentId)
+        {
+            try
+            {
+                return inventorydal.GetAllByDepartment(procuderName,departmentId);
             }
             catch
             {

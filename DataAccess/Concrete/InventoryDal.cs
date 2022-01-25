@@ -32,7 +32,8 @@ namespace DataAccess.Concrete
                    new SqlParameter("@amount", entity.Amount),
                    new SqlParameter("@info", entity.Info),
                    new SqlParameter("@createdtime", entity.CreatedTime),
-                   new SqlParameter("@createdemployee", entity.CreatedEmployee));
+                   new SqlParameter("@createdemployee", entity.CreatedEmployee),
+                   new SqlParameter("@departmentid",entity.DepartmentId));
 
                 return "Envanter Başarı İle Eklendi";
 
@@ -91,7 +92,8 @@ namespace DataAccess.Concrete
                            dataRow["INFO"].ToString(),
                            dataRow["CREATEDTIME"].ConDate(),
                            dataRow["TC"].ToString(),
-                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                          Guid.Parse(dataRow["DEPARTMENTID"].ToString()))
                            );
                     }
                 }
@@ -127,7 +129,8 @@ namespace DataAccess.Concrete
                             dataRow["INFO"].ToString(),
                             dataRow["CREATEDTIME"].ConDate(),
                             dataRow["TC"].ToString(),
-                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
+                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                             Guid.Parse(dataRow["DEPARTMENTID"].ToString()))
                             );
                     }
                 }
@@ -165,7 +168,8 @@ namespace DataAccess.Concrete
                             dataRow["INFO"].ToString(),
                             dataRow["CREATEDTIME"].ConDate(),
                             dataRow["TC"].ToString(),
-                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"));
+                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                            Guid.Parse(dataRow["DEPARTMENTID"].ToString())));
                     }
                 }
                 else inventories = null;
@@ -203,7 +207,8 @@ namespace DataAccess.Concrete
                             dataRow["INFO"].ToString(),
                             dataRow["CREATEDTIME"].ConDate(),
                             dataRow["TC"].ToString(),
-                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"));
+                           $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                            Guid.Parse(dataRow["DEPARTMENTID"].ToString())));
                     }
                 }
                 else inventories = null;
@@ -246,8 +251,8 @@ namespace DataAccess.Concrete
                         dataRow["INFO"].ToString(),
                         dataRow["CREATEDTIME"].ConDate(),
                         dataRow["TC"].ToString(),
-                        $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}")
-                        );
+                        $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                        Guid.Parse(dataRow["DEPARTMENTID"].ToString())));
                 }
             }
 
@@ -257,7 +262,45 @@ namespace DataAccess.Concrete
 
         return inventoryList;
     }
-    public string UpdateNew(Inventory entity)
+        public List<Inventory> GetAllByDepartment(string procuderName, Guid departmentId)
+        {
+            List<Inventory> inventoryList = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@departmantid", departmentId));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    inventoryList = new List<Inventory>();
+
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        inventoryList.Add(new Inventory(
+                           Guid.Parse(dataRow["INVENTORYID"].ToString()),
+                           dataRow["INVENTORYSERINO"].ToString(),
+                            dataRow["INVENTORYNAME"].ToString(),
+                            dataRow["AMOUNT"].ContInt(),
+                            dataRow["INFO"].ToString(),
+                            dataRow["CREATEDTIME"].ConDate(),
+                            dataRow["TC"].ToString(),
+                            $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                            Guid.Parse(dataRow["DEPARTMENTID"].ToString())));
+                    }
+                }
+
+            }
+            catch (Exception ex) { }
+            finally { }
+
+            return inventoryList;
+        }
+        public string UpdateNew(Inventory entity)
     {
         string result = null;
         try

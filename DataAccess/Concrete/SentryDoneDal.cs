@@ -33,28 +33,31 @@ namespace DataAccess.Concrete
                 var (isSucces, msg) = sqlService.StoredV2("SentryDoneCreate",
                     new SqlParameter("@done", entity.Done),
                     new SqlParameter("@createdtime", entity.CreatedTime),
-                    new SqlParameter("@createdemployee", entity.CreatedEmployee));
+                    new SqlParameter("@createdemployee", entity.CreatedEmployee),
+                    new SqlParameter("@departmentid",entity.DepartmentId));
                // return "Yapılan İş Başarı ile Eklendi";
 
-                return logService.Info("Yapılan İş Ekleme","Yapılan İş: "+entity.Done,"Ekleme Zamanı: "+entity.CreatedTime,"Ekleyen Personel: " + entity.CreatedEmployee);
+                return logService.Info("Yapılan İş Ekleme","Yapılan İş: "+entity.Done,"Ekleme Zamanı: "+entity.CreatedTime,"Ekleyen Personel: " + entity.CreatedEmployee,
+                    "Ekleyen Personel Departmanı: "+entity.DepartmentId);
             }
 
             catch (Exception ex)
             {
 
                 // return ex.Message;
-             return   logService.Error(ex.Message, "Yapılan İş Ekleme", "Yapılan İş: " + entity.Done, "Ekleme Zamanı: " + entity.CreatedTime, "Ekleyen Personel: " + entity.CreatedEmployee);
+             return   logService.Error(ex.Message, "Yapılan İş Ekleme", "Yapılan İş: " + entity.Done, "Ekleme Zamanı: " + entity.CreatedTime,
+                 "Ekleyen Personel: " + entity.CreatedEmployee,"Ekleyen Personel Departmanı: " + entity.DepartmentId);
             }
             return result;
         }
 
 
-        public List<SentryDone> GetSentryByDate(string procuderName, DateTime date)
+        public List<SentryDone> GetSentryByDate(string procuderName, DateTime date, Guid departmentId)
         {
             List<SentryDone> sentryDones = null;
             try
             {
-                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date));
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdtime", date),new SqlParameter("@departmentid",departmentId));
                 if (msg != null)
                 {
                     return null;
@@ -71,7 +74,8 @@ namespace DataAccess.Concrete
                               dataRow["DONE"].ToString(),
                               dataRow["CREATEDTIME"].ConDate(),
                               dataRow["TC"].ToString(),
-                              $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}"
+                              $"{dataRow["NAME"].ToString()} {dataRow["SURNAME"].ToString()}",
+                              (Guid)dataRow["DEPARTMENTID"]
                             )
                         );
 
@@ -140,7 +144,9 @@ namespace DataAccess.Concrete
                
                 if (isSuccess)
                 {
-                    result = "Yapılan İş  Başarı İle Silindi";
+                    //  result = "Yapılan İş  Başarı İle Silindi";
+                 return   logService.Info("Yapılan İş Sil", "İş Id: " + id);
+                          
                 }
                 else
                 {
@@ -150,7 +156,7 @@ namespace DataAccess.Concrete
             catch (Exception ex)
             {
 
-                return ex.Message;
+                return logService.Error(ex.Message,"Yapılan İş Sil", "İş Id: " + id);
             }
             return result;
         }
