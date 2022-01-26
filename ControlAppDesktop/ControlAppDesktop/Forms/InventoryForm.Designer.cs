@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -49,14 +49,12 @@
             this.lblInventorySeriNo = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnList = new System.Windows.Forms.Button();
-            this.btnInventoryPdf = new System.Windows.Forms.Button();
             this.btnInventoryWeb = new System.Windows.Forms.Button();
             this.btnAllList = new System.Windows.Forms.Button();
             this.txtbxtSearchInventoryName = new System.Windows.Forms.TextBox();
             this.txtInventorySearchSeriNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.grpInventory.SuspendLayout();
@@ -81,8 +79,8 @@
             this.dgvInventory.AllowUserToDeleteRows = false;
             this.dgvInventory.AllowUserToResizeColumns = false;
             this.dgvInventory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvInventory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
@@ -250,18 +248,9 @@
             this.btnList.UseVisualStyleBackColor = true;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
-            // btnInventoryPdf
-            // 
-            this.btnInventoryPdf.Location = new System.Drawing.Point(1007, 38);
-            this.btnInventoryPdf.Name = "btnInventoryPdf";
-            this.btnInventoryPdf.Size = new System.Drawing.Size(124, 23);
-            this.btnInventoryPdf.TabIndex = 11;
-            this.btnInventoryPdf.Text = "Pdf Olarak Dışarı Aktar";
-            this.btnInventoryPdf.UseVisualStyleBackColor = true;
-            // 
             // btnInventoryWeb
             // 
-            this.btnInventoryWeb.Location = new System.Drawing.Point(1007, 70);
+            this.btnInventoryWeb.Location = new System.Drawing.Point(1048, 38);
             this.btnInventoryWeb.Name = "btnInventoryWeb";
             this.btnInventoryWeb.Size = new System.Drawing.Size(124, 23);
             this.btnInventoryWeb.TabIndex = 12;
@@ -319,16 +308,6 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Envanter Adı";
             // 
-            // btnExcel
-            // 
-            this.btnExcel.Location = new System.Drawing.Point(973, 160);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(135, 23);
-            this.btnExcel.TabIndex = 22;
-            this.btnExcel.Text = "Excel Olarak Dışarı Aktar";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -337,14 +316,12 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1184, 730);
-            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInventorySearchSeriNo);
             this.Controls.Add(this.txtbxtSearchInventoryName);
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.btnInventoryWeb);
-            this.Controls.Add(this.btnInventoryPdf);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.grpInventoryInfo);
@@ -380,7 +357,6 @@
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnInventoryPdf;
         private System.Windows.Forms.Button btnInventoryWeb;
         private System.Windows.Forms.Button btnAllList;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -391,7 +367,6 @@
         private System.Windows.Forms.TextBox txtInventorySearchSeriNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }

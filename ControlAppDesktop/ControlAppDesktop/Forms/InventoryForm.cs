@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Concrete;
 using System.IO;
-using ClosedXML.Excel;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 namespace ControlAppDesktop.Forms
 {
 
@@ -31,7 +31,7 @@ namespace ControlAppDesktop.Forms
         }
         void GridDisplay()
         {
-            if (dgvInventory.Rows.Count>0)
+            if (dgvInventory.Rows.Count > 0)
             {
                 dgvInventory.Columns[0].Visible = false;
                 dgvInventory.Columns[4].Visible = false;
@@ -69,9 +69,9 @@ namespace ControlAppDesktop.Forms
         void allInventoryList()
         {
             dgvInventory.DataSource = inventoryManager.GetAllByDepartment("InventoryList", Guid.Parse(infos[5].ToString()));
-            
-                 GridDisplay();
-           
+
+            GridDisplay();
+
         }
         void addInventory()
         {
@@ -146,8 +146,8 @@ namespace ControlAppDesktop.Forms
         }
         void searchInventoryBySeriNo()
         {
-         
-            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtInventorySearchSeriNo.Text,Guid.Parse(infos[5].ToString()));
+
+            dgvInventory.DataSource = inventoryManager.GetInventoryBySeriNo("InventoryGetBySeriNo", txtInventorySearchSeriNo.Text, Guid.Parse(infos[5].ToString()));
             GridDisplay();
 
         }
@@ -218,7 +218,7 @@ namespace ControlAppDesktop.Forms
                dgvInventory.CurrentRow.Cells["CreatedEmployee"].ToString(),
                DateTime.Parse(dgvInventory.CurrentRow.Cells["CreatedTime"].Value.ToString()));
             Guid.Parse(dgvInventory.CurrentRow.Cells["DepartmentId"].Value.ToString());
-            
+
 
             DialogResult dialogResult = MessageBox.Show("Seçili Envanteri Güncelleme Yapmak İstediğinize Emin Misiniz?",
                             "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -266,24 +266,10 @@ namespace ControlAppDesktop.Forms
         private void txtbzxSearchInventory_MouseClick(object sender, MouseEventArgs e)
         {
             txtbxtSearchInventoryName.Clear();
-           // txtInventorySearchSeriNo.Text = "Seri No'ya Göre Ara...";
+            // txtInventorySearchSeriNo.Text = "Seri No'ya Göre Ara...";
         }
-        
 
 
-        private void btnInventoryWeb_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Envanter Listesini HTML Ortamında Masaüstü'ne Kaydetmek İstiyor Musunuz?", "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (dialogResult == DialogResult.Yes)
-            {
-                allInventoryList();
-                string content = Html_Out(dgvInventory);
-                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                File.WriteAllText(desktopPath + "\\ Envanter Listesi.html", content);
-                MessageBox.Show("Envanter Listesi HTML Formatında Masaüstüne Kaydedildi...");
-            }
-        }
         public string Html_Out(DataGridView dg)
         {
             StringBuilder strB = new StringBuilder();
@@ -308,6 +294,20 @@ namespace ControlAppDesktop.Forms
             return strB.ToString();
         }
 
+        private void btnInventoryWeb_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Envanter Listesini HTML Ortamında Masaüstü'ne Kaydetmek İstiyor Musunuz?", "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                allInventoryList();
+                string content = Html_Out(dgvInventory);
+                string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                File.WriteAllText(desktopPath + "\\ Envanter Listesi.html", content);
+                MessageBox.Show("Envanter Listesi HTML Formatında Masaüstüne Kaydedildi...");
+            }
+        }
+
         private void InventoryForm_Load(object sender, EventArgs e)
         {
 
@@ -323,7 +323,7 @@ namespace ControlAppDesktop.Forms
                 return;
             }
 
-           
+
         }
 
         private void txtInventorySearchSeriNo_TextChanged(object sender, EventArgs e)
@@ -335,13 +335,13 @@ namespace ControlAppDesktop.Forms
                 return;
             }
 
-           
+
         }
 
         private void txtInventorySearchSeriNo_MouseClick(object sender, MouseEventArgs e)
         {
-           txtInventorySearchSeriNo.Clear();
-           // txtbxtSearchInventoryName.Text = "Envanter Adına Göre Ara...";
+            txtInventorySearchSeriNo.Clear();
+            // txtbxtSearchInventoryName.Text = "Envanter Adına Göre Ara...";
         }
 
         private void txtbxAmount_KeyPress(object sender, KeyPressEventArgs e)
@@ -349,37 +349,7 @@ namespace ControlAppDesktop.Forms
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
 
 
-            DialogResult dialogResult = saveFileDialog1.ShowDialog();
-            if (dialogResult == DialogResult.OK)
-            {
-            fullpath= saveFileDialog1.FileName;
-                string oldName=Path.GetFileName(fullpath);
-                string newName = Path.GetFileNameWithoutExtension(oldName) + ".xlsx";
-                fullpath=fullpath.Replace(oldName, newName);
-                
-            }
-            if (dgvInventory.DataSource == null)
-            {
-                MessageBox.Show("Eklenmiş Envanter Bulunmamaktadır...");
-                return;
-            }
-            if (string.IsNullOrEmpty(fullpath))
-            {
-                return;
-            }
-           IXLWorkbook workbook= new XLWorkbook();
-            IXLWorksheet xLWorksheet = workbook.AddWorksheet(dgvInventory.,"Envanter");
-
-            IXLRow xLRow = xLWorksheet.Row(1);
-            
-            foreach (DataGridViewRow item in dgvInventory.Rows)
-            {
-
-            }
-        }
     }
 }

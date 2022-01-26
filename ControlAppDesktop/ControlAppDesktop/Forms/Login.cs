@@ -33,7 +33,7 @@ namespace ControlAppDesktop
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-             
+
             if (mtxtTC.Text.Trim() == "")
             {
                 MessageBox.Show("TC Kimlik Numarası Boş Geçilemez", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -47,23 +47,28 @@ namespace ControlAppDesktop
             }
 
             object[] infos = employeeManager.Login(mtxtTC.Text, txtPassword.Text);
-            UserRealName.RealName = infos[1] + " " + infos[2].ToString();
-            
+
+
             if (infos == null)
             {
                 MessageBox.Show("Hatalı TC Kimlik Numarası veya Şifre Girdiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-           
+            else
+            {
+                UserRealName.RealName = infos[1] + " " + infos[2].ToString();
+
                 HomePage homePage = new HomePage();
                 homePage.infos = infos;
                 homePage.Show();
-                
-                this.Hide();
-              
 
-           
-           
+                this.Hide();
+
+            }
+
+
+
+
             MessageBox.Show("Sayın " + infos[1] + " " + infos[2] + " Hoşgeldiniz");
 
 
@@ -72,7 +77,7 @@ namespace ControlAppDesktop
 
         private void LnkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RegisterForm registerForm= new RegisterForm();
+            RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
         }
     }
