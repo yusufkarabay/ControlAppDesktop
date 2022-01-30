@@ -84,6 +84,7 @@
             this.LnkForgot.TabIndex = 5;
             this.LnkForgot.TabStop = true;
             this.LnkForgot.Text = "Şifremi Unuttum";
+            this.LnkForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkForgot_LinkClicked);
             // 
             // LnkSignUp
             // 

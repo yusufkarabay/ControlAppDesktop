@@ -80,5 +80,11 @@ namespace ControlAppDesktop
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
         }
+
+        private void LnkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PasswordForgotForm passwordForgotForm= new PasswordForgotForm();
+            passwordForgotForm.Show();
+        }
     }
 }

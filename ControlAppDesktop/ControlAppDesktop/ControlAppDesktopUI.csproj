@@ -192,6 +192,12 @@
     <Compile Include="Forms\InventoryForm.Designer.cs">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MailCheckedCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MailCheckedCodeForm.Designer.cs">
+      <DependentUpon>MailCheckedCodeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MaintenanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MailCheckedCodeForm.resx">
+      <DependentUpon>MailCheckedCodeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MaintenanceForm.resx">
       <DependentUpon>MaintenanceForm.cs</DependentUpon>

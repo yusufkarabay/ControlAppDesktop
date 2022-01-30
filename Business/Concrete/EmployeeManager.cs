@@ -133,6 +133,22 @@ namespace Business.Concrete
                 return null;
             }
         }
+        //public Employee MailCheck(string procuderName,string mail)
+        //{
+        //    try
+        //    {
+        //        if (mail == null)
+        //        {
+        //            return null;
+        //        }
+
+        //        return employeeDal.MailCheck(procuderName,mail);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
 
         public List<Employee> GetByTc(string procuderName, string tc)
         {
