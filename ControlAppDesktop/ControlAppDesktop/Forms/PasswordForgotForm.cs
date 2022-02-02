@@ -16,5 +16,11 @@ namespace ControlAppDesktop.Forms
         {
             InitializeComponent();
         }
+
+        private void btnCheckCode_Click(object sender, EventArgs e)
+        {
+            MailCheckedCodeForm form = new MailCheckedCodeForm();
+            form.Show();
+        }
     }
 }

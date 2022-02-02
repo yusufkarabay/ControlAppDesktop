@@ -39,68 +39,76 @@
             // 
             // txtTC
             // 
-            this.txtTC.Location = new System.Drawing.Point(145, 53);
+            this.txtTC.Location = new System.Drawing.Point(193, 65);
+            this.txtTC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTC.Name = "txtTC";
-            this.txtTC.Size = new System.Drawing.Size(217, 20);
+            this.txtTC.Size = new System.Drawing.Size(288, 22);
             this.txtTC.TabIndex = 0;
             this.txtTC.Text = "T.C. Kimlik No";
             // 
             // txtCheckCode
             // 
-            this.txtCheckCode.Location = new System.Drawing.Point(145, 97);
+            this.txtCheckCode.Location = new System.Drawing.Point(193, 119);
+            this.txtCheckCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCheckCode.Name = "txtCheckCode";
-            this.txtCheckCode.Size = new System.Drawing.Size(217, 20);
+            this.txtCheckCode.Size = new System.Drawing.Size(288, 22);
             this.txtCheckCode.TabIndex = 1;
             this.txtCheckCode.Text = "Onay Kodu";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(145, 136);
+            this.txtPassword.Location = new System.Drawing.Point(193, 167);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(217, 20);
+            this.txtPassword.Size = new System.Drawing.Size(288, 22);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Şifre";
             // 
             // txtRePassword
             // 
-            this.txtRePassword.Location = new System.Drawing.Point(145, 174);
+            this.txtRePassword.Location = new System.Drawing.Point(193, 214);
+            this.txtRePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRePassword.Name = "txtRePassword";
-            this.txtRePassword.Size = new System.Drawing.Size(217, 20);
+            this.txtRePassword.Size = new System.Drawing.Size(288, 22);
             this.txtRePassword.TabIndex = 3;
             this.txtRePassword.Text = "Tekrar Şifre";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(187, 245);
+            this.btnSave.Location = new System.Drawing.Point(249, 302);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnCheckCode
             // 
-            this.btnCheckCode.Location = new System.Drawing.Point(388, 609);
+            this.btnCheckCode.Location = new System.Drawing.Point(517, 750);
+            this.btnCheckCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckCode.Name = "btnCheckCode";
-            this.btnCheckCode.Size = new System.Drawing.Size(75, 23);
+            this.btnCheckCode.Size = new System.Drawing.Size(100, 28);
             this.btnCheckCode.TabIndex = 5;
             this.btnCheckCode.Text = "Onay Kodu Al";
             this.btnCheckCode.UseVisualStyleBackColor = true;
+            this.btnCheckCode.Click += new System.EventHandler(this.btnCheckCode_Click);
             // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(28, 621);
+            this.btnReturn.Location = new System.Drawing.Point(37, 764);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.Size = new System.Drawing.Size(100, 28);
             this.btnReturn.TabIndex = 6;
             this.btnReturn.Text = "GeriDön";
             this.btnReturn.UseVisualStyleBackColor = true;
             // 
             // PasswordForgotForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 708);
+            this.ClientSize = new System.Drawing.Size(659, 871);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnCheckCode);
             this.Controls.Add(this.btnSave);
@@ -109,6 +117,7 @@
             this.Controls.Add(this.txtCheckCode);
             this.Controls.Add(this.txtTC);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PasswordForgotForm";
             this.Text = "PasswordForgotForm";
             this.ResumeLayout(false);

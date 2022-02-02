@@ -409,6 +409,52 @@ namespace DataAccess.Concrete
 
             return employeesList;
         }
+        public  Employee MailCheck(string procuderName, string mail, string tc)
+        {
+            Employee employee = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@mail", mail), new SqlParameter("@tc", tc));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                         ;
+                      
+
+                      
+                        tc = dataRow["TC"].ToString();
+                 
+                        mail = dataRow["MAIL"].ToString();
+                        
+
+                        employee = new Employee
+                        {
+                            Tc = tc,                          
+                            Mail = mail,
+                         
+                         
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+            }
+
+            return employee;
+        }
+
         public List<Employee> GetAll()
         {
 
@@ -677,68 +723,6 @@ namespace DataAccess.Concrete
             return employee;
         }
 
-        //public Employee MailCheck(string mail)
-        //{
-        //    Employee employee = null;
-
-        //    try
-        //    {
-        //        var (dt, msg) = sqlService.StoredV2("MailCheck", new SqlParameter("@mail", mail));
-        //        if (msg != null)
-        //        {
-        //            return null;
-        //        }
-
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            foreach (DataRow dataRow in dt.Rows)
-        //            {
-
-        //                //string tc, name, surname, departmentName, authorityName, address, mail, tel;
-        //                string mail;
-        //                //DateTime bdate;
-        //                //Guid departmentId, authorityId;
-
-        //                //tc = dataRow["TC"].ToString();
-        //                //name = dataRow["NAME"].ToString();
-        //                //surname = dataRow["SURNAME"].ToString();
-        //                //departmentName = dataRow["DEPARTMENTNAME"].ToString();
-        //                //authorityName = dataRow["AUTHORITYNAME"].ToString();
-        //                //departmentId = (Guid)dataRow["DEPARTMENTID"];
-        //                //authorityId = (Guid)dataRow["AUTHORITYID"];
-        //                //address = dataRow["ADRESS"].ToString();
-        //                mail = dataRow["MAIL"].ToString();
-        //                //tel = dataRow["TEL"].ToString();
-        //                //bdate = dataRow["BDATE"].ConDate();
-
-        //                employee = new Employee
-        //                {
-        //                    //Tc = tc,
-        //                    //Name = name,
-        //                    //Surname = surname,
-        //                    //DepartmentId = departmentId,
-        //                    //AuthorityId = authorityId,
-        //                    //Id = id,
-        //                    //AuthorityName = authorityName,
-        //                    //DepartmentName = departmentName,
-        //                    //Adress = address,
-        //                    Mail = mail,
-        //                    //Tel = tel,
-        //                    //Bdate = bdate
-        //                };
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //    }
-
-        //    return employee;
-        //}
         public string UpdateNew(Employee entity)
         {
 
