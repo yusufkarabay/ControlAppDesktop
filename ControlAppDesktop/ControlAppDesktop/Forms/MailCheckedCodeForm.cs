@@ -64,7 +64,7 @@ namespace ControlAppDesktop.Forms
             CreateCode();
             EmployeeCheckCodeUpdate();
             MailSend();
-            this.Close();
+           
 
         }
         bool MailSend()

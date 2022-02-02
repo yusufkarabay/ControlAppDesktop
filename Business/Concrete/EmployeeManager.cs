@@ -133,18 +133,34 @@ namespace Business.Concrete
                 return null;
             }
         }
-        public Employee MailCheck(string procuderName, string mail,string tc)
+        public Employee MailCheck(string procuderName, string mail, string tc)
         {
             try
             {
-                if (mail == null || tc==null)
+                if (mail == null || tc == null)
                 {
                     return null;
                 }
 
-                return employeeDal.MailCheck(procuderName, mail,tc);
+                return employeeDal.MailCheck(procuderName, mail, tc);
             }
-            catch (Exception )
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        public Employee CheckCodeAndTcCheck(string procuderName, string checkcode, string tc)
+        {
+            try
+            {
+                if (checkcode == null || tc == null)
+                {
+                    return null;
+                }
+
+                return employeeDal.CheckCodeAndTcCheck(procuderName, checkcode, tc);
+            }
+            catch (Exception)
             {
                 return null;
             }
@@ -328,8 +344,8 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        
-            public string PassiveEmployeeToActive(Employee entity)
+
+        public string PassiveEmployeeToActive(Employee entity)
         {
             try
             {
@@ -399,8 +415,8 @@ namespace Business.Concrete
                 {
                     return " Sistemde Girilen Kimlik Numarasına Ait Personel Bulunmamaktadır";
 
-                }               
-               
+                }
+
                 return employeeDal.CheckCodeUpdate(entity);
             }
             catch (Exception ex)
@@ -409,7 +425,25 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-            public static EmployeeManager GetInstance()
+        public string PasswordUpdate(Employee entity)
+        {
+            try
+            {
+                if (entity.Tc == null)
+                {
+                    return " Sistemde Girilen Kimlik Numarasına Ait Personel Bulunmamaktadır";
+
+                }
+
+                return employeeDal.PasswordUpdate(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+        public static EmployeeManager GetInstance()
         {
             if (employeeManager == null) { employeeManager = new EmployeeManager(); }
             return employeeManager;

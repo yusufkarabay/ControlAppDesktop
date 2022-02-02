@@ -409,7 +409,7 @@ namespace DataAccess.Concrete
 
             return employeesList;
         }
-        public  Employee MailCheck(string procuderName, string mail, string tc)
+        public Employee MailCheck(string procuderName, string mail, string tc)
         {
             Employee employee = null;
 
@@ -425,21 +425,21 @@ namespace DataAccess.Concrete
                 {
                     foreach (DataRow dataRow in dt.Rows)
                     {
-                         ;
-                      
+                        ;
 
-                      
+
+
                         tc = dataRow["TC"].ToString();
-                 
+
                         mail = dataRow["MAIL"].ToString();
-                        
+
 
                         employee = new Employee
                         {
-                            Tc = tc,                          
+                            Tc = tc,
                             Mail = mail,
-                         
-                         
+
+
                         };
                     }
                 }
@@ -455,6 +455,82 @@ namespace DataAccess.Concrete
             return employee;
         }
 
+        public Employee CheckCodeAndTcCheck(string procuderName, string checkcode, string tc)
+        {
+            Employee employee = null;
+
+            try
+            {
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@checkcode", checkcode), new SqlParameter("@tc", tc));
+                if (msg != null)
+                {
+                    return null;
+                }
+
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        ;
+
+
+
+                        tc = dataRow["TC"].ToString();
+
+                        checkcode = dataRow["CHECKCODE"].ToString();
+
+
+                        employee = new Employee
+                        {
+                            Tc = tc,
+                            CheckCode = checkcode,
+
+
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+            }
+
+            return employee;
+        }
+
+        public string PasswordUpdate(Employee entity)
+        {
+
+            string result = null;
+
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("PasswordUpdate",
+                    new SqlParameter("@tc", entity.Tc),
+                     new SqlParameter("@checkcode", entity.CheckCode),
+                     new SqlParameter("@password", entity.Password),
+                     new SqlParameter("@repassword", entity.RePassword));
+
+                if (isSuccess)
+                {
+                    result = "Şifre Güncelleme İşlemi Tamamlandı";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+            return result;
+        }
         public List<Employee> GetAll()
         {
 
@@ -758,8 +834,8 @@ namespace DataAccess.Concrete
 
             return result;
         }
-        
-            public string CheckCodeUpdate(Employee entity)
+
+        public string CheckCodeUpdate(Employee entity)
         {
 
             string result = null;

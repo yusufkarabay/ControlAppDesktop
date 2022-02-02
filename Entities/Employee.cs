@@ -11,6 +11,8 @@ namespace Entities
         Guid id;
         string name;       
         string surname;
+        string tc;
+        string checkCode;        
         string password;
         string rePassword;
         DateTime bdate;
@@ -25,8 +27,7 @@ namespace Entities
         string employeeName;
         string employeeSurname;
 
-        string checkCode;
-        string tc;
+       
         Guid departmentId;
         Guid authorityId;
         bool isDeleted;
@@ -285,6 +286,14 @@ namespace Entities
             this.tc = tc;
         }
 
+        public Employee(string tc, string checkCode, string password, string rePassword)
+        {
+            this.tc = tc;
+            this.checkCode = checkCode;
+            this.password = password;
+            this.rePassword = rePassword;
+        }
+
         public Guid Id { get => id; set => id = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }
         public Guid AuthorityId { get => authorityId; set => authorityId = value; }
@@ -300,12 +309,13 @@ namespace Entities
         public string EmployeeName { get => employeeName; set => employeeName = value; }
         public string EmployeeSurname { get => employeeSurname; set => employeeSurname = value; }
         public string EmployeeFullName { get => employeeFullName; set => employeeFullName = value; }
-        public string Password { get => password;  }
-        public string RePassword { get => rePassword; }
+ 
         public bool IsDeleted { get => isDeleted; set => isDeleted = value; }
        
         public string ApprovedEmployee { get => approvedEmployee; set => approvedEmployee = value; }
         public bool IsUser { get => isUser; set => isUser = value; }
         public string CheckCode { get => checkCode; set => checkCode = value; }
+        public string Password { get => password; set => password = value; }
+        public string RePassword { get => rePassword; set => rePassword = value; }
     }
 }
