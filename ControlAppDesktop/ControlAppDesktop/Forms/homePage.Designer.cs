@@ -45,9 +45,10 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSentry = new System.Windows.Forms.Button();
             this.pnlTopMenu = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlCenter = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlTopMenu.SuspendLayout();
             this.SuspendLayout();
@@ -315,24 +316,15 @@
             // pnlTopMenu
             // 
             this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.pnlTopMenu.Controls.Add(this.btnClose);
+            this.pnlTopMenu.Controls.Add(this.btnMinimize);
             this.pnlTopMenu.Controls.Add(this.lblTime);
+            this.pnlTopMenu.Controls.Add(this.btnExit);
             this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
             this.pnlTopMenu.Name = "pnlTopMenu";
             this.pnlTopMenu.Size = new System.Drawing.Size(1186, 35);
             this.pnlTopMenu.TabIndex = 1;
             this.pnlTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopMenu_MouseDown);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(802, 9);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.Text = "Kapat";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTime
             // 
@@ -341,7 +333,7 @@
             this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTime.Location = new System.Drawing.Point(15, 5);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 19);
+            this.lblTime.Size = new System.Drawing.Size(77, 23);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "Zaman";
             // 
@@ -352,9 +344,35 @@
             this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
             this.pnlCenter.TabIndex = 3;
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Image = global::ControlAppDesktop.Properties.Resources.minimize;
+            this.btnMinimize.Location = new System.Drawing.Point(1123, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimize.TabIndex = 13;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::ControlAppDesktop.Properties.Resources.cancel_red;
+            this.btnExit.Location = new System.Drawing.Point(1153, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1366, 768);
@@ -393,9 +411,10 @@
         private System.Windows.Forms.Button btnUserName;
         private System.Windows.Forms.Button btnDirectory;
         private System.Windows.Forms.Panel pnlActive;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAdminForm;
         public System.Windows.Forms.Panel pnlCenter;
         public System.Windows.Forms.Panel pnlLeftMenu;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Button btnExit;
     }
 }

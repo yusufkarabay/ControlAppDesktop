@@ -11,18 +11,35 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccess.Concrete;
 using Entities;
+using System.Runtime.InteropServices;
 
 namespace ControlAppDesktop
 {
     public partial class Login : Form
     {
         EmployeeManager employeeManager;
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+   (
+       int nLeftRect,
+       int nTopRect,
+       int nRightRect,
+       int nBottomRect,
+       int nWidthEllipse,
+       int nHeightEllipse
+   );
         public Login()
         {
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int Iparam);
         private void frmLogin_Load(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString("f");
@@ -84,9 +101,25 @@ namespace ControlAppDesktop
 
         private void LnkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            PasswordForgotForm passwordForgotForm= new PasswordForgotForm();
+            PasswordForgotForm passwordForgotForm = new PasswordForgotForm();
             passwordForgotForm.Show();
             this.Hide();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pnlLoginTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
