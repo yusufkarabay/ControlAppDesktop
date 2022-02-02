@@ -14,10 +14,10 @@ using Entities;
 
 namespace ControlAppDesktop
 {
-    public partial class frmLogin : Form
+    public partial class Login : Form
     {
         EmployeeManager employeeManager;
-        public frmLogin()
+        public Login()
         {
             InitializeComponent();
             employeeManager = EmployeeManager.GetInstance();
@@ -79,12 +79,14 @@ namespace ControlAppDesktop
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
+            this.Hide();
         }
 
         private void LnkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PasswordForgotForm passwordForgotForm= new PasswordForgotForm();
             passwordForgotForm.Show();
+            this.Hide();
         }
     }
 }

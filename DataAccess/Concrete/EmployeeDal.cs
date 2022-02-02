@@ -758,6 +758,35 @@ namespace DataAccess.Concrete
 
             return result;
         }
+        
+            public string CheckCodeUpdate(Employee entity)
+        {
+
+            string result = null;
+
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("CheckCodeUpdate",
+                    new SqlParameter("@tc", entity.Tc),
+                     new SqlParameter("@checkcode", entity.CheckCode));
+
+                if (isSuccess)
+                {
+                    result = "Girilen Personel'e Kod Gönderildi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+
+            return result;
+        }
         public string Checked(Employee entity)
         {
 

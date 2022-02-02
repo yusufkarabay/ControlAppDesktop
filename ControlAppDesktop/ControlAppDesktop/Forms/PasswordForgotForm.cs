@@ -21,6 +21,14 @@ namespace ControlAppDesktop.Forms
         {
             MailCheckedCodeForm form = new MailCheckedCodeForm();
             form.Show();
+           this.Close();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Login frmLogin = new Login();
+            frmLogin.Show();
+            this.Close();   
         }
     }
 }

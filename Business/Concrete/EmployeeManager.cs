@@ -391,7 +391,25 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public static EmployeeManager GetInstance()
+        public string CheckCodeUpdate(Employee entity)
+        {
+            try
+            {
+                if (entity.Tc == null)
+                {
+                    return " Sistemde Girilen Kimlik Numarasına Ait Personel Bulunmamaktadır";
+
+                }               
+               
+                return employeeDal.CheckCodeUpdate(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+        }
+            public static EmployeeManager GetInstance()
         {
             if (employeeManager == null) { employeeManager = new EmployeeManager(); }
             return employeeManager;

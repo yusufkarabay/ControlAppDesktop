@@ -34,7 +34,13 @@ namespace ControlAppDesktop.Forms
             }
             return checkCode;
         }
-
+        void EmployeeCheckCodeUpdate()
+        {
+            employee = new Employee(
+                txtTC.Text.ToString(),
+                checkCode.ToString());
+            MessageBox.Show(employeeManager.CheckCodeUpdate(employee));
+        }
         private void btnSend_Click(object sender, EventArgs e)
 
         {
@@ -56,11 +62,9 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             CreateCode();
-
-
-
+            EmployeeCheckCodeUpdate();
             MailSend();
-
+            this.Close();
 
         }
         bool MailSend()
@@ -101,6 +105,13 @@ namespace ControlAppDesktop.Forms
         private void MailCheckedCodeForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PasswordForgotForm passwordForgotForm = new PasswordForgotForm();
+            passwordForgotForm.Show();
+            this.Close();   
         }
     }
 }

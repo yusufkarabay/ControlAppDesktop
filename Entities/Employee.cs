@@ -25,14 +25,14 @@ namespace Entities
         string employeeName;
         string employeeSurname;
 
-
+        string checkCode;
         string tc;
         Guid departmentId;
         Guid authorityId;
         bool isDeleted;
         string approvedEmployee;
         bool isUser;
-
+        
 
         public Employee() { }
         public string FullName
@@ -279,6 +279,12 @@ namespace Entities
             this.approvedEmployee = approvedEmployee;
         }
 
+        public Employee(string tc, string checkCode)
+        {
+            this.checkCode = checkCode;
+            this.tc = tc;
+        }
+
         public Guid Id { get => id; set => id = value; }
         public Guid DepartmentId { get => departmentId; set => departmentId = value; }
         public Guid AuthorityId { get => authorityId; set => authorityId = value; }
@@ -300,5 +306,6 @@ namespace Entities
        
         public string ApprovedEmployee { get => approvedEmployee; set => approvedEmployee = value; }
         public bool IsUser { get => isUser; set => isUser = value; }
+        public string CheckCode { get => checkCode; set => checkCode = value; }
     }
 }
