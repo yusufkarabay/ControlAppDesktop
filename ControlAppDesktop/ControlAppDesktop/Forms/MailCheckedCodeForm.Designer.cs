@@ -43,10 +43,10 @@
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSend.Location = new System.Drawing.Point(191, 217);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(350, 43);
-            this.btnSend.TabIndex = 0;
+            this.btnSend.TabIndex = 2;
             this.btnSend.Text = "Gönder";
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
@@ -55,7 +55,7 @@
             // 
             this.txtMail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtMail.Location = new System.Drawing.Point(191, 162);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(349, 23);
             this.txtMail.TabIndex = 1;
@@ -80,10 +80,10 @@
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.btnReturn.Location = new System.Drawing.Point(15, 16);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(5);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(43, 48);
-            this.btnReturn.TabIndex = 22;
+            this.btnReturn.TabIndex = 3;
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -102,11 +102,11 @@
             // 
             this.mtxbTC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mtxbTC.Location = new System.Drawing.Point(191, 113);
-            this.mtxbTC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.mtxbTC.Margin = new System.Windows.Forms.Padding(5);
             this.mtxbTC.Mask = "00000000000";
             this.mtxbTC.Name = "mtxbTC";
             this.mtxbTC.Size = new System.Drawing.Size(349, 23);
-            this.mtxbTC.TabIndex = 24;
+            this.mtxbTC.TabIndex = 0;
             this.mtxbTC.ValidatingType = typeof(int);
             // 
             // MailCheckedCodeForm
@@ -124,7 +124,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MailCheckedCodeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MailCheckedCode";

@@ -42,9 +42,9 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(64, 32);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(233, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(233, 22);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // gbxGuestCardDelivery
@@ -54,11 +54,11 @@
             this.gbxGuestCardDelivery.Controls.Add(this.txtGuestCardNo);
             this.gbxGuestCardDelivery.Controls.Add(this.lblDeliveryEmployee);
             this.gbxGuestCardDelivery.Controls.Add(this.lblNoInfo);
-            this.gbxGuestCardDelivery.Location = new System.Drawing.Point(31, 110);
-            this.gbxGuestCardDelivery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbxGuestCardDelivery.Location = new System.Drawing.Point(44, 100);
+            this.gbxGuestCardDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.gbxGuestCardDelivery.Name = "gbxGuestCardDelivery";
-            this.gbxGuestCardDelivery.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbxGuestCardDelivery.Size = new System.Drawing.Size(491, 242);
+            this.gbxGuestCardDelivery.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxGuestCardDelivery.Size = new System.Drawing.Size(430, 222);
             this.gbxGuestCardDelivery.TabIndex = 8;
             this.gbxGuestCardDelivery.TabStop = false;
             this.gbxGuestCardDelivery.Text = "Misafir Kart Teslim Et";
@@ -66,7 +66,7 @@
             // btnGuestCardDelivery
             // 
             this.btnGuestCardDelivery.Location = new System.Drawing.Point(192, 154);
-            this.btnGuestCardDelivery.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuestCardDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuestCardDelivery.Name = "btnGuestCardDelivery";
             this.btnGuestCardDelivery.Size = new System.Drawing.Size(88, 28);
             this.btnGuestCardDelivery.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.cbxDeliveryEmployee.FormattingEnabled = true;
             this.cbxDeliveryEmployee.Location = new System.Drawing.Point(144, 81);
-            this.cbxDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDeliveryEmployee.Name = "cbxDeliveryEmployee";
             this.cbxDeliveryEmployee.Size = new System.Drawing.Size(226, 24);
             this.cbxDeliveryEmployee.TabIndex = 1;
@@ -86,9 +86,9 @@
             // txtGuestCardNo
             // 
             this.txtGuestCardNo.Location = new System.Drawing.Point(142, 41);
-            this.txtGuestCardNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGuestCardNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtGuestCardNo.Name = "txtGuestCardNo";
-            this.txtGuestCardNo.Size = new System.Drawing.Size(227, 21);
+            this.txtGuestCardNo.Size = new System.Drawing.Size(227, 22);
             this.txtGuestCardNo.TabIndex = 0;
             // 
             // lblDeliveryEmployee
@@ -97,7 +97,7 @@
             this.lblDeliveryEmployee.Location = new System.Drawing.Point(7, 85);
             this.lblDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryEmployee.Name = "lblDeliveryEmployee";
-            this.lblDeliveryEmployee.Size = new System.Drawing.Size(117, 16);
+            this.lblDeliveryEmployee.Size = new System.Drawing.Size(132, 16);
             this.lblDeliveryEmployee.TabIndex = 1;
             this.lblDeliveryEmployee.Text = "Teslim Alan Personel :";
             // 
@@ -107,7 +107,7 @@
             this.lblNoInfo.Location = new System.Drawing.Point(7, 49);
             this.lblNoInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoInfo.Name = "lblNoInfo";
-            this.lblNoInfo.Size = new System.Drawing.Size(83, 16);
+            this.lblNoInfo.Size = new System.Drawing.Size(92, 16);
             this.lblNoInfo.TabIndex = 0;
             this.lblNoInfo.Text = "Çekmece No :";
             // 
@@ -117,8 +117,8 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(511, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Location = new System.Drawing.Point(483, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 32);
             this.btnClose.TabIndex = 3;
@@ -130,13 +130,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(565, 412);
+            this.ClientSize = new System.Drawing.Size(528, 390);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxGuestCardDelivery);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GuestCardDeliveryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GuestCardDeliveryForm";

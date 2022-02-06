@@ -54,9 +54,10 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(907, 13);
+            this.btnClose.Location = new System.Drawing.Point(1134, 12);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.Size = new System.Drawing.Size(37, 37);
             this.btnClose.TabIndex = 5;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -64,51 +65,61 @@
             // lblMail
             // 
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(122, 18);
+            this.lblMail.Location = new System.Drawing.Point(143, 103);
+            this.lblMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(64, 13);
+            this.lblMail.Size = new System.Drawing.Size(73, 15);
             this.lblMail.TabIndex = 1;
             this.lblMail.Text = "Mail Adresi :";
             // 
             // lblMailEmployee
             // 
             this.lblMailEmployee.AutoSize = true;
-            this.lblMailEmployee.Location = new System.Drawing.Point(122, 52);
+            this.lblMailEmployee.Location = new System.Drawing.Point(143, 142);
+            this.lblMailEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMailEmployee.Name = "lblMailEmployee";
-            this.lblMailEmployee.Size = new System.Drawing.Size(64, 13);
+            this.lblMailEmployee.Size = new System.Drawing.Size(72, 15);
             this.lblMailEmployee.TabIndex = 2;
             this.lblMailEmployee.Text = "Mail Sahibi :";
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(206, 15);
+            this.txtMail.Location = new System.Drawing.Point(241, 99);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(188, 20);
+            this.txtMail.Size = new System.Drawing.Size(219, 21);
             this.txtMail.TabIndex = 0;
             // 
             // txtEmployee
             // 
-            this.txtEmployee.Location = new System.Drawing.Point(206, 52);
+            this.txtEmployee.Location = new System.Drawing.Point(241, 142);
+            this.txtEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmployee.Name = "txtEmployee";
-            this.txtEmployee.Size = new System.Drawing.Size(188, 20);
+            this.txtEmployee.Size = new System.Drawing.Size(219, 21);
             this.txtEmployee.TabIndex = 1;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(414, 31);
+            this.btnAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(484, 118);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
             this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gbMail
             // 
             this.gbMail.Controls.Add(this.dgvMail);
-            this.gbMail.Location = new System.Drawing.Point(45, 148);
+            this.gbMail.Location = new System.Drawing.Point(53, 253);
+            this.gbMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbMail.Name = "gbMail";
-            this.gbMail.Size = new System.Drawing.Size(914, 269);
+            this.gbMail.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbMail.Size = new System.Drawing.Size(1066, 310);
             this.gbMail.TabIndex = 27;
             this.gbMail.TabStop = false;
             this.gbMail.Text = "Mail Listesi";
@@ -128,13 +139,14 @@
             this.dgvMail.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvMail.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvMail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMail.Location = new System.Drawing.Point(3, 16);
+            this.dgvMail.Location = new System.Drawing.Point(4, 17);
+            this.dgvMail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvMail.MultiSelect = false;
             this.dgvMail.Name = "dgvMail";
             this.dgvMail.ReadOnly = true;
             this.dgvMail.RowHeadersVisible = false;
             this.dgvMail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMail.Size = new System.Drawing.Size(908, 250);
+            this.dgvMail.Size = new System.Drawing.Size(1058, 290);
             this.dgvMail.TabIndex = 2;
             // 
             // contextMenuStrip1
@@ -161,31 +173,39 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(586, 31);
+            this.btnList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnList.FlatAppearance.BorderSize = 0;
+            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnList.Location = new System.Drawing.Point(1008, 228);
+            this.btnList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(75, 23);
+            this.btnList.Size = new System.Drawing.Size(108, 23);
             this.btnList.TabIndex = 3;
             this.btnList.Text = "Listele";
-            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.UseVisualStyleBackColor = false;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(727, 31);
+            this.btnUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(549, 118);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(32, 32);
             this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // MaintenanceMailAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1005, 565);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnList);
             this.Controls.Add(this.gbMail);
@@ -195,7 +215,9 @@
             this.Controls.Add(this.lblMailEmployee);
             this.Controls.Add(this.lblMail);
             this.Controls.Add(this.btnClose);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MaintenanceMailAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintenanceMailAdd";

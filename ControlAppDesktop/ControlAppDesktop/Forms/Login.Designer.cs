@@ -34,6 +34,8 @@
             this.mtxtTC = new System.Windows.Forms.MaskedTextBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.pnlLoginTop = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlTc = new System.Windows.Forms.Panel();
             this.pnlPassword = new System.Windows.Forms.Panel();
             this.cbPassShow = new System.Windows.Forms.CheckBox();
@@ -41,8 +43,6 @@
             this.pbPassword = new System.Windows.Forms.PictureBox();
             this.pbTc = new System.Windows.Forms.PictureBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.pnlLoginTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTc)).BeginInit();
@@ -59,7 +59,7 @@
             this.btnLogin.Location = new System.Drawing.Point(146, 463);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(256, 32);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Giriş Yap";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -86,7 +86,7 @@
             this.LnkForgot.Location = new System.Drawing.Point(379, 548);
             this.LnkForgot.Name = "LnkForgot";
             this.LnkForgot.Size = new System.Drawing.Size(120, 20);
-            this.LnkForgot.TabIndex = 5;
+            this.LnkForgot.TabIndex = 6;
             this.LnkForgot.TabStop = true;
             this.LnkForgot.Text = "Şifremi Unuttum";
             this.LnkForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkForgot_LinkClicked);
@@ -130,6 +130,34 @@
             this.pnlLoginTop.TabIndex = 9;
             this.pnlLoginTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLoginTop_MouseDown);
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Image = global::ControlAppDesktop.Properties.Resources.minimize;
+            this.btnMinimize.Location = new System.Drawing.Point(512, -2);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(22, 24);
+            this.btnMinimize.TabIndex = 7;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::ControlAppDesktop.Properties.Resources.cancel_red;
+            this.btnExit.Location = new System.Drawing.Point(535, -2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(22, 24);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // pnlTc
             // 
             this.pnlTc.BackColor = System.Drawing.Color.White;
@@ -156,7 +184,7 @@
             this.cbPassShow.Location = new System.Drawing.Point(146, 437);
             this.cbPassShow.Name = "cbPassShow";
             this.cbPassShow.Size = new System.Drawing.Size(100, 19);
-            this.cbPassShow.TabIndex = 15;
+            this.cbPassShow.TabIndex = 3;
             this.cbPassShow.Text = "Şifreyi Göster";
             this.cbPassShow.UseVisualStyleBackColor = true;
             this.cbPassShow.CheckedChanged += new System.EventHandler(this.cbPassShow_CheckedChanged);
@@ -171,7 +199,7 @@
             this.btnRegister.Location = new System.Drawing.Point(146, 501);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(256, 32);
-            this.btnRegister.TabIndex = 16;
+            this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Kaydol";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -203,34 +231,6 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 11;
             this.pbLogo.TabStop = false;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::ControlAppDesktop.Properties.Resources.minimize;
-            this.btnMinimize.Location = new System.Drawing.Point(512, -2);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(22, 24);
-            this.btnMinimize.TabIndex = 11;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::ControlAppDesktop.Properties.Resources.cancel_red;
-            this.btnExit.Location = new System.Drawing.Point(535, -2);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(22, 24);
-            this.btnExit.TabIndex = 10;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Login
             // 

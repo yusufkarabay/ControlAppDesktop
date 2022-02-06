@@ -118,7 +118,7 @@
             this.grpNotRequest.Margin = new System.Windows.Forms.Padding(4);
             this.grpNotRequest.Name = "grpNotRequest";
             this.grpNotRequest.Padding = new System.Windows.Forms.Padding(4);
-            this.grpNotRequest.Size = new System.Drawing.Size(1096, 335);
+            this.grpNotRequest.Size = new System.Drawing.Size(1026, 335);
             this.grpNotRequest.TabIndex = 8;
             this.grpNotRequest.TabStop = false;
             this.grpNotRequest.Text = "Atanmamış İşler Listesi";
@@ -145,7 +145,7 @@
             this.dgvNotRequest.ReadOnly = true;
             this.dgvNotRequest.RowHeadersVisible = false;
             this.dgvNotRequest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotRequest.Size = new System.Drawing.Size(1088, 313);
+            this.dgvNotRequest.Size = new System.Drawing.Size(1018, 313);
             this.dgvNotRequest.TabIndex = 0;
             this.dgvNotRequest.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvNotRequest_MouseClick);
             // 
@@ -206,7 +206,7 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1154, 13);
+            this.btnClose.Location = new System.Drawing.Point(1126, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 32);
@@ -219,7 +219,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(1209, 794);
+            this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.grpNotRequest);
             this.Controls.Add(this.btnRequestCreate);

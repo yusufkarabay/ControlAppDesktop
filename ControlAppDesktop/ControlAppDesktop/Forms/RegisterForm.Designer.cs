@@ -264,7 +264,7 @@
             this.btnClose.Location = new System.Drawing.Point(14, 16);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(37, 41);
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
             this.btnClose.TabIndex = 21;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);

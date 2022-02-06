@@ -29,16 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
-            this.pnlActive = new System.Windows.Forms.Panel();
-            this.btnUserName = new System.Windows.Forms.Button();
-            this.pnlTopMenu = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.pnlCenter = new System.Windows.Forms.Panel();
-            this.btnAdminForm = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnWorkSteps = new System.Windows.Forms.Button();
             this.btnPasswordNote = new System.Windows.Forms.Button();
+            this.pnlActive = new System.Windows.Forms.Panel();
+            this.btnUserName = new System.Windows.Forms.Button();
             this.btnDirectory = new System.Windows.Forms.Button();
             this.btnGenarator = new System.Windows.Forms.Button();
             this.btnGuestCard = new System.Windows.Forms.Button();
@@ -51,6 +45,12 @@
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSentry = new System.Windows.Forms.Button();
+            this.pnlTopMenu = new System.Windows.Forms.Panel();
+            this.btnAdminForm = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.pnlCenter = new System.Windows.Forms.Panel();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlTopMenu.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,38 @@
             this.pnlLeftMenu.Size = new System.Drawing.Size(180, 768);
             this.pnlLeftMenu.TabIndex = 0;
             // 
+            // btnWorkSteps
+            // 
+            this.btnWorkSteps.FlatAppearance.BorderSize = 0;
+            this.btnWorkSteps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkSteps.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnWorkSteps.ForeColor = System.Drawing.Color.LightGray;
+            this.btnWorkSteps.Image = global::ControlAppDesktop.Properties.Resources.process__1_;
+            this.btnWorkSteps.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWorkSteps.Location = new System.Drawing.Point(13, 664);
+            this.btnWorkSteps.Name = "btnWorkSteps";
+            this.btnWorkSteps.Size = new System.Drawing.Size(164, 34);
+            this.btnWorkSteps.TabIndex = 13;
+            this.btnWorkSteps.Text = "      İş Adımları";
+            this.btnWorkSteps.UseVisualStyleBackColor = true;
+            this.btnWorkSteps.Click += new System.EventHandler(this.btnWorkSteps_Click);
+            // 
+            // btnPasswordNote
+            // 
+            this.btnPasswordNote.FlatAppearance.BorderSize = 0;
+            this.btnPasswordNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasswordNote.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPasswordNote.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPasswordNote.Image = global::ControlAppDesktop.Properties.Resources.lock__2___1_;
+            this.btnPasswordNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPasswordNote.Location = new System.Drawing.Point(13, 622);
+            this.btnPasswordNote.Name = "btnPasswordNote";
+            this.btnPasswordNote.Size = new System.Drawing.Size(164, 34);
+            this.btnPasswordNote.TabIndex = 12;
+            this.btnPasswordNote.Text = "      Şifre Notları";
+            this.btnPasswordNote.UseVisualStyleBackColor = true;
+            this.btnPasswordNote.Click += new System.EventHandler(this.btnPasswordNote_Click);
+            // 
             // pnlActive
             // 
             this.pnlActive.BackColor = System.Drawing.Color.Gainsboro;
@@ -98,114 +130,6 @@
             this.btnUserName.Text = "Personel Adı";
             this.btnUserName.UseVisualStyleBackColor = true;
             // 
-            // pnlTopMenu
-            // 
-            this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            this.pnlTopMenu.Controls.Add(this.btnAdminForm);
-            this.pnlTopMenu.Controls.Add(this.btnMinimize);
-            this.pnlTopMenu.Controls.Add(this.lblTime);
-            this.pnlTopMenu.Controls.Add(this.btnExit);
-            this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
-            this.pnlTopMenu.Name = "pnlTopMenu";
-            this.pnlTopMenu.Size = new System.Drawing.Size(1186, 35);
-            this.pnlTopMenu.TabIndex = 1;
-            this.pnlTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopMenu_MouseDown);
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTime.Location = new System.Drawing.Point(15, 8);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 19);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "Zaman";
-            // 
-            // pnlCenter
-            // 
-            this.pnlCenter.BackColor = System.Drawing.Color.LightGray;
-            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
-            this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
-            this.pnlCenter.TabIndex = 3;
-            // 
-            // btnAdminForm
-            // 
-            this.btnAdminForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            this.btnAdminForm.FlatAppearance.BorderSize = 0;
-            this.btnAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAdminForm.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnAdminForm.Image = global::ControlAppDesktop.Properties.Resources.admin;
-            this.btnAdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdminForm.Location = new System.Drawing.Point(892, 3);
-            this.btnAdminForm.Name = "btnAdminForm";
-            this.btnAdminForm.Size = new System.Drawing.Size(164, 33);
-            this.btnAdminForm.TabIndex = 4;
-            this.btnAdminForm.Text = " Yönetici Ekranı";
-            this.btnAdminForm.UseVisualStyleBackColor = false;
-            this.btnAdminForm.Click += new System.EventHandler(this.btnAdminForm_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::ControlAppDesktop.Properties.Resources.minimize;
-            this.btnMinimize.Location = new System.Drawing.Point(1123, 3);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.TabIndex = 13;
-            this.btnMinimize.UseVisualStyleBackColor = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::ControlAppDesktop.Properties.Resources.cancel_red;
-            this.btnExit.Location = new System.Drawing.Point(1153, 3);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 12;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnWorkSteps
-            // 
-            this.btnWorkSteps.FlatAppearance.BorderSize = 0;
-            this.btnWorkSteps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWorkSteps.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnWorkSteps.ForeColor = System.Drawing.Color.LightGray;
-            this.btnWorkSteps.Image = global::ControlAppDesktop.Properties.Resources.process__1_;
-            this.btnWorkSteps.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnWorkSteps.Location = new System.Drawing.Point(13, 664);
-            this.btnWorkSteps.Name = "btnWorkSteps";
-            this.btnWorkSteps.Size = new System.Drawing.Size(164, 34);
-            this.btnWorkSteps.TabIndex = 5;
-            this.btnWorkSteps.Text = "      İş Adımları";
-            this.btnWorkSteps.UseVisualStyleBackColor = true;
-            this.btnWorkSteps.Click += new System.EventHandler(this.btnWorkSteps_Click);
-            // 
-            // btnPasswordNote
-            // 
-            this.btnPasswordNote.FlatAppearance.BorderSize = 0;
-            this.btnPasswordNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPasswordNote.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPasswordNote.ForeColor = System.Drawing.Color.LightGray;
-            this.btnPasswordNote.Image = global::ControlAppDesktop.Properties.Resources.lock__2___1_;
-            this.btnPasswordNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPasswordNote.Location = new System.Drawing.Point(13, 622);
-            this.btnPasswordNote.Name = "btnPasswordNote";
-            this.btnPasswordNote.Size = new System.Drawing.Size(164, 34);
-            this.btnPasswordNote.TabIndex = 4;
-            this.btnPasswordNote.Text = "      Şifre Notları";
-            this.btnPasswordNote.UseVisualStyleBackColor = true;
-            this.btnPasswordNote.Click += new System.EventHandler(this.btnPasswordNote_Click);
-            // 
             // btnDirectory
             // 
             this.btnDirectory.FlatAppearance.BorderSize = 0;
@@ -217,7 +141,7 @@
             this.btnDirectory.Location = new System.Drawing.Point(13, 568);
             this.btnDirectory.Name = "btnDirectory";
             this.btnDirectory.Size = new System.Drawing.Size(164, 34);
-            this.btnDirectory.TabIndex = 2;
+            this.btnDirectory.TabIndex = 11;
             this.btnDirectory.Text = "            Telefon Rehberi";
             this.btnDirectory.UseVisualStyleBackColor = true;
             this.btnDirectory.Click += new System.EventHandler(this.btnDirectory_Click);
@@ -234,7 +158,7 @@
             this.btnGenarator.Location = new System.Drawing.Point(13, 518);
             this.btnGenarator.Name = "btnGenarator";
             this.btnGenarator.Size = new System.Drawing.Size(164, 34);
-            this.btnGenarator.TabIndex = 2;
+            this.btnGenarator.TabIndex = 10;
             this.btnGenarator.Text = "    Jeneratör";
             this.btnGenarator.UseVisualStyleBackColor = true;
             this.btnGenarator.Click += new System.EventHandler(this.btnGenarator_Click);
@@ -251,7 +175,7 @@
             this.btnGuestCard.Location = new System.Drawing.Point(13, 470);
             this.btnGuestCard.Name = "btnGuestCard";
             this.btnGuestCard.Size = new System.Drawing.Size(164, 34);
-            this.btnGuestCard.TabIndex = 2;
+            this.btnGuestCard.TabIndex = 9;
             this.btnGuestCard.Text = "         Misafir Kart";
             this.btnGuestCard.UseVisualStyleBackColor = true;
             this.btnGuestCard.Click += new System.EventHandler(this.btnGuestCard_Click);
@@ -268,7 +192,7 @@
             this.btnCabinet.Location = new System.Drawing.Point(13, 422);
             this.btnCabinet.Name = "btnCabinet";
             this.btnCabinet.Size = new System.Drawing.Size(164, 34);
-            this.btnCabinet.TabIndex = 2;
+            this.btnCabinet.TabIndex = 8;
             this.btnCabinet.Text = " Dolap";
             this.btnCabinet.UseVisualStyleBackColor = true;
             this.btnCabinet.Click += new System.EventHandler(this.btnCabinet_Click);
@@ -285,7 +209,7 @@
             this.btnDrawer.Location = new System.Drawing.Point(13, 374);
             this.btnDrawer.Name = "btnDrawer";
             this.btnDrawer.Size = new System.Drawing.Size(164, 34);
-            this.btnDrawer.TabIndex = 2;
+            this.btnDrawer.TabIndex = 7;
             this.btnDrawer.Text = "      Çekmece";
             this.btnDrawer.UseVisualStyleBackColor = true;
             this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
@@ -302,7 +226,7 @@
             this.btnIdCard.Location = new System.Drawing.Point(13, 326);
             this.btnIdCard.Name = "btnIdCard";
             this.btnIdCard.Size = new System.Drawing.Size(164, 34);
-            this.btnIdCard.TabIndex = 2;
+            this.btnIdCard.TabIndex = 6;
             this.btnIdCard.Text = "       Giriş Kartı";
             this.btnIdCard.UseVisualStyleBackColor = true;
             this.btnIdCard.Click += new System.EventHandler(this.btnIdCard_Click);
@@ -319,7 +243,7 @@
             this.btnHeadset.Location = new System.Drawing.Point(13, 278);
             this.btnHeadset.Name = "btnHeadset";
             this.btnHeadset.Size = new System.Drawing.Size(164, 34);
-            this.btnHeadset.TabIndex = 2;
+            this.btnHeadset.TabIndex = 5;
             this.btnHeadset.Text = "      Kulaklık";
             this.btnHeadset.UseVisualStyleBackColor = true;
             this.btnHeadset.Click += new System.EventHandler(this.btnHeadset_Click);
@@ -336,7 +260,7 @@
             this.btnMaintenance.Location = new System.Drawing.Point(13, 230);
             this.btnMaintenance.Name = "btnMaintenance";
             this.btnMaintenance.Size = new System.Drawing.Size(164, 34);
-            this.btnMaintenance.TabIndex = 2;
+            this.btnMaintenance.TabIndex = 4;
             this.btnMaintenance.Text = "   Bakım";
             this.btnMaintenance.UseVisualStyleBackColor = true;
             this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
@@ -353,7 +277,7 @@
             this.btnRequest.Location = new System.Drawing.Point(13, 182);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(164, 34);
-            this.btnRequest.TabIndex = 2;
+            this.btnRequest.TabIndex = 3;
             this.btnRequest.Text = " Talep";
             this.btnRequest.UseVisualStyleBackColor = true;
             this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
@@ -387,7 +311,7 @@
             this.btnInventory.Location = new System.Drawing.Point(13, 86);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(164, 34);
-            this.btnInventory.TabIndex = 2;
+            this.btnInventory.TabIndex = 1;
             this.btnInventory.Text = "     Envanter";
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
@@ -404,10 +328,86 @@
             this.btnSentry.Location = new System.Drawing.Point(13, 38);
             this.btnSentry.Name = "btnSentry";
             this.btnSentry.Size = new System.Drawing.Size(164, 34);
-            this.btnSentry.TabIndex = 2;
+            this.btnSentry.TabIndex = 0;
             this.btnSentry.Text = "Nöbet";
             this.btnSentry.UseVisualStyleBackColor = true;
             this.btnSentry.Click += new System.EventHandler(this.btnSentry_Click);
+            // 
+            // pnlTopMenu
+            // 
+            this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.pnlTopMenu.Controls.Add(this.btnAdminForm);
+            this.pnlTopMenu.Controls.Add(this.btnMinimize);
+            this.pnlTopMenu.Controls.Add(this.lblTime);
+            this.pnlTopMenu.Controls.Add(this.btnExit);
+            this.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopMenu.Location = new System.Drawing.Point(180, 0);
+            this.pnlTopMenu.Name = "pnlTopMenu";
+            this.pnlTopMenu.Size = new System.Drawing.Size(1186, 35);
+            this.pnlTopMenu.TabIndex = 1;
+            this.pnlTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopMenu_MouseDown);
+            // 
+            // btnAdminForm
+            // 
+            this.btnAdminForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.btnAdminForm.FlatAppearance.BorderSize = 0;
+            this.btnAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdminForm.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAdminForm.Image = global::ControlAppDesktop.Properties.Resources.admin;
+            this.btnAdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminForm.Location = new System.Drawing.Point(892, 3);
+            this.btnAdminForm.Name = "btnAdminForm";
+            this.btnAdminForm.Size = new System.Drawing.Size(164, 33);
+            this.btnAdminForm.TabIndex = 14;
+            this.btnAdminForm.Text = " Yönetici Ekranı";
+            this.btnAdminForm.UseVisualStyleBackColor = false;
+            this.btnAdminForm.Click += new System.EventHandler(this.btnAdminForm_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Image = global::ControlAppDesktop.Properties.Resources.minimize;
+            this.btnMinimize.Location = new System.Drawing.Point(1123, 3);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimize.TabIndex = 15;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTime.Location = new System.Drawing.Point(15, 8);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(65, 19);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "Zaman";
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = global::ControlAppDesktop.Properties.Resources.cancel_red;
+            this.btnExit.Location = new System.Drawing.Point(1153, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 16;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pnlCenter
+            // 
+            this.pnlCenter.BackColor = System.Drawing.Color.LightGray;
+            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
+            this.pnlCenter.Name = "pnlCenter";
+            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
+            this.pnlCenter.TabIndex = 3;
             // 
             // HomePage
             // 
