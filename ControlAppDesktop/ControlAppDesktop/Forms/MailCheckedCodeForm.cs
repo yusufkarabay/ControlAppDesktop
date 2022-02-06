@@ -37,7 +37,7 @@ namespace ControlAppDesktop.Forms
         void EmployeeCheckCodeUpdate()
         {
             employee = new Employee(
-                txtTC.Text.ToString(),
+                mtxbTC.Text.ToString(),
                 checkCode.ToString());
             MessageBox.Show(employeeManager.CheckCodeUpdate(employee));
         }
@@ -49,13 +49,13 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Mail Adresi Boş Geçilemez", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtTC.Text == "")
+            if (mtxbTC.Text == "")
             {
                 MessageBox.Show("Kimlik Numarası Boş Geçilemez", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             Employee checkEmployee = new Employee();
-            checkEmployee = employeeManager.MailCheck("MailCheck", txtMail.Text.ToString(), txtTC.Text.ToString());
+            checkEmployee = employeeManager.MailCheck("MailCheck", txtMail.Text.ToString(), mtxbTC.Text.ToString());
             if (checkEmployee == null)
             {
                 MessageBox.Show("Böyle Bir Personel Bulunamadı");
@@ -77,7 +77,7 @@ namespace ControlAppDesktop.Forms
 
             ePosta.Subject = "ControlApp-Onay Kodu ";
 
-            ePosta.Body = "ControlApp Şifremi Değişikliği İçin Onay Kodu  " + checkCode + "  || Lütfen Bu İletiyi Cevaplamayınız";
+            ePosta.Body = "ControlApp Şifre Değişikliği İçin Onay Kodu  " + checkCode + "  || Lütfen Bu İletiyi Cevaplamayınız";
 
             SmtpClient smtp = new SmtpClient();
 
@@ -109,9 +109,14 @@ namespace ControlAppDesktop.Forms
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+
             PasswordForgotForm passwordForgotForm = new PasswordForgotForm();
             passwordForgotForm.Show();
-            this.Close();   
+            this.Close();
         }
     }
 }

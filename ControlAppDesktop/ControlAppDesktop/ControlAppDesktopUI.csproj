@@ -468,5 +468,38 @@
   <ItemGroup>
     <None Include="Resources\minimize.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-with-cogwheels %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

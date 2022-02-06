@@ -34,7 +34,15 @@ namespace ControlAppDesktop.Forms
 
         }
 
-
+        void DataGridSettings(DataGridView dataGridView)
+        {
+            dataGridView.BorderStyle=BorderStyle.None;
+            dataGridView.BackgroundColor=Color.LightGray;
+            dataGridView.DefaultCellStyle.SelectionBackColor=Color.FromArgb(26, 110, 145);
+            dataGridView.EnableHeadersVisualStyles=false;
+            
+           
+        }
         private void btnSentryListDone_Click(object sender, EventArgs e)
         {
             if (dgvSentry.Visible == true)
@@ -158,7 +166,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Listeden Güncellenecek İş seçiniz");
                 return;
             }
-            
+
             sentryToDo = new SentryToDo(
                  Guid.Parse(dgvSentryTodo.CurrentRow.Cells["SentryToDoId"].Value.ToString()),
                  dgvSentryTodo.CurrentRow.Cells["ToDo"].Value.ToString(),
@@ -176,7 +184,7 @@ namespace ControlAppDesktop.Forms
                 rtbxSentryToDo.Text = sentryToDo.ToDo;
                 btnSentryToDoUpdate.Visible = true;
             }
-            
+
         }
         private void silToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -371,7 +379,7 @@ namespace ControlAppDesktop.Forms
                              "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-               
+
                 MessageBox.Show(sentryToDoManager.Delete(sentryToDo.SentryToDoId));
                 thisDateToDo();
 

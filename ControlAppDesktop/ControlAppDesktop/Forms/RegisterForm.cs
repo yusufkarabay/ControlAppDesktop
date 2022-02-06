@@ -132,6 +132,8 @@ namespace ControlAppDesktop.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            Login frmLogin = new Login();
+            frmLogin.Show();
             this.Close();
         }
     }

@@ -28,99 +28,161 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTC = new System.Windows.Forms.TextBox();
             this.txtCheckCode = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtRePassword = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCheckCode = new System.Windows.Forms.Button();
+            this.lblRePassword = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblTcInfo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mtxbTC = new System.Windows.Forms.MaskedTextBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtTC
-            // 
-            this.txtTC.Location = new System.Drawing.Point(193, 65);
-            this.txtTC.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTC.Name = "txtTC";
-            this.txtTC.Size = new System.Drawing.Size(288, 22);
-            this.txtTC.TabIndex = 0;
-            this.txtTC.Text = "T.C. Kimlik No";
-            // 
             // txtCheckCode
             // 
-            this.txtCheckCode.Location = new System.Drawing.Point(193, 119);
-            this.txtCheckCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCheckCode.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtCheckCode.Location = new System.Drawing.Point(144, 233);
             this.txtCheckCode.Name = "txtCheckCode";
-            this.txtCheckCode.Size = new System.Drawing.Size(288, 22);
+            this.txtCheckCode.Size = new System.Drawing.Size(311, 23);
             this.txtCheckCode.TabIndex = 1;
-            this.txtCheckCode.Text = "Onay Kodu";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(193, 167);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPassword.Location = new System.Drawing.Point(144, 272);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(288, 22);
+            this.txtPassword.Size = new System.Drawing.Size(311, 23);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "Şifre";
             // 
             // txtRePassword
             // 
-            this.txtRePassword.Location = new System.Drawing.Point(193, 214);
-            this.txtRePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRePassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtRePassword.Location = new System.Drawing.Point(144, 310);
             this.txtRePassword.Name = "txtRePassword";
-            this.txtRePassword.Size = new System.Drawing.Size(288, 22);
+            this.txtRePassword.Size = new System.Drawing.Size(311, 23);
             this.txtRePassword.TabIndex = 3;
-            this.txtRePassword.Text = "Tekrar Şifre";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(249, 302);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(162)))), ((int)(((byte)(214)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSave.Location = new System.Drawing.Point(144, 353);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
+            this.btnSave.Size = new System.Drawing.Size(311, 39);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCheckCode
             // 
-            this.btnCheckCode.Location = new System.Drawing.Point(517, 750);
-            this.btnCheckCode.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckCode.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCheckCode.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnCheckCode.Location = new System.Drawing.Point(418, 741);
             this.btnCheckCode.Name = "btnCheckCode";
-            this.btnCheckCode.Size = new System.Drawing.Size(100, 28);
+            this.btnCheckCode.Size = new System.Drawing.Size(123, 23);
             this.btnCheckCode.TabIndex = 5;
             this.btnCheckCode.Text = "Onay Kodu Al";
             this.btnCheckCode.UseVisualStyleBackColor = true;
             this.btnCheckCode.Click += new System.EventHandler(this.btnCheckCode_Click);
             // 
+            // lblRePassword
+            // 
+            this.lblRePassword.AutoSize = true;
+            this.lblRePassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRePassword.Location = new System.Drawing.Point(46, 317);
+            this.lblRePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRePassword.Name = "lblRePassword";
+            this.lblRePassword.Size = new System.Drawing.Size(91, 16);
+            this.lblRePassword.TabIndex = 22;
+            this.lblRePassword.Text = "Tekrar Parola :";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblPassword.Location = new System.Drawing.Point(46, 279);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(51, 16);
+            this.lblPassword.TabIndex = 21;
+            this.lblPassword.Text = "Parola :";
+            // 
+            // lblTcInfo
+            // 
+            this.lblTcInfo.AutoSize = true;
+            this.lblTcInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTcInfo.Location = new System.Drawing.Point(46, 189);
+            this.lblTcInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTcInfo.Name = "lblTcInfo";
+            this.lblTcInfo.Size = new System.Drawing.Size(28, 16);
+            this.lblTcInfo.TabIndex = 20;
+            this.lblTcInfo.Text = "TC :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(46, 240);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Onay Kodu";
+            // 
+            // mtxbTC
+            // 
+            this.mtxbTC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mtxbTC.Location = new System.Drawing.Point(144, 189);
+            this.mtxbTC.Margin = new System.Windows.Forms.Padding(4);
+            this.mtxbTC.Mask = "00000000000";
+            this.mtxbTC.Name = "mtxbTC";
+            this.mtxbTC.Size = new System.Drawing.Size(311, 23);
+            this.mtxbTC.TabIndex = 0;
+            this.mtxbTC.ValidatingType = typeof(int);
+            // 
             // btnReturn
             // 
-            this.btnReturn.Location = new System.Drawing.Point(37, 764);
+            this.btnReturn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnReturn.BackgroundImage = global::ControlAppDesktop.Properties.Resources.back;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnReturn.Location = new System.Drawing.Point(13, 13);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(100, 28);
+            this.btnReturn.Size = new System.Drawing.Size(37, 39);
             this.btnReturn.TabIndex = 6;
-            this.btnReturn.Text = "GeriDön";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // PasswordForgotForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 871);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(562, 800);
             this.Controls.Add(this.btnReturn);
+            this.Controls.Add(this.mtxbTC);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRePassword);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblTcInfo);
             this.Controls.Add(this.btnCheckCode);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtRePassword);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtCheckCode);
-            this.Controls.Add(this.txtTC);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PasswordForgotForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PasswordForgotForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,13 +190,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtTC;
         private System.Windows.Forms.TextBox txtCheckCode;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtRePassword;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCheckCode;
+        private System.Windows.Forms.Label lblRePassword;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblTcInfo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox mtxbTC;
         private System.Windows.Forms.Button btnReturn;
     }
 }

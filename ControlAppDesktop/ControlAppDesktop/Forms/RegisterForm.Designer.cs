@@ -53,178 +53,228 @@
             // lblTcInfo
             // 
             this.lblTcInfo.AutoSize = true;
-            this.lblTcInfo.Location = new System.Drawing.Point(105, 67);
+            this.lblTcInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTcInfo.Location = new System.Drawing.Point(49, 84);
+            this.lblTcInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTcInfo.Name = "lblTcInfo";
-            this.lblTcInfo.Size = new System.Drawing.Size(27, 13);
+            this.lblTcInfo.Size = new System.Drawing.Size(28, 16);
             this.lblTcInfo.TabIndex = 0;
             this.lblTcInfo.Text = "TC :";
             // 
             // lblNameInfo
             // 
             this.lblNameInfo.AutoSize = true;
-            this.lblNameInfo.Location = new System.Drawing.Point(105, 106);
+            this.lblNameInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblNameInfo.Location = new System.Drawing.Point(49, 132);
+            this.lblNameInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameInfo.Name = "lblNameInfo";
-            this.lblNameInfo.Size = new System.Drawing.Size(26, 13);
+            this.lblNameInfo.Size = new System.Drawing.Size(30, 16);
             this.lblNameInfo.TabIndex = 1;
             this.lblNameInfo.Text = "Ad :";
             // 
             // lblSurnameInfo
             // 
             this.lblSurnameInfo.AutoSize = true;
-            this.lblSurnameInfo.Location = new System.Drawing.Point(105, 145);
+            this.lblSurnameInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSurnameInfo.Location = new System.Drawing.Point(49, 180);
+            this.lblSurnameInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSurnameInfo.Name = "lblSurnameInfo";
-            this.lblSurnameInfo.Size = new System.Drawing.Size(37, 13);
+            this.lblSurnameInfo.Size = new System.Drawing.Size(44, 16);
             this.lblSurnameInfo.TabIndex = 2;
             this.lblSurnameInfo.Text = "Soyad";
             // 
             // lblBDateInfo
             // 
             this.lblBDateInfo.AutoSize = true;
-            this.lblBDateInfo.Location = new System.Drawing.Point(98, 264);
+            this.lblBDateInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblBDateInfo.Location = new System.Drawing.Point(49, 327);
+            this.lblBDateInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBDateInfo.Name = "lblBDateInfo";
-            this.lblBDateInfo.Size = new System.Drawing.Size(76, 13);
+            this.lblBDateInfo.Size = new System.Drawing.Size(89, 16);
             this.lblBDateInfo.TabIndex = 3;
             this.lblBDateInfo.Text = "Doğum Tarihi :";
             // 
             // lblAdressInfo
             // 
             this.lblAdressInfo.AutoSize = true;
-            this.lblAdressInfo.Location = new System.Drawing.Point(98, 303);
+            this.lblAdressInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAdressInfo.Location = new System.Drawing.Point(49, 375);
+            this.lblAdressInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdressInfo.Name = "lblAdressInfo";
-            this.lblAdressInfo.Size = new System.Drawing.Size(40, 13);
+            this.lblAdressInfo.Size = new System.Drawing.Size(47, 16);
             this.lblAdressInfo.TabIndex = 4;
             this.lblAdressInfo.Text = "Adres :";
             // 
             // lblTelInfo
             // 
             this.lblTelInfo.AutoSize = true;
-            this.lblTelInfo.Location = new System.Drawing.Point(98, 404);
+            this.lblTelInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTelInfo.Location = new System.Drawing.Point(49, 499);
+            this.lblTelInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelInfo.Name = "lblTelInfo";
-            this.lblTelInfo.Size = new System.Drawing.Size(49, 13);
+            this.lblTelInfo.Size = new System.Drawing.Size(56, 16);
             this.lblTelInfo.TabIndex = 5;
             this.lblTelInfo.Text = "Telefon :";
             // 
             // lblMailInfo
             // 
             this.lblMailInfo.AutoSize = true;
-            this.lblMailInfo.Location = new System.Drawing.Point(98, 443);
+            this.lblMailInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblMailInfo.Location = new System.Drawing.Point(49, 547);
+            this.lblMailInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMailInfo.Name = "lblMailInfo";
-            this.lblMailInfo.Size = new System.Drawing.Size(32, 13);
+            this.lblMailInfo.Size = new System.Drawing.Size(38, 16);
             this.lblMailInfo.TabIndex = 6;
             this.lblMailInfo.Text = "Mail :";
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(246, 496);
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(162)))), ((int)(((byte)(214)))));
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRegister.Location = new System.Drawing.Point(165, 598);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(313, 39);
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Kaydol";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(203, 106);
+            this.txtName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtName.Location = new System.Drawing.Point(165, 131);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(166, 20);
+            this.txtName.Size = new System.Drawing.Size(312, 22);
             this.txtName.TabIndex = 1;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(203, 145);
+            this.txtSurname.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSurname.Location = new System.Drawing.Point(165, 178);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(166, 20);
+            this.txtSurname.Size = new System.Drawing.Size(312, 22);
             this.txtSurname.TabIndex = 2;
             // 
             // rtxtAdress
             // 
-            this.rtxtAdress.Location = new System.Drawing.Point(196, 290);
+            this.rtxtAdress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rtxtAdress.Location = new System.Drawing.Point(165, 371);
+            this.rtxtAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtxtAdress.Name = "rtxtAdress";
-            this.rtxtAdress.Size = new System.Drawing.Size(186, 96);
+            this.rtxtAdress.Size = new System.Drawing.Size(312, 117);
             this.rtxtAdress.TabIndex = 6;
             this.rtxtAdress.Text = "";
             // 
             // mtxtTel
             // 
-            this.mtxtTel.Location = new System.Drawing.Point(196, 397);
+            this.mtxtTel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mtxtTel.Location = new System.Drawing.Point(165, 499);
+            this.mtxtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtxtTel.Mask = "(999) 000-0000";
             this.mtxtTel.Name = "mtxtTel";
-            this.mtxtTel.Size = new System.Drawing.Size(165, 20);
+            this.mtxtTel.Size = new System.Drawing.Size(312, 22);
             this.mtxtTel.TabIndex = 7;
             this.mtxtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtTel_KeyPress);
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(196, 440);
+            this.txtMail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMail.Location = new System.Drawing.Point(165, 551);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(166, 20);
+            this.txtMail.Size = new System.Drawing.Size(311, 22);
             this.txtMail.TabIndex = 8;
             // 
             // mtxbTC
             // 
-            this.mtxbTC.Location = new System.Drawing.Point(204, 67);
+            this.mtxbTC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.mtxbTC.Location = new System.Drawing.Point(165, 84);
+            this.mtxbTC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mtxbTC.Mask = "00000000000";
             this.mtxbTC.Name = "mtxbTC";
-            this.mtxbTC.Size = new System.Drawing.Size(165, 20);
+            this.mtxbTC.Size = new System.Drawing.Size(311, 22);
             this.mtxbTC.TabIndex = 0;
             this.mtxbTC.ValidatingType = typeof(int);
             this.mtxbTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxbTC_KeyPress);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(204, 179);
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPassword.Location = new System.Drawing.Point(165, 225);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(166, 20);
+            this.txtPassword.Size = new System.Drawing.Size(312, 22);
             this.txtPassword.TabIndex = 3;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(105, 182);
+            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblPassword.Location = new System.Drawing.Point(48, 232);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(43, 13);
+            this.lblPassword.Size = new System.Drawing.Size(51, 16);
             this.lblPassword.TabIndex = 17;
             this.lblPassword.Text = "Parola :";
             // 
             // txtRepassword
             // 
-            this.txtRepassword.Location = new System.Drawing.Point(203, 212);
+            this.txtRepassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtRepassword.Location = new System.Drawing.Point(165, 272);
+            this.txtRepassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRepassword.Name = "txtRepassword";
-            this.txtRepassword.Size = new System.Drawing.Size(166, 20);
+            this.txtRepassword.Size = new System.Drawing.Size(312, 22);
             this.txtRepassword.TabIndex = 4;
             // 
             // lblRePassword
             // 
             this.lblRePassword.AutoSize = true;
-            this.lblRePassword.Location = new System.Drawing.Point(105, 212);
+            this.lblRePassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRePassword.Location = new System.Drawing.Point(48, 279);
+            this.lblRePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRePassword.Name = "lblRePassword";
-            this.lblRePassword.Size = new System.Drawing.Size(77, 13);
+            this.lblRePassword.Size = new System.Drawing.Size(91, 16);
             this.lblRePassword.TabIndex = 19;
             this.lblRePassword.Text = "Tekrar Parola :";
             // 
             // dtpBDate
             // 
-            this.dtpBDate.Location = new System.Drawing.Point(204, 257);
+            this.dtpBDate.CalendarForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.dtpBDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.dtpBDate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dtpBDate.Location = new System.Drawing.Point(165, 318);
+            this.dtpBDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpBDate.Name = "dtpBDate";
-            this.dtpBDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpBDate.TabIndex = 20;
+            this.dtpBDate.Size = new System.Drawing.Size(311, 22);
+            this.dtpBDate.TabIndex = 5;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(559, 57);
+            this.btnClose.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.back;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnClose.Location = new System.Drawing.Point(14, 15);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(37, 39);
             this.btnClose.TabIndex = 21;
-            this.btnClose.Text = "Kapat";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 731);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(562, 800);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dtpBDate);
             this.Controls.Add(this.txtRepassword);
@@ -245,8 +295,12 @@
             this.Controls.Add(this.lblSurnameInfo);
             this.Controls.Add(this.lblNameInfo);
             this.Controls.Add(this.lblTcInfo);
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
             this.ResumeLayout(false);

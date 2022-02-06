@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
-            this.btnAdminForm = new System.Windows.Forms.Button();
             this.pnlActive = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
             this.btnDirectory = new System.Windows.Forms.Button();
@@ -45,18 +44,18 @@
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSentry = new System.Windows.Forms.Button();
             this.pnlTopMenu = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.pnlCenter = new System.Windows.Forms.Panel();
+            this.btnAdminForm = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.lblTime = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.pnlCenter = new System.Windows.Forms.Panel();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlTopMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLeftMenu
             // 
-            this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.pnlLeftMenu.Controls.Add(this.btnAdminForm);
+            this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
             this.pnlLeftMenu.Controls.Add(this.pnlActive);
             this.pnlLeftMenu.Controls.Add(this.btnUserName);
             this.pnlLeftMenu.Controls.Add(this.btnDirectory);
@@ -77,22 +76,6 @@
             this.pnlLeftMenu.Size = new System.Drawing.Size(180, 768);
             this.pnlLeftMenu.TabIndex = 0;
             // 
-            // btnAdminForm
-            // 
-            this.btnAdminForm.BackColor = System.Drawing.Color.Red;
-            this.btnAdminForm.FlatAppearance.BorderSize = 0;
-            this.btnAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAdminForm.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdminForm.Location = new System.Drawing.Point(12, 639);
-            this.btnAdminForm.Name = "btnAdminForm";
-            this.btnAdminForm.Size = new System.Drawing.Size(164, 48);
-            this.btnAdminForm.TabIndex = 4;
-            this.btnAdminForm.Text = " Yönetici Ekranı";
-            this.btnAdminForm.UseVisualStyleBackColor = false;
-            this.btnAdminForm.Click += new System.EventHandler(this.btnAdminForm_Click);
-            // 
             // pnlActive
             // 
             this.pnlActive.BackColor = System.Drawing.Color.Gainsboro;
@@ -103,6 +86,7 @@
             // 
             // btnUserName
             // 
+            this.btnUserName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUserName.Location = new System.Drawing.Point(0, 733);
             this.btnUserName.Name = "btnUserName";
             this.btnUserName.Size = new System.Drawing.Size(180, 23);
@@ -115,7 +99,7 @@
             this.btnDirectory.FlatAppearance.BorderSize = 0;
             this.btnDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDirectory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDirectory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDirectory.ForeColor = System.Drawing.Color.LightGray;
             this.btnDirectory.Image = global::ControlAppDesktop.Properties.Resources._001_phonebook;
             this.btnDirectory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDirectory.Location = new System.Drawing.Point(12, 585);
@@ -132,7 +116,7 @@
             this.btnGenarator.FlatAppearance.BorderSize = 0;
             this.btnGenarator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenarator.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGenarator.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnGenarator.ForeColor = System.Drawing.Color.LightGray;
             this.btnGenarator.Image = global::ControlAppDesktop.Properties.Resources.electric_generator;
             this.btnGenarator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenarator.Location = new System.Drawing.Point(12, 535);
@@ -149,7 +133,7 @@
             this.btnGuestCard.FlatAppearance.BorderSize = 0;
             this.btnGuestCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuestCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuestCard.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnGuestCard.ForeColor = System.Drawing.Color.LightGray;
             this.btnGuestCard.Image = global::ControlAppDesktop.Properties.Resources.id;
             this.btnGuestCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuestCard.Location = new System.Drawing.Point(12, 487);
@@ -166,7 +150,7 @@
             this.btnCabinet.FlatAppearance.BorderSize = 0;
             this.btnCabinet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCabinet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCabinet.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCabinet.ForeColor = System.Drawing.Color.LightGray;
             this.btnCabinet.Image = global::ControlAppDesktop.Properties.Resources.locker;
             this.btnCabinet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCabinet.Location = new System.Drawing.Point(12, 439);
@@ -183,7 +167,7 @@
             this.btnDrawer.FlatAppearance.BorderSize = 0;
             this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrawer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDrawer.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDrawer.ForeColor = System.Drawing.Color.LightGray;
             this.btnDrawer.Image = global::ControlAppDesktop.Properties.Resources.dresser;
             this.btnDrawer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDrawer.Location = new System.Drawing.Point(12, 391);
@@ -200,7 +184,7 @@
             this.btnIdCard.FlatAppearance.BorderSize = 0;
             this.btnIdCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIdCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnIdCard.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnIdCard.ForeColor = System.Drawing.Color.LightGray;
             this.btnIdCard.Image = global::ControlAppDesktop.Properties.Resources.name;
             this.btnIdCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIdCard.Location = new System.Drawing.Point(12, 343);
@@ -217,7 +201,7 @@
             this.btnHeadset.FlatAppearance.BorderSize = 0;
             this.btnHeadset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeadset.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHeadset.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnHeadset.ForeColor = System.Drawing.Color.LightGray;
             this.btnHeadset.Image = global::ControlAppDesktop.Properties.Resources.headphone;
             this.btnHeadset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHeadset.Location = new System.Drawing.Point(12, 295);
@@ -234,7 +218,7 @@
             this.btnMaintenance.FlatAppearance.BorderSize = 0;
             this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintenance.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMaintenance.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMaintenance.ForeColor = System.Drawing.Color.LightGray;
             this.btnMaintenance.Image = global::ControlAppDesktop.Properties.Resources.schedule;
             this.btnMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMaintenance.Location = new System.Drawing.Point(12, 247);
@@ -251,7 +235,7 @@
             this.btnRequest.FlatAppearance.BorderSize = 0;
             this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRequest.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRequest.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRequest.ForeColor = System.Drawing.Color.LightGray;
             this.btnRequest.Image = global::ControlAppDesktop.Properties.Resources.clipboard;
             this.btnRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRequest.Location = new System.Drawing.Point(12, 199);
@@ -268,7 +252,7 @@
             this.btnEmployee.FlatAppearance.BorderSize = 0;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEmployee.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnEmployee.ForeColor = System.Drawing.Color.LightGray;
             this.btnEmployee.Image = global::ControlAppDesktop.Properties.Resources.employee;
             this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployee.Location = new System.Drawing.Point(12, 151);
@@ -285,7 +269,7 @@
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnInventory.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnInventory.ForeColor = System.Drawing.Color.LightGray;
             this.btnInventory.Image = global::ControlAppDesktop.Properties.Resources.inventory;
             this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInventory.Location = new System.Drawing.Point(12, 103);
@@ -302,7 +286,7 @@
             this.btnSentry.FlatAppearance.BorderSize = 0;
             this.btnSentry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSentry.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSentry.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnSentry.ForeColor = System.Drawing.Color.LightGray;
             this.btnSentry.Image = global::ControlAppDesktop.Properties.Resources.rotation;
             this.btnSentry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSentry.Location = new System.Drawing.Point(12, 55);
@@ -315,7 +299,8 @@
             // 
             // pnlTopMenu
             // 
-            this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.pnlTopMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.pnlTopMenu.Controls.Add(this.btnAdminForm);
             this.pnlTopMenu.Controls.Add(this.btnMinimize);
             this.pnlTopMenu.Controls.Add(this.lblTime);
             this.pnlTopMenu.Controls.Add(this.btnExit);
@@ -326,27 +311,26 @@
             this.pnlTopMenu.TabIndex = 1;
             this.pnlTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopMenu_MouseDown);
             // 
-            // lblTime
+            // btnAdminForm
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTime.Location = new System.Drawing.Point(15, 5);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(77, 23);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "Zaman";
-            // 
-            // pnlCenter
-            // 
-            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
-            this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
-            this.pnlCenter.TabIndex = 3;
+            this.btnAdminForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.btnAdminForm.FlatAppearance.BorderSize = 0;
+            this.btnAdminForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminForm.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAdminForm.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnAdminForm.Image = global::ControlAppDesktop.Properties.Resources.admin;
+            this.btnAdminForm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminForm.Location = new System.Drawing.Point(892, 3);
+            this.btnAdminForm.Name = "btnAdminForm";
+            this.btnAdminForm.Size = new System.Drawing.Size(164, 33);
+            this.btnAdminForm.TabIndex = 4;
+            this.btnAdminForm.Text = " Yönetici Ekranı";
+            this.btnAdminForm.UseVisualStyleBackColor = false;
+            this.btnAdminForm.Click += new System.EventHandler(this.btnAdminForm_Click);
             // 
             // btnMinimize
             // 
-            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = global::ControlAppDesktop.Properties.Resources.minimize;
@@ -357,9 +341,20 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTime.Location = new System.Drawing.Point(15, 8);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(65, 19);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "Zaman";
+            // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::ControlAppDesktop.Properties.Resources.cancel_red;
@@ -370,9 +365,17 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // pnlCenter
+            // 
+            this.pnlCenter.BackColor = System.Drawing.Color.LightGray;
+            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
+            this.pnlCenter.Name = "pnlCenter";
+            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
+            this.pnlCenter.TabIndex = 3;
+            // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1366, 768);

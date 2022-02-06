@@ -29,17 +29,12 @@ namespace ControlAppDesktop.Forms
            this.Close();
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            Login frmLogin = new Login();
-            frmLogin.Show();
-            this.Close();   
-        }
+       
 
        void PasswordUpdate()
         {
             employee= new Employee(
-                txtTC.Text.ToString(),
+                mtxbTC.Text.ToString(),
                 txtCheckCode.Text.ToString(),
                 txtPassword.Text.ToString(),
                 txtRePassword.Text.ToString());
@@ -47,7 +42,7 @@ namespace ControlAppDesktop.Forms
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTC.Text == "")
+            if (mtxbTC.Text == "")
             {
                 MessageBox.Show("Kimlik Numarası Boş Geçilemez", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -73,13 +68,20 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             Employee checkEmployee = new Employee();
-            checkEmployee = employeeManager.CheckCodeAndTcCheck("CheckCodeAndTcCheck", txtCheckCode.Text.ToString(), txtTC.Text.ToString());
+            checkEmployee = employeeManager.CheckCodeAndTcCheck("CheckCodeAndTcCheck", txtCheckCode.Text.ToString(), mtxbTC.Text.ToString());
             if (checkEmployee == null)
             {
                 MessageBox.Show("Personel ve Onay Kodu Uyuşmazlığı","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             PasswordUpdate();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Login frmLogin = new Login();
+            frmLogin.Show();
+            this.Close();
         }
     }
 }

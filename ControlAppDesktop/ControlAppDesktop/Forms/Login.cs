@@ -94,9 +94,7 @@ namespace ControlAppDesktop
 
         private void LnkSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Show();
-            this.Hide();
+           
         }
 
         private void LnkForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -120,6 +118,84 @@ namespace ControlAppDesktop
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void mtxtTC_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (pnlTc.BackColor==Color.White)
+            {
+                pnlTc.BackColor=Color.FromArgb(39, 162, 214);
+            }
+            if (mtxtTC.ForeColor==Color.White)
+            {
+                mtxtTC.ForeColor=Color.FromArgb(39, 162, 214);
+            }
+            if (pnlPassword.BackColor==Color.FromArgb(39, 162, 214))
+            {
+                pnlPassword.BackColor=Color.White;
+
+            }
+            if (txtPassword.ForeColor==Color.FromArgb(39, 162, 214))
+            {
+                txtPassword.ForeColor=Color.White;
+            }
+            if (pbPassword.Image!=Properties.Resources.lock_16)
+            {
+                pbPassword.Image=Properties.Resources.lock_16;
+            }
+            mtxtTC.Clear();
+            pbTc.Image=Properties.Resources.userblue;
+        }
+
+        private void txtPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (pnlPassword.BackColor==Color.White)
+            {
+                pnlPassword.BackColor=Color.FromArgb(39, 162, 214);
+
+            }
+            if (txtPassword.ForeColor==Color.White)
+            {
+                txtPassword.ForeColor=Color.FromArgb(39, 162, 214);
+            }
+            if (pbPassword.Image!=Properties.Resources.lockblue)
+            {
+                pbPassword.Image=Properties.Resources.lockblue;
+            }
+            if (pbTc.Image!=Properties.Resources.user_16)
+            {
+                pbTc.Image=Properties.Resources.user_16;
+            }
+            if (mtxtTC.ForeColor!=Color.White)
+            {
+                mtxtTC.ForeColor=Color.White;
+            }
+            if (pnlTc.BackColor!=Color.White)
+            {
+                pnlTc.BackColor=Color.White;
+            }
+            txtPassword.Clear();
+            
+        }
+
+        private void cbPassShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbPassShow.Checked)
+            {
+                txtPassword.PasswordChar='\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar='*';
+            }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
         }
     }
 }

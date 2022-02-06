@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
@@ -44,13 +44,13 @@
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSentryListDone = new System.Windows.Forms.Button();
-            this.btnSentryDoneAdd = new System.Windows.Forms.Button();
-            this.btnSentryToDoAdd = new System.Windows.Forms.Button();
-            this.btnSentryListToDo = new System.Windows.Forms.Button();
             this.rtbxSentryToDo = new System.Windows.Forms.RichTextBox();
-            this.btnSentryDoneUpdate = new System.Windows.Forms.Button();
             this.btnSentryToDoUpdate = new System.Windows.Forms.Button();
+            this.btnSentryDoneUpdate = new System.Windows.Forms.Button();
+            this.btnSentryListToDo = new System.Windows.Forms.Button();
+            this.btnSentryToDoAdd = new System.Windows.Forms.Button();
+            this.btnSentryDoneAdd = new System.Windows.Forms.Button();
+            this.btnSentryListDone = new System.Windows.Forms.Button();
             this.gbSentry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).BeginInit();
             this.rightMenuToDo.SuspendLayout();
@@ -62,7 +62,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(467, 13);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // rtbxSentry
@@ -76,6 +76,7 @@
             // 
             // gbSentry
             // 
+            this.gbSentry.BackColor = System.Drawing.Color.LightGray;
             this.gbSentry.Controls.Add(this.dgvSentryTodo);
             this.gbSentry.Controls.Add(this.dgvSentry);
             this.gbSentry.Location = new System.Drawing.Point(55, 398);
@@ -91,20 +92,23 @@
             this.dgvSentryTodo.AllowUserToDeleteRows = false;
             this.dgvSentryTodo.AllowUserToResizeColumns = false;
             this.dgvSentryTodo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSentryTodo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSentryTodo.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSentryTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSentryTodo.ContextMenuStrip = this.rightMenuToDo;
             this.dgvSentryTodo.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvSentryTodo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSentryTodo.Location = new System.Drawing.Point(3, 16);
+            this.dgvSentryTodo.GridColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.Location = new System.Drawing.Point(3, 17);
             this.dgvSentryTodo.MultiSelect = false;
             this.dgvSentryTodo.Name = "dgvSentryTodo";
             this.dgvSentryTodo.ReadOnly = true;
             this.dgvSentryTodo.RowHeadersVisible = false;
             this.dgvSentryTodo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 247);
+            this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 246);
             this.dgvSentryTodo.TabIndex = 2;
             // 
             // rightMenuToDo
@@ -143,20 +147,20 @@
             this.dgvSentry.AllowUserToDeleteRows = false;
             this.dgvSentry.AllowUserToResizeColumns = false;
             this.dgvSentry.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentry.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSentry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSentry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSentry.ContextMenuStrip = this.rightMenuDone;
             this.dgvSentry.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvSentry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSentry.Location = new System.Drawing.Point(3, 16);
+            this.dgvSentry.Location = new System.Drawing.Point(3, 17);
             this.dgvSentry.MultiSelect = false;
             this.dgvSentry.Name = "dgvSentry";
             this.dgvSentry.ReadOnly = true;
             this.dgvSentry.RowHeadersVisible = false;
             this.dgvSentry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSentry.Size = new System.Drawing.Size(1033, 247);
+            this.dgvSentry.Size = new System.Drawing.Size(1033, 246);
             this.dgvSentry.TabIndex = 1;
             // 
             // rightMenuDone
@@ -189,47 +193,6 @@
             this.yenileToolStripMenuItem.Text = "Yenile";
             this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
-            // btnSentryListDone
-            // 
-            this.btnSentryListDone.Location = new System.Drawing.Point(253, 277);
-            this.btnSentryListDone.Name = "btnSentryListDone";
-            this.btnSentryListDone.Size = new System.Drawing.Size(75, 23);
-            this.btnSentryListDone.TabIndex = 3;
-            this.btnSentryListDone.Text = "Listele";
-            this.btnSentryListDone.UseVisualStyleBackColor = true;
-            this.btnSentryListDone.Click += new System.EventHandler(this.btnSentryListDone_Click);
-            // 
-            // btnSentryDoneAdd
-            // 
-            this.btnSentryDoneAdd.Location = new System.Drawing.Point(119, 277);
-            this.btnSentryDoneAdd.Name = "btnSentryDoneAdd";
-            this.btnSentryDoneAdd.Size = new System.Drawing.Size(114, 23);
-            this.btnSentryDoneAdd.TabIndex = 5;
-            this.btnSentryDoneAdd.Text = "Yapılan İş Ekle";
-            this.btnSentryDoneAdd.UseVisualStyleBackColor = true;
-            this.btnSentryDoneAdd.Click += new System.EventHandler(this.btnSentryDoneAdd_Click);
-            // 
-            // btnSentryToDoAdd
-            // 
-            this.btnSentryToDoAdd.Enabled = false;
-            this.btnSentryToDoAdd.Location = new System.Drawing.Point(622, 287);
-            this.btnSentryToDoAdd.Name = "btnSentryToDoAdd";
-            this.btnSentryToDoAdd.Size = new System.Drawing.Size(162, 23);
-            this.btnSentryToDoAdd.TabIndex = 6;
-            this.btnSentryToDoAdd.Text = "Takip Edilecek İş Ekle";
-            this.btnSentryToDoAdd.UseVisualStyleBackColor = true;
-            this.btnSentryToDoAdd.Click += new System.EventHandler(this.btnSentryToDoAdd_Click);
-            // 
-            // btnSentryListToDo
-            // 
-            this.btnSentryListToDo.Location = new System.Drawing.Point(806, 287);
-            this.btnSentryListToDo.Name = "btnSentryListToDo";
-            this.btnSentryListToDo.Size = new System.Drawing.Size(75, 23);
-            this.btnSentryListToDo.TabIndex = 7;
-            this.btnSentryListToDo.Text = "Listele";
-            this.btnSentryListToDo.UseVisualStyleBackColor = true;
-            this.btnSentryListToDo.Click += new System.EventHandler(this.btnSentryListToDo_Click);
-            // 
             // rtbxSentryToDo
             // 
             this.rtbxSentryToDo.Location = new System.Drawing.Point(622, 122);
@@ -239,30 +202,96 @@
             this.rtbxSentryToDo.Text = "Takip edilecek işlemler...";
             this.rtbxSentryToDo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rtbxSentryToDo_MouseClick);
             // 
-            // btnSentryDoneUpdate
-            // 
-            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(361, 277);
-            this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
-            this.btnSentryDoneUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnSentryDoneUpdate.TabIndex = 9;
-            this.btnSentryDoneUpdate.Text = "Güncelle";
-            this.btnSentryDoneUpdate.UseVisualStyleBackColor = true;
-            this.btnSentryDoneUpdate.Click += new System.EventHandler(this.btnSentryDoneUpdate_Click);
-            // 
             // btnSentryToDoUpdate
             // 
-            this.btnSentryToDoUpdate.Location = new System.Drawing.Point(911, 287);
+            this.btnSentryToDoUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnSentryToDoUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnSentryToDoUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSentryToDoUpdate.FlatAppearance.BorderSize = 0;
+            this.btnSentryToDoUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentryToDoUpdate.Location = new System.Drawing.Point(1021, 277);
             this.btnSentryToDoUpdate.Name = "btnSentryToDoUpdate";
-            this.btnSentryToDoUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnSentryToDoUpdate.Size = new System.Drawing.Size(32, 32);
             this.btnSentryToDoUpdate.TabIndex = 11;
-            this.btnSentryToDoUpdate.Text = "Güncelle";
-            this.btnSentryToDoUpdate.UseVisualStyleBackColor = true;
+            this.btnSentryToDoUpdate.UseVisualStyleBackColor = false;
             this.btnSentryToDoUpdate.Visible = false;
             this.btnSentryToDoUpdate.Click += new System.EventHandler(this.btnSentryToDoUpdate_Click);
+            // 
+            // btnSentryDoneUpdate
+            // 
+            this.btnSentryDoneUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnSentryDoneUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnSentryDoneUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSentryDoneUpdate.FlatAppearance.BorderSize = 0;
+            this.btnSentryDoneUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentryDoneUpdate.Location = new System.Drawing.Point(408, 281);
+            this.btnSentryDoneUpdate.Name = "btnSentryDoneUpdate";
+            this.btnSentryDoneUpdate.Size = new System.Drawing.Size(32, 32);
+            this.btnSentryDoneUpdate.TabIndex = 9;
+            this.btnSentryDoneUpdate.UseVisualStyleBackColor = false;
+            this.btnSentryDoneUpdate.Click += new System.EventHandler(this.btnSentryDoneUpdate_Click);
+            // 
+            // btnSentryListToDo
+            // 
+            this.btnSentryListToDo.BackColor = System.Drawing.Color.Transparent;
+            this.btnSentryListToDo.BackgroundImage = global::ControlAppDesktop.Properties.Resources.loupe;
+            this.btnSentryListToDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSentryListToDo.FlatAppearance.BorderSize = 0;
+            this.btnSentryListToDo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentryListToDo.Location = new System.Drawing.Point(832, 281);
+            this.btnSentryListToDo.Name = "btnSentryListToDo";
+            this.btnSentryListToDo.Size = new System.Drawing.Size(32, 32);
+            this.btnSentryListToDo.TabIndex = 7;
+            this.btnSentryListToDo.UseVisualStyleBackColor = false;
+            this.btnSentryListToDo.Click += new System.EventHandler(this.btnSentryListToDo_Click);
+            // 
+            // btnSentryToDoAdd
+            // 
+            this.btnSentryToDoAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnSentryToDoAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSentryToDoAdd.Enabled = false;
+            this.btnSentryToDoAdd.FlatAppearance.BorderSize = 0;
+            this.btnSentryToDoAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentryToDoAdd.Location = new System.Drawing.Point(647, 277);
+            this.btnSentryToDoAdd.Name = "btnSentryToDoAdd";
+            this.btnSentryToDoAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnSentryToDoAdd.TabIndex = 6;
+            this.btnSentryToDoAdd.UseVisualStyleBackColor = true;
+            this.btnSentryToDoAdd.Click += new System.EventHandler(this.btnSentryToDoAdd_Click);
+            // 
+            // btnSentryDoneAdd
+            // 
+            this.btnSentryDoneAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnSentryDoneAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnSentryDoneAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSentryDoneAdd.FlatAppearance.BorderSize = 0;
+            this.btnSentryDoneAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentryDoneAdd.Location = new System.Drawing.Point(37, 277);
+            this.btnSentryDoneAdd.Name = "btnSentryDoneAdd";
+            this.btnSentryDoneAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnSentryDoneAdd.TabIndex = 5;
+            this.btnSentryDoneAdd.UseVisualStyleBackColor = false;
+            this.btnSentryDoneAdd.Click += new System.EventHandler(this.btnSentryDoneAdd_Click);
+            // 
+            // btnSentryListDone
+            // 
+            this.btnSentryListDone.BackColor = System.Drawing.Color.Transparent;
+            this.btnSentryListDone.BackgroundImage = global::ControlAppDesktop.Properties.Resources.loupe;
+            this.btnSentryListDone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSentryListDone.FlatAppearance.BorderSize = 0;
+            this.btnSentryListDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentryListDone.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSentryListDone.Location = new System.Drawing.Point(200, 281);
+            this.btnSentryListDone.Name = "btnSentryListDone";
+            this.btnSentryListDone.Size = new System.Drawing.Size(32, 32);
+            this.btnSentryListDone.TabIndex = 3;
+            this.btnSentryListDone.UseVisualStyleBackColor = false;
+            this.btnSentryListDone.Click += new System.EventHandler(this.btnSentryListDone_Click);
             // 
             // SentryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnSentryToDoUpdate);
             this.Controls.Add(this.btnSentryDoneUpdate);
@@ -274,6 +303,7 @@
             this.Controls.Add(this.gbSentry);
             this.Controls.Add(this.rtbxSentry);
             this.Controls.Add(this.dateTimePicker1);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SentryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
