@@ -50,19 +50,19 @@
             this.gbxHeadsetDelivery.Controls.Add(this.lblHeadsetInfo);
             this.gbxHeadsetDelivery.Controls.Add(this.lblDeliveryEmployee);
             this.gbxHeadsetDelivery.Controls.Add(this.lblHeadsetSeriNoInfo);
-            this.gbxHeadsetDelivery.Location = new System.Drawing.Point(265, 41);
+            this.gbxHeadsetDelivery.Location = new System.Drawing.Point(43, 69);
             this.gbxHeadsetDelivery.Name = "gbxHeadsetDelivery";
-            this.gbxHeadsetDelivery.Size = new System.Drawing.Size(421, 339);
+            this.gbxHeadsetDelivery.Size = new System.Drawing.Size(421, 211);
             this.gbxHeadsetDelivery.TabIndex = 0;
             this.gbxHeadsetDelivery.TabStop = false;
             this.gbxHeadsetDelivery.Text = "Kulaklık Teslim Et";
             // 
             // btnHeadsetDelivery
             // 
-            this.btnHeadsetDelivery.Location = new System.Drawing.Point(174, 221);
+            this.btnHeadsetDelivery.Location = new System.Drawing.Point(173, 159);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
             this.btnHeadsetDelivery.Size = new System.Drawing.Size(75, 23);
-            this.btnHeadsetDelivery.TabIndex = 6;
+            this.btnHeadsetDelivery.TabIndex = 3;
             this.btnHeadsetDelivery.Text = "Teslim Et";
             this.btnHeadsetDelivery.UseVisualStyleBackColor = true;
             this.btnHeadsetDelivery.Click += new System.EventHandler(this.btnHeadsetDelivery_Click);
@@ -72,7 +72,7 @@
             this.txtHeadsetInfo.Location = new System.Drawing.Point(122, 100);
             this.txtHeadsetInfo.Name = "txtHeadsetInfo";
             this.txtHeadsetInfo.Size = new System.Drawing.Size(195, 20);
-            this.txtHeadsetInfo.TabIndex = 5;
+            this.txtHeadsetInfo.TabIndex = 2;
             // 
             // cbxDeliveryEmployee
             // 
@@ -80,14 +80,14 @@
             this.cbxDeliveryEmployee.Location = new System.Drawing.Point(123, 66);
             this.cbxDeliveryEmployee.Name = "cbxDeliveryEmployee";
             this.cbxDeliveryEmployee.Size = new System.Drawing.Size(194, 21);
-            this.cbxDeliveryEmployee.TabIndex = 4;
+            this.cbxDeliveryEmployee.TabIndex = 1;
             // 
             // txtHeadsetSeriNo
             // 
             this.txtHeadsetSeriNo.Location = new System.Drawing.Point(122, 33);
             this.txtHeadsetSeriNo.Name = "txtHeadsetSeriNo";
             this.txtHeadsetSeriNo.Size = new System.Drawing.Size(195, 20);
-            this.txtHeadsetSeriNo.TabIndex = 3;
+            this.txtHeadsetSeriNo.TabIndex = 0;
             // 
             // lblHeadsetInfo
             // 
@@ -118,18 +118,21 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(31, 74);
+            this.dateTimePicker1.Location = new System.Drawing.Point(43, 40);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 1;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(118, 217);
+            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(471, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "Kapat";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 4;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -137,12 +140,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 437);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(540, 437);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxHeadsetDelivery);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HeadsetDeliveryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HeadsetDeliveryForm";
             this.Load += new System.EventHandler(this.HeadsetDeliveryForm_Load);
             this.gbxHeadsetDelivery.ResumeLayout(false);

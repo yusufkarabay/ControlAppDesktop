@@ -77,17 +77,18 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHeadset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHeadset.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvHeadset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHeadset.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvHeadset.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvHeadset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHeadset.Location = new System.Drawing.Point(3, 16);
+            this.dgvHeadset.Location = new System.Drawing.Point(3, 17);
             this.dgvHeadset.MultiSelect = false;
             this.dgvHeadset.Name = "dgvHeadset";
             this.dgvHeadset.ReadOnly = true;
             this.dgvHeadset.RowHeadersVisible = false;
             this.dgvHeadset.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHeadset.Size = new System.Drawing.Size(761, 236);
+            this.dgvHeadset.Size = new System.Drawing.Size(761, 235);
             this.dgvHeadset.TabIndex = 1;
             this.dgvHeadset.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHeadset_CellMouseClick);
             // 
@@ -127,7 +128,7 @@
             this.lblHeadsetSeriNo.AutoSize = true;
             this.lblHeadsetSeriNo.Location = new System.Drawing.Point(6, 25);
             this.lblHeadsetSeriNo.Name = "lblHeadsetSeriNo";
-            this.lblHeadsetSeriNo.Size = new System.Drawing.Size(85, 13);
+            this.lblHeadsetSeriNo.Size = new System.Drawing.Size(87, 16);
             this.lblHeadsetSeriNo.TabIndex = 10;
             this.lblHeadsetSeriNo.Text = "Kulaklık Seri No:";
             // 
@@ -136,7 +137,7 @@
             this.headsetstatus.AutoSize = true;
             this.headsetstatus.Location = new System.Drawing.Point(6, 103);
             this.headsetstatus.Name = "headsetstatus";
-            this.headsetstatus.Size = new System.Drawing.Size(84, 13);
+            this.headsetstatus.Size = new System.Drawing.Size(90, 16);
             this.headsetstatus.TabIndex = 8;
             this.headsetstatus.Text = "Kulaklık Durumu";
             // 
@@ -145,7 +146,7 @@
             this.lblDeliveryPerson.AutoSize = true;
             this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(68, 13);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(71, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
@@ -154,7 +155,7 @@
             this.lblReceiverPerson.AutoSize = true;
             this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(64, 13);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(67, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
@@ -163,7 +164,7 @@
             this.lblHeadsetStatusInfo.AutoSize = true;
             this.lblHeadsetStatusInfo.Location = new System.Drawing.Point(100, 103);
             this.lblHeadsetStatusInfo.Name = "lblHeadsetStatusInfo";
-            this.lblHeadsetStatusInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblHeadsetStatusInfo.Size = new System.Drawing.Size(19, 16);
             this.lblHeadsetStatusInfo.TabIndex = 9;
             this.lblHeadsetStatusInfo.Text = "00";
             // 
@@ -172,7 +173,7 @@
             this.lblDeliveryPersonInfo.AutoSize = true;
             this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(100, 77);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
-            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(19, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
             this.lblDeliveryPersonInfo.Text = "00";
             // 
@@ -181,7 +182,7 @@
             this.lblReceiverPersonInfo.AutoSize = true;
             this.lblReceiverPersonInfo.Location = new System.Drawing.Point(100, 51);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
-            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(19, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
             this.lblReceiverPersonInfo.Text = "00";
             // 
@@ -190,7 +191,7 @@
             this.lblHeadsetSeriNoInfo.AutoSize = true;
             this.lblHeadsetSeriNoInfo.Location = new System.Drawing.Point(100, 25);
             this.lblHeadsetSeriNoInfo.Name = "lblHeadsetSeriNoInfo";
-            this.lblHeadsetSeriNoInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblHeadsetSeriNoInfo.Size = new System.Drawing.Size(19, 16);
             this.lblHeadsetSeriNoInfo.TabIndex = 1;
             this.lblHeadsetSeriNoInfo.Text = "00";
             // 
@@ -199,7 +200,7 @@
             this.btnHeadsetDelivery.Location = new System.Drawing.Point(757, 140);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
             this.btnHeadsetDelivery.Size = new System.Drawing.Size(108, 23);
-            this.btnHeadsetDelivery.TabIndex = 3;
+            this.btnHeadsetDelivery.TabIndex = 1;
             this.btnHeadsetDelivery.Text = "Kulaklık Teslim Et";
             this.btnHeadsetDelivery.UseVisualStyleBackColor = true;
             this.btnHeadsetDelivery.Click += new System.EventHandler(this.btnHeadsetDelivery_Click);
@@ -209,7 +210,7 @@
             this.btnHeadsetList.Location = new System.Drawing.Point(757, 99);
             this.btnHeadsetList.Name = "btnHeadsetList";
             this.btnHeadsetList.Size = new System.Drawing.Size(75, 23);
-            this.btnHeadsetList.TabIndex = 4;
+            this.btnHeadsetList.TabIndex = 0;
             this.btnHeadsetList.Text = "Listele";
             this.btnHeadsetList.UseVisualStyleBackColor = true;
             this.btnHeadsetList.Click += new System.EventHandler(this.btnHeadsetList_Click);
@@ -219,7 +220,7 @@
             this.btnHeadsetSearch.Location = new System.Drawing.Point(513, 264);
             this.btnHeadsetSearch.Name = "btnHeadsetSearch";
             this.btnHeadsetSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnHeadsetSearch.TabIndex = 5;
+            this.btnHeadsetSearch.TabIndex = 3;
             this.btnHeadsetSearch.Text = "Ara";
             this.btnHeadsetSearch.UseVisualStyleBackColor = true;
             this.btnHeadsetSearch.Click += new System.EventHandler(this.btnHeadsetSearch_Click);
@@ -228,8 +229,8 @@
             // 
             this.txtHeadsetSearch.Location = new System.Drawing.Point(474, 238);
             this.txtHeadsetSearch.Name = "txtHeadsetSearch";
-            this.txtHeadsetSearch.Size = new System.Drawing.Size(165, 20);
-            this.txtHeadsetSearch.TabIndex = 6;
+            this.txtHeadsetSearch.Size = new System.Drawing.Size(165, 21);
+            this.txtHeadsetSearch.TabIndex = 2;
             this.txtHeadsetSearch.Text = "Kulaklık Ara...";
             this.txtHeadsetSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtHeadsetSearch_MouseClick);
             // 
@@ -238,7 +239,7 @@
             this.rbHeadsetSeriNo.AutoSize = true;
             this.rbHeadsetSeriNo.Location = new System.Drawing.Point(16, 52);
             this.rbHeadsetSeriNo.Name = "rbHeadsetSeriNo";
-            this.rbHeadsetSeriNo.Size = new System.Drawing.Size(158, 17);
+            this.rbHeadsetSeriNo.Size = new System.Drawing.Size(169, 20);
             this.rbHeadsetSeriNo.TabIndex = 7;
             this.rbHeadsetSeriNo.TabStop = true;
             this.rbHeadsetSeriNo.Text = "Kulaklık Seri No\'ya Göre Ara";
@@ -250,7 +251,7 @@
             this.rbDeliveryEmployee.AutoSize = true;
             this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(178, 17);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(191, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -274,7 +275,7 @@
             this.rbReciverEmployee.AutoSize = true;
             this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(140, 17);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(153, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -284,6 +285,7 @@
             // HeadsetForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.txtHeadsetSearch);
@@ -292,6 +294,7 @@
             this.Controls.Add(this.btnHeadsetDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbHeadset);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HeadsetForm";
             this.Text = "HeadsetForm";

@@ -93,7 +93,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.Size = new System.Drawing.Size(24, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "TC:";
             // 
@@ -102,7 +102,7 @@
             this.department.AutoSize = true;
             this.department.Location = new System.Drawing.Point(6, 103);
             this.department.Name = "department";
-            this.department.Size = new System.Drawing.Size(62, 13);
+            this.department.Size = new System.Drawing.Size(73, 16);
             this.department.TabIndex = 8;
             this.department.Text = "Departman:";
             // 
@@ -111,7 +111,7 @@
             this.employeeSurname.AutoSize = true;
             this.employeeSurname.Location = new System.Drawing.Point(6, 77);
             this.employeeSurname.Name = "employeeSurname";
-            this.employeeSurname.Size = new System.Drawing.Size(40, 13);
+            this.employeeSurname.Size = new System.Drawing.Size(45, 16);
             this.employeeSurname.TabIndex = 3;
             this.employeeSurname.Text = "Soyad:";
             // 
@@ -120,7 +120,7 @@
             this.employeeName.AutoSize = true;
             this.employeeName.Location = new System.Drawing.Point(6, 51);
             this.employeeName.Name = "employeeName";
-            this.employeeName.Size = new System.Drawing.Size(23, 13);
+            this.employeeName.Size = new System.Drawing.Size(25, 16);
             this.employeeName.TabIndex = 2;
             this.employeeName.Text = "Ad:";
             // 
@@ -129,7 +129,7 @@
             this.lblDepartmentInfo.AutoSize = true;
             this.lblDepartmentInfo.Location = new System.Drawing.Point(100, 103);
             this.lblDepartmentInfo.Name = "lblDepartmentInfo";
-            this.lblDepartmentInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblDepartmentInfo.Size = new System.Drawing.Size(19, 16);
             this.lblDepartmentInfo.TabIndex = 9;
             this.lblDepartmentInfo.Text = "00";
             // 
@@ -138,7 +138,7 @@
             this.lblSurnameInfo.AutoSize = true;
             this.lblSurnameInfo.Location = new System.Drawing.Point(100, 77);
             this.lblSurnameInfo.Name = "lblSurnameInfo";
-            this.lblSurnameInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblSurnameInfo.Size = new System.Drawing.Size(19, 16);
             this.lblSurnameInfo.TabIndex = 5;
             this.lblSurnameInfo.Text = "00";
             // 
@@ -147,7 +147,7 @@
             this.lblNameInfo.AutoSize = true;
             this.lblNameInfo.Location = new System.Drawing.Point(100, 51);
             this.lblNameInfo.Name = "lblNameInfo";
-            this.lblNameInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblNameInfo.Size = new System.Drawing.Size(19, 16);
             this.lblNameInfo.TabIndex = 4;
             this.lblNameInfo.Text = "00";
             // 
@@ -156,7 +156,7 @@
             this.lblTcInfo.AutoSize = true;
             this.lblTcInfo.Location = new System.Drawing.Point(100, 25);
             this.lblTcInfo.Name = "lblTcInfo";
-            this.lblTcInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblTcInfo.Size = new System.Drawing.Size(19, 16);
             this.lblTcInfo.TabIndex = 1;
             this.lblTcInfo.Text = "00";
             // 
@@ -165,7 +165,7 @@
             this.tlblTime.AutoSize = true;
             this.tlblTime.Location = new System.Drawing.Point(941, 9);
             this.tlblTime.Name = "tlblTime";
-            this.tlblTime.Size = new System.Drawing.Size(40, 13);
+            this.tlblTime.Size = new System.Drawing.Size(46, 16);
             this.tlblTime.TabIndex = 1;
             this.tlblTime.Text = "Zaman";
             // 
@@ -188,17 +188,19 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.dgvRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRequest.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvRequest.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequest.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvRequest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRequest.Location = new System.Drawing.Point(3, 16);
+            this.dgvRequest.Location = new System.Drawing.Point(3, 17);
             this.dgvRequest.MultiSelect = false;
             this.dgvRequest.Name = "dgvRequest";
             this.dgvRequest.ReadOnly = true;
             this.dgvRequest.RowHeadersVisible = false;
             this.dgvRequest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRequest.Size = new System.Drawing.Size(1008, 253);
+            this.dgvRequest.Size = new System.Drawing.Size(1008, 252);
             this.dgvRequest.TabIndex = 0;
             this.dgvRequest.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRequest_CellMouseClick);
             this.dgvRequest.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRequest_CellMouseDoubleClick);
@@ -238,7 +240,7 @@
             this.richTxtRequestContent.Name = "richTxtRequestContent";
             this.richTxtRequestContent.ReadOnly = true;
             this.richTxtRequestContent.Size = new System.Drawing.Size(282, 96);
-            this.richTxtRequestContent.TabIndex = 5;
+            this.richTxtRequestContent.TabIndex = 10;
             this.richTxtRequestContent.Text = "";
             this.richTxtRequestContent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTxtRequestContent_KeyDown);
             this.richTxtRequestContent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTxtRequestContent_KeyPress);
@@ -248,8 +250,8 @@
             this.txtRequested.Location = new System.Drawing.Point(183, 64);
             this.txtRequested.Name = "txtRequested";
             this.txtRequested.ReadOnly = true;
-            this.txtRequested.Size = new System.Drawing.Size(282, 20);
-            this.txtRequested.TabIndex = 4;
+            this.txtRequested.Size = new System.Drawing.Size(282, 21);
+            this.txtRequested.TabIndex = 9;
             this.txtRequested.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequested_KeyDown);
             this.txtRequested.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRequested_KeyPress);
             // 
@@ -258,8 +260,8 @@
             this.txtRequestTitle.Location = new System.Drawing.Point(183, 27);
             this.txtRequestTitle.Name = "txtRequestTitle";
             this.txtRequestTitle.ReadOnly = true;
-            this.txtRequestTitle.Size = new System.Drawing.Size(282, 20);
-            this.txtRequestTitle.TabIndex = 3;
+            this.txtRequestTitle.Size = new System.Drawing.Size(282, 21);
+            this.txtRequestTitle.TabIndex = 8;
             this.txtRequestTitle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRequestTitle_KeyDown);
             this.txtRequestTitle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRequestTitle_KeyPress);
             // 
@@ -268,7 +270,7 @@
             this.requested.AutoSize = true;
             this.requested.Location = new System.Drawing.Point(16, 71);
             this.requested.Name = "requested";
-            this.requested.Size = new System.Drawing.Size(62, 13);
+            this.requested.Size = new System.Drawing.Size(68, 16);
             this.requested.TabIndex = 2;
             this.requested.Text = "Talep Eden";
             // 
@@ -277,7 +279,7 @@
             this.lblrequestDetail.AutoSize = true;
             this.lblrequestDetail.Location = new System.Drawing.Point(16, 102);
             this.lblrequestDetail.Name = "lblrequestDetail";
-            this.lblrequestDetail.Size = new System.Drawing.Size(87, 13);
+            this.lblrequestDetail.Size = new System.Drawing.Size(95, 16);
             this.lblrequestDetail.TabIndex = 1;
             this.lblrequestDetail.Text = "Talep Açıklaması";
             // 
@@ -286,7 +288,7 @@
             this.requestName.AutoSize = true;
             this.requestName.Location = new System.Drawing.Point(16, 35);
             this.requestName.Name = "requestName";
-            this.requestName.Size = new System.Drawing.Size(52, 13);
+            this.requestName.Size = new System.Drawing.Size(57, 16);
             this.requestName.TabIndex = 0;
             this.requestName.Text = "Talep Adı";
             // 
@@ -317,10 +319,10 @@
             // 
             // btnDepartmentRequest
             // 
-            this.btnDepartmentRequest.Location = new System.Drawing.Point(13, 24);
+            this.btnDepartmentRequest.Location = new System.Drawing.Point(13, 20);
             this.btnDepartmentRequest.Name = "btnDepartmentRequest";
-            this.btnDepartmentRequest.Size = new System.Drawing.Size(168, 23);
-            this.btnDepartmentRequest.TabIndex = 13;
+            this.btnDepartmentRequest.Size = new System.Drawing.Size(176, 23);
+            this.btnDepartmentRequest.TabIndex = 0;
             this.btnDepartmentRequest.Text = "Departmana Gelen Talepler";
             this.btnDepartmentRequest.UseVisualStyleBackColor = true;
             this.btnDepartmentRequest.Click += new System.EventHandler(this.btnDepartmentRequest_Click);
@@ -330,7 +332,7 @@
             this.btnMyRequest.Location = new System.Drawing.Point(13, 139);
             this.btnMyRequest.Name = "btnMyRequest";
             this.btnMyRequest.Size = new System.Drawing.Size(176, 23);
-            this.btnMyRequest.TabIndex = 5;
+            this.btnMyRequest.TabIndex = 4;
             this.btnMyRequest.Text = "Talep Ettiklerim";
             this.btnMyRequest.UseVisualStyleBackColor = true;
             this.btnMyRequest.Click += new System.EventHandler(this.btnMyRequest_Click);
@@ -340,7 +342,7 @@
             this.btnCreateRequest.Location = new System.Drawing.Point(13, 109);
             this.btnCreateRequest.Name = "btnCreateRequest";
             this.btnCreateRequest.Size = new System.Drawing.Size(176, 23);
-            this.btnCreateRequest.TabIndex = 6;
+            this.btnCreateRequest.TabIndex = 3;
             this.btnCreateRequest.Text = "Talep Oluştur";
             this.btnCreateRequest.UseVisualStyleBackColor = true;
             this.btnCreateRequest.Click += new System.EventHandler(this.btnCreateRequest_Click);
@@ -350,7 +352,7 @@
             this.btnWeb.Location = new System.Drawing.Point(13, 79);
             this.btnWeb.Name = "btnWeb";
             this.btnWeb.Size = new System.Drawing.Size(176, 23);
-            this.btnWeb.TabIndex = 1;
+            this.btnWeb.TabIndex = 2;
             this.btnWeb.Text = "Web\'de Görüntüle";
             this.btnWeb.UseVisualStyleBackColor = true;
             this.btnWeb.Click += new System.EventHandler(this.btnWeb_Click);
@@ -360,7 +362,7 @@
             this.btnRequestRefresh.Location = new System.Drawing.Point(13, 49);
             this.btnRequestRefresh.Name = "btnRequestRefresh";
             this.btnRequestRefresh.Size = new System.Drawing.Size(176, 23);
-            this.btnRequestRefresh.TabIndex = 0;
+            this.btnRequestRefresh.TabIndex = 1;
             this.btnRequestRefresh.Text = "Aktif Talepler";
             this.btnRequestRefresh.UseVisualStyleBackColor = true;
             this.btnRequestRefresh.Click += new System.EventHandler(this.btnRequestRefresh_Click);
@@ -370,7 +372,7 @@
             this.lblCount.AutoSize = true;
             this.lblCount.Location = new System.Drawing.Point(780, 504);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(132, 13);
+            this.lblCount.Size = new System.Drawing.Size(146, 16);
             this.lblCount.TabIndex = 11;
             this.lblCount.Text = "Devam Eden Talep Sayısı:";
             // 
@@ -379,7 +381,7 @@
             this.lblCountInfo.AutoSize = true;
             this.lblCountInfo.Location = new System.Drawing.Point(1047, 504);
             this.lblCountInfo.Name = "lblCountInfo";
-            this.lblCountInfo.Size = new System.Drawing.Size(19, 13);
+            this.lblCountInfo.Size = new System.Drawing.Size(19, 16);
             this.lblCountInfo.TabIndex = 12;
             this.lblCountInfo.Text = "00";
             // 
@@ -388,17 +390,17 @@
             this.lblEndText.AutoSize = true;
             this.lblEndText.Location = new System.Drawing.Point(721, 54);
             this.lblEndText.Name = "lblEndText";
-            this.lblEndText.Size = new System.Drawing.Size(56, 13);
+            this.lblEndText.Size = new System.Drawing.Size(62, 16);
             this.lblEndText.TabIndex = 15;
             this.lblEndText.Text = "Açıklama :";
             this.lblEndText.Visible = false;
             // 
             // rtbEndText
             // 
-            this.rtbEndText.Location = new System.Drawing.Point(783, 47);
+            this.rtbEndText.Location = new System.Drawing.Point(802, 37);
             this.rtbEndText.Name = "rtbEndText";
             this.rtbEndText.Size = new System.Drawing.Size(236, 81);
-            this.rtbEndText.TabIndex = 16;
+            this.rtbEndText.TabIndex = 6;
             this.rtbEndText.Text = "";
             this.rtbEndText.Visible = false;
             // 
@@ -407,7 +409,7 @@
             this.btnEndRequest.Location = new System.Drawing.Point(915, 150);
             this.btnEndRequest.Name = "btnEndRequest";
             this.btnEndRequest.Size = new System.Drawing.Size(75, 23);
-            this.btnEndRequest.TabIndex = 17;
+            this.btnEndRequest.TabIndex = 7;
             this.btnEndRequest.Text = "Bitir";
             this.btnEndRequest.UseVisualStyleBackColor = true;
             this.btnEndRequest.Visible = false;
@@ -416,6 +418,7 @@
             // RequestForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnEndRequest);
             this.Controls.Add(this.rtbEndText);
@@ -427,6 +430,7 @@
             this.Controls.Add(this.grpRequest);
             this.Controls.Add(this.tlblTime);
             this.Controls.Add(this.grpInfo);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RequestForm";
             this.Text = "Talep";

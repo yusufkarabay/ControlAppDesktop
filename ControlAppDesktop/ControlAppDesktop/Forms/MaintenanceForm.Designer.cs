@@ -41,10 +41,11 @@
             this.dgvContract = new System.Windows.Forms.DataGridView();
             this.contextMenuStripContract = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbMaintanance = new System.Windows.Forms.GroupBox();
-            this.dgvMaintenance = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbContractInfo = new System.Windows.Forms.GroupBox();
             this.dtpContractEndTime = new System.Windows.Forms.DateTimePicker();
             this.lblContractEndTime = new System.Windows.Forms.Label();
@@ -68,16 +69,15 @@
             this.btnMaintananceList = new System.Windows.Forms.Button();
             this.btnMaintananceUpdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvMaintenance = new System.Windows.Forms.DataGridView();
             this.gbContract.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.contextMenuStripContract.SuspendLayout();
             this.gbMaintanance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.gbContractInfo.SuspendLayout();
             this.gbMaintananceInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             this.SuspendLayout();
             // 
             // lblContractName
@@ -85,7 +85,7 @@
             this.lblContractName.AutoSize = true;
             this.lblContractName.Location = new System.Drawing.Point(19, 30);
             this.lblContractName.Name = "lblContractName";
-            this.lblContractName.Size = new System.Drawing.Size(76, 13);
+            this.lblContractName.Size = new System.Drawing.Size(81, 16);
             this.lblContractName.TabIndex = 0;
             this.lblContractName.Text = "Sözleşme Adı :";
             // 
@@ -94,7 +94,7 @@
             this.lblContractStartTime.AutoSize = true;
             this.lblContractStartTime.Location = new System.Drawing.Point(19, 63);
             this.lblContractStartTime.Name = "lblContractStartTime";
-            this.lblContractStartTime.Size = new System.Drawing.Size(97, 13);
+            this.lblContractStartTime.Size = new System.Drawing.Size(108, 16);
             this.lblContractStartTime.TabIndex = 1;
             this.lblContractStartTime.Text = "Başlangıç Zamanı :";
             // 
@@ -103,7 +103,7 @@
             this.lblContractCompany.AutoSize = true;
             this.lblContractCompany.Location = new System.Drawing.Point(19, 126);
             this.lblContractCompany.Name = "lblContractCompany";
-            this.lblContractCompany.Size = new System.Drawing.Size(124, 13);
+            this.lblContractCompany.Size = new System.Drawing.Size(137, 16);
             this.lblContractCompany.TabIndex = 2;
             this.lblContractCompany.Text = "Sözleşme Yapılan Firma :";
             // 
@@ -112,7 +112,7 @@
             this.lblCompanyAdress.AutoSize = true;
             this.lblCompanyAdress.Location = new System.Drawing.Point(19, 159);
             this.lblCompanyAdress.Name = "lblCompanyAdress";
-            this.lblCompanyAdress.Size = new System.Drawing.Size(68, 13);
+            this.lblCompanyAdress.Size = new System.Drawing.Size(73, 16);
             this.lblCompanyAdress.TabIndex = 3;
             this.lblCompanyAdress.Text = "Firma Adres :";
             // 
@@ -121,7 +121,7 @@
             this.lblContractCompanyTel.AutoSize = true;
             this.lblContractCompanyTel.Location = new System.Drawing.Point(19, 192);
             this.lblContractCompanyTel.Name = "lblContractCompanyTel";
-            this.lblContractCompanyTel.Size = new System.Drawing.Size(77, 13);
+            this.lblContractCompanyTel.Size = new System.Drawing.Size(82, 16);
             this.lblContractCompanyTel.TabIndex = 4;
             this.lblContractCompanyTel.Text = "Firma Telefon :";
             // 
@@ -130,13 +130,14 @@
             this.lblContractNotes.AutoSize = true;
             this.lblContractNotes.Location = new System.Drawing.Point(19, 225);
             this.lblContractNotes.Name = "lblContractNotes";
-            this.lblContractNotes.Size = new System.Drawing.Size(91, 13);
+            this.lblContractNotes.Size = new System.Drawing.Size(98, 16);
             this.lblContractNotes.TabIndex = 5;
             this.lblContractNotes.Text = "Sözleşme Notları :";
             // 
             // gbContract
             // 
             this.gbContract.Controls.Add(this.dgvContract);
+            this.gbContract.Controls.Add(this.gbMaintanance);
             this.gbContract.Location = new System.Drawing.Point(120, 363);
             this.gbContract.Name = "gbContract";
             this.gbContract.Size = new System.Drawing.Size(914, 269);
@@ -154,17 +155,19 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvContract.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvContract.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContract.ContextMenuStrip = this.contextMenuStripContract;
             this.dgvContract.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvContract.Location = new System.Drawing.Point(3, 16);
+            this.dgvContract.Location = new System.Drawing.Point(3, 17);
             this.dgvContract.MultiSelect = false;
             this.dgvContract.Name = "dgvContract";
             this.dgvContract.ReadOnly = true;
             this.dgvContract.RowHeadersVisible = false;
             this.dgvContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContract.Size = new System.Drawing.Size(908, 250);
+            this.dgvContract.Size = new System.Drawing.Size(908, 249);
             this.dgvContract.TabIndex = 2;
             // 
             // contextMenuStripContract
@@ -182,10 +185,17 @@
             this.updateToolStripMenuItem.Text = "Güncelle";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.deleteToolStripMenuItem.Text = "Sil";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // gbMaintanance
             // 
             this.gbMaintanance.Controls.Add(this.dgvMaintenance);
-            this.gbMaintanance.Location = new System.Drawing.Point(122, 362);
+            this.gbMaintanance.Location = new System.Drawing.Point(3, 0);
             this.gbMaintanance.Name = "gbMaintanance";
             this.gbMaintanance.Size = new System.Drawing.Size(914, 269);
             this.gbMaintanance.TabIndex = 26;
@@ -193,42 +203,27 @@
             this.gbMaintanance.Text = "Bakım Listesi";
             this.gbMaintanance.Visible = false;
             // 
-            // dgvMaintenance
-            // 
-            this.dgvMaintenance.AllowUserToAddRows = false;
-            this.dgvMaintenance.AllowUserToDeleteRows = false;
-            this.dgvMaintenance.AllowUserToResizeColumns = false;
-            this.dgvMaintenance.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaintenance.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvMaintenance.Cursor = System.Windows.Forms.Cursors.PanWest;
-            this.dgvMaintenance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaintenance.Location = new System.Drawing.Point(3, 16);
-            this.dgvMaintenance.MultiSelect = false;
-            this.dgvMaintenance.Name = "dgvMaintenance";
-            this.dgvMaintenance.ReadOnly = true;
-            this.dgvMaintenance.RowHeadersVisible = false;
-            this.dgvMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaintenance.Size = new System.Drawing.Size(908, 250);
-            this.dgvMaintenance.TabIndex = 2;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateMaintenanceToolStripMenuItem,
             this.deleteMaintenanceToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
             // 
             // updateMaintenanceToolStripMenuItem
             // 
             this.updateMaintenanceToolStripMenuItem.Name = "updateMaintenanceToolStripMenuItem";
-            this.updateMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.updateMaintenanceToolStripMenuItem.Text = "Güncelle";
             this.updateMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.updateMaintenanceToolStripMenuItem_Click);
+            // 
+            // deleteMaintenanceToolStripMenuItem
+            // 
+            this.deleteMaintenanceToolStripMenuItem.Name = "deleteMaintenanceToolStripMenuItem";
+            this.deleteMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.deleteMaintenanceToolStripMenuItem.Text = "Sil";
+            this.deleteMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.deleteMaintenanceToolStripMenuItem_Click);
             // 
             // gbContractInfo
             // 
@@ -257,15 +252,15 @@
             // 
             this.dtpContractEndTime.Location = new System.Drawing.Point(141, 90);
             this.dtpContractEndTime.Name = "dtpContractEndTime";
-            this.dtpContractEndTime.Size = new System.Drawing.Size(200, 20);
-            this.dtpContractEndTime.TabIndex = 17;
+            this.dtpContractEndTime.Size = new System.Drawing.Size(187, 21);
+            this.dtpContractEndTime.TabIndex = 2;
             // 
             // lblContractEndTime
             // 
             this.lblContractEndTime.AutoSize = true;
             this.lblContractEndTime.Location = new System.Drawing.Point(19, 96);
             this.lblContractEndTime.Name = "lblContractEndTime";
-            this.lblContractEndTime.Size = new System.Drawing.Size(73, 13);
+            this.lblContractEndTime.Size = new System.Drawing.Size(78, 16);
             this.lblContractEndTime.TabIndex = 16;
             this.lblContractEndTime.Text = "Bitiş  Zamanı :";
             // 
@@ -273,16 +268,16 @@
             // 
             this.rtbContractNotes.Location = new System.Drawing.Point(141, 215);
             this.rtbContractNotes.Name = "rtbContractNotes";
-            this.rtbContractNotes.Size = new System.Drawing.Size(157, 71);
-            this.rtbContractNotes.TabIndex = 15;
+            this.rtbContractNotes.Size = new System.Drawing.Size(187, 71);
+            this.rtbContractNotes.TabIndex = 6;
             this.rtbContractNotes.Text = "";
             // 
             // txtCompanyTel
             // 
             this.txtCompanyTel.Location = new System.Drawing.Point(141, 189);
             this.txtCompanyTel.Name = "txtCompanyTel";
-            this.txtCompanyTel.Size = new System.Drawing.Size(187, 20);
-            this.txtCompanyTel.TabIndex = 14;
+            this.txtCompanyTel.Size = new System.Drawing.Size(187, 21);
+            this.txtCompanyTel.TabIndex = 5;
             this.txtCompanyTel.Text = "Firma Telefon...";
             this.txtCompanyTel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCompanyTel_MouseClick);
             // 
@@ -290,15 +285,15 @@
             // 
             this.dtpContractStartTime.Location = new System.Drawing.Point(141, 60);
             this.dtpContractStartTime.Name = "dtpContractStartTime";
-            this.dtpContractStartTime.Size = new System.Drawing.Size(200, 20);
-            this.dtpContractStartTime.TabIndex = 13;
+            this.dtpContractStartTime.Size = new System.Drawing.Size(187, 21);
+            this.dtpContractStartTime.TabIndex = 1;
             // 
             // txtCompanyAdress
             // 
             this.txtCompanyAdress.Location = new System.Drawing.Point(141, 159);
             this.txtCompanyAdress.Name = "txtCompanyAdress";
-            this.txtCompanyAdress.Size = new System.Drawing.Size(187, 20);
-            this.txtCompanyAdress.TabIndex = 9;
+            this.txtCompanyAdress.Size = new System.Drawing.Size(187, 21);
+            this.txtCompanyAdress.TabIndex = 4;
             this.txtCompanyAdress.Text = "Firma Adresi...";
             this.txtCompanyAdress.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCompanyAdress_MouseClick);
             // 
@@ -306,8 +301,8 @@
             // 
             this.txtContractCompany.Location = new System.Drawing.Point(141, 123);
             this.txtContractCompany.Name = "txtContractCompany";
-            this.txtContractCompany.Size = new System.Drawing.Size(187, 20);
-            this.txtContractCompany.TabIndex = 8;
+            this.txtContractCompany.Size = new System.Drawing.Size(187, 21);
+            this.txtContractCompany.TabIndex = 3;
             this.txtContractCompany.Text = "Firma Adı...";
             this.txtContractCompany.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtContractCompany_MouseClick);
             // 
@@ -315,8 +310,8 @@
             // 
             this.txtContractName.Location = new System.Drawing.Point(141, 27);
             this.txtContractName.Name = "txtContractName";
-            this.txtContractName.Size = new System.Drawing.Size(187, 20);
-            this.txtContractName.TabIndex = 7;
+            this.txtContractName.Size = new System.Drawing.Size(187, 21);
+            this.txtContractName.TabIndex = 0;
             this.txtContractName.Text = "Sözleşme Adı...";
             this.txtContractName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtContractName_MouseClick);
             // 
@@ -325,7 +320,7 @@
             this.btnContractList.Location = new System.Drawing.Point(31, 329);
             this.btnContractList.Name = "btnContractList";
             this.btnContractList.Size = new System.Drawing.Size(75, 23);
-            this.btnContractList.TabIndex = 32;
+            this.btnContractList.TabIndex = 8;
             this.btnContractList.Text = "Listele";
             this.btnContractList.UseVisualStyleBackColor = true;
             this.btnContractList.Click += new System.EventHandler(this.btnContractList_Click);
@@ -335,7 +330,7 @@
             this.btnContractUpdate.Location = new System.Drawing.Point(112, 329);
             this.btnContractUpdate.Name = "btnContractUpdate";
             this.btnContractUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnContractUpdate.TabIndex = 31;
+            this.btnContractUpdate.TabIndex = 9;
             this.btnContractUpdate.Text = "Güncelle";
             this.btnContractUpdate.UseVisualStyleBackColor = true;
             this.btnContractUpdate.Visible = false;
@@ -361,30 +356,30 @@
             this.cbMonth.FormattingEnabled = true;
             this.cbMonth.Location = new System.Drawing.Point(154, 46);
             this.cbMonth.Name = "cbMonth";
-            this.cbMonth.Size = new System.Drawing.Size(121, 21);
-            this.cbMonth.TabIndex = 15;
+            this.cbMonth.Size = new System.Drawing.Size(200, 24);
+            this.cbMonth.TabIndex = 11;
             // 
             // cbContractSelect
             // 
             this.cbContractSelect.FormattingEnabled = true;
             this.cbContractSelect.Location = new System.Drawing.Point(154, 19);
             this.cbContractSelect.Name = "cbContractSelect";
-            this.cbContractSelect.Size = new System.Drawing.Size(121, 21);
-            this.cbContractSelect.TabIndex = 14;
+            this.cbContractSelect.Size = new System.Drawing.Size(200, 24);
+            this.cbContractSelect.TabIndex = 10;
             // 
             // dtpFirstMaintenance
             // 
             this.dtpFirstMaintenance.Location = new System.Drawing.Point(154, 75);
             this.dtpFirstMaintenance.Name = "dtpFirstMaintenance";
-            this.dtpFirstMaintenance.Size = new System.Drawing.Size(200, 20);
-            this.dtpFirstMaintenance.TabIndex = 14;
+            this.dtpFirstMaintenance.Size = new System.Drawing.Size(200, 21);
+            this.dtpFirstMaintenance.TabIndex = 12;
             // 
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
             this.lblMonth.Location = new System.Drawing.Point(17, 55);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(94, 13);
+            this.lblMonth.Size = new System.Drawing.Size(102, 16);
             this.lblMonth.TabIndex = 2;
             this.lblMonth.Text = "Bakım Aralığı (Ay) :";
             // 
@@ -393,7 +388,7 @@
             this.lblContractSelect.AutoSize = true;
             this.lblContractSelect.Location = new System.Drawing.Point(19, 30);
             this.lblContractSelect.Name = "lblContractSelect";
-            this.lblContractSelect.Size = new System.Drawing.Size(95, 13);
+            this.lblContractSelect.Size = new System.Drawing.Size(100, 16);
             this.lblContractSelect.TabIndex = 0;
             this.lblContractSelect.Text = "Sözleşme Seçiniz :";
             // 
@@ -402,7 +397,7 @@
             this.lblFirstMaintenance.AutoSize = true;
             this.lblFirstMaintenance.Location = new System.Drawing.Point(17, 81);
             this.lblFirstMaintenance.Name = "lblFirstMaintenance";
-            this.lblFirstMaintenance.Size = new System.Drawing.Size(97, 13);
+            this.lblFirstMaintenance.Size = new System.Drawing.Size(104, 16);
             this.lblFirstMaintenance.TabIndex = 1;
             this.lblFirstMaintenance.Text = "İlk Bakım  Zamanı :";
             // 
@@ -411,7 +406,7 @@
             this.btnContractAdd.Location = new System.Drawing.Point(331, 329);
             this.btnContractAdd.Name = "btnContractAdd";
             this.btnContractAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnContractAdd.TabIndex = 33;
+            this.btnContractAdd.TabIndex = 7;
             this.btnContractAdd.Text = "Ekle";
             this.btnContractAdd.UseVisualStyleBackColor = true;
             this.btnContractAdd.Click += new System.EventHandler(this.btnContractAdd_Click);
@@ -421,7 +416,7 @@
             this.btnMaintananceAdd.Location = new System.Drawing.Point(1085, 275);
             this.btnMaintananceAdd.Name = "btnMaintananceAdd";
             this.btnMaintananceAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnMaintananceAdd.TabIndex = 36;
+            this.btnMaintananceAdd.TabIndex = 13;
             this.btnMaintananceAdd.Text = "Ekle";
             this.btnMaintananceAdd.UseVisualStyleBackColor = true;
             this.btnMaintananceAdd.Click += new System.EventHandler(this.btnMaintananceAdd_Click);
@@ -431,7 +426,7 @@
             this.btnMaintananceList.Location = new System.Drawing.Point(785, 275);
             this.btnMaintananceList.Name = "btnMaintananceList";
             this.btnMaintananceList.Size = new System.Drawing.Size(75, 23);
-            this.btnMaintananceList.TabIndex = 35;
+            this.btnMaintananceList.TabIndex = 14;
             this.btnMaintananceList.Text = "Listele";
             this.btnMaintananceList.UseVisualStyleBackColor = true;
             this.btnMaintananceList.Click += new System.EventHandler(this.btnMaintananceList_Click);
@@ -441,7 +436,7 @@
             this.btnMaintananceUpdate.Location = new System.Drawing.Point(866, 275);
             this.btnMaintananceUpdate.Name = "btnMaintananceUpdate";
             this.btnMaintananceUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnMaintananceUpdate.TabIndex = 34;
+            this.btnMaintananceUpdate.TabIndex = 15;
             this.btnMaintananceUpdate.Text = "Güncelle";
             this.btnMaintananceUpdate.UseVisualStyleBackColor = true;
             this.btnMaintananceUpdate.Visible = false;
@@ -452,30 +447,40 @@
             this.button1.Location = new System.Drawing.Point(487, 22);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 23);
-            this.button1.TabIndex = 37;
+            this.button1.TabIndex = 16;
             this.button1.Text = "Bilgilendirme Mail İşlemleri";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // deleteToolStripMenuItem
+            // dgvMaintenance
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.deleteToolStripMenuItem.Text = "Sil";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // deleteMaintenanceToolStripMenuItem
-            // 
-            this.deleteMaintenanceToolStripMenuItem.Name = "deleteMaintenanceToolStripMenuItem";
-            this.deleteMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteMaintenanceToolStripMenuItem.Text = "Sil";
-            this.deleteMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.deleteMaintenanceToolStripMenuItem_Click);
+            this.dgvMaintenance.AllowUserToAddRows = false;
+            this.dgvMaintenance.AllowUserToDeleteRows = false;
+            this.dgvMaintenance.AllowUserToResizeColumns = false;
+            this.dgvMaintenance.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMaintenance.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvMaintenance.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMaintenance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaintenance.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvMaintenance.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.dgvMaintenance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaintenance.Location = new System.Drawing.Point(3, 17);
+            this.dgvMaintenance.MultiSelect = false;
+            this.dgvMaintenance.Name = "dgvMaintenance";
+            this.dgvMaintenance.ReadOnly = true;
+            this.dgvMaintenance.RowHeadersVisible = false;
+            this.dgvMaintenance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMaintenance.Size = new System.Drawing.Size(908, 249);
+            this.dgvMaintenance.TabIndex = 2;
             // 
             // MaintenanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 730);
-            this.Controls.Add(this.gbMaintanance);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMaintananceAdd);
             this.Controls.Add(this.btnMaintananceList);
@@ -486,6 +491,7 @@
             this.Controls.Add(this.btnContractUpdate);
             this.Controls.Add(this.gbContractInfo);
             this.Controls.Add(this.gbContract);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MaintenanceForm";
             this.Text = "MaintenanceForm";
@@ -494,12 +500,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
             this.contextMenuStripContract.ResumeLayout(false);
             this.gbMaintanance.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.gbContractInfo.ResumeLayout(false);
             this.gbContractInfo.PerformLayout();
             this.gbMaintananceInfo.ResumeLayout(false);
             this.gbMaintananceInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,10 +546,10 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStripContract;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbMaintanance;
-        private System.Windows.Forms.DataGridView dgvMaintenance;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem updateMaintenanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteMaintenanceToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvMaintenance;
     }
 }

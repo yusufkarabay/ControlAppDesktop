@@ -54,7 +54,7 @@
             // 
             this.lblTcInfo.AutoSize = true;
             this.lblTcInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTcInfo.Location = new System.Drawing.Point(49, 84);
+            this.lblTcInfo.Location = new System.Drawing.Point(49, 89);
             this.lblTcInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTcInfo.Name = "lblTcInfo";
             this.lblTcInfo.Size = new System.Drawing.Size(28, 16);
@@ -65,7 +65,7 @@
             // 
             this.lblNameInfo.AutoSize = true;
             this.lblNameInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNameInfo.Location = new System.Drawing.Point(49, 132);
+            this.lblNameInfo.Location = new System.Drawing.Point(49, 140);
             this.lblNameInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNameInfo.Name = "lblNameInfo";
             this.lblNameInfo.Size = new System.Drawing.Size(30, 16);
@@ -76,7 +76,7 @@
             // 
             this.lblSurnameInfo.AutoSize = true;
             this.lblSurnameInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSurnameInfo.Location = new System.Drawing.Point(49, 180);
+            this.lblSurnameInfo.Location = new System.Drawing.Point(49, 191);
             this.lblSurnameInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSurnameInfo.Name = "lblSurnameInfo";
             this.lblSurnameInfo.Size = new System.Drawing.Size(44, 16);
@@ -87,7 +87,7 @@
             // 
             this.lblBDateInfo.AutoSize = true;
             this.lblBDateInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBDateInfo.Location = new System.Drawing.Point(49, 327);
+            this.lblBDateInfo.Location = new System.Drawing.Point(49, 347);
             this.lblBDateInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBDateInfo.Name = "lblBDateInfo";
             this.lblBDateInfo.Size = new System.Drawing.Size(89, 16);
@@ -98,7 +98,7 @@
             // 
             this.lblAdressInfo.AutoSize = true;
             this.lblAdressInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAdressInfo.Location = new System.Drawing.Point(49, 375);
+            this.lblAdressInfo.Location = new System.Drawing.Point(49, 398);
             this.lblAdressInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdressInfo.Name = "lblAdressInfo";
             this.lblAdressInfo.Size = new System.Drawing.Size(47, 16);
@@ -109,7 +109,7 @@
             // 
             this.lblTelInfo.AutoSize = true;
             this.lblTelInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTelInfo.Location = new System.Drawing.Point(49, 499);
+            this.lblTelInfo.Location = new System.Drawing.Point(49, 530);
             this.lblTelInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelInfo.Name = "lblTelInfo";
             this.lblTelInfo.Size = new System.Drawing.Size(56, 16);
@@ -120,7 +120,7 @@
             // 
             this.lblMailInfo.AutoSize = true;
             this.lblMailInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblMailInfo.Location = new System.Drawing.Point(49, 547);
+            this.lblMailInfo.Location = new System.Drawing.Point(49, 581);
             this.lblMailInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMailInfo.Name = "lblMailInfo";
             this.lblMailInfo.Size = new System.Drawing.Size(38, 16);
@@ -133,10 +133,10 @@
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRegister.Location = new System.Drawing.Point(165, 598);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Location = new System.Drawing.Point(165, 635);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(313, 39);
+            this.btnRegister.Size = new System.Drawing.Size(313, 41);
             this.btnRegister.TabIndex = 9;
             this.btnRegister.Text = "Kaydol";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -145,8 +145,8 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtName.Location = new System.Drawing.Point(165, 131);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Location = new System.Drawing.Point(165, 139);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(312, 22);
             this.txtName.TabIndex = 1;
@@ -154,8 +154,8 @@
             // txtSurname
             // 
             this.txtSurname.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSurname.Location = new System.Drawing.Point(165, 178);
-            this.txtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSurname.Location = new System.Drawing.Point(165, 189);
+            this.txtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(312, 22);
             this.txtSurname.TabIndex = 2;
@@ -163,18 +163,18 @@
             // rtxtAdress
             // 
             this.rtxtAdress.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rtxtAdress.Location = new System.Drawing.Point(165, 371);
-            this.rtxtAdress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtAdress.Location = new System.Drawing.Point(165, 394);
+            this.rtxtAdress.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtAdress.Name = "rtxtAdress";
-            this.rtxtAdress.Size = new System.Drawing.Size(312, 117);
+            this.rtxtAdress.Size = new System.Drawing.Size(312, 124);
             this.rtxtAdress.TabIndex = 6;
             this.rtxtAdress.Text = "";
             // 
             // mtxtTel
             // 
             this.mtxtTel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mtxtTel.Location = new System.Drawing.Point(165, 499);
-            this.mtxtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtxtTel.Location = new System.Drawing.Point(165, 530);
+            this.mtxtTel.Margin = new System.Windows.Forms.Padding(4);
             this.mtxtTel.Mask = "(999) 000-0000";
             this.mtxtTel.Name = "mtxtTel";
             this.mtxtTel.Size = new System.Drawing.Size(312, 22);
@@ -184,8 +184,8 @@
             // txtMail
             // 
             this.txtMail.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMail.Location = new System.Drawing.Point(165, 551);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Location = new System.Drawing.Point(165, 585);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(311, 22);
             this.txtMail.TabIndex = 8;
@@ -193,8 +193,8 @@
             // mtxbTC
             // 
             this.mtxbTC.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.mtxbTC.Location = new System.Drawing.Point(165, 84);
-            this.mtxbTC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mtxbTC.Location = new System.Drawing.Point(165, 89);
+            this.mtxbTC.Margin = new System.Windows.Forms.Padding(4);
             this.mtxbTC.Mask = "00000000000";
             this.mtxbTC.Name = "mtxbTC";
             this.mtxbTC.Size = new System.Drawing.Size(311, 22);
@@ -205,8 +205,8 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPassword.Location = new System.Drawing.Point(165, 225);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(165, 239);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(312, 22);
             this.txtPassword.TabIndex = 3;
@@ -215,7 +215,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPassword.Location = new System.Drawing.Point(48, 232);
+            this.lblPassword.Location = new System.Drawing.Point(48, 246);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(51, 16);
@@ -225,8 +225,8 @@
             // txtRepassword
             // 
             this.txtRepassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtRepassword.Location = new System.Drawing.Point(165, 272);
-            this.txtRepassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRepassword.Location = new System.Drawing.Point(165, 289);
+            this.txtRepassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtRepassword.Name = "txtRepassword";
             this.txtRepassword.Size = new System.Drawing.Size(312, 22);
             this.txtRepassword.TabIndex = 4;
@@ -235,7 +235,7 @@
             // 
             this.lblRePassword.AutoSize = true;
             this.lblRePassword.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRePassword.Location = new System.Drawing.Point(48, 279);
+            this.lblRePassword.Location = new System.Drawing.Point(48, 296);
             this.lblRePassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRePassword.Name = "lblRePassword";
             this.lblRePassword.Size = new System.Drawing.Size(91, 16);
@@ -247,8 +247,8 @@
             this.dtpBDate.CalendarForeColor = System.Drawing.SystemColors.WindowFrame;
             this.dtpBDate.CalendarTitleForeColor = System.Drawing.SystemColors.WindowFrame;
             this.dtpBDate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpBDate.Location = new System.Drawing.Point(165, 318);
-            this.dtpBDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpBDate.Location = new System.Drawing.Point(165, 338);
+            this.dtpBDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBDate.Name = "dtpBDate";
             this.dtpBDate.Size = new System.Drawing.Size(311, 22);
             this.dtpBDate.TabIndex = 5;
@@ -261,20 +261,20 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnClose.Location = new System.Drawing.Point(14, 15);
+            this.btnClose.Location = new System.Drawing.Point(14, 16);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(37, 39);
+            this.btnClose.Size = new System.Drawing.Size(37, 41);
             this.btnClose.TabIndex = 21;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(562, 800);
+            this.ClientSize = new System.Drawing.Size(562, 850);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dtpBDate);
             this.Controls.Add(this.txtRepassword);
@@ -295,10 +295,10 @@
             this.Controls.Add(this.lblSurnameInfo);
             this.Controls.Add(this.lblNameInfo);
             this.Controls.Add(this.lblTcInfo);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";

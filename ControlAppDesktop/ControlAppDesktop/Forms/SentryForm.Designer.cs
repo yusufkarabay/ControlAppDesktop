@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rtbxSentry = new System.Windows.Forms.RichTextBox();
             this.gbSentry = new System.Windows.Forms.GroupBox();
+            this.dgvSentryTodo = new System.Windows.Forms.DataGridView();
             this.rightMenuToDo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,19 +53,18 @@
             this.btnSentryToDoAdd = new System.Windows.Forms.Button();
             this.btnSentryDoneAdd = new System.Windows.Forms.Button();
             this.btnSentryListDone = new System.Windows.Forms.Button();
-            this.dgvSentryTodo = new System.Windows.Forms.DataGridView();
             this.gbSentry.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).BeginInit();
             this.rightMenuToDo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).BeginInit();
             this.rightMenuDone.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(467, 13);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // rtbxSentry
@@ -88,6 +88,40 @@
             this.gbSentry.TabStop = false;
             this.gbSentry.Text = "Yapılan İşler";
             // 
+            // dgvSentryTodo
+            // 
+            this.dgvSentryTodo.AllowUserToAddRows = false;
+            this.dgvSentryTodo.AllowUserToDeleteRows = false;
+            this.dgvSentryTodo.AllowUserToResizeColumns = false;
+            this.dgvSentryTodo.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSentryTodo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSentryTodo.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSentryTodo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSentryTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSentryTodo.ContextMenuStrip = this.rightMenuToDo;
+            this.dgvSentryTodo.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.dgvSentryTodo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSentryTodo.GridColor = System.Drawing.Color.LightGray;
+            this.dgvSentryTodo.Location = new System.Drawing.Point(3, 17);
+            this.dgvSentryTodo.MultiSelect = false;
+            this.dgvSentryTodo.Name = "dgvSentryTodo";
+            this.dgvSentryTodo.ReadOnly = true;
+            this.dgvSentryTodo.RowHeadersVisible = false;
+            this.dgvSentryTodo.RowHeadersWidth = 51;
+            this.dgvSentryTodo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 246);
+            this.dgvSentryTodo.TabIndex = 3;
+            // 
             // rightMenuToDo
             // 
             this.rightMenuToDo.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -96,26 +130,26 @@
             this.silToolStripMenuItem1,
             this.yenileToolStripMenuItem1});
             this.rightMenuToDo.Name = "rightMenuToDo";
-            this.rightMenuToDo.Size = new System.Drawing.Size(242, 76);
+            this.rightMenuToDo.Size = new System.Drawing.Size(205, 70);
             // 
             // gToolStripMenuItem
             // 
             this.gToolStripMenuItem.Name = "gToolStripMenuItem";
-            this.gToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.gToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.gToolStripMenuItem.Text = "Güncellenecek Kaydı Seç";
             this.gToolStripMenuItem.Click += new System.EventHandler(this.gToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem1
             // 
             this.silToolStripMenuItem1.Name = "silToolStripMenuItem1";
-            this.silToolStripMenuItem1.Size = new System.Drawing.Size(241, 24);
+            this.silToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.silToolStripMenuItem1.Text = "Sil";
             this.silToolStripMenuItem1.Click += new System.EventHandler(this.silToolStripMenuItem1_Click);
             // 
             // yenileToolStripMenuItem1
             // 
             this.yenileToolStripMenuItem1.Name = "yenileToolStripMenuItem1";
-            this.yenileToolStripMenuItem1.Size = new System.Drawing.Size(241, 24);
+            this.yenileToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.yenileToolStripMenuItem1.Text = "Yenile";
             this.yenileToolStripMenuItem1.Click += new System.EventHandler(this.yenileToolStripMenuItem1_Click);
             // 
@@ -132,7 +166,7 @@
             this.dgvSentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -142,14 +176,14 @@
             this.dgvSentry.ContextMenuStrip = this.rightMenuDone;
             this.dgvSentry.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvSentry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSentry.Location = new System.Drawing.Point(3, 20);
+            this.dgvSentry.Location = new System.Drawing.Point(3, 17);
             this.dgvSentry.MultiSelect = false;
             this.dgvSentry.Name = "dgvSentry";
             this.dgvSentry.ReadOnly = true;
             this.dgvSentry.RowHeadersVisible = false;
             this.dgvSentry.RowHeadersWidth = 51;
             this.dgvSentry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSentry.Size = new System.Drawing.Size(1033, 243);
+            this.dgvSentry.Size = new System.Drawing.Size(1033, 246);
             this.dgvSentry.TabIndex = 1;
             // 
             // rightMenuDone
@@ -160,26 +194,26 @@
             this.silToolStripMenuItem,
             this.yenileToolStripMenuItem});
             this.rightMenuDone.Name = "contextMenuStrip1";
-            this.rightMenuDone.Size = new System.Drawing.Size(242, 76);
+            this.rightMenuDone.Size = new System.Drawing.Size(205, 70);
             // 
             // güncelleToolStripMenuItem
             // 
             this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.güncelleToolStripMenuItem.Text = "Güncellenecek Kaydı Seç";
             this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // yenileToolStripMenuItem
             // 
             this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(241, 24);
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.yenileToolStripMenuItem.Text = "Yenile";
             this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
@@ -278,40 +312,6 @@
             this.btnSentryListDone.UseVisualStyleBackColor = false;
             this.btnSentryListDone.Click += new System.EventHandler(this.btnSentryListDone_Click);
             // 
-            // dgvSentryTodo
-            // 
-            this.dgvSentryTodo.AllowUserToAddRows = false;
-            this.dgvSentryTodo.AllowUserToDeleteRows = false;
-            this.dgvSentryTodo.AllowUserToResizeColumns = false;
-            this.dgvSentryTodo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvSentryTodo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSentryTodo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSentryTodo.BackgroundColor = System.Drawing.Color.LightGray;
-            this.dgvSentryTodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSentryTodo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvSentryTodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSentryTodo.ContextMenuStrip = this.rightMenuToDo;
-            this.dgvSentryTodo.Cursor = System.Windows.Forms.Cursors.PanWest;
-            this.dgvSentryTodo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSentryTodo.GridColor = System.Drawing.Color.LightGray;
-            this.dgvSentryTodo.Location = new System.Drawing.Point(3, 20);
-            this.dgvSentryTodo.MultiSelect = false;
-            this.dgvSentryTodo.Name = "dgvSentryTodo";
-            this.dgvSentryTodo.ReadOnly = true;
-            this.dgvSentryTodo.RowHeadersVisible = false;
-            this.dgvSentryTodo.RowHeadersWidth = 51;
-            this.dgvSentryTodo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 243);
-            this.dgvSentryTodo.TabIndex = 3;
-            // 
             // SentryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -327,17 +327,17 @@
             this.Controls.Add(this.gbSentry);
             this.Controls.Add(this.rtbxSentry);
             this.Controls.Add(this.dateTimePicker1);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SentryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SentryForm";
             this.Load += new System.EventHandler(this.SentryForm_Load);
             this.gbSentry.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).EndInit();
             this.rightMenuToDo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSentry)).EndInit();
             this.rightMenuDone.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSentryTodo)).EndInit();
             this.ResumeLayout(false);
 
         }

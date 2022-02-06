@@ -41,9 +41,10 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(73, 89);
+            this.dateTimePicker1.Location = new System.Drawing.Point(63, 41);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(233, 21);
             this.dateTimePicker1.TabIndex = 3;
             // 
             // gbxEntranceCardDelivery
@@ -53,19 +54,22 @@
             this.gbxEntranceCardDelivery.Controls.Add(this.txtEntranceCardSeriNo);
             this.gbxEntranceCardDelivery.Controls.Add(this.lblDeliveryEmployee);
             this.gbxEntranceCardDelivery.Controls.Add(this.lblEntranceCardSeriNoInfo);
-            this.gbxEntranceCardDelivery.Location = new System.Drawing.Point(307, 56);
+            this.gbxEntranceCardDelivery.Location = new System.Drawing.Point(40, 90);
+            this.gbxEntranceCardDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.gbxEntranceCardDelivery.Name = "gbxEntranceCardDelivery";
-            this.gbxEntranceCardDelivery.Size = new System.Drawing.Size(421, 339);
+            this.gbxEntranceCardDelivery.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxEntranceCardDelivery.Size = new System.Drawing.Size(491, 236);
             this.gbxEntranceCardDelivery.TabIndex = 2;
             this.gbxEntranceCardDelivery.TabStop = false;
             this.gbxEntranceCardDelivery.Text = "Giriş Kartı Teslim Et";
             // 
             // btnHeadsetDelivery
             // 
-            this.btnHeadsetDelivery.Location = new System.Drawing.Point(165, 125);
+            this.btnHeadsetDelivery.Location = new System.Drawing.Point(192, 154);
+            this.btnHeadsetDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
-            this.btnHeadsetDelivery.Size = new System.Drawing.Size(75, 23);
-            this.btnHeadsetDelivery.TabIndex = 6;
+            this.btnHeadsetDelivery.Size = new System.Drawing.Size(88, 28);
+            this.btnHeadsetDelivery.TabIndex = 2;
             this.btnHeadsetDelivery.Text = "Teslim Et";
             this.btnHeadsetDelivery.UseVisualStyleBackColor = true;
             this.btnHeadsetDelivery.Click += new System.EventHandler(this.btnHeadsetDelivery_Click);
@@ -73,56 +77,68 @@
             // cbxDeliveryEmployee
             // 
             this.cbxDeliveryEmployee.FormattingEnabled = true;
-            this.cbxDeliveryEmployee.Location = new System.Drawing.Point(123, 66);
+            this.cbxDeliveryEmployee.Location = new System.Drawing.Point(144, 81);
+            this.cbxDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDeliveryEmployee.Name = "cbxDeliveryEmployee";
-            this.cbxDeliveryEmployee.Size = new System.Drawing.Size(194, 21);
-            this.cbxDeliveryEmployee.TabIndex = 4;
+            this.cbxDeliveryEmployee.Size = new System.Drawing.Size(226, 24);
+            this.cbxDeliveryEmployee.TabIndex = 1;
             // 
             // txtEntranceCardSeriNo
             // 
-            this.txtEntranceCardSeriNo.Location = new System.Drawing.Point(122, 33);
+            this.txtEntranceCardSeriNo.Location = new System.Drawing.Point(142, 41);
+            this.txtEntranceCardSeriNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtEntranceCardSeriNo.Name = "txtEntranceCardSeriNo";
-            this.txtEntranceCardSeriNo.Size = new System.Drawing.Size(195, 20);
-            this.txtEntranceCardSeriNo.TabIndex = 3;
+            this.txtEntranceCardSeriNo.Size = new System.Drawing.Size(227, 21);
+            this.txtEntranceCardSeriNo.TabIndex = 0;
             // 
             // lblDeliveryEmployee
             // 
             this.lblDeliveryEmployee.AutoSize = true;
-            this.lblDeliveryEmployee.Location = new System.Drawing.Point(6, 69);
+            this.lblDeliveryEmployee.Location = new System.Drawing.Point(7, 85);
+            this.lblDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryEmployee.Name = "lblDeliveryEmployee";
-            this.lblDeliveryEmployee.Size = new System.Drawing.Size(111, 13);
+            this.lblDeliveryEmployee.Size = new System.Drawing.Size(117, 16);
             this.lblDeliveryEmployee.TabIndex = 1;
             this.lblDeliveryEmployee.Text = "Teslim Alan Personel :";
             // 
             // lblEntranceCardSeriNoInfo
             // 
             this.lblEntranceCardSeriNoInfo.AutoSize = true;
-            this.lblEntranceCardSeriNoInfo.Location = new System.Drawing.Point(6, 40);
+            this.lblEntranceCardSeriNoInfo.Location = new System.Drawing.Point(7, 49);
+            this.lblEntranceCardSeriNoInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEntranceCardSeriNoInfo.Name = "lblEntranceCardSeriNoInfo";
-            this.lblEntranceCardSeriNoInfo.Size = new System.Drawing.Size(95, 13);
+            this.lblEntranceCardSeriNoInfo.Size = new System.Drawing.Size(100, 16);
             this.lblEntranceCardSeriNoInfo.TabIndex = 0;
             this.lblEntranceCardSeriNoInfo.Text = "Giriş Kartı Seri No :";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(129, 191);
+            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(563, 14);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 4;
-            this.btnClose.Text = "Kapat";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 3;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // EntranceCardDeliveryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(644, 554);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxEntranceCardDelivery);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EntranceCardDeliveryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EntranceCardDelivery";
             this.Load += new System.EventHandler(this.EntranceCardDeliveryForm_Load);
             this.gbxEntranceCardDelivery.ResumeLayout(false);
