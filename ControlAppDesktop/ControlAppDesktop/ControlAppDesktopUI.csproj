@@ -216,6 +216,12 @@
     <Compile Include="Forms\PasswordForgotForm.Designer.cs">
       <DependentUpon>PasswordForgotForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PasswordNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordNotesForm.Designer.cs">
+      <DependentUpon>PasswordNotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,12 @@
     </Compile>
     <Compile Include="Forms\EmployeeUpdateForm.Designer.cs">
       <DependentUpon>EmployeeUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WorkStepsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkStepsForm.Designer.cs">
+      <DependentUpon>WorkStepsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -338,6 +350,9 @@
     <EmbeddedResource Include="Forms\PasswordForgotForm.resx">
       <DependentUpon>PasswordForgotForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordNotesForm.resx">
+      <DependentUpon>PasswordNotesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeUpdateForm.resx">
       <DependentUpon>EmployeeUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkStepsForm.resx">
+      <DependentUpon>WorkStepsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -515,6 +533,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock %282%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -197,7 +197,7 @@ namespace ControlAppDesktop.Forms
 
         private void btnAdminForm_Click(object sender, EventArgs e)
         {
-            LeftWhitePanel(btnAdminForm);
+           
             pnlCenter.Controls.Clear();
             AdminForm adminForm = new AdminForm();
             adminForm.infos = infos;
@@ -212,6 +212,24 @@ namespace ControlAppDesktop.Forms
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnPasswordNote_Click(object sender, EventArgs e)
+        {
+            LeftWhitePanel(btnPasswordNote);
+            pnlCenter.Controls.Clear();
+           PasswordNotesForm passwordNotesForm = new PasswordNotesForm();
+            passwordNotesForm.infos = infos;
+            FormGet(passwordNotesForm);
+        }
+
+        private void btnWorkSteps_Click(object sender, EventArgs e)
+        {
+            LeftWhitePanel(btnWorkSteps);
+            pnlCenter.Controls.Clear();
+            WorkStepsForm workStepsForm= new WorkStepsForm();
+            workStepsForm.infos = infos;
+            FormGet(workStepsForm);
         }
     }
 }

@@ -58,7 +58,9 @@
             // 
             // btnGuestCardDelivery
             // 
-            this.btnGuestCardDelivery.Location = new System.Drawing.Point(816, 113);
+            this.btnGuestCardDelivery.FlatAppearance.BorderSize = 0;
+            this.btnGuestCardDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuestCardDelivery.Location = new System.Drawing.Point(902, 29);
             this.btnGuestCardDelivery.Name = "btnGuestCardDelivery";
             this.btnGuestCardDelivery.Size = new System.Drawing.Size(184, 23);
             this.btnGuestCardDelivery.TabIndex = 1;
@@ -71,9 +73,9 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbGuestCardNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(524, 72);
+            this.gbSearchInfo.Location = new System.Drawing.Point(465, 99);
             this.gbSearchInfo.Name = "gbSearchInfo";
-            this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
+            this.gbSearchInfo.Size = new System.Drawing.Size(333, 127);
             this.gbSearchInfo.TabIndex = 37;
             this.gbSearchInfo.TabStop = false;
             this.gbSearchInfo.Text = "Arama Seçeneği";
@@ -83,7 +85,7 @@
             this.rbReciverEmployee.AutoSize = true;
             this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(153, 20);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(170, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -95,7 +97,7 @@
             this.rbGuestCardNo.AutoSize = true;
             this.rbGuestCardNo.Location = new System.Drawing.Point(16, 52);
             this.rbGuestCardNo.Name = "rbGuestCardNo";
-            this.rbGuestCardNo.Size = new System.Drawing.Size(168, 20);
+            this.rbGuestCardNo.Size = new System.Drawing.Size(182, 20);
             this.rbGuestCardNo.TabIndex = 7;
             this.rbGuestCardNo.TabStop = true;
             this.rbGuestCardNo.Text = "Misafir Kart No\'ya Göre Ara";
@@ -107,7 +109,7 @@
             this.rbDeliveryEmployee.AutoSize = true;
             this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(191, 20);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(211, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -142,20 +144,20 @@
             this.dgvGuestCard.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvGuestCard.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvGuestCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGuestCard.Location = new System.Drawing.Point(3, 17);
+            this.dgvGuestCard.Location = new System.Drawing.Point(3, 18);
             this.dgvGuestCard.MultiSelect = false;
             this.dgvGuestCard.Name = "dgvGuestCard";
             this.dgvGuestCard.ReadOnly = true;
             this.dgvGuestCard.RowHeadersVisible = false;
             this.dgvGuestCard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGuestCard.Size = new System.Drawing.Size(761, 235);
+            this.dgvGuestCard.Size = new System.Drawing.Size(761, 234);
             this.dgvGuestCard.TabIndex = 1;
             this.dgvGuestCard.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGuestCard_CellMouseClick);
             // 
             // gbCabinet
             // 
             this.gbCabinet.Controls.Add(this.dgvGuestCard);
-            this.gbCabinet.Location = new System.Drawing.Point(177, 364);
+            this.gbCabinet.Location = new System.Drawing.Point(115, 391);
             this.gbCabinet.Name = "gbCabinet";
             this.gbCabinet.Size = new System.Drawing.Size(767, 255);
             this.gbCabinet.TabIndex = 31;
@@ -165,84 +167,90 @@
             // lblGuestCardNo
             // 
             this.lblGuestCardNo.AutoSize = true;
-            this.lblGuestCardNo.Location = new System.Drawing.Point(6, 25);
+            this.lblGuestCardNo.Location = new System.Drawing.Point(37, 29);
             this.lblGuestCardNo.Name = "lblGuestCardNo";
-            this.lblGuestCardNo.Size = new System.Drawing.Size(86, 16);
+            this.lblGuestCardNo.Size = new System.Drawing.Size(92, 16);
             this.lblGuestCardNo.TabIndex = 10;
             this.lblGuestCardNo.Text = "Misafir Kart No:";
             // 
             // lblDeliveryPerson
             // 
             this.lblDeliveryPerson.AutoSize = true;
-            this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
+            this.lblDeliveryPerson.Location = new System.Drawing.Point(37, 81);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(71, 16);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(78, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
             // lblReceiverPerson
             // 
             this.lblReceiverPerson.AutoSize = true;
-            this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
+            this.lblReceiverPerson.Location = new System.Drawing.Point(37, 55);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(67, 16);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(76, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
             // lblDeliveryPersonInfo
             // 
             this.lblDeliveryPersonInfo.AutoSize = true;
-            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(100, 77);
+            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(151, 81);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
-            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(19, 16);
+            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
             this.lblDeliveryPersonInfo.Text = "00";
             // 
             // lblReceiverPersonInfo
             // 
             this.lblReceiverPersonInfo.AutoSize = true;
-            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(100, 51);
+            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(151, 55);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
-            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(19, 16);
+            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
             this.lblReceiverPersonInfo.Text = "00";
             // 
             // lblGuestCardNoInfo
             // 
             this.lblGuestCardNoInfo.AutoSize = true;
-            this.lblGuestCardNoInfo.Location = new System.Drawing.Point(100, 25);
+            this.lblGuestCardNoInfo.Location = new System.Drawing.Point(151, 29);
             this.lblGuestCardNoInfo.Name = "lblGuestCardNoInfo";
-            this.lblGuestCardNoInfo.Size = new System.Drawing.Size(19, 16);
+            this.lblGuestCardNoInfo.Size = new System.Drawing.Size(21, 16);
             this.lblGuestCardNoInfo.TabIndex = 1;
             this.lblGuestCardNoInfo.Text = "00";
             // 
             // txtGuestCardearch
             // 
-            this.txtGuestCardearch.Location = new System.Drawing.Point(533, 211);
+            this.txtGuestCardearch.Location = new System.Drawing.Point(474, 238);
             this.txtGuestCardearch.Name = "txtGuestCardearch";
-            this.txtGuestCardearch.Size = new System.Drawing.Size(165, 21);
+            this.txtGuestCardearch.Size = new System.Drawing.Size(239, 22);
             this.txtGuestCardearch.TabIndex = 2;
             this.txtGuestCardearch.Text = "Misafir Kart Ara...";
             this.txtGuestCardearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtGuestCardearch_MouseClick);
             // 
             // btnGuestCardSearch
             // 
-            this.btnGuestCardSearch.Location = new System.Drawing.Point(572, 237);
+            this.btnGuestCardSearch.BackgroundImage = global::ControlAppDesktop.Properties.Resources.loupe;
+            this.btnGuestCardSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnGuestCardSearch.FlatAppearance.BorderSize = 0;
+            this.btnGuestCardSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuestCardSearch.Location = new System.Drawing.Point(569, 265);
             this.btnGuestCardSearch.Name = "btnGuestCardSearch";
-            this.btnGuestCardSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnGuestCardSearch.Size = new System.Drawing.Size(32, 32);
             this.btnGuestCardSearch.TabIndex = 3;
-            this.btnGuestCardSearch.Text = "Ara";
             this.btnGuestCardSearch.UseVisualStyleBackColor = true;
             this.btnGuestCardSearch.Click += new System.EventHandler(this.btnGuestCardSearch_Click);
             // 
             // btnGuestCardList
             // 
-            this.btnGuestCardList.Location = new System.Drawing.Point(866, 276);
+            this.btnGuestCardList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGuestCardList.FlatAppearance.BorderSize = 0;
+            this.btnGuestCardList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuestCardList.Location = new System.Drawing.Point(774, 369);
             this.btnGuestCardList.Name = "btnGuestCardList";
-            this.btnGuestCardList.Size = new System.Drawing.Size(75, 23);
+            this.btnGuestCardList.Size = new System.Drawing.Size(108, 23);
             this.btnGuestCardList.TabIndex = 0;
             this.btnGuestCardList.Text = "Listele";
-            this.btnGuestCardList.UseVisualStyleBackColor = true;
+            this.btnGuestCardList.UseVisualStyleBackColor = false;
             this.btnGuestCardList.Click += new System.EventHandler(this.btnGuestCardList_Click);
             // 
             // grpInfo
@@ -253,12 +261,13 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblGuestCardNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(120, 72);
+            this.grpInfo.Location = new System.Drawing.Point(109, 99);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(349, 152);
+            this.grpInfo.Size = new System.Drawing.Size(328, 159);
             this.grpInfo.TabIndex = 32;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Misafir Kart Bilgileri";
+            this.grpInfo.Enter += new System.EventHandler(this.grpInfo_Enter);
             // 
             // GuestCardForm
             // 
@@ -272,7 +281,7 @@
             this.Controls.Add(this.btnGuestCardSearch);
             this.Controls.Add(this.btnGuestCardList);
             this.Controls.Add(this.grpInfo);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GuestCardForm";
             this.Text = "GuestCardForm";

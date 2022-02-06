@@ -203,6 +203,16 @@ namespace ControlAppDesktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock__2___1_ {
+            get {
+                object obj = ResourceManager.GetObject("lock (2) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_16 {
             get {
                 object obj = ResourceManager.GetObject("lock-16", resourceCulture);
@@ -286,6 +296,16 @@ namespace ControlAppDesktop.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap process__1_ {
+            get {
+                object obj = ResourceManager.GetObject("process (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

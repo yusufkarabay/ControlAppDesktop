@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbHeadset = new System.Windows.Forms.GroupBox();
             this.dgvHeadset = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -62,7 +61,7 @@
             // gbHeadset
             // 
             this.gbHeadset.Controls.Add(this.dgvHeadset);
-            this.gbHeadset.Location = new System.Drawing.Point(118, 391);
+            this.gbHeadset.Location = new System.Drawing.Point(115, 391);
             this.gbHeadset.Name = "gbHeadset";
             this.gbHeadset.Size = new System.Drawing.Size(767, 255);
             this.gbHeadset.TabIndex = 0;
@@ -75,29 +74,21 @@
             this.dgvHeadset.AllowUserToDeleteRows = false;
             this.dgvHeadset.AllowUserToResizeColumns = false;
             this.dgvHeadset.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvHeadset.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHeadset.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHeadset.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvHeadset.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHeadset.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvHeadset.Cursor = System.Windows.Forms.Cursors.PanWest;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHeadset.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvHeadset.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHeadset.Location = new System.Drawing.Point(3, 17);
+            this.dgvHeadset.Location = new System.Drawing.Point(3, 18);
             this.dgvHeadset.MultiSelect = false;
             this.dgvHeadset.Name = "dgvHeadset";
             this.dgvHeadset.ReadOnly = true;
             this.dgvHeadset.RowHeadersVisible = false;
             this.dgvHeadset.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHeadset.Size = new System.Drawing.Size(761, 235);
+            this.dgvHeadset.Size = new System.Drawing.Size(761, 234);
             this.dgvHeadset.TabIndex = 1;
             this.dgvHeadset.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHeadset_CellMouseClick);
             // 
@@ -135,72 +126,72 @@
             // lblHeadsetSeriNo
             // 
             this.lblHeadsetSeriNo.AutoSize = true;
-            this.lblHeadsetSeriNo.Location = new System.Drawing.Point(6, 25);
+            this.lblHeadsetSeriNo.Location = new System.Drawing.Point(28, 31);
             this.lblHeadsetSeriNo.Name = "lblHeadsetSeriNo";
-            this.lblHeadsetSeriNo.Size = new System.Drawing.Size(94, 15);
+            this.lblHeadsetSeriNo.Size = new System.Drawing.Size(99, 16);
             this.lblHeadsetSeriNo.TabIndex = 10;
             this.lblHeadsetSeriNo.Text = "Kulaklık Seri No:";
             // 
             // headsetstatus
             // 
             this.headsetstatus.AutoSize = true;
-            this.headsetstatus.Location = new System.Drawing.Point(6, 103);
+            this.headsetstatus.Location = new System.Drawing.Point(28, 109);
             this.headsetstatus.Name = "headsetstatus";
-            this.headsetstatus.Size = new System.Drawing.Size(94, 15);
+            this.headsetstatus.Size = new System.Drawing.Size(99, 16);
             this.headsetstatus.TabIndex = 8;
             this.headsetstatus.Text = "Kulaklık Durumu";
             // 
             // lblDeliveryPerson
             // 
             this.lblDeliveryPerson.AutoSize = true;
-            this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
+            this.lblDeliveryPerson.Location = new System.Drawing.Point(28, 83);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(72, 15);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(78, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
             // lblReceiverPerson
             // 
             this.lblReceiverPerson.AutoSize = true;
-            this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
+            this.lblReceiverPerson.Location = new System.Drawing.Point(28, 57);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(70, 15);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(76, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
             // lblHeadsetStatusInfo
             // 
             this.lblHeadsetStatusInfo.AutoSize = true;
-            this.lblHeadsetStatusInfo.Location = new System.Drawing.Point(127, 103);
+            this.lblHeadsetStatusInfo.Location = new System.Drawing.Point(149, 109);
             this.lblHeadsetStatusInfo.Name = "lblHeadsetStatusInfo";
-            this.lblHeadsetStatusInfo.Size = new System.Drawing.Size(19, 15);
+            this.lblHeadsetStatusInfo.Size = new System.Drawing.Size(21, 16);
             this.lblHeadsetStatusInfo.TabIndex = 9;
             this.lblHeadsetStatusInfo.Text = "00";
             // 
             // lblDeliveryPersonInfo
             // 
             this.lblDeliveryPersonInfo.AutoSize = true;
-            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(127, 77);
+            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(149, 83);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
-            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(19, 15);
+            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
             this.lblDeliveryPersonInfo.Text = "00";
             // 
             // lblReceiverPersonInfo
             // 
             this.lblReceiverPersonInfo.AutoSize = true;
-            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(127, 51);
+            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(149, 57);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
-            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(19, 15);
+            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
             this.lblReceiverPersonInfo.Text = "00";
             // 
             // lblHeadsetSeriNoInfo
             // 
             this.lblHeadsetSeriNoInfo.AutoSize = true;
-            this.lblHeadsetSeriNoInfo.Location = new System.Drawing.Point(127, 25);
+            this.lblHeadsetSeriNoInfo.Location = new System.Drawing.Point(149, 31);
             this.lblHeadsetSeriNoInfo.Name = "lblHeadsetSeriNoInfo";
-            this.lblHeadsetSeriNoInfo.Size = new System.Drawing.Size(19, 15);
+            this.lblHeadsetSeriNoInfo.Size = new System.Drawing.Size(21, 16);
             this.lblHeadsetSeriNoInfo.TabIndex = 1;
             this.lblHeadsetSeriNoInfo.Text = "00";
             // 
@@ -210,7 +201,7 @@
             this.btnHeadsetDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeadsetDelivery.Location = new System.Drawing.Point(902, 29);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
-            this.btnHeadsetDelivery.Size = new System.Drawing.Size(108, 23);
+            this.btnHeadsetDelivery.Size = new System.Drawing.Size(121, 27);
             this.btnHeadsetDelivery.TabIndex = 1;
             this.btnHeadsetDelivery.Text = "Kulaklık Teslim Et";
             this.btnHeadsetDelivery.UseVisualStyleBackColor = false;
@@ -246,7 +237,7 @@
             // 
             this.txtHeadsetSearch.Location = new System.Drawing.Point(474, 238);
             this.txtHeadsetSearch.Name = "txtHeadsetSearch";
-            this.txtHeadsetSearch.Size = new System.Drawing.Size(239, 21);
+            this.txtHeadsetSearch.Size = new System.Drawing.Size(239, 22);
             this.txtHeadsetSearch.TabIndex = 2;
             this.txtHeadsetSearch.Text = "Kulaklık Ara...";
             this.txtHeadsetSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtHeadsetSearch_MouseClick);
@@ -254,9 +245,9 @@
             // rbHeadsetSeriNo
             // 
             this.rbHeadsetSeriNo.AutoSize = true;
-            this.rbHeadsetSeriNo.Location = new System.Drawing.Point(16, 52);
+            this.rbHeadsetSeriNo.Location = new System.Drawing.Point(35, 56);
             this.rbHeadsetSeriNo.Name = "rbHeadsetSeriNo";
-            this.rbHeadsetSeriNo.Size = new System.Drawing.Size(176, 19);
+            this.rbHeadsetSeriNo.Size = new System.Drawing.Size(189, 20);
             this.rbHeadsetSeriNo.TabIndex = 7;
             this.rbHeadsetSeriNo.TabStop = true;
             this.rbHeadsetSeriNo.Text = "Kulaklık Seri No\'ya Göre Ara";
@@ -266,9 +257,9 @@
             // rbDeliveryEmployee
             // 
             this.rbDeliveryEmployee.AutoSize = true;
-            this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
+            this.rbDeliveryEmployee.Location = new System.Drawing.Point(35, 79);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(196, 19);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(211, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -290,9 +281,9 @@
             // rbReciverEmployee
             // 
             this.rbReciverEmployee.AutoSize = true;
-            this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
+            this.rbReciverEmployee.Location = new System.Drawing.Point(35, 31);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(158, 19);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(170, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -311,7 +302,7 @@
             this.Controls.Add(this.btnHeadsetDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbHeadset);
-            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HeadsetForm";
             this.Text = "HeadsetForm";

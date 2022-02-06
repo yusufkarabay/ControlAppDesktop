@@ -134,34 +134,34 @@
             // lblDrawerNo
             // 
             this.lblDrawerNo.AutoSize = true;
-            this.lblDrawerNo.Location = new System.Drawing.Point(6, 25);
+            this.lblDrawerNo.Location = new System.Drawing.Point(26, 27);
             this.lblDrawerNo.Name = "lblDrawerNo";
-            this.lblDrawerNo.Size = new System.Drawing.Size(95, 16);
+            this.lblDrawerNo.Size = new System.Drawing.Size(89, 16);
             this.lblDrawerNo.TabIndex = 10;
             this.lblDrawerNo.Text = "Çekmece No:";
             // 
             // lblDeliveryPerson
             // 
             this.lblDeliveryPerson.AutoSize = true;
-            this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
+            this.lblDeliveryPerson.Location = new System.Drawing.Point(26, 79);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(87, 16);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(78, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
             // lblReceiverPerson
             // 
             this.lblReceiverPerson.AutoSize = true;
-            this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
+            this.lblReceiverPerson.Location = new System.Drawing.Point(26, 53);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(86, 16);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(76, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
             // lblDeliveryPersonInfo
             // 
             this.lblDeliveryPersonInfo.AutoSize = true;
-            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(129, 79);
+            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(149, 81);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
             this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
@@ -170,7 +170,7 @@
             // lblReceiverPersonInfo
             // 
             this.lblReceiverPersonInfo.AutoSize = true;
-            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(129, 53);
+            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(149, 55);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
             this.lblReceiverPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
@@ -179,7 +179,7 @@
             // lblDrawerNoInfo
             // 
             this.lblDrawerNoInfo.AutoSize = true;
-            this.lblDrawerNoInfo.Location = new System.Drawing.Point(129, 27);
+            this.lblDrawerNoInfo.Location = new System.Drawing.Point(149, 29);
             this.lblDrawerNoInfo.Name = "lblDrawerNoInfo";
             this.lblDrawerNoInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDrawerNoInfo.TabIndex = 1;
@@ -189,7 +189,7 @@
             // 
             this.txtDrawerSearch.Location = new System.Drawing.Point(474, 238);
             this.txtDrawerSearch.Name = "txtDrawerSearch";
-            this.txtDrawerSearch.Size = new System.Drawing.Size(239, 23);
+            this.txtDrawerSearch.Size = new System.Drawing.Size(239, 22);
             this.txtDrawerSearch.TabIndex = 2;
             this.txtDrawerSearch.Text = "Çekmece Ara...";
             this.txtDrawerSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtDrawerSearch_MouseClick);
@@ -210,9 +210,9 @@
             // rbDeliveryEmployee
             // 
             this.rbDeliveryEmployee.AutoSize = true;
-            this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
+            this.rbDeliveryEmployee.Location = new System.Drawing.Point(35, 75);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(231, 20);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(211, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -222,9 +222,9 @@
             // rbReciverEmployee
             // 
             this.rbReciverEmployee.AutoSize = true;
-            this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
+            this.rbReciverEmployee.Location = new System.Drawing.Point(35, 27);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(185, 20);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(170, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -234,9 +234,9 @@
             // rbDrawerNo
             // 
             this.rbDrawerNo.AutoSize = true;
-            this.rbDrawerNo.Location = new System.Drawing.Point(16, 52);
+            this.rbDrawerNo.Location = new System.Drawing.Point(35, 52);
             this.rbDrawerNo.Name = "rbDrawerNo";
-            this.rbDrawerNo.Size = new System.Drawing.Size(193, 20);
+            this.rbDrawerNo.Size = new System.Drawing.Size(179, 20);
             this.rbDrawerNo.TabIndex = 7;
             this.rbDrawerNo.TabStop = true;
             this.rbDrawerNo.Text = "Çekmece No\'ya Göre Ara";
@@ -281,7 +281,7 @@
             this.Controls.Add(this.btnDrawerSearch);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.btnDrawerList);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DrawerForm";
             this.Text = "DrawerForm";

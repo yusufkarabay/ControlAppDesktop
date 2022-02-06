@@ -176,5 +176,10 @@ namespace ControlAppDesktop.Forms
         {
             txtGuestCardearch.Text = "";
         }
+
+        private void grpInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

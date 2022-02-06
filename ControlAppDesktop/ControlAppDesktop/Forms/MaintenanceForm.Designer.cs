@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblContractName = new System.Windows.Forms.Label();
             this.lblContractStartTime = new System.Windows.Forms.Label();
@@ -39,7 +38,6 @@
             this.lblContractCompanyTel = new System.Windows.Forms.Label();
             this.lblContractNotes = new System.Windows.Forms.Label();
             this.gbContract = new System.Windows.Forms.GroupBox();
-            this.dgvContract = new System.Windows.Forms.DataGridView();
             this.contextMenuStripContract = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,32 +51,33 @@
             this.lblContractEndTime = new System.Windows.Forms.Label();
             this.rtbContractNotes = new System.Windows.Forms.RichTextBox();
             this.txtCompanyTel = new System.Windows.Forms.TextBox();
+            this.btnContractAdd = new System.Windows.Forms.Button();
+            this.btnContractList = new System.Windows.Forms.Button();
             this.dtpContractStartTime = new System.Windows.Forms.DateTimePicker();
+            this.btnContractUpdate = new System.Windows.Forms.Button();
             this.txtCompanyAdress = new System.Windows.Forms.TextBox();
             this.txtContractCompany = new System.Windows.Forms.TextBox();
             this.txtContractName = new System.Windows.Forms.TextBox();
-            this.btnContractList = new System.Windows.Forms.Button();
-            this.btnContractUpdate = new System.Windows.Forms.Button();
             this.gbMaintananceInfo = new System.Windows.Forms.GroupBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
             this.cbContractSelect = new System.Windows.Forms.ComboBox();
             this.dtpFirstMaintenance = new System.Windows.Forms.DateTimePicker();
+            this.btnMaintananceList = new System.Windows.Forms.Button();
+            this.btnMaintananceAdd = new System.Windows.Forms.Button();
+            this.btnMaintananceUpdate = new System.Windows.Forms.Button();
             this.lblMonth = new System.Windows.Forms.Label();
             this.lblContractSelect = new System.Windows.Forms.Label();
             this.lblFirstMaintenance = new System.Windows.Forms.Label();
-            this.btnContractAdd = new System.Windows.Forms.Button();
-            this.btnMaintananceAdd = new System.Windows.Forms.Button();
-            this.btnMaintananceList = new System.Windows.Forms.Button();
-            this.btnMaintananceUpdate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MaintenanceMail = new System.Windows.Forms.Button();
+            this.dgvContract = new System.Windows.Forms.DataGridView();
             this.gbContract.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.contextMenuStripContract.SuspendLayout();
             this.gbMaintanance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.gbContractInfo.SuspendLayout();
             this.gbMaintananceInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.SuspendLayout();
             // 
             // lblContractName
@@ -138,7 +137,6 @@
             // gbContract
             // 
             this.gbContract.Controls.Add(this.dgvContract);
-            this.gbContract.Controls.Add(this.gbMaintanance);
             this.gbContract.Location = new System.Drawing.Point(120, 363);
             this.gbContract.Name = "gbContract";
             this.gbContract.Size = new System.Drawing.Size(914, 269);
@@ -146,38 +144,6 @@
             this.gbContract.TabStop = false;
             this.gbContract.Text = "Sözleşme Listesi";
             this.gbContract.Visible = false;
-            // 
-            // dgvContract
-            // 
-            this.dgvContract.AllowUserToAddRows = false;
-            this.dgvContract.AllowUserToDeleteRows = false;
-            this.dgvContract.AllowUserToResizeColumns = false;
-            this.dgvContract.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightGray;
-            this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvContract.BackgroundColor = System.Drawing.Color.LightGray;
-            this.dgvContract.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContract.ContextMenuStrip = this.contextMenuStripContract;
-            this.dgvContract.Cursor = System.Windows.Forms.Cursors.PanWest;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvContract.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvContract.Location = new System.Drawing.Point(3, 17);
-            this.dgvContract.MultiSelect = false;
-            this.dgvContract.Name = "dgvContract";
-            this.dgvContract.ReadOnly = true;
-            this.dgvContract.RowHeadersVisible = false;
-            this.dgvContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContract.Size = new System.Drawing.Size(908, 249);
-            this.dgvContract.TabIndex = 2;
             // 
             // contextMenuStripContract
             // 
@@ -204,7 +170,7 @@
             // gbMaintanance
             // 
             this.gbMaintanance.Controls.Add(this.dgvMaintenance);
-            this.gbMaintanance.Location = new System.Drawing.Point(3, 0);
+            this.gbMaintanance.Location = new System.Drawing.Point(114, 363);
             this.gbMaintanance.Name = "gbMaintanance";
             this.gbMaintanance.Size = new System.Drawing.Size(914, 269);
             this.gbMaintanance.TabIndex = 26;
@@ -218,8 +184,8 @@
             this.dgvMaintenance.AllowUserToDeleteRows = false;
             this.dgvMaintenance.AllowUserToResizeColumns = false;
             this.dgvMaintenance.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvMaintenance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMaintenance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMaintenance.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvMaintenance.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -318,12 +284,52 @@
             this.txtCompanyTel.Text = "Firma Telefon...";
             this.txtCompanyTel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCompanyTel_MouseClick);
             // 
+            // btnContractAdd
+            // 
+            this.btnContractAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnContractAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnContractAdd.FlatAppearance.BorderSize = 0;
+            this.btnContractAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContractAdd.Location = new System.Drawing.Point(277, 289);
+            this.btnContractAdd.Name = "btnContractAdd";
+            this.btnContractAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnContractAdd.TabIndex = 7;
+            this.btnContractAdd.UseVisualStyleBackColor = true;
+            this.btnContractAdd.Click += new System.EventHandler(this.btnContractAdd_Click);
+            // 
+            // btnContractList
+            // 
+            this.btnContractList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnContractList.FlatAppearance.BorderSize = 0;
+            this.btnContractList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContractList.Location = new System.Drawing.Point(20, 300);
+            this.btnContractList.Name = "btnContractList";
+            this.btnContractList.Size = new System.Drawing.Size(75, 23);
+            this.btnContractList.TabIndex = 8;
+            this.btnContractList.Text = "Listele";
+            this.btnContractList.UseVisualStyleBackColor = false;
+            this.btnContractList.Click += new System.EventHandler(this.btnContractList_Click);
+            // 
             // dtpContractStartTime
             // 
             this.dtpContractStartTime.Location = new System.Drawing.Point(188, 57);
             this.dtpContractStartTime.Name = "dtpContractStartTime";
             this.dtpContractStartTime.Size = new System.Drawing.Size(244, 21);
             this.dtpContractStartTime.TabIndex = 1;
+            // 
+            // btnContractUpdate
+            // 
+            this.btnContractUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnContractUpdate.FlatAppearance.BorderSize = 0;
+            this.btnContractUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContractUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnContractUpdate.Location = new System.Drawing.Point(378, 289);
+            this.btnContractUpdate.Name = "btnContractUpdate";
+            this.btnContractUpdate.Size = new System.Drawing.Size(32, 32);
+            this.btnContractUpdate.TabIndex = 9;
+            this.btnContractUpdate.UseVisualStyleBackColor = true;
+            this.btnContractUpdate.Visible = false;
+            this.btnContractUpdate.Click += new System.EventHandler(this.btnContractUpdate_Click);
             // 
             // txtCompanyAdress
             // 
@@ -351,33 +357,6 @@
             this.txtContractName.TabIndex = 0;
             this.txtContractName.Text = "Sözleşme Adı...";
             this.txtContractName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtContractName_MouseClick);
-            // 
-            // btnContractList
-            // 
-            this.btnContractList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnContractList.FlatAppearance.BorderSize = 0;
-            this.btnContractList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContractList.Location = new System.Drawing.Point(20, 300);
-            this.btnContractList.Name = "btnContractList";
-            this.btnContractList.Size = new System.Drawing.Size(75, 23);
-            this.btnContractList.TabIndex = 8;
-            this.btnContractList.Text = "Listele";
-            this.btnContractList.UseVisualStyleBackColor = false;
-            this.btnContractList.Click += new System.EventHandler(this.btnContractList_Click);
-            // 
-            // btnContractUpdate
-            // 
-            this.btnContractUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
-            this.btnContractUpdate.FlatAppearance.BorderSize = 0;
-            this.btnContractUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContractUpdate.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnContractUpdate.Location = new System.Drawing.Point(378, 289);
-            this.btnContractUpdate.Name = "btnContractUpdate";
-            this.btnContractUpdate.Size = new System.Drawing.Size(32, 32);
-            this.btnContractUpdate.TabIndex = 9;
-            this.btnContractUpdate.UseVisualStyleBackColor = true;
-            this.btnContractUpdate.Visible = false;
-            this.btnContractUpdate.Click += new System.EventHandler(this.btnContractUpdate_Click);
             // 
             // gbMaintananceInfo
             // 
@@ -420,6 +399,46 @@
             this.dtpFirstMaintenance.Size = new System.Drawing.Size(200, 21);
             this.dtpFirstMaintenance.TabIndex = 12;
             // 
+            // btnMaintananceList
+            // 
+            this.btnMaintananceList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnMaintananceList.FlatAppearance.BorderSize = 0;
+            this.btnMaintananceList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaintananceList.Location = new System.Drawing.Point(6, 182);
+            this.btnMaintananceList.Name = "btnMaintananceList";
+            this.btnMaintananceList.Size = new System.Drawing.Size(75, 23);
+            this.btnMaintananceList.TabIndex = 14;
+            this.btnMaintananceList.Text = "Listele";
+            this.btnMaintananceList.UseVisualStyleBackColor = false;
+            this.btnMaintananceList.Click += new System.EventHandler(this.btnMaintananceList_Click);
+            // 
+            // btnMaintananceAdd
+            // 
+            this.btnMaintananceAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnMaintananceAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaintananceAdd.FlatAppearance.BorderSize = 0;
+            this.btnMaintananceAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaintananceAdd.Location = new System.Drawing.Point(243, 112);
+            this.btnMaintananceAdd.Name = "btnMaintananceAdd";
+            this.btnMaintananceAdd.Size = new System.Drawing.Size(32, 32);
+            this.btnMaintananceAdd.TabIndex = 13;
+            this.btnMaintananceAdd.UseVisualStyleBackColor = true;
+            this.btnMaintananceAdd.Click += new System.EventHandler(this.btnMaintananceAdd_Click);
+            // 
+            // btnMaintananceUpdate
+            // 
+            this.btnMaintananceUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnMaintananceUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaintananceUpdate.FlatAppearance.BorderSize = 0;
+            this.btnMaintananceUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaintananceUpdate.Location = new System.Drawing.Point(311, 112);
+            this.btnMaintananceUpdate.Name = "btnMaintananceUpdate";
+            this.btnMaintananceUpdate.Size = new System.Drawing.Size(32, 32);
+            this.btnMaintananceUpdate.TabIndex = 15;
+            this.btnMaintananceUpdate.UseVisualStyleBackColor = true;
+            this.btnMaintananceUpdate.Visible = false;
+            this.btnMaintananceUpdate.Click += new System.EventHandler(this.btnMaintananceUpdate_Click);
+            // 
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
@@ -447,79 +466,51 @@
             this.lblFirstMaintenance.TabIndex = 1;
             this.lblFirstMaintenance.Text = "İlk Bakım  Zamanı :";
             // 
-            // btnContractAdd
+            // MaintenanceMail
             // 
-            this.btnContractAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
-            this.btnContractAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnContractAdd.FlatAppearance.BorderSize = 0;
-            this.btnContractAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContractAdd.Location = new System.Drawing.Point(277, 289);
-            this.btnContractAdd.Name = "btnContractAdd";
-            this.btnContractAdd.Size = new System.Drawing.Size(32, 32);
-            this.btnContractAdd.TabIndex = 7;
-            this.btnContractAdd.UseVisualStyleBackColor = true;
-            this.btnContractAdd.Click += new System.EventHandler(this.btnContractAdd_Click);
+            this.MaintenanceMail.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.MaintenanceMail.FlatAppearance.BorderSize = 0;
+            this.MaintenanceMail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MaintenanceMail.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MaintenanceMail.Location = new System.Drawing.Point(547, 21);
+            this.MaintenanceMail.Name = "MaintenanceMail";
+            this.MaintenanceMail.Size = new System.Drawing.Size(176, 48);
+            this.MaintenanceMail.TabIndex = 16;
+            this.MaintenanceMail.Text = "Bilgilendirme Mail İşlemleri";
+            this.MaintenanceMail.UseVisualStyleBackColor = false;
+            this.MaintenanceMail.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnMaintananceAdd
+            // dgvContract
             // 
-            this.btnMaintananceAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
-            this.btnMaintananceAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaintananceAdd.FlatAppearance.BorderSize = 0;
-            this.btnMaintananceAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaintananceAdd.Location = new System.Drawing.Point(243, 112);
-            this.btnMaintananceAdd.Name = "btnMaintananceAdd";
-            this.btnMaintananceAdd.Size = new System.Drawing.Size(32, 32);
-            this.btnMaintananceAdd.TabIndex = 13;
-            this.btnMaintananceAdd.UseVisualStyleBackColor = true;
-            this.btnMaintananceAdd.Click += new System.EventHandler(this.btnMaintananceAdd_Click);
-            // 
-            // btnMaintananceList
-            // 
-            this.btnMaintananceList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnMaintananceList.FlatAppearance.BorderSize = 0;
-            this.btnMaintananceList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaintananceList.Location = new System.Drawing.Point(6, 182);
-            this.btnMaintananceList.Name = "btnMaintananceList";
-            this.btnMaintananceList.Size = new System.Drawing.Size(75, 23);
-            this.btnMaintananceList.TabIndex = 14;
-            this.btnMaintananceList.Text = "Listele";
-            this.btnMaintananceList.UseVisualStyleBackColor = false;
-            this.btnMaintananceList.Click += new System.EventHandler(this.btnMaintananceList_Click);
-            // 
-            // btnMaintananceUpdate
-            // 
-            this.btnMaintananceUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
-            this.btnMaintananceUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaintananceUpdate.FlatAppearance.BorderSize = 0;
-            this.btnMaintananceUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaintananceUpdate.Location = new System.Drawing.Point(311, 112);
-            this.btnMaintananceUpdate.Name = "btnMaintananceUpdate";
-            this.btnMaintananceUpdate.Size = new System.Drawing.Size(32, 32);
-            this.btnMaintananceUpdate.TabIndex = 15;
-            this.btnMaintananceUpdate.UseVisualStyleBackColor = true;
-            this.btnMaintananceUpdate.Visible = false;
-            this.btnMaintananceUpdate.Click += new System.EventHandler(this.btnMaintananceUpdate_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(547, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 48);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Bilgilendirme Mail İşlemleri";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dgvContract.AllowUserToAddRows = false;
+            this.dgvContract.AllowUserToDeleteRows = false;
+            this.dgvContract.AllowUserToResizeColumns = false;
+            this.dgvContract.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvContract.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvContract.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContract.ContextMenuStrip = this.contextMenuStripContract;
+            this.dgvContract.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvContract.Location = new System.Drawing.Point(3, 17);
+            this.dgvContract.MultiSelect = false;
+            this.dgvContract.Name = "dgvContract";
+            this.dgvContract.ReadOnly = true;
+            this.dgvContract.RowHeadersVisible = false;
+            this.dgvContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvContract.Size = new System.Drawing.Size(908, 249);
+            this.dgvContract.TabIndex = 2;
             // 
             // MaintenanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 730);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.gbMaintanance);
+            this.Controls.Add(this.MaintenanceMail);
             this.Controls.Add(this.gbMaintananceInfo);
             this.Controls.Add(this.gbContractInfo);
             this.Controls.Add(this.gbContract);
@@ -529,7 +520,6 @@
             this.Text = "MaintenanceForm";
             this.Load += new System.EventHandler(this.MaintenanceForm_Load);
             this.gbContract.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
             this.contextMenuStripContract.ResumeLayout(false);
             this.gbMaintanance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
@@ -538,6 +528,7 @@
             this.gbContractInfo.PerformLayout();
             this.gbMaintananceInfo.ResumeLayout(false);
             this.gbMaintananceInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -551,7 +542,6 @@
         private System.Windows.Forms.Label lblContractCompanyTel;
         private System.Windows.Forms.Label lblContractNotes;
         private System.Windows.Forms.GroupBox gbContract;
-        private System.Windows.Forms.DataGridView dgvContract;
         private System.Windows.Forms.GroupBox gbContractInfo;
         private System.Windows.Forms.Button btnContractList;
         private System.Windows.Forms.Button btnContractUpdate;
@@ -572,7 +562,7 @@
         private System.Windows.Forms.Button btnMaintananceList;
         private System.Windows.Forms.Button btnMaintananceUpdate;
         private System.Windows.Forms.RichTextBox rtbContractNotes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MaintenanceMail;
         private System.Windows.Forms.DateTimePicker dtpContractEndTime;
         private System.Windows.Forms.Label lblContractEndTime;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripContract;
@@ -583,5 +573,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteMaintenanceToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvMaintenance;
+        private System.Windows.Forms.DataGridView dgvContract;
     }
 }

@@ -31,6 +31,14 @@
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
             this.pnlActive = new System.Windows.Forms.Panel();
             this.btnUserName = new System.Windows.Forms.Button();
+            this.pnlTopMenu = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.pnlCenter = new System.Windows.Forms.Panel();
+            this.btnAdminForm = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnWorkSteps = new System.Windows.Forms.Button();
+            this.btnPasswordNote = new System.Windows.Forms.Button();
             this.btnDirectory = new System.Windows.Forms.Button();
             this.btnGenarator = new System.Windows.Forms.Button();
             this.btnGuestCard = new System.Windows.Forms.Button();
@@ -43,12 +51,6 @@
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSentry = new System.Windows.Forms.Button();
-            this.pnlTopMenu = new System.Windows.Forms.Panel();
-            this.btnAdminForm = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pnlCenter = new System.Windows.Forms.Panel();
             this.pnlLeftMenu.SuspendLayout();
             this.pnlTopMenu.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,8 @@
             // pnlLeftMenu
             // 
             this.pnlLeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
+            this.pnlLeftMenu.Controls.Add(this.btnWorkSteps);
+            this.pnlLeftMenu.Controls.Add(this.btnPasswordNote);
             this.pnlLeftMenu.Controls.Add(this.pnlActive);
             this.pnlLeftMenu.Controls.Add(this.btnUserName);
             this.pnlLeftMenu.Controls.Add(this.btnDirectory);
@@ -79,9 +83,9 @@
             // pnlActive
             // 
             this.pnlActive.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlActive.Location = new System.Drawing.Point(0, 57);
+            this.pnlActive.Location = new System.Drawing.Point(1, 40);
             this.pnlActive.Name = "pnlActive";
-            this.pnlActive.Size = new System.Drawing.Size(12, 48);
+            this.pnlActive.Size = new System.Drawing.Size(12, 34);
             this.pnlActive.TabIndex = 2;
             // 
             // btnUserName
@@ -93,209 +97,6 @@
             this.btnUserName.TabIndex = 3;
             this.btnUserName.Text = "Personel Adı";
             this.btnUserName.UseVisualStyleBackColor = true;
-            // 
-            // btnDirectory
-            // 
-            this.btnDirectory.FlatAppearance.BorderSize = 0;
-            this.btnDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDirectory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDirectory.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDirectory.Image = global::ControlAppDesktop.Properties.Resources._001_phonebook;
-            this.btnDirectory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDirectory.Location = new System.Drawing.Point(12, 585);
-            this.btnDirectory.Name = "btnDirectory";
-            this.btnDirectory.Size = new System.Drawing.Size(164, 48);
-            this.btnDirectory.TabIndex = 2;
-            this.btnDirectory.Text = "            Telefon Rehberi";
-            this.btnDirectory.UseVisualStyleBackColor = true;
-            this.btnDirectory.Click += new System.EventHandler(this.btnDirectory_Click);
-            // 
-            // btnGenarator
-            // 
-            this.btnGenarator.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnGenarator.FlatAppearance.BorderSize = 0;
-            this.btnGenarator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenarator.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGenarator.ForeColor = System.Drawing.Color.LightGray;
-            this.btnGenarator.Image = global::ControlAppDesktop.Properties.Resources.electric_generator;
-            this.btnGenarator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenarator.Location = new System.Drawing.Point(12, 535);
-            this.btnGenarator.Name = "btnGenarator";
-            this.btnGenarator.Size = new System.Drawing.Size(164, 48);
-            this.btnGenarator.TabIndex = 2;
-            this.btnGenarator.Text = "    Jeneratör";
-            this.btnGenarator.UseVisualStyleBackColor = true;
-            this.btnGenarator.Click += new System.EventHandler(this.btnGenarator_Click);
-            // 
-            // btnGuestCard
-            // 
-            this.btnGuestCard.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnGuestCard.FlatAppearance.BorderSize = 0;
-            this.btnGuestCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuestCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnGuestCard.ForeColor = System.Drawing.Color.LightGray;
-            this.btnGuestCard.Image = global::ControlAppDesktop.Properties.Resources.id;
-            this.btnGuestCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuestCard.Location = new System.Drawing.Point(12, 487);
-            this.btnGuestCard.Name = "btnGuestCard";
-            this.btnGuestCard.Size = new System.Drawing.Size(164, 48);
-            this.btnGuestCard.TabIndex = 2;
-            this.btnGuestCard.Text = "         Misafir Kart";
-            this.btnGuestCard.UseVisualStyleBackColor = true;
-            this.btnGuestCard.Click += new System.EventHandler(this.btnGuestCard_Click);
-            // 
-            // btnCabinet
-            // 
-            this.btnCabinet.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnCabinet.FlatAppearance.BorderSize = 0;
-            this.btnCabinet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCabinet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCabinet.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCabinet.Image = global::ControlAppDesktop.Properties.Resources.locker;
-            this.btnCabinet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCabinet.Location = new System.Drawing.Point(12, 439);
-            this.btnCabinet.Name = "btnCabinet";
-            this.btnCabinet.Size = new System.Drawing.Size(164, 48);
-            this.btnCabinet.TabIndex = 2;
-            this.btnCabinet.Text = " Dolap";
-            this.btnCabinet.UseVisualStyleBackColor = true;
-            this.btnCabinet.Click += new System.EventHandler(this.btnCabinet_Click);
-            // 
-            // btnDrawer
-            // 
-            this.btnDrawer.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnDrawer.FlatAppearance.BorderSize = 0;
-            this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDrawer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDrawer.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDrawer.Image = global::ControlAppDesktop.Properties.Resources.dresser;
-            this.btnDrawer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDrawer.Location = new System.Drawing.Point(12, 391);
-            this.btnDrawer.Name = "btnDrawer";
-            this.btnDrawer.Size = new System.Drawing.Size(164, 48);
-            this.btnDrawer.TabIndex = 2;
-            this.btnDrawer.Text = "      Çekmece";
-            this.btnDrawer.UseVisualStyleBackColor = true;
-            this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
-            // 
-            // btnIdCard
-            // 
-            this.btnIdCard.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnIdCard.FlatAppearance.BorderSize = 0;
-            this.btnIdCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIdCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnIdCard.ForeColor = System.Drawing.Color.LightGray;
-            this.btnIdCard.Image = global::ControlAppDesktop.Properties.Resources.name;
-            this.btnIdCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIdCard.Location = new System.Drawing.Point(12, 343);
-            this.btnIdCard.Name = "btnIdCard";
-            this.btnIdCard.Size = new System.Drawing.Size(164, 48);
-            this.btnIdCard.TabIndex = 2;
-            this.btnIdCard.Text = "       Giriş Kartı";
-            this.btnIdCard.UseVisualStyleBackColor = true;
-            this.btnIdCard.Click += new System.EventHandler(this.btnIdCard_Click);
-            // 
-            // btnHeadset
-            // 
-            this.btnHeadset.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnHeadset.FlatAppearance.BorderSize = 0;
-            this.btnHeadset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHeadset.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnHeadset.ForeColor = System.Drawing.Color.LightGray;
-            this.btnHeadset.Image = global::ControlAppDesktop.Properties.Resources.headphone;
-            this.btnHeadset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHeadset.Location = new System.Drawing.Point(12, 295);
-            this.btnHeadset.Name = "btnHeadset";
-            this.btnHeadset.Size = new System.Drawing.Size(164, 48);
-            this.btnHeadset.TabIndex = 2;
-            this.btnHeadset.Text = "      Kulaklık";
-            this.btnHeadset.UseVisualStyleBackColor = true;
-            this.btnHeadset.Click += new System.EventHandler(this.btnHeadset_Click);
-            // 
-            // btnMaintenance
-            // 
-            this.btnMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnMaintenance.FlatAppearance.BorderSize = 0;
-            this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaintenance.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMaintenance.ForeColor = System.Drawing.Color.LightGray;
-            this.btnMaintenance.Image = global::ControlAppDesktop.Properties.Resources.schedule;
-            this.btnMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMaintenance.Location = new System.Drawing.Point(12, 247);
-            this.btnMaintenance.Name = "btnMaintenance";
-            this.btnMaintenance.Size = new System.Drawing.Size(164, 48);
-            this.btnMaintenance.TabIndex = 2;
-            this.btnMaintenance.Text = "   Bakım";
-            this.btnMaintenance.UseVisualStyleBackColor = true;
-            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
-            // 
-            // btnRequest
-            // 
-            this.btnRequest.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnRequest.FlatAppearance.BorderSize = 0;
-            this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRequest.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRequest.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRequest.Image = global::ControlAppDesktop.Properties.Resources.clipboard;
-            this.btnRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRequest.Location = new System.Drawing.Point(12, 199);
-            this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(164, 48);
-            this.btnRequest.TabIndex = 2;
-            this.btnRequest.Text = " Talep";
-            this.btnRequest.UseVisualStyleBackColor = true;
-            this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
-            // 
-            // btnEmployee
-            // 
-            this.btnEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnEmployee.FlatAppearance.BorderSize = 0;
-            this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnEmployee.ForeColor = System.Drawing.Color.LightGray;
-            this.btnEmployee.Image = global::ControlAppDesktop.Properties.Resources.employee;
-            this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployee.Location = new System.Drawing.Point(12, 151);
-            this.btnEmployee.Name = "btnEmployee";
-            this.btnEmployee.Size = new System.Drawing.Size(164, 48);
-            this.btnEmployee.TabIndex = 2;
-            this.btnEmployee.Text = "     Personel";
-            this.btnEmployee.UseVisualStyleBackColor = true;
-            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
-            // 
-            // btnInventory
-            // 
-            this.btnInventory.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnInventory.FlatAppearance.BorderSize = 0;
-            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInventory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnInventory.ForeColor = System.Drawing.Color.LightGray;
-            this.btnInventory.Image = global::ControlAppDesktop.Properties.Resources.inventory;
-            this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventory.Location = new System.Drawing.Point(12, 103);
-            this.btnInventory.Name = "btnInventory";
-            this.btnInventory.Size = new System.Drawing.Size(164, 48);
-            this.btnInventory.TabIndex = 2;
-            this.btnInventory.Text = "     Envanter";
-            this.btnInventory.UseVisualStyleBackColor = true;
-            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
-            // 
-            // btnSentry
-            // 
-            this.btnSentry.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.btnSentry.FlatAppearance.BorderSize = 0;
-            this.btnSentry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSentry.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSentry.ForeColor = System.Drawing.Color.LightGray;
-            this.btnSentry.Image = global::ControlAppDesktop.Properties.Resources.rotation;
-            this.btnSentry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSentry.Location = new System.Drawing.Point(12, 55);
-            this.btnSentry.Name = "btnSentry";
-            this.btnSentry.Size = new System.Drawing.Size(164, 48);
-            this.btnSentry.TabIndex = 2;
-            this.btnSentry.Text = "Nöbet";
-            this.btnSentry.UseVisualStyleBackColor = true;
-            this.btnSentry.Click += new System.EventHandler(this.btnSentry_Click);
             // 
             // pnlTopMenu
             // 
@@ -310,6 +111,25 @@
             this.pnlTopMenu.Size = new System.Drawing.Size(1186, 35);
             this.pnlTopMenu.TabIndex = 1;
             this.pnlTopMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopMenu_MouseDown);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTime.Location = new System.Drawing.Point(15, 8);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(65, 19);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "Zaman";
+            // 
+            // pnlCenter
+            // 
+            this.pnlCenter.BackColor = System.Drawing.Color.LightGray;
+            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
+            this.pnlCenter.Name = "pnlCenter";
+            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
+            this.pnlCenter.TabIndex = 3;
             // 
             // btnAdminForm
             // 
@@ -341,17 +161,6 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTime.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTime.Location = new System.Drawing.Point(15, 8);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 19);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "Zaman";
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
@@ -365,13 +174,240 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // pnlCenter
+            // btnWorkSteps
             // 
-            this.pnlCenter.BackColor = System.Drawing.Color.LightGray;
-            this.pnlCenter.Location = new System.Drawing.Point(182, 38);
-            this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1184, 730);
-            this.pnlCenter.TabIndex = 3;
+            this.btnWorkSteps.FlatAppearance.BorderSize = 0;
+            this.btnWorkSteps.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorkSteps.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnWorkSteps.ForeColor = System.Drawing.Color.LightGray;
+            this.btnWorkSteps.Image = global::ControlAppDesktop.Properties.Resources.process__1_;
+            this.btnWorkSteps.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWorkSteps.Location = new System.Drawing.Point(13, 664);
+            this.btnWorkSteps.Name = "btnWorkSteps";
+            this.btnWorkSteps.Size = new System.Drawing.Size(164, 34);
+            this.btnWorkSteps.TabIndex = 5;
+            this.btnWorkSteps.Text = "      İş Adımları";
+            this.btnWorkSteps.UseVisualStyleBackColor = true;
+            this.btnWorkSteps.Click += new System.EventHandler(this.btnWorkSteps_Click);
+            // 
+            // btnPasswordNote
+            // 
+            this.btnPasswordNote.FlatAppearance.BorderSize = 0;
+            this.btnPasswordNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPasswordNote.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPasswordNote.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPasswordNote.Image = global::ControlAppDesktop.Properties.Resources.lock__2___1_;
+            this.btnPasswordNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPasswordNote.Location = new System.Drawing.Point(13, 622);
+            this.btnPasswordNote.Name = "btnPasswordNote";
+            this.btnPasswordNote.Size = new System.Drawing.Size(164, 34);
+            this.btnPasswordNote.TabIndex = 4;
+            this.btnPasswordNote.Text = "      Şifre Notları";
+            this.btnPasswordNote.UseVisualStyleBackColor = true;
+            this.btnPasswordNote.Click += new System.EventHandler(this.btnPasswordNote_Click);
+            // 
+            // btnDirectory
+            // 
+            this.btnDirectory.FlatAppearance.BorderSize = 0;
+            this.btnDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDirectory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDirectory.ForeColor = System.Drawing.Color.LightGray;
+            this.btnDirectory.Image = global::ControlAppDesktop.Properties.Resources._001_phonebook;
+            this.btnDirectory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDirectory.Location = new System.Drawing.Point(13, 568);
+            this.btnDirectory.Name = "btnDirectory";
+            this.btnDirectory.Size = new System.Drawing.Size(164, 34);
+            this.btnDirectory.TabIndex = 2;
+            this.btnDirectory.Text = "            Telefon Rehberi";
+            this.btnDirectory.UseVisualStyleBackColor = true;
+            this.btnDirectory.Click += new System.EventHandler(this.btnDirectory_Click);
+            // 
+            // btnGenarator
+            // 
+            this.btnGenarator.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnGenarator.FlatAppearance.BorderSize = 0;
+            this.btnGenarator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenarator.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGenarator.ForeColor = System.Drawing.Color.LightGray;
+            this.btnGenarator.Image = global::ControlAppDesktop.Properties.Resources.electric_generator;
+            this.btnGenarator.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenarator.Location = new System.Drawing.Point(13, 518);
+            this.btnGenarator.Name = "btnGenarator";
+            this.btnGenarator.Size = new System.Drawing.Size(164, 34);
+            this.btnGenarator.TabIndex = 2;
+            this.btnGenarator.Text = "    Jeneratör";
+            this.btnGenarator.UseVisualStyleBackColor = true;
+            this.btnGenarator.Click += new System.EventHandler(this.btnGenarator_Click);
+            // 
+            // btnGuestCard
+            // 
+            this.btnGuestCard.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnGuestCard.FlatAppearance.BorderSize = 0;
+            this.btnGuestCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuestCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGuestCard.ForeColor = System.Drawing.Color.LightGray;
+            this.btnGuestCard.Image = global::ControlAppDesktop.Properties.Resources.id;
+            this.btnGuestCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuestCard.Location = new System.Drawing.Point(13, 470);
+            this.btnGuestCard.Name = "btnGuestCard";
+            this.btnGuestCard.Size = new System.Drawing.Size(164, 34);
+            this.btnGuestCard.TabIndex = 2;
+            this.btnGuestCard.Text = "         Misafir Kart";
+            this.btnGuestCard.UseVisualStyleBackColor = true;
+            this.btnGuestCard.Click += new System.EventHandler(this.btnGuestCard_Click);
+            // 
+            // btnCabinet
+            // 
+            this.btnCabinet.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnCabinet.FlatAppearance.BorderSize = 0;
+            this.btnCabinet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCabinet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCabinet.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCabinet.Image = global::ControlAppDesktop.Properties.Resources.locker;
+            this.btnCabinet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCabinet.Location = new System.Drawing.Point(13, 422);
+            this.btnCabinet.Name = "btnCabinet";
+            this.btnCabinet.Size = new System.Drawing.Size(164, 34);
+            this.btnCabinet.TabIndex = 2;
+            this.btnCabinet.Text = " Dolap";
+            this.btnCabinet.UseVisualStyleBackColor = true;
+            this.btnCabinet.Click += new System.EventHandler(this.btnCabinet_Click);
+            // 
+            // btnDrawer
+            // 
+            this.btnDrawer.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnDrawer.FlatAppearance.BorderSize = 0;
+            this.btnDrawer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrawer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDrawer.ForeColor = System.Drawing.Color.LightGray;
+            this.btnDrawer.Image = global::ControlAppDesktop.Properties.Resources.dresser;
+            this.btnDrawer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDrawer.Location = new System.Drawing.Point(13, 374);
+            this.btnDrawer.Name = "btnDrawer";
+            this.btnDrawer.Size = new System.Drawing.Size(164, 34);
+            this.btnDrawer.TabIndex = 2;
+            this.btnDrawer.Text = "      Çekmece";
+            this.btnDrawer.UseVisualStyleBackColor = true;
+            this.btnDrawer.Click += new System.EventHandler(this.btnDrawer_Click);
+            // 
+            // btnIdCard
+            // 
+            this.btnIdCard.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnIdCard.FlatAppearance.BorderSize = 0;
+            this.btnIdCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIdCard.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnIdCard.ForeColor = System.Drawing.Color.LightGray;
+            this.btnIdCard.Image = global::ControlAppDesktop.Properties.Resources.name;
+            this.btnIdCard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIdCard.Location = new System.Drawing.Point(13, 326);
+            this.btnIdCard.Name = "btnIdCard";
+            this.btnIdCard.Size = new System.Drawing.Size(164, 34);
+            this.btnIdCard.TabIndex = 2;
+            this.btnIdCard.Text = "       Giriş Kartı";
+            this.btnIdCard.UseVisualStyleBackColor = true;
+            this.btnIdCard.Click += new System.EventHandler(this.btnIdCard_Click);
+            // 
+            // btnHeadset
+            // 
+            this.btnHeadset.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnHeadset.FlatAppearance.BorderSize = 0;
+            this.btnHeadset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHeadset.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnHeadset.ForeColor = System.Drawing.Color.LightGray;
+            this.btnHeadset.Image = global::ControlAppDesktop.Properties.Resources.headphone;
+            this.btnHeadset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHeadset.Location = new System.Drawing.Point(13, 278);
+            this.btnHeadset.Name = "btnHeadset";
+            this.btnHeadset.Size = new System.Drawing.Size(164, 34);
+            this.btnHeadset.TabIndex = 2;
+            this.btnHeadset.Text = "      Kulaklık";
+            this.btnHeadset.UseVisualStyleBackColor = true;
+            this.btnHeadset.Click += new System.EventHandler(this.btnHeadset_Click);
+            // 
+            // btnMaintenance
+            // 
+            this.btnMaintenance.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnMaintenance.FlatAppearance.BorderSize = 0;
+            this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaintenance.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMaintenance.ForeColor = System.Drawing.Color.LightGray;
+            this.btnMaintenance.Image = global::ControlAppDesktop.Properties.Resources.schedule;
+            this.btnMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaintenance.Location = new System.Drawing.Point(13, 230);
+            this.btnMaintenance.Name = "btnMaintenance";
+            this.btnMaintenance.Size = new System.Drawing.Size(164, 34);
+            this.btnMaintenance.TabIndex = 2;
+            this.btnMaintenance.Text = "   Bakım";
+            this.btnMaintenance.UseVisualStyleBackColor = true;
+            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
+            // 
+            // btnRequest
+            // 
+            this.btnRequest.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnRequest.FlatAppearance.BorderSize = 0;
+            this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRequest.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRequest.ForeColor = System.Drawing.Color.LightGray;
+            this.btnRequest.Image = global::ControlAppDesktop.Properties.Resources.clipboard;
+            this.btnRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRequest.Location = new System.Drawing.Point(13, 182);
+            this.btnRequest.Name = "btnRequest";
+            this.btnRequest.Size = new System.Drawing.Size(164, 34);
+            this.btnRequest.TabIndex = 2;
+            this.btnRequest.Text = " Talep";
+            this.btnRequest.UseVisualStyleBackColor = true;
+            this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
+            // 
+            // btnEmployee
+            // 
+            this.btnEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnEmployee.FlatAppearance.BorderSize = 0;
+            this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmployee.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnEmployee.ForeColor = System.Drawing.Color.LightGray;
+            this.btnEmployee.Image = global::ControlAppDesktop.Properties.Resources.employee;
+            this.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmployee.Location = new System.Drawing.Point(13, 134);
+            this.btnEmployee.Name = "btnEmployee";
+            this.btnEmployee.Size = new System.Drawing.Size(164, 34);
+            this.btnEmployee.TabIndex = 2;
+            this.btnEmployee.Text = "     Personel";
+            this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
+            // 
+            // btnInventory
+            // 
+            this.btnInventory.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnInventory.ForeColor = System.Drawing.Color.LightGray;
+            this.btnInventory.Image = global::ControlAppDesktop.Properties.Resources.inventory;
+            this.btnInventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInventory.Location = new System.Drawing.Point(13, 86);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(164, 34);
+            this.btnInventory.TabIndex = 2;
+            this.btnInventory.Text = "     Envanter";
+            this.btnInventory.UseVisualStyleBackColor = true;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            // 
+            // btnSentry
+            // 
+            this.btnSentry.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.btnSentry.FlatAppearance.BorderSize = 0;
+            this.btnSentry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSentry.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSentry.ForeColor = System.Drawing.Color.LightGray;
+            this.btnSentry.Image = global::ControlAppDesktop.Properties.Resources.rotation;
+            this.btnSentry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSentry.Location = new System.Drawing.Point(13, 38);
+            this.btnSentry.Name = "btnSentry";
+            this.btnSentry.Size = new System.Drawing.Size(164, 34);
+            this.btnSentry.TabIndex = 2;
+            this.btnSentry.Text = "Nöbet";
+            this.btnSentry.UseVisualStyleBackColor = true;
+            this.btnSentry.Click += new System.EventHandler(this.btnSentry_Click);
             // 
             // HomePage
             // 
@@ -419,5 +455,7 @@
         public System.Windows.Forms.Panel pnlLeftMenu;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnPasswordNote;
+        private System.Windows.Forms.Button btnWorkSteps;
     }
 }

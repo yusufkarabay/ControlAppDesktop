@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchInfo = new System.Windows.Forms.GroupBox();
             this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
             this.rbEntranceCardSeriNo = new System.Windows.Forms.RadioButton();
@@ -71,9 +71,9 @@
             // rbReciverEmployee
             // 
             this.rbReciverEmployee.AutoSize = true;
-            this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
+            this.rbReciverEmployee.Location = new System.Drawing.Point(42, 28);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(185, 20);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(170, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -83,9 +83,9 @@
             // rbEntranceCardSeriNo
             // 
             this.rbEntranceCardSeriNo.AutoSize = true;
-            this.rbEntranceCardSeriNo.Location = new System.Drawing.Point(16, 52);
+            this.rbEntranceCardSeriNo.Location = new System.Drawing.Point(42, 53);
             this.rbEntranceCardSeriNo.Name = "rbEntranceCardSeriNo";
-            this.rbEntranceCardSeriNo.Size = new System.Drawing.Size(219, 20);
+            this.rbEntranceCardSeriNo.Size = new System.Drawing.Size(194, 20);
             this.rbEntranceCardSeriNo.TabIndex = 7;
             this.rbEntranceCardSeriNo.TabStop = true;
             this.rbEntranceCardSeriNo.Text = "Giriş Kart Seri No\'ya Göre Ara";
@@ -95,9 +95,9 @@
             // rbDeliveryEmployee
             // 
             this.rbDeliveryEmployee.AutoSize = true;
-            this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
+            this.rbDeliveryEmployee.Location = new System.Drawing.Point(42, 76);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(231, 20);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(211, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -108,7 +108,7 @@
             // 
             this.txtEntranceCardSearch.Location = new System.Drawing.Point(474, 238);
             this.txtEntranceCardSearch.Name = "txtEntranceCardSearch";
-            this.txtEntranceCardSearch.Size = new System.Drawing.Size(239, 23);
+            this.txtEntranceCardSearch.Size = new System.Drawing.Size(239, 22);
             this.txtEntranceCardSearch.TabIndex = 2;
             this.txtEntranceCardSearch.Text = "Giriş Kartı Ara...";
             this.txtEntranceCardSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEntranceCardSearch_MouseClick);
@@ -168,34 +168,34 @@
             // lblEntranceCardSeriNo
             // 
             this.lblEntranceCardSeriNo.AutoSize = true;
-            this.lblEntranceCardSeriNo.Location = new System.Drawing.Point(6, 25);
+            this.lblEntranceCardSeriNo.Location = new System.Drawing.Point(36, 27);
             this.lblEntranceCardSeriNo.Name = "lblEntranceCardSeriNo";
-            this.lblEntranceCardSeriNo.Size = new System.Drawing.Size(124, 16);
+            this.lblEntranceCardSeriNo.Size = new System.Drawing.Size(107, 16);
             this.lblEntranceCardSeriNo.TabIndex = 10;
             this.lblEntranceCardSeriNo.Text = "Giriş Kartı Seri No:";
             // 
             // lblDeliveryPerson
             // 
             this.lblDeliveryPerson.AutoSize = true;
-            this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
+            this.lblDeliveryPerson.Location = new System.Drawing.Point(36, 79);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(87, 16);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(78, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
             // lblReceiverPerson
             // 
             this.lblReceiverPerson.AutoSize = true;
-            this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
+            this.lblReceiverPerson.Location = new System.Drawing.Point(36, 53);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(86, 16);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(76, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
             // lblDeliveryPersonInfo
             // 
             this.lblDeliveryPersonInfo.AutoSize = true;
-            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(124, 78);
+            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(165, 79);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
             this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
@@ -204,7 +204,7 @@
             // lblReceiverPersonInfo
             // 
             this.lblReceiverPersonInfo.AutoSize = true;
-            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(124, 52);
+            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(165, 53);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
             this.lblReceiverPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
@@ -213,7 +213,7 @@
             // lblEntranceCardNoInfo
             // 
             this.lblEntranceCardNoInfo.AutoSize = true;
-            this.lblEntranceCardNoInfo.Location = new System.Drawing.Point(124, 26);
+            this.lblEntranceCardNoInfo.Location = new System.Drawing.Point(165, 27);
             this.lblEntranceCardNoInfo.Name = "lblEntranceCardNoInfo";
             this.lblEntranceCardNoInfo.Size = new System.Drawing.Size(21, 16);
             this.lblEntranceCardNoInfo.TabIndex = 1;
@@ -235,21 +235,21 @@
             this.dgvEntranceCard.AllowUserToDeleteRows = false;
             this.dgvEntranceCard.AllowUserToResizeColumns = false;
             this.dgvEntranceCard.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvEntranceCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            this.dgvEntranceCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEntranceCard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntranceCard.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvEntranceCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEntranceCard.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvEntranceCard.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvEntranceCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEntranceCard.Location = new System.Drawing.Point(3, 19);
+            this.dgvEntranceCard.Location = new System.Drawing.Point(3, 18);
             this.dgvEntranceCard.MultiSelect = false;
             this.dgvEntranceCard.Name = "dgvEntranceCard";
             this.dgvEntranceCard.ReadOnly = true;
             this.dgvEntranceCard.RowHeadersVisible = false;
             this.dgvEntranceCard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEntranceCard.Size = new System.Drawing.Size(761, 233);
+            this.dgvEntranceCard.Size = new System.Drawing.Size(761, 234);
             this.dgvEntranceCard.TabIndex = 1;
             this.dgvEntranceCard.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEntranceCard_CellMouseClick);
             // 
@@ -279,7 +279,7 @@
             this.Controls.Add(this.btnEntranceCardDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbHeadset);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EntranceCardForm";
             this.Text = "EntranceCardForm";

@@ -34,6 +34,27 @@ namespace ControlAppDesktop.Forms
             maintenanceManager = MaintenanceManager.GetInstance();
             maintenanceMonthManager = MaintenanceMonthManager.GetInstance();
         }
+        void contractGrid()
+        {
+            dgvContract.Columns[0].Visible = false;
+            dgvContract.Columns["ContractName"].HeaderText ="Sözleşme Adı";
+            dgvContract.Columns["ContractStart"].HeaderText ="Sözleşme Başlangıç Tarihi";
+            dgvContract.Columns["Company"].HeaderText ="Firma";
+            dgvContract.Columns["CompanyAdress"].HeaderText ="Firma Adresi";
+            dgvContract.Columns["CompanyTel"].HeaderText ="Firma Telefonu";
+            dgvContract.Columns["Notes"].HeaderText ="Notlar";
+            dgvContract.Columns["ContractEnd"].HeaderText ="Sözleşme Bitiş Tarihi";
+
+        }
+        void maintenanceGrid()
+        {
+            dgvMaintenance.Columns[0].Visible = false;
+            dgvMaintenance.Columns[1].Visible = false;
+            dgvMaintenance.Columns["MaintenanceMonth"].HeaderText ="Bakım Aralığı";
+            dgvMaintenance.Columns["FirstMaintenanceDate"].HeaderText ="İlk Bakım Tarihi";
+            dgvMaintenance.Columns["ContractName"].HeaderText ="Kontrat Adı";
+           
+        }
         void allContractList()
         {
             dgvContract.DataSource = contractManager.GetAll();
@@ -42,7 +63,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Sözleşme Bulunmamaktadır");
                 return;
             }
-            dgvContract.Columns[0].Visible = false;
+            contractGrid();
         }
         void allMaintenanceList()
         {
@@ -52,8 +73,9 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Bakım Bulunmamaktadır");
                 return;
             }
-            dgvMaintenance.Columns[0].Visible = false;
-            dgvMaintenance.Columns[1].Visible = false;
+            maintenanceGrid();  
+
+
         }
         void updateContract()
         {

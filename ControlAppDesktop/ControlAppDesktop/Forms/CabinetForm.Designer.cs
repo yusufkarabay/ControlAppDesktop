@@ -58,20 +58,23 @@
             // 
             // btnCabinetList
             // 
-            this.btnCabinetList.Location = new System.Drawing.Point(835, 111);
+            this.btnCabinetList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCabinetList.FlatAppearance.BorderSize = 0;
+            this.btnCabinetList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCabinetList.Location = new System.Drawing.Point(774, 371);
             this.btnCabinetList.Name = "btnCabinetList";
-            this.btnCabinetList.Size = new System.Drawing.Size(75, 23);
+            this.btnCabinetList.Size = new System.Drawing.Size(108, 23);
             this.btnCabinetList.TabIndex = 0;
             this.btnCabinetList.Text = "Listele";
-            this.btnCabinetList.UseVisualStyleBackColor = true;
+            this.btnCabinetList.UseVisualStyleBackColor = false;
             this.btnCabinetList.Click += new System.EventHandler(this.btnCabinetList_Click);
             // 
             // rbReciverEmployee
             // 
             this.rbReciverEmployee.AutoSize = true;
-            this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
+            this.rbReciverEmployee.Location = new System.Drawing.Point(29, 27);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(181, 21);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(170, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -81,9 +84,9 @@
             // rbCabinetNo
             // 
             this.rbCabinetNo.AutoSize = true;
-            this.rbCabinetNo.Location = new System.Drawing.Point(16, 52);
+            this.rbCabinetNo.Location = new System.Drawing.Point(29, 52);
             this.rbCabinetNo.Name = "rbCabinetNo";
-            this.rbCabinetNo.Size = new System.Drawing.Size(173, 21);
+            this.rbCabinetNo.Size = new System.Drawing.Size(158, 20);
             this.rbCabinetNo.TabIndex = 7;
             this.rbCabinetNo.TabStop = true;
             this.rbCabinetNo.Text = "Dolap  No\'ya Göre Ara";
@@ -93,9 +96,9 @@
             // rbDeliveryEmployee
             // 
             this.rbDeliveryEmployee.AutoSize = true;
-            this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
+            this.rbDeliveryEmployee.Location = new System.Drawing.Point(29, 75);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(226, 21);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(211, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -104,81 +107,84 @@
             // 
             // txtDrawerSearch
             // 
-            this.txtDrawerSearch.Location = new System.Drawing.Point(552, 250);
+            this.txtDrawerSearch.Location = new System.Drawing.Point(474, 238);
             this.txtDrawerSearch.Name = "txtDrawerSearch";
-            this.txtDrawerSearch.Size = new System.Drawing.Size(192, 23);
+            this.txtDrawerSearch.Size = new System.Drawing.Size(239, 22);
             this.txtDrawerSearch.TabIndex = 3;
             this.txtDrawerSearch.Text = "Dolap Ara...";
             this.txtDrawerSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtDrawerSearch_MouseClick);
             // 
             // btnCabinetSearch
             // 
-            this.btnCabinetSearch.Location = new System.Drawing.Point(591, 276);
+            this.btnCabinetSearch.BackgroundImage = global::ControlAppDesktop.Properties.Resources.loupe;
+            this.btnCabinetSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCabinetSearch.FlatAppearance.BorderSize = 0;
+            this.btnCabinetSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCabinetSearch.Location = new System.Drawing.Point(569, 265);
             this.btnCabinetSearch.Name = "btnCabinetSearch";
-            this.btnCabinetSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnCabinetSearch.Size = new System.Drawing.Size(32, 32);
             this.btnCabinetSearch.TabIndex = 4;
-            this.btnCabinetSearch.Text = "Ara";
             this.btnCabinetSearch.UseVisualStyleBackColor = true;
             this.btnCabinetSearch.Click += new System.EventHandler(this.btnDrawerSearch_Click);
             // 
             // lblCabinetNo
             // 
             this.lblCabinetNo.AutoSize = true;
-            this.lblCabinetNo.Location = new System.Drawing.Point(6, 25);
+            this.lblCabinetNo.Location = new System.Drawing.Point(27, 27);
             this.lblCabinetNo.Name = "lblCabinetNo";
-            this.lblCabinetNo.Size = new System.Drawing.Size(75, 17);
+            this.lblCabinetNo.Size = new System.Drawing.Size(65, 16);
             this.lblCabinetNo.TabIndex = 10;
             this.lblCabinetNo.Text = "Dolap No:";
             // 
             // lblDeliveryPerson
             // 
             this.lblDeliveryPerson.AutoSize = true;
-            this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
+            this.lblDeliveryPerson.Location = new System.Drawing.Point(27, 79);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(85, 17);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(78, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
             // lblReceiverPerson
             // 
             this.lblReceiverPerson.AutoSize = true;
-            this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
+            this.lblReceiverPerson.Location = new System.Drawing.Point(27, 53);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(82, 17);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(76, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
             // lblDeliveryPersonInfo
             // 
             this.lblDeliveryPersonInfo.AutoSize = true;
-            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(100, 77);
+            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(121, 79);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
-            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(22, 17);
+            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
             this.lblDeliveryPersonInfo.Text = "00";
             // 
             // lblReceiverPersonInfo
             // 
             this.lblReceiverPersonInfo.AutoSize = true;
-            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(100, 51);
+            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(121, 53);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
-            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(22, 17);
+            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
             this.lblReceiverPersonInfo.Text = "00";
             // 
             // lblCabinetNoInfo
             // 
             this.lblCabinetNoInfo.AutoSize = true;
-            this.lblCabinetNoInfo.Location = new System.Drawing.Point(100, 25);
+            this.lblCabinetNoInfo.Location = new System.Drawing.Point(121, 27);
             this.lblCabinetNoInfo.Name = "lblCabinetNoInfo";
-            this.lblCabinetNoInfo.Size = new System.Drawing.Size(22, 17);
+            this.lblCabinetNoInfo.Size = new System.Drawing.Size(21, 16);
             this.lblCabinetNoInfo.TabIndex = 1;
             this.lblCabinetNoInfo.Text = "00";
             // 
             // gbCabinet
             // 
             this.gbCabinet.Controls.Add(this.dgvCabinet);
-            this.gbCabinet.Location = new System.Drawing.Point(166, 355);
+            this.gbCabinet.Location = new System.Drawing.Point(115, 391);
             this.gbCabinet.Name = "gbCabinet";
             this.gbCabinet.Size = new System.Drawing.Size(767, 255);
             this.gbCabinet.TabIndex = 24;
@@ -200,13 +206,13 @@
             this.dgvCabinet.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvCabinet.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvCabinet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCabinet.Location = new System.Drawing.Point(3, 19);
+            this.dgvCabinet.Location = new System.Drawing.Point(3, 18);
             this.dgvCabinet.MultiSelect = false;
             this.dgvCabinet.Name = "dgvCabinet";
             this.dgvCabinet.ReadOnly = true;
             this.dgvCabinet.RowHeadersVisible = false;
             this.dgvCabinet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCabinet.Size = new System.Drawing.Size(761, 233);
+            this.dgvCabinet.Size = new System.Drawing.Size(761, 234);
             this.dgvCabinet.TabIndex = 1;
             this.dgvCabinet.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCabinet_CellMouseClick);
             // 
@@ -226,7 +232,9 @@
             // 
             // btnCabinetDelivery
             // 
-            this.btnCabinetDelivery.Location = new System.Drawing.Point(835, 152);
+            this.btnCabinetDelivery.FlatAppearance.BorderSize = 0;
+            this.btnCabinetDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCabinetDelivery.Location = new System.Drawing.Point(902, 29);
             this.btnCabinetDelivery.Name = "btnCabinetDelivery";
             this.btnCabinetDelivery.Size = new System.Drawing.Size(144, 23);
             this.btnCabinetDelivery.TabIndex = 2;
@@ -242,9 +250,9 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblCabinetNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(139, 111);
+            this.grpInfo.Location = new System.Drawing.Point(109, 99);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(349, 152);
+            this.grpInfo.Size = new System.Drawing.Size(328, 159);
             this.grpInfo.TabIndex = 25;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Dolap Bilgileri";
@@ -254,9 +262,9 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbCabinetNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(543, 111);
+            this.gbSearchInfo.Location = new System.Drawing.Point(465, 99);
             this.gbSearchInfo.Name = "gbSearchInfo";
-            this.gbSearchInfo.Size = new System.Drawing.Size(200, 127);
+            this.gbSearchInfo.Size = new System.Drawing.Size(333, 127);
             this.gbSearchInfo.TabIndex = 30;
             this.gbSearchInfo.TabStop = false;
             this.gbSearchInfo.Text = "Arama Seçeneği";
@@ -274,7 +282,7 @@
             this.Controls.Add(this.btnCabinetDelivery);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.gbSearchInfo);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
