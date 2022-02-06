@@ -59,7 +59,7 @@
             this.btnDirectoryAdd.Location = new System.Drawing.Point(115, 113);
             this.btnDirectoryAdd.Name = "btnDirectoryAdd";
             this.btnDirectoryAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnDirectoryAdd.TabIndex = 0;
+            this.btnDirectoryAdd.TabIndex = 4;
             this.btnDirectoryAdd.Text = "Ekle";
             this.btnDirectoryAdd.UseVisualStyleBackColor = true;
             this.btnDirectoryAdd.Click += new System.EventHandler(this.btnDirectoryAdd_Click);
@@ -69,7 +69,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(18, 32);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(26, 13);
+            this.lblName.Size = new System.Drawing.Size(34, 17);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Ad :";
             // 
@@ -78,7 +78,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Location = new System.Drawing.Point(18, 59);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(49, 13);
+            this.lblPhone.Size = new System.Drawing.Size(61, 17);
             this.lblPhone.TabIndex = 2;
             this.lblPhone.Text = "Telefon :";
             // 
@@ -87,7 +87,7 @@
             this.lblInfo.AutoSize = true;
             this.lblInfo.Location = new System.Drawing.Point(18, 86);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(38, 13);
+            this.lblInfo.Size = new System.Drawing.Size(50, 17);
             this.lblInfo.TabIndex = 3;
             this.lblInfo.Text = "Detay:";
             // 
@@ -95,22 +95,22 @@
             // 
             this.txtName.Location = new System.Drawing.Point(88, 25);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(149, 20);
-            this.txtName.TabIndex = 4;
+            this.txtName.Size = new System.Drawing.Size(149, 23);
+            this.txtName.TabIndex = 1;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(88, 56);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(149, 20);
-            this.txtPhone.TabIndex = 5;
+            this.txtPhone.Size = new System.Drawing.Size(149, 23);
+            this.txtPhone.TabIndex = 2;
             // 
             // txtInfo
             // 
             this.txtInfo.Location = new System.Drawing.Point(88, 87);
             this.txtInfo.Name = "txtInfo";
-            this.txtInfo.Size = new System.Drawing.Size(149, 20);
-            this.txtInfo.TabIndex = 6;
+            this.txtInfo.Size = new System.Drawing.Size(149, 23);
+            this.txtInfo.TabIndex = 3;
             // 
             // gbDirectory
             // 
@@ -131,24 +131,25 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.dgvDirectory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDirectory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDirectory.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDirectory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDirectory.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDirectory.Location = new System.Drawing.Point(3, 16);
+            this.dgvDirectory.Location = new System.Drawing.Point(3, 19);
             this.dgvDirectory.MultiSelect = false;
             this.dgvDirectory.Name = "dgvDirectory";
             this.dgvDirectory.ReadOnly = true;
             this.dgvDirectory.RowHeadersVisible = false;
             this.dgvDirectory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDirectory.Size = new System.Drawing.Size(1019, 343);
+            this.dgvDirectory.Size = new System.Drawing.Size(1019, 340);
             this.dgvDirectory.TabIndex = 1;
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(961, 76);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(187, 20);
-            this.txtSearch.TabIndex = 26;
+            this.txtSearch.Size = new System.Drawing.Size(187, 23);
+            this.txtSearch.TabIndex = 5;
             this.txtSearch.Text = "Ara...";
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             // 
@@ -169,7 +170,7 @@
             this.rbtInfo.AutoSize = true;
             this.rbtInfo.Location = new System.Drawing.Point(7, 67);
             this.rbtInfo.Name = "rbtInfo";
-            this.rbtInfo.Size = new System.Drawing.Size(100, 17);
+            this.rbtInfo.Size = new System.Drawing.Size(129, 21);
             this.rbtInfo.TabIndex = 2;
             this.rbtInfo.TabStop = true;
             this.rbtInfo.Text = "Detay\' Göre Ara";
@@ -181,7 +182,7 @@
             this.rbtPhone.AutoSize = true;
             this.rbtPhone.Location = new System.Drawing.Point(6, 43);
             this.rbtPhone.Name = "rbtPhone";
-            this.rbtPhone.Size = new System.Drawing.Size(114, 17);
+            this.rbtPhone.Size = new System.Drawing.Size(145, 21);
             this.rbtPhone.TabIndex = 1;
             this.rbtPhone.TabStop = true;
             this.rbtPhone.Text = "Telefon\'a Göre Ara";
@@ -193,7 +194,7 @@
             this.rbtName.AutoSize = true;
             this.rbtName.Location = new System.Drawing.Point(6, 20);
             this.rbtName.Name = "rbtName";
-            this.rbtName.Size = new System.Drawing.Size(91, 17);
+            this.rbtName.Size = new System.Drawing.Size(118, 21);
             this.rbtName.TabIndex = 0;
             this.rbtName.TabStop = true;
             this.rbtName.Text = "Ad\'a Göre Ara";
@@ -205,7 +206,7 @@
             this.btnSearch.Location = new System.Drawing.Point(1015, 109);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 28;
+            this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Ara";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -213,9 +214,9 @@
             // lblMessage
             // 
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(719, 632);
+            this.lblMessage.Location = new System.Drawing.Point(615, 632);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(394, 13);
+            this.lblMessage.Size = new System.Drawing.Size(512, 17);
             this.lblMessage.TabIndex = 29;
             this.lblMessage.Text = "Rehbere Yanlış Bir Kayıt Eklediyseniz Lütfen Sistem Yöneticisi İle İletişime Geçi" +
     "niz..";
@@ -240,8 +241,8 @@
             // 
             this.btnAllList.Location = new System.Drawing.Point(421, 57);
             this.btnAllList.Name = "btnAllList";
-            this.btnAllList.Size = new System.Drawing.Size(75, 23);
-            this.btnAllList.TabIndex = 31;
+            this.btnAllList.Size = new System.Drawing.Size(123, 23);
+            this.btnAllList.TabIndex = 0;
             this.btnAllList.Text = "Tümünü Listele";
             this.btnAllList.UseVisualStyleBackColor = true;
             this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
@@ -253,6 +254,7 @@
             // DirectoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1184, 730);
             this.Controls.Add(this.btnAllList);
             this.Controls.Add(this.gbAdd);
@@ -261,6 +263,7 @@
             this.Controls.Add(this.gbSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.gbDirectory);
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DirectoryForm";
             this.Text = "DirectoryForm";

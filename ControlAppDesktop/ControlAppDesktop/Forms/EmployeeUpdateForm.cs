@@ -60,7 +60,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("personel yüklenemedi ve ya bulunamadı.");
                 return false;
             }
-            mtxtTcInfo.Text = employee.Tc;
+            mtxbTC.Text = employee.Tc;
             txtNameInfo.Text = employee.Name;
             txtSurnmaeInfo.Text = employee.Surname;
 
@@ -141,7 +141,7 @@ namespace ControlAppDesktop.Forms
                "Soru", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                employee.Tc = mtxtTcInfo.Text;
+                employee.Tc = mtxbTC.Text;
                 employee.Name = txtNameInfo.Text;
                 employee.Surname = txtSurnmaeInfo.Text;
                 employee.Bdate = dateTimePicker1.Value;

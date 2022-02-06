@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpEmployee = new System.Windows.Forms.GroupBox();
             this.dgvNotCheckedEmployee = new System.Windows.Forms.DataGridView();
@@ -48,20 +48,26 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(984, 53);
+            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(1176, 14);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "Kapat";
+            this.btnClose.Size = new System.Drawing.Size(32, 34);
+            this.btnClose.TabIndex = 4;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // grpEmployee
             // 
             this.grpEmployee.Controls.Add(this.dgvNotCheckedEmployee);
-            this.grpEmployee.Location = new System.Drawing.Point(81, 194);
+            this.grpEmployee.Location = new System.Drawing.Point(108, 254);
+            this.grpEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.grpEmployee.Name = "grpEmployee";
-            this.grpEmployee.Size = new System.Drawing.Size(1014, 272);
+            this.grpEmployee.Padding = new System.Windows.Forms.Padding(4);
+            this.grpEmployee.Size = new System.Drawing.Size(1120, 356);
             this.grpEmployee.TabIndex = 4;
             this.grpEmployee.TabStop = false;
             this.grpEmployee.Text = "Onay Bekleyen Personel Listesi";
@@ -72,20 +78,22 @@
             this.dgvNotCheckedEmployee.AllowUserToDeleteRows = false;
             this.dgvNotCheckedEmployee.AllowUserToResizeColumns = false;
             this.dgvNotCheckedEmployee.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvNotCheckedEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvNotCheckedEmployee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotCheckedEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNotCheckedEmployee.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvNotCheckedEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNotCheckedEmployee.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvNotCheckedEmployee.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvNotCheckedEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNotCheckedEmployee.Location = new System.Drawing.Point(3, 16);
+            this.dgvNotCheckedEmployee.Location = new System.Drawing.Point(4, 20);
+            this.dgvNotCheckedEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNotCheckedEmployee.MultiSelect = false;
             this.dgvNotCheckedEmployee.Name = "dgvNotCheckedEmployee";
             this.dgvNotCheckedEmployee.ReadOnly = true;
             this.dgvNotCheckedEmployee.RowHeadersVisible = false;
             this.dgvNotCheckedEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotCheckedEmployee.Size = new System.Drawing.Size(1008, 253);
+            this.dgvNotCheckedEmployee.Size = new System.Drawing.Size(1112, 332);
             this.dgvNotCheckedEmployee.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -104,20 +112,22 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(1017, 165);
+            this.btnRefresh.Location = new System.Drawing.Point(1108, 198);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 5;
+            this.btnRefresh.Size = new System.Drawing.Size(100, 30);
+            this.btnRefresh.TabIndex = 0;
             this.btnRefresh.Text = "Yenile";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(342, 91);
+            this.btnOk.Location = new System.Drawing.Point(456, 119);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 6;
+            this.btnOk.Size = new System.Drawing.Size(100, 30);
+            this.btnOk.TabIndex = 3;
             this.btnOk.Text = "Onayla";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Visible = false;
@@ -126,18 +136,20 @@
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(205, 70);
+            this.cbDepartment.Location = new System.Drawing.Point(273, 91);
+            this.cbDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.cbDepartment.Name = "cbDepartment";
-            this.cbDepartment.Size = new System.Drawing.Size(121, 21);
-            this.cbDepartment.TabIndex = 7;
+            this.cbDepartment.Size = new System.Drawing.Size(160, 25);
+            this.cbDepartment.TabIndex = 1;
             this.cbDepartment.Visible = false;
             // 
             // lblDepartment
             // 
             this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Location = new System.Drawing.Point(106, 70);
+            this.lblDepartment.Location = new System.Drawing.Point(141, 91);
+            this.lblDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(87, 13);
+            this.lblDepartment.Size = new System.Drawing.Size(117, 17);
             this.lblDepartment.TabIndex = 8;
             this.lblDepartment.Text = "Departman Seç :";
             this.lblDepartment.Visible = false;
@@ -145,9 +157,10 @@
             // lblAuthority
             // 
             this.lblAuthority.AutoSize = true;
-            this.lblAuthority.Location = new System.Drawing.Point(106, 111);
+            this.lblAuthority.Location = new System.Drawing.Point(141, 146);
+            this.lblAuthority.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAuthority.Name = "lblAuthority";
-            this.lblAuthority.Size = new System.Drawing.Size(59, 13);
+            this.lblAuthority.Size = new System.Drawing.Size(72, 17);
             this.lblAuthority.TabIndex = 11;
             this.lblAuthority.Text = "Yetki Seç :";
             this.lblAuthority.Visible = false;
@@ -155,17 +168,19 @@
             // cbAuthority
             // 
             this.cbAuthority.FormattingEnabled = true;
-            this.cbAuthority.Location = new System.Drawing.Point(205, 111);
+            this.cbAuthority.Location = new System.Drawing.Point(273, 146);
+            this.cbAuthority.Margin = new System.Windows.Forms.Padding(4);
             this.cbAuthority.Name = "cbAuthority";
-            this.cbAuthority.Size = new System.Drawing.Size(121, 21);
-            this.cbAuthority.TabIndex = 10;
+            this.cbAuthority.Size = new System.Drawing.Size(160, 25);
+            this.cbAuthority.TabIndex = 2;
             this.cbAuthority.Visible = false;
             // 
             // EmployeeCheckedForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 660);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(1301, 863);
             this.Controls.Add(this.lblAuthority);
             this.Controls.Add(this.cbAuthority);
             this.Controls.Add(this.lblDepartment);
@@ -174,8 +189,11 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.grpEmployee);
             this.Controls.Add(this.btnClose);
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeCheckedForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeCheckedForm";
             this.Load += new System.EventHandler(this.EmployeeCheckedForm_Load);
             this.grpEmployee.ResumeLayout(false);

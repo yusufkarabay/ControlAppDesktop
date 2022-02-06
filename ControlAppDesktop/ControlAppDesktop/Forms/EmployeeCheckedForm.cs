@@ -68,6 +68,8 @@ namespace ControlAppDesktop.Forms
                 dgvNotCheckedEmployee.Columns[18].Visible = false;
                 dgvNotCheckedEmployee.Columns[19].Visible = false;
                 dgvNotCheckedEmployee.Columns[20].Visible = false;
+                dgvNotCheckedEmployee.Columns[21].Visible = false;
+
 
 
 
@@ -128,6 +130,8 @@ namespace ControlAppDesktop.Forms
         }
         private void EmployeeCheckedForm_Load(object sender, EventArgs e)
         {
+            
+            
             cbFill();
             notCheckedEmployeeList();
         }

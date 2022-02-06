@@ -41,9 +41,10 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(73, 89);
+            this.dateTimePicker1.Location = new System.Drawing.Point(67, 36);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(265, 23);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // gbxDrawerDelivery
@@ -53,19 +54,22 @@
             this.gbxDrawerDelivery.Controls.Add(this.txtDrawerNo);
             this.gbxDrawerDelivery.Controls.Add(this.lblDeliveryEmployee);
             this.gbxDrawerDelivery.Controls.Add(this.lblDrawerNoInfo);
-            this.gbxDrawerDelivery.Location = new System.Drawing.Point(307, 56);
+            this.gbxDrawerDelivery.Location = new System.Drawing.Point(67, 113);
+            this.gbxDrawerDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.gbxDrawerDelivery.Name = "gbxDrawerDelivery";
-            this.gbxDrawerDelivery.Size = new System.Drawing.Size(421, 339);
+            this.gbxDrawerDelivery.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxDrawerDelivery.Size = new System.Drawing.Size(493, 306);
             this.gbxDrawerDelivery.TabIndex = 4;
             this.gbxDrawerDelivery.TabStop = false;
             this.gbxDrawerDelivery.Text = "Çekmece Teslim Et";
             // 
             // btnDrawerDelivery
             // 
-            this.btnDrawerDelivery.Location = new System.Drawing.Point(165, 125);
+            this.btnDrawerDelivery.Location = new System.Drawing.Point(220, 164);
+            this.btnDrawerDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.btnDrawerDelivery.Name = "btnDrawerDelivery";
-            this.btnDrawerDelivery.Size = new System.Drawing.Size(75, 23);
-            this.btnDrawerDelivery.TabIndex = 6;
+            this.btnDrawerDelivery.Size = new System.Drawing.Size(100, 30);
+            this.btnDrawerDelivery.TabIndex = 2;
             this.btnDrawerDelivery.Text = "Teslim Et";
             this.btnDrawerDelivery.UseVisualStyleBackColor = true;
             this.btnDrawerDelivery.Click += new System.EventHandler(this.btnDrawerDelivery_Click);
@@ -73,56 +77,68 @@
             // cbxDeliveryEmployee
             // 
             this.cbxDeliveryEmployee.FormattingEnabled = true;
-            this.cbxDeliveryEmployee.Location = new System.Drawing.Point(123, 66);
+            this.cbxDeliveryEmployee.Location = new System.Drawing.Point(164, 86);
+            this.cbxDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.cbxDeliveryEmployee.Name = "cbxDeliveryEmployee";
-            this.cbxDeliveryEmployee.Size = new System.Drawing.Size(194, 21);
-            this.cbxDeliveryEmployee.TabIndex = 4;
+            this.cbxDeliveryEmployee.Size = new System.Drawing.Size(257, 25);
+            this.cbxDeliveryEmployee.TabIndex = 1;
             // 
             // txtDrawerNo
             // 
-            this.txtDrawerNo.Location = new System.Drawing.Point(122, 33);
+            this.txtDrawerNo.Location = new System.Drawing.Point(163, 44);
+            this.txtDrawerNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtDrawerNo.Name = "txtDrawerNo";
-            this.txtDrawerNo.Size = new System.Drawing.Size(195, 20);
-            this.txtDrawerNo.TabIndex = 3;
+            this.txtDrawerNo.Size = new System.Drawing.Size(259, 23);
+            this.txtDrawerNo.TabIndex = 0;
             // 
             // lblDeliveryEmployee
             // 
             this.lblDeliveryEmployee.AutoSize = true;
-            this.lblDeliveryEmployee.Location = new System.Drawing.Point(6, 69);
+            this.lblDeliveryEmployee.Location = new System.Drawing.Point(8, 90);
+            this.lblDeliveryEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeliveryEmployee.Name = "lblDeliveryEmployee";
-            this.lblDeliveryEmployee.Size = new System.Drawing.Size(111, 13);
+            this.lblDeliveryEmployee.Size = new System.Drawing.Size(143, 17);
             this.lblDeliveryEmployee.TabIndex = 1;
             this.lblDeliveryEmployee.Text = "Teslim Alan Personel :";
             // 
             // lblDrawerNoInfo
             // 
             this.lblDrawerNoInfo.AutoSize = true;
-            this.lblDrawerNoInfo.Location = new System.Drawing.Point(6, 40);
+            this.lblDrawerNoInfo.Location = new System.Drawing.Point(8, 52);
+            this.lblDrawerNoInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDrawerNoInfo.Name = "lblDrawerNoInfo";
-            this.lblDrawerNoInfo.Size = new System.Drawing.Size(75, 13);
+            this.lblDrawerNoInfo.Size = new System.Drawing.Size(102, 17);
             this.lblDrawerNoInfo.TabIndex = 0;
             this.lblDrawerNoInfo.Text = "Çekmece No :";
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(126, 210);
+            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(561, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(32, 34);
             this.btnClose.TabIndex = 6;
-            this.btnClose.Text = "Kapat";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // DrawerDeliveryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.ClientSize = new System.Drawing.Size(696, 501);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxDrawerDelivery);
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DrawerDeliveryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DrawerDeliveryForm";
             this.Load += new System.EventHandler(this.DrawerDeliveryForm_Load);
             this.gbxDrawerDelivery.ResumeLayout(false);

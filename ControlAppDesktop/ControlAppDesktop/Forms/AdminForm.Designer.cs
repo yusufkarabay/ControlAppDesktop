@@ -36,9 +36,9 @@
             // 
             // btnAuthorityForm
             // 
-            this.btnAuthorityForm.Location = new System.Drawing.Point(89, 126);
+            this.btnAuthorityForm.Location = new System.Drawing.Point(27, 22);
             this.btnAuthorityForm.Name = "btnAuthorityForm";
-            this.btnAuthorityForm.Size = new System.Drawing.Size(164, 23);
+            this.btnAuthorityForm.Size = new System.Drawing.Size(210, 50);
             this.btnAuthorityForm.TabIndex = 0;
             this.btnAuthorityForm.Text = "Yetki İşlemleri";
             this.btnAuthorityForm.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // btnDepartmentForm
             // 
-            this.btnDepartmentForm.Location = new System.Drawing.Point(275, 126);
+            this.btnDepartmentForm.Location = new System.Drawing.Point(264, 22);
             this.btnDepartmentForm.Name = "btnDepartmentForm";
-            this.btnDepartmentForm.Size = new System.Drawing.Size(164, 23);
+            this.btnDepartmentForm.Size = new System.Drawing.Size(205, 50);
             this.btnDepartmentForm.TabIndex = 1;
             this.btnDepartmentForm.Text = "Departman İşlemleri";
             this.btnDepartmentForm.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // btnEmployeeChecked
             // 
-            this.btnEmployeeChecked.Location = new System.Drawing.Point(579, 126);
+            this.btnEmployeeChecked.Location = new System.Drawing.Point(515, 22);
             this.btnEmployeeChecked.Name = "btnEmployeeChecked";
-            this.btnEmployeeChecked.Size = new System.Drawing.Size(164, 23);
+            this.btnEmployeeChecked.Size = new System.Drawing.Size(205, 50);
             this.btnEmployeeChecked.TabIndex = 2;
             this.btnEmployeeChecked.Text = "Personel Onaylama İşlemleri";
             this.btnEmployeeChecked.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(778, 126);
+            this.button4.Location = new System.Drawing.Point(760, 22);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(191, 23);
+            this.button4.Size = new System.Drawing.Size(205, 50);
             this.button4.TabIndex = 3;
             this.button4.Text = "Personel Yetki Düzenleme İşlemleri";
             this.button4.UseVisualStyleBackColor = true;
@@ -77,11 +77,13 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1184, 730);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(1480, 913);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnEmployeeChecked);
             this.Controls.Add(this.btnDepartmentForm);
             this.Controls.Add(this.btnAuthorityForm);
+            this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
             this.Text = "TestForm";
