@@ -60,6 +60,8 @@ namespace ControlAppDesktop.Forms
                 dgvEmployee.Columns[18].Visible = false;
                 dgvEmployee.Columns[19].Visible = false;
                 dgvEmployee.Columns[20].Visible = false;
+                dgvEmployee.Columns[21].Visible = false;
+
 
 
 

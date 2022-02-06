@@ -77,13 +77,13 @@
             this.dgvDrawer.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvDrawer.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvDrawer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDrawer.Location = new System.Drawing.Point(3, 19);
+            this.dgvDrawer.Location = new System.Drawing.Point(3, 17);
             this.dgvDrawer.MultiSelect = false;
             this.dgvDrawer.Name = "dgvDrawer";
             this.dgvDrawer.ReadOnly = true;
             this.dgvDrawer.RowHeadersVisible = false;
             this.dgvDrawer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrawer.Size = new System.Drawing.Size(761, 233);
+            this.dgvDrawer.Size = new System.Drawing.Size(761, 235);
             this.dgvDrawer.TabIndex = 1;
             this.dgvDrawer.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDrawer_CellMouseClick);
             // 
@@ -97,7 +97,8 @@
             // gbHeadset
             // 
             this.gbHeadset.Controls.Add(this.dgvDrawer);
-            this.gbHeadset.Location = new System.Drawing.Point(202, 371);
+            this.gbHeadset.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbHeadset.Location = new System.Drawing.Point(118, 391);
             this.gbHeadset.Name = "gbHeadset";
             this.gbHeadset.Size = new System.Drawing.Size(767, 255);
             this.gbHeadset.TabIndex = 17;
@@ -106,9 +107,10 @@
             // 
             // btnDrawerDelivery
             // 
-            this.btnDrawerDelivery.Location = new System.Drawing.Point(841, 120);
+            this.btnDrawerDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrawerDelivery.Location = new System.Drawing.Point(902, 29);
             this.btnDrawerDelivery.Name = "btnDrawerDelivery";
-            this.btnDrawerDelivery.Size = new System.Drawing.Size(151, 23);
+            this.btnDrawerDelivery.Size = new System.Drawing.Size(158, 28);
             this.btnDrawerDelivery.TabIndex = 1;
             this.btnDrawerDelivery.Text = "Çekmece Teslim Et";
             this.btnDrawerDelivery.UseVisualStyleBackColor = true;
@@ -122,9 +124,9 @@
             this.grpInfo.Controls.Add(this.lblDeliveryPersonInfo);
             this.grpInfo.Controls.Add(this.lblReceiverPersonInfo);
             this.grpInfo.Controls.Add(this.lblDrawerNoInfo);
-            this.grpInfo.Location = new System.Drawing.Point(145, 79);
+            this.grpInfo.Location = new System.Drawing.Point(109, 99);
             this.grpInfo.Name = "grpInfo";
-            this.grpInfo.Size = new System.Drawing.Size(349, 152);
+            this.grpInfo.Size = new System.Drawing.Size(328, 159);
             this.grpInfo.TabIndex = 18;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Çekmece Bilgileri";
@@ -134,7 +136,7 @@
             this.lblDrawerNo.AutoSize = true;
             this.lblDrawerNo.Location = new System.Drawing.Point(6, 25);
             this.lblDrawerNo.Name = "lblDrawerNo";
-            this.lblDrawerNo.Size = new System.Drawing.Size(98, 17);
+            this.lblDrawerNo.Size = new System.Drawing.Size(95, 16);
             this.lblDrawerNo.TabIndex = 10;
             this.lblDrawerNo.Text = "Çekmece No:";
             // 
@@ -143,7 +145,7 @@
             this.lblDeliveryPerson.AutoSize = true;
             this.lblDeliveryPerson.Location = new System.Drawing.Point(6, 77);
             this.lblDeliveryPerson.Name = "lblDeliveryPerson";
-            this.lblDeliveryPerson.Size = new System.Drawing.Size(85, 17);
+            this.lblDeliveryPerson.Size = new System.Drawing.Size(87, 16);
             this.lblDeliveryPerson.TabIndex = 3;
             this.lblDeliveryPerson.Text = "Teslim Eden:";
             // 
@@ -152,53 +154,56 @@
             this.lblReceiverPerson.AutoSize = true;
             this.lblReceiverPerson.Location = new System.Drawing.Point(6, 51);
             this.lblReceiverPerson.Name = "lblReceiverPerson";
-            this.lblReceiverPerson.Size = new System.Drawing.Size(82, 17);
+            this.lblReceiverPerson.Size = new System.Drawing.Size(86, 16);
             this.lblReceiverPerson.TabIndex = 2;
             this.lblReceiverPerson.Text = "Teslim Alan:";
             // 
             // lblDeliveryPersonInfo
             // 
             this.lblDeliveryPersonInfo.AutoSize = true;
-            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(100, 77);
+            this.lblDeliveryPersonInfo.Location = new System.Drawing.Point(129, 79);
             this.lblDeliveryPersonInfo.Name = "lblDeliveryPersonInfo";
-            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(22, 17);
+            this.lblDeliveryPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDeliveryPersonInfo.TabIndex = 5;
             this.lblDeliveryPersonInfo.Text = "00";
             // 
             // lblReceiverPersonInfo
             // 
             this.lblReceiverPersonInfo.AutoSize = true;
-            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(100, 51);
+            this.lblReceiverPersonInfo.Location = new System.Drawing.Point(129, 53);
             this.lblReceiverPersonInfo.Name = "lblReceiverPersonInfo";
-            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(22, 17);
+            this.lblReceiverPersonInfo.Size = new System.Drawing.Size(21, 16);
             this.lblReceiverPersonInfo.TabIndex = 4;
             this.lblReceiverPersonInfo.Text = "00";
             // 
             // lblDrawerNoInfo
             // 
             this.lblDrawerNoInfo.AutoSize = true;
-            this.lblDrawerNoInfo.Location = new System.Drawing.Point(100, 25);
+            this.lblDrawerNoInfo.Location = new System.Drawing.Point(129, 27);
             this.lblDrawerNoInfo.Name = "lblDrawerNoInfo";
-            this.lblDrawerNoInfo.Size = new System.Drawing.Size(22, 17);
+            this.lblDrawerNoInfo.Size = new System.Drawing.Size(21, 16);
             this.lblDrawerNoInfo.TabIndex = 1;
             this.lblDrawerNoInfo.Text = "00";
             // 
             // txtDrawerSearch
             // 
-            this.txtDrawerSearch.Location = new System.Drawing.Point(558, 218);
+            this.txtDrawerSearch.Location = new System.Drawing.Point(474, 238);
             this.txtDrawerSearch.Name = "txtDrawerSearch";
-            this.txtDrawerSearch.Size = new System.Drawing.Size(165, 23);
+            this.txtDrawerSearch.Size = new System.Drawing.Size(239, 23);
             this.txtDrawerSearch.TabIndex = 2;
             this.txtDrawerSearch.Text = "Çekmece Ara...";
             this.txtDrawerSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtDrawerSearch_MouseClick);
             // 
             // btnDrawerSearch
             // 
-            this.btnDrawerSearch.Location = new System.Drawing.Point(597, 244);
+            this.btnDrawerSearch.BackgroundImage = global::ControlAppDesktop.Properties.Resources.loupe;
+            this.btnDrawerSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDrawerSearch.FlatAppearance.BorderSize = 0;
+            this.btnDrawerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrawerSearch.Location = new System.Drawing.Point(569, 265);
             this.btnDrawerSearch.Name = "btnDrawerSearch";
-            this.btnDrawerSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnDrawerSearch.Size = new System.Drawing.Size(32, 32);
             this.btnDrawerSearch.TabIndex = 3;
-            this.btnDrawerSearch.Text = "Ara";
             this.btnDrawerSearch.UseVisualStyleBackColor = true;
             this.btnDrawerSearch.Click += new System.EventHandler(this.btnDrawerSearch_Click);
             // 
@@ -207,7 +212,7 @@
             this.rbDeliveryEmployee.AutoSize = true;
             this.rbDeliveryEmployee.Location = new System.Drawing.Point(16, 75);
             this.rbDeliveryEmployee.Name = "rbDeliveryEmployee";
-            this.rbDeliveryEmployee.Size = new System.Drawing.Size(226, 21);
+            this.rbDeliveryEmployee.Size = new System.Drawing.Size(231, 20);
             this.rbDeliveryEmployee.TabIndex = 8;
             this.rbDeliveryEmployee.TabStop = true;
             this.rbDeliveryEmployee.Text = "Teslim Eden Personele Göre Ara";
@@ -219,7 +224,7 @@
             this.rbReciverEmployee.AutoSize = true;
             this.rbReciverEmployee.Location = new System.Drawing.Point(16, 27);
             this.rbReciverEmployee.Name = "rbReciverEmployee";
-            this.rbReciverEmployee.Size = new System.Drawing.Size(181, 21);
+            this.rbReciverEmployee.Size = new System.Drawing.Size(185, 20);
             this.rbReciverEmployee.TabIndex = 9;
             this.rbReciverEmployee.TabStop = true;
             this.rbReciverEmployee.Text = "AlanPersonel\'e Göre Ara";
@@ -231,7 +236,7 @@
             this.rbDrawerNo.AutoSize = true;
             this.rbDrawerNo.Location = new System.Drawing.Point(16, 52);
             this.rbDrawerNo.Name = "rbDrawerNo";
-            this.rbDrawerNo.Size = new System.Drawing.Size(192, 21);
+            this.rbDrawerNo.Size = new System.Drawing.Size(193, 20);
             this.rbDrawerNo.TabIndex = 7;
             this.rbDrawerNo.TabStop = true;
             this.rbDrawerNo.Text = "Çekmece No\'ya Göre Ara";
@@ -243,21 +248,25 @@
             this.gbSearchInfo.Controls.Add(this.rbReciverEmployee);
             this.gbSearchInfo.Controls.Add(this.rbDrawerNo);
             this.gbSearchInfo.Controls.Add(this.rbDeliveryEmployee);
-            this.gbSearchInfo.Location = new System.Drawing.Point(549, 79);
+            this.gbSearchInfo.Location = new System.Drawing.Point(465, 99);
             this.gbSearchInfo.Name = "gbSearchInfo";
-            this.gbSearchInfo.Size = new System.Drawing.Size(258, 127);
+            this.gbSearchInfo.Size = new System.Drawing.Size(333, 127);
             this.gbSearchInfo.TabIndex = 23;
             this.gbSearchInfo.TabStop = false;
             this.gbSearchInfo.Text = "Arama Seçeneği";
             // 
             // btnDrawerList
             // 
-            this.btnDrawerList.Location = new System.Drawing.Point(861, 276);
+            this.btnDrawerList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDrawerList.FlatAppearance.BorderSize = 0;
+            this.btnDrawerList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrawerList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnDrawerList.Location = new System.Drawing.Point(774, 371);
             this.btnDrawerList.Name = "btnDrawerList";
             this.btnDrawerList.Size = new System.Drawing.Size(108, 23);
             this.btnDrawerList.TabIndex = 0;
             this.btnDrawerList.Text = "Listele";
-            this.btnDrawerList.UseVisualStyleBackColor = true;
+            this.btnDrawerList.UseVisualStyleBackColor = false;
             this.btnDrawerList.Click += new System.EventHandler(this.btnDrawerList_Click);
             // 
             // DrawerForm
@@ -272,7 +281,7 @@
             this.Controls.Add(this.btnDrawerSearch);
             this.Controls.Add(this.gbSearchInfo);
             this.Controls.Add(this.btnDrawerList);
-            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DrawerForm";
             this.Text = "DrawerForm";

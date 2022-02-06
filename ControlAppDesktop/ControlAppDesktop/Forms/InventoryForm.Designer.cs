@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -66,6 +67,7 @@
             // grpInventory
             // 
             this.grpInventory.Controls.Add(this.dgvInventory);
+            this.grpInventory.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpInventory.Location = new System.Drawing.Point(69, 310);
             this.grpInventory.Name = "grpInventory";
             this.grpInventory.Size = new System.Drawing.Size(1014, 272);
@@ -87,6 +89,14 @@
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvInventory.Cursor = System.Windows.Forms.Cursors.PanWest;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventory.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventory.Location = new System.Drawing.Point(3, 17);
             this.dgvInventory.MultiSelect = false;
@@ -139,6 +149,7 @@
             this.grpInventoryInfo.Controls.Add(this.btnAdd);
             this.grpInventoryInfo.Controls.Add(this.lblInventoryName);
             this.grpInventoryInfo.Controls.Add(this.lblInventorySeriNo);
+            this.grpInventoryInfo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpInventoryInfo.Location = new System.Drawing.Point(72, 38);
             this.grpInventoryInfo.Name = "grpInventoryInfo";
             this.grpInventoryInfo.Size = new System.Drawing.Size(345, 227);
@@ -181,7 +192,7 @@
             this.lblInventoryInfo.AutoSize = true;
             this.lblInventoryInfo.Location = new System.Drawing.Point(19, 135);
             this.lblInventoryInfo.Name = "lblInventoryInfo";
-            this.lblInventoryInfo.Size = new System.Drawing.Size(62, 16);
+            this.lblInventoryInfo.Size = new System.Drawing.Size(63, 15);
             this.lblInventoryInfo.TabIndex = 3;
             this.lblInventoryInfo.Text = "Açıklama :";
             // 
@@ -190,28 +201,34 @@
             this.lblInventoryAmount.AutoSize = true;
             this.lblInventoryAmount.Location = new System.Drawing.Point(19, 96);
             this.lblInventoryAmount.Name = "lblInventoryAmount";
-            this.lblInventoryAmount.Size = new System.Drawing.Size(46, 16);
+            this.lblInventoryAmount.Size = new System.Drawing.Size(46, 15);
             this.lblInventoryAmount.TabIndex = 2;
             this.lblInventoryAmount.Text = "Miktar :";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(18, 198);
+            this.btnUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(267, 184);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(32, 32);
             this.btnUpdate.TabIndex = 9;
-            this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Location = new System.Drawing.Point(175, 185);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(32, 32);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -220,7 +237,7 @@
             this.lblInventoryName.AutoSize = true;
             this.lblInventoryName.Location = new System.Drawing.Point(19, 62);
             this.lblInventoryName.Name = "lblInventoryName";
-            this.lblInventoryName.Size = new System.Drawing.Size(83, 16);
+            this.lblInventoryName.Size = new System.Drawing.Size(81, 15);
             this.lblInventoryName.TabIndex = 1;
             this.lblInventoryName.Text = "Envanter Adı :";
             // 
@@ -229,7 +246,7 @@
             this.lblInventorySeriNo.AutoSize = true;
             this.lblInventorySeriNo.Location = new System.Drawing.Point(19, 30);
             this.lblInventorySeriNo.Name = "lblInventorySeriNo";
-            this.lblInventorySeriNo.Size = new System.Drawing.Size(49, 16);
+            this.lblInventorySeriNo.Size = new System.Drawing.Size(52, 15);
             this.lblInventorySeriNo.TabIndex = 0;
             this.lblInventorySeriNo.Text = "Seri No :";
             // 
@@ -242,32 +259,44 @@
             // 
             // btnList
             // 
-            this.btnList.Location = new System.Drawing.Point(712, 90);
+            this.btnList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnList.FlatAppearance.BorderSize = 0;
+            this.btnList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnList.Location = new System.Drawing.Point(703, 68);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(75, 23);
             this.btnList.TabIndex = 1;
             this.btnList.Text = "Listele";
-            this.btnList.UseVisualStyleBackColor = true;
+            this.btnList.UseVisualStyleBackColor = false;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
             // btnInventoryWeb
             // 
-            this.btnInventoryWeb.Location = new System.Drawing.Point(1048, 38);
+            this.btnInventoryWeb.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnInventoryWeb.FlatAppearance.BorderSize = 0;
+            this.btnInventoryWeb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventoryWeb.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnInventoryWeb.Location = new System.Drawing.Point(1033, 12);
             this.btnInventoryWeb.Name = "btnInventoryWeb";
             this.btnInventoryWeb.Size = new System.Drawing.Size(124, 23);
             this.btnInventoryWeb.TabIndex = 10;
             this.btnInventoryWeb.Text = "Web\'de Görüntüle";
-            this.btnInventoryWeb.UseVisualStyleBackColor = true;
+            this.btnInventoryWeb.UseVisualStyleBackColor = false;
             this.btnInventoryWeb.Click += new System.EventHandler(this.btnInventoryWeb_Click);
             // 
             // btnAllList
             // 
-            this.btnAllList.Location = new System.Drawing.Point(463, 42);
+            this.btnAllList.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAllList.FlatAppearance.BorderSize = 0;
+            this.btnAllList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllList.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAllList.Location = new System.Drawing.Point(969, 281);
             this.btnAllList.Name = "btnAllList";
             this.btnAllList.Size = new System.Drawing.Size(111, 23);
             this.btnAllList.TabIndex = 0;
             this.btnAllList.Text = "Tümünü Listele";
-            this.btnAllList.UseVisualStyleBackColor = true;
+            this.btnAllList.UseVisualStyleBackColor = false;
             this.btnAllList.Click += new System.EventHandler(this.btnAllList_Click);
             // 
             // txtbxtSearchInventoryName
@@ -295,18 +324,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(460, 222);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 20;
             this.label1.Text = "Seri No";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(805, 223);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 16);
+            this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 21;
             this.label2.Text = "Envanter Adı";
             // 

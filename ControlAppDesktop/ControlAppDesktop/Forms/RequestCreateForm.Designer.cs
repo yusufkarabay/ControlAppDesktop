@@ -36,14 +36,14 @@
             this.txtRequestTitle = new System.Windows.Forms.TextBox();
             this.rtxtRequestContext = new System.Windows.Forms.RichTextBox();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnRequestCreate = new System.Windows.Forms.Button();
             this.grpNotRequest = new System.Windows.Forms.GroupBox();
             this.dgvNotRequest = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.requestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteRequestlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSend = new System.Windows.Forms.Button();
+            this.btnRequestCreate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.grpNotRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotRequest)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -52,30 +52,33 @@
             // lblRequestTitle
             // 
             this.lblRequestTitle.AutoSize = true;
+            this.lblRequestTitle.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRequestTitle.Location = new System.Drawing.Point(65, 55);
             this.lblRequestTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRequestTitle.Name = "lblRequestTitle";
-            this.lblRequestTitle.Size = new System.Drawing.Size(79, 16);
+            this.lblRequestTitle.Size = new System.Drawing.Size(79, 15);
             this.lblRequestTitle.TabIndex = 0;
             this.lblRequestTitle.Text = "Talep Konusu";
             // 
             // lblRequestContent
             // 
             this.lblRequestContent.AutoSize = true;
+            this.lblRequestContent.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblRequestContent.Location = new System.Drawing.Point(65, 105);
             this.lblRequestContent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRequestContent.Name = "lblRequestContent";
-            this.lblRequestContent.Size = new System.Drawing.Size(71, 16);
+            this.lblRequestContent.Size = new System.Drawing.Size(72, 15);
             this.lblRequestContent.TabIndex = 1;
             this.lblRequestContent.Text = "Talep İçeriği";
             // 
             // lblRequestDepartment
             // 
             this.lblRequestDepartment.AutoSize = true;
-            this.lblRequestDepartment.Location = new System.Drawing.Point(597, 68);
+            this.lblRequestDepartment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblRequestDepartment.Location = new System.Drawing.Point(593, 55);
             this.lblRequestDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRequestDepartment.Name = "lblRequestDepartment";
-            this.lblRequestDepartment.Size = new System.Drawing.Size(111, 16);
+            this.lblRequestDepartment.Size = new System.Drawing.Size(107, 15);
             this.lblRequestDepartment.TabIndex = 2;
             this.lblRequestDepartment.Text = "Talep Departmanı :";
             this.lblRequestDepartment.Visible = false;
@@ -83,7 +86,7 @@
             // txtRequestTitle
             // 
             this.txtRequestTitle.Location = new System.Drawing.Point(195, 47);
-            this.txtRequestTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequestTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequestTitle.Name = "txtRequestTitle";
             this.txtRequestTitle.Size = new System.Drawing.Size(354, 21);
             this.txtRequestTitle.TabIndex = 0;
@@ -91,54 +94,30 @@
             // rtxtRequestContext
             // 
             this.rtxtRequestContext.Location = new System.Drawing.Point(195, 105);
-            this.rtxtRequestContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtRequestContext.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtRequestContext.Name = "rtxtRequestContext";
-            this.rtxtRequestContext.Size = new System.Drawing.Size(354, 88);
+            this.rtxtRequestContext.Size = new System.Drawing.Size(354, 106);
             this.rtxtRequestContext.TabIndex = 1;
             this.rtxtRequestContext.Text = "";
             // 
             // cbDepartment
             // 
             this.cbDepartment.FormattingEnabled = true;
-            this.cbDepartment.Location = new System.Drawing.Point(727, 68);
-            this.cbDepartment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDepartment.Location = new System.Drawing.Point(724, 55);
+            this.cbDepartment.Margin = new System.Windows.Forms.Padding(4);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(184, 24);
             this.cbDepartment.TabIndex = 3;
             this.cbDepartment.Visible = false;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1154, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 32);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnRequestCreate
-            // 
-            this.btnRequestCreate.Location = new System.Drawing.Point(462, 228);
-            this.btnRequestCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnRequestCreate.Name = "btnRequestCreate";
-            this.btnRequestCreate.Size = new System.Drawing.Size(88, 28);
-            this.btnRequestCreate.TabIndex = 2;
-            this.btnRequestCreate.Text = "Oluştur";
-            this.btnRequestCreate.UseVisualStyleBackColor = true;
-            this.btnRequestCreate.Click += new System.EventHandler(this.btnRequestCreate_Click);
-            // 
             // grpNotRequest
             // 
             this.grpNotRequest.Controls.Add(this.dgvNotRequest);
+            this.grpNotRequest.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpNotRequest.Location = new System.Drawing.Point(68, 340);
-            this.grpNotRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpNotRequest.Margin = new System.Windows.Forms.Padding(4);
             this.grpNotRequest.Name = "grpNotRequest";
-            this.grpNotRequest.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpNotRequest.Padding = new System.Windows.Forms.Padding(4);
             this.grpNotRequest.Size = new System.Drawing.Size(1096, 335);
             this.grpNotRequest.TabIndex = 8;
             this.grpNotRequest.TabStop = false;
@@ -160,7 +139,7 @@
             this.dgvNotRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvNotRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNotRequest.Location = new System.Drawing.Point(4, 18);
-            this.dgvNotRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvNotRequest.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNotRequest.MultiSelect = false;
             this.dgvNotRequest.Name = "dgvNotRequest";
             this.dgvNotRequest.ReadOnly = true;
@@ -194,14 +173,46 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(961, 65);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSend.BackgroundImage = global::ControlAppDesktop.Properties.Resources.send;
+            this.btnSend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSend.FlatAppearance.BorderSize = 0;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSend.Location = new System.Drawing.Point(793, 89);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(88, 28);
+            this.btnSend.Size = new System.Drawing.Size(32, 32);
             this.btnSend.TabIndex = 4;
-            this.btnSend.Text = "Gönder";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Visible = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // btnRequestCreate
+            // 
+            this.btnRequestCreate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
+            this.btnRequestCreate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRequestCreate.FlatAppearance.BorderSize = 0;
+            this.btnRequestCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRequestCreate.Location = new System.Drawing.Point(355, 237);
+            this.btnRequestCreate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRequestCreate.Name = "btnRequestCreate";
+            this.btnRequestCreate.Size = new System.Drawing.Size(32, 32);
+            this.btnRequestCreate.TabIndex = 2;
+            this.btnRequestCreate.UseVisualStyleBackColor = true;
+            this.btnRequestCreate.Click += new System.EventHandler(this.btnRequestCreate_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = global::ControlAppDesktop.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(1154, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // RequestCreateForm
             // 
@@ -221,7 +232,7 @@
             this.Controls.Add(this.lblRequestTitle);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RequestCreateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RequestCreateForm";

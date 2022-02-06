@@ -38,6 +38,7 @@
             this.lblHeadsetSeriNoInfo = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblHeaset = new System.Windows.Forms.Label();
             this.gbxHeadsetDelivery.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +51,11 @@
             this.gbxHeadsetDelivery.Controls.Add(this.lblHeadsetInfo);
             this.gbxHeadsetDelivery.Controls.Add(this.lblDeliveryEmployee);
             this.gbxHeadsetDelivery.Controls.Add(this.lblHeadsetSeriNoInfo);
-            this.gbxHeadsetDelivery.Location = new System.Drawing.Point(43, 69);
+            this.gbxHeadsetDelivery.Location = new System.Drawing.Point(43, 110);
             this.gbxHeadsetDelivery.Name = "gbxHeadsetDelivery";
             this.gbxHeadsetDelivery.Size = new System.Drawing.Size(421, 211);
             this.gbxHeadsetDelivery.TabIndex = 0;
             this.gbxHeadsetDelivery.TabStop = false;
-            this.gbxHeadsetDelivery.Text = "Kulaklık Teslim Et";
             // 
             // btnHeadsetDelivery
             // 
@@ -136,12 +136,23 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblHeaset
+            // 
+            this.lblHeaset.AutoSize = true;
+            this.lblHeaset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHeaset.Location = new System.Drawing.Point(48, 110);
+            this.lblHeaset.Name = "lblHeaset";
+            this.lblHeaset.Size = new System.Drawing.Size(108, 13);
+            this.lblHeaset.TabIndex = 5;
+            this.lblHeaset.Text = "Kulaklık Teslim Et";
+            // 
             // HeadsetDeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(540, 437);
+            this.Controls.Add(this.lblHeaset);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxHeadsetDelivery);
@@ -153,6 +164,7 @@
             this.gbxHeadsetDelivery.ResumeLayout(false);
             this.gbxHeadsetDelivery.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -168,5 +180,6 @@
         private System.Windows.Forms.Label lblHeadsetSeriNoInfo;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblHeaset;
     }
 }

@@ -81,7 +81,8 @@
             this.gbSentry.BackColor = System.Drawing.Color.LightGray;
             this.gbSentry.Controls.Add(this.dgvSentryTodo);
             this.gbSentry.Controls.Add(this.dgvSentry);
-            this.gbSentry.Location = new System.Drawing.Point(69, 396);
+            this.gbSentry.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbSentry.Location = new System.Drawing.Point(55, 406);
             this.gbSentry.Name = "gbSentry";
             this.gbSentry.Size = new System.Drawing.Size(1039, 266);
             this.gbSentry.TabIndex = 2;
@@ -101,7 +102,7 @@
             this.dgvSentryTodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -120,7 +121,8 @@
             this.dgvSentryTodo.RowHeadersWidth = 51;
             this.dgvSentryTodo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSentryTodo.Size = new System.Drawing.Size(1033, 246);
-            this.dgvSentryTodo.TabIndex = 3;
+            this.dgvSentryTodo.TabIndex = 4;
+            this.dgvSentryTodo.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSentryTodo_CellMouseClick);
             // 
             // rightMenuToDo
             // 
@@ -166,7 +168,7 @@
             this.dgvSentry.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(110)))), ((int)(((byte)(145)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -185,6 +187,7 @@
             this.dgvSentry.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSentry.Size = new System.Drawing.Size(1033, 246);
             this.dgvSentry.TabIndex = 1;
+            this.dgvSentry.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSentry_CellMouseClick);
             // 
             // rightMenuDone
             // 
@@ -273,7 +276,6 @@
             // 
             this.btnSentryToDoAdd.BackgroundImage = global::ControlAppDesktop.Properties.Resources.plus;
             this.btnSentryToDoAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSentryToDoAdd.Enabled = false;
             this.btnSentryToDoAdd.FlatAppearance.BorderSize = 0;
             this.btnSentryToDoAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSentryToDoAdd.Location = new System.Drawing.Point(647, 277);

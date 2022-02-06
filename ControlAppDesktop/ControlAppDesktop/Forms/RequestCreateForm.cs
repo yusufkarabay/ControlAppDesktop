@@ -142,6 +142,8 @@ namespace ControlAppDesktop.Forms
         {
             requestAdd();
             requestSendUpdate();
+            rtxtRequestContext.Clear();
+            txtRequestTitle.Clear();
         }
 
         private void requestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -151,8 +153,8 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Göndermek  İstediğiniz Talebi Seçiniz", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-           dgvNotRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
-           dgvNotRequest.CurrentRow.Cells["REQUESTCONTENT"].Value.ToString();
+            dgvNotRequest.CurrentRow.Cells["REQUESTTITLE"].Value.ToString();
+            dgvNotRequest.CurrentRow.Cells["REQUESTCONTENT"].Value.ToString();
 
             if (cbDepartment.Visible == false)
             {
@@ -161,6 +163,10 @@ namespace ControlAppDesktop.Forms
             if (lblRequestDepartment.Visible == false)
             {
                 lblRequestDepartment.Visible = true;
+            }
+            if (btnSend.Visible==false)
+            {
+                btnSend.Visible=true;
             }
         }
 
@@ -181,6 +187,22 @@ namespace ControlAppDesktop.Forms
 
             requestToDepartment();
             requestSendUpdate();
+            if (btnSend.Visible==true)
+            {
+                btnSend.Visible=false;
+
+            }
+            if (lblRequestDepartment.Visible==true)
+            {
+                lblRequestDepartment.Visible=false;
+
+            }
+            if (cbDepartment.Visible==true)
+            {
+                cbDepartment.SelectedIndex=-1;
+                cbDepartment.Visible=false;
+
+            }
         }
 
         private void dgvNotRequest_MouseClick(object sender, MouseEventArgs e)

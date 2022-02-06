@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpDepartmentRequest = new System.Windows.Forms.GroupBox();
             this.dgvMyDepartmentRequest = new System.Windows.Forms.DataGridView();
@@ -57,6 +58,7 @@
             // grpDepartmentRequest
             // 
             this.grpDepartmentRequest.Controls.Add(this.dgvMyDepartmentRequest);
+            this.grpDepartmentRequest.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grpDepartmentRequest.Location = new System.Drawing.Point(133, 287);
             this.grpDepartmentRequest.Margin = new System.Windows.Forms.Padding(4);
             this.grpDepartmentRequest.Name = "grpDepartmentRequest";
@@ -79,6 +81,14 @@
             this.dgvMyDepartmentRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMyDepartmentRequest.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvMyDepartmentRequest.Cursor = System.Windows.Forms.Cursors.PanWest;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMyDepartmentRequest.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMyDepartmentRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMyDepartmentRequest.Location = new System.Drawing.Point(4, 20);
             this.dgvMyDepartmentRequest.Margin = new System.Windows.Forms.Padding(4);

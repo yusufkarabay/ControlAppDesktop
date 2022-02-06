@@ -30,6 +30,7 @@
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gbxEntranceCardDelivery = new System.Windows.Forms.GroupBox();
+            this.lbEtranceCard = new System.Windows.Forms.Label();
             this.btnHeadsetDelivery = new System.Windows.Forms.Button();
             this.cbxDeliveryEmployee = new System.Windows.Forms.ComboBox();
             this.txtEntranceCardSeriNo = new System.Windows.Forms.TextBox();
@@ -41,7 +42,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(63, 41);
+            this.dateTimePicker1.Location = new System.Drawing.Point(63, 35);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 21);
@@ -49,6 +50,7 @@
             // 
             // gbxEntranceCardDelivery
             // 
+            this.gbxEntranceCardDelivery.Controls.Add(this.lbEtranceCard);
             this.gbxEntranceCardDelivery.Controls.Add(this.btnHeadsetDelivery);
             this.gbxEntranceCardDelivery.Controls.Add(this.cbxDeliveryEmployee);
             this.gbxEntranceCardDelivery.Controls.Add(this.txtEntranceCardSeriNo);
@@ -61,11 +63,20 @@
             this.gbxEntranceCardDelivery.Size = new System.Drawing.Size(491, 236);
             this.gbxEntranceCardDelivery.TabIndex = 2;
             this.gbxEntranceCardDelivery.TabStop = false;
-            this.gbxEntranceCardDelivery.Text = "Giriş Kartı Teslim Et";
+            // 
+            // lbEtranceCard
+            // 
+            this.lbEtranceCard.AutoSize = true;
+            this.lbEtranceCard.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbEtranceCard.Location = new System.Drawing.Point(7, 0);
+            this.lbEtranceCard.Name = "lbEtranceCard";
+            this.lbEtranceCard.Size = new System.Drawing.Size(105, 15);
+            this.lbEtranceCard.TabIndex = 4;
+            this.lbEtranceCard.Text = "Giriş Kartı Teslim Et";
             // 
             // btnHeadsetDelivery
             // 
-            this.btnHeadsetDelivery.Location = new System.Drawing.Point(192, 154);
+            this.btnHeadsetDelivery.Location = new System.Drawing.Point(207, 131);
             this.btnHeadsetDelivery.Margin = new System.Windows.Forms.Padding(4);
             this.btnHeadsetDelivery.Name = "btnHeadsetDelivery";
             this.btnHeadsetDelivery.Size = new System.Drawing.Size(88, 28);
@@ -88,7 +99,7 @@
             this.txtEntranceCardSeriNo.Location = new System.Drawing.Point(142, 41);
             this.txtEntranceCardSeriNo.Margin = new System.Windows.Forms.Padding(4);
             this.txtEntranceCardSeriNo.Name = "txtEntranceCardSeriNo";
-            this.txtEntranceCardSeriNo.Size = new System.Drawing.Size(227, 21);
+            this.txtEntranceCardSeriNo.Size = new System.Drawing.Size(226, 21);
             this.txtEntranceCardSeriNo.TabIndex = 0;
             // 
             // lblDeliveryEmployee
@@ -117,7 +128,7 @@
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(563, 14);
+            this.btnClose.Location = new System.Drawing.Point(559, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 32);
@@ -130,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(644, 554);
+            this.ClientSize = new System.Drawing.Size(604, 414);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.gbxEntranceCardDelivery);
@@ -157,5 +168,6 @@
         private System.Windows.Forms.Label lblDeliveryEmployee;
         private System.Windows.Forms.Label lblEntranceCardSeriNoInfo;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lbEtranceCard;
     }
 }

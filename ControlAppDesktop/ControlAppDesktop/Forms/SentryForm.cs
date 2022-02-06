@@ -227,7 +227,7 @@ namespace ControlAppDesktop.Forms
             }
             dgvSentryTodo.Visible = true;
 
-            if (rtbxSentryToDo.Text == "" | rtbxSentryToDo.Text == "Takip Edilecek İşlemler...")
+            if (rtbxSentryToDo.Text == "" || rtbxSentryToDo.Text == "Takip edilecek işlemler...")
             {
                 MessageBox.Show("Yapılacak İş Alanı Boş Bırakılamaz", "Uyarı", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
@@ -416,6 +416,34 @@ namespace ControlAppDesktop.Forms
         {
             rtbxSentryToDo.Text = "";
             btnSentryToDoAdd.Enabled = true;
+        }
+
+       
+
+     
+        private void dgvSentry_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            sentryDone = new SentryDone(
+                Guid.Parse(dgvSentry.CurrentRow.Cells["SentrydoneId"].Value.ToString()),
+                    dgvSentry.CurrentRow.Cells["Done"].Value.ToString(),
+                    DateTime.Parse(dgvSentry.CurrentRow.Cells["CreatedTime"].Value.ToString()),
+                    dgvSentry.CurrentRow.Cells["CreatedEmployee"].Value.ToString(),
+                    dgvSentry.CurrentRow.Cells["EmployeeName"].Value.ToString(),
+                    Guid.Parse(dgvSentry.CurrentRow.Cells["DepartmentId"].Value.ToString()));
+
+            rtbxSentry.Text=sentryDone.Done.ToString();
+        }
+
+        private void dgvSentryTodo_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            sentryToDo = new SentryToDo(
+                Guid.Parse(dgvSentryTodo.CurrentRow.Cells["SentryToDoId"].Value.ToString()),
+                dgvSentryTodo.CurrentRow.Cells["ToDo"].Value.ToString(),
+                DateTime.Parse(dgvSentryTodo.CurrentRow.Cells["CreatedTime"].Value.ToString()),
+                dgvSentryTodo.CurrentRow.Cells["CreatedEmployee"].ToString());
+            rtbxSentryToDo.Text=sentryToDo.ToDo.ToString();
         }
     }
 }
