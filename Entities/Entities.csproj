@@ -57,6 +57,7 @@
     <Compile Include="Maintenance.cs" />
     <Compile Include="MaintenanceMail.cs" />
     <Compile Include="MaintenanceMonth.cs" />
+    <Compile Include="PasswordNotes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="RequestDetail.cs" />

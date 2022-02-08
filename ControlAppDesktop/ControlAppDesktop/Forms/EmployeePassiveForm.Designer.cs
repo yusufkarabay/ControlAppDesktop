@@ -199,12 +199,15 @@
             // 
             // btnSearchEmployee
             // 
+            this.btnSearchEmployee.BackgroundImage = global::ControlAppDesktop.Properties.Resources.loupe;
+            this.btnSearchEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearchEmployee.FlatAppearance.BorderSize = 0;
+            this.btnSearchEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchEmployee.Location = new System.Drawing.Point(1059, 69);
             this.btnSearchEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchEmployee.Name = "btnSearchEmployee";
-            this.btnSearchEmployee.Size = new System.Drawing.Size(100, 30);
+            this.btnSearchEmployee.Size = new System.Drawing.Size(32, 32);
             this.btnSearchEmployee.TabIndex = 1;
-            this.btnSearchEmployee.Text = "Ara";
             this.btnSearchEmployee.UseVisualStyleBackColor = true;
             this.btnSearchEmployee.Click += new System.EventHandler(this.btnSearchEmployee_Click);
             // 

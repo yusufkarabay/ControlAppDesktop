@@ -104,6 +104,7 @@
     <Compile Include="Concrete\MaintenanceDal.cs" />
     <Compile Include="Concrete\MaintenanceMailDal.cs" />
     <Compile Include="Concrete\MaintenanceMonthDal.cs" />
+    <Compile Include="Concrete\PasswordNotesDal.cs" />
     <Compile Include="Concrete\RequestDal.cs" />
     <Compile Include="Concrete\RequestDetailDal.cs" />
     <Compile Include="Concrete\SentryDoneDal.cs" />
