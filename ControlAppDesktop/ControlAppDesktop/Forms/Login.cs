@@ -68,23 +68,17 @@ namespace ControlAppDesktop
 
             if (infos == null)
             {
-                MessageBox.Show("Hatalı TC Kimlik Numarası veya Şifre Girdiniz", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Girilen Bilgileri Yanlış ya da Kullanıcı Aktif Değil", "Giriş Başarısız", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }            
             else
             {
                 UserRealName.RealName = infos[1] + " " + infos[2].ToString();
-
                 HomePage homePage = new HomePage();
                 homePage.infos = infos;
                 homePage.Show();
-
                 this.Hide();
-
             }
-
-
-
 
             MessageBox.Show("Sayın " + infos[1] + " " + infos[2] + " Hoşgeldiniz");
 
