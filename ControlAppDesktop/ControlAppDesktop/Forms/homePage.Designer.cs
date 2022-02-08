@@ -362,6 +362,7 @@
             this.btnAdminForm.TabIndex = 14;
             this.btnAdminForm.Text = " Yönetici Ekranı";
             this.btnAdminForm.UseVisualStyleBackColor = false;
+            this.btnAdminForm.Visible = false;
             this.btnAdminForm.Click += new System.EventHandler(this.btnAdminForm_Click);
             // 
             // btnMinimize

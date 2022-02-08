@@ -47,6 +47,10 @@ namespace ControlAppDesktop.Forms
             pnlActive.Visible = false;
             lblTime.Text = DateTime.Now.ToString("f");
             btnUserName.Text = infos[1] + " " + infos[2].ToString();
+            if (infos[4].ToString()=="Administrator")
+            {
+                btnAdminForm.Visible=true;
+            }
         }
         public void FormGet(Form form)
         {

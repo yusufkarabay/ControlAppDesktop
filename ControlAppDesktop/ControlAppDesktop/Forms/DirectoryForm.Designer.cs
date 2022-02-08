@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDirectoryAdd = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
@@ -48,10 +49,15 @@
             this.gbAdd = new System.Windows.Forms.GroupBox();
             this.btnAllList = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.gbDirectory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDirectory)).BeginInit();
             this.gbSearch.SuspendLayout();
             this.gbAdd.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDirectoryAdd
@@ -137,6 +143,7 @@
             this.dgvDirectory.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvDirectory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDirectory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDirectory.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvDirectory.Cursor = System.Windows.Forms.Cursors.PanWest;
             this.dgvDirectory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDirectory.Location = new System.Drawing.Point(3, 18);
@@ -174,10 +181,10 @@
             this.rbtInfo.AutoSize = true;
             this.rbtInfo.Location = new System.Drawing.Point(34, 67);
             this.rbtInfo.Name = "rbtInfo";
-            this.rbtInfo.Size = new System.Drawing.Size(119, 20);
+            this.rbtInfo.Size = new System.Drawing.Size(127, 20);
             this.rbtInfo.TabIndex = 2;
             this.rbtInfo.TabStop = true;
-            this.rbtInfo.Text = "Detay\' Göre Ara";
+            this.rbtInfo.Text = "Detay\'a Göre Ara";
             this.rbtInfo.UseVisualStyleBackColor = true;
             this.rbtInfo.CheckedChanged += new System.EventHandler(this.rbtInfo_CheckedChanged);
             // 
@@ -230,6 +237,7 @@
             // 
             // gbAdd
             // 
+            this.gbAdd.Controls.Add(this.btnUpdate);
             this.gbAdd.Controls.Add(this.txtPhone);
             this.gbAdd.Controls.Add(this.lblName);
             this.gbAdd.Controls.Add(this.lblPhone);
@@ -261,6 +269,43 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.updateToolStripMenuItem.Text = "Güncelle";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.deleteToolStripMenuItem.Text = "Sil";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BackgroundImage = global::ControlAppDesktop.Properties.Resources.upload;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(260, 123);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(32, 32);
+            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // DirectoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -284,6 +329,7 @@
             this.gbSearch.PerformLayout();
             this.gbAdd.ResumeLayout(false);
             this.gbAdd.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,5 +356,9 @@
         private System.Windows.Forms.GroupBox gbAdd;
         private System.Windows.Forms.Button btnAllList;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

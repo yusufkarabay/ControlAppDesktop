@@ -43,7 +43,25 @@ namespace DataAccess.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("DirectoryDelete", new SqlParameter("@directoryid", id));
+                if (isSuccess)
+                {
+                    result = "Kayıt Başarı İle Silindi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
         }
 
         public Directory Get(Guid id)
@@ -181,7 +199,28 @@ namespace DataAccess.Concrete
 
         public string UpdateNew(Directory entity)
         {
-            throw new NotImplementedException();
+            string result = null;
+            try
+            {
+                var (isSuccess, msg) = sqlService.StoreReaderV2("DirectoryUpdate", new SqlParameter("@directoryid", entity.DirectoryId),
+                    new SqlParameter("@directoryuser", entity.DirectoryUserName), new SqlParameter("@userphone", entity.DirectoryPhone),
+                    new SqlParameter("@info", entity.Info));
+                if (isSuccess)
+                {
+                    result = "Kayıt  Başarı İle Güncellendi";
+                }
+                else
+                {
+                    result = msg;
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+            return result;
         }
         public static DirectoryDal GetInstance()
         {

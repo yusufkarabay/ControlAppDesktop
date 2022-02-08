@@ -35,7 +35,18 @@ namespace Business.Concrete
 
         public string Delete(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (id == Guid.Empty)
+                {
+                    return "Silmek İçin Lütfen Geçerli Bir Kayıt Seçiniz.";
+                }
+                return directoryDal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
         public Directory Get(Guid id)
@@ -114,7 +125,21 @@ namespace Business.Concrete
 
         public string UpdateNew(Directory entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (entity.DirectoryUserName == null)
+                {
+                    return " Güncellemek İstediğiniz Envanteri Seçiniz";
+
+                }
+                
+                return directoryDal.UpdateNew(entity);
+            }
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
         }
         public static DirectoryManager GetInstance()
         {
