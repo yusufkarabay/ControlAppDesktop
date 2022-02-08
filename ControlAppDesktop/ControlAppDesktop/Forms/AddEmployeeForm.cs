@@ -56,7 +56,7 @@ namespace ControlAppDesktop.Forms
                 true,
                 chebUser.Checked
                );
-               
+           
 
 
             employeeManager.EmployeeInCreate(employee);
@@ -99,7 +99,11 @@ namespace ControlAppDesktop.Forms
             {
                 MessageBox.Show("Parola Uyuşmamaktadır"); return;
             }
-                 
+            if (infos[4].ToString()!="Administrator" & cmbAuthority.Text=="Administrator")
+            {
+                MessageBox.Show("Yalnızca Yöneticiler Administrator Yetkisi Tanımlayabilir");
+                return;
+            }
 
             else
             {
