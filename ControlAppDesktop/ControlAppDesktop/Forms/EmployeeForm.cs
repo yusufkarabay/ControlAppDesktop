@@ -35,10 +35,7 @@ namespace ControlAppDesktop.Forms
         {
             employeeList();
             cbDepartment.Visible = false;
-            if (infos[4].ToString() == "Bilgi İşlem Yetkisi".ToString())
-            {
-                label2.Text = "Teestttt Başarılııı";
-            }
+            
             
 
         }
@@ -128,8 +125,9 @@ namespace ControlAppDesktop.Forms
         //}
         void UpdateToEmployeeForm()
         {
+           
             EmployeeUpdateForm updateEmployeeFrom = new EmployeeUpdateForm(employee.Id);
-
+            updateEmployeeFrom.infos = infos;
             updateEmployeeFrom.Show();
 
 

@@ -31,7 +31,6 @@
             this.btnAuthorityForm = new System.Windows.Forms.Button();
             this.btnDepartmentForm = new System.Windows.Forms.Button();
             this.btnEmployeeChecked = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAuthorityForm
@@ -64,22 +63,12 @@
             this.btnEmployeeChecked.UseVisualStyleBackColor = true;
             this.btnEmployeeChecked.Click += new System.EventHandler(this.btnEmployeeChecked_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(760, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(205, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Personel Yetki Düzenleme İşlemleri";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // AdminForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1480, 913);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.btnEmployeeChecked);
             this.Controls.Add(this.btnDepartmentForm);
             this.Controls.Add(this.btnAuthorityForm);
@@ -97,6 +86,5 @@
         private System.Windows.Forms.Button btnAuthorityForm;
         private System.Windows.Forms.Button btnDepartmentForm;
         private System.Windows.Forms.Button btnEmployeeChecked;
-        private System.Windows.Forms.Button button4;
     }
 }

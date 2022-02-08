@@ -50,6 +50,11 @@ namespace ControlAppDesktop.Forms
                 FillCbAuthority();
 
             }
+            if (infos[4].ToString()!="Administrator")
+            {
+                cbAuthority.Enabled=false;
+                cbDepartment.Enabled=false;
+            }
         }
 
         bool GetEmployeeById()
@@ -121,6 +126,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Yetki seçiniz");
                 return;
             }
+            
             else
             {
                 UpdadeteEmployee();

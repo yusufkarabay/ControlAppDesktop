@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpEmployee = new System.Windows.Forms.GroupBox();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -40,7 +39,6 @@
             this.btnEmployeeAdd = new System.Windows.Forms.Button();
             this.txtbxSearchEmloyee = new System.Windows.Forms.TextBox();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnPassiveEmploye = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnSearchEmployee = new System.Windows.Forms.Button();
@@ -101,14 +99,6 @@
             this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployee.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvEmployee.Cursor = System.Windows.Forms.Cursors.PanWest;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmployee.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployee.Location = new System.Drawing.Point(3, 19);
             this.dgvEmployee.MultiSelect = false;
@@ -180,15 +170,6 @@
             this.cbDepartment.Size = new System.Drawing.Size(200, 25);
             this.cbDepartment.TabIndex = 10;
             this.cbDepartment.Text = "Departman Seçiniz...";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 644);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "yönetici testii";
             // 
             // btnPassiveEmploye
             // 
@@ -491,7 +472,6 @@
             this.Controls.Add(this.lblSearchOptions);
             this.Controls.Add(this.lblEmployeeInfo);
             this.Controls.Add(this.btnPassiveEmploye);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbDepartment);
             this.Controls.Add(this.gbEmployeeSearch);
@@ -529,7 +509,6 @@
         private System.Windows.Forms.TextBox txtbxSearchEmloyee;
         private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPassiveEmploye;
         private System.Windows.Forms.ToolStripMenuItem passiveToolStripMenuItem;
         private System.Windows.Forms.GroupBox gbEmployeeSearch;
