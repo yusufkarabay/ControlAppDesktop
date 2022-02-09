@@ -94,6 +94,7 @@
             this.btnWorkSteps.TabIndex = 13;
             this.btnWorkSteps.Text = "      İş Adımları";
             this.btnWorkSteps.UseVisualStyleBackColor = true;
+            this.btnWorkSteps.Visible = false;
             this.btnWorkSteps.Click += new System.EventHandler(this.btnWorkSteps_Click);
             // 
             // btnPasswordNote
