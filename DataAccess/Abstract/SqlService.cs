@@ -14,7 +14,12 @@ namespace DataAccess.Abstract
         /* veritabanı adresini connectionString tutacak readonly olması sadece okunabilir ve müdahala edilemez. aynı bilgisayarda sunucuda çalışıyorsak(local sql) server=. şeklinde yazılabilir
         uzak sql ise ip adresi yazılabilir. Integrated security=true dersek şifre vermeye gerek kalmaz. False ise userid ve password belirtmek gerekecektir
          */
+
+#if DEBUG
         readonly string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+#else
+        readonly string connectionString = ConfigurationManager.ConnectionStrings["prodConnString"].ConnectionString;
+#endif
 
         SqlConnection connection;// sql bağlantı nesnesidir
 

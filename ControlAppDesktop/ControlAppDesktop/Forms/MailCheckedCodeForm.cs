@@ -63,7 +63,10 @@ namespace ControlAppDesktop.Forms
             }
             CreateCode();
             EmployeeCheckCodeUpdate();
-            MailSend();
+           // MailSend();
+           PasswordForgotForm passwordForgotForm = new PasswordForgotForm();
+            passwordForgotForm.Show();
+            this.Hide();
            
 
         }
