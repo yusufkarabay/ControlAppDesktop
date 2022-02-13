@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.btnAuthorityForm = new System.Windows.Forms.Button();
             this.btnDepartmentForm = new System.Windows.Forms.Button();
             this.btnEmployeeChecked = new System.Windows.Forms.Button();
@@ -74,8 +75,9 @@
             this.Controls.Add(this.btnAuthorityForm);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
-            this.Text = "TestForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.ResumeLayout(false);
 

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepartmentForm));
             this.btnDepartmentList = new System.Windows.Forms.Button();
             this.btnDepartmentUpdate = new System.Windows.Forms.Button();
             this.lblDepartmentNameEdit = new System.Windows.Forms.Label();
@@ -212,9 +213,10 @@
             this.Controls.Add(this.gbDepartmentList);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DepartmentForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.DepartmentForm_Load);
             this.gbDepartmentInfo.ResumeLayout(false);
             this.gbDepartmentInfo.PerformLayout();

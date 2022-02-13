@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestCardDeliveryForm));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gbxGuestCardDelivery = new System.Windows.Forms.GroupBox();
             this.btnGuestCardDelivery = new System.Windows.Forms.Button();
@@ -136,10 +137,11 @@
             this.Controls.Add(this.gbxGuestCardDelivery);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GuestCardDeliveryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GuestCardDeliveryForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.GuestCardDeliveryForm_Load);
             this.gbxGuestCardDelivery.ResumeLayout(false);
             this.gbxGuestCardDelivery.PerformLayout();

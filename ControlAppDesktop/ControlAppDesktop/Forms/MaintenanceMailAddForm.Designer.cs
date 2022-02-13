@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceMailAddForm));
             this.btnClose = new System.Windows.Forms.Button();
             this.lblMail = new System.Windows.Forms.Label();
             this.lblMailEmployee = new System.Windows.Forms.Label();
@@ -217,10 +218,11 @@
             this.Controls.Add(this.btnClose);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MaintenanceMailAddForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MaintenanceMailAdd";
+            this.Text = "Control App";
             this.gbMail.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMail)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawerForm));
             this.teslimAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvDrawer = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -283,8 +284,9 @@
             this.Controls.Add(this.btnDrawerList);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DrawerForm";
-            this.Text = "DrawerForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.DrawerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrawer)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

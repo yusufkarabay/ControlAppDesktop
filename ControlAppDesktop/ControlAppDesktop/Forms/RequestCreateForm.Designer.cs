@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestCreateForm));
             this.lblRequestTitle = new System.Windows.Forms.Label();
             this.lblRequestContent = new System.Windows.Forms.Label();
             this.lblRequestDepartment = new System.Windows.Forms.Label();
@@ -232,10 +233,11 @@
             this.Controls.Add(this.lblRequestTitle);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RequestCreateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RequestCreateForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.RequestCreateForm_Load);
             this.grpNotRequest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotRequest)).EndInit();

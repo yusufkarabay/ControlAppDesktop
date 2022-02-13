@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaintenanceForm));
             this.lblContractName = new System.Windows.Forms.Label();
             this.lblContractStartTime = new System.Windows.Forms.Label();
             this.lblContractCompany = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.lblContractCompanyTel = new System.Windows.Forms.Label();
             this.lblContractNotes = new System.Windows.Forms.Label();
             this.gbContract = new System.Windows.Forms.GroupBox();
+            this.dgvContract = new System.Windows.Forms.DataGridView();
             this.contextMenuStripContract = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,15 +71,14 @@
             this.lblContractSelect = new System.Windows.Forms.Label();
             this.lblFirstMaintenance = new System.Windows.Forms.Label();
             this.MaintenanceMail = new System.Windows.Forms.Button();
-            this.dgvContract = new System.Windows.Forms.DataGridView();
             this.gbContract.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.contextMenuStripContract.SuspendLayout();
             this.gbMaintanance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.gbContractInfo.SuspendLayout();
             this.gbMaintananceInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
             this.SuspendLayout();
             // 
             // lblContractName
@@ -144,6 +145,30 @@
             this.gbContract.TabStop = false;
             this.gbContract.Text = "Sözleşme Listesi";
             this.gbContract.Visible = false;
+            // 
+            // dgvContract
+            // 
+            this.dgvContract.AllowUserToAddRows = false;
+            this.dgvContract.AllowUserToDeleteRows = false;
+            this.dgvContract.AllowUserToResizeColumns = false;
+            this.dgvContract.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvContract.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvContract.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContract.ContextMenuStrip = this.contextMenuStripContract;
+            this.dgvContract.Cursor = System.Windows.Forms.Cursors.PanWest;
+            this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvContract.Location = new System.Drawing.Point(3, 17);
+            this.dgvContract.MultiSelect = false;
+            this.dgvContract.Name = "dgvContract";
+            this.dgvContract.ReadOnly = true;
+            this.dgvContract.RowHeadersVisible = false;
+            this.dgvContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvContract.Size = new System.Drawing.Size(908, 249);
+            this.dgvContract.TabIndex = 2;
             // 
             // contextMenuStripContract
             // 
@@ -480,30 +505,6 @@
             this.MaintenanceMail.UseVisualStyleBackColor = false;
             this.MaintenanceMail.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgvContract
-            // 
-            this.dgvContract.AllowUserToAddRows = false;
-            this.dgvContract.AllowUserToDeleteRows = false;
-            this.dgvContract.AllowUserToResizeColumns = false;
-            this.dgvContract.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            this.dgvContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvContract.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvContract.BackgroundColor = System.Drawing.Color.LightGray;
-            this.dgvContract.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContract.ContextMenuStrip = this.contextMenuStripContract;
-            this.dgvContract.Cursor = System.Windows.Forms.Cursors.PanWest;
-            this.dgvContract.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvContract.Location = new System.Drawing.Point(3, 17);
-            this.dgvContract.MultiSelect = false;
-            this.dgvContract.Name = "dgvContract";
-            this.dgvContract.ReadOnly = true;
-            this.dgvContract.RowHeadersVisible = false;
-            this.dgvContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContract.Size = new System.Drawing.Size(908, 249);
-            this.dgvContract.TabIndex = 2;
-            // 
             // MaintenanceForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -516,10 +517,12 @@
             this.Controls.Add(this.gbContract);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaintenanceForm";
-            this.Text = "MaintenanceForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.MaintenanceForm_Load);
             this.gbContract.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
             this.contextMenuStripContract.ResumeLayout(false);
             this.gbMaintanance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaintenance)).EndInit();
@@ -528,7 +531,6 @@
             this.gbContractInfo.PerformLayout();
             this.gbMaintananceInfo.ResumeLayout(false);
             this.gbMaintananceInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
             this.ResumeLayout(false);
 
         }

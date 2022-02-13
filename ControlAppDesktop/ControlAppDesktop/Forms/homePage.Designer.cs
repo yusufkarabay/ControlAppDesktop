@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.pnlLeftMenu = new System.Windows.Forms.Panel();
             this.btnWorkSteps = new System.Windows.Forms.Button();
             this.btnPasswordNote = new System.Windows.Forms.Button();
@@ -422,11 +423,12 @@
             this.Controls.Add(this.pnlLeftMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "homePage";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.homePage_Load);
             this.pnlLeftMenu.ResumeLayout(false);
             this.pnlTopMenu.ResumeLayout(false);

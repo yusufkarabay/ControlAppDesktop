@@ -46,7 +46,7 @@ namespace DataAccess.Concrete
                 }
                 else
                 {
-                    return entity.Tc + "Kimlik Numaralı Personel Bulunmaktadır";
+                    return entity.Tc + " Kimlik Numaralı Personel Bulunmaktadır";
                 }
 
             }

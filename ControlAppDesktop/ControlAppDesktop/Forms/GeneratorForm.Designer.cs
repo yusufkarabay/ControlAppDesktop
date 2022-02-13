@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneratorForm));
             this.dtpFirst = new System.Windows.Forms.DateTimePicker();
             this.dtpSecond = new System.Windows.Forms.DateTimePicker();
             this.txtWorkedTime = new System.Windows.Forms.TextBox();
@@ -336,8 +337,9 @@
             this.Controls.Add(this.dtpFirst);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GeneratorForm";
-            this.Text = "GeneratorForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.GeneratorForm_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestCardForm));
             this.btnGuestCardDelivery = new System.Windows.Forms.Button();
             this.gbSearchInfo = new System.Windows.Forms.GroupBox();
             this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
@@ -283,8 +284,9 @@
             this.Controls.Add(this.grpInfo);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GuestCardForm";
-            this.Text = "GuestCardForm";
+            this.Text = "Control App";
             this.gbSearchInfo.ResumeLayout(false);
             this.gbSearchInfo.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

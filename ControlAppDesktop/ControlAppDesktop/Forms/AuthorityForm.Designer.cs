@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorityForm));
             this.gbAuthorityList = new System.Windows.Forms.GroupBox();
             this.dgvAuthority = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -67,8 +68,8 @@
             this.dgvAuthority.AllowUserToDeleteRows = false;
             this.dgvAuthority.AllowUserToResizeColumns = false;
             this.dgvAuthority.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvAuthority.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvAuthority.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAuthority.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAuthority.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvAuthority.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -229,10 +230,11 @@
             this.Controls.Add(this.gbAuthorityInfo);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AuthorityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AuthorityForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.AuthorityForm_Load);
             this.gbAuthorityList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAuthority)).EndInit();

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepartmentRequestForm));
             this.btnClose = new System.Windows.Forms.Button();
             this.grpDepartmentRequest = new System.Windows.Forms.GroupBox();
             this.dgvMyDepartmentRequest = new System.Windows.Forms.DataGridView();
@@ -115,10 +116,11 @@
             this.Controls.Add(this.btnClose);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DepartmentRequestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DepartmentRequestForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.DepartmentRequestForm_Load);
             this.grpDepartmentRequest.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMyDepartmentRequest)).EndInit();

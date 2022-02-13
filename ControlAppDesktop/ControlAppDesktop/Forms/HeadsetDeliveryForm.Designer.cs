@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeadsetDeliveryForm));
             this.gbxHeadsetDelivery = new System.Windows.Forms.GroupBox();
             this.btnHeadsetDelivery = new System.Windows.Forms.Button();
             this.txtHeadsetInfo = new System.Windows.Forms.TextBox();
@@ -170,10 +171,11 @@
             this.Controls.Add(this.gbxHeadsetDelivery);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "HeadsetDeliveryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HeadsetDeliveryForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.HeadsetDeliveryForm_Load);
             this.gbxHeadsetDelivery.ResumeLayout(false);
             this.gbxHeadsetDelivery.PerformLayout();

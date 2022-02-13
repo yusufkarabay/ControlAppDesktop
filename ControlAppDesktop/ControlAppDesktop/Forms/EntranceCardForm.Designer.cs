@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceCardForm));
             this.gbSearchInfo = new System.Windows.Forms.GroupBox();
             this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
             this.rbEntranceCardSeriNo = new System.Windows.Forms.RadioButton();
@@ -235,8 +236,8 @@
             this.dgvEntranceCard.AllowUserToDeleteRows = false;
             this.dgvEntranceCard.AllowUserToResizeColumns = false;
             this.dgvEntranceCard.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
-            this.dgvEntranceCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgvEntranceCard.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEntranceCard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntranceCard.BackgroundColor = System.Drawing.Color.LightGray;
             this.dgvEntranceCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -281,8 +282,9 @@
             this.Controls.Add(this.gbHeadset);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EntranceCardForm";
-            this.Text = "EntranceCardForm";
+            this.Text = "Control App";
             this.gbSearchInfo.ResumeLayout(false);
             this.gbSearchInfo.PerformLayout();
             this.grpInfo.ResumeLayout(false);

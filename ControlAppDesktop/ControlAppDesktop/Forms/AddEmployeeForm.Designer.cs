@@ -337,9 +337,10 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddEmployeeForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.AddEmployeeForm_Load);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();

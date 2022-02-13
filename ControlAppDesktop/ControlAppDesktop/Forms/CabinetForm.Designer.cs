@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CabinetForm));
             this.btnCabinetList = new System.Windows.Forms.Button();
             this.rbReciverEmployee = new System.Windows.Forms.RadioButton();
             this.rbCabinetNo = new System.Windows.Forms.RadioButton();
@@ -284,10 +285,11 @@
             this.Controls.Add(this.gbSearchInfo);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CabinetForm";
-            this.Text = "CabinetForm";
+            this.Text = "Control App";
             this.gbCabinet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCabinet)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

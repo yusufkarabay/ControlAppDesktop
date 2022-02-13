@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawerDeliveryForm));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gbxDrawerDelivery = new System.Windows.Forms.GroupBox();
             this.btnDrawerDelivery = new System.Windows.Forms.Button();
@@ -136,10 +137,11 @@
             this.Controls.Add(this.gbxDrawerDelivery);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DrawerDeliveryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DrawerDeliveryForm";
+            this.Text = "Control App";
             this.Load += new System.EventHandler(this.DrawerDeliveryForm_Load);
             this.gbxDrawerDelivery.ResumeLayout(false);
             this.gbxDrawerDelivery.PerformLayout();

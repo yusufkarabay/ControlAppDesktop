@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordForgotForm));
             this.txtCheckCode = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtRePassword = new System.Windows.Forms.TextBox();
@@ -144,7 +145,7 @@
             // 
             this.mtxbTC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mtxbTC.Location = new System.Drawing.Point(169, 170);
-            this.mtxbTC.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.mtxbTC.Margin = new System.Windows.Forms.Padding(5);
             this.mtxbTC.Mask = "00000000000";
             this.mtxbTC.Name = "mtxbTC";
             this.mtxbTC.Size = new System.Drawing.Size(320, 23);
@@ -160,7 +161,7 @@
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReturn.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.btnReturn.Location = new System.Drawing.Point(15, 15);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(5);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(32, 32);
             this.btnReturn.TabIndex = 6;
@@ -187,10 +188,11 @@
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PasswordForgotForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PasswordForgotForm";
+            this.Text = "Control App";
             this.ResumeLayout(false);
             this.PerformLayout();
 
