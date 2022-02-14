@@ -35,9 +35,14 @@ namespace ControlAppDesktop.Forms
         void AllReceiverHeadset()
         {
             dgvHeadset.DataSource = headsetManager.GetAll();
-            dgvHeadset.Columns[0].Visible = false;
-            dgvHeadset.Columns[2].Visible = false;
-            dgvHeadset.Columns[3].Visible = false;
+            if (dgvHeadset.Rows.Count>1)
+            {
+                
+                dgvHeadset.Columns[0].Visible = false;
+                dgvHeadset.Columns[2].Visible = false;
+                dgvHeadset.Columns[3].Visible = false;
+            }
+          
         }
         void headsetReturnDelivery()
         {

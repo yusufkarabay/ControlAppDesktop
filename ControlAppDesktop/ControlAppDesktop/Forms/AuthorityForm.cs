@@ -33,6 +33,7 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             dgvAuthority.Columns[1].Visible = false;
+            dgvAuthority.Columns["AuthorityName"].HeaderText="Yetki Adı";
 
         }
         void fillInfos()

@@ -131,6 +131,7 @@ namespace ControlAppDesktop.Forms
 
             cmbAuthority.ValueMember = "AuthorityId";
             cmbAuthority.DisplayMember = "AuthorityName";
+            cmbAuthority.SelectedIndex =2;
             
 
         }

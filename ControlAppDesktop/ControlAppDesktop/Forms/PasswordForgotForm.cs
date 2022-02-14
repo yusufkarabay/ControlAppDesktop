@@ -75,6 +75,9 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             PasswordUpdate();
+            Login login = new Login();  
+            login.Show();
+            this.Hide();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)

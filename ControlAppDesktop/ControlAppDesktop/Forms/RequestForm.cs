@@ -150,7 +150,11 @@ namespace ControlAppDesktop.Forms
             }
             grpRequest.Text = "Taleplerim";
             MyRequest();
-            dgvRequest.Columns["RequestingName"].HeaderText = "Talep Edilen";
+            if (dgvRequest.Columns.Count>1)
+            {
+                dgvRequest.Columns["RequestingName"].HeaderText = "Talep Edilen";
+            }
+            
         }
         private void txtRequestTitle_KeyPress(object sender, KeyPressEventArgs e)
         {

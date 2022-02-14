@@ -251,6 +251,10 @@ namespace ControlAppDesktop.Forms
             dgvSentry.Columns[0].Visible = false;
             dgvSentry.Columns[3].Visible = false;
             dgvSentry.Columns[5].Visible = false;
+            dgvSentry.Columns["Done"].HeaderText ="Yapılan İşlemler";
+            dgvSentry.Columns["EmployeeName"].HeaderText ="Personel Adı";
+            dgvSentry.Columns["CreatedTime"].HeaderText ="Eklenme Zamanı";
+
 
         }
         //*********************************
@@ -333,6 +337,9 @@ namespace ControlAppDesktop.Forms
             dgvSentryTodo.Columns[0].Visible = false;
             dgvSentryTodo.Columns[3].Visible = false;
             dgvSentryTodo.Columns[5].Visible = false;
+            dgvSentryTodo.Columns["ToDo"].HeaderText ="Yapılacak İşlemler";
+            dgvSentryTodo.Columns["EmployeeName"].HeaderText ="Personel Adı";
+            dgvSentryTodo.Columns["CreatedTime"].HeaderText ="Eklenme Zamanı";
 
         }
         void thisDateToDo()

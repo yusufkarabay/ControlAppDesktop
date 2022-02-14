@@ -33,7 +33,7 @@ namespace ControlAppDesktop.Forms
                 return;
             }
             dgvDepartment.Columns[0].Visible = false;
-
+            dgvDepartment.Columns["DepartmentName"].HeaderText="Departman Adı";
         }
 
         private void btnDepartmentList_Click(object sender, EventArgs e)
