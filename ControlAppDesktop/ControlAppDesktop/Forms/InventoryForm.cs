@@ -91,7 +91,11 @@ namespace ControlAppDesktop.Forms
         void deleteInventory()
         {
 
-
+            if (dgvInventory.CurrentRow == null)
+            {
+                MessageBox.Show("Sİlmek İçin Bir Kayıt Seçiniz");
+                return;
+            }
             inventory = new Inventory(
             Guid.Parse(dgvInventory.CurrentRow.Cells["InventoryId"].Value.ToString()),
             dgvInventory.CurrentRow.Cells["InventorySeriNo"].Value.ToString(),

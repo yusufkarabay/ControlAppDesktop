@@ -201,6 +201,7 @@
             this.mtxbTC.Size = new System.Drawing.Size(311, 22);
             this.mtxbTC.TabIndex = 0;
             this.mtxbTC.ValidatingType = typeof(int);
+            this.mtxbTC.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxbTC_MaskInputRejected);
             this.mtxbTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxbTC_KeyPress);
             // 
             // txtPassword

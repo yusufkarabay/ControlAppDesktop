@@ -42,11 +42,25 @@ namespace ControlAppDesktop.Forms
             cbDepartment.SelectedIndex = -1;
 
         }
+        void GridDisplay()
+        {
+            if (dgvNotRequest.Rows.Count>0)
+            {
+
+                dgvNotRequest.Columns[0].Visible = false;
+                dgvNotRequest.Columns[4].Visible = false;
+                dgvNotRequest.Columns[5].Visible = false;
+
+                dgvNotRequest.Columns["RequestTitle"].HeaderText="Talep Başlığı";
+                dgvNotRequest.Columns["RequestContent"].HeaderText="Talep İçeriği";
+                dgvNotRequest.Columns["RequestTime"].HeaderText="Talep Zamanı";
+            }
+        }
         void notRequest()
         {
-            dgvNotRequest.DataSource = requestManager.GetAll();
-            dgvNotRequest.Columns[0].Visible = false;
-            dgvNotRequest.Columns[4].Visible = false;
+            dgvNotRequest.DataSource = requestManager.RequestSendedList("RequestSendedList", infos[0].ToString());
+
+            GridDisplay();
 
         }
         void requestToDepartment()
@@ -73,13 +87,12 @@ namespace ControlAppDesktop.Forms
         }
         void requestSendUpdate()
         {
-            dgvNotRequest.DataSource = requestManager.RequestSendedList();
+            dgvNotRequest.DataSource = requestManager.RequestSendedList("RequestSendedList",infos[0].ToString());
             if (dgvNotRequest.Rows.Count <= 0)
             {
                 return;
             }
-            dgvNotRequest.Columns[0].Visible = false;
-            dgvNotRequest.Columns[4].Visible = false;
+            GridDisplay();
         }
         void requestAdd()
         {
@@ -98,7 +111,7 @@ namespace ControlAppDesktop.Forms
                 request = new Request(
                txtRequestTitle.Text.ToString(),
                rtxtRequestContext.Text.ToString(),
-               DateTime.Parse(DateTime.Now.ToString()));
+               DateTime.Parse(DateTime.Now.ToString()),infos[0].ToString());
 
                 requestManager.Add(request);
                 MessageBox.Show("Talep Başarı İle Kaydedildi", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,6 +146,10 @@ namespace ControlAppDesktop.Forms
 
         private void RequestCreateForm_Load(object sender, EventArgs e)
         {
+            //if (dgvNotRequest.Rows.Count<0)
+            //{
+            //    contextMenuStrip1.Enabled=false;
+            //}
             cbFill();
 
             requestSendUpdate();

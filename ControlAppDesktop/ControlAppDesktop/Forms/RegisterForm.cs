@@ -112,7 +112,9 @@ namespace ControlAppDesktop.Forms
             {
                 addEmployee();
             }
-            //this.Close();
+            Login frmLogin = new Login();
+            frmLogin.Show();
+            this.Close();
         }
 
         private void mtxbTC_KeyPress(object sender, KeyPressEventArgs e)
@@ -135,6 +137,11 @@ namespace ControlAppDesktop.Forms
             Login frmLogin = new Login();
             frmLogin.Show();
             this.Close();
+        }
+
+        private void mtxbTC_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

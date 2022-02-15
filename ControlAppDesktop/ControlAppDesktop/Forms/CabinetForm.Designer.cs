@@ -233,11 +233,10 @@
             // 
             // btnCabinetDelivery
             // 
-            this.btnCabinetDelivery.FlatAppearance.BorderSize = 0;
             this.btnCabinetDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCabinetDelivery.Location = new System.Drawing.Point(902, 29);
             this.btnCabinetDelivery.Name = "btnCabinetDelivery";
-            this.btnCabinetDelivery.Size = new System.Drawing.Size(144, 23);
+            this.btnCabinetDelivery.Size = new System.Drawing.Size(144, 30);
             this.btnCabinetDelivery.TabIndex = 2;
             this.btnCabinetDelivery.Text = "Dolap Teslim Et";
             this.btnCabinetDelivery.UseVisualStyleBackColor = true;

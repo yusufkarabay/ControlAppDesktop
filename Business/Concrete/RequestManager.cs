@@ -108,11 +108,11 @@ namespace Business.Concrete
                 return ex.Message;
             }
         }
-        public List<Request> RequestSendedList()
+        public List<Request> RequestSendedList(string procedureName, string createdEmployee)
         {
             try
             {
-                return requestDal.RequestSendedList();
+                return requestDal.RequestSendedList(procedureName,createdEmployee);
             }
             catch
             {

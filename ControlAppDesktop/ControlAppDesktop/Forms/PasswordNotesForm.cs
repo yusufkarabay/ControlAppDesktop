@@ -26,7 +26,7 @@ namespace ControlAppDesktop.Forms
         }
         void GridDisplay()
         {
-            if (dgvPassword.Rows.Count>1)
+            if (dgvPassword.Rows.Count>0)
             {
                 dgvPassword.Columns["PASSWORDID"].Visible=false;
                 dgvPassword.Columns["PASSWORD"].HeaderText="Şifre";

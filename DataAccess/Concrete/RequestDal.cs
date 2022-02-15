@@ -27,7 +27,7 @@ namespace DataAccess.Concrete
             {
                 var (isSuccess, msg) = sqlService.StoreReaderV2("RequestCreate", new SqlParameter("@requesttitle", entity.RequestTitle),
                     new SqlParameter("@requestcontent", entity.RequestContent),
-                    new SqlParameter("@requesttime", entity.RequestTime));
+                    new SqlParameter("@requesttime", entity.RequestTime),new SqlParameter("@createdemployee",entity.CreatedEmployee));
                 if (isSuccess)
                 {
                     return entity.RequestTitle + " Talep Başarıyla Oluşturuldu";
@@ -209,13 +209,13 @@ namespace DataAccess.Concrete
             }
             return result;
         }
-        public List<Request>  RequestSendedList()
-        {
+        public List<Request>  RequestSendedList(string procuderName, string createdEmployee)
+        {//"RequestSendedList"
             List<Request> list = null;
 
             try
             {
-                var (dt, msg) = sqlService.StoredV2("RequestSendedList");
+                var (dt, msg) = sqlService.StoredV2(procuderName, new SqlParameter("@createdemployee", createdEmployee));
                 if (msg != null)
                 {
                     return null;
@@ -231,7 +231,8 @@ namespace DataAccess.Concrete
                             Guid.Parse(dataRow["REQUESTID"].ToString()),
                             dataRow["REQUESTTITLE"].ToString(),
                             dataRow["REQUESTCONTENT"].ToString(),
-                            DateTime.Parse(dataRow["REQUESTTIME"].ToString())));
+                            DateTime.Parse(dataRow["REQUESTTIME"].ToString()),
+                            dataRow["CREATEDEMPLOYEE"].ToString()));
                     }
                 }
 

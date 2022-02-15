@@ -243,7 +243,7 @@ namespace DataAccess.Concrete
                         dataRow["REQUESTTITLE"].ToString(),
                         dataRow["REQUESTCONTENT"].ToString(),
                         DateTime.Parse(dataRow["REQUESTTIME"].ToString()),
-                       (Guid)dataRow["DEPARTMENTID"]);
+                       (Guid)dataRow["DEPARTMENTID"],dataRow["REQUESTENDTEXT"].ToString());
 
                         list.Add(requestDetail);
                     }

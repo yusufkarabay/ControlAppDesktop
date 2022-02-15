@@ -161,7 +161,7 @@ namespace Entities
             this.departmentId = departmentId;
 
         }
-
+       
         public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
            DateTime requestTime, Guid departmentId)
         {
@@ -172,6 +172,19 @@ namespace Entities
             this.requestTitle = requestTitle;
             this.departmentId = departmentId;
             this.requestTime = requestTime;
+
+        }
+        public RequestDetail(Guid requestDetailId, Guid requestId, string requestingName, string requestTitle, string requestContent,
+          DateTime requestTime, Guid departmentId,string requestEndText)
+        {
+            this.requestDetailId = requestDetailId;
+            this.requestId = requestId;
+            this.requestingName = requestingName;
+            this.requestContent = requestContent;
+            this.requestTitle = requestTitle;
+            this.departmentId = departmentId;
+            this.requestTime = requestTime;
+           this.requestEndText=requestEndText;
         }
 
         public RequestDetail(string requestContent, string requestTitle, string requesting)

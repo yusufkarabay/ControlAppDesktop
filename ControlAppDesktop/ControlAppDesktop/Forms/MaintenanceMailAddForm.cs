@@ -23,6 +23,14 @@ namespace ControlAppDesktop.Forms
             InitializeComponent();
             maintenanceMailManager = MaintenanceMailManager.GetInstance();
         }
+        void GridDisplay()
+        {
+            dgvMail.Columns[0].Visible = false;
+           dgvMail.Columns[1].HeaderText ="Mail" ;
+           dgvMail.Columns[2].HeaderText ="Mail Sahibi";
+
+
+        }
         void allMailList()
         {
             dgvMail.DataSource = maintenanceMailManager.GetAll();
@@ -31,7 +39,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Mail Bulunmamaktadır");
                 return;
             }
-            dgvMail.Columns[0].Visible = false;
+            GridDisplay();
         }
         void updateMail()
         {
@@ -48,6 +56,7 @@ namespace ControlAppDesktop.Forms
                 maintenanceMail.MaintenanceEmployeeName = txtEmployee.Text.ToString();
                 MessageBox.Show(maintenanceMailManager.UpdateNew(maintenanceMail));
             }
+            allMailList();
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

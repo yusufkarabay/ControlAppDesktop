@@ -59,11 +59,10 @@
             // 
             // btnGuestCardDelivery
             // 
-            this.btnGuestCardDelivery.FlatAppearance.BorderSize = 0;
             this.btnGuestCardDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuestCardDelivery.Location = new System.Drawing.Point(902, 29);
             this.btnGuestCardDelivery.Name = "btnGuestCardDelivery";
-            this.btnGuestCardDelivery.Size = new System.Drawing.Size(184, 23);
+            this.btnGuestCardDelivery.Size = new System.Drawing.Size(184, 27);
             this.btnGuestCardDelivery.TabIndex = 1;
             this.btnGuestCardDelivery.Text = "Misafir Kart Teslim Et";
             this.btnGuestCardDelivery.UseVisualStyleBackColor = true;

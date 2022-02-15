@@ -13,14 +13,23 @@ namespace Entities
         string requestContent;
         DateTime requestTime;
         bool isSend;
+        string createdEmployee;
      
+        public Request(string requestTitle, string requestContent, DateTime requestTime,string createdEmployee)
+        {
+            this.requestTitle = requestTitle;
+            this.requestContent = requestContent;          
+            this.requestTime = requestTime;
+            this.createdEmployee = createdEmployee;
+        }
         public Request(string requestTitle, string requestContent, DateTime requestTime)
         {
             this.requestTitle = requestTitle;
             this.requestContent = requestContent;
             this.requestTime = requestTime;
+           
         }
-        
+
         public Request()
         {
 
@@ -32,6 +41,15 @@ namespace Entities
             this.requestTitle = requestTitle;
             this.requestContent = requestContent;
             this.requestTime = requestTime;
+
+        }
+        public Request(Guid requestId, string requestTitle, string requestContent, DateTime requestTime, string createdEmployee)
+        {
+            this.requestId = requestId;
+            this.requestTitle = requestTitle;
+            this.requestContent = requestContent;
+            this.requestTime = requestTime;
+            this.createdEmployee= createdEmployee;
 
         }
         public Request(Guid requestId, string requestTitle, string requestContent, DateTime requestTime,bool isSend)
@@ -53,5 +71,6 @@ namespace Entities
         public string RequestContent { get => requestContent; set => requestContent = value; }
         public DateTime RequestTime { get => requestTime; set => requestTime = value; }
         public bool IsSend { get => isSend; set => isSend = value; }
+        public string CreatedEmployee { get => createdEmployee; set => createdEmployee=value; }
     }
 }

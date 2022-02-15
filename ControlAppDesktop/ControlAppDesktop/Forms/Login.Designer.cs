@@ -44,6 +44,8 @@
             this.pbPassword = new System.Windows.Forms.PictureBox();
             this.pbTc = new System.Windows.Forms.PictureBox();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlLoginTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTc)).BeginInit();
@@ -75,7 +77,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(256, 19);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "123456";
             this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
             // 
@@ -102,10 +104,11 @@
             this.mtxtTC.Mask = "00000000000";
             this.mtxtTC.Name = "mtxtTC";
             this.mtxtTC.Size = new System.Drawing.Size(256, 19);
-            this.mtxtTC.TabIndex = 0;
-            this.mtxtTC.Text = "22420015174";
+            this.mtxtTC.TabIndex = 1;
             this.mtxtTC.ValidatingType = typeof(int);
+            this.mtxtTC.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtTC_MaskInputRejected);
             this.mtxtTC.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mtxtTC_MouseClick);
+            this.mtxtTC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtxtTC_KeyPress);
             // 
             // lblTime
             // 
@@ -180,11 +183,11 @@
             // cbPassShow
             // 
             this.cbPassShow.AutoSize = true;
-            this.cbPassShow.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbPassShow.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cbPassShow.ForeColor = System.Drawing.Color.White;
             this.cbPassShow.Location = new System.Drawing.Point(146, 437);
             this.cbPassShow.Name = "cbPassShow";
-            this.cbPassShow.Size = new System.Drawing.Size(100, 19);
+            this.cbPassShow.Size = new System.Drawing.Size(112, 20);
             this.cbPassShow.TabIndex = 3;
             this.cbPassShow.Text = "Şifreyi Göster";
             this.cbPassShow.UseVisualStyleBackColor = true;
@@ -208,7 +211,7 @@
             // pbPassword
             // 
             this.pbPassword.Image = global::ControlAppDesktop.Properties.Resources.lock_16;
-            this.pbPassword.Location = new System.Drawing.Point(106, 411);
+            this.pbPassword.Location = new System.Drawing.Point(108, 411);
             this.pbPassword.Name = "pbPassword";
             this.pbPassword.Size = new System.Drawing.Size(20, 20);
             this.pbPassword.TabIndex = 13;
@@ -217,7 +220,7 @@
             // pbTc
             // 
             this.pbTc.Image = global::ControlAppDesktop.Properties.Resources.user_16;
-            this.pbTc.Location = new System.Drawing.Point(106, 374);
+            this.pbTc.Location = new System.Drawing.Point(108, 374);
             this.pbTc.Name = "pbTc";
             this.pbTc.Size = new System.Drawing.Size(20, 20);
             this.pbTc.TabIndex = 12;
@@ -233,6 +236,28 @@
             this.pbLogo.TabIndex = 11;
             this.pbLogo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label1.Location = new System.Drawing.Point(303, 370);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "T.C. Kimlik No";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label2.Location = new System.Drawing.Point(366, 406);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Şifre";
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
@@ -240,6 +265,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(562, 800);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.cbPassShow);
             this.Controls.Add(this.pbPassword);
@@ -286,6 +313,8 @@
         private System.Windows.Forms.PictureBox pbPassword;
         private System.Windows.Forms.CheckBox cbPassShow;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

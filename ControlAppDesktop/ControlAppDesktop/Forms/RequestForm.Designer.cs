@@ -64,6 +64,8 @@
             this.lblEndText = new System.Windows.Forms.Label();
             this.rtbEndText = new System.Windows.Forms.RichTextBox();
             this.btnEndRequest = new System.Windows.Forms.Button();
+            this.rtbEndTextRead = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpInfo.SuspendLayout();
             this.grpRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequest)).BeginInit();
@@ -224,6 +226,8 @@
             // 
             // gbRequestRead
             // 
+            this.gbRequestRead.Controls.Add(this.rtbEndTextRead);
+            this.gbRequestRead.Controls.Add(this.label2);
             this.gbRequestRead.Controls.Add(this.richTxtRequestContent);
             this.gbRequestRead.Controls.Add(this.txtRequested);
             this.gbRequestRead.Controls.Add(this.txtRequestTitle);
@@ -233,7 +237,7 @@
             this.gbRequestRead.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gbRequestRead.Location = new System.Drawing.Point(85, 520);
             this.gbRequestRead.Name = "gbRequestRead";
-            this.gbRequestRead.Size = new System.Drawing.Size(538, 198);
+            this.gbRequestRead.Size = new System.Drawing.Size(1022, 207);
             this.gbRequestRead.TabIndex = 3;
             this.gbRequestRead.TabStop = false;
             this.gbRequestRead.Text = "Talep Bilgileri";
@@ -274,27 +278,27 @@
             this.requested.AutoSize = true;
             this.requested.Location = new System.Drawing.Point(16, 71);
             this.requested.Name = "requested";
-            this.requested.Size = new System.Drawing.Size(66, 15);
+            this.requested.Size = new System.Drawing.Size(72, 15);
             this.requested.TabIndex = 2;
-            this.requested.Text = "Talep Eden";
+            this.requested.Text = "Talep Eden :";
             // 
             // lblrequestDetail
             // 
             this.lblrequestDetail.AutoSize = true;
             this.lblrequestDetail.Location = new System.Drawing.Point(16, 102);
             this.lblrequestDetail.Name = "lblrequestDetail";
-            this.lblrequestDetail.Size = new System.Drawing.Size(97, 15);
+            this.lblrequestDetail.Size = new System.Drawing.Size(103, 15);
             this.lblrequestDetail.TabIndex = 1;
-            this.lblrequestDetail.Text = "Talep Açıklaması";
+            this.lblrequestDetail.Text = "Talep Açıklaması :";
             // 
             // requestName
             // 
             this.requestName.AutoSize = true;
             this.requestName.Location = new System.Drawing.Point(16, 35);
             this.requestName.Name = "requestName";
-            this.requestName.Size = new System.Drawing.Size(57, 15);
+            this.requestName.Size = new System.Drawing.Size(63, 15);
             this.requestName.TabIndex = 0;
-            this.requestName.Text = "Talep Adı";
+            this.requestName.Text = "Talep Adı :";
             // 
             // grpAction
             // 
@@ -400,7 +404,7 @@
             // 
             this.lblCount.AutoSize = true;
             this.lblCount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCount.Location = new System.Drawing.Point(780, 504);
+            this.lblCount.Location = new System.Drawing.Point(825, 211);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(142, 15);
             this.lblCount.TabIndex = 11;
@@ -410,7 +414,7 @@
             // 
             this.lblCountInfo.AutoSize = true;
             this.lblCountInfo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCountInfo.Location = new System.Drawing.Point(1047, 504);
+            this.lblCountInfo.Location = new System.Drawing.Point(1052, 211);
             this.lblCountInfo.Name = "lblCountInfo";
             this.lblCountInfo.Size = new System.Drawing.Size(19, 15);
             this.lblCountInfo.TabIndex = 12;
@@ -450,6 +454,24 @@
             this.btnEndRequest.UseVisualStyleBackColor = false;
             this.btnEndRequest.Visible = false;
             this.btnEndRequest.Click += new System.EventHandler(this.btnEndRequest_Click);
+            // 
+            // rtbEndTextRead
+            // 
+            this.rtbEndTextRead.Location = new System.Drawing.Point(647, 27);
+            this.rtbEndTextRead.Name = "rtbEndTextRead";
+            this.rtbEndTextRead.ReadOnly = true;
+            this.rtbEndTextRead.Size = new System.Drawing.Size(364, 174);
+            this.rtbEndTextRead.TabIndex = 12;
+            this.rtbEndTextRead.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(500, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Sonlandırma Açıklaması :";
             // 
             // RequestForm
             // 
@@ -521,5 +543,7 @@
         private System.Windows.Forms.Label lblEndText;
         private System.Windows.Forms.RichTextBox rtbEndText;
         private System.Windows.Forms.Button btnEndRequest;
+        private System.Windows.Forms.RichTextBox rtbEndTextRead;
+        private System.Windows.Forms.Label label2;
     }
 }
