@@ -24,7 +24,19 @@ namespace ControlAppDesktop.Forms
             InitializeComponent();
             drawerManager = DrawerManager.GetInstance();
         }
+        void GridDisplay()
+        {
+            dgvDrawer.Columns[0].Visible = false;
+            dgvDrawer.Columns[2].Visible = false;
+            dgvDrawer.Columns[3].Visible = false;
+            dgvDrawer.Columns["DrawerNo"].HeaderText = "Çekmece No";
+            dgvDrawer.Columns["ReceiverPersonName"].HeaderText = "Teslim Alan Personel";
+            dgvDrawer.Columns["DeliveryPersonName"].HeaderText = "Teslim Eden Alan Personel";
+            dgvDrawer.Columns["DeliveryDate"].HeaderText = "Teslim Tarihi";
 
+
+
+        }
         void allDrawerList()
         {
             dgvDrawer.DataSource = drawerManager.GetAll();
@@ -33,9 +45,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Teslim Edilen Çekmece Bulunmamaktadır");
                 return;
             }
-            dgvDrawer.Columns[0].Visible = false;
-            dgvDrawer.Columns[2].Visible = false;
-            dgvDrawer.Columns[3].Visible = false;
+            GridDisplay();
         }
         void fillInfos()
         {
@@ -114,9 +124,7 @@ namespace ControlAppDesktop.Forms
 
             }
 
-            dgvDrawer.Columns[0].Visible = false;
-            dgvDrawer.Columns[2].Visible = false;
-            dgvDrawer.Columns[3].Visible = false;
+            GridDisplay();
         }
         private void btnDrawerList_Click(object sender, EventArgs e)
         {

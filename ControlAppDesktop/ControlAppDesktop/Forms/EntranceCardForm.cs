@@ -23,7 +23,19 @@ namespace ControlAppDesktop.Forms
             InitializeComponent();
             entranceCardManager = EntranceCardManager.GetInstance();
         }
+        void GridDisplay()
+        {
+            dgvEntranceCard.Columns[0].Visible = false;
+            dgvEntranceCard.Columns[2].Visible = false;
+            dgvEntranceCard.Columns[3].Visible = false;
+            dgvEntranceCard.Columns["EntranceCardSeriNo"].HeaderText = "Misafir Kart No";
+            dgvEntranceCard.Columns["ReceiverPersonName"].HeaderText = "Teslim Alan Personel";
+            dgvEntranceCard.Columns["DeliveryPersonName"].HeaderText = "Teslim Eden Alan Personel";
+            dgvEntranceCard.Columns["DeliveryDate"].HeaderText = "Teslim Tarihi";
 
+
+
+        }
         void allReceiverEntranceCard()
         {
             dgvEntranceCard.DataSource = entranceCardManager.GetAll();
@@ -32,9 +44,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Teslim Edilen Giriş Kartı Bulunmamaktadır");
                 return;
             }
-            dgvEntranceCard.Columns[0].Visible = false;
-            dgvEntranceCard.Columns[2].Visible = false;
-            dgvEntranceCard.Columns[3].Visible = false;
+           GridDisplay();
         }
         void fillInfos()
         {
@@ -107,9 +117,7 @@ namespace ControlAppDesktop.Forms
                     return;
                 }
             }
-            dgvEntranceCard.Columns[0].Visible = false;
-            dgvEntranceCard.Columns[2].Visible = false;
-            dgvEntranceCard.Columns[3].Visible = false;
+            GridDisplay();
 
         }
         private void btnEntranceCardList_Click(object sender, EventArgs e)

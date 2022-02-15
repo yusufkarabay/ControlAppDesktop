@@ -31,6 +31,19 @@ namespace ControlAppDesktop.Forms
             guestCardDeliveryForm.infos=infos;
             guestCardDeliveryForm.Show();
         }
+        void GridDisplay()
+        {
+            dgvGuestCard.Columns[0].Visible = false;
+            dgvGuestCard.Columns[2].Visible = false;
+            dgvGuestCard.Columns[3].Visible = false;
+            dgvGuestCard.Columns["GuestCardNo"].HeaderText = "Misafir Kart No";
+            dgvGuestCard.Columns["ReceiverPersonName"].HeaderText = "Teslim Alan Personel";
+            dgvGuestCard.Columns["DeliveryPersonName"].HeaderText = "Teslim Eden Alan Personel";
+            dgvGuestCard.Columns["DeliveryDate"].HeaderText = "Teslim Tarihi";
+
+            
+
+        }
         void allGuestCardList()
         {
             dgvGuestCard.DataSource = guestCardManager.GetAll();
@@ -39,9 +52,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Teslim Edilen Misafir Kartı Bulunmamaktadır");
                 return;
             }
-            dgvGuestCard.Columns[0].Visible = false;
-            dgvGuestCard.Columns[2].Visible = false;
-            dgvGuestCard.Columns[3].Visible = false;
+            GridDisplay();
         }
         void fillInfos()
         {
@@ -96,6 +107,7 @@ namespace ControlAppDesktop.Forms
                     MessageBox.Show("Girilen Personele Misafir Kart Teslim Edilmemiştir...");
                     return;
                 }
+                GridDisplay();
 
             }
             else if (rbDeliveryEmployee.Checked == true)

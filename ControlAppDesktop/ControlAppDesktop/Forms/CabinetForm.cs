@@ -31,6 +31,19 @@ namespace ControlAppDesktop.Forms
             cabinetDeliveryForm.infos = infos;
             cabinetDeliveryForm.Show();
         }
+        void GridDisplay()
+        {
+            dgvCabinet.Columns[0].Visible = false;
+            dgvCabinet.Columns[2].Visible = false;
+            dgvCabinet.Columns[3].Visible = false;
+            dgvCabinet.Columns["CabinetNo"].HeaderText = "Dolap No";
+            dgvCabinet.Columns["ReceiverPersonName"].HeaderText = "Teslim Alan Personel";
+            dgvCabinet.Columns["DeliveryPersonName"].HeaderText = "Teslim Eden Alan Personel";
+            dgvCabinet.Columns["DeliveryDate"].HeaderText = "Teslim Tarihi";
+
+
+
+        }
         void allCabinetList()
         {
             dgvCabinet.DataSource = cabinetManager.GetAll();
@@ -39,9 +52,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Teslim Edilen Dolap Bulunmamaktadır");
                 return;
             }
-            dgvCabinet.Columns[0].Visible = false;
-            dgvCabinet.Columns[2].Visible = false;
-            dgvCabinet.Columns[3].Visible = false;
+            GridDisplay();
         }
         void fillInfos()
         {
@@ -119,9 +130,7 @@ namespace ControlAppDesktop.Forms
 
             }
 
-            dgvCabinet.Columns[0].Visible = false;
-            dgvCabinet.Columns[2].Visible = false;
-            dgvCabinet.Columns[3].Visible = false;
+            GridDisplay();
         }
 
         private void btnCabinetList_Click(object sender, EventArgs e)

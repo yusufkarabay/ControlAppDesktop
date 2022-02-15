@@ -53,7 +53,7 @@ namespace ControlAppDesktop.Forms
             dgvMaintenance.Columns["MaintenanceMonth"].HeaderText ="Bakım Aralığı";
             dgvMaintenance.Columns["FirstMaintenanceDate"].HeaderText ="İlk Bakım Tarihi";
             dgvMaintenance.Columns["ContractName"].HeaderText ="Kontrat Adı";
-           
+
         }
         void allContractList()
         {
@@ -73,7 +73,7 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Bakım Bulunmamaktadır");
                 return;
             }
-            maintenanceGrid();  
+            maintenanceGrid();
 
 
         }
@@ -200,7 +200,7 @@ namespace ControlAppDesktop.Forms
             rtbContractNotes.Text.ToString());
             contractManager.Add(contract);
             MessageBox.Show("Sözleşme Başarı İle Kaydedildi", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            txtClear();
+            txtClear(); cbContractFill();
             allContractList();
         }
         private void btnContractList_Click(object sender, EventArgs e)
@@ -343,10 +343,10 @@ namespace ControlAppDesktop.Forms
                 MessageBox.Show("Bakım Aralığı Seçiniz");
                 return;
             }
-            updateMaintenance();           
+            updateMaintenance();
             allMaintenanceList();
             cbContractSelect.SelectedIndex = -1;
-            cbMonth.SelectedIndex = -1; 
+            cbMonth.SelectedIndex = -1;
             cbContractSelect.Enabled = true;
             btnMaintananceUpdate.Visible = false;
         }

@@ -32,17 +32,27 @@ namespace ControlAppDesktop.Forms
             lblDeliveryPersonInfo.Text = headset.ReceiverPersonName;
             lblHeadsetStatusInfo.Text = headset.HeadsetStatusInfo;
         }
+        void GridDisplay()
+        {
+            dgvHeadset.Columns [0].Visible = false;
+            dgvHeadset.Columns [2].Visible = false;
+            dgvHeadset.Columns [3].Visible = false;
+            dgvHeadset.Columns["HeadsetSeriNo"].HeaderText = "Kulaklık Seri No";
+            dgvHeadset.Columns["ReceiverPersonName"].HeaderText = "Teslim Alan Personel";
+            dgvHeadset.Columns["DeliveryPersonName"].HeaderText = "Teslim Eden Alan Personel";
+            dgvHeadset.Columns["DeliveryDate"].HeaderText = "Teslim Tarihi";
+            dgvHeadset.Columns["HeadsetStatusInfo"].HeaderText = "Kulaklık Durumu";
+
+        }
         void AllReceiverHeadset()
         {
             dgvHeadset.DataSource = headsetManager.GetAll();
-            if (dgvHeadset.Rows.Count>1)
+            if (dgvHeadset.Rows.Count<1)
             {
-                
-                dgvHeadset.Columns[0].Visible = false;
-                dgvHeadset.Columns[2].Visible = false;
-                dgvHeadset.Columns[3].Visible = false;
+
+                return;
             }
-          
+          GridDisplay();
         }
         void headsetReturnDelivery()
         {
@@ -147,6 +157,7 @@ namespace ControlAppDesktop.Forms
                     MessageBox.Show("Girilen Personel  Kulaklık Teslim Etmemiştir...");
                     return;
                 }
+                
             }
 
             else if (rbHeadsetSeriNo.Checked == true)
@@ -170,9 +181,7 @@ namespace ControlAppDesktop.Forms
                 }
             }
 
-            dgvHeadset.Columns[0].Visible = false;
-            dgvHeadset.Columns[2].Visible = false;
-            dgvHeadset.Columns[3].Visible = false;
+            GridDisplay();
         }
         private void txtHeadsetSearch_MouseClick(object sender, MouseEventArgs e)
         {
